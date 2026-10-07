@@ -1,0 +1,81 @@
+---
+title: Tooltip
+description: 트리거에 hover하거나 클릭하면 보조 설명을 표시하는 툴팁입니다.
+---
+
+import {
+  TooltipClick,
+  TooltipHover,
+  TooltipSides,
+  TooltipSizes,
+  TooltipStaticPreview,
+  TooltipWithTitle,
+} from "../../../../components/react/overlay/TooltipExamples.tsx"
+
+`Tooltip`은 Base UI Tooltip(hover)과 Base UI Popover(click)를 내부적으로 선택해 씁니다. 트리거는 자식 요소를 그대로 쓰므로 감싸는 `<span>`이 없습니다.
+
+```tsx
+import { Tooltip } from "@umc-product/react"
+
+;<Tooltip content="저장 단축키: Ctrl+S">
+  <button type="button">저장</button>
+</Tooltip>
+```
+
+## 외형 미리보기
+
+툴팁 내용 영역의 외형입니다. dark 모드, light 모드, 제목 있는 세 가지 변형을 항상 볼 수 있습니다.
+
+<TooltipStaticPreview />
+
+## hover와 light 모드
+
+기본값은 `openOn="hover"`, `mode="dark"`입니다.
+
+<TooltipHover />
+
+## 제목(label)
+
+`title` prop을 넘기면 툴팁 상단에 초록 라벨이 생깁니다.
+
+<TooltipWithTitle />
+
+## 방향
+
+`side`로 툴팁이 열릴 방향을 지정합니다. 공간이 부족하면 Base UI가 자동으로 반전합니다.
+
+<TooltipSides />
+
+## 클릭 트리거
+
+`openOn="click"`으로 설정하면 외부 클릭 또는 Esc 키로 닫힙니다.
+
+<TooltipClick />
+
+## 최대 폭(size)
+
+<TooltipSizes />
+
+| size | 최대 폭 |
+| ---- | ------- |
+| `xs` | 80px    |
+| `sm` | 100px   |
+| `md` | 240px   |
+
+## props
+
+| prop       | 타입                                     | 기본값    | 설명             |
+| ---------- | ---------------------------------------- | --------- | ---------------- |
+| `content`  | `ReactNode`                              | 필수      | 툴팁 본문        |
+| `title`    | `ReactNode`                              | 없음      | 초록 라벨        |
+| `side`     | `"top" \| "bottom" \| "left" \| "right"` | `"top"`   | 열릴 방향        |
+| `mode`     | `"dark" \| "light"`                      | `"dark"`  | 색 팔레트        |
+| `size`     | `"xs" \| "sm" \| "md"`                   | `"md"`    | 최대 폭          |
+| `openOn`   | `"hover" \| "click"`                     | `"hover"` | 트리거 방식      |
+| `delay`    | `number`                                 | 없음      | hover 딜레이(ms) |
+| `children` | `ReactElement`                           | 필수      | 트리거 요소      |
+
+## 디자인 팀 확인 사항
+
+- label 색상이 피그마 `#0b6b64`이나 가장 가까운 토큰 `--umc-color-teal-600(#02746c)`을 사용했습니다.
+- light 모드 그림자는 `drop-shadow(0 4px 16px rgba(64, 68, 67, 0.16))`으로 화살표까지 통일하게 `filter`로 적용합니다.
