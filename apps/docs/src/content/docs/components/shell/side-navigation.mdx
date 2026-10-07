@@ -87,5 +87,5 @@ type SideNavigationItem = SideNavigationLink | SideNavigationGroup
 
 - 그룹 동작: 피그마 설명은 "선택 시 최상단 서브 메뉴도 함께 Active되며 그 페이지가 열림"입니다. 이 컴포넌트의 그룹 버튼은 펼침과 접힘만 맡고 이동하지 않습니다. 한 버튼이 이동과 접기를 함께 하면 접으려고 누를 때도 페이지가 바뀌기 때문입니다. 그룹을 열 때 첫 하위 페이지로 보내려면 앱 라우팅에서 처리합니다.
 - 오른쪽 경계선: `Type=Default`는 2기 변수 `teal-gray-200`(#e9ecec), `Type=With Slot`은 `Border/Neutral/Weak-200`(#e2e3e3)을 씁니다. 3기 토큰 `--umc-color-border-neutral-weak`로 통일했습니다.
-- hover 그림자: 피그마 스타일 이름은 `Shadow/Inner/Neutral_1`이지만 값이 토큰과 다릅니다(#D3D8D833, 1, 1, 2). 피그마 값을 컴포넌트 변수 `--umc-side-navigation-hover-shadow-color`로 썼습니다.
+- hover 그림자: 피그마 스타일 이름은 `Shadow/Inner/Neutral_1`이지만 값이 파운데이션 정의와 다릅니다(#D3D8D833, 1, 1, 2). 이름 있는 스타일은 토큰을 따르는 규칙대로 `--umc-shadow-inner-neutral-1`을 씁니다.
 - 긴 메뉴 이름은 한 줄을 넘으면 말줄임표로 자릅니다. 피그마에는 넘치는 경우가 없습니다.

@@ -1,7 +1,5 @@
 @layer components {
   .umc-side-navigation {
-    --umc-side-navigation-hover-shadow-color: #d3d8d833;
-
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -114,8 +112,7 @@
     .umc-side-navigation__group-trigger:hover
       .umc-side-navigation__item-inner:not([data-selected]) {
       background-color: var(--umc-color-fill-neutral-weak);
-      box-shadow: inset 1px 1px 2px 0
-        var(--umc-side-navigation-hover-shadow-color);
+      box-shadow: var(--umc-shadow-inner-neutral-1);
     }
   }
 
