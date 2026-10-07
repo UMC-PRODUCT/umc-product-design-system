@@ -63,6 +63,7 @@ export default defineConfig({
             "contributing/decisions",
             "contributing/figma-normalization",
             "contributing/icon-normalization",
+            "contributing/design-questions",
           ],
         },
       ],
