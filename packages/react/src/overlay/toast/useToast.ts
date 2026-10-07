@@ -6,7 +6,12 @@ import { useMemo } from "react"
 import type { ToastApi, ToastOptions } from "./Toast.tsx"
 
 export function useToast(): ToastApi {
-  const manager = Toast.useToastManager()
+  let manager: ReturnType<typeof Toast.useToastManager>
+  try {
+    manager = Toast.useToastManager()
+  } catch {
+    throw new Error("useToast는 ToastProvider 안에서만 쓸 수 있습니다")
+  }
 
   return useMemo(
     () => ({

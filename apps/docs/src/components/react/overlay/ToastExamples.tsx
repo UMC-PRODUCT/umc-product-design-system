@@ -3,33 +3,40 @@
 import { CloseIcon } from "@umc-product/icons"
 import { Button, ToastProvider, useToast } from "@umc-product/react"
 
+type ToastPreviewItemProps = {
+  color: "primary" | "neutral" | "error"
+  message: string
+  specId: string
+}
+
+function ToastPreviewItem({ color, message, specId }: ToastPreviewItemProps) {
+  return (
+    <div data-spec-id={specId}>
+      <div className="umc-toast" data-color={color}>
+        <div className="umc-toast__main">
+          <p className="umc-toast__message">{message}</p>
+        </div>
+        <button className="umc-toast__close" aria-label="닫기" type="button">
+          <CloseIcon size={24} aria-hidden={true} />
+        </button>
+      </div>
+    </div>
+  )
+}
+
 export function ToastStaticPreview() {
   return (
     <div className="umc-example umc-example-stack" style={{ gap: "8px" }}>
-      <div
-        className="umc-toast"
-        data-color="primary"
-        data-spec-id="toast-primary-default"
-      >
-        <div className="umc-toast__main">
-          <p className="umc-toast__message">저장되었습니다.</p>
-        </div>
-        <button className="umc-toast__close" aria-label="닫기" type="button">
-          <CloseIcon size={24} aria-hidden={true} />
-        </button>
-      </div>
-      <div
-        className="umc-toast"
-        data-color="error"
-        data-spec-id="toast-error-default"
-      >
-        <div className="umc-toast__main">
-          <p className="umc-toast__message">오류가 발생했습니다.</p>
-        </div>
-        <button className="umc-toast__close" aria-label="닫기" type="button">
-          <CloseIcon size={24} aria-hidden={true} />
-        </button>
-      </div>
+      <ToastPreviewItem
+        specId="toast-primary-default"
+        color="primary"
+        message="저장되었습니다."
+      />
+      <ToastPreviewItem
+        specId="toast-error-default"
+        color="error"
+        message="오류가 발생했습니다."
+      />
     </div>
   )
 }

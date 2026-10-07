@@ -146,6 +146,44 @@ describe("ToastProvider & useToast", () => {
     expect(onClick).toHaveBeenCalledTimes(1)
   })
 
+  it("action 버튼 클릭 시 토스트가 닫힌다", async () => {
+    render(
+      <ToastProvider>
+        <ShowApp
+          message="닫힘 확인"
+          action={{ label: "닫기 액션", onClick: vi.fn() }}
+        />
+      </ToastProvider>,
+    )
+    act(() => {
+      fireEvent.click(screen.getByRole("button", { name: "보여줘" }))
+    })
+    expect(screen.getByText("닫힘 확인")).toBeInTheDocument()
+    await act(async () => {
+      fireEvent.click(screen.getByRole("button", { name: "닫기 액션" }))
+      vi.advanceTimersByTime(500)
+      await vi.runAllTimersAsync()
+    })
+    expect(screen.queryByText("닫힘 확인")).not.toBeInTheDocument()
+  })
+
+  it("DOM 구조: .umc-toast[data-color] > .umc-toast__main > .umc-toast__message", () => {
+    render(
+      <ToastProvider>
+        <ShowApp message="구조 테스트" color="primary" />
+      </ToastProvider>,
+    )
+    act(() => {
+      fireEvent.click(screen.getByRole("button", { name: "보여줘" }))
+    })
+    const toast = document.querySelector(".umc-toast")
+    expect(toast).toHaveAttribute("data-color", "primary")
+    const main = toast?.querySelector(".umc-toast__main")
+    expect(main).not.toBeNull()
+    const message = main?.querySelector(".umc-toast__message")
+    expect(message).not.toBeNull()
+  })
+
   it("close(id)를 호출하면 해당 토스트가 닫힌다", async () => {
     render(
       <ToastProvider>
@@ -176,9 +214,11 @@ describe("ToastProvider & useToast", () => {
     expect(toast).toHaveAttribute("data-color", "error")
   })
 
-  it("Provider 밖에서 useToast를 호출하면 오류가 발생한다", () => {
+  it("Provider 밖에서 useToast를 호출하면 user-friendly 오류가 발생한다", () => {
+    const consoleSpy = vi.spyOn(console, "error").mockImplementation(() => {})
     expect(() => {
       render(<ShowApp message="에러" />)
-    }).toThrow()
+    }).toThrow("useToast는 ToastProvider 안에서만 쓸 수 있습니다")
+    consoleSpy.mockRestore()
   })
 })

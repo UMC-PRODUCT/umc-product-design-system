@@ -1,64 +1,49 @@
 {
   "component": "Tooltip",
-  "figmaNodeId": null,
-  "specs": [
+  "figmaSection": "2621:36221",
+  "page": "/components/overlay/tooltip/",
+  "nodes": [
     {
       "specId": "tooltip-dark-md-default",
-      "description": "dark 모드 md 크기 기본 툴팁 내용 영역",
+      "node": "2621:36222",
+      "variant": "Side=Top, Appearance=Dark, Size=Md, Show Label=False",
+      "target": ".umc-tooltip__content",
       "expected": {
-        "background-color": "var(--umc-color-icon-neutral-strong)",
-        "border-top-left-radius": "6px",
+        "background-color": "#606262",
+        "color": "#ffffff",
         "padding-top": "8px",
         "padding-bottom": "8px",
         "padding-left": "12px",
-        "padding-right": "12px"
-      }
-    },
-    {
-      "specId": "tooltip-light-md-default",
-      "description": "light 모드 md 크기 툴팁 내용 영역",
-      "expected": {
-        "background-color": "var(--umc-color-fill-neutral-default)",
+        "padding-right": "12px",
         "border-top-left-radius": "6px"
       }
     },
     {
-      "specId": "tooltip-dark-title",
-      "description": "dark 모드 title(label) 텍스트",
+      "specId": "tooltip-light-md-default",
+      "node": "2621:36233",
+      "variant": "Side=Top, Appearance=Light, Size=Md, Show Label=False",
+      "target": ".umc-tooltip__content",
       "expected": {
-        "color": "var(--umc-color-teal-600)"
+        "background-color": "#ffffff",
+        "color": "#282a2a",
+        "padding-top": "8px",
+        "padding-bottom": "8px",
+        "padding-left": "12px",
+        "padding-right": "12px",
+        "border-top-left-radius": "6px"
+      }
+    },
+    {
+      "specId": "tooltip-light-md-label",
+      "node": "2621:36239",
+      "variant": "Side=Top, Appearance=Light, Size=Md, Show Label=True",
+      "target": ".umc-tooltip__label",
+      "expected": {
+        "color": "#0b6b64"
+      },
+      "figmaDiffers": {
+        "color": "피그마 --color-teal-600 = #0b6b64이나 3기 --umc-color-teal-600 = #02746c로 값이 다름. 역할 변수 --umc-tooltip-title-color: #0b6b64를 선언해 피그마 값을 그대로 사용했다. 디자인 팀에 토큰 일치 확인 요청 필요"
       }
     }
-  ],
-  "props": [
-    { "name": "content", "type": "ReactNode", "required": true },
-    { "name": "title", "type": "ReactNode" },
-    {
-      "name": "side",
-      "type": "\"top\" | \"bottom\" | \"left\" | \"right\"",
-      "default": "\"top\""
-    },
-    {
-      "name": "mode",
-      "type": "\"dark\" | \"light\"",
-      "default": "\"dark\""
-    },
-    {
-      "name": "size",
-      "type": "\"xs\" | \"sm\" | \"md\"",
-      "default": "\"md\""
-    },
-    {
-      "name": "openOn",
-      "type": "\"hover\" | \"click\"",
-      "default": "\"hover\""
-    },
-    { "name": "delay", "type": "number" },
-    { "name": "children", "type": "ReactElement", "required": true }
-  ],
-  "designNotes": [
-    "label(title) 색이 피그마에서 #0b6b64이나 가장 가까운 토큰 --umc-color-teal-600(#02746c)을 사용했습니다.",
-    "hover 모드는 Base UI Tooltip, click 모드는 Base UI Popover로 구현합니다.",
-    "arrow는 clip-path 삼각형으로 방향별로 모양을 맞춥니다."
   ]
 }

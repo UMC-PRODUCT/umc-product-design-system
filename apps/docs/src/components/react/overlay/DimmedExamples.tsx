@@ -6,63 +6,25 @@ import { Button, Dimmed } from "@umc-product/react"
 export function DimmedStaticPreview() {
   return (
     <div className="umc-example" style={{ gap: "8px", alignItems: "center" }}>
-      <div
-        style={{
-          position: "relative",
-          width: "80px",
-          height: "80px",
-          borderRadius: "8px",
-          overflow: "hidden",
-          background: "var(--umc-color-fill-neutral-default)",
-        }}
-      >
+      {(["weak", "medium", "strong"] as const).map((intensity) => (
         <div
+          key={intensity}
           style={{
-            position: "absolute",
-            inset: 0,
-            background: "var(--umc-color-dimmed-weak)",
+            position: "relative",
+            width: "80px",
+            height: "80px",
+            borderRadius: "8px",
+            overflow: "hidden",
+            background: "var(--umc-color-fill-neutral-default)",
           }}
-          data-spec-id="dimmed-weak"
-        />
-      </div>
-      <div
-        style={{
-          position: "relative",
-          width: "80px",
-          height: "80px",
-          borderRadius: "8px",
-          overflow: "hidden",
-          background: "var(--umc-color-fill-neutral-default)",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "var(--umc-color-dimmed-medium)",
-          }}
-          data-spec-id="dimmed-medium"
-        />
-      </div>
-      <div
-        style={{
-          position: "relative",
-          width: "80px",
-          height: "80px",
-          borderRadius: "8px",
-          overflow: "hidden",
-          background: "var(--umc-color-fill-neutral-default)",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "var(--umc-color-dimmed-strong)",
-          }}
-          data-spec-id="dimmed-strong"
-        />
-      </div>
+        >
+          <Dimmed
+            intensity={intensity}
+            className="absolute inset-0"
+            data-spec-id={`dimmed-${intensity}`}
+          />
+        </div>
+      ))}
     </div>
   )
 }

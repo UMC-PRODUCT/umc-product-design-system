@@ -30,7 +30,7 @@ type ToastData = {
 }
 
 function ToastViewportPortal({ placement }: { placement: "top" | "bottom" }) {
-  const { toasts } = Toast.useToastManager<ToastData>()
+  const { toasts, close } = Toast.useToastManager<ToastData>()
 
   return (
     <Toast.Portal>
@@ -56,8 +56,11 @@ function ToastViewportPortal({ placement }: { placement: "top" | "bottom" }) {
               {data?.action !== undefined ? (
                 <button
                   className="umc-toast__action"
-                  onClick={data.action.onClick}
                   type="button"
+                  onClick={() => {
+                    data.action!.onClick()
+                    close(toast.id)
+                  }}
                 >
                   {data.action.label}
                 </button>

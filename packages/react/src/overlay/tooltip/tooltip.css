@@ -90,12 +90,13 @@
   }
 
   .umc-tooltip__label {
+    --umc-tooltip-title-color: #0b6b64;
     font-family: var(--umc-typography-caption-2-bold-font-family);
     font-size: var(--umc-typography-caption-2-bold-font-size);
     font-weight: var(--umc-typography-caption-2-bold-font-weight);
     line-height: var(--umc-typography-caption-2-bold-line-height);
     letter-spacing: var(--umc-typography-caption-2-bold-letter-spacing);
-    color: var(--umc-color-teal-600);
+    color: var(--umc-tooltip-title-color);
   }
 
   .umc-tooltip__text {

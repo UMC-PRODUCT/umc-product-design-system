@@ -1,64 +1,46 @@
 {
-  "component": "ToastProvider / useToast",
-  "figmaNodeId": null,
-  "specs": [
+  "component": "Toast",
+  "figmaSection": "2621:33488",
+  "page": "/components/overlay/toast/",
+  "nodes": [
     {
       "specId": "toast-primary-default",
-      "description": "primary 색상 토스트",
+      "node": "2621:33495",
+      "variant": "Type=Primary, Leading Acc=False, Text Button=False",
+      "target": ".umc-toast",
       "expected": {
-        "background-color~": "rgba("
+        "background-color": "#b3e5e1",
+        "color": "#015a54",
+        "padding-top": "12px",
+        "padding-bottom": "12px",
+        "padding-left": "14px",
+        "padding-right": "16px",
+        "border-top-left-radius": "14px",
+        "min-height": "48px",
+        "width": "400px",
+        "box-shadow~": "rgba(64, 68, 67, 0.16) 0px 4px 16px 0px"
+      },
+      "figmaDiffers": {
+        "padding-left": "피그마 아이콘 없는 Primary 변형은 padding-left 16px이나 구현에서 아이콘 유무 공통 14px로 통일했다"
       }
     },
     {
       "specId": "toast-error-default",
-      "description": "error 색상 토스트",
+      "node": "2621:33516",
+      "variant": "Type=Error, Leading Acc=True, Text Button=False",
+      "target": ".umc-toast",
       "expected": {
-        "background-color": "var(--umc-color-fill-error-medium)"
+        "background-color": "#ffe7e5",
+        "color": "#a60303",
+        "padding-top": "12px",
+        "padding-bottom": "12px",
+        "padding-left": "14px",
+        "padding-right": "16px",
+        "border-top-left-radius": "14px"
+      },
+      "figmaDiffers": {
+        "background-color": "피그마 Error 변형은 #fed7d7(color-error-200)이나 3기 토큰에 error-200 없음. --umc-color-fill-error-medium = --umc-color-red-100 = #ffe7e5로 대응했다"
       }
     }
-  ],
-  "props": [
-    {
-      "name": "placement",
-      "type": "\"top\" | \"bottom\"",
-      "default": "\"bottom\"",
-      "component": "ToastProvider"
-    },
-    {
-      "name": "children",
-      "type": "ReactNode",
-      "required": true,
-      "component": "ToastProvider"
-    },
-    {
-      "name": "message",
-      "type": "ReactNode",
-      "required": true,
-      "component": "ToastOptions"
-    },
-    {
-      "name": "color",
-      "type": "\"primary\" | \"neutral\" | \"error\"",
-      "default": "\"primary\"",
-      "component": "ToastOptions"
-    },
-    { "name": "icon", "type": "ReactNode", "component": "ToastOptions" },
-    {
-      "name": "action",
-      "type": "{ label: ReactNode; onClick: () => void }",
-      "component": "ToastOptions"
-    },
-    {
-      "name": "duration",
-      "type": "number",
-      "description": "기본값: action 없으면 3000ms, 있으면 6000ms",
-      "component": "ToastOptions"
-    }
-  ],
-  "designNotes": [
-    "neutral 색상 배경이 rgba(63, 65, 65, 0.8)이나 토큰이 없어 컴포넌트 변수로 선언합니다.",
-    "error 색상은 --umc-color-fill-error-medium 토큰을 씁니다.",
-    "placement=top: 위에서 112px, placement=bottom: 아래에서 86px 위치에 렌더합니다.",
-    "가로 400px, 최소 높이 48px. 창 폭이 좁으면 calc(100vw - 32px)로 줄어듭니다."
   ]
 }

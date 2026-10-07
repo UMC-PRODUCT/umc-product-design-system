@@ -2,40 +2,63 @@
 
 import { Button, Tooltip } from "@umc-product/react"
 
+type TooltipPreviewItemProps = {
+  specId: string
+  mode: "dark" | "light"
+  size?: "xs" | "sm" | "md"
+  title?: string
+  text: string
+}
+
+function TooltipPreviewItem({
+  specId,
+  mode,
+  size = "md",
+  title,
+  text,
+}: TooltipPreviewItemProps) {
+  return (
+    <div data-spec-id={specId}>
+      <div
+        className="umc-tooltip__positioner"
+        data-size={size}
+        data-mode={mode}
+      >
+        <div className="umc-tooltip__popup" data-mode={mode}>
+          <div className="umc-tooltip__content" data-mode={mode}>
+            {title !== undefined && (
+              <span className="umc-tooltip__label">{title}</span>
+            )}
+            <div className="umc-tooltip__text">{text}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function TooltipStaticPreview() {
   return (
     <div
       className="umc-example"
       style={{ gap: "16px", alignItems: "flex-start" }}
     >
-      <div className="umc-tooltip__popup" data-mode="dark">
-        <div
-          className="umc-tooltip__content"
-          data-mode="dark"
-          data-spec-id="tooltip-dark-md-default"
-        >
-          <div className="umc-tooltip__text">dark 모드 기본 툴팁</div>
-        </div>
-      </div>
-      <div className="umc-tooltip__popup" data-mode="light">
-        <div
-          className="umc-tooltip__content"
-          data-mode="light"
-          data-spec-id="tooltip-light-md-default"
-        >
-          <div className="umc-tooltip__text">light 모드 툴팁</div>
-        </div>
-      </div>
-      <div className="umc-tooltip__popup" data-mode="dark">
-        <div
-          className="umc-tooltip__content"
-          data-mode="dark"
-          data-spec-id="tooltip-dark-title"
-        >
-          <span className="umc-tooltip__label">제목</span>
-          <div className="umc-tooltip__text">제목 있는 툴팁</div>
-        </div>
-      </div>
+      <TooltipPreviewItem
+        specId="tooltip-dark-md-default"
+        mode="dark"
+        text="dark 모드 기본 툴팁"
+      />
+      <TooltipPreviewItem
+        specId="tooltip-light-md-default"
+        mode="light"
+        text="light 모드 툴팁"
+      />
+      <TooltipPreviewItem
+        specId="tooltip-light-md-label"
+        mode="light"
+        title="제목"
+        text="제목 있는 툴팁"
+      />
     </div>
   )
 }

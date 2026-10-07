@@ -97,6 +97,29 @@ describe("Tooltip (hover)", () => {
   })
 })
 
+describe("Tooltip DOM 구조", () => {
+  it(".umc-tooltip__positioner > .umc-tooltip__popup > .umc-tooltip__content 사슬이 렌더된다", async () => {
+    const user = userEvent.setup()
+    render(
+      <Tooltip content="구조 확인" mode="dark" size="md" openOn="hover">
+        <button>트리거</button>
+      </Tooltip>,
+    )
+    await user.hover(screen.getByRole("button", { name: "트리거" }))
+    await waitFor(() => {
+      const positioner = document.querySelector(".umc-tooltip__positioner")
+      expect(positioner).not.toBeNull()
+      expect(positioner).toHaveAttribute("data-size", "md")
+      expect(positioner).toHaveAttribute("data-mode", "dark")
+      const popup = positioner?.querySelector(".umc-tooltip__popup")
+      expect(popup).not.toBeNull()
+      expect(popup).toHaveAttribute("data-mode", "dark")
+      const content = popup?.querySelector(".umc-tooltip__content")
+      expect(content).not.toBeNull()
+    })
+  })
+})
+
 describe("Tooltip (click)", () => {
   it("트리거를 클릭하면 열리고 바깥을 클릭하면 닫힌다", async () => {
     const user = userEvent.setup()

@@ -1,45 +1,34 @@
 {
   "component": "Dimmed",
-  "figmaNodeId": null,
-  "specs": [
+  "figmaSection": "2621:33088",
+  "page": "/components/overlay/dimmed/",
+  "nodes": [
     {
       "specId": "dimmed-weak",
-      "description": "weak 강도 딤 레이어",
+      "node": "2621:33091",
+      "variant": "Intensity=Weak",
       "expected": {
-        "position": "fixed"
+        "background-color": "#0f101033",
+        "position": "absolute"
       }
     },
     {
       "specId": "dimmed-medium",
-      "description": "medium 강도 딤 레이어",
+      "node": "2621:33089",
+      "variant": "Intensity=Medium",
       "expected": {
-        "position": "fixed"
+        "background-color": "#0f1010a6",
+        "position": "absolute"
       }
     },
     {
       "specId": "dimmed-strong",
-      "description": "strong 강도 딤 레이어",
+      "node": "2621:33093",
+      "variant": "Intensity=Strong",
       "expected": {
-        "position": "fixed"
+        "background-color": "#0f1010d9",
+        "position": "absolute"
       }
     }
-  ],
-  "props": [
-    {
-      "name": "intensity",
-      "type": "\"weak\" | \"medium\" | \"strong\"",
-      "default": "\"medium\""
-    },
-    {
-      "name": "...",
-      "type": "ComponentPropsWithRef<\"div\">"
-    }
-  ],
-  "designNotes": [
-    "weak: --umc-color-dimmed-weak 토큰을 씁니다.",
-    "medium: --umc-color-dimmed-medium 토큰을 씁니다.",
-    "strong: --umc-color-dimmed-strong 토큰을 씁니다.",
-    "position: fixed, inset: 0으로 전체 화면을 덮습니다.",
-    "z-index는 --umc-z-dimmed(1000) 입니다."
   ]
 }
