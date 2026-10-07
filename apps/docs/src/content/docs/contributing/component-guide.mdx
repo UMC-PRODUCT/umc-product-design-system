@@ -95,7 +95,9 @@ apps/docs/src/components/react/<Component>Examples.tsx
 ```
 
 - 색은 `#rrggbb` 또는 `#rrggbbaa`, 길이는 px로 적습니다.
-- 키가 `~`로 끝나면 부분 일치로 비교합니다(예: `"box-shadow~"`).
+- 축약 속성(`border`, `padding`, `gap`, `border-radius`) 대신 개별 속성(`border-top-color`, `padding-top`, `column-gap`, `border-top-left-radius`)을 씁니다. 브라우저가 계산하는 값과 바로 비교하기 위해서입니다.
+- 키가 `~`로 끝나면 부분 일치로 비교합니다(예: `"box-shadow~"`). 크롬은 그림자 색을 앞에 쓰므로 그림자는 부분 일치로 적습니다.
+- 재려는 요소가 컴포넌트 안쪽 부품이면 예시를 `data-spec-id` 래퍼로 감싸고 `"target"`에 래퍼 기준 CSS 선택자를 적습니다(예: `".umc-option-button[data-checked]"`). 문서 검증을 위해 공개 API에 prop을 추가하지 않습니다.
 - `"interaction": "hover"`이면 요소에 마우스를 올린 뒤 비교합니다.
 - 피그마와 일부러 다르게 만든 값은 `figmaDiffers`에 이유를 적습니다.
 
