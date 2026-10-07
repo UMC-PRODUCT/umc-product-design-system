@@ -1,0 +1,52 @@
+---
+title: LinkProvider
+description: 라우터 Link 컴포넌트를 전역 주입하는 컨텍스트 프로바이더입니다.
+---
+
+import { LinkProviderDefault } from "../../../../components/react/shell/LinkProviderExamples.tsx"
+
+`LinkProvider`는 Next.js `Link`, React Router `Link` 등 라우터 종속 컴포넌트를 디자인 시스템 내부에 주입합니다. 한 번 등록하면 `Header`, `SideNavigation` 등 링크를 렌더하는 모든 셸 컴포넌트가 그 컴포넌트를 씁니다.
+
+```tsx
+import { LinkProvider } from "@umc-product/react"
+import Link from "next/link"
+
+export function Providers({ children }: { children: React.ReactNode }) {
+  return <LinkProvider component={Link}>{children}</LinkProvider>
+}
+```
+
+`LinkProvider`가 없으면 기본 `<a>` 태그로 폴백합니다.
+
+<LinkProviderDefault />
+
+## useLinkComponent
+
+등록한 컴포넌트를 직접 꺼내 쓰고 싶을 때 훅을 씁니다.
+
+```tsx
+import { useLinkComponent } from "@umc-product/react"
+
+function MyLink({ href, label }: { href: string; label: string }) {
+  const Link = useLinkComponent()
+  return <Link href={href}>{label}</Link>
+}
+```
+
+## props
+
+### LinkProvider
+
+| prop        | 타입                                | 기본값 | 설명                 |
+| ----------- | ----------------------------------- | ------ | -------------------- |
+| `component` | `ComponentType<LinkComponentProps>` | 없음   | 주입할 링크 컴포넌트 |
+| `children`  | `ReactNode`                         | 없음   | 하위 트리            |
+
+### LinkComponentProps
+
+| prop           | 타입                                      | 설명                |
+| -------------- | ----------------------------------------- | ------------------- |
+| `href`         | `string`                                  | 이동 경로           |
+| `children`     | `ReactNode`                               | 링크 콘텐츠         |
+| `aria-current` | `"page" \| "step" \| ...`                 | 현재 페이지 표시    |
+| 나머지         | `AnchorHTMLAttributes<HTMLAnchorElement>` | `<a>` 네이티브 속성 |

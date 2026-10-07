@@ -1,0 +1,86 @@
+{
+  "component": "Header",
+  "figmaSection": "2858:65987",
+  "page": "/components/shell/header/",
+  "nodes": [
+    {
+      "specId": "header-light-default",
+      "node": "2678:52059",
+      "variant": "Login Status=Logged In, Mode=Light, Show CTA Button=False",
+      "target": ".umc-header",
+      "expected": {
+        "height": "80px",
+        "background-color": "#fbfcfc",
+        "box-shadow~": "rgba(239, 240, 240, 0.302) 0px 4px 16px 0px"
+      }
+    },
+    {
+      "specId": "header-dark-default",
+      "node": "2809:62842",
+      "variant": "Login Status=Logged In, Mode=Dark, Show CTA Button=False",
+      "target": ".umc-header",
+      "expected": {
+        "height": "80px",
+        "background-color": "#3f4141",
+        "box-shadow~": "rgba(239, 240, 240, 0.302) 0px 4px 16px 0px"
+      },
+      "figmaNote": {
+        "background": "피그마 다크 헤더 배경은 이미지 오버레이(node 2809:62842). 실제 색을 CSS로 표현할 수 없어 --umc-color-surface-neutral-inverse(#3f4141) 사용. 동일한 Shadow/Drop/Neutral_3 적용."
+      }
+    },
+    {
+      "specId": "header-nav-item-default",
+      "node": "2678:52269",
+      "variant": "Navigation Item Default, Mode=Light",
+      "target": ".umc-header__nav-link:not([aria-current])",
+      "expected": {
+        "height": "36px",
+        "padding-left": "18px",
+        "padding-right": "18px",
+        "border-top-left-radius": "999px",
+        "color": "#606262",
+        "background-color": "rgba(0, 0, 0, 0)",
+        "font-size": "16px",
+        "font-weight": "500",
+        "line-height": "23.2px",
+        "letter-spacing": "-0.16px"
+      }
+    },
+    {
+      "specId": "header-nav-item-selected",
+      "node": "2678:52277",
+      "variant": "Navigation Item Selected, Mode=Light",
+      "target": ".umc-header__nav-link[aria-current=\"page\"]",
+      "expected": {
+        "height": "36px",
+        "padding-left": "18px",
+        "padding-right": "18px",
+        "border-top-left-radius": "999px",
+        "background-color": "#e9f7f5",
+        "color": "#02746c",
+        "font-size": "16px",
+        "font-weight": "600",
+        "line-height": "23.2px",
+        "letter-spacing": "-0.16px"
+      },
+      "figmaNote": {
+        "background": "피그마 var(--color-action-primary-default)=#e9f7f5=teal-75. token_lookup 결과: --umc-color-teal-75(#e9f7f5)의 시맨틱 alias는 --umc-color-surface-brand-medium, --umc-color-fill-primary-weak, --umc-color-background-brand-medium. 표면색이므로 --umc-color-surface-brand-medium 사용."
+      }
+    },
+    {
+      "specId": "header-nav-pill-container",
+      "node": "2678:52059",
+      "variant": "Navigation pill container",
+      "target": ".umc-header__nav-list",
+      "expected": {
+        "padding-top": "6px",
+        "padding-left": "6px",
+        "column-gap": "6px",
+        "border-top-left-radius": "999px",
+        "border-top-width": "1px",
+        "border-top-color": "#f7f8f8",
+        "background-color": "#fbfcfc"
+      }
+    }
+  ]
+}

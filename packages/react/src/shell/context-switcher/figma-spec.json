@@ -1,0 +1,33 @@
+{
+  "component": "ContextSwitcher",
+  "figmaSection": "3384:69706",
+  "page": "/components/shell/context-switcher/",
+  "nodes": [
+    {
+      "specId": "context-switcher-default",
+      "node": "2281:6451",
+      "variant": "State=Default",
+      "target": ".umc-context-switcher",
+      "expected": {
+        "font-size": "14px",
+        "font-weight": "500",
+        "line-height": "21px",
+        "letter-spacing": "0px",
+        "color": "#606262",
+        "border-top-left-radius": "8px",
+        "padding-top": "6px",
+        "padding-bottom": "6px",
+        "padding-left": "8px",
+        "padding-right": "8px"
+      }
+    },
+    {
+      "specId": "context-switcher-selected",
+      "node": "2281:6459",
+      "variant": "State=Selected (dropdown open)",
+      "expected": {
+        "min-width": "172px"
+      }
+    }
+  ]
+}

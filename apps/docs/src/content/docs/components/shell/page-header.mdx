@@ -1,0 +1,59 @@
+---
+title: PageHeader
+description: 페이지 상단 제목 영역과 브레드크럼입니다.
+---
+
+import {
+  PageHeaderDefault,
+  PageHeaderSimple,
+} from "../../../../components/react/shell/PageHeaderExamples.tsx"
+
+피그마 `PageHeader` 컴포넌트를 구현했습니다. 브레드크럼, 제목, 설명 세 영역으로 구성됩니다. 브레드크럼과 설명은 선택 사항입니다.
+
+```tsx
+import { PageHeader } from "@umc-product/react"
+
+export function ApplicantListPage() {
+  return (
+    <>
+      <PageHeader
+        title="지원자 목록"
+        description="현재 차수에 지원한 모든 지원자를 확인합니다."
+        breadcrumbs={[
+          { label: "리크루팅", href: "/recruiting" },
+          { label: "지원자 목록" },
+        ]}
+      />
+      {/* 페이지 본문 */}
+    </>
+  )
+}
+```
+
+## 브레드크럼 포함
+
+<PageHeaderDefault />
+
+## 제목만
+
+<PageHeaderSimple />
+
+## 브레드크럼
+
+마지막 항목은 `href`를 생략합니다. 스크린 리더는 마지막 항목에 `aria-current="page"`를 읽습니다. 화살표 구분자는 `@umc-product/icons`의 `ChevronRightIcon`을 씁니다.
+
+## props
+
+| prop          | 타입               | 기본값      | 설명                  |
+| ------------- | ------------------ | ----------- | --------------------- |
+| `title`       | `ReactNode`        | —           | 페이지 제목 (`<h1>`)  |
+| `description` | `ReactNode`        | `undefined` | 부제 설명             |
+| `breadcrumbs` | `BreadcrumbItem[]` | `undefined` | 브레드크럼 항목 목록  |
+| `className`   | `string`           | `undefined` | 루트 요소 추가 클래스 |
+
+### BreadcrumbItem
+
+| 필드    | 타입        | 설명                           |
+| ------- | ----------- | ------------------------------ |
+| `label` | `ReactNode` | 브레드크럼 레이블              |
+| `href`  | `string`    | 링크 경로 (마지막 항목은 생략) |

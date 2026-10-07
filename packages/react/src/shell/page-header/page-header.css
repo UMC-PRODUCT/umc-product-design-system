@@ -1,0 +1,104 @@
+@layer components {
+  .umc-page-header {
+    --umc-page-header-breadcrumb-text: var(--umc-color-text-placeholder);
+    --umc-page-header-breadcrumb-separator: var(--umc-color-icon-neutral-weak);
+    --umc-page-header-title-text: var(--umc-color-text-neutral-default);
+    --umc-page-header-description-text: var(--umc-color-text-neutral-medium);
+    --umc-page-header-breadcrumb-gap: var(--umc-spacing-2);
+
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    padding-inline-start: var(--umc-spacing-padding-12);
+    padding-inline-end: 0;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+    box-sizing: border-box;
+  }
+
+  .umc-page-header__breadcrumbs {
+    display: flex;
+    align-items: center;
+  }
+
+  .umc-page-header__breadcrumb-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--umc-page-header-breadcrumb-gap);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .umc-page-header__breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: var(--umc-page-header-breadcrumb-gap);
+  }
+
+  .umc-page-header__breadcrumb-link {
+    display: inline-flex;
+    align-items: center;
+    height: 22px;
+    color: var(--umc-page-header-breadcrumb-text);
+    font-family: var(--umc-typography-body-3-medium-font-family);
+    font-size: var(--umc-typography-body-3-medium-font-size);
+    font-weight: var(--umc-typography-body-3-medium-font-weight);
+    line-height: var(--umc-typography-body-3-medium-line-height);
+    letter-spacing: var(--umc-typography-body-3-medium-letter-spacing);
+    text-decoration: none;
+  }
+
+  a.umc-page-header__breadcrumb-link:hover {
+    text-decoration: underline;
+  }
+
+  a.umc-page-header__breadcrumb-link:focus-visible {
+    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline-offset: 2px;
+  }
+
+  .umc-page-header__breadcrumb-separator {
+    display: flex;
+    align-items: center;
+    color: var(--umc-page-header-breadcrumb-separator);
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .umc-page-header__breadcrumb-separator > svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .umc-page-header__title-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--umc-spacing-gap-12);
+  }
+
+  .umc-page-header__title {
+    margin: 0;
+    padding: 0;
+    color: var(--umc-page-header-title-text);
+    font-family: var(--umc-typography-heading-2-semibold-font-family);
+    font-size: var(--umc-typography-heading-2-semibold-font-size);
+    font-weight: var(--umc-typography-heading-2-semibold-font-weight);
+    line-height: var(--umc-typography-heading-2-semibold-line-height);
+    letter-spacing: var(--umc-typography-heading-2-semibold-letter-spacing);
+  }
+
+  .umc-page-header__description {
+    margin: 0;
+    padding: 0;
+    color: var(--umc-page-header-description-text);
+    font-family: var(--umc-typography-body-3-regular-font-family);
+    font-size: var(--umc-typography-body-3-regular-font-size);
+    font-weight: var(--umc-typography-body-3-regular-font-weight);
+    line-height: var(--umc-typography-body-3-regular-line-height);
+    letter-spacing: var(--umc-typography-body-3-regular-letter-spacing);
+  }
+}

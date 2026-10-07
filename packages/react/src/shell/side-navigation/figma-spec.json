@@ -1,0 +1,81 @@
+{
+  "component": "SideNavigation",
+  "figmaSection": "2929:72851",
+  "page": "/components/shell/side-navigation/",
+  "nodes": [
+    {
+      "specId": "side-navigation-default",
+      "node": "2929:72289",
+      "variant": "Type=Default",
+      "target": ".umc-side-navigation",
+      "expected": {
+        "width": "216px",
+        "background-color": "#fbfcfc",
+        "border-right-width": "1px",
+        "border-right-color": "#e9ecec",
+        "padding-top": "16px",
+        "padding-bottom": "16px"
+      },
+      "figmaNote": {
+        "border-right": "피그마 var(--color-teal-gray-200)=#e9ecec. 토큰 --umc-color-teal-grey-200(#e2e3e3)과 값이 다름. 컴포넌트 변수 --umc-side-navigation-border-right로 선언. 디자이너 확인 필요."
+      }
+    },
+    {
+      "specId": "side-navigation-menu-item-default",
+      "node": "2281:6466",
+      "variant": "Menu Item Default",
+      "target": ".umc-side-navigation__item-label",
+      "expected": {
+        "color": "#606262",
+        "font-size": "16px",
+        "font-weight": "600",
+        "line-height": "22.4px",
+        "letter-spacing": "-0.32px"
+      }
+    },
+    {
+      "specId": "side-navigation-menu-item-selected",
+      "node": "2281:6471",
+      "variant": "Menu Item Selected",
+      "target": ".umc-side-navigation__item-inner[data-selected]",
+      "expected": {
+        "background-color": "#e9f7f5",
+        "color": "#02746c",
+        "box-shadow~": "rgba(11, 107, 100, 0.13) 1px 1px 3px 0px inset"
+      },
+      "figmaNote": {
+        "background": "피그마 var(--color-action-primary-default)=#e9f7f5=teal-75. --umc-color-surface-brand-medium(#e9f7f5) 사용."
+      }
+    },
+    {
+      "specId": "side-navigation-submenu-item-default",
+      "node": "2281:6490",
+      "variant": "Submenu Item Default",
+      "target": ".umc-side-navigation__subitem-link:not([aria-current])",
+      "expected": {
+        "height": "36px",
+        "padding-left": "48px",
+        "color": "#606262",
+        "font-size": "14px",
+        "font-weight": "500",
+        "line-height": "21px",
+        "letter-spacing": "0px"
+      }
+    },
+    {
+      "specId": "side-navigation-submenu-item-selected",
+      "node": "2281:6494",
+      "variant": "Submenu Item Selected",
+      "target": ".umc-side-navigation__subitem-link[aria-current=\"page\"]",
+      "expected": {
+        "height": "36px",
+        "padding-left": "48px",
+        "color": "#02746c",
+        "font-size": "14px",
+        "font-weight": "600",
+        "line-height": "21px",
+        "letter-spacing": "0px"
+      }
+    }
+  ]
+}
