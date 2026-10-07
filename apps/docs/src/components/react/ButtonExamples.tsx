@@ -86,19 +86,19 @@ export function ButtonIcons() {
       <Button
         size="md"
         color="neutral"
-        leadingIcon={<AddIcon />}
+        leadingIcon={<AddIcon weight="fill" />}
         data-spec-id="button-fill-neutral-md-leading-icon"
       >
         추가
       </Button>
       <Button
         size="sm"
-        trailingIcon={<ChevronRightIcon />}
+        trailingIcon={<ChevronRightIcon weight="fill" />}
         data-spec-id="button-fill-primary-sm-trailing-icon"
       >
         다음
       </Button>
-      <Button size="xs" variant="weak" leadingIcon={<AddIcon />}>
+      <Button size="xs" variant="weak" leadingIcon={<AddIcon weight="fill" />}>
         추가
       </Button>
     </div>

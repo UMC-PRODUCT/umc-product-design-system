@@ -79,7 +79,7 @@ export function HeaderActions() {
                   <HeaderActionButton>문의사항</HeaderActionButton>
                 </span>
                 <span data-spec-id="header-action-button-suffix header-action-button-suffix-icon">
-                  <HeaderActionButton suffix={<ExpandMoreIcon />}>
+                  <HeaderActionButton suffix={<ExpandMoreIcon weight="fill" />}>
                     10기 운영진
                   </HeaderActionButton>
                 </span>

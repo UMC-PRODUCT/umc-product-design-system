@@ -1,7 +1,9 @@
 "use client"
 
-import { CheckCircleIcon, CloseIcon } from "@umc-product/icons"
+import { CheckCircleIcon } from "@umc-product/icons"
 import { Button, ToastProvider, useToast } from "@umc-product/react"
+
+import { LegacyCloseGlyph } from "../../../../../../packages/react/src/internal/glyphs.tsx"
 
 type ToastPreviewItemProps = {
   color: "primary" | "neutral" | "error"
@@ -36,7 +38,7 @@ function ToastPreviewItem({
         </div>
         {actionLabel === undefined ? (
           <button className="umc-toast__close" aria-label="닫기" type="button">
-            <CloseIcon size={24} aria-hidden={true} />
+            <LegacyCloseGlyph />
           </button>
         ) : (
           <button className="umc-toast__action" type="button">

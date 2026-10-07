@@ -211,7 +211,7 @@ export const OPEN_QUESTIONS: readonly string[] = [
   "Bold, Italic, Strikethrough, Underline, Time, warning의 Fill 변형과 ThumbsUp 전체는 프레임이 23.85×25이고, Link는 24×25, Location Fill은 19×24.51, Person Regular와 Fill은 22×24입니다. 코드에서는 24px 정사각형 안에 비율을 지켜 줄여 넣었습니다. 24×24로 맞춰 주실 수 있나요?",
   "`Icon/ThumbsUp`에 보이지 않는 `Format italic` 요소가 남아 있습니다.",
   "Notification, Notification-Off의 빨간 점(`#dc3d3d`)과 흰 테두리, Time과 warning의 Regular와 Thin, Check_circle Fill, ThumbsUp의 흰 부분은 아이콘 색을 바꿔도 고정입니다. 흰 배경이 아닌 곳에서는 흰 부분이 드러나므로, 뚫린 모양으로 그릴지 알려 주세요.",
-  "Thin 굵기를 선으로 그린 아이콘과 면으로 그린 아이콘이 섞여 있습니다. 렌더 결과는 같지만 하나로 맞추면 수정이 쉬워집니다.",
+  "선으로 그린 아이콘과 면으로 그린 아이콘이 섞여 있습니다. 24px에서는 같아 보이지만, 인스턴스를 줄이면 선 아이콘은 두께가 그대로이고 면 아이콘은 같이 줄어듭니다(예: Option Button 20px의 `Icon/Check`는 선 두께 2). 패키지 아이콘은 모두 크기에 비례해 줄어듭니다. 모두 면(Outline stroke)으로 맞춰 주실 수 있나요?",
   "`Pictogram/Person`은 PNG 마스크라 코드에서 뺐습니다. SVG로 받을 수 있나요?",
   "`Pictogram/School`의 색 `#0b6b64`는 3기 색 변수에 없습니다. 다른 픽토그램처럼 Teal-600(`#02746c`)이 맞는지 알려 주세요. 지금은 피그마 값을 기본색으로 둡니다.",
   "`Pictogram/Under-construction`의 변형 이름이 `Varient`입니다. Dark 변형의 `#b3e6e1`은 Teal-200(`#b3e5e1`)과 1만큼 달라 피그마 값 그대로 두었습니다.",
