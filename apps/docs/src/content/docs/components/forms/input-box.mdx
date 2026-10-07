@@ -1,0 +1,57 @@
+---
+title: InputBox
+description: 텍스트 입력, 부속 요소, 아이콘 버튼을 가로로 배치하는 입력 상자 컨테이너입니다.
+---
+
+import {
+  InputBoxDefault,
+  InputBoxDisabled,
+  InputBoxInvalid,
+  InputBoxMd,
+  InputBoxPadding,
+} from "../../../../components/react/forms/InputBoxExamples.tsx"
+
+피그마 Input Box(노드 2621:33296)의 크기, 상태, 내부 레이아웃을 구현한 컨테이너입니다. `TextField`, `SearchField` 등이 이 컴포넌트를 내부에서 사용합니다.
+
+```tsx
+import { InputBox } from "@umc-product/react"
+
+;<InputBox size="lg" invalid={hasError} disabled={isDisabled}>
+  <input className="umc-input-box__input" />
+</InputBox>
+```
+
+## 기본 (lg)
+
+<InputBoxDefault />
+
+## Md 크기
+
+<InputBoxMd />
+
+## 오류 상태
+
+<InputBoxInvalid />
+
+## 비활성 상태
+
+<InputBoxDisabled />
+
+## 여백 확인
+
+<InputBoxPadding />
+
+## 크기
+
+| size | 높이 | 글자             |
+| ---- | ---- | ---------------- |
+| `lg` | 48px | `label-1-medium` |
+| `md` | 40px | `label-3-medium` |
+
+## props
+
+| prop       | 타입           | 기본값  | 설명               |
+| ---------- | -------------- | ------- | ------------------ |
+| `size`     | `"lg" \| "md"` | `"lg"`  | 높이와 글자 크기   |
+| `invalid`  | `boolean`      | `false` | 오류 테두리와 배경 |
+| `disabled` | `boolean`      | `false` | 비활성 외형        |

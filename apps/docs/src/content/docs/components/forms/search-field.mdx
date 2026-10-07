@@ -1,0 +1,48 @@
+---
+title: SearchField
+description: 검색 전용 입력 필드입니다. 값이 있을 때 지우기 버튼이 나타나고 비어있을 때 검색 아이콘을 표시합니다.
+---
+
+import {
+  SearchFieldClearable,
+  SearchFieldDefault,
+  SearchFieldMd,
+  SearchFieldNoClear,
+} from "../../../../components/react/forms/SearchFieldExamples.tsx"
+
+피그마 `Search Field`(노드 2621:33450)를 구현합니다. `type="search"`를 사용하며 브라우저 기본 취소 버튼은 숨깁니다.
+
+```tsx
+import { SearchField } from "@umc-product/react"
+
+;<SearchField
+  placeholder="프로젝트 검색"
+  value={query}
+  onChange={(e) => setQuery(e.target.value)}
+/>
+```
+
+## 기본 (lg)
+
+<SearchFieldDefault client:load />
+
+## Md 크기
+
+<SearchFieldMd client:load />
+
+## 지우기 버튼
+
+<SearchFieldClearable client:load />
+
+## 지우기 버튼 비활성화
+
+<SearchFieldNoClear client:load />
+
+## props
+
+| prop          | 타입                             | 기본값 | 설명                          |
+| ------------- | -------------------------------- | ------ | ----------------------------- |
+| `size`        | `"lg" \| "md"`                   | `"lg"` | 높이와 글자 크기              |
+| `clearable`   | `boolean`                        | `true` | 값이 있을 때 지우기 버튼 표시 |
+| `placeholder` | `string`                         | 없음   | 플레이스홀더 텍스트           |
+| 나머지        | `ComponentPropsWithRef<"input">` | -      | `onChange`, `value`, `ref` 등 |

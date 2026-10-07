@@ -1,0 +1,39 @@
+{
+  "component": "Select",
+  "figmaSection": "2621:33492",
+  "page": "/components/forms/select/",
+  "nodes": [
+    {
+      "specId": "select-lg-default",
+      "node": "2621:33492",
+      "variant": "Type=Select, State=Default, Size=Lg",
+      "target": ".umc-select__trigger",
+      "expected": {
+        "border-top-left-radius": "14px",
+        "border-top-right-radius": "14px",
+        "border-bottom-left-radius": "14px",
+        "border-bottom-right-radius": "14px",
+        "height": "48px"
+      }
+    },
+    {
+      "specId": "select-md-default",
+      "node": "2621:33510",
+      "variant": "Type=Select, State=Default, Size=Md",
+      "target": ".umc-select__trigger",
+      "expected": {
+        "height": "40px"
+      }
+    },
+    {
+      "specId": "select-popup",
+      "node": "2621:33528",
+      "variant": "Type=Select Popup, Item Size=Sm",
+      "target": ".umc-select__popup",
+      "expected": {
+        "border-top-left-radius": "14px",
+        "border-top-right-radius": "14px"
+      }
+    }
+  ]
+}

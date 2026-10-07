@@ -1,0 +1,65 @@
+---
+title: Field
+description: 레이블, 캡션, 오류 메시지를 묶어 접근성 관계를 자동으로 연결하는 필드 래퍼입니다.
+---
+
+import {
+  FieldCaptionExample,
+  FieldDefault,
+  FieldErrorCaptionExample,
+  FieldInvalid,
+  FieldLabelExample,
+  FieldRequired,
+} from "../../../../components/react/forms/FieldExamples.tsx"
+
+피그마 `Field`(노드 2621:33351)의 레이블, 캡션, 오류 메시지를 하나의 컴포넌트로 묶었습니다. Base UI `Field.Root`를 기반으로 하여 `id`, `aria-invalid`, `aria-describedby` 연결을 자동으로 처리합니다.
+
+```tsx
+import { Field, FieldControl } from "@umc-product/react"
+
+;<Field
+  label="이름"
+  required
+  caption="20자 이내"
+  invalid
+  errorMessage="필수 입력"
+>
+  <FieldControl render={<input placeholder="홍길동" />} />
+</Field>
+```
+
+## 기본 사용
+
+<FieldDefault client:load />
+
+## 필수 표시
+
+<FieldRequired client:load />
+
+## 오류 상태
+
+<FieldInvalid client:load />
+
+## 레이블 스타일
+
+<FieldLabelExample />
+
+## 캡션 스타일
+
+<FieldCaptionExample />
+
+## 오류 캡션 스타일
+
+<FieldErrorCaptionExample />
+
+## props
+
+| prop           | 타입                     | 기본값      | 설명                          |
+| -------------- | ------------------------ | ----------- | ----------------------------- |
+| `label`        | `ReactNode`              | 없음        | 레이블 텍스트                 |
+| `required`     | `boolean`                | `false`     | 필수 표시(`*`) 추가           |
+| `caption`      | `ReactNode`              | 없음        | 도움말 텍스트                 |
+| `captionColor` | `"neutral" \| "primary"` | `"neutral"` | 도움말 색상                   |
+| `invalid`      | `boolean`                | `false`     | 오류 상태로 변경              |
+| `errorMessage` | `ReactNode`              | 없음        | `invalid`일 때 캡션 대신 표시 |
+| `disabled`     | `boolean`                | `false`     | 비활성 상태                   |
