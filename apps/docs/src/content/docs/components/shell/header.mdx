@@ -5,6 +5,7 @@ description: 서비스 최상단에 놓는 로고, 메인 내비게이션, 액�
 
 import { Aside } from "@astrojs/starlight/components"
 import {
+  HeaderActions,
   HeaderDark,
   HeaderLight,
 } from "../../../../components/react/shell/HeaderExamples.tsx"
@@ -48,6 +49,29 @@ export function AppHeader() {
 피그마 설명대로 주로 랜딩 페이지에서 씁니다. 헤더 배경은 투명하고, 뒤에 깔린 히어로 이미지나 배경이 그대로 보입니다. 내비게이션 알약은 반투명 배경에 `backdrop-filter: blur(21px)`를 씁니다.
 
 <HeaderDark client:visible />
+
+## 액션 버튼
+
+`HeaderActionButton`은 피그마 `.primitive/Web/Header/Action Button`입니다. 로그인한 사용자에게 보이는 문의, 계정 메뉴 같은 보조 동작을 `actions`에 놓을 때 씁니다. 높이 40px 알약 모양이고, hover하면 테두리가 사라지고 배경이 짙어집니다. `suffix`에는 펼침 화살표 같은 16px 아이콘을 넣습니다.
+
+```tsx
+import { Header, HeaderActionButton } from "@umc-product/react"
+import { ExpandMoreIcon } from "@umc-product/icons"
+
+<Header
+  logo={<Logo />}
+  actions={
+    <>
+      <HeaderActionButton onClick={openInquiry}>문의사항</HeaderActionButton>
+      <HeaderActionButton suffix={<ExpandMoreIcon />}>10기 운영진</HeaderActionButton>
+    </>
+  }
+/>
+```
+
+<HeaderActions client:visible />
+
+네이티브 `button` 속성을 받고 `type`의 기본값은 `"button"`입니다. 피그마의 `Profile`(원형 아바타)과 로고 hover는 에셋이 정해지지 않아 아직 컴포넌트로 만들지 않았습니다.
 
 ## 선택 상태
 

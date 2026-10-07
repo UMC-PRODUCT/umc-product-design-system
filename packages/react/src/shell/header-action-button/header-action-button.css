@@ -1,0 +1,69 @@
+@layer components {
+  .umc-header-action-button {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: var(--umc-spacing-gap-6);
+    box-sizing: border-box;
+    height: 40px;
+    margin: 0;
+    padding-block: var(--umc-spacing-padding-6);
+    padding-inline: 18px;
+    border: 0;
+    border-radius: var(--umc-radius-full);
+    background-color: var(--umc-color-fill-neutral-weaker);
+    box-shadow: inset 0 0 0 1px var(--umc-color-border-neutral-weaker);
+    color: var(--umc-color-text-neutral-medium);
+    font-family: var(--umc-typography-body-1-medium-font-family);
+    font-size: var(--umc-typography-body-1-medium-font-size);
+    font-weight: var(--umc-typography-body-1-medium-font-weight);
+    line-height: var(--umc-typography-body-1-medium-line-height);
+    letter-spacing: var(--umc-typography-body-1-medium-letter-spacing);
+    white-space: nowrap;
+    cursor: pointer;
+    appearance: none;
+    transition:
+      background-color var(--umc-motion-duration) ease,
+      box-shadow var(--umc-motion-duration) ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .umc-header-action-button:has(.umc-header-action-button__suffix) {
+    padding-inline-end: var(--umc-spacing-padding-12);
+  }
+
+  .umc-header-action-button:active {
+    background-color: var(--umc-color-fill-neutral-weaker-hover-pressed);
+    box-shadow: none;
+  }
+
+  @media (hover: hover) {
+    .umc-header-action-button:hover {
+      background-color: var(--umc-color-fill-neutral-weaker-hover-pressed);
+      box-shadow: none;
+    }
+  }
+
+  .umc-header-action-button:focus-visible {
+    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline-offset: 2px;
+  }
+
+  .umc-header-action-button__suffix {
+    display: inline-flex;
+    flex: 0 0 auto;
+    color: var(--umc-color-icon-neutral-medium);
+  }
+
+  .umc-header-action-button__suffix > svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .umc-header-action-button {
+      transition: none;
+    }
+  }
+}

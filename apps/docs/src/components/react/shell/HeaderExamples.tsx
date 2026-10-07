@@ -1,6 +1,7 @@
 "use client"
 
-import { Button, Header } from "@umc-product/react"
+import { Button, Header, HeaderActionButton } from "@umc-product/react"
+import { ExpandMoreIcon } from "@umc-product/icons"
 import { useState } from "react"
 
 import { PreviewLinks } from "./PreviewLinks.tsx"
@@ -55,6 +56,35 @@ export function HeaderDark() {
             logo={<Logo color="var(--umc-color-text-inverse)" />}
             navItems={NAV_ITEMS}
             currentPath={path}
+          />
+        </div>
+      </PreviewLinks>
+    </div>
+  )
+}
+
+export function HeaderActions() {
+  const [path, setPath] = useState("/matching")
+  return (
+    <div className="umc-example umc-example-flush overflow-x-auto">
+      <PreviewLinks onNavigate={setPath}>
+        <div className="min-w-[720px]">
+          <Header
+            logo={<Logo color="var(--umc-color-text-neutral-strong)" />}
+            navItems={NAV_ITEMS}
+            currentPath={path}
+            actions={
+              <>
+                <span data-spec-id="header-action-button header-action-button-hover">
+                  <HeaderActionButton>문의사항</HeaderActionButton>
+                </span>
+                <span data-spec-id="header-action-button-suffix header-action-button-suffix-icon">
+                  <HeaderActionButton suffix={<ExpandMoreIcon />}>
+                    10기 운영진
+                  </HeaderActionButton>
+                </span>
+              </>
+            }
           />
         </div>
       </PreviewLinks>
