@@ -2,19 +2,27 @@
 
 import { useState } from "react"
 
-import { SegmentedControl } from "@umc-product/react"
+import { SegmentedControl, type SegmentedControlItem } from "@umc-product/react"
 
-const VIEW_ITEMS = [
-  { value: "list", label: "목록" },
-  { value: "grid", label: "그리드" },
+const VIEW_ITEMS: SegmentedControlItem[] = [
+  {
+    value: "list",
+    label: "목록",
+    "data-spec-id": "segmented-control-item-selected",
+  },
+  {
+    value: "grid",
+    label: "그리드",
+    "data-spec-id": "segmented-control-item-unselected",
+  },
   { value: "map", label: "지도" },
-] as const
+]
 
 export function SegmentedControlBasic() {
   return (
     <div className="umc-example">
       <SegmentedControl
-        items={[...VIEW_ITEMS]}
+        items={VIEW_ITEMS}
         aria-label="보기 방식"
         defaultValue="list"
       />
@@ -31,7 +39,7 @@ export function SegmentedControlControlled() {
       style={{ flexDirection: "column", gap: "12px" }}
     >
       <SegmentedControl
-        items={[...VIEW_ITEMS]}
+        items={VIEW_ITEMS}
         aria-label="보기 방식"
         value={view}
         onValueChange={setView}

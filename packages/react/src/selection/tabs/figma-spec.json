@@ -2,13 +2,18 @@
   "component": "Tabs",
   "figmaSection": "3325:62141",
   "page": "/components/selection/tabs/",
+  "specIdMap": {
+    "tab-selected-default": "TabsBasic의 첫 번째(notice) 탭 — defaultValue=notice이므로 활성",
+    "tab-unselected-default": "TabsBasic의 두 번째(faq) 탭 — 비활성",
+    "tab-icon-unselected": "TabsWithIcon의 두 번째(list) 아이콘 탭 — defaultValue=filter이므로 비활성"
+  },
   "nodes": [
     {
       "specId": "tab-selected-default",
       "node": "2621:35318",
       "variant": "State=Selected, Type=Default",
       "expected": {
-        "background-color": "transparent",
+        "background-color": "rgba(0, 0, 0, 0)",
         "color": "#02746c",
         "height": "44px",
         "padding-top": "8px",
@@ -23,7 +28,7 @@
         "border-bottom-color": "#0b6b64"
       },
       "figmaDiffers": {
-        "border-bottom-color": "피그마 var(--color-teal-600) → #0b6b64. 토큰 없음. --umc-tab-selected-underline 변수에 담음."
+        "border-bottom-color": "피그마 탭 밑줄은 var(--color-teal-600) 변수. figma/mcp/get-variable-defs 조회 결과 해당 노드의 --color-teal-600 resolved 값은 #0b6b64. 3기 토큰 --umc-color-teal-600=#02746c와 다름. #0b6b64는 3기 시멘틱 토큰 어디에도 직접 색값으로 없음(--umc-shadow-inner-neutral-1 그림자 색의 알파 없는 기반 값으로만 존재). --umc-tab-selected-underline 역할 변수에 #0b6b64 직접 사용하고 디자인 팀 토큰 발급 요청"
       }
     },
     {
@@ -31,7 +36,7 @@
       "node": "2621:35310",
       "variant": "State=Unselected, Type=Default",
       "expected": {
-        "background-color": "transparent",
+        "background-color": "rgba(0, 0, 0, 0)",
         "color": "#606262",
         "height": "44px",
         "font-size": "16px",

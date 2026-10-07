@@ -48,15 +48,37 @@ export function OptionButtonGroupVariants() {
       style={{ flexDirection: "column", gap: "16px" }}
     >
       <OptionButtonGroup
-        options={PART_OPTIONS}
+        options={[
+          {
+            value: "fe",
+            label: "프론트엔드",
+            "data-spec-id": "option-button-weak-xl-selected",
+          },
+          {
+            value: "be",
+            label: "백엔드",
+            "data-spec-id": "option-button-unselected-xl",
+          },
+          { value: "de", label: "디자인" },
+        ]}
         aria-label="파트 (weak)"
         variant="weak"
+        size="xl"
         defaultValue="fe"
       />
       <OptionButtonGroup
-        options={PART_OPTIONS}
+        options={[
+          {
+            value: "fe",
+            label: "프론트엔드",
+            "data-spec-id": "option-button-strong-xl-selected",
+          },
+          { value: "be", label: "백엔드" },
+          { value: "de", label: "디자인" },
+        ]}
         aria-label="파트 (strong)"
         variant="strong"
+        size="xl"
         defaultValue="fe"
       />
     </div>
@@ -97,10 +119,16 @@ export function OptionButtonGroupDisabled() {
       <OptionButtonGroup
         options={[
           { value: "fe", label: "프론트엔드" },
-          { value: "be", label: "백엔드", disabled: true },
+          {
+            value: "be",
+            label: "백엔드",
+            disabled: true,
+            "data-spec-id": "option-button-unselected-xl-disabled",
+          },
           { value: "de", label: "디자인" },
         ]}
         aria-label="파트 선택 (일부 비활성)"
+        size="xl"
         defaultValue="fe"
       />
     </div>

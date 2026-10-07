@@ -5,7 +5,16 @@ const STEPS = ["지원서 작성", "제출 확인", "결과 안내"]
 export function StepNavigationBasic() {
   return (
     <div className="umc-example">
-      <StepNavigation steps={STEPS} currentStep={1} aria-label="지원 단계" />
+      <StepNavigation
+        steps={STEPS}
+        currentStep={1}
+        aria-label="지원 단계"
+        stepSpecIds={[
+          "step-navigation-active",
+          "step-navigation-inactive",
+          undefined,
+        ]}
+      />
     </div>
   )
 }

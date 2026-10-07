@@ -9,6 +9,7 @@ export type OptionItem<V extends string = string> = {
   value: V
   label: ReactNode
   disabled?: boolean
+  "data-spec-id"?: string
 }
 
 type OptionButtonGroupCommon<V extends string> = {
@@ -66,7 +67,10 @@ function OptionButtonGroupSingle<V extends string>({
     <RadioGroup
       value={value ?? undefined}
       defaultValue={defaultValue ?? undefined}
-      onValueChange={(v) => onValueChange?.(v as V)}
+      onValueChange={(next) => {
+        const found = options.find((option) => option.value === next)
+        if (found) onValueChange?.(found.value)
+      }}
       disabled={disabled}
       name={name}
       aria-label={ariaLabel}
@@ -82,6 +86,7 @@ function OptionButtonGroupSingle<V extends string>({
           disabled={option.disabled}
           className="umc-option-button"
           data-position={resolvePosition(index, options.length)}
+          data-spec-id={option["data-spec-id"]}
         >
           <span className="umc-option-button__label">{option.label}</span>
         </Radio.Root>
@@ -107,7 +112,12 @@ function OptionButtonGroupMultiple<V extends string>({
     <CheckboxGroup
       value={value}
       defaultValue={defaultValue}
-      onValueChange={(v) => onValueChange?.(v as V[])}
+      onValueChange={(next) => {
+        const found = options
+          .filter((option) => next.includes(option.value))
+          .map((option) => option.value)
+        onValueChange?.(found)
+      }}
       disabled={disabled}
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledby}
@@ -123,6 +133,7 @@ function OptionButtonGroupMultiple<V extends string>({
           disabled={option.disabled}
           className="umc-option-button"
           data-position={resolvePosition(index, options.length)}
+          data-spec-id={option["data-spec-id"]}
         >
           <span className="umc-option-button__label">{option.label}</span>
         </Checkbox.Root>

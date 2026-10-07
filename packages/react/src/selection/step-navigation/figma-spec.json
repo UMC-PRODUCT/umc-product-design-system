@@ -2,6 +2,10 @@
   "component": "StepNavigation",
   "figmaSection": "2505:14204",
   "page": "/components/selection/step-navigation/",
+  "specIdMap": {
+    "step-navigation-active": "StepNavigationBasic의 첫 번째(index=0) 항목 — currentStep=1이므로 활성",
+    "step-navigation-inactive": "StepNavigationBasic의 두 번째(index=1) 항목 — 비활성"
+  },
   "nodes": [
     {
       "specId": "step-navigation-active",

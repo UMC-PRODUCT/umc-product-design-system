@@ -2,6 +2,10 @@
   "component": "SegmentedControl",
   "figmaSection": "2505:14204",
   "page": "/components/selection/segmented-control/",
+  "specIdMap": {
+    "segmented-control-item-selected": "SegmentedControlBasic의 첫 번째(list) 항목 (defaultValue=list)",
+    "segmented-control-item-unselected": "SegmentedControlBasic의 두 번째(grid) 항목"
+  },
   "nodes": [
     {
       "specId": "segmented-control-item-selected",
@@ -11,16 +15,21 @@
         "background-color": "#ffffff",
         "color": "#282a2a",
         "height": "38px",
+        "padding-top": "8px",
+        "padding-bottom": "8px",
         "padding-left": "12px",
         "padding-right": "12px",
-        "border-radius": "8px",
+        "border-top-left-radius": "8px",
+        "border-top-right-radius": "8px",
+        "border-bottom-left-radius": "8px",
+        "border-bottom-right-radius": "8px",
         "font-size": "16px",
         "font-weight": "600",
         "line-height": "22.4px",
         "letter-spacing": "-0.32px"
       },
       "figmaDiffers": {
-        "box-shadow": "피그마 선택 항목의 그림자는 0px 1px 2px rgba(99,196,184,0.2) + 0px 0px 10px rgba(156,163,163,0.3). 토큰 없음. --umc-segmented-control-selected-shadow-teal, -grey 변수에 값 담음."
+        "box-shadow": "피그마 선택 항목 그림자: 0px 1px 2px rgba(99,196,184,0.2) + 0px 0px 10px rgba(156,163,163,0.3). 토큰 없음. --umc-segmented-control-selected-shadow-teal(#63c4b833), -grey(#9ca3a34d) 변수에 담음. CSS 다중 box-shadow는 computed 포맷 불일치로 spec 제외"
       }
     },
     {
@@ -28,7 +37,7 @@
       "node": "2281:6405",
       "variant": "State=Unselected, Type=Default",
       "expected": {
-        "background-color": "transparent",
+        "background-color": "rgba(0, 0, 0, 0)",
         "color": "#606262",
         "font-size": "16px",
         "font-weight": "500"

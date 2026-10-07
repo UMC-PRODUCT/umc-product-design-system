@@ -6,7 +6,11 @@ describe("SegmentedControlProps", () => {
   it("items 배열의 value는 V 타입이다", () => {
     type Props = SegmentedControlProps<"a" | "b">
     expectTypeOf<Props["items"]>().toEqualTypeOf<
-      Array<{ value: "a" | "b"; label: import("react").ReactNode }>
+      Array<{
+        value: "a" | "b"
+        label: import("react").ReactNode
+        "data-spec-id"?: string
+      }>
     >()
   })
 
