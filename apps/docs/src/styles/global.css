@@ -521,37 +521,6 @@
   box-shadow: none;
 }
 
-.docs-logo {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 4px;
-  color: var(--umc-color-icon-neutral-stronger);
-  text-decoration: none;
-}
-
-.docs-logo__mark {
-  width: 74px;
-  height: 22px;
-  margin-top: 3.6px;
-}
-
-.docs-logo__context {
-  display: grid;
-  font-family: var(--umc-font-family-brand);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.025em;
-  text-transform: uppercase;
-}
-
-.docs-logo__context > :first-child {
-  font-size: 13.5px;
-}
-
-.docs-logo__context > :last-child {
-  font-size: 11.7px;
-}
-
 .docs-side-navigation {
   display: none;
 }

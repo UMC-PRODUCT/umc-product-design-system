@@ -1,7 +1,5 @@
-import { Header, type NavItem } from "@umc-product/react"
+import { Header, HeaderHomeLink, type NavItem } from "@umc-product/react"
 import type { ReactNode } from "react"
-
-import { DocsLogo } from "./DocsLogo.tsx"
 
 type DocsHeaderProps = {
   navItems: NavItem[]
@@ -17,7 +15,7 @@ export function DocsHeader({
   return (
     <Header
       className="docs-header"
-      logo={<DocsLogo />}
+      logo={<HeaderHomeLink context="product-tech" />}
       navItems={navItems}
       currentPath={currentPath}
       actions={actions}
