@@ -1,0 +1,29 @@
+---
+import Default from "@astrojs/starlight/components/Sidebar.astro"
+import { SideNavigation } from "@umc-product/react"
+
+import {
+  currentSectionOf,
+  sideNavigationItemsOf,
+} from "../../lib/docs-navigation.ts"
+
+const { sidebar } = Astro.locals.starlightRoute
+const section = currentSectionOf(sidebar)
+---
+
+{
+  section && (
+    <div class="docs-side-navigation">
+      <SideNavigation
+        client:load
+        title={section.label}
+        items={sideNavigationItemsOf(section)}
+        currentPath={Astro.url.pathname}
+        aria-label={`${section.label} 메뉴`}
+      />
+    </div>
+  )
+}
+<div class="docs-mobile-sidebar">
+  <Default />
+</div>

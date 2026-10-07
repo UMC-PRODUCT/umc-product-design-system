@@ -29,6 +29,11 @@ export default defineConfig({
       customCss: ["./src/styles/global.css"],
       components: {
         Head: "./src/components/starlight/Head.astro",
+        Header: "./src/components/starlight/Header.astro",
+        Sidebar: "./src/components/starlight/Sidebar.astro",
+        PageTitle: "./src/components/starlight/PageTitle.astro",
+        ThemeSelect: "./src/components/starlight/ThemeSelect.astro",
+        ThemeProvider: "./src/components/starlight/ThemeProvider.astro",
       },
       sidebar: [
         {

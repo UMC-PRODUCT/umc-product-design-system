@@ -486,3 +486,110 @@
 .umc-force-state {
   display: contents;
 }
+
+:root {
+  --sl-font: var(--umc-font-family-brand);
+  --sl-nav-height: var(--umc-layout-header-height);
+  --sl-sidebar-width: var(--umc-layout-sidebar-width);
+  --sl-content-width: 52rem;
+  --sl-color-bg: var(--umc-color-background-default);
+  --sl-color-bg-nav: var(--umc-color-fill-neutral-weaker);
+  --sl-color-bg-sidebar: var(--umc-color-fill-neutral-weaker);
+  --sl-text-h2: var(--umc-typography-heading-3-semibold-font-size);
+  --sl-text-h3: var(--umc-typography-heading-4-semibold-font-size);
+  --sl-text-h4: var(--umc-typography-title-4-semibold-font-size);
+  --sl-text-h5: var(--umc-typography-title-4-semibold-font-size);
+  --sl-color-blue-low: var(--umc-color-fill-primary-weaker);
+  --sl-color-blue: var(--umc-color-teal-500);
+  --sl-color-blue-high: var(--umc-color-teal-700);
+}
+
+.content-panel + .content-panel {
+  border-top: 0;
+}
+
+.page > header.header {
+  padding-block: 0;
+  padding-inline-start: 0;
+  border-bottom: 0;
+  background: var(--umc-color-fill-neutral-weaker);
+  box-shadow: var(--umc-shadow-drop-neutral-3);
+}
+
+.docs-header {
+  position: relative;
+  box-shadow: none;
+}
+
+.docs-logo {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 4px;
+  color: var(--umc-color-icon-neutral-stronger);
+  text-decoration: none;
+}
+
+.docs-logo__mark {
+  width: 74px;
+  height: 22px;
+  margin-top: 3.6px;
+}
+
+.docs-logo__context {
+  display: grid;
+  font-family: var(--umc-font-family-brand);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+.docs-logo__context > :first-child {
+  font-size: 13.5px;
+}
+
+.docs-logo__context > :last-child {
+  font-size: 11.7px;
+}
+
+.docs-side-navigation {
+  display: none;
+}
+
+@media (min-width: 50rem) {
+  .page > header.header {
+    padding-inline-end: 0;
+  }
+
+  .sidebar-pane {
+    border-inline-end: 0;
+    background: none;
+  }
+
+  .sidebar-content {
+    padding: 0;
+  }
+
+  .docs-side-navigation {
+    display: block;
+    height: 100%;
+  }
+
+  .docs-mobile-sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 49.99rem) {
+  .docs-header .umc-header__nav {
+    display: none;
+  }
+
+  .docs-header .umc-header__logo {
+    padding-inline: var(--umc-spacing-padding-16);
+  }
+}
+
+.docs-page-header {
+  padding-block: 0.5rem 0;
+}
