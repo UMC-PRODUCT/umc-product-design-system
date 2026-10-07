@@ -104,20 +104,42 @@ describe("OptionButtonGroup single", () => {
     expect(onValueChange).not.toHaveBeenCalled()
   })
 
-  it("name prop이 있으면 form 제출에 포함된다", () => {
-    const { container } = render(
-      <form>
+  it("name prop이 있으면 form 제출 값에 선택한 값이 들어간다", () => {
+    render(
+      <form aria-label="지원서">
         <OptionButtonGroup
           options={[...SINGLE_OPTIONS]}
           aria-label="파트"
           name="part"
-          value="be"
+          defaultValue="be"
         />
-        <button type="submit">제출</button>
       </form>,
     )
-    const inputs = container.querySelectorAll('input[name="part"]')
-    expect(inputs.length).toBeGreaterThan(0)
+    const form = screen.getByRole("form", { name: "지원서" })
+    if (!(form instanceof HTMLFormElement)) {
+      throw new Error("form 요소가 아닙니다")
+    }
+    expect(new FormData(form).get("part")).toBe("be")
+  })
+
+  it("선택한 항목에만 체크 아이콘을 그리고, 선택이 바뀌면 아이콘도 옮긴다", async () => {
+    render(
+      <OptionButtonGroup
+        options={[...SINGLE_OPTIONS]}
+        aria-label="파트"
+        defaultValue="fe"
+      />,
+    )
+    const iconOf = (name: string) =>
+      screen
+        .getByRole("radio", { name })
+        .querySelector(".umc-option-button__indicator svg")
+    expect(iconOf("프론트엔드")).not.toBeNull()
+    expect(iconOf("백엔드")).toBeNull()
+
+    await userEvent.click(screen.getByRole("radio", { name: "백엔드" }))
+    expect(iconOf("프론트엔드")).toBeNull()
+    expect(iconOf("백엔드")).not.toBeNull()
   })
 })
 
@@ -178,6 +200,23 @@ describe("OptionButtonGroup multiple", () => {
     expect(checkboxes[0]).toHaveAttribute("data-position", "start")
     expect(checkboxes[1]).toHaveAttribute("data-position", "middle")
     expect(checkboxes[2]).toHaveAttribute("data-position", "end")
+  })
+
+  it("선택한 항목마다 체크 아이콘을 그린다", () => {
+    render(
+      <OptionButtonGroup<"react" | "ts" | "node">
+        type="multiple"
+        options={[...MULTI_OPTIONS]}
+        aria-label="기술 스택"
+        defaultValue={["react", "node"]}
+      />,
+    )
+    const icons = screen
+      .getAllByRole("checkbox")
+      .map((checkbox) =>
+        checkbox.querySelector(".umc-option-button__indicator svg"),
+      )
+    expect(icons.map((icon) => icon !== null)).toEqual([true, false, true])
   })
 
   it("disabled 항목은 체크되지 않는다", async () => {

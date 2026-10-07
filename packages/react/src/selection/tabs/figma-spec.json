@@ -9,7 +9,7 @@
       "variant": "State=Selected, Type=Default",
       "target": ".umc-tab[data-active]",
       "expected": {
-        "background-color": "rgba(0, 0, 0, 0)",
+        "background-color": "#00000000",
         "color": "#02746c",
         "height": "44px",
         "padding-top": "8px",
@@ -22,9 +22,6 @@
         "letter-spacing": "-0.32px",
         "border-bottom-width": "2px",
         "border-bottom-color": "#0b6b64"
-      },
-      "figmaDiffers": {
-        "border-bottom-color": "피그마 탭 밑줄은 var(--color-teal-600) 변수. figma/mcp/get-variable-defs 조회 결과 해당 노드의 --color-teal-600 resolved 값은 #0b6b64. 3기 토큰 --umc-color-teal-600=#02746c와 다름. #0b6b64는 3기 시멘틱 토큰 어디에도 직접 색값으로 없음(--umc-shadow-inner-neutral-1 그림자 색의 알파 없는 기반 값으로만 존재). --umc-tab-selected-underline 역할 변수에 #0b6b64 직접 사용하고 디자인 팀 토큰 발급 요청"
       }
     },
     {
@@ -33,13 +30,28 @@
       "variant": "State=Unselected, Type=Default",
       "target": ".umc-tab:nth-child(2)",
       "expected": {
-        "background-color": "rgba(0, 0, 0, 0)",
+        "background-color": "#00000000",
         "color": "#606262",
         "height": "44px",
         "font-size": "16px",
         "font-weight": "500",
+        "letter-spacing": "-0.32px",
         "border-bottom-width": "2px",
         "border-bottom-color": "#e2e3e3"
+      },
+      "figmaDiffers": {
+        "letter-spacing": "피그마는 -0.48px(-3%)다. 예전에 게시된 Label/3-Medium을 참조한 차이로 보고 토큰 값(-2%)을 썼다"
+      }
+    },
+    {
+      "specId": "tab-hover-default",
+      "interaction": "hover",
+      "node": "2621:35314",
+      "variant": "State=Hover & Pressed, Type=Default",
+      "target": ".umc-tab:nth-child(2)",
+      "expected": {
+        "color": "#606262",
+        "border-bottom-color": "#adadad"
       }
     },
     {
@@ -48,8 +60,21 @@
       "variant": "State=Unselected, Type=Icon",
       "target": ".umc-tab[data-icon]:nth-child(2)",
       "expected": {
+        "height": "44px",
         "padding-left": "12px",
-        "padding-right": "12px"
+        "padding-right": "12px",
+        "border-bottom-color": "#e2e3e3"
+      }
+    },
+    {
+      "specId": "tab-icon-glyph",
+      "node": "2505:17095",
+      "variant": "Icon/Filter Weight=Regular",
+      "target": ".umc-tab[data-icon] .umc-tab__icon",
+      "expected": {
+        "color": "#3f4141",
+        "width": "24px",
+        "height": "24px"
       }
     }
   ]

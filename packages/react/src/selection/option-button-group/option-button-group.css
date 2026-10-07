@@ -2,136 +2,249 @@
   .umc-option-button-group {
     display: inline-flex;
     align-items: stretch;
-    column-gap: 1px;
-    background-color: var(--umc-color-fill-neutral-medium);
-    border-radius: var(--umc-radius-8);
-    overflow: hidden;
+    max-width: 100%;
     margin: 0;
     padding: 0;
     border: 0;
+    border-radius: var(--umc-radius-8);
+    background-color: var(--umc-color-fill-neutral-medium);
+    overflow-x: auto;
   }
 
   .umc-option-button {
     --umc-option-button-bg: var(--umc-color-fill-neutral-default);
     --umc-option-button-fg: var(--umc-color-text-neutral-strong);
     --umc-option-button-border-color: var(--umc-color-border-neutral-weaker);
+    --umc-option-button-border-start: 0px;
+    --umc-option-button-border-end: 0px;
+    --umc-option-button-border:
+      inset 0 1px 0 0 var(--umc-option-button-border-color),
+      inset 0 -1px 0 0 var(--umc-option-button-border-color),
+      inset var(--umc-option-button-border-start) 0 0 0
+        var(--umc-option-button-border-color),
+      inset calc(-1 * var(--umc-option-button-border-end)) 0 0 0
+        var(--umc-option-button-border-color);
+    --umc-option-button-checked-bg: var(--umc-color-fill-primary-weak);
+    --umc-option-button-checked-fg: var(--umc-color-text-brand-default);
+    --umc-option-button-checked-border-color: var(
+      --umc-color-border-primary-weak
+    );
+    --umc-option-button-checked-border: inset 0 0 0 1px
+      var(--umc-option-button-checked-border-color);
+    --umc-option-button-icon-color: var(--umc-color-icon-brand-medium);
 
     position: relative;
     display: inline-flex;
+    flex: 0 0 auto;
     align-items: center;
     justify-content: center;
-    gap: var(--umc-spacing-gap-8);
+    gap: var(--umc-spacing-gap-4);
     box-sizing: border-box;
+    min-height: var(--umc-option-button-height);
     margin: 0;
-    padding-block: var(--umc-option-button-padding-block);
-    padding-inline: var(--umc-option-button-padding-inline);
-    background-color: var(--umc-option-button-bg);
+    padding-block: var(--umc-spacing-padding-4);
+    padding-inline-start: var(--umc-option-button-padding-start);
+    padding-inline-end: var(--umc-option-button-padding-end);
     border: 0;
-    box-shadow: inset 0 0 0 1px var(--umc-option-button-border-color);
+    box-shadow: var(--umc-option-button-border);
+    background-color: var(--umc-option-button-bg);
     color: var(--umc-option-button-fg);
     font-family: var(--umc-option-button-font-family);
     font-size: var(--umc-option-button-font-size);
     font-weight: var(--umc-option-button-font-weight);
     line-height: var(--umc-option-button-line-height);
     letter-spacing: var(--umc-option-button-letter-spacing);
+    white-space: nowrap;
     appearance: none;
     cursor: pointer;
-    white-space: nowrap;
-    -webkit-tap-highlight-color: transparent;
     outline: none;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .umc-option-button[data-position="start"] {
-    border-top-left-radius: var(--umc-radius-8);
-    border-bottom-left-radius: var(--umc-radius-8);
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  .umc-option-button[data-position="middle"] {
-    border-radius: 0;
+    --umc-option-button-border-start: 1px;
+    border-start-start-radius: var(--umc-radius-8);
+    border-end-start-radius: var(--umc-radius-8);
   }
 
   .umc-option-button[data-position="end"] {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: var(--umc-radius-8);
-    border-bottom-right-radius: var(--umc-radius-8);
+    --umc-option-button-border-end: 1px;
+    border-start-end-radius: var(--umc-radius-8);
+    border-end-end-radius: var(--umc-radius-8);
+  }
+
+  .umc-option-button[data-unchecked] + .umc-option-button[data-unchecked],
+  .umc-option-button[data-unchecked]
+    + input
+    + .umc-option-button[data-unchecked] {
+    margin-inline-start: 1px;
   }
 
   .umc-option-button-group[data-size="xl"] .umc-option-button {
-    --umc-option-button-padding-block: 4px;
-    --umc-option-button-padding-inline: var(--umc-spacing-padding-28);
-    --umc-option-button-font-family: var(--umc-font-family-brand);
-    --umc-option-button-font-size: 20px;
-    --umc-option-button-font-weight: 400;
-    --umc-option-button-line-height: 1.4;
-    --umc-option-button-letter-spacing: -0.4px;
+    --umc-option-button-height: 48px;
+    --umc-option-button-icon-size: 20px;
+    --umc-option-button-padding-start: var(--umc-spacing-padding-28);
+    --umc-option-button-padding-end: var(--umc-spacing-padding-28);
+    --umc-option-button-checked-padding-start: 18px;
+    --umc-option-button-checked-padding-end: var(--umc-spacing-padding-28);
+    --umc-option-button-font-family: var(
+      --umc-typography-title-2-medium-font-family
+    );
+    --umc-option-button-font-size: var(
+      --umc-typography-title-2-medium-font-size
+    );
+    --umc-option-button-font-weight: var(--umc-font-weight-regular);
+    --umc-option-button-line-height: var(
+      --umc-typography-title-2-medium-line-height
+    );
+    --umc-option-button-letter-spacing: var(
+      --umc-typography-title-2-medium-letter-spacing
+    );
+    --umc-option-button-checked-font-size: var(
+      --umc-typography-title-2-medium-font-size
+    );
+    --umc-option-button-checked-font-weight: var(
+      --umc-typography-title-2-medium-font-weight
+    );
+    --umc-option-button-checked-line-height: var(
+      --umc-typography-title-2-medium-line-height
+    );
+    --umc-option-button-checked-letter-spacing: var(
+      --umc-typography-title-2-medium-letter-spacing
+    );
   }
 
   .umc-option-button-group[data-size="sm"] .umc-option-button {
-    --umc-option-button-padding-block: 3px;
-    --umc-option-button-padding-inline: var(--umc-spacing-padding-12);
+    --umc-option-button-height: 38px;
+    --umc-option-button-icon-size: 16px;
+    --umc-option-button-padding-start: var(--umc-spacing-padding-20);
+    --umc-option-button-padding-end: var(--umc-spacing-padding-20);
+    --umc-option-button-checked-padding-start: var(--umc-spacing-padding-12);
+    --umc-option-button-checked-padding-end: var(--umc-spacing-padding-20);
     --umc-option-button-font-family: var(
-      --umc-typography-label-3-medium-font-family
+      --umc-typography-body-1-regular-font-family
     );
     --umc-option-button-font-size: var(
-      --umc-typography-label-3-medium-font-size
+      --umc-typography-body-1-regular-font-size
     );
     --umc-option-button-font-weight: var(
-      --umc-typography-label-3-medium-font-weight
+      --umc-typography-body-1-regular-font-weight
     );
     --umc-option-button-line-height: var(
-      --umc-typography-label-3-medium-line-height
+      --umc-typography-body-1-regular-line-height
     );
     --umc-option-button-letter-spacing: var(
+      --umc-typography-body-1-regular-letter-spacing
+    );
+    --umc-option-button-checked-font-size: var(
+      --umc-typography-label-3-medium-font-size
+    );
+    --umc-option-button-checked-font-weight: var(
+      --umc-typography-label-3-medium-font-weight
+    );
+    --umc-option-button-checked-line-height: var(
+      --umc-typography-label-3-medium-line-height
+    );
+    --umc-option-button-checked-letter-spacing: var(
       --umc-typography-label-3-medium-letter-spacing
     );
   }
 
   .umc-option-button-group[data-size="xs"] .umc-option-button {
-    --umc-option-button-padding-block: 2px;
-    --umc-option-button-padding-inline: var(--umc-spacing-padding-8);
+    --umc-option-button-height: 28px;
+    --umc-option-button-icon-size: 16px;
+    --umc-option-button-padding-start: var(--umc-spacing-padding-12);
+    --umc-option-button-padding-end: var(--umc-spacing-padding-12);
+    --umc-option-button-checked-padding-start: var(--umc-spacing-padding-6);
+    --umc-option-button-checked-padding-end: var(--umc-spacing-padding-10);
     --umc-option-button-font-family: var(
-      --umc-typography-label-3-medium-font-family
+      --umc-typography-label-5-medium-font-family
     );
     --umc-option-button-font-size: var(
-      --umc-typography-label-3-medium-font-size
+      --umc-typography-label-5-medium-font-size
     );
     --umc-option-button-font-weight: var(
-      --umc-typography-label-3-medium-font-weight
+      --umc-typography-label-5-medium-font-weight
     );
     --umc-option-button-line-height: var(
-      --umc-typography-label-3-medium-line-height
+      --umc-typography-label-5-medium-line-height
     );
     --umc-option-button-letter-spacing: var(
-      --umc-typography-label-3-medium-letter-spacing
+      --umc-typography-label-5-medium-letter-spacing
+    );
+    --umc-option-button-checked-font-size: var(
+      --umc-typography-label-5-medium-font-size
+    );
+    --umc-option-button-checked-font-weight: var(
+      --umc-typography-label-5-medium-font-weight
+    );
+    --umc-option-button-checked-line-height: var(
+      --umc-typography-label-5-medium-line-height
+    );
+    --umc-option-button-checked-letter-spacing: var(
+      --umc-typography-label-5-medium-letter-spacing
     );
   }
 
-  .umc-option-button-group[data-variant="weak"]
-    .umc-option-button[data-checked] {
-    --umc-option-button-bg: var(--umc-color-fill-primary-weak);
-    --umc-option-button-fg: var(--umc-color-text-brand-default);
-    --umc-option-button-border-color: var(--umc-color-border-primary-weak);
+  .umc-option-button-group[data-size="xs"]
+    .umc-option-button[data-position="start"] {
+    --umc-option-button-padding-start: 14px;
   }
 
-  .umc-option-button-group[data-variant="strong"]
-    .umc-option-button[data-checked] {
-    --umc-option-button-strong-checked-bg: #0b6b64;
-    --umc-option-button-bg: var(--umc-option-button-strong-checked-bg);
-    --umc-option-button-fg: var(--umc-color-text-inverse);
-    --umc-option-button-border-color: transparent;
+  .umc-option-button-group[data-size="xs"]
+    .umc-option-button[data-position="end"] {
+    --umc-option-button-padding-end: 14px;
+  }
+
+  .umc-option-button-group[data-variant="strong"] .umc-option-button {
+    --umc-option-button-checked-bg: var(
+      --umc-color-fill-primary-inverse-stronger
+    );
+    --umc-option-button-checked-fg: var(--umc-color-text-inverse);
+    --umc-option-button-checked-border: none;
+    --umc-option-button-icon-color: var(--umc-color-teal-50);
+  }
+
+  .umc-option-button[data-checked] {
+    padding-inline-start: var(--umc-option-button-checked-padding-start);
+    padding-inline-end: var(--umc-option-button-checked-padding-end);
+    box-shadow: var(--umc-option-button-checked-border);
+    background-color: var(--umc-option-button-checked-bg);
+    color: var(--umc-option-button-checked-fg);
+    font-size: var(--umc-option-button-checked-font-size);
+    font-weight: var(--umc-option-button-checked-font-weight);
+    line-height: var(--umc-option-button-checked-line-height);
+    letter-spacing: var(--umc-option-button-checked-letter-spacing);
   }
 
   .umc-option-button[data-disabled] {
-    --umc-option-button-fg: var(--umc-color-text-disabled);
+    color: var(--umc-color-text-disabled);
     cursor: default;
   }
 
-  .umc-option-button-group[data-variant="weak"]
+  .umc-option-button[data-checked][data-disabled] {
+    color: var(--umc-color-text-brand-disabled);
+  }
+
+  .umc-option-button-group[data-variant="strong"]
     .umc-option-button[data-checked][data-disabled] {
-    --umc-option-button-fg: var(--umc-color-text-brand-disabled);
+    background-color: var(--umc-color-teal-300);
+    color: var(--umc-color-teal-100);
+  }
+
+  .umc-option-button__indicator {
+    display: inline-flex;
+    flex: 0 0 auto;
+    color: var(--umc-option-button-icon-color);
+  }
+
+  .umc-option-button[data-disabled] .umc-option-button__indicator {
+    color: inherit;
+  }
+
+  .umc-option-button__indicator > svg {
+    width: var(--umc-option-button-icon-size);
+    height: var(--umc-option-button-icon-size);
   }
 
   .umc-option-button:focus-visible {

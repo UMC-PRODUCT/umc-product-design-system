@@ -16,6 +16,13 @@ const STACK_OPTIONS: OptionItem[] = [
   { value: "node", label: "Node.js" },
 ]
 
+const ROUND_OPTIONS: OptionItem[] = [
+  { value: "1", label: "1차" },
+  { value: "2", label: "2차" },
+  { value: "3", label: "3차" },
+  { value: "4", label: "4차" },
+]
+
 export function OptionButtonGroupSingle() {
   return (
     <div className="umc-example">
@@ -35,7 +42,7 @@ export function OptionButtonGroupMultiple() {
         type="multiple"
         options={STACK_OPTIONS}
         aria-label="기술 스택 선택"
-        defaultValue={["react"]}
+        defaultValue={["react", "ts"]}
       />
     </div>
   )
@@ -43,41 +50,19 @@ export function OptionButtonGroupMultiple() {
 
 export function OptionButtonGroupVariants() {
   return (
-    <div
-      className="umc-example"
-      style={{ flexDirection: "column", gap: "16px" }}
-    >
-      <div
-        data-spec-id="option-button-unselected-xl"
-        style={{ display: "contents" }}
-      >
-        <div
-          data-spec-id="option-button-weak-xl-selected"
-          style={{ display: "contents" }}
-        >
-          <OptionButtonGroup
-            options={[
-              { value: "fe", label: "프론트엔드" },
-              { value: "be", label: "백엔드" },
-              { value: "de", label: "디자인" },
-            ]}
-            aria-label="파트 (weak)"
-            variant="weak"
-            size="xl"
-            defaultValue="fe"
-          />
-        </div>
-      </div>
-      <div
-        data-spec-id="option-button-strong-xl-selected"
-        style={{ display: "contents" }}
-      >
+    <div className="umc-example umc-example-stack">
+      <div data-spec-id="option-button-weak-xl-selected option-button-weak-indicator option-button-unselected-xl option-button-unselected-xl-end">
         <OptionButtonGroup
-          options={[
-            { value: "fe", label: "프론트엔드" },
-            { value: "be", label: "백엔드" },
-            { value: "de", label: "디자인" },
-          ]}
+          options={PART_OPTIONS}
+          aria-label="파트 (weak)"
+          variant="weak"
+          size="xl"
+          defaultValue="fe"
+        />
+      </div>
+      <div data-spec-id="option-button-strong-xl-selected option-button-strong-indicator">
+        <OptionButtonGroup
+          options={PART_OPTIONS}
           aria-label="파트 (strong)"
           variant="strong"
           size="xl"
@@ -90,39 +75,37 @@ export function OptionButtonGroupVariants() {
 
 export function OptionButtonGroupSizes() {
   return (
-    <div
-      className="umc-example"
-      style={{ flexDirection: "column", gap: "16px" }}
-    >
+    <div className="umc-example umc-example-stack">
       <OptionButtonGroup
-        options={PART_OPTIONS}
-        aria-label="파트 (xl)"
+        options={ROUND_OPTIONS}
+        aria-label="차수 (xl)"
         size="xl"
-        defaultValue="fe"
+        defaultValue="2"
       />
-      <OptionButtonGroup
-        options={PART_OPTIONS}
-        aria-label="파트 (sm)"
-        size="sm"
-        defaultValue="fe"
-      />
-      <OptionButtonGroup
-        options={PART_OPTIONS}
-        aria-label="파트 (xs)"
-        size="xs"
-        defaultValue="fe"
-      />
+      <div data-spec-id="option-button-weak-sm-selected option-button-unselected-sm">
+        <OptionButtonGroup
+          options={ROUND_OPTIONS}
+          aria-label="차수 (sm)"
+          size="sm"
+          defaultValue="2"
+        />
+      </div>
+      <div data-spec-id="option-button-weak-xs-selected option-button-unselected-xs-start option-button-unselected-xs-end">
+        <OptionButtonGroup
+          options={ROUND_OPTIONS}
+          aria-label="차수 (xs)"
+          size="xs"
+          defaultValue="2"
+        />
+      </div>
     </div>
   )
 }
 
 export function OptionButtonGroupDisabled() {
   return (
-    <div className="umc-example">
-      <div
-        data-spec-id="option-button-unselected-xl-disabled"
-        style={{ display: "contents" }}
-      >
+    <div className="umc-example umc-example-stack">
+      <div data-spec-id="option-button-unselected-xl-disabled">
         <OptionButtonGroup
           options={[
             { value: "fe", label: "프론트엔드" },
@@ -134,6 +117,15 @@ export function OptionButtonGroupDisabled() {
           defaultValue="fe"
         />
       </div>
+      <div data-spec-id="option-button-weak-xl-selected-disabled">
+        <OptionButtonGroup
+          options={PART_OPTIONS}
+          aria-label="파트 선택 (전체 비활성)"
+          size="xl"
+          defaultValue="fe"
+          disabled
+        />
+      </div>
     </div>
   )
 }
@@ -142,10 +134,7 @@ export function OptionButtonGroupControlled() {
   const [part, setPart] = useState<string>("fe")
 
   return (
-    <div
-      className="umc-example"
-      style={{ flexDirection: "column", gap: "12px" }}
-    >
+    <div className="umc-example umc-example-stack">
       <OptionButtonGroup
         options={PART_OPTIONS}
         aria-label="파트"

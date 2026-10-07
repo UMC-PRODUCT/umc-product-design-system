@@ -1,68 +1,66 @@
 @layer components {
   .umc-segmented-control {
-    display: inline-flex;
-    align-items: stretch;
-    background-color: var(--umc-color-fill-neutral-medium);
-    border-radius: var(--umc-radius-segmented-control-xs);
-    overflow: hidden;
-    padding: 4px;
-    gap: 4px;
+    display: flex;
+    align-items: center;
+    column-gap: var(--umc-spacing-gap-8);
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 46px;
     margin: 0;
+    padding: var(--umc-spacing-padding-4);
     border: 0;
+    border-radius: var(--umc-radius-14);
+    background-color: var(--umc-color-fill-neutral-weak);
+    box-shadow: var(--umc-shadow-inner-neutral-2);
+    overflow-x: auto;
   }
 
   .umc-segmented-control__item {
-    --umc-segmented-control-item-bg: transparent;
-    --umc-segmented-control-item-fg: var(--umc-color-text-neutral-medium);
-    --umc-segmented-control-item-font-weight: var(
-      --umc-typography-label-3-medium-font-weight
-    );
-    --umc-segmented-control-item-shadow: none;
+    --umc-segmented-control-shadow-teal: #63c4b833;
+    --umc-segmented-control-shadow-grey: #9ca3a34d;
+    --umc-segmented-control-selected-shadow:
+      0 1px 2px 0 var(--umc-segmented-control-shadow-teal),
+      0 0 10px 0 var(--umc-segmented-control-shadow-grey);
 
     position: relative;
     display: inline-flex;
+    flex: 1 0 0;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    padding-block: var(--umc-spacing-padding-8);
-    padding-inline: var(--umc-spacing-padding-12);
-    background-color: var(--umc-segmented-control-item-bg);
-    box-shadow: var(--umc-segmented-control-item-shadow);
-    border-radius: var(--umc-radius-8);
-    border: 0;
+    min-width: 100px;
+    height: 38px;
     margin: 0;
-    color: var(--umc-segmented-control-item-fg);
-    font-family: var(--umc-typography-label-3-medium-font-family);
-    font-size: var(--umc-typography-label-3-medium-font-size);
-    font-weight: var(--umc-segmented-control-item-font-weight);
-    line-height: var(--umc-typography-label-3-medium-line-height);
-    letter-spacing: var(--umc-typography-label-3-medium-letter-spacing);
+    padding-block: var(--umc-spacing-padding-4);
+    padding-inline: var(--umc-spacing-padding-12);
+    border: 0;
+    border-radius: var(--umc-radius-12);
+    background-color: transparent;
+    box-shadow: none;
+    color: var(--umc-color-text-brand-default);
+    font-family: var(--umc-typography-label-3-semibold-font-family);
+    font-size: var(--umc-typography-label-3-semibold-font-size);
+    font-weight: var(--umc-typography-label-3-semibold-font-weight);
+    line-height: var(--umc-typography-label-3-semibold-line-height);
+    letter-spacing: var(--umc-typography-label-3-semibold-letter-spacing);
     white-space: nowrap;
     appearance: none;
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
     outline: none;
-  }
-
-  .umc-segmented-control__item[data-checked] {
-    --umc-segmented-control-selected-shadow-teal: #63c4b833;
-    --umc-segmented-control-selected-shadow-grey: #9ca3a34d;
-    --umc-segmented-control-item-bg: var(--umc-color-fill-neutral-default);
-    --umc-segmented-control-item-fg: var(--umc-color-text-neutral-strong);
-    --umc-segmented-control-item-font-weight: var(
-      --umc-typography-label-3-semibold-font-weight
-    );
-    --umc-segmented-control-item-shadow:
-      0px 1px 2px var(--umc-segmented-control-selected-shadow-teal),
-      0px 0px 10px var(--umc-segmented-control-selected-shadow-grey);
+    -webkit-tap-highlight-color: transparent;
   }
 
   @media (hover: hover) {
     .umc-segmented-control__item:hover:not([data-checked]) {
-      --umc-segmented-control-item-bg: var(
-        --umc-color-fill-neutral-medium-hover-pressed
-      );
+      background-color: var(--umc-color-fill-neutral-medium);
+      box-shadow: var(--umc-shadow-inner-neutral-1);
     }
+  }
+
+  .umc-segmented-control__item[data-checked] {
+    background-color: var(--umc-color-fill-neutral-default);
+    box-shadow: var(--umc-segmented-control-selected-shadow);
+    color: var(--umc-color-text-neutral-strong);
   }
 
   .umc-segmented-control__item:focus-visible {
@@ -71,6 +69,8 @@
   }
 
   .umc-segmented-control__label {
+    overflow: hidden;
+    text-overflow: ellipsis;
     pointer-events: none;
   }
 }

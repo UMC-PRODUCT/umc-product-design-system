@@ -10,65 +10,75 @@
   .umc-step-navigation__list {
     display: flex;
     align-items: center;
-    gap: 0;
-    list-style: none;
+    column-gap: var(--umc-spacing-gap-8);
+    box-sizing: border-box;
+    min-height: 46px;
     margin: 0;
-    padding: 0;
+    padding: var(--umc-spacing-padding-4);
     border: 0;
+    border-radius: var(--umc-radius-14);
+    background-color: var(--umc-color-fill-neutral-weak);
+    box-shadow: var(--umc-shadow-inner-neutral-2);
+    list-style: none;
+    overflow-x: auto;
   }
 
   .umc-step-navigation__step {
-    --umc-step-navigation-step-bg: var(--umc-color-fill-neutral-medium);
-    --umc-step-navigation-step-fg: var(--umc-color-text-neutral-medium);
-    --umc-step-navigation-badge-bg: var(--umc-color-fill-neutral-medium);
-    --umc-step-navigation-badge-fg: var(--umc-color-text-neutral-medium);
+    --umc-step-navigation-shadow-teal: #63c4b833;
+    --umc-step-navigation-shadow-grey: #9ca3a34d;
+    --umc-step-navigation-current-shadow:
+      0 1px 2px 0 var(--umc-step-navigation-shadow-teal),
+      0 0 10px 0 var(--umc-step-navigation-shadow-grey);
 
-    flex: 1;
     display: flex;
+    flex: 1 0 0;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 4px;
-    padding-block: var(--umc-spacing-padding-8);
-    padding-inline: var(--umc-spacing-padding-12);
+    column-gap: var(--umc-spacing-gap-8);
     box-sizing: border-box;
-    background-color: var(--umc-step-navigation-step-bg);
-    color: var(--umc-step-navigation-step-fg);
-    font-family: var(--umc-typography-label-3-medium-font-family);
-    font-size: var(--umc-typography-label-3-medium-font-size);
-    font-weight: var(--umc-typography-label-3-medium-font-weight);
-    line-height: var(--umc-typography-label-3-medium-line-height);
-    letter-spacing: var(--umc-typography-label-3-medium-letter-spacing);
-    cursor: default;
-    user-select: none;
+    min-width: 0;
+    height: 38px;
+    margin: 0;
+    padding-block: var(--umc-spacing-padding-4);
+    padding-inline-start: var(--umc-spacing-padding-12);
+    padding-inline-end: var(--umc-spacing-padding-20);
+    border-radius: var(--umc-radius-12);
+    color: var(--umc-color-text-brand-default);
+    font-family: var(--umc-typography-label-3-semibold-font-family);
+    font-size: var(--umc-typography-label-3-semibold-font-size);
+    font-weight: var(--umc-typography-label-3-semibold-font-weight);
+    line-height: var(--umc-typography-label-3-semibold-line-height);
+    letter-spacing: var(--umc-typography-label-3-semibold-letter-spacing);
+    white-space: nowrap;
   }
 
-  .umc-step-navigation__step[data-active] {
-    --umc-step-navigation-step-bg: var(--umc-color-fill-neutral-default);
-    --umc-step-navigation-step-fg: var(--umc-color-text-brand-default);
-    --umc-step-navigation-badge-bg: var(
-      --umc-color-fill-primary-inverse-medium-hover-pressed
-    );
-    --umc-step-navigation-badge-fg: var(--umc-color-text-inverse);
-    font-weight: var(--umc-typography-label-3-semibold-font-weight);
+  .umc-step-navigation__step[aria-current="step"] {
+    background-color: var(--umc-color-fill-neutral-default);
+    box-shadow: var(--umc-step-navigation-current-shadow);
+    color: var(--umc-color-text-neutral-strong);
   }
 
   .umc-step-navigation__badge {
     display: inline-flex;
+    flex: 0 0 auto;
     align-items: center;
     justify-content: center;
-    width: 20px;
+    box-sizing: border-box;
+    min-width: 20px;
     height: 20px;
-    border-radius: 50%;
-    background-color: var(--umc-step-navigation-badge-bg);
-    color: var(--umc-step-navigation-badge-fg);
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1;
-    flex-shrink: 0;
+    padding-inline: var(--umc-spacing-padding-4);
+    border-radius: var(--umc-radius-full);
+    background-color: var(--umc-color-fill-neutral-medium);
+    color: var(--umc-color-text-neutral-medium);
+    font-family: var(--umc-typography-label-5-semibold-font-family);
+    font-size: var(--umc-typography-label-5-semibold-font-size);
+    font-weight: var(--umc-typography-label-5-semibold-font-weight);
+    line-height: var(--umc-typography-label-5-semibold-line-height);
+    letter-spacing: var(--umc-typography-label-5-semibold-letter-spacing);
   }
 
   .umc-step-navigation__label {
-    pointer-events: none;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

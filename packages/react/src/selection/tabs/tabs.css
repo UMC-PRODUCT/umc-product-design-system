@@ -29,10 +29,11 @@
 
     position: relative;
     display: inline-flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     flex-shrink: 0;
     box-sizing: border-box;
+    height: 44px;
     padding-top: var(--umc-spacing-padding-8);
     padding-bottom: var(--umc-spacing-padding-12);
     padding-inline: var(--umc-spacing-padding-20);

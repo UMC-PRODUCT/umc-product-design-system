@@ -1,6 +1,7 @@
 "use client"
 
 import { CheckboxGroup, Checkbox, RadioGroup, Radio } from "@base-ui/react"
+import { CheckIcon } from "@umc-product/icons"
 import type { ReactNode } from "react"
 
 import { cx } from "../../internal/cx.ts"
@@ -43,11 +44,12 @@ const resolvePosition = (
   index: number,
   total: number,
 ): "start" | "middle" | "end" => {
-  if (total === 1) return "start"
   if (index === 0) return "start"
   if (index === total - 1) return "end"
   return "middle"
 }
+
+const checkIcon = <CheckIcon weight="fill" />
 
 function OptionButtonGroupSingle<V extends string>({
   options,
@@ -86,6 +88,9 @@ function OptionButtonGroupSingle<V extends string>({
           className="umc-option-button"
           data-position={resolvePosition(index, options.length)}
         >
+          <Radio.Indicator className="umc-option-button__indicator">
+            {checkIcon}
+          </Radio.Indicator>
           <span className="umc-option-button__label">{option.label}</span>
         </Radio.Root>
       ))}
@@ -132,6 +137,9 @@ function OptionButtonGroupMultiple<V extends string>({
           className="umc-option-button"
           data-position={resolvePosition(index, options.length)}
         >
+          <Checkbox.Indicator className="umc-option-button__indicator">
+            {checkIcon}
+          </Checkbox.Indicator>
           <span className="umc-option-button__label">{option.label}</span>
         </Checkbox.Root>
       ))}
