@@ -1,0 +1,74 @@
+@layer components {
+  .umc-step-navigation {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .umc-step-navigation__list {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .umc-step-navigation__step {
+    --umc-step-navigation-step-bg: var(--umc-color-fill-neutral-medium);
+    --umc-step-navigation-step-fg: var(--umc-color-text-neutral-medium);
+    --umc-step-navigation-badge-bg: var(--umc-color-fill-neutral-medium);
+    --umc-step-navigation-badge-fg: var(--umc-color-text-neutral-medium);
+
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    padding-block: var(--umc-spacing-padding-8);
+    padding-inline: var(--umc-spacing-padding-12);
+    box-sizing: border-box;
+    background-color: var(--umc-step-navigation-step-bg);
+    color: var(--umc-step-navigation-step-fg);
+    font-family: var(--umc-typography-label-3-medium-font-family);
+    font-size: var(--umc-typography-label-3-medium-font-size);
+    font-weight: var(--umc-typography-label-3-medium-font-weight);
+    line-height: var(--umc-typography-label-3-medium-line-height);
+    letter-spacing: var(--umc-typography-label-3-medium-letter-spacing);
+    cursor: default;
+    user-select: none;
+  }
+
+  .umc-step-navigation__step[data-active] {
+    --umc-step-navigation-step-bg: var(--umc-color-fill-neutral-default);
+    --umc-step-navigation-step-fg: var(--umc-color-text-brand-default);
+    --umc-step-navigation-badge-bg: var(
+      --umc-color-fill-primary-inverse-medium-hover-pressed
+    );
+    --umc-step-navigation-badge-fg: var(--umc-color-text-inverse);
+    font-weight: var(--umc-typography-label-3-semibold-font-weight);
+  }
+
+  .umc-step-navigation__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--umc-step-navigation-badge-bg);
+    color: var(--umc-step-navigation-badge-fg);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .umc-step-navigation__label {
+    pointer-events: none;
+  }
+}
