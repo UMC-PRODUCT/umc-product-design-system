@@ -1,24 +1,48 @@
 "use client"
 
-import { CloseIcon } from "@umc-product/icons"
+import { CheckCircleIcon, CloseIcon } from "@umc-product/icons"
 import { Button, ToastProvider, useToast } from "@umc-product/react"
 
 type ToastPreviewItemProps = {
   color: "primary" | "neutral" | "error"
   message: string
   specId: string
+  withIcon?: boolean
+  actionLabel?: string
 }
 
-function ToastPreviewItem({ color, message, specId }: ToastPreviewItemProps) {
+function ToastPreviewItem({
+  color,
+  message,
+  specId,
+  withIcon = false,
+  actionLabel,
+}: ToastPreviewItemProps) {
   return (
     <div data-spec-id={specId}>
-      <div className="umc-toast" data-color={color}>
+      <div
+        className="umc-toast"
+        data-color={color}
+        data-icon={withIcon ? "" : undefined}
+        style={{ animation: "none" }}
+      >
         <div className="umc-toast__main">
+          {withIcon && (
+            <span className="umc-toast__icon" aria-hidden="true">
+              <CheckCircleIcon weight="fill" />
+            </span>
+          )}
           <p className="umc-toast__message">{message}</p>
         </div>
-        <button className="umc-toast__close" aria-label="닫기" type="button">
-          <CloseIcon size={24} aria-hidden={true} />
-        </button>
+        {actionLabel === undefined ? (
+          <button className="umc-toast__close" aria-label="닫기" type="button">
+            <CloseIcon size={24} aria-hidden={true} />
+          </button>
+        ) : (
+          <button className="umc-toast__action" type="button">
+            {actionLabel}
+          </button>
+        )}
       </div>
     </div>
   )
@@ -26,16 +50,37 @@ function ToastPreviewItem({ color, message, specId }: ToastPreviewItemProps) {
 
 export function ToastStaticPreview() {
   return (
-    <div className="umc-example umc-example-stack" style={{ gap: "8px" }}>
+    <div className="umc-example umc-example-stack">
       <ToastPreviewItem
-        specId="toast-primary-default"
+        specId="toast-primary-icon toast-primary-icon-glyph toast-close"
         color="primary"
-        message="저장되었습니다."
+        message="토스트 알림이에요"
+        withIcon
       />
       <ToastPreviewItem
-        specId="toast-error-default"
+        specId="toast-primary-action toast-primary-action-button"
+        color="primary"
+        message="토스트 알림이에요"
+        actionLabel="버튼"
+      />
+      <ToastPreviewItem
+        specId="toast-neutral"
+        color="neutral"
+        message="토스트 알림이에요"
+        withIcon
+      />
+      <ToastPreviewItem
+        specId="toast-error toast-error-icon"
         color="error"
-        message="오류가 발생했습니다."
+        message="토스트 알림이에요"
+        withIcon
+      />
+      <ToastPreviewItem
+        specId="toast-error-action"
+        color="error"
+        message="토스트 알림이에요"
+        withIcon
+        actionLabel="버튼"
       />
     </div>
   )

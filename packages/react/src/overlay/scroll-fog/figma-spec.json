@@ -4,13 +4,26 @@
   "page": "/components/overlay/scroll-fog/",
   "nodes": [
     {
-      "specId": "scroll-fog-right",
+      "specId": "scroll-fog-bottom",
       "node": "2596:23214",
       "variant": "Scroll Fog",
       "expected": {
         "position": "absolute",
-        "pointer-events": "none",
+        "height": "74px",
         "background-image~": "rgba(0, 0, 0, 0) 0%, rgb(255, 255, 255) 90.865%"
+      }
+    },
+    {
+      "specId": "scroll-fog-right",
+      "node": "2596:23214",
+      "variant": "Scroll Fog를 가로 방향으로 돌린 모양",
+      "expected": {
+        "position": "absolute",
+        "width": "74px",
+        "background-image~": "to right, rgba(0, 0, 0, 0) 0%, rgb(255, 255, 255) 90.865%"
+      },
+      "figmaDiffers": {
+        "width": "피그마에는 아래쪽 안개(높이 74px)만 있어서 좌우 안개는 같은 크기를 가로로 돌려 썼다"
       }
     }
   ]

@@ -18,14 +18,26 @@ function TooltipPreviewItem({
   text,
 }: TooltipPreviewItemProps) {
   return (
-    <div data-spec-id={specId}>
+    <div data-spec-id={specId} className="pb-3">
       <div
         className="umc-tooltip__positioner"
         data-size={size}
         data-mode={mode}
       >
         <div className="umc-tooltip__popup" data-mode={mode}>
-          <div className="umc-tooltip__content" data-mode={mode}>
+          <div
+            className="umc-tooltip__arrow"
+            data-side="top"
+            style={{
+              position: "absolute",
+              left: "calc(50% - var(--umc-tooltip-arrow-width) / 2)",
+            }}
+          />
+          <div
+            className="umc-tooltip__content"
+            data-mode={mode}
+            data-titled={title === undefined ? undefined : ""}
+          >
             {title !== undefined && (
               <span className="umc-tooltip__label">{title}</span>
             )}
@@ -39,25 +51,35 @@ function TooltipPreviewItem({
 
 export function TooltipStaticPreview() {
   return (
-    <div
-      className="umc-example"
-      style={{ gap: "16px", alignItems: "flex-start" }}
-    >
+    <div className="umc-example items-start gap-6">
       <TooltipPreviewItem
-        specId="tooltip-dark-md-default"
+        specId="tooltip-dark-xs tooltip-dark-xs-arrow"
         mode="dark"
-        text="dark 모드 기본 툴팁"
+        size="xs"
+        text="툴팁이에요"
       />
       <TooltipPreviewItem
-        specId="tooltip-light-md-default"
-        mode="light"
-        text="light 모드 툴팁"
+        specId="tooltip-dark-sm"
+        mode="dark"
+        size="sm"
+        text="툴팁이에요"
       />
       <TooltipPreviewItem
-        specId="tooltip-light-md-label"
+        specId="tooltip-light-sm tooltip-light-shadow"
         mode="light"
-        title="제목"
-        text="제목 있는 툴팁"
+        size="sm"
+        text="툴팁이에요"
+      />
+      <TooltipPreviewItem
+        specId="tooltip-dark-md tooltip-dark-md-arrow"
+        mode="dark"
+        text="사용자에게 정보를 안내 할 Tooltip Message 여러줄 가능"
+      />
+      <TooltipPreviewItem
+        specId="tooltip-light-md-label tooltip-light-md-titled"
+        mode="light"
+        title="라벨"
+        text="사용자에게 정보를 안내 할 Tooltip Message 여러줄 가능"
       />
     </div>
   )
@@ -119,19 +141,19 @@ export function TooltipClick() {
 export function TooltipSizes() {
   return (
     <div className="umc-example" style={{ gap: "12px" }}>
-      <Tooltip size="xs" content="xs 크기: 최대 폭 80px입니다.">
+      <Tooltip size="xs" content="xs 크기 툴팁">
         <Button size="sm" variant="weak" color="neutral">
           xs
         </Button>
       </Tooltip>
-      <Tooltip size="sm" content="sm 크기: 최대 폭 100px입니다.">
+      <Tooltip size="sm" content="sm 크기 툴팁">
         <Button size="sm" variant="weak" color="neutral">
           sm
         </Button>
       </Tooltip>
       <Tooltip
         size="md"
-        content="md 크기: 최대 폭 240px입니다. 긴 내용을 여러 줄로 표시할 수 있습니다."
+        content="md 크기는 최대 폭 240px 안에서 여러 줄로 줄바꿈합니다."
       >
         <Button size="sm" variant="weak" color="neutral">
           md

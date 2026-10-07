@@ -38,12 +38,14 @@ function ToastViewportPortal({ placement }: { placement: "top" | "bottom" }) {
         {toasts.map((toast) => {
           const data = toast.data
           const color = data?.color ?? "primary"
+          const action = data?.action
           return (
             <Toast.Root
               key={toast.id}
               toast={toast}
               className="umc-toast"
               data-color={color}
+              data-icon={data?.icon === undefined ? undefined : ""}
             >
               <div className="umc-toast__main">
                 {data?.icon !== undefined && (
@@ -53,16 +55,16 @@ function ToastViewportPortal({ placement }: { placement: "top" | "bottom" }) {
                 )}
                 <Toast.Description className="umc-toast__message" />
               </div>
-              {data?.action !== undefined ? (
+              {action !== undefined ? (
                 <button
                   className="umc-toast__action"
                   type="button"
                   onClick={() => {
-                    data.action!.onClick()
+                    action.onClick()
                     close(toast.id)
                   }}
                 >
-                  {data.action.label}
+                  {action.label}
                 </button>
               ) : (
                 <Toast.Close className="umc-toast__close" aria-label="닫기">

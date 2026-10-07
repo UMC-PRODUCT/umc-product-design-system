@@ -12,7 +12,7 @@ import {
   TooltipWithTitle,
 } from "../../../../components/react/overlay/TooltipExamples.tsx"
 
-`Tooltip`은 Base UI Tooltip(hover)과 Base UI Popover(click)를 내부적으로 선택해 씁니다. 트리거는 자식 요소를 그대로 쓰므로 감싸는 `<span>`이 없습니다.
+피그마 `Tooltip`(노드 2621:36221)을 옮겼습니다. 마우스를 올리면 열리는 방식은 Base UI Tooltip, 눌러서 여닫는 방식은 Base UI Popover로 만듭니다. 트리거는 자식 요소를 그대로 쓰므로 감싸는 `<span>`이 없고, 자식은 ref와 이벤트 핸들러를 받을 수 있어야 합니다.
 
 ```tsx
 import { Tooltip } from "@umc-product/react"
@@ -24,7 +24,7 @@ import { Tooltip } from "@umc-product/react"
 
 ## 외형 미리보기
 
-툴팁 내용 영역의 외형입니다. dark 모드, light 모드, 제목 있는 세 가지 변형을 항상 볼 수 있습니다.
+열린 툴팁의 모양을 항상 보이게 그린 미리보기입니다. 왼쪽부터 Xs Dark, Sm Dark, Sm Light, Md Dark, 라벨이 있는 Md Light입니다.
 
 <TooltipStaticPreview />
 
@@ -32,35 +32,35 @@ import { Tooltip } from "@umc-product/react"
 
 기본값은 `openOn="hover"`, `mode="dark"`입니다.
 
-<TooltipHover />
+<TooltipHover client:visible />
 
 ## 제목(label)
 
 `title` prop을 넘기면 툴팁 상단에 초록 라벨이 생깁니다.
 
-<TooltipWithTitle />
+<TooltipWithTitle client:visible />
 
 ## 방향
 
 `side`로 툴팁이 열릴 방향을 지정합니다. 공간이 부족하면 Base UI가 자동으로 반전합니다.
 
-<TooltipSides />
+<TooltipSides client:visible />
 
 ## 클릭 트리거
 
 `openOn="click"`으로 설정하면 외부 클릭 또는 Esc 키로 닫힙니다.
 
-<TooltipClick />
+<TooltipClick client:visible />
 
-## 최대 폭(size)
+## 크기
 
-<TooltipSizes />
+| size | 여백(상하, 좌우) | 모서리 | 글자                | 화살표 | 줄바꿈                      |
+| ---- | ---------------- | ------ | ------------------- | ------ | --------------------------- |
+| `xs` | 6px, 8px         | 6px    | `caption-2-regular` | 10×6px | 한 줄                       |
+| `sm` | 6px, 8px         | 8px    | `body-3-medium`     | 10×6px | 한 줄                       |
+| `md` | 8px, 12px        | 6px    | `caption-2-regular` | 16×8px | 최대 폭 240px 안에서 줄바꿈 |
 
-| size | 최대 폭 |
-| ---- | ------- |
-| `xs` | 80px    |
-| `sm` | 100px   |
-| `md` | 240px   |
+<TooltipSizes client:visible />
 
 ## props
 
@@ -70,12 +70,15 @@ import { Tooltip } from "@umc-product/react"
 | `title`    | `ReactNode`                              | 없음      | 초록 라벨        |
 | `side`     | `"top" \| "bottom" \| "left" \| "right"` | `"top"`   | 열릴 방향        |
 | `mode`     | `"dark" \| "light"`                      | `"dark"`  | 색 팔레트        |
-| `size`     | `"xs" \| "sm" \| "md"`                   | `"md"`    | 최대 폭          |
+| `size`     | `"xs" \| "sm" \| "md"`                   | `"md"`    | 크기             |
 | `openOn`   | `"hover" \| "click"`                     | `"hover"` | 트리거 방식      |
 | `delay`    | `number`                                 | 없음      | hover 딜레이(ms) |
 | `children` | `ReactElement`                           | 필수      | 트리거 요소      |
 
 ## 디자인 팀 확인 사항
 
-- label 색상이 피그마 `#0b6b64`이나 가장 가까운 토큰 `--umc-color-teal-600(#02746c)`을 사용했습니다.
-- light 모드 그림자는 `drop-shadow(0 4px 16px rgba(64, 68, 67, 0.16))`으로 화살표까지 통일하게 `filter`로 적용합니다.
+- 라벨 색이 2기 변수 `var(--color-teal-600)`(`#0b6b64`)에 연결되어 있습니다. 3기 Teal-600은 `#02746c`라서 피그마 값을 역할 변수에 그대로 담았습니다.
+- 라벨은 Light Md에만 있습니다. Dark나 다른 크기에서 라벨을 쓸 수 있는지 알려 주세요. 지금은 같은 색으로 보여 줍니다.
+- Md 툴팁의 최대 폭이 정의되어 있지 않아 240px로 가정했습니다.
+- 트리거와 툴팁 사이 간격을 8px로 두었습니다. 화살표가 Md는 그 간격을 채우고, Xs와 Sm은 2px가 남습니다.
+- Light 그림자는 `Shadow/Drop/Neutral_1`을 화살표까지 포함하도록 `filter: drop-shadow`로 옮겼습니다. 피그마 코드 내보내기 기준 흐림 값은 8px입니다.

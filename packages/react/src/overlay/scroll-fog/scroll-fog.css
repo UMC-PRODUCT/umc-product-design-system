@@ -1,39 +1,60 @@
 @layer components {
   .umc-scroll-fog {
+    --umc-scroll-fog-size: 74px;
+    --umc-scroll-fog-solid-stop: 90.865%;
+
     position: absolute;
-    inset: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
     pointer-events: none;
   }
 
-  .umc-scroll-fog[data-side="right"] {
-    background: linear-gradient(
-      to right,
-      transparent 0%,
-      var(--umc-color-background-default) 90.865%
-    );
+  .umc-scroll-fog[data-side="top"],
+  .umc-scroll-fog[data-side="bottom"] {
+    inset-inline: 0;
+    height: var(--umc-scroll-fog-size);
   }
 
-  .umc-scroll-fog[data-side="left"] {
-    background: linear-gradient(
-      to left,
-      transparent 0%,
-      var(--umc-color-background-default) 90.865%
-    );
+  .umc-scroll-fog[data-side="left"],
+  .umc-scroll-fog[data-side="right"] {
+    inset-block: 0;
+    width: var(--umc-scroll-fog-size);
   }
 
   .umc-scroll-fog[data-side="top"] {
-    background: linear-gradient(
+    top: 0;
+    background-image: linear-gradient(
       to top,
       transparent 0%,
-      var(--umc-color-background-default) 90.865%
+      var(--umc-color-background-default) var(--umc-scroll-fog-solid-stop)
     );
   }
 
   .umc-scroll-fog[data-side="bottom"] {
-    background: linear-gradient(
+    bottom: 0;
+    background-image: linear-gradient(
       to bottom,
       transparent 0%,
-      var(--umc-color-background-default) 90.865%
+      var(--umc-color-background-default) var(--umc-scroll-fog-solid-stop)
+    );
+  }
+
+  .umc-scroll-fog[data-side="left"] {
+    left: 0;
+    background-image: linear-gradient(
+      to left,
+      transparent 0%,
+      var(--umc-color-background-default) var(--umc-scroll-fog-solid-stop)
+    );
+  }
+
+  .umc-scroll-fog[data-side="right"] {
+    right: 0;
+    background-image: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--umc-color-background-default) var(--umc-scroll-fog-solid-stop)
     );
   }
 }

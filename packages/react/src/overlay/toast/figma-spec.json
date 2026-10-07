@@ -1,45 +1,108 @@
 {
   "component": "Toast",
-  "figmaSection": "2621:33488",
+  "figmaSection": "2621:33487",
   "page": "/components/overlay/toast/",
   "nodes": [
     {
-      "specId": "toast-primary-default",
-      "node": "2621:33495",
-      "variant": "Type=Primary, Leading Acc=False, Text Button=False",
+      "specId": "toast-primary-icon",
+      "node": "2621:33489",
+      "variant": "Type=Primary, Leading Acc=True, Text Button=False",
       "target": ".umc-toast",
       "expected": {
         "background-color": "#b3e5e1",
         "color": "#015a54",
+        "min-height": "44px",
+        "min-width": "400px",
         "padding-top": "12px",
-        "padding-bottom": "12px",
         "padding-left": "14px",
         "padding-right": "16px",
         "border-top-left-radius": "14px",
-        "min-height": "48px",
-        "width": "400px",
+        "font-size": "16px",
+        "font-weight": "500",
+        "line-height": "22.4px",
+        "letter-spacing": "-0.32px",
         "box-shadow~": "rgba(64, 68, 67, 0.16) 0px 4px 16px 0px"
-      },
-      "figmaDiffers": {
-        "padding-left": "피그마 아이콘 없는 Primary 변형은 padding-left 16px이나 구현에서 아이콘 유무 공통 14px로 통일했다"
       }
     },
     {
-      "specId": "toast-error-default",
+      "specId": "toast-primary-icon-glyph",
+      "node": "3140:48776",
+      "variant": "Icon_Check_circle (Primary)",
+      "target": ".umc-toast__icon",
+      "expected": {
+        "color": "#008a80",
+        "width": "24px",
+        "height": "24px"
+      }
+    },
+    {
+      "specId": "toast-close",
+      "node": "2621:33494",
+      "variant": "24 icon (닫기)",
+      "target": ".umc-toast__close",
+      "expected": {
+        "color": "#adadad",
+        "width": "24px",
+        "height": "24px"
+      }
+    },
+    {
+      "specId": "toast-primary-action",
+      "node": "2621:33506",
+      "variant": "Type=Primary, Leading Acc=False, Text Button=True",
+      "target": ".umc-toast",
+      "expected": {
+        "padding-left": "16px",
+        "column-gap": "16px"
+      }
+    },
+    {
+      "specId": "toast-primary-action-button",
+      "node": "2621:33510",
+      "variant": "Type=Primary 텍스트 버튼",
+      "target": ".umc-toast__action",
+      "expected": {
+        "color": "#008a80",
+        "font-size": "16px",
+        "text-decoration-line": "underline"
+      }
+    },
+    {
+      "specId": "toast-neutral",
+      "node": "3140:48614",
+      "variant": "Type=Neutral, Leading Acc=True, Text Button=False",
+      "target": ".umc-toast",
+      "expected": {
+        "background-color": "#3f4141cc",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "toast-error",
       "node": "2621:33516",
       "variant": "Type=Error, Leading Acc=True, Text Button=False",
       "target": ".umc-toast",
       "expected": {
-        "background-color": "#ffe7e5",
-        "color": "#a60303",
-        "padding-top": "12px",
-        "padding-bottom": "12px",
-        "padding-left": "14px",
-        "padding-right": "16px",
-        "border-top-left-radius": "14px"
-      },
-      "figmaDiffers": {
-        "background-color": "피그마 Error 변형은 #fed7d7(color-error-200)이나 3기 토큰에 error-200 없음. --umc-color-fill-error-medium = --umc-color-red-100 = #ffe7e5로 대응했다"
+        "background-color": "#fed7d7",
+        "color": "#a60303"
+      }
+    },
+    {
+      "specId": "toast-error-icon",
+      "node": "3140:48820",
+      "variant": "Icon_Check_circle (Error)",
+      "target": ".umc-toast__icon",
+      "expected": {
+        "color": "#dc3d3d"
+      }
+    },
+    {
+      "specId": "toast-error-action",
+      "node": "2621:33532",
+      "variant": "Type=Error 텍스트 버튼",
+      "target": ".umc-toast__action",
+      "expected": {
+        "color": "#dc3d3d"
       }
     }
   ]

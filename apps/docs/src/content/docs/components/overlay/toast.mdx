@@ -35,7 +35,7 @@ function Page() {
 
 ## 외형 미리보기
 
-토스트 외형의 항상 볼 수 있는 정적 예시입니다.
+피그마 `Toast Bottom`(노드 2621:33488)의 변형을 항상 보이게 그린 미리보기입니다. 위에서부터 Primary(아이콘과 닫기), Primary(동작 버튼), Neutral, Error, Error(동작 버튼)입니다. 앞 아이콘은 `icon`에 `<CheckCircleIcon weight="fill" />`을 넘기면 타입에 맞는 색(Primary와 Neutral은 틸, Error는 빨강)으로 칠해집니다.
 
 <ToastStaticPreview />
 
@@ -43,19 +43,19 @@ function Page() {
 
 버튼을 눌러 각 색상의 토스트를 확인하세요.
 
-<ToastColors />
+<ToastColors client:visible />
 
 ## 액션 버튼
 
-`action.onClick`이 있으면 닫기 버튼 자리에 액션 버튼이 생깁니다. 자동 닫힘 시간이 6초로 늘어납니다.
+`action`을 넘기면 닫기 버튼 자리에 밑줄 텍스트 버튼이 생기고, 자동으로 닫히는 시간이 6초로 늘어납니다. 버튼을 누르면 `onClick`을 실행한 뒤 토스트를 닫습니다.
 
-<ToastWithAction />
+<ToastWithAction client:visible />
 
 ## 상단 배치
 
 `placement="top"`으로 상단에 표시할 수 있습니다.
 
-<ToastPlacementTop />
+<ToastPlacementTop client:visible />
 
 ## props
 
@@ -83,7 +83,17 @@ function Page() {
 | `action`   | `{ label: ReactNode; onClick: () => void }` | 없음        | 액션 버튼                                    |
 | `duration` | `number`                                    | 없음        | 자동 닫힘 시간(ms). 기본: 3000, action: 6000 |
 
+## 동작
+
+- 3초 뒤에 저절로 닫히고, 동작 버튼이 있으면 6초 뒤에 닫힙니다(피그마 안내 5~8초).
+- Error 토스트는 나타날 때 좌우로 흔들리고, 화면 낭독기에 바로 알립니다. 움직임 줄이기 설정에서는 흔들리지 않습니다.
+- 웹에서는 최소 폭 400px이고 화면 양옆 16px 안쪽으로 줄어듭니다. 하단 배치는 화면 아래에서 86px 위에 놓입니다.
+
 ## 디자인 팀 확인 사항
 
-- neutral 배경색 `rgba(63, 65, 65, 0.8)`에 해당하는 토큰이 없어 컴포넌트 변수로 선언했습니다.
-- error 토스트는 `role="alert"`로 스크린 리더에 즉시 알립니다.
+- 글자 스타일이 2기 `Label/1-Medium`(16px)을 참조합니다. 3기 `Label/1-Medium`은 18px이라서 같은 값인 3기 `Label/3-Medium`을 썼습니다.
+- Error 배경이 2기 변수 `var(--color-error-200)`(`#fed7d7`)에 연결되어 있어 피그마 값을 그대로 썼습니다.
+- Neutral 배경 `rgba(63, 65, 65, 0.8)`은 이름 없는 값이라 역할 변수에 담았습니다.
+- 앞 아이콘의 체크 색이 `#fbfcfc`입니다. 아이콘 패키지는 흰색(`#ffffff`)으로 고정해 둡니다.
+- Service Notice 타입의 양옆 그래픽 에셋은 컴포넌트에 넣지 않았습니다. 필요하면 에셋과 사용처를 알려 주세요.
+- Error 토스트의 흔들림은 주석만 있어서 400ms 동안 6px씩 두 번 흔들리게 가정했습니다.

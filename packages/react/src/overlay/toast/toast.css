@@ -27,28 +27,36 @@
 
   .umc-toast {
     --umc-toast-neutral-bg: rgba(63, 65, 65, 0.8);
-    --umc-toast-error-bg: var(--umc-color-fill-error-medium);
+    --umc-toast-error-bg: #fed7d7;
+
     display: flex;
     align-items: center;
-    gap: 16px;
-    width: 400px;
+    gap: var(--umc-spacing-gap-16);
+    box-sizing: border-box;
+    width: max-content;
+    min-width: min(400px, calc(100vw - 32px));
     max-width: calc(100vw - 32px);
-    min-height: 48px;
-    padding-top: var(--umc-spacing-padding-12);
-    padding-bottom: var(--umc-spacing-padding-12);
-    padding-left: 14px;
-    padding-right: var(--umc-spacing-padding-16);
+    min-height: 44px;
     margin: 0;
+    padding-block: var(--umc-spacing-padding-12);
+    padding-inline-start: var(--umc-spacing-padding-16);
+    padding-inline-end: var(--umc-spacing-padding-16);
     border: 0;
     border-radius: var(--umc-radius-toast);
+    background-color: var(--umc-toast-bg);
     box-shadow: var(--umc-shadow-drop-neutral-1);
-    font-family: var(--umc-typography-label-1-medium-font-family);
-    font-size: var(--umc-typography-label-1-medium-font-size);
-    font-weight: var(--umc-typography-label-1-medium-font-weight);
-    line-height: var(--umc-typography-label-1-medium-line-height);
-    letter-spacing: var(--umc-typography-label-1-medium-letter-spacing);
+    color: var(--umc-toast-fg);
+    font-family: var(--umc-typography-label-3-medium-font-family);
+    font-size: var(--umc-typography-label-3-medium-font-size);
+    font-weight: var(--umc-typography-label-3-medium-font-weight);
+    line-height: var(--umc-typography-label-3-medium-line-height);
+    letter-spacing: var(--umc-typography-label-3-medium-letter-spacing);
     opacity: 1;
     transition: opacity var(--umc-motion-duration);
+  }
+
+  .umc-toast[data-icon] {
+    padding-inline-start: 14px;
   }
 
   .umc-toast[data-starting-style],
@@ -56,30 +64,54 @@
     opacity: 0;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .umc-toast {
-      transition: none;
-    }
-  }
-
   .umc-toast[data-color="primary"] {
     --umc-toast-bg: var(--umc-color-fill-primary-strong);
     --umc-toast-fg: var(--umc-color-teal-700);
+    --umc-toast-icon: var(--umc-color-icon-brand-medium);
+    --umc-toast-action: var(--umc-color-teal-500);
   }
 
   .umc-toast[data-color="neutral"] {
     --umc-toast-bg: var(--umc-toast-neutral-bg);
     --umc-toast-fg: var(--umc-color-text-inverse);
+    --umc-toast-icon: var(--umc-color-icon-brand-medium);
+    --umc-toast-action: var(--umc-color-text-inverse);
   }
 
   .umc-toast[data-color="error"] {
     --umc-toast-bg: var(--umc-toast-error-bg);
     --umc-toast-fg: var(--umc-color-red-700);
+    --umc-toast-icon: var(--umc-color-icon-error);
+    --umc-toast-action: var(--umc-color-red-500);
+
+    animation: umc-toast-shake 400ms ease-in-out;
   }
 
-  .umc-toast {
-    background-color: var(--umc-toast-bg);
-    color: var(--umc-toast-fg);
+  @keyframes umc-toast-shake {
+    0%,
+    100% {
+      translate: 0;
+    }
+
+    20%,
+    60% {
+      translate: -6px 0;
+    }
+
+    40%,
+    80% {
+      translate: 6px 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .umc-toast {
+      transition: none;
+    }
+
+    .umc-toast[data-color="error"] {
+      animation: none;
+    }
   }
 
   .umc-toast__main {
@@ -94,6 +126,12 @@
     flex-shrink: 0;
     width: 24px;
     height: 24px;
+    color: var(--umc-toast-icon);
+  }
+
+  .umc-toast__icon > svg {
+    width: 100%;
+    height: 100%;
   }
 
   .umc-toast__message {
@@ -106,12 +144,8 @@
     padding: 0;
     border: 0;
     background: none;
-    color: var(--umc-color-teal-500);
-    font-family: var(--umc-typography-label-1-medium-font-family);
-    font-size: var(--umc-typography-label-1-medium-font-size);
-    font-weight: var(--umc-typography-label-1-medium-font-weight);
-    line-height: var(--umc-typography-label-1-medium-line-height);
-    letter-spacing: var(--umc-typography-label-1-medium-letter-spacing);
+    color: var(--umc-toast-action);
+    font: inherit;
     text-decoration: underline;
     cursor: pointer;
     white-space: nowrap;
@@ -132,7 +166,7 @@
     padding: 0;
     border: 0;
     background: none;
-    color: inherit;
+    color: var(--umc-color-icon-neutral-weak);
     cursor: pointer;
   }
 

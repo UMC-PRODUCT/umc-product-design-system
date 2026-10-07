@@ -22,7 +22,11 @@ function TooltipBody({
   mode,
 }: Pick<TooltipProps, "content" | "title" | "mode">) {
   return (
-    <div className="umc-tooltip__content" data-mode={mode}>
+    <div
+      className="umc-tooltip__content"
+      data-mode={mode}
+      data-titled={title ? "" : undefined}
+    >
       {title && <span className="umc-tooltip__label">{title}</span>}
       <div className="umc-tooltip__text">{content}</div>
     </div>

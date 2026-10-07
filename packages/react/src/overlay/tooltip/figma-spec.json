@@ -1,48 +1,118 @@
 {
   "component": "Tooltip",
-  "figmaSection": "2621:36221",
+  "figmaSection": "2621:36220",
   "page": "/components/overlay/tooltip/",
   "nodes": [
     {
-      "specId": "tooltip-dark-md-default",
+      "specId": "tooltip-dark-xs",
+      "node": "2621:36228",
+      "variant": "Side=Top, Appearance=Dark, Size=Xs, Show Label=False",
+      "target": ".umc-tooltip__content",
+      "expected": {
+        "background-color": "#606262",
+        "color": "#ffffff",
+        "padding-top": "6px",
+        "padding-left": "8px",
+        "border-top-left-radius": "6px",
+        "font-size": "12px",
+        "font-weight": "400",
+        "line-height": "18px",
+        "letter-spacing": "-0.24px"
+      }
+    },
+    {
+      "specId": "tooltip-dark-xs-arrow",
+      "node": "2621:36229",
+      "variant": "Side=Top, Appearance=Dark, Size=Xs 화살표",
+      "target": ".umc-tooltip__arrow",
+      "expected": {
+        "width": "10px",
+        "height": "6px",
+        "background-color": "#606262"
+      }
+    },
+    {
+      "specId": "tooltip-dark-sm",
+      "node": "2929:83882",
+      "variant": "Side=Top, Appearance=Dark, Size=Sm, Show Label=False",
+      "target": ".umc-tooltip__content",
+      "expected": {
+        "padding-top": "6px",
+        "padding-left": "8px",
+        "border-top-left-radius": "8px",
+        "font-size": "14px",
+        "font-weight": "500",
+        "line-height": "21px",
+        "letter-spacing": "0px"
+      }
+    },
+    {
+      "specId": "tooltip-light-sm",
+      "node": "2929:83887",
+      "variant": "Side=Top, Appearance=Light, Size=Sm, Show Label=False",
+      "target": ".umc-tooltip__content",
+      "expected": {
+        "background-color": "#ffffff",
+        "color": "#282a2a",
+        "border-top-left-radius": "8px"
+      }
+    },
+    {
+      "specId": "tooltip-light-shadow",
+      "node": "2929:83887",
+      "variant": "Side=Top, Appearance=Light, Size=Sm 그림자",
+      "target": ".umc-tooltip__popup",
+      "expected": {
+        "filter~": "rgba(64, 68, 67, 0.16) 0px 4px 8px"
+      }
+    },
+    {
+      "specId": "tooltip-dark-md",
       "node": "2621:36222",
       "variant": "Side=Top, Appearance=Dark, Size=Md, Show Label=False",
       "target": ".umc-tooltip__content",
       "expected": {
         "background-color": "#606262",
-        "color": "#ffffff",
         "padding-top": "8px",
-        "padding-bottom": "8px",
         "padding-left": "12px",
-        "padding-right": "12px",
-        "border-top-left-radius": "6px"
+        "border-top-left-radius": "6px",
+        "font-size": "12px",
+        "line-height": "18px",
+        "max-width": "240px"
       }
     },
     {
-      "specId": "tooltip-light-md-default",
-      "node": "2621:36233",
-      "variant": "Side=Top, Appearance=Light, Size=Md, Show Label=False",
-      "target": ".umc-tooltip__content",
+      "specId": "tooltip-dark-md-arrow",
+      "node": "2621:36224",
+      "variant": "Side=Top, Appearance=Dark, Size=Md 화살표",
+      "target": ".umc-tooltip__arrow",
       "expected": {
-        "background-color": "#ffffff",
-        "color": "#282a2a",
-        "padding-top": "8px",
-        "padding-bottom": "8px",
-        "padding-left": "12px",
-        "padding-right": "12px",
-        "border-top-left-radius": "6px"
+        "width": "16px",
+        "height": "8px"
       }
     },
     {
       "specId": "tooltip-light-md-label",
-      "node": "2621:36239",
-      "variant": "Side=Top, Appearance=Light, Size=Md, Show Label=True",
+      "node": "2621:36243",
+      "variant": "Side=Top, Appearance=Light, Size=Md, Show Label=True 라벨",
       "target": ".umc-tooltip__label",
       "expected": {
-        "color": "#0b6b64"
-      },
-      "figmaDiffers": {
-        "color": "피그마 --color-teal-600 = #0b6b64이나 3기 --umc-color-teal-600 = #02746c로 값이 다름. 역할 변수 --umc-tooltip-title-color: #0b6b64를 선언해 피그마 값을 그대로 사용했다. 디자인 팀에 토큰 일치 확인 요청 필요"
+        "color": "#0b6b64",
+        "font-size": "12px",
+        "font-weight": "700",
+        "line-height": "18px",
+        "letter-spacing": "-0.24px"
+      }
+    },
+    {
+      "specId": "tooltip-light-md-titled",
+      "node": "2621:36242",
+      "variant": "Side=Top, Appearance=Light, Size=Md, Show Label=True",
+      "target": ".umc-tooltip__content",
+      "expected": {
+        "row-gap": "4px",
+        "padding-top": "8px",
+        "padding-left": "12px"
       }
     }
   ]
