@@ -6,6 +6,7 @@ description: 서비스 최상단에 놓는 로고, 메인 내비게이션, 액�
 import { Aside } from "@astrojs/starlight/components"
 import {
   HeaderActions,
+  HeaderAllVariants,
   HeaderDark,
   HeaderLight,
 } from "../../../../components/react/shell/HeaderExamples.tsx"
@@ -87,6 +88,12 @@ isActivePath("/matching", "/m") // false, 경로 단위로만 비교
   `href="/"`는 완전 일치만 선택합니다. `currentPath="/about"`일 때 루트 항목은
   선택되지 않습니다.
 </Aside>
+
+## 모든 변형
+
+피그마 `Web/Header` 8개, `Home Link` 4개, `Navigation` 2개, `Navigation Item` 6개, `Actions` 6개, `Action Button` 4개를 그렸습니다. 항목 하나의 변형은 그 항목만 든 헤더로 보여 줍니다. 칸에 마우스를 올리면 피그마 변형 이름이 보입니다. Hover처럼 마우스가 있어야 보이는 상태는 문서에서 켜 둔 모습입니다.
+
+<HeaderAllVariants client:visible />
 
 ## props
 

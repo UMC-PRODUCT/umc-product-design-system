@@ -4,6 +4,9 @@ import { CheckCircleIcon } from "@umc-product/icons"
 import { Button, ToastProvider, useToast } from "@umc-product/react"
 
 import { LegacyCloseGlyph } from "../../../../../../packages/react/src/internal/glyphs.tsx"
+import { NotImplemented } from "../variants/VariantCells.tsx"
+import { lookup, type FigmaVariant } from "../variants/figma-variants.ts"
+import { VariantGrid } from "../variants/VariantGrid.tsx"
 
 type ToastPreviewItemProps = {
   color: "primary" | "neutral" | "error"
@@ -188,5 +191,75 @@ export function ToastPlacementTop() {
         />
       </div>
     </ToastProvider>
+  )
+}
+
+const TOAST_COLORS = {
+  Primary: "primary",
+  Neutral: "neutral",
+  Error: "error",
+} as const
+
+const TOAST_TYPE_ORDER = [
+  "Primary",
+  "Neutral",
+  "Error",
+  "Service Notice",
+  "Service Notice · Neutral",
+]
+
+function ToastVariantCell({
+  variant,
+  placement,
+}: {
+  variant: FigmaVariant
+  placement: "top" | "bottom"
+}) {
+  if (variant.props["Type"]?.startsWith("Service Notice")) {
+    return (
+      <NotImplemented reason="양옆 그래픽 에셋과 사용처가 정해지지 않아 넣지 않았습니다" />
+    )
+  }
+  return (
+    <ToastPreviewItem
+      color={lookup(TOAST_COLORS, variant, "Type")}
+      placement={placement}
+      message="토스트 알림이에요"
+      withIcon={variant.props["Leading Acc"] === "True"}
+      actionLabel={variant.props["Text Button"] === "True" ? "버튼" : undefined}
+    />
+  )
+}
+
+export function ToastAllVariants() {
+  return (
+    <>
+      <VariantGrid
+        set="toast-bottom"
+        rows={["Type", "Leading Acc", "Text Button"]}
+        columns={[]}
+        order={{
+          Type: TOAST_TYPE_ORDER,
+          "Leading Acc": ["True", "False"],
+          "Text Button": ["False", "True"],
+        }}
+        render={(variant) => (
+          <ToastVariantCell variant={variant} placement="bottom" />
+        )}
+      />
+      <VariantGrid
+        set="toast-top"
+        rows={["Type", "Leading Acc"]}
+        columns={["Text Button"]}
+        order={{
+          Type: TOAST_TYPE_ORDER,
+          "Leading Acc": ["True", "False"],
+          "Text Button": ["False", "True"],
+        }}
+        render={(variant) => (
+          <ToastVariantCell variant={variant} placement="top" />
+        )}
+      />
+    </>
   )
 }

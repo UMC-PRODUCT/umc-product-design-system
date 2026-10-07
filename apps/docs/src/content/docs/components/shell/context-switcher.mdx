@@ -3,7 +3,10 @@ title: ContextSwitcher
 description: 현재 작업 맥락(기수, 계정 뷰, 권한)을 바꾸는 버튼입니다.
 ---
 
-import { ContextSwitcherDefault } from "../../../../components/react/shell/ContextSwitcherExamples.tsx"
+import {
+  ContextSwitcherAllVariants,
+  ContextSwitcherDefault,
+} from "../../../../components/react/shell/ContextSwitcherExamples.tsx"
 
 피그마 `Context Switcher`(node 2281:6450)를 구현했습니다. 피그마 설명대로 워크스페이스, 계정 뷰, 관리 권한처럼 작업 맥락을 바꾸고 그에 따라 아래 메뉴가 달라지는 곳에 씁니다. 필요 없으면 쓰지 않습니다. 보통 `SideNavigation`의 `slot`에 넣습니다.
 
@@ -32,6 +35,12 @@ export function ViewSwitcher() {
 - 버튼을 누르면 버튼 바로 아래에 목록이 열립니다. 목록 너비는 버튼과 같습니다.
 - 선택된 항목은 연한 브랜드 배경과 체크 표시로 구분합니다. 키보드 방향키로 옮기고 Enter로 고릅니다.
 - `value`와 `onValueChange`로만 제어합니다. 값 타입은 `options`의 `value`에서 추론합니다.
+
+## 모든 변형
+
+피그마 `Context Switcher` 변형 3개를 그렸습니다. Selected는 목록이 열린 모습이라 목록을 버튼 아래에 고정해 그렸습니다. 칸에 마우스를 올리면 피그마 변형 이름이 보입니다. Hover처럼 마우스가 있어야 보이는 상태는 문서에서 켜 둔 모습입니다.
+
+<ContextSwitcherAllVariants client:visible />
 
 ## props
 

@@ -4,6 +4,10 @@ import { FilterIcon, ListIcon } from "@umc-product/icons"
 
 import { Tab, TabList, TabPanel, Tabs } from "@umc-product/react"
 
+import { ForceState } from "../variants/VariantCells.tsx"
+import type { FigmaVariant } from "../variants/figma-variants.ts"
+import { VariantGrid } from "../variants/VariantGrid.tsx"
+
 export function TabsBasic() {
   return (
     <div
@@ -43,5 +47,35 @@ export function TabsWithIcon() {
         </Tabs>
       </div>
     </div>
+  )
+}
+
+function TabVariantCell({ variant }: { variant: FigmaVariant }) {
+  const state = variant.props["State"]
+  const isIcon = variant.props["Type"] === "Icon"
+  return (
+    <ForceState states={state === "Hover & Pressed" ? ["hover", "active"] : []}>
+      <Tabs value={state === "Selected" ? "tab" : "none"}>
+        <TabList aria-label="탭">
+          {isIcon ? (
+            <Tab value="tab" icon={<FilterIcon />} aria-label="필터" />
+          ) : (
+            <Tab value="tab">공지사항</Tab>
+          )}
+        </TabList>
+      </Tabs>
+    </ForceState>
+  )
+}
+
+export function TabsAllVariants() {
+  return (
+    <VariantGrid
+      set="tab-button"
+      rows={["Type"]}
+      columns={["State"]}
+      order={{ State: ["Unselected", "Hover & Pressed", "Selected"] }}
+      render={(variant) => <TabVariantCell variant={variant} />}
+    />
   )
 }

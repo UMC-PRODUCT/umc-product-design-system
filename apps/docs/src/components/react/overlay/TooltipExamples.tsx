@@ -1,9 +1,33 @@
 "use client"
 
 import { Button, Tooltip } from "@umc-product/react"
+import type { CSSProperties } from "react"
+
+import { lookup, type FigmaVariant } from "../variants/figma-variants.ts"
+import { VariantGrid } from "../variants/VariantGrid.tsx"
+
+type TooltipSide = "top" | "bottom" | "left" | "right"
+
+const HORIZONTAL_CENTER: CSSProperties = {
+  position: "absolute",
+  left: "calc(50% - var(--umc-tooltip-arrow-width) / 2)",
+}
+
+const VERTICAL_CENTER: CSSProperties = {
+  position: "absolute",
+  top: "calc(50% - var(--umc-tooltip-arrow-height) / 2)",
+}
+
+const ARROW_POSITIONS: Readonly<Record<TooltipSide, CSSProperties>> = {
+  top: HORIZONTAL_CENTER,
+  bottom: HORIZONTAL_CENTER,
+  left: VERTICAL_CENTER,
+  right: VERTICAL_CENTER,
+}
 
 type TooltipPreviewItemProps = {
-  specId: string
+  specId?: string
+  side?: TooltipSide
   mode: "dark" | "light"
   size?: "xs" | "sm" | "md"
   title?: string
@@ -12,13 +36,14 @@ type TooltipPreviewItemProps = {
 
 function TooltipPreviewItem({
   specId,
+  side = "top",
   mode,
   size = "md",
   title,
   text,
 }: TooltipPreviewItemProps) {
   return (
-    <div data-spec-id={specId} className="pb-3">
+    <div data-spec-id={specId} className="p-3">
       <div
         className="umc-tooltip__positioner"
         data-size={size}
@@ -27,11 +52,8 @@ function TooltipPreviewItem({
         <div className="umc-tooltip__popup" data-mode={mode}>
           <div
             className="umc-tooltip__arrow"
-            data-side="top"
-            style={{
-              position: "absolute",
-              left: "calc(50% - var(--umc-tooltip-arrow-width) / 2)",
-            }}
+            data-side={side}
+            style={ARROW_POSITIONS[side]}
           />
           <div
             className="umc-tooltip__content"
@@ -160,5 +182,48 @@ export function TooltipSizes() {
         </Button>
       </Tooltip>
     </div>
+  )
+}
+
+const TOOLTIP_SIDES = {
+  Top: "top",
+  Bottom: "bottom",
+  Left: "left",
+  Right: "right",
+} as const
+const TOOLTIP_MODES = { Dark: "dark", Light: "light" } as const
+const TOOLTIP_SIZES = { Xs: "xs", Sm: "sm", Md: "md" } as const
+
+function TooltipVariantCell({ variant }: { variant: FigmaVariant }) {
+  const size = lookup(TOOLTIP_SIZES, variant, "Size")
+  return (
+    <TooltipPreviewItem
+      side={lookup(TOOLTIP_SIDES, variant, "Side")}
+      mode={lookup(TOOLTIP_MODES, variant, "Appearance")}
+      size={size}
+      title={variant.props["Show Label"] === "True" ? "라벨" : undefined}
+      text={
+        size === "md"
+          ? "사용자에게 정보를 안내 할 Tooltip Message 여러줄 가능"
+          : "툴팁이에요"
+      }
+    />
+  )
+}
+
+export function TooltipAllVariants() {
+  return (
+    <VariantGrid
+      set="tooltip"
+      sections={["Appearance"]}
+      rows={["Size", "Show Label"]}
+      columns={["Side"]}
+      order={{
+        Size: ["Xs", "Sm", "Md"],
+        "Show Label": ["False", "True"],
+        Side: ["Top", "Bottom", "Left", "Right"],
+      }}
+      render={(variant) => <TooltipVariantCell variant={variant} />}
+    />
   )
 }

@@ -17,6 +17,7 @@
     "docs:dev": "pnpm --filter @umc-product/docs dev",
     "docs:build": "pnpm --filter @umc-product/docs build",
     "docs:preview": "pnpm --filter @umc-product/docs preview",
+    "docs:variants": "pnpm --filter @umc-product/docs variants:check",
     "test": "pnpm -r test",
     "typecheck": "tsc -b && pnpm --filter @umc-product/docs typecheck",
     "format": "prettier --write .",

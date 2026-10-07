@@ -3,6 +3,10 @@
 import { Button, Menu } from "@umc-product/react"
 import { useState } from "react"
 
+import { LegacyCheckGlyph } from "../../../../../../packages/react/src/internal/glyphs.tsx"
+import { lookup, type FigmaVariant } from "../variants/figma-variants.ts"
+import { VariantGrid } from "../variants/VariantGrid.tsx"
+
 export function MenuDefault() {
   const [lastAction, setLastAction] = useState("없음")
   return (
@@ -47,5 +51,46 @@ export function MenuSizes() {
         />
       ))}
     </div>
+  )
+}
+
+const ITEM_SIZES = { Xs: "xs", Sm: "sm", Md: "md" } as const
+
+const presence = (condition: boolean) => (condition ? "" : undefined)
+
+function DropdownItemPreview({ variant }: { variant: FigmaVariant }) {
+  const state = variant.props["State"]
+  return (
+    <div className="umc-dropdown-list w-[160px]">
+      <div
+        className="umc-dropdown-item"
+        data-size={lookup(ITEM_SIZES, variant, "Size")}
+        data-highlighted={presence(state === "Hover")}
+        data-selected={presence(state === "Active")}
+        data-disabled={presence(state === "Disabled")}
+      >
+        <span className="umc-dropdown-item__content">항목</span>
+        {state === "Active" && (
+          <span className="umc-dropdown-item__indicator">
+            <LegacyCheckGlyph />
+          </span>
+        )}
+      </div>
+    </div>
+  )
+}
+
+export function DropdownItemAllVariants() {
+  return (
+    <VariantGrid
+      set="dropdown-item"
+      rows={["State"]}
+      columns={["Size"]}
+      order={{
+        State: ["Default", "Hover", "Active", "Disabled"],
+        Size: ["Xs", "Sm", "Md"],
+      }}
+      render={(variant) => <DropdownItemPreview variant={variant} />}
+    />
   )
 }

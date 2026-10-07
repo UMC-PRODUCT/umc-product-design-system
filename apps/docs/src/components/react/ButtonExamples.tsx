@@ -6,6 +6,10 @@ import {
   type ButtonVariant,
 } from "@umc-product/react"
 
+import { ForceState } from "./variants/VariantCells.tsx"
+import { lookup, type FigmaVariant } from "./variants/figma-variants.ts"
+import { VariantGrid } from "./variants/VariantGrid.tsx"
+
 const COLORS: readonly ButtonColor[] = ["primary", "neutral", "red", "white"]
 const VARIANTS: readonly ButtonVariant[] = ["fill", "weak"]
 const SIZES: readonly ButtonSize[] = ["lg", "md", "sm", "xs"]
@@ -126,5 +130,65 @@ export function ButtonOverride() {
         className="w-60"
       </Button>
     </div>
+  )
+}
+
+const FIGMA_SIZES: Readonly<Record<string, ButtonSize>> = {
+  Lg: "lg",
+  Md: "md",
+  Sm: "sm",
+  XS: "xs",
+}
+
+const FIGMA_COLORS: Readonly<Record<string, ButtonColor>> = {
+  Primary: "primary",
+  Neutral: "neutral",
+  White: "white",
+  Red: "red",
+}
+
+const FIGMA_STYLES: Readonly<Record<string, ButtonVariant>> = {
+  Fill: "fill",
+  Weak: "weak",
+}
+
+const figmaIcon = <AddIcon weight="fill" />
+
+function ButtonVariantCell({ variant }: { variant: FigmaVariant }) {
+  const state = variant.props["State"]
+  const iconPosition = variant.props["Icon Position"]
+  return (
+    <ForceState states={state === "Pressed" ? ["active"] : []}>
+      <Button
+        size={lookup(FIGMA_SIZES, variant, "Size")}
+        color={lookup(FIGMA_COLORS, variant, "Color")}
+        variant={lookup(FIGMA_STYLES, variant, "Style")}
+        disabled={state === "Disabled"}
+        isLoading={state === "Loading"}
+        leadingIcon={iconPosition === "Left" ? figmaIcon : undefined}
+        trailingIcon={iconPosition === "Right" ? figmaIcon : undefined}
+      >
+        버튼
+      </Button>
+    </ForceState>
+  )
+}
+
+export function ButtonAllVariants() {
+  return (
+    <VariantGrid
+      set="button"
+      sections={["Icon Position", "Size"]}
+      rows={["Color", "Style"]}
+      columns={["State"]}
+      order={{
+        Size: ["Lg", "Md", "Sm", "XS"],
+        State: ["Default", "Pressed", "Loading", "Disabled"],
+      }}
+      tone={(variant) =>
+        variant.props["Color"] === "White" ? "muted" : undefined
+      }
+      render={(variant) => <ButtonVariantCell variant={variant} />}
+    />
   )
 }

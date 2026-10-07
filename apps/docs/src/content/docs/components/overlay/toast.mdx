@@ -4,6 +4,7 @@ description: 화면 하단(또는 상단)에 짧은 피드백 메시지를 띄�
 ---
 
 import {
+  ToastAllVariants,
   ToastColors,
   ToastPlacementTop,
   ToastStaticPreview,
@@ -56,6 +57,12 @@ function Page() {
 `placement="top"`으로 상단에 표시할 수 있습니다. 피그마 `Toast Top`처럼 상단 토스트는 닫기 버튼 없이 내용 폭으로 그리고, 정해진 시간이 지나면 저절로 닫힙니다.
 
 <ToastPlacementTop client:visible />
+
+## 모든 변형
+
+피그마 `Toast Bottom` 14개와 `Toast Top` 14개를 그렸습니다. 토스트는 잠깐 떴다 사라지므로 화면에 고정해 그렸습니다. 칸에 마우스를 올리면 피그마 변형 이름이 보입니다.
+
+<ToastAllVariants />
 
 ## props
 

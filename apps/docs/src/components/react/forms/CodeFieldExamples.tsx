@@ -3,6 +3,10 @@
 import { CodeField, TextInfoButton } from "@umc-product/react"
 import { useState } from "react"
 
+import { ForceState, type ForcedState } from "../variants/VariantCells.tsx"
+import type { FigmaVariant } from "../variants/figma-variants.ts"
+import { VariantGrid } from "../variants/VariantGrid.tsx"
+
 const VALID_CODE = "123456"
 
 export function CodeFieldDefault() {
@@ -58,5 +62,63 @@ export function CodeFieldStates() {
         <CodeField label="개별 지원 코드" defaultValue="000000" disabled />
       </div>
     </div>
+  )
+}
+
+const FORCED_CELL_STATES: Readonly<Record<string, readonly ForcedState[]>> = {
+  Hover: ["hover"],
+  Focus: ["focus"],
+}
+
+const CELL_STATES_WITH_VALUE = new Set(["Filled", "Error", "Disabled"])
+
+function CodeCellVariantCell({ variant }: { variant: FigmaVariant }) {
+  const state = variant.props["State"] ?? ""
+  return (
+    <ForceState states={FORCED_CELL_STATES[state] ?? []}>
+      <CodeField
+        length={1}
+        defaultValue={CELL_STATES_WITH_VALUE.has(state) ? "7" : undefined}
+        invalid={state === "Error"}
+        disabled={state === "Disabled"}
+      />
+    </ForceState>
+  )
+}
+
+function CodeInputVariantCell({ variant }: { variant: FigmaVariant }) {
+  const invalid = variant.props["Error"] === "True"
+  return (
+    <CodeField
+      label="개별 지원 코드"
+      required
+      info={<TextInfoButton>개별 지원 코드란?</TextInfoButton>}
+      defaultValue={invalid ? "000000" : undefined}
+      invalid={invalid}
+      errorMessage={invalid ? "코드가 일치하지 않습니다" : undefined}
+    />
+  )
+}
+
+export function CodeFieldAllVariants() {
+  return (
+    <>
+      <VariantGrid
+        set="code-cell"
+        rows={["State"]}
+        columns={["Size"]}
+        order={{
+          State: ["Default", "Hover", "Focus", "Filled", "Error", "Disabled"],
+        }}
+        render={(variant) => <CodeCellVariantCell variant={variant} />}
+      />
+      <VariantGrid
+        set="code-input"
+        rows={["Error"]}
+        columns={[]}
+        order={{ Error: ["False", "True"] }}
+        render={(variant) => <CodeInputVariantCell variant={variant} />}
+      />
+    </>
   )
 }

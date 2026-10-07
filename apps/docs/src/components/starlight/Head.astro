@@ -1,0 +1,15 @@
+---
+import Default from "@astrojs/starlight/components/Head.astro"
+---
+
+<Default />
+
+<script>
+  import { applyForcedStates } from "../../scripts/forced-states.ts"
+
+  if (document.readyState === "complete") {
+    applyForcedStates()
+  } else {
+    window.addEventListener("load", applyForcedStates, { once: true })
+  }
+</script>

@@ -5,12 +5,13 @@ description: 단일 선택(라디오)·다중 선택(체크박스)을 버튼 그
 
 import { Aside } from "@astrojs/starlight/components"
 import {
-  OptionButtonGroupSingle,
-  OptionButtonGroupMultiple,
-  OptionButtonGroupVariants,
-  OptionButtonGroupSizes,
-  OptionButtonGroupDisabled,
+  OptionButtonGroupAllVariants,
   OptionButtonGroupControlled,
+  OptionButtonGroupDisabled,
+  OptionButtonGroupMultiple,
+  OptionButtonGroupSingle,
+  OptionButtonGroupSizes,
+  OptionButtonGroupVariants,
 } from "../../../../components/react/selection/OptionButtonGroupExamples.tsx"
 
 `type="single"`(기본)이면 `RadioGroup`으로, `type="multiple"`이면 `CheckboxGroup`으로 렌더됩니다. 두 모드 모두 키보드 탐색과 ARIA 역할을 자동으로 처리합니다.
@@ -63,6 +64,12 @@ import { OptionButtonGroup } from "@umc-product/react"
 `value`와 `onValueChange`로 외부 상태와 연결합니다. React Hook Form을 쓸 때는 `Controller`의 `field.value`를 `value`에, `field.onChange`를 `onValueChange`에 연결합니다.
 
 <OptionButtonGroupControlled client:visible />
+
+## 모든 변형
+
+피그마 `.primitive/Segmented Control/Option Button` 45개와 체크 `Check-icon` 2개, 일곱 칸짜리 `Segmented Control/Option` 7개를 그렸습니다. 버튼 하나의 변형은 세 칸짜리 그룹에서 해당 위치(Left, Middle, Right)의 버튼으로 보여 줍니다. 칸에 마우스를 올리면 피그마 변형 이름이 보입니다. Hover처럼 마우스가 있어야 보이는 상태는 문서에서 켜 둔 모습입니다.
+
+<OptionButtonGroupAllVariants client:visible />
 
 ## props
 

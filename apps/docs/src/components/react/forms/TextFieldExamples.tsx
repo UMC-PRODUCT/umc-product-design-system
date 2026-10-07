@@ -2,6 +2,17 @@
 
 import { TextField } from "@umc-product/react"
 
+import { ForceState } from "../variants/VariantCells.tsx"
+import { lookup, type FigmaVariant } from "../variants/figma-variants.ts"
+import {
+  forcedInputStates,
+  hasInputValue,
+  INPUT_SIZES,
+  INPUT_STATE_ORDER,
+  isDisabledState,
+} from "../variants/input-states.ts"
+import { VariantGrid } from "../variants/VariantGrid.tsx"
+
 export function TextFieldDefault() {
   return (
     <div className="umc-example umc-example-stack">
@@ -120,5 +131,73 @@ export function TextFieldDisabled() {
         />
       </div>
     </div>
+  )
+}
+
+function TextFieldBoxCell({ variant }: { variant: FigmaVariant }) {
+  const isPassword = variant.props["Type"] === "Password"
+  return (
+    <div className="w-[260px]">
+      <ForceState states={forcedInputStates(variant)}>
+        <TextField
+          aria-label="예시 입력"
+          size={lookup(INPUT_SIZES, variant, "Size")}
+          type={isPassword ? "password" : "text"}
+          placeholder={
+            isPassword ? "비밀번호를 입력하세요" : "텍스트를 입력하세요"
+          }
+          defaultValue={
+            hasInputValue(variant)
+              ? isPassword
+                ? "umc1234"
+                : "UMC"
+              : undefined
+          }
+          disabled={isDisabledState(variant)}
+        />
+      </ForceState>
+    </div>
+  )
+}
+
+function TextFieldComposedCell({ variant }: { variant: FigmaVariant }) {
+  const invalid = variant.props["Error"] === "True"
+  return (
+    <div className="w-[260px]">
+      <ForceState states={forcedInputStates(variant)}>
+        <TextField
+          label="레이블"
+          caption="도움말을 적어 주세요"
+          invalid={invalid}
+          errorMessage={invalid ? "오류 메시지를 적어 주세요" : undefined}
+          placeholder="텍스트를 입력하세요"
+          defaultValue={hasInputValue(variant) ? "UMC" : undefined}
+          disabled={isDisabledState(variant)}
+        />
+      </ForceState>
+    </div>
+  )
+}
+
+export function TextFieldAllVariants() {
+  return (
+    <>
+      <VariantGrid
+        set="input-box"
+        only={{ Type: ["Text", "Password"] }}
+        sections={["Type"]}
+        rows={["State"]}
+        columns={["Size"]}
+        order={{ State: INPUT_STATE_ORDER }}
+        render={(variant) => <TextFieldBoxCell variant={variant} />}
+      />
+      <VariantGrid
+        set="text-field-box"
+        rows={["State"]}
+        columns={["Error"]}
+        order={{ State: INPUT_STATE_ORDER, Error: ["False", "True"] }}
+        render={(variant) => <TextFieldComposedCell variant={variant} />}
+      />
+    </>
   )
 }

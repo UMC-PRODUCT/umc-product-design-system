@@ -7,6 +7,10 @@ import {
   TextInfoButton,
 } from "@umc-product/react"
 
+import { NotImplemented } from "../variants/VariantCells.tsx"
+import type { FigmaVariant } from "../variants/figma-variants.ts"
+import { VariantGrid } from "../variants/VariantGrid.tsx"
+
 function Control({
   placeholder,
   defaultValue,
@@ -91,5 +95,59 @@ export function FieldWithInfo() {
         </Field>
       </div>
     </div>
+  )
+}
+
+function FieldLabelCell({ variant }: { variant: FigmaVariant }) {
+  if (variant.props["Caption"] === "True") {
+    return (
+      <NotImplemented reason="레이블 옆 회색 보조 문구는 쓰임새를 확인할 때까지 넣지 않았습니다" />
+    )
+  }
+  const state = variant.props["State"]
+  return (
+    <Field
+      label="레이블"
+      required
+      invalid={state === "Error"}
+      disabled={state === "Disabled"}
+    >
+      {null}
+    </Field>
+  )
+}
+
+function FieldCaptionCell({ variant }: { variant: FigmaVariant }) {
+  const type = variant.props["Type"]
+  return (
+    <Field
+      caption="도움말을 적어 주세요"
+      captionColor={type === "Primary" ? "primary" : "neutral"}
+      invalid={type === "Error"}
+      errorMessage={type === "Error" ? "오류 메시지를 적어 주세요" : undefined}
+      disabled={type === "Disabled"}
+    >
+      {null}
+    </Field>
+  )
+}
+
+export function FieldAllVariants() {
+  return (
+    <>
+      <VariantGrid
+        set="text-field-label"
+        rows={["State"]}
+        columns={["Caption"]}
+        order={{ Caption: ["False", "True"] }}
+        render={(variant) => <FieldLabelCell variant={variant} />}
+      />
+      <VariantGrid
+        set="help-text"
+        rows={["Type"]}
+        columns={[]}
+        render={(variant) => <FieldCaptionCell variant={variant} />}
+      />
+    </>
   )
 }

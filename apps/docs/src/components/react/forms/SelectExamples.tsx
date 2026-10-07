@@ -3,6 +3,17 @@
 import { Select, type SelectOption } from "@umc-product/react"
 import { useState } from "react"
 
+import { ForceState, type ForcedState } from "../variants/VariantCells.tsx"
+import { lookup, type FigmaVariant } from "../variants/figma-variants.ts"
+import {
+  hasInputValue,
+  INPUT_SIZES,
+  INPUT_STATE_ORDER,
+  isDisabledState,
+  stateOf,
+} from "../variants/input-states.ts"
+import { VariantGrid } from "../variants/VariantGrid.tsx"
+
 type Part = "plan" | "design" | "web" | "android" | "ios" | "spring" | "node"
 
 const PARTS: SelectOption<Part>[] = [
@@ -119,5 +130,45 @@ export function SelectStates() {
         />
       </div>
     </div>
+  )
+}
+
+const FORCED_SELECT_STATES: Readonly<Record<string, readonly ForcedState[]>> = {
+  Hover: ["hover"],
+  "Focused & Hover": ["hover"],
+}
+
+function SelectVariantCell({ variant }: { variant: FigmaVariant }) {
+  const state = stateOf(variant)
+  const isFilter = state === "Filtered"
+  return (
+    <div className={isFilter ? "w-[140px]" : "w-[260px]"}>
+      <ForceState states={FORCED_SELECT_STATES[state] ?? []}>
+        <Select
+          aria-label={isFilter ? "정렬" : "파트"}
+          options={isFilter ? SORTS : PARTS}
+          size={lookup(INPUT_SIZES, variant, "Size")}
+          variant={isFilter ? "filter" : "default"}
+          placeholder={isFilter ? "정렬" : "파트를 선택하세요"}
+          defaultValue={
+            hasInputValue(variant) ? (isFilter ? "recent" : "web") : null
+          }
+          disabled={isDisabledState(variant)}
+        />
+      </ForceState>
+    </div>
+  )
+}
+
+export function SelectAllVariants() {
+  return (
+    <VariantGrid
+      set="input-box"
+      only={{ Type: ["Select"] }}
+      rows={["State"]}
+      columns={["Size"]}
+      order={{ State: INPUT_STATE_ORDER }}
+      render={(variant) => <SelectVariantCell variant={variant} />}
+    />
   )
 }

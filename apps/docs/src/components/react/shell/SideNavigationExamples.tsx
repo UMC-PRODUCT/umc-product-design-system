@@ -8,6 +8,9 @@ import {
 import { PeoplePictogram } from "@umc-product/icons"
 import { useState } from "react"
 
+import { ForceState } from "../variants/VariantCells.tsx"
+import type { FigmaVariant } from "../variants/figma-variants.ts"
+import { VariantGrid } from "../variants/VariantGrid.tsx"
 import { PreviewLinks } from "./PreviewLinks.tsx"
 
 const menuIcon = <PeoplePictogram color="currentColor" />
@@ -76,5 +79,115 @@ export function SideNavigationWithSlot() {
         </div>
       </PreviewLinks>
     </div>
+  )
+}
+
+const ignoreGenerationChange = () => {}
+
+const generationSlot = (
+  <ContextSwitcher
+    options={GENERATIONS}
+    value="10"
+    onValueChange={ignoreGenerationChange}
+  />
+)
+
+const SELECTED_GROUP: SideNavigationItem = {
+  label: "매칭 관리",
+  icon: menuIcon,
+  children: [
+    { label: "매칭 목록", href: "/matching" },
+    { label: "매칭 현황", href: "/matching/status" },
+    { label: "매칭 결과", href: "/matching/result" },
+  ],
+}
+
+const PLAIN_ITEM: SideNavigationItem = {
+  label: "대시보드",
+  href: "/dashboard",
+  icon: menuIcon,
+}
+
+function MenuItemCell({ variant }: { variant: FigmaVariant }) {
+  const selected = variant.props["Selected"] === "True"
+  return (
+    <div className="w-[216px]">
+      <ForceState states={variant.props["State"] === "Hover" ? ["hover"] : []}>
+        <SideNavigation
+          aria-label="메뉴 항목"
+          items={[selected ? SELECTED_GROUP : PLAIN_ITEM]}
+          currentPath={selected ? "/matching/status" : "/"}
+          slot={variant.props["Slot"] === "True" ? generationSlot : undefined}
+        />
+      </ForceState>
+    </div>
+  )
+}
+
+function SubmenuItemCell({ variant }: { variant: FigmaVariant }) {
+  const selected = variant.props["Selected"] === "True"
+  return (
+    <div className="w-[216px]">
+      <SideNavigation
+        aria-label="하위 메뉴 항목"
+        items={[
+          {
+            label: "매칭 관리",
+            icon: menuIcon,
+            children: [
+              { label: "매칭 목록", href: "/matching" },
+              { label: "매칭 현황", href: "/matching/status" },
+            ],
+          },
+        ]}
+        currentPath={selected ? "/matching" : "/matching/status"}
+      />
+    </div>
+  )
+}
+
+export function SideNavigationAllVariants() {
+  return (
+    <PreviewLinks>
+      <VariantGrid
+        set="side-navigation"
+        rows={[]}
+        columns={["Type"]}
+        render={(variant) => (
+          <div className="h-[480px] w-[216px]">
+            <SideNavigation
+              title={
+                variant.props["Type"] === "Default" ? "관리 메뉴" : undefined
+              }
+              items={ITEMS}
+              currentPath="/matching/status"
+              slot={
+                variant.props["Type"] === "With Slot"
+                  ? generationSlot
+                  : undefined
+              }
+            />
+          </div>
+        )}
+      />
+      <VariantGrid
+        set="side-navigation-menu-item"
+        rows={["Selected", "State"]}
+        columns={["Slot"]}
+        order={{
+          Selected: ["False", "True"],
+          State: ["Default", "Hover"],
+          Slot: ["False", "True"],
+        }}
+        render={(variant) => <MenuItemCell variant={variant} />}
+      />
+      <VariantGrid
+        set="side-navigation-submenu-item"
+        rows={[]}
+        columns={["Selected"]}
+        order={{ Selected: ["False", "True"] }}
+        render={(variant) => <SubmenuItemCell variant={variant} />}
+      />
+    </PreviewLinks>
   )
 }

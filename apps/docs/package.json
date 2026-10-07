@@ -6,7 +6,8 @@
     "dev": "pnpm -w run build:packages && astro dev",
     "build": "pnpm -w run build:packages && astro build",
     "preview": "astro preview",
-    "typecheck": "pnpm -w run build:packages && astro check"
+    "typecheck": "pnpm -w run build:packages && astro check",
+    "variants:check": "node scripts/check-variant-coverage.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^7.0.1",

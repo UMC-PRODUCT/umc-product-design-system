@@ -2,6 +2,17 @@
 
 import { TextArea } from "@umc-product/react"
 
+import { ForceState } from "../variants/VariantCells.tsx"
+import { lookup, type FigmaVariant } from "../variants/figma-variants.ts"
+import {
+  forcedInputStates,
+  hasInputValue,
+  INPUT_SIZES,
+  INPUT_STATE_ORDER,
+  isDisabledState,
+} from "../variants/input-states.ts"
+import { VariantGrid } from "../variants/VariantGrid.tsx"
+
 export function TextAreaDefault() {
   return (
     <div className="umc-example umc-example-stack">
@@ -45,5 +56,36 @@ export function TextAreaStates() {
         />
       </div>
     </div>
+  )
+}
+
+function TextAreaVariantCell({ variant }: { variant: FigmaVariant }) {
+  return (
+    <div className="w-[260px]">
+      <ForceState states={forcedInputStates(variant)}>
+        <TextArea
+          aria-label="예시 입력"
+          size={lookup(INPUT_SIZES, variant, "Size")}
+          placeholder="내용을 입력하세요"
+          defaultValue={
+            hasInputValue(variant) ? "UMC 9기 활동을 돌아보며" : undefined
+          }
+          disabled={isDisabledState(variant)}
+        />
+      </ForceState>
+    </div>
+  )
+}
+
+export function TextAreaAllVariants() {
+  return (
+    <VariantGrid
+      set="input-box"
+      only={{ Type: ["Text Area"] }}
+      rows={["State"]}
+      columns={["Size"]}
+      order={{ State: INPUT_STATE_ORDER }}
+      render={(variant) => <TextAreaVariantCell variant={variant} />}
+    />
   )
 }

@@ -4,6 +4,7 @@ description: 관리자 화면 왼쪽에 놓는 메뉴입니다.
 ---
 
 import {
+  SideNavigationAllVariants,
   SideNavigationDefault,
   SideNavigationWithSlot,
 } from "../../../../components/react/shell/SideNavigationExamples.tsx"
@@ -58,6 +59,12 @@ export function AdminSidebar({ pathname }: { pathname: string }) {
 ## 아이콘
 
 아이콘 칸은 20px이고 색은 상태를 따라 바뀝니다(기본 `--umc-color-icon-neutral-weak`, 선택 `--umc-color-icon-brand-strong`). 일반 아이콘은 `currentColor`를 쓰므로 그대로 넣습니다. 픽토그램은 자기 색을 갖고 있어 `color="currentColor"`를 넘겨야 상태 색을 따릅니다.
+
+## 모든 변형
+
+피그마 `Web/Side Navigation` 2개, `Menu Item` 6개, `Submenu Item` 2개를 그렸습니다. 선택된 메뉴 항목은 피그마처럼 하위 메뉴를 펼친 모습입니다. 칸에 마우스를 올리면 피그마 변형 이름이 보입니다. Hover처럼 마우스가 있어야 보이는 상태는 문서에서 켜 둔 모습입니다.
+
+<SideNavigationAllVariants client:visible />
 
 ## props
 

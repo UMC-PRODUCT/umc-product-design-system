@@ -4,6 +4,7 @@ description: 상호 배타적인 보기 모드나 필터를 전환하는 라디�
 ---
 
 import {
+  SegmentedControlAllVariants,
   SegmentedControlBasic,
   SegmentedControlControlled,
   SegmentedControlWidth,
@@ -41,6 +42,12 @@ import { SegmentedControl } from "@umc-product/react"
 `value`와 `onValueChange`로 외부에서 선택 상태를 관리합니다.
 
 <SegmentedControlControlled client:visible />
+
+## 모든 변형
+
+피그마 `Web/ Segmented Control / Button`의 기본형(`Type=Defalut`) 3개를 항목 하나짜리 컨트롤로 그렸습니다. 번호형은 [Step Navigation](/components/selection/step-navigation/#모든-변형)에 있습니다. 칸에 마우스를 올리면 피그마 변형 이름이 보입니다. Hover처럼 마우스가 있어야 보이는 상태는 문서에서 켜 둔 모습입니다.
+
+<SegmentedControlAllVariants client:visible />
 
 ## props
 

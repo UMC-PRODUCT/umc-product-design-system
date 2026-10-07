@@ -4,6 +4,7 @@ description: 연관된 콘텐츠를 탭으로 구분하는 컴포넌트 집합�
 ---
 
 import {
+  TabsAllVariants,
   TabsBasic,
   TabsWithIcon,
 } from "../../../../components/react/selection/TabsExamples.tsx"
@@ -34,6 +35,12 @@ import { Tab, TabList, TabPanel, Tabs } from "@umc-product/react"
 `icon` prop에 노드를 넘기면 아이콘 전용 탭이 됩니다. 텍스트 레이블이 없으므로 반드시 `aria-label`을 함께 전달합니다.
 
 <TabsWithIcon client:visible />
+
+## 모든 변형
+
+피그마 `Tab Button` 변형 5개를 탭 하나짜리 목록으로 그렸습니다. 칸에 마우스를 올리면 피그마 변형 이름이 보입니다. Hover처럼 마우스가 있어야 보이는 상태는 문서에서 켜 둔 모습입니다.
+
+<TabsAllVariants client:visible />
 
 ## props
 

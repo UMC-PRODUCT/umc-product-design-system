@@ -4,6 +4,7 @@ description: 레이블, 컨트롤, 도움말, 오류 메시지를 묶는 틀입�
 ---
 
 import {
+  FieldAllVariants,
   FieldCaptionTones,
   FieldDefault,
   FieldWithInfo,
@@ -38,6 +39,12 @@ import { Field, FieldControl, InputBox } from "@umc-product/react"
 ## 접근성
 
 `FieldControl`은 레이블의 `for`, `aria-describedby`, `aria-invalid`를 자동으로 연결합니다. 필수 표시 `*`는 화면 낭독기에 읽히지 않고, 대신 컨트롤에 `required`가 붙습니다.
+
+## 모든 변형
+
+피그마 `Text Field/ Label` 6개와 `Help Text` 4개를 그렸습니다. 칸에 마우스를 올리면 피그마 변형 이름이 보입니다. Hover, Focus, Typing처럼 마우스나 키보드가 있어야 보이는 상태는 문서에서 켜 둔 모습입니다.
+
+<FieldAllVariants />
 
 ## props
 

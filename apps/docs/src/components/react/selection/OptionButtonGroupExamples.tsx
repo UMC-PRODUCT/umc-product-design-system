@@ -4,6 +4,9 @@ import { useState } from "react"
 
 import { OptionButtonGroup, type OptionItem } from "@umc-product/react"
 
+import { lookup, type FigmaVariant } from "../variants/figma-variants.ts"
+import { VariantGrid } from "../variants/VariantGrid.tsx"
+
 const PART_OPTIONS: OptionItem[] = [
   { value: "fe", label: "프론트엔드" },
   { value: "be", label: "백엔드" },
@@ -143,5 +146,81 @@ export function OptionButtonGroupControlled() {
       />
       <p>선택된 파트: {part}</p>
     </div>
+  )
+}
+
+const OPTION_SIZES = { Xl: "xl", Sm: "sm", Xs: "xs" } as const
+const DIRECTION_INDEX = { Left: 0, Middle: 1, Right: 2 } as const
+const CHECK_SIZES = { "20px": "xl", "16px": "sm" } as const
+const PREVIEW_LABELS = ["옵션 1", "옵션 2", "옵션 3"]
+const WEEKDAYS = ["월", "화", "수", "목", "금", "토", "일"]
+
+function OptionButtonVariantCell({ variant }: { variant: FigmaVariant }) {
+  const target = lookup(DIRECTION_INDEX, variant, "Direction")
+  const disabled = variant.props["Disabled"] === "True"
+  const options = PREVIEW_LABELS.map((label, index) => ({
+    value: String(index),
+    label,
+    disabled: disabled && index === target,
+  }))
+  return (
+    <OptionButtonGroup
+      aria-label="옵션"
+      size={lookup(OPTION_SIZES, variant, "Size")}
+      variant={variant.props["Type"] === "Strong" ? "strong" : "weak"}
+      options={options}
+      defaultValue={
+        variant.props["Selected"] === "True" ? String(target) : null
+      }
+    />
+  )
+}
+
+export function OptionButtonGroupAllVariants() {
+  return (
+    <>
+      <VariantGrid
+        set="option-button"
+        sections={["Size"]}
+        rows={["Selected", "Type", "Disabled"]}
+        columns={["Direction"]}
+        order={{
+          Size: ["Xl", "Sm", "Xs"],
+          Selected: ["False", "True"],
+          Type: ["Default", "Weak", "Strong"],
+          Disabled: ["False", "True"],
+          Direction: ["Left", "Middle", "Right"],
+        }}
+        render={(variant) => <OptionButtonVariantCell variant={variant} />}
+      />
+      <VariantGrid
+        set="option-check"
+        rows={[]}
+        columns={["Size"]}
+        render={(variant) => (
+          <OptionButtonGroup
+            aria-label="선택된 옵션"
+            size={lookup(CHECK_SIZES, variant, "Size")}
+            options={[{ value: "checked", label: "선택" }]}
+            defaultValue="checked"
+          />
+        )}
+      />
+      <VariantGrid
+        set="option-group"
+        rows={["Selected Option"]}
+        columns={[]}
+        render={(variant) => (
+          <OptionButtonGroup
+            aria-label="요일"
+            options={WEEKDAYS.map((label, index) => ({
+              value: String(index + 1),
+              label,
+            }))}
+            defaultValue={variant.props["Selected Option"] ?? null}
+          />
+        )}
+      />
+    </>
   )
 }

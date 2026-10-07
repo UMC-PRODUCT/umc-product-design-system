@@ -2,6 +2,8 @@
 
 import { PageHeader } from "@umc-product/react"
 
+import { ForceState } from "../variants/VariantCells.tsx"
+import { VariantGrid } from "../variants/VariantGrid.tsx"
 import { PreviewLinks } from "./PreviewLinks.tsx"
 
 export function PageHeaderDefault() {
@@ -32,5 +34,30 @@ export function PageHeaderSimple() {
     <div className="umc-example">
       <PageHeader title="대시보드" />
     </div>
+  )
+}
+
+export function PageHeaderAllVariants() {
+  return (
+    <PreviewLinks>
+      <VariantGrid
+        set="breadcrumb-item"
+        rows={[]}
+        columns={["State"]}
+        render={(variant) => (
+          <ForceState
+            states={variant.props["State"] === "Hover" ? ["hover"] : []}
+          >
+            <PageHeader
+              title="지원자 목록"
+              breadcrumbs={[
+                { label: "리크루팅", href: "/recruiting" },
+                { label: "지원자 목록" },
+              ]}
+            />
+          </ForceState>
+        )}
+      />
+    </PreviewLinks>
   )
 }

@@ -27,6 +27,9 @@ export default defineConfig({
         root: { label: "한국어", lang: "ko" },
       },
       customCss: ["./src/styles/global.css"],
+      components: {
+        Head: "./src/components/starlight/Head.astro",
+      },
       sidebar: [
         {
           label: "시작하기",

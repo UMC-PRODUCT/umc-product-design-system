@@ -4,6 +4,10 @@ import { useState } from "react"
 
 import { SegmentedControl, type SegmentedControlItem } from "@umc-product/react"
 
+import { ForceState } from "../variants/VariantCells.tsx"
+import type { FigmaVariant } from "../variants/figma-variants.ts"
+import { VariantGrid } from "../variants/VariantGrid.tsx"
+
 const VIEW_ITEMS: SegmentedControlItem[] = [
   { value: "list", label: "목록" },
   { value: "grid", label: "그리드" },
@@ -58,5 +62,31 @@ export function SegmentedControlControlled() {
       />
       <p>선택된 보기: {view}</p>
     </div>
+  )
+}
+
+function SegmentedButtonCell({ variant }: { variant: FigmaVariant }) {
+  const state = variant.props["State"]
+  return (
+    <ForceState states={state === "Hover" ? ["hover"] : []}>
+      <SegmentedControl
+        aria-label="보기 방식"
+        items={[{ value: "item", label: "항목" }]}
+        defaultValue={state === "Selected" ? "item" : undefined}
+      />
+    </ForceState>
+  )
+}
+
+export function SegmentedControlAllVariants() {
+  return (
+    <VariantGrid
+      set="web-segmented-button"
+      only={{ Type: ["Defalut"] }}
+      rows={[]}
+      columns={["State"]}
+      order={{ State: ["Unselected", "Hover", "Selected"] }}
+      render={(variant) => <SegmentedButtonCell variant={variant} />}
+    />
   )
 }

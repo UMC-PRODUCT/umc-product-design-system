@@ -3,6 +3,9 @@
 import { useState } from "react"
 import { Button, Dimmed } from "@umc-product/react"
 
+import { lookup } from "../variants/figma-variants.ts"
+import { VariantGrid } from "../variants/VariantGrid.tsx"
+
 export function DimmedStaticPreview() {
   return (
     <div className="umc-example" style={{ gap: "8px", alignItems: "center" }}>
@@ -55,5 +58,30 @@ export function DimmedIntensities() {
         />
       )}
     </div>
+  )
+}
+
+const DIMMED_INTENSITIES = {
+  Weak: "weak",
+  Medium: "medium",
+  Strong: "strong",
+} as const
+
+export function DimmedAllVariants() {
+  return (
+    <VariantGrid
+      set="dimmed"
+      rows={[]}
+      columns={["Intensity"]}
+      order={{ Intensity: ["Weak", "Medium", "Strong"] }}
+      render={(variant) => (
+        <div className="relative h-20 w-20 overflow-hidden rounded-lg bg-[var(--umc-color-fill-neutral-default)]">
+          <Dimmed
+            intensity={lookup(DIMMED_INTENSITIES, variant, "Intensity")}
+            className="absolute inset-0"
+          />
+        </div>
+      )}
+    />
   )
 }

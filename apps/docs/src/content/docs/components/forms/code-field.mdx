@@ -4,6 +4,7 @@ description: 한 칸에 한 글자씩 받는 코드 입력 필드입니다.
 ---
 
 import {
+  CodeFieldAllVariants,
   CodeFieldDefault,
   CodeFieldStates,
   CodeFieldVerify,
@@ -33,6 +34,12 @@ import { CodeField } from "@umc-product/react"
 ## 상태
 
 <CodeFieldStates client:visible />
+
+## 모든 변형
+
+피그마 `Input Box/Code Input/ Cell` 6개는 한 칸짜리(`length={1}`)로, `Text Field/ Code Input` 2개는 여섯 칸으로 그렸습니다. 칸에 마우스를 올리면 피그마 변형 이름이 보입니다. Hover, Focus, Typing처럼 마우스나 키보드가 있어야 보이는 상태는 문서에서 켜 둔 모습입니다.
+
+<CodeFieldAllVariants client:visible />
 
 ## props
 
