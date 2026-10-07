@@ -1,0 +1,17 @@
+{
+  "component": "ScrollFog",
+  "figmaSection": "3325:62505",
+  "page": "/components/overlay/scroll-fog/",
+  "nodes": [
+    {
+      "specId": "scroll-fog-right",
+      "node": "2596:23214",
+      "variant": "Scroll Fog",
+      "expected": {
+        "position": "absolute",
+        "pointer-events": "none",
+        "background-image~": "rgba(0, 0, 0, 0) 0%, rgb(255, 255, 255) 90.865%"
+      }
+    }
+  ]
+}

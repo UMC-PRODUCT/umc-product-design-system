@@ -1,0 +1,36 @@
+@layer components {
+  .umc-dimmed {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+    opacity: 1;
+    transition: opacity var(--umc-motion-duration);
+    z-index: var(--umc-z-dimmed);
+  }
+
+  .umc-dimmed[data-starting-style],
+  .umc-dimmed[data-ending-style] {
+    opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .umc-dimmed {
+      transition: none;
+    }
+  }
+
+  .umc-dimmed[data-intensity="weak"] {
+    background-color: var(--umc-color-dimmed-weak);
+  }
+
+  .umc-dimmed[data-intensity="medium"] {
+    background-color: var(--umc-color-dimmed-medium);
+  }
+
+  .umc-dimmed[data-intensity="strong"] {
+    background-color: var(--umc-color-dimmed-strong);
+  }
+}

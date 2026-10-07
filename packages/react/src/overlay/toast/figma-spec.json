@@ -1,0 +1,46 @@
+{
+  "component": "Toast",
+  "figmaSection": "2621:33488",
+  "page": "/components/overlay/toast/",
+  "nodes": [
+    {
+      "specId": "toast-primary-default",
+      "node": "2621:33495",
+      "variant": "Type=Primary, Leading Acc=False, Text Button=False",
+      "target": ".umc-toast",
+      "expected": {
+        "background-color": "#b3e5e1",
+        "color": "#015a54",
+        "padding-top": "12px",
+        "padding-bottom": "12px",
+        "padding-left": "14px",
+        "padding-right": "16px",
+        "border-top-left-radius": "14px",
+        "min-height": "48px",
+        "width": "400px",
+        "box-shadow~": "rgba(64, 68, 67, 0.16) 0px 4px 16px 0px"
+      },
+      "figmaDiffers": {
+        "padding-left": "피그마 아이콘 없는 Primary 변형은 padding-left 16px이나 구현에서 아이콘 유무 공통 14px로 통일했다"
+      }
+    },
+    {
+      "specId": "toast-error-default",
+      "node": "2621:33516",
+      "variant": "Type=Error, Leading Acc=True, Text Button=False",
+      "target": ".umc-toast",
+      "expected": {
+        "background-color": "#ffe7e5",
+        "color": "#a60303",
+        "padding-top": "12px",
+        "padding-bottom": "12px",
+        "padding-left": "14px",
+        "padding-right": "16px",
+        "border-top-left-radius": "14px"
+      },
+      "figmaDiffers": {
+        "background-color": "피그마 Error 변형은 #fed7d7(color-error-200)이나 3기 토큰에 error-200 없음. --umc-color-fill-error-medium = --umc-color-red-100 = #ffe7e5로 대응했다"
+      }
+    }
+  ]
+}

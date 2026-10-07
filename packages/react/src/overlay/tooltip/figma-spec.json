@@ -1,0 +1,49 @@
+{
+  "component": "Tooltip",
+  "figmaSection": "2621:36221",
+  "page": "/components/overlay/tooltip/",
+  "nodes": [
+    {
+      "specId": "tooltip-dark-md-default",
+      "node": "2621:36222",
+      "variant": "Side=Top, Appearance=Dark, Size=Md, Show Label=False",
+      "target": ".umc-tooltip__content",
+      "expected": {
+        "background-color": "#606262",
+        "color": "#ffffff",
+        "padding-top": "8px",
+        "padding-bottom": "8px",
+        "padding-left": "12px",
+        "padding-right": "12px",
+        "border-top-left-radius": "6px"
+      }
+    },
+    {
+      "specId": "tooltip-light-md-default",
+      "node": "2621:36233",
+      "variant": "Side=Top, Appearance=Light, Size=Md, Show Label=False",
+      "target": ".umc-tooltip__content",
+      "expected": {
+        "background-color": "#ffffff",
+        "color": "#282a2a",
+        "padding-top": "8px",
+        "padding-bottom": "8px",
+        "padding-left": "12px",
+        "padding-right": "12px",
+        "border-top-left-radius": "6px"
+      }
+    },
+    {
+      "specId": "tooltip-light-md-label",
+      "node": "2621:36239",
+      "variant": "Side=Top, Appearance=Light, Size=Md, Show Label=True",
+      "target": ".umc-tooltip__label",
+      "expected": {
+        "color": "#0b6b64"
+      },
+      "figmaDiffers": {
+        "color": "피그마 --color-teal-600 = #0b6b64이나 3기 --umc-color-teal-600 = #02746c로 값이 다름. 역할 변수 --umc-tooltip-title-color: #0b6b64를 선언해 피그마 값을 그대로 사용했다. 디자인 팀에 토큰 일치 확인 요청 필요"
+      }
+    }
+  ]
+}

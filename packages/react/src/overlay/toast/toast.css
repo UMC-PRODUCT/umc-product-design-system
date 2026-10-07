@@ -1,0 +1,143 @@
+@layer components {
+  .umc-toast-viewport {
+    --umc-toast-viewport-offset-top: 112px;
+    --umc-toast-viewport-offset-bottom: 86px;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: var(--umc-z-toast);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .umc-toast-viewport[data-placement="top"] {
+    top: var(--umc-toast-viewport-offset-top);
+    bottom: auto;
+  }
+
+  .umc-toast-viewport[data-placement="bottom"] {
+    bottom: var(--umc-toast-viewport-offset-bottom);
+    top: auto;
+    flex-direction: column-reverse;
+  }
+
+  .umc-toast {
+    --umc-toast-neutral-bg: rgba(63, 65, 65, 0.8);
+    --umc-toast-error-bg: var(--umc-color-fill-error-medium);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 400px;
+    max-width: calc(100vw - 32px);
+    min-height: 48px;
+    padding-top: var(--umc-spacing-padding-12);
+    padding-bottom: var(--umc-spacing-padding-12);
+    padding-left: 14px;
+    padding-right: var(--umc-spacing-padding-16);
+    margin: 0;
+    border: 0;
+    border-radius: var(--umc-radius-toast);
+    box-shadow: var(--umc-shadow-drop-neutral-1);
+    font-family: var(--umc-typography-label-1-medium-font-family);
+    font-size: var(--umc-typography-label-1-medium-font-size);
+    font-weight: var(--umc-typography-label-1-medium-font-weight);
+    line-height: var(--umc-typography-label-1-medium-line-height);
+    letter-spacing: var(--umc-typography-label-1-medium-letter-spacing);
+    opacity: 1;
+    transition: opacity var(--umc-motion-duration);
+  }
+
+  .umc-toast[data-starting-style],
+  .umc-toast[data-ending-style] {
+    opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .umc-toast {
+      transition: none;
+    }
+  }
+
+  .umc-toast[data-color="primary"] {
+    --umc-toast-bg: var(--umc-color-fill-primary-strong);
+    --umc-toast-fg: var(--umc-color-teal-700);
+  }
+
+  .umc-toast[data-color="neutral"] {
+    --umc-toast-bg: var(--umc-toast-neutral-bg);
+    --umc-toast-fg: var(--umc-color-text-inverse);
+  }
+
+  .umc-toast[data-color="error"] {
+    --umc-toast-bg: var(--umc-toast-error-bg);
+    --umc-toast-fg: var(--umc-color-red-700);
+  }
+
+  .umc-toast {
+    background-color: var(--umc-toast-bg);
+    color: var(--umc-toast-fg);
+  }
+
+  .umc-toast__main {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .umc-toast__icon {
+    display: inline-flex;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+  }
+
+  .umc-toast__message {
+    flex: 1;
+    margin: 0;
+  }
+
+  .umc-toast__action {
+    flex-shrink: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--umc-color-teal-500);
+    font-family: var(--umc-typography-label-1-medium-font-family);
+    font-size: var(--umc-typography-label-1-medium-font-size);
+    font-weight: var(--umc-typography-label-1-medium-font-weight);
+    line-height: var(--umc-typography-label-1-medium-line-height);
+    letter-spacing: var(--umc-typography-label-1-medium-letter-spacing);
+    text-decoration: underline;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .umc-toast__action:focus-visible {
+    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline-offset: 2px;
+  }
+
+  .umc-toast__close {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .umc-toast__close:focus-visible {
+    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline-offset: 2px;
+  }
+}

@@ -1,0 +1,47 @@
+---
+title: ScrollFog
+description: 스크롤 가능한 영역 끝에 그라디언트로 내용이 더 있음을 암시하는 안개 효과입니다.
+---
+
+import {
+  ScrollFogHorizontal,
+  ScrollFogVertical,
+} from "../../../../components/react/overlay/ScrollFogExamples.tsx"
+
+`ScrollFog`는 `position: absolute; inset: 0`으로 부모 요소를 기준으로 덮습니다. 부모에 `position: relative`가 필요합니다. `pointer-events: none`이어서 클릭과 스크롤을 막지 않습니다.
+
+```tsx
+import { ScrollFog } from "@umc-product/react"
+
+;<div style={{ position: "relative", overflow: "hidden" }}>
+  <ul style={{ overflowX: "auto" }}>
+    {items.map((item) => (
+      <li key={item.id}>{item.name}</li>
+    ))}
+  </ul>
+  <ScrollFog side="right" style={{ width: "80px" }} />
+</div>
+```
+
+## 가로 스크롤
+
+양쪽 끝에 각각 두면 양방향 안개 효과를 만들 수 있습니다.
+
+<ScrollFogHorizontal />
+
+## 세로 스크롤
+
+<ScrollFogVertical />
+
+## props
+
+| prop   | 타입                                     | 기본값    | 설명                           |
+| ------ | ---------------------------------------- | --------- | ------------------------------ |
+| `side` | `"top" \| "bottom" \| "left" \| "right"` | `"right"` | 그라디언트 방향                |
+| 나머지 | `ComponentPropsWithRef<"div">`           |           | `style`, `className`, `ref` 등 |
+
+그라디언트 진행 방향은 `side`와 반대입니다. `side="right"`이면 왼쪽(투명)에서 오른쪽(`--umc-color-background-default`)으로 진행합니다.
+
+## 접근성
+
+`aria-hidden="true"`가 고정으로 달려 있어 스크린 리더에서 무시합니다.
