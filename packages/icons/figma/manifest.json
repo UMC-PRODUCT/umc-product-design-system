@@ -7,7 +7,7 @@
       "nodeId": "3060:94171",
       "kind": "icon",
       "componentName": "Icon/Add",
-      "variantName": "Weight=Bold",
+      "variantName": "Weight=Fill",
       "files": [
         {
           "file": "svg/3060-94171.svg",
@@ -670,7 +670,7 @@
       "nodeId": "3095:97143",
       "kind": "icon",
       "componentName": "Icon/Eye_invisable",
-      "variantName": "Property 1=Regular",
+      "variantName": "Weight=Regular",
       "files": [
         {
           "file": "svg/3095-97143.svg",
@@ -683,7 +683,7 @@
       "nodeId": "3095:97142",
       "kind": "icon",
       "componentName": "Icon/Eye_visable",
-      "variantName": "Property 1=Fill",
+      "variantName": "Weight=Fill",
       "files": [
         {
           "file": "svg/3095-97142.svg",
@@ -1034,7 +1034,7 @@
       "nodeId": "2505:17245",
       "kind": "icon",
       "componentName": "Icon/More_horiz",
-      "variantName": "Weight=Bold",
+      "variantName": "Weight=Fill",
       "files": [
         {
           "file": "svg/2505-17245.svg",
@@ -1190,7 +1190,7 @@
       "nodeId": "3060:96620",
       "kind": "icon",
       "componentName": "Icon/Paperclip",
-      "variantName": "Weight=Weight4",
+      "variantName": "Weight=Thin",
       "files": [
         {
           "file": "svg/3060-96620.svg",
@@ -1346,7 +1346,7 @@
       "nodeId": "3331:44045",
       "kind": "icon",
       "componentName": "Icon/Search",
-      "variantName": "Weight=Weight2",
+      "variantName": "Regular=Weight",
       "files": [
         {
           "file": "svg/3331-44045.svg",
@@ -1359,7 +1359,7 @@
       "nodeId": "3060:94086",
       "kind": "icon",
       "componentName": "Icon/Setting",
-      "variantName": "Size=24 icon, Weight=Fill",
+      "variantName": "Weight=Fill",
       "files": [
         {
           "file": "svg/3060-94086.svg",
@@ -1372,7 +1372,7 @@
       "nodeId": "2505:16951",
       "kind": "icon",
       "componentName": "Icon/Setting",
-      "variantName": "Size=24 icon, Weight=Regular",
+      "variantName": "Weight=Regular",
       "files": [
         {
           "file": "svg/2505-16951.svg",
@@ -1735,7 +1735,7 @@
     {
       "nodeId": "3060:93844",
       "kind": "icon",
-      "componentName": "Icon_menu",
+      "componentName": "Icon/Menu",
       "variantName": "Weight=Fill",
       "files": [
         {
@@ -1748,7 +1748,7 @@
     {
       "nodeId": "3060:93842",
       "kind": "icon",
-      "componentName": "Icon_menu",
+      "componentName": "Icon/Menu",
       "variantName": "Weight=Regular",
       "files": [
         {
@@ -1761,7 +1761,7 @@
     {
       "nodeId": "3060:93840",
       "kind": "icon",
-      "componentName": "Icon_menu",
+      "componentName": "Icon/Menu",
       "variantName": "Weight=Thin",
       "files": [
         {

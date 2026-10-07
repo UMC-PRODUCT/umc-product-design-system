@@ -9,26 +9,22 @@
 
 ## 디자인 팀 확인 요청
 
-1. `Icon/More_horiz`, `Icon/Add`의 굵기가 `Bold`로 적혀 있습니다. 모양이 Fill과 같아서 코드에서는 fill로 읽었습니다. 이름을 Fill로 바꿔 주실 수 있나요?
-2. `Icon/Search`는 변형이 `Weight2` 하나뿐이고 `Icon/Paperclip`에는 `Weight4`가 있습니다. 임시 이름이라 코드에서는 각각 regular, thin으로 읽었습니다. 맞는지, 빠진 굵기를 추가할지 알려 주세요.
-3. `Icon/Eye_visable`, `Icon/Eye_invisable`은 굵기 축 이름이 `Property 1`이고 철자가 visable입니다. Weight 축과 visible로 바꿔 주세요.
-4. Bold, Italic, Strikethrough, Underline, Time, warning의 Fill 변형과 ThumbsUp 전체는 프레임이 23.85×25이고, Link는 24×25, Location Fill은 19×24.51, Person Regular와 Fill은 22×24입니다. 코드에서는 24px 정사각형 안에 비율을 지켜 줄여 넣었습니다. 24×24로 맞춰 주실 수 있나요?
-5. `Icon/ThumbsUp`에 보이지 않는 `Format italic` 요소가 남아 있습니다.
-6. Notification, Notification-Off의 빨간 점(`#dc3d3d`)과 흰 테두리, Time과 warning의 Regular와 Thin, Check_circle Fill, ThumbsUp의 흰 부분은 아이콘 색을 바꿔도 고정입니다. 흰 배경이 아닌 곳에서는 흰 부분이 드러나므로, 뚫린 모양으로 그릴지 알려 주세요.
-7. 선으로 그린 아이콘과 면으로 그린 아이콘이 섞여 있습니다. 24px에서는 같아 보이지만, 인스턴스를 줄이면 선 아이콘은 두께가 그대로이고 면 아이콘은 같이 줄어듭니다(예: Option Button 20px의 `Icon/Check`는 선 두께 2). 패키지 아이콘은 모두 크기에 비례해 줄어듭니다. 모두 면(Outline stroke)으로 맞춰 주실 수 있나요?
-8. `Pictogram/Person`은 PNG 마스크라 코드에서 뺐습니다. SVG로 받을 수 있나요?
-9. `Pictogram/School`의 색 `#0b6b64`는 3기 색 변수에 없습니다. 다른 픽토그램처럼 Teal-600(`#02746c`)이 맞는지 알려 주세요. 지금은 피그마 값을 기본색으로 둡니다.
-10. `Pictogram/Under-construction`의 변형 이름이 `Varient`입니다. Dark 변형의 `#b3e6e1`은 Teal-200(`#b3e5e1`)과 1만큼 달라 피그마 값 그대로 두었습니다.
-11. `Icon_menu`처럼 `/` 대신 `_`로 나눈 이름 6개와 소문자로 시작하는 `Icon/home`이 있습니다. 이름을 맞춰 주실 수 있나요?
+1. `Icon/Search`의 변형 이름이 `Regular=Weight`로 속성과 값이 뒤집혀 있습니다. 코드에서는 `Weight=Regular`로 읽었습니다. 이름을 바로잡아 주시고, Thin과 Fill 굵기를 추가할지도 알려 주세요.
+2. `Icon/Eye_visable`, `Icon/Eye_invisable`의 철자가 visable입니다. visible로 바꿔 주실 수 있나요?
+3. Bold, Italic, Strikethrough, Underline, Time, warning의 Fill 변형과 ThumbsUp 전체는 프레임이 23.85×25이고, Link는 24×25, Location Fill은 19×24.51, Person Regular와 Fill은 22×24입니다. 코드에서는 24px 정사각형 안에 비율을 지켜 줄여 넣었습니다. 24×24로 맞춰 주실 수 있나요?
+4. `Icon/ThumbsUp`에 보이지 않는 `Format italic` 요소가 남아 있습니다.
+5. Notification, Notification-Off의 빨간 점(`#dc3d3d`)과 흰 테두리, Time과 warning의 Regular와 Thin, Check_circle Fill, ThumbsUp의 흰 부분은 아이콘 색을 바꿔도 고정입니다. 흰 배경이 아닌 곳에서는 흰 부분이 드러나므로, 뚫린 모양으로 그릴지 알려 주세요.
+6. 선으로 그린 아이콘과 면으로 그린 아이콘이 섞여 있습니다. 24px에서는 같아 보이지만, 인스턴스를 줄이면 선 아이콘은 두께가 그대로이고 면 아이콘은 같이 줄어듭니다(예: Option Button 20px의 `Icon/Check`는 선 두께 2). 패키지 아이콘은 모두 크기에 비례해 줄어듭니다. 모두 면(Outline stroke)으로 맞춰 주실 수 있나요?
+7. `Pictogram/Person`은 PNG 마스크라 코드에서 뺐습니다. 크기 변형(30px, 36px, 24px)이 생겼지만 세 변형 모두 아직 PNG입니다. SVG로 받을 수 있나요?
+8. `Pictogram/School`의 색 `#0b6b64`는 3기 색 변수에 없습니다. 다른 픽토그램처럼 Teal-600(`#02746c`)이 맞는지 알려 주세요. 지금은 피그마 값을 기본색으로 둡니다.
+9. `Pictogram/Under-construction`의 변형 이름이 `Varient`입니다. Dark 변형의 `#b3e6e1`은 Teal-200(`#b3e5e1`)과 1만큼 달라 피그마 값 그대로 두었습니다.
+10. `Icon_warning`처럼 `/` 대신 `_`로 나눈 이름 5개와 소문자로 시작하는 `Icon/home`이 있습니다. 이름을 맞춰 주실 수 있나요?
 
 ## 확인 대기 굵기 대응
 
 | 피그마 컴포넌트 | 피그마 변형 | 코드 굵기 | 이유 |
 | --- | --- | --- | --- |
-| `Icon/Add` | `Weight=Bold` | fill | More_horiz, Add만 Bold라고 적혀 있고 모양은 Fill과 같다 |
-| `Icon/More_horiz` | `Weight=Bold` | fill | More_horiz, Add만 Bold라고 적혀 있고 모양은 Fill과 같다 |
-| `Icon/Paperclip` | `Weight=Weight4` | thin | 임시 이름. Paperclip의 Regular, Fill과 함께 있는 가는 변형이다 |
-| `Icon/Search` | `Weight=Weight2` | regular | 임시 이름. Search의 유일한 변형이다 |
+| `Icon/Search` | `Regular=Weight` | regular | Search의 유일한 변형 이름이 속성과 값이 뒤집혀 있다. Weight=Regular로 읽는다 |
 
 ## 제외한 컴포넌트
 
@@ -44,7 +40,7 @@
 | --- | --- | --- | --- |
 | `Icon/Chevron_Left` Weight=Thin(3060:94610)<br>`Icon/Chevron_Left` Weight=Regular(3060:94614)<br>`Icon/Chevron_Left` Weight=Fill(3060:94618)<br>`Icon/Chevron_Right` Weight=Thin(3060:94199)<br>`Icon/Chevron_Right` Weight=Regular(3060:94203)<br>`Icon/Chevron_Right` Weight=Fill(3060:94207) | 0 0 24 24 | 4, 0 | Chevron_Left, Chevron_Right는 24×24 프레임이 아니라 안쪽 16×24 도형만 내보낸다. 프레임 안 위치로 되돌린다 |
 | `Icon/Person` Weight=Regular(2505:16490)<br>`Icon/Person` Weight=Fill(3060:93819) | 0 0 22 24 | 1, 1 | Person Regular, Fill은 22×24 프레임이 아니라 안쪽 20×22 그룹만 내보낸다. 프레임 크기는 피그마 값 그대로 둔다 |
-| `Icon/Setting` Size=24 icon, Weight=Regular(2505:16951)<br>`Icon/Setting` Size=24 icon, Weight=Fill(3060:94086) | 0 0 24 24 | 1.9997, 2.0004 | Setting은 24×24 프레임이 아니라 안쪽 20×20 그룹만 내보낸다. 프레임 안 위치로 되돌린다 |
+| `Icon/Setting` Weight=Regular(2505:16951)<br>`Icon/Setting` Weight=Fill(3060:94086) | 0 0 24 24 | 1.9997, 2.0004 | Setting은 24×24 프레임이 아니라 안쪽 20×20 그룹만 내보낸다. 프레임 안 위치로 되돌린다 |
 | `Pictogram/Under-construction` Varient=Light(3156:42932)<br>`Pictogram/Under-construction` Varient=Dark(3156:42994) | 0 0 30 30 | 0.6006, 0.8994 | Under-construction은 30×30 프레임이 아니라 안쪽 28.8×27 그룹만 내보낸다. 프레임 안 위치로 되돌린다 |
 
 ## viewBox 예외
@@ -111,7 +107,7 @@
 | `Icon_Location` | `LocationIcon` | thin(3060:96478), regular(3060:96430), fill(3060:96435) |
 | `Icon/Lock` | `LockIcon` | fill(3095:97336) |
 | `Icon/Megaphone` | `MegaphoneIcon` | fill(3095:97475) |
-| `Icon_menu` | `MenuIcon` | thin(3060:93840), regular(3060:93842), fill(3060:93844) |
+| `Icon/Menu` | `MenuIcon` | thin(3060:93840), regular(3060:93842), fill(3060:93844) |
 | `Icon/More_horiz` | `MoreHorizIcon` | thin(3060:95468), regular(3060:95473), fill(2505:17245) |
 | `Icon/More_Vertical` | `MoreVerticalIcon` | thin(3060:95443), regular(3060:95439), fill(2505:17248) |
 | `Icon/Notification` | `NotificationIcon` | regular(2505:16945), fill(3060:93949) |

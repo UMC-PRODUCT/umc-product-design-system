@@ -189,7 +189,7 @@ export const iconCatalog = [
   { name: "LocationIcon", figmaName: "Icon_Location", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: LocationIcon },
   { name: "LockIcon", figmaName: "Icon/Lock", defaultWeight: "fill", weights: ["fill"], component: LockIcon },
   { name: "MegaphoneIcon", figmaName: "Icon/Megaphone", defaultWeight: "fill", weights: ["fill"], component: MegaphoneIcon },
-  { name: "MenuIcon", figmaName: "Icon_menu", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: MenuIcon },
+  { name: "MenuIcon", figmaName: "Icon/Menu", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: MenuIcon },
   { name: "MoreHorizIcon", figmaName: "Icon/More_horiz", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: MoreHorizIcon },
   { name: "MoreVerticalIcon", figmaName: "Icon/More_Vertical", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: MoreVerticalIcon },
   { name: "NotificationIcon", figmaName: "Icon/Notification", defaultWeight: "regular", weights: ["regular", "fill"], component: NotificationIcon },

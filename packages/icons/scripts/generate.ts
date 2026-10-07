@@ -23,6 +23,7 @@ import {
   PICTOGRAM_PRIMARY_COLORS,
   PICTOGRAM_VIEWBOX,
   PLACEMENTS,
+  VARIANT_NAME_FIXES,
   VIEWBOX_EXCEPTIONS,
   WEIGHT_PROPERTY_NAMES,
   WEIGHT_RULES,
@@ -140,14 +141,18 @@ const toKebab = (componentName: string): string =>
 export const resolveWeight = (
   variantName: string,
 ): { weight: IconWeight; rule: WeightRule } => {
-  const variant = parseVariant(variantName)
+  const fix = VARIANT_NAME_FIXES[variantName]
+  const variant = parseVariant(fix?.variantName ?? variantName)
   const value = WEIGHT_PROPERTY_NAMES.map((name) => variant.get(name)).find(
     (found) => found !== undefined,
   )
-  const rule = value === undefined ? undefined : WEIGHT_RULES[value]
-  if (!rule) {
+  const weightRule = value === undefined ? undefined : WEIGHT_RULES[value]
+  if (!weightRule) {
     throw new Error(`굵기 규칙이 없는 변형입니다: "${variantName}"`)
   }
+  const rule = fix
+    ? { weight: weightRule.weight, status: fix.status, reason: fix.reason }
+    : weightRule
   return { weight: rule.weight, rule }
 }
 
@@ -413,6 +418,17 @@ export const buildComponents = (
   if (staleExclusions.length > 0) {
     throw new Error(
       `원문에 없는 제외 규칙입니다: ${staleExclusions.join(", ")}`,
+    )
+  }
+  const presentVariantNames = new Set(
+    manifest.sources.map((source) => source.variantName),
+  )
+  const staleFixes = Object.keys(VARIANT_NAME_FIXES).filter(
+    (variantName) => !presentVariantNames.has(variantName),
+  )
+  if (staleFixes.length > 0) {
+    throw new Error(
+      `원문에 없는 변형 이름 규칙입니다: ${staleFixes.join(", ")}`,
     )
   }
   const ruleNodeIds = [...PLACEMENTS, ...VIEWBOX_EXCEPTIONS].flatMap(

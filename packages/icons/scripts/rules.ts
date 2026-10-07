@@ -12,6 +12,12 @@ export type WeightRule = {
   reason: string
 }
 
+export type VariantNameFix = {
+  variantName: string
+  status: RuleStatus
+  reason: string
+}
+
 export type Exclusion = {
   componentName: string
   reason: string
@@ -41,7 +47,7 @@ export const ICON_WEIGHT_ORDER: readonly IconWeight[] = [
 ]
 export const PICTOGRAM_MODE_ORDER: readonly PictogramMode[] = ["light", "dark"]
 
-export const WEIGHT_PROPERTY_NAMES: readonly string[] = ["Weight", "Property 1"]
+export const WEIGHT_PROPERTY_NAMES: readonly string[] = ["Weight"]
 export const MODE_PROPERTY_NAMES: readonly string[] = [
   "Varient",
   "Variant",
@@ -56,20 +62,14 @@ export const WEIGHT_RULES: Readonly<Record<string, WeightRule>> = {
     reason: "피그마 Weight=Regular",
   },
   Fill: { weight: "fill", status: "accepted", reason: "피그마 Weight=Fill" },
-  Bold: {
-    weight: "fill",
+}
+
+export const VARIANT_NAME_FIXES: Readonly<Record<string, VariantNameFix>> = {
+  "Regular=Weight": {
+    variantName: "Weight=Regular",
     status: "pending",
-    reason: "More_horiz, Add만 Bold라고 적혀 있고 모양은 Fill과 같다",
-  },
-  Weight2: {
-    weight: "regular",
-    status: "pending",
-    reason: "임시 이름. Search의 유일한 변형이다",
-  },
-  Weight4: {
-    weight: "thin",
-    status: "pending",
-    reason: "임시 이름. Paperclip의 Regular, Fill과 함께 있는 가는 변형이다",
+    reason:
+      "Search의 유일한 변형 이름이 속성과 값이 뒤집혀 있다. Weight=Regular로 읽는다",
   },
 }
 
@@ -205,15 +205,14 @@ export const mapPictogramColor = (color: string): ColorReplacement => {
 }
 
 export const OPEN_QUESTIONS: readonly string[] = [
-  "`Icon/More_horiz`, `Icon/Add`의 굵기가 `Bold`로 적혀 있습니다. 모양이 Fill과 같아서 코드에서는 fill로 읽었습니다. 이름을 Fill로 바꿔 주실 수 있나요?",
-  "`Icon/Search`는 변형이 `Weight2` 하나뿐이고 `Icon/Paperclip`에는 `Weight4`가 있습니다. 임시 이름이라 코드에서는 각각 regular, thin으로 읽었습니다. 맞는지, 빠진 굵기를 추가할지 알려 주세요.",
-  "`Icon/Eye_visable`, `Icon/Eye_invisable`은 굵기 축 이름이 `Property 1`이고 철자가 visable입니다. Weight 축과 visible로 바꿔 주세요.",
+  "`Icon/Search`의 변형 이름이 `Regular=Weight`로 속성과 값이 뒤집혀 있습니다. 코드에서는 `Weight=Regular`로 읽었습니다. 이름을 바로잡아 주시고, Thin과 Fill 굵기를 추가할지도 알려 주세요.",
+  "`Icon/Eye_visable`, `Icon/Eye_invisable`의 철자가 visable입니다. visible로 바꿔 주실 수 있나요?",
   "Bold, Italic, Strikethrough, Underline, Time, warning의 Fill 변형과 ThumbsUp 전체는 프레임이 23.85×25이고, Link는 24×25, Location Fill은 19×24.51, Person Regular와 Fill은 22×24입니다. 코드에서는 24px 정사각형 안에 비율을 지켜 줄여 넣었습니다. 24×24로 맞춰 주실 수 있나요?",
   "`Icon/ThumbsUp`에 보이지 않는 `Format italic` 요소가 남아 있습니다.",
   "Notification, Notification-Off의 빨간 점(`#dc3d3d`)과 흰 테두리, Time과 warning의 Regular와 Thin, Check_circle Fill, ThumbsUp의 흰 부분은 아이콘 색을 바꿔도 고정입니다. 흰 배경이 아닌 곳에서는 흰 부분이 드러나므로, 뚫린 모양으로 그릴지 알려 주세요.",
   "선으로 그린 아이콘과 면으로 그린 아이콘이 섞여 있습니다. 24px에서는 같아 보이지만, 인스턴스를 줄이면 선 아이콘은 두께가 그대로이고 면 아이콘은 같이 줄어듭니다(예: Option Button 20px의 `Icon/Check`는 선 두께 2). 패키지 아이콘은 모두 크기에 비례해 줄어듭니다. 모두 면(Outline stroke)으로 맞춰 주실 수 있나요?",
-  "`Pictogram/Person`은 PNG 마스크라 코드에서 뺐습니다. SVG로 받을 수 있나요?",
+  "`Pictogram/Person`은 PNG 마스크라 코드에서 뺐습니다. 크기 변형(30px, 36px, 24px)이 생겼지만 세 변형 모두 아직 PNG입니다. SVG로 받을 수 있나요?",
   "`Pictogram/School`의 색 `#0b6b64`는 3기 색 변수에 없습니다. 다른 픽토그램처럼 Teal-600(`#02746c`)이 맞는지 알려 주세요. 지금은 피그마 값을 기본색으로 둡니다.",
   "`Pictogram/Under-construction`의 변형 이름이 `Varient`입니다. Dark 변형의 `#b3e6e1`은 Teal-200(`#b3e5e1`)과 1만큼 달라 피그마 값 그대로 두었습니다.",
-  "`Icon_menu`처럼 `/` 대신 `_`로 나눈 이름 6개와 소문자로 시작하는 `Icon/home`이 있습니다. 이름을 맞춰 주실 수 있나요?",
+  "`Icon_warning`처럼 `/` 대신 `_`로 나눈 이름 5개와 소문자로 시작하는 `Icon/home`이 있습니다. 이름을 맞춰 주실 수 있나요?",
 ]
