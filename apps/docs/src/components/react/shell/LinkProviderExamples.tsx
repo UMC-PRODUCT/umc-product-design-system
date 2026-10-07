@@ -1,7 +1,4 @@
-import {
-  LinkProvider,
-  type LinkComponentProps,
-} from "@umc-product/react/shell"
+import { LinkProvider, type LinkComponentProps } from "@umc-product/react"
 
 function RouterLink({ href, children, ...rest }: LinkComponentProps) {
   return (
@@ -11,13 +8,7 @@ function RouterLink({ href, children, ...rest }: LinkComponentProps) {
   )
 }
 
-function ConsumerLink({
-  href,
-  label,
-}: {
-  href: string
-  label: string
-}) {
+function ConsumerLink({ href, label }: { href: string; label: string }) {
   return (
     <a href={href} className="umc-example-link">
       {label}

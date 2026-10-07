@@ -54,7 +54,10 @@ export function ContextSwitcher<V extends string = string>({
           <Menu.Popup className="umc-context-switcher__popup">
             <Menu.RadioGroup
               value={value}
-              onValueChange={(v) => onValueChange(v as V)}
+              onValueChange={(next) => {
+                const matched = options.find((opt) => opt.value === next)
+                if (matched) onValueChange(matched.value)
+              }}
             >
               {options.map((opt) => (
                 <Menu.RadioItem

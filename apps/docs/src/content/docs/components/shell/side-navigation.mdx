@@ -8,7 +8,7 @@ import { SideNavigationDefault } from "../../../../components/react/shell/SideNa
 피그마 `SideNavigation` 컴포넌트를 구현했습니다. 단일 링크와 펼침/접힘 그룹 두 가지 항목 유형을 지원합니다. 너비는 `--umc-layout-sidebar-width(13.5rem)`으로 고정됩니다.
 
 ```tsx
-import { SideNavigation, type SideNavigationItem } from "@umc-product/react/shell"
+import { SideNavigation, type SideNavigationItem } from "@umc-product/react"
 
 const items: SideNavigationItem[] = [
   { label: "대시보드", href: "/dashboard" },
@@ -23,11 +23,7 @@ const items: SideNavigationItem[] = [
 
 export function AppSidebar() {
   return (
-    <SideNavigation
-      title="관리 메뉴"
-      items={items}
-      currentPath={pathname}
-    />
+    <SideNavigation title="관리 메뉴" items={items} currentPath={pathname} />
   )
 }
 ```
@@ -40,20 +36,20 @@ export function AppSidebar() {
 
 ## props
 
-| prop         | 타입                  | 기본값      | 설명                           |
-| ------------ | --------------------- | ----------- | ------------------------------ |
-| `items`      | `SideNavigationItem[]` | —          | 내비게이션 항목 목록           |
-| `title`      | `string`              | `undefined` | 사이드바 제목 (섹션 헤더)      |
-| `currentPath`| `string`              | `undefined` | 현재 경로                      |
-| `slot`       | `ReactNode`           | `undefined` | 하단 추가 콘텐츠               |
-| `aria-label` | `string`              | `undefined` | nav 요소 접근성 레이블         |
-| `className`  | `string`              | `undefined` | 루트 요소 추가 클래스          |
+| prop          | 타입                   | 기본값      | 설명                      |
+| ------------- | ---------------------- | ----------- | ------------------------- |
+| `items`       | `SideNavigationItem[]` | —           | 내비게이션 항목 목록      |
+| `title`       | `string`               | `undefined` | 사이드바 제목 (섹션 헤더) |
+| `currentPath` | `string`               | `undefined` | 현재 경로                 |
+| `slot`        | `ReactNode`            | `undefined` | 하단 추가 콘텐츠          |
+| `aria-label`  | `string`               | `undefined` | nav 요소 접근성 레이블    |
+| `className`   | `string`               | `undefined` | 루트 요소 추가 클래스     |
 
 ### SideNavigationItem
 
 ```ts
 type SideNavigationItem =
-  | SideNavigationLeaf                       // 단일 링크
+  | SideNavigationLeaf // 단일 링크
   | { label: string; children: SideNavigationLeaf[] } // 그룹
 ```
 

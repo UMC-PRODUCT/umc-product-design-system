@@ -7,15 +7,17 @@
       "specId": "page-header-full",
       "node": "2809:63752",
       "variant": "Default (with breadcrumbs and description)",
+      "target": ".umc-page-header",
       "expected": {
         "padding-left": "12px",
-        "gap": "26px"
+        "row-gap": "26px"
       }
     },
     {
       "specId": "page-header-breadcrumb-item",
       "node": "2809:63770",
       "variant": "Breadcrumb Item Default",
+      "target": ".umc-page-header__breadcrumb-link",
       "expected": {
         "height": "22px",
         "color": "#adadad",
@@ -24,14 +26,15 @@
         "line-height": "21px",
         "letter-spacing": "0px"
       },
-      "figmaDiffers": {
-        "color": "피그마 마지막 항목도 #adadad. 현재 경로 항목에 시각적 구분을 위해 aria-current='page'만 추가. 디자이너가 색 구분을 원하면 --umc-color-text-neutral-default로 변경 필요"
+      "figmaNote": {
+        "color": "피그마 마지막 항목도 #adadad. aria-current='page'만 추가(시각 구분 없음). 색 구분을 원하면 --umc-color-text-neutral-default로 변경 필요."
       }
     },
     {
       "specId": "page-header-title",
       "node": "2809:63766",
       "variant": "Page Title",
+      "target": ".umc-page-header__title",
       "expected": {
         "color": "#0f1010",
         "font-size": "24px",
@@ -44,6 +47,7 @@
       "specId": "page-header-description",
       "node": "2809:63751",
       "variant": "Description",
+      "target": ".umc-page-header__description",
       "expected": {
         "color": "#606262",
         "font-size": "14px",
