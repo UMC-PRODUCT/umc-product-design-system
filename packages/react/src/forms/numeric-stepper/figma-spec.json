@@ -1,0 +1,30 @@
+{
+  "component": "NumericStepper",
+  "figmaSection": "2621:33540",
+  "page": "/components/forms/numeric-stepper/",
+  "nodes": [
+    {
+      "specId": "numeric-stepper-default",
+      "node": "2621:33540",
+      "variant": "Type=Numeric Stepper, State=Default",
+      "target": ".umc-numeric-stepper",
+      "expected": {
+        "height": "48px",
+        "border-top-left-radius": "14px",
+        "border-top-right-radius": "14px",
+        "border-bottom-left-radius": "14px",
+        "border-bottom-right-radius": "14px",
+        "background-color": "rgb(255, 255, 255)"
+      }
+    },
+    {
+      "specId": "numeric-stepper-btn",
+      "node": "2621:33558",
+      "variant": "Type=Stepper Button",
+      "expected": {
+        "width": "48px",
+        "height": "48px"
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "component": "CodeField",
+  "figmaSection": "2621:33470",
+  "page": "/components/forms/code-field/",
+  "nodes": [
+    {
+      "specId": "code-field-slot-default",
+      "node": "2621:33470",
+      "variant": "Type=OTP Slot, State=Default",
+      "expected": {
+        "height": "56px",
+        "border-top-left-radius": "14px",
+        "border-top-right-radius": "14px",
+        "border-bottom-left-radius": "14px",
+        "border-bottom-right-radius": "14px",
+        "background-color": "rgb(255, 255, 255)",
+        "text-align": "center"
+      }
+    },
+    {
+      "specId": "code-field-slot-invalid",
+      "node": "2621:33488",
+      "variant": "Type=OTP Slot, State=Error",
+      "expected": {
+        "background-color": "rgb(254, 242, 241)",
+        "color": "rgb(220, 61, 61)"
+      }
+    }
+  ]
+}
