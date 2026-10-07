@@ -1,0 +1,84 @@
+{
+  "component": "SideNavigation",
+  "figmaSection": "2929:72851",
+  "page": "/components/shell/side-navigation/",
+  "nodes": [
+    {
+      "specId": "side-navigation-default",
+      "node": "2929:72289",
+      "variant": "Type=Default",
+      "expected": {
+        "width": "216px",
+        "background-color": "#fbfcfc",
+        "border-right": "1px solid #e9ecec",
+        "padding-top": "16px",
+        "padding-bottom": "16px"
+      },
+      "figmaDiffers": {
+        "border-right": "피그마 var(--color-teal-gray-200)=#e9ecec. 토큰에 없는 값으로 #e9ecec를 컴포넌트 변수로 직접 사용. 디자이너 확인 필요"
+      }
+    },
+    {
+      "specId": "side-navigation-menu-item-default",
+      "node": "2281:6466",
+      "variant": "Menu Item Default",
+      "expected": {
+        "height": "48px",
+        "padding-left": "32px",
+        "padding-right": "16px",
+        "color": "#606262",
+        "font-size": "16px",
+        "font-weight": "600",
+        "line-height": "22.4px",
+        "letter-spacing": "-0.32px"
+      }
+    },
+    {
+      "specId": "side-navigation-menu-item-selected",
+      "node": "2281:6471",
+      "variant": "Menu Item Selected",
+      "expected": {
+        "height": "48px",
+        "padding-left": "32px",
+        "background-color": "#e9f7f5",
+        "color": "#02746c",
+        "font-size": "16px",
+        "font-weight": "600",
+        "line-height": "22.4px",
+        "letter-spacing": "-0.32px",
+        "box-shadow~": "rgba(11, 107, 100, 0.13) 1px 1px 3px 0px inset"
+      },
+      "figmaDiffers": {
+        "background-color": "피그마 var(--color-action-primary-default)=#e9f7f5. 토큰 오용으로 --umc-color-surface-brand-medium(#e9f7f5)으로 대응. 디자이너 확인 필요"
+      }
+    },
+    {
+      "specId": "side-navigation-submenu-item-default",
+      "node": "2281:6490",
+      "variant": "Submenu Item Default",
+      "expected": {
+        "height": "36px",
+        "padding-left": "48px",
+        "color": "#606262",
+        "font-size": "14px",
+        "font-weight": "500",
+        "line-height": "21px",
+        "letter-spacing": "0px"
+      }
+    },
+    {
+      "specId": "side-navigation-submenu-item-selected",
+      "node": "2281:6494",
+      "variant": "Submenu Item Selected",
+      "expected": {
+        "height": "36px",
+        "padding-left": "48px",
+        "color": "#02746c",
+        "font-size": "14px",
+        "font-weight": "600",
+        "line-height": "21px",
+        "letter-spacing": "0px"
+      }
+    }
+  ]
+}
