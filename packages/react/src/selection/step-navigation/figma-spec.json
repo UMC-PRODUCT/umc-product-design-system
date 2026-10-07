@@ -1,0 +1,29 @@
+{
+  "component": "StepNavigation",
+  "figmaSection": "2505:14204",
+  "page": "/components/selection/step-navigation/",
+  "nodes": [
+    {
+      "specId": "step-navigation-active",
+      "node": "2581:16139",
+      "variant": "Web/Step Navigation - Active Step",
+      "expected": {
+        "background-color": "#ffffff",
+        "color": "#02746c",
+        "font-size": "16px",
+        "font-weight": "600"
+      }
+    },
+    {
+      "specId": "step-navigation-inactive",
+      "node": "2581:16139",
+      "variant": "Web/Step Navigation - Inactive Step",
+      "expected": {
+        "background-color": "#eff0f0",
+        "color": "#606262",
+        "font-size": "16px",
+        "font-weight": "500"
+      }
+    }
+  ]
+}
