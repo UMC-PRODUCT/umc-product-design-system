@@ -45,6 +45,7 @@ function ToastViewportPortal({ placement }: { placement: "top" | "bottom" }) {
               toast={toast}
               className="umc-toast"
               data-color={color}
+              data-placement={placement}
               data-icon={data?.icon === undefined ? undefined : ""}
             >
               <div className="umc-toast__main">
@@ -55,7 +56,7 @@ function ToastViewportPortal({ placement }: { placement: "top" | "bottom" }) {
                 )}
                 <Toast.Description className="umc-toast__message" />
               </div>
-              {action !== undefined ? (
+              {action !== undefined && (
                 <button
                   className="umc-toast__action"
                   type="button"
@@ -66,7 +67,8 @@ function ToastViewportPortal({ placement }: { placement: "top" | "bottom" }) {
                 >
                   {action.label}
                 </button>
-              ) : (
+              )}
+              {action === undefined && placement === "bottom" && (
                 <Toast.Close className="umc-toast__close" aria-label="닫기">
                   <LegacyCloseGlyph />
                 </Toast.Close>

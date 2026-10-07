@@ -35,7 +35,7 @@ function Page() {
 
 ## 외형 미리보기
 
-피그마 `Toast Bottom`(노드 2621:33488)의 변형을 항상 보이게 그린 미리보기입니다. 위에서부터 Primary(아이콘과 닫기), Primary(동작 버튼), Neutral, Error, Error(동작 버튼)입니다. 앞 아이콘은 `icon`에 `<CheckCircleIcon weight="fill" />`을 넘기면 타입에 맞는 색(Primary와 Neutral은 틸, Error는 빨강)으로 칠해집니다.
+피그마 `Toast Bottom`(노드 2621:33488)과 `Toast Top`(노드 2621:33538)의 변형을 항상 보이게 그린 미리보기입니다. 위에서부터 Primary(아이콘과 닫기), Primary(동작 버튼), Neutral, Error, Error(동작 버튼), 상단 Primary(아이콘), 상단 Primary(동작 버튼)입니다. 앞 아이콘은 `icon`에 `<CheckCircleIcon weight="fill" />`을 넘기면 타입에 맞는 색(Primary와 Neutral은 틸, Error는 빨강)으로 칠해집니다.
 
 <ToastStaticPreview />
 
@@ -53,7 +53,7 @@ function Page() {
 
 ## 상단 배치
 
-`placement="top"`으로 상단에 표시할 수 있습니다.
+`placement="top"`으로 상단에 표시할 수 있습니다. 피그마 `Toast Top`처럼 상단 토스트는 닫기 버튼 없이 내용 폭으로 그리고, 정해진 시간이 지나면 저절로 닫힙니다.
 
 <ToastPlacementTop client:visible />
 
@@ -97,4 +97,5 @@ function Page() {
 - 앞 아이콘의 체크 색이 `#fbfcfc`입니다. 아이콘 패키지는 흰색(`#ffffff`)으로 고정해 둡니다.
 - 닫기 아이콘은 원본 컴포넌트가 지워진 `24 icon` 인스턴스입니다. 라이브러리 `Icon/Close`보다 작은 13px X라서 피그마 그림을 그대로 그렸습니다.
 - Service Notice 타입의 양옆 그래픽 에셋은 컴포넌트에 넣지 않았습니다. 필요하면 에셋과 사용처를 알려 주세요.
+- `Toast Top`의 설명이 하단 설명과 같습니다(하단 96px, X로 닫기). 변형에는 닫기 버튼이 없어 코드는 변형을 따랐습니다.
 - Error 토스트의 흔들림은 주석만 있어서 400ms 동안 6px씩 두 번 흔들리게 가정했습니다.

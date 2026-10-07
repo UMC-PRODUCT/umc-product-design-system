@@ -59,6 +59,11 @@
     padding-inline-start: 14px;
   }
 
+  .umc-toast[data-placement="top"] {
+    min-width: 0;
+    min-height: 46px;
+  }
+
   .umc-toast[data-starting-style],
   .umc-toast[data-ending-style] {
     opacity: 0;

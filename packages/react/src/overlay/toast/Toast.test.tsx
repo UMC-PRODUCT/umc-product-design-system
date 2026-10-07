@@ -207,6 +207,49 @@ describe("ToastProvider & useToast", () => {
     expect(drawingOf(glyph)).toEqual(drawingOf(svgOf(<LegacyCloseGlyph />)))
   })
 
+  it("하단 토스트는 동작 버튼이 없으면 닫기 버튼을 단다", () => {
+    render(
+      <ToastProvider placement="bottom">
+        <ShowApp message="하단 토스트" />
+      </ToastProvider>,
+    )
+    act(() => {
+      fireEvent.click(screen.getByRole("button", { name: "보여줘" }))
+    })
+    const toast = document.querySelector(".umc-toast")
+    expect(toast).toHaveAttribute("data-placement", "bottom")
+    expect(toast?.querySelector(".umc-toast__close")).not.toBeNull()
+  })
+
+  it("상단 토스트는 피그마처럼 닫기 버튼 없이 그린다", () => {
+    render(
+      <ToastProvider placement="top">
+        <ShowApp message="상단 토스트" />
+      </ToastProvider>,
+    )
+    act(() => {
+      fireEvent.click(screen.getByRole("button", { name: "보여줘" }))
+    })
+    const toast = document.querySelector(".umc-toast")
+    expect(toast).toHaveAttribute("data-placement", "top")
+    expect(toast?.querySelector(".umc-toast__close")).toBeNull()
+  })
+
+  it("상단 토스트도 동작 버튼은 그린다", () => {
+    render(
+      <ToastProvider placement="top">
+        <ShowApp
+          message="상단 동작"
+          action={{ label: "되돌리기", onClick: () => {} }}
+        />
+      </ToastProvider>,
+    )
+    act(() => {
+      fireEvent.click(screen.getByRole("button", { name: "보여줘" }))
+    })
+    expect(screen.getByRole("button", { name: "되돌리기" })).toBeInTheDocument()
+  })
+
   it("close(id)를 호출하면 해당 토스트가 닫힌다", async () => {
     render(
       <ToastProvider>

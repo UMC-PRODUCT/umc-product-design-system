@@ -104,6 +104,32 @@
       "expected": {
         "color": "#dc3d3d"
       }
+    },
+    {
+      "specId": "toast-top-primary-icon",
+      "node": "2621:33539",
+      "variant": "Toast Top Type=Primary, Leading Acc=True, Text Button=False",
+      "target": ".umc-toast",
+      "expected": {
+        "min-width": "0px",
+        "min-height": "46px",
+        "padding-top": "12px",
+        "padding-left": "14px",
+        "padding-right": "16px"
+      }
+    },
+    {
+      "specId": "toast-top-primary-action",
+      "node": "2621:33554",
+      "variant": "Toast Top Type=Primary, Leading Acc=False, Text Button=True",
+      "target": ".umc-toast",
+      "expected": {
+        "min-width": "0px",
+        "min-height": "46px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "column-gap": "16px"
+      }
     }
   ]
 }

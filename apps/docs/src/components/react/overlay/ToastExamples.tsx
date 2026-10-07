@@ -8,7 +8,8 @@ import { LegacyCloseGlyph } from "../../../../../../packages/react/src/internal/
 type ToastPreviewItemProps = {
   color: "primary" | "neutral" | "error"
   message: string
-  specId: string
+  specId?: string
+  placement?: "top" | "bottom"
   withIcon?: boolean
   actionLabel?: string
 }
@@ -17,6 +18,7 @@ function ToastPreviewItem({
   color,
   message,
   specId,
+  placement = "bottom",
   withIcon = false,
   actionLabel,
 }: ToastPreviewItemProps) {
@@ -25,6 +27,7 @@ function ToastPreviewItem({
       <div
         className="umc-toast"
         data-color={color}
+        data-placement={placement}
         data-icon={withIcon ? "" : undefined}
         style={{ animation: "none" }}
       >
@@ -36,13 +39,14 @@ function ToastPreviewItem({
           )}
           <p className="umc-toast__message">{message}</p>
         </div>
-        {actionLabel === undefined ? (
-          <button className="umc-toast__close" aria-label="닫기" type="button">
-            <LegacyCloseGlyph />
-          </button>
-        ) : (
+        {actionLabel !== undefined && (
           <button className="umc-toast__action" type="button">
             {actionLabel}
+          </button>
+        )}
+        {actionLabel === undefined && placement === "bottom" && (
+          <button className="umc-toast__close" aria-label="닫기" type="button">
+            <LegacyCloseGlyph />
           </button>
         )}
       </div>
@@ -82,6 +86,20 @@ export function ToastStaticPreview() {
         color="error"
         message="토스트 알림이에요"
         withIcon
+        actionLabel="버튼"
+      />
+      <ToastPreviewItem
+        specId="toast-top-primary-icon"
+        color="primary"
+        placement="top"
+        message="토스트 알림이에요"
+        withIcon
+      />
+      <ToastPreviewItem
+        specId="toast-top-primary-action"
+        color="primary"
+        placement="top"
+        message="토스트 알림이에요"
         actionLabel="버튼"
       />
     </div>
