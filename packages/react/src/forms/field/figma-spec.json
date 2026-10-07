@@ -1,0 +1,37 @@
+{
+  "component": "Field",
+  "figmaSection": "2621:33351",
+  "page": "/components/forms/field/",
+  "nodes": [
+    {
+      "specId": "field-label",
+      "node": "2621:33351",
+      "variant": "Label",
+      "expected": {
+        "font-size": "15px",
+        "font-weight": "500",
+        "color": "rgb(96, 98, 98)"
+      }
+    },
+    {
+      "specId": "field-caption",
+      "node": "2621:33394",
+      "variant": "Caption Default",
+      "expected": {
+        "font-size": "13px",
+        "font-weight": "400",
+        "color": "rgb(126, 127, 127)"
+      }
+    },
+    {
+      "specId": "field-error-caption",
+      "node": "2621:33346",
+      "variant": "Caption Error",
+      "expected": {
+        "font-size": "13px",
+        "font-weight": "400",
+        "color": "rgb(220, 61, 61)"
+      }
+    }
+  ]
+}
