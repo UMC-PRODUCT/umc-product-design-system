@@ -4,29 +4,82 @@
   "page": "/components/shell/side-navigation/",
   "nodes": [
     {
-      "specId": "side-navigation-default",
-      "node": "2929:72289",
-      "variant": "Type=Default",
+      "specId": "side-navigation-root",
+      "node": "2929:72291",
+      "variant": "Type=With Slot",
       "target": ".umc-side-navigation",
       "expected": {
         "width": "216px",
-        "background-color": "#fbfcfc",
-        "border-right-width": "1px",
-        "border-right-color": "#e9ecec",
         "padding-top": "16px",
-        "padding-bottom": "16px"
+        "padding-bottom": "16px",
+        "border-right-width": "1px",
+        "border-right-color": "#e2e3e3",
+        "background-color": "#fbfcfc"
       },
-      "figmaNote": {
-        "border-right": "피그마 var(--color-teal-gray-200)=#e9ecec. 토큰 --umc-color-teal-grey-200(#e2e3e3)과 값이 다름. 컴포넌트 변수 --umc-side-navigation-border-right로 선언. 디자이너 확인 필요."
+      "figmaDiffers": {
+        "border-right-color": "Type=Default는 2기 변수 teal-gray-200(#e9ecec), Type=With Slot은 Border/Neutral/Weak-200(#e2e3e3)을 쓴다. 3기 토큰인 #e2e3e3로 통일했다"
       }
     },
     {
-      "specId": "side-navigation-menu-item-default",
-      "node": "2281:6466",
-      "variant": "Menu Item Default",
-      "target": ".umc-side-navigation__item-label",
+      "specId": "side-navigation-slot",
+      "node": "2929:72350",
+      "variant": "Slot",
+      "target": ".umc-side-navigation__slot",
       "expected": {
-        "color": "#606262",
+        "padding-top": "8px",
+        "padding-right": "16px",
+        "padding-bottom": "8px",
+        "padding-left": "32px"
+      }
+    },
+    {
+      "specId": "side-navigation-title",
+      "node": "2903:72135",
+      "variant": "Title Container",
+      "target": ".umc-side-navigation__title",
+      "expected": {
+        "color": "#adadad",
+        "font-size": "14px",
+        "font-weight": "400",
+        "line-height": "21px",
+        "letter-spacing": "0px"
+      }
+    },
+    {
+      "specId": "side-navigation-menu-item",
+      "node": "2281:6466",
+      "variant": "Selected=False, State=Default, Slot=False",
+      "target": ".umc-side-navigation__item-link:not([aria-current]) .umc-side-navigation__item-inner",
+      "expected": {
+        "height": "48px",
+        "padding-left": "12px",
+        "padding-right": "12px",
+        "border-top-left-radius": "12px",
+        "column-gap": "8px",
+        "background-color": "#00000000",
+        "color": "#606262"
+      }
+    },
+    {
+      "specId": "side-navigation-menu-item-hover",
+      "interaction": "hover",
+      "node": "2281:6477",
+      "variant": "Selected=False, State=Hover, Slot=False",
+      "target": ".umc-side-navigation__item-link:not([aria-current]) .umc-side-navigation__item-inner",
+      "expected": {
+        "background-color": "#f7f8f8",
+        "box-shadow~": "#d3d8d833 1px 1px 2px 0px inset"
+      },
+      "figmaDiffers": {
+        "box-shadow~": "피그마 스타일 이름은 Shadow/Inner/Neutral_1이지만 값(#D3D8D833, 1, 1, 2)이 토큰과 다르다. 피그마 값을 컴포넌트 변수로 썼다"
+      }
+    },
+    {
+      "specId": "side-navigation-menu-item-label",
+      "node": "2281:6470",
+      "variant": "Menu Item Label",
+      "target": ".umc-side-navigation__item-link:not([aria-current]) .umc-side-navigation__item-label",
+      "expected": {
         "font-size": "16px",
         "font-weight": "600",
         "line-height": "22.4px",
@@ -34,27 +87,46 @@
       }
     },
     {
-      "specId": "side-navigation-menu-item-selected",
-      "node": "2281:6471",
-      "variant": "Menu Item Selected",
-      "target": ".umc-side-navigation__item-inner[data-selected]",
+      "specId": "side-navigation-menu-item-icon",
+      "node": "2903:72072",
+      "variant": "Pictogram/People 20",
+      "target": ".umc-side-navigation__item-link:not([aria-current]) .umc-side-navigation__item-icon",
       "expected": {
-        "background-color": "#e9f7f5",
-        "color": "#02746c",
-        "box-shadow~": "rgba(11, 107, 100, 0.13) 1px 1px 3px 0px inset"
-      },
-      "figmaNote": {
-        "background": "피그마 var(--color-action-primary-default)=#e9f7f5=teal-75. --umc-color-surface-brand-medium(#e9f7f5) 사용."
+        "width": "20px",
+        "height": "20px",
+        "color": "#adadad"
       }
     },
     {
-      "specId": "side-navigation-submenu-item-default",
+      "specId": "side-navigation-group-selected",
+      "node": "2281:6471",
+      "variant": "Selected=True, State=Default, Slot=False",
+      "target": ".umc-side-navigation__group-trigger .umc-side-navigation__item-inner[data-selected]",
+      "expected": {
+        "height": "48px",
+        "background-color": "#e9f7f5",
+        "color": "#02746c",
+        "box-shadow~": "#0b6b6421 1px 1px 3px 0px inset, #ffffff40 -1px -1px 1px 0px inset"
+      }
+    },
+    {
+      "specId": "side-navigation-group-selected-icon",
+      "node": "2903:72088",
+      "variant": "Pictogram/People 20 selected",
+      "target": ".umc-side-navigation__item-inner[data-selected] .umc-side-navigation__item-icon",
+      "expected": {
+        "color": "#02746c"
+      }
+    },
+    {
+      "specId": "side-navigation-submenu-item",
       "node": "2281:6490",
-      "variant": "Submenu Item Default",
+      "variant": "Submenu Item, Selected=False",
       "target": ".umc-side-navigation__subitem-link:not([aria-current])",
       "expected": {
         "height": "36px",
         "padding-left": "48px",
+        "column-gap": "10px",
         "color": "#606262",
         "font-size": "14px",
         "font-weight": "500",
@@ -63,18 +135,34 @@
       }
     },
     {
+      "specId": "side-navigation-submenu-bullet",
+      "node": "2281:6492",
+      "variant": "Submenu Item bullet, Selected=False",
+      "target": ".umc-side-navigation__subitem-link:not([aria-current]) .umc-side-navigation__subitem-bullet",
+      "expected": {
+        "width": "4px",
+        "height": "1px",
+        "background-color": "#adadad"
+      }
+    },
+    {
       "specId": "side-navigation-submenu-item-selected",
       "node": "2281:6494",
-      "variant": "Submenu Item Selected",
+      "variant": "Submenu Item, Selected=True",
       "target": ".umc-side-navigation__subitem-link[aria-current=\"page\"]",
       "expected": {
         "height": "36px",
-        "padding-left": "48px",
         "color": "#02746c",
-        "font-size": "14px",
-        "font-weight": "600",
-        "line-height": "21px",
-        "letter-spacing": "0px"
+        "font-weight": "600"
+      }
+    },
+    {
+      "specId": "side-navigation-submenu-bullet-selected",
+      "node": "2281:6496",
+      "variant": "Submenu Item bullet, Selected=True",
+      "target": ".umc-side-navigation__subitem-link[aria-current=\"page\"] .umc-side-navigation__subitem-bullet",
+      "expected": {
+        "background-color": "#02746c"
       }
     }
   ]

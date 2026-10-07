@@ -1,6 +1,5 @@
 "use client"
 
-import { ChevronRightIcon } from "@umc-product/icons"
 import type { ReactNode } from "react"
 
 import { cx } from "../../internal/cx.ts"
@@ -16,6 +15,28 @@ export type PageHeaderProps = {
   description?: ReactNode
   breadcrumbs?: BreadcrumbItem[]
   className?: string
+}
+
+function BreadcrumbSeparator() {
+  return (
+    <svg
+      className="umc-page-header__breadcrumb-separator"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path
+        d="M6.25 4.5L9.75 8L6.25 11.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
 }
 
 export function PageHeader({
@@ -54,14 +75,7 @@ export function PageHeader({
                       {item.label}
                     </span>
                   )}
-                  {!isLast && (
-                    <span
-                      className="umc-page-header__breadcrumb-separator"
-                      aria-hidden="true"
-                    >
-                      <ChevronRightIcon size={16} />
-                    </span>
-                  )}
+                  {!isLast && <BreadcrumbSeparator />}
                 </li>
               )
             })}

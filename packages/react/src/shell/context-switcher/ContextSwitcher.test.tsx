@@ -48,4 +48,27 @@ describe("ContextSwitcher", () => {
     await user.click(menuItem)
     expect(onValueChange).toHaveBeenCalledWith("challenger")
   })
+
+  it("선택된 항목에만 체크 표시를 보여 준다", async () => {
+    const user = userEvent.setup()
+    render(
+      <ContextSwitcher
+        options={options}
+        value="challenger"
+        onValueChange={() => {}}
+      />,
+    )
+    await user.click(screen.getByRole("button"))
+    const checked = await screen.findByRole("menuitemradio", {
+      name: "챌린저 뷰",
+    })
+    expect(checked).toHaveAttribute("aria-checked", "true")
+    expect(
+      checked.querySelector(".umc-context-switcher__option-indicator svg"),
+    ).not.toBeNull()
+    const unchecked = screen.getByRole("menuitemradio", { name: "관리자 뷰" })
+    expect(
+      unchecked.querySelector(".umc-context-switcher__option-indicator"),
+    ).toBeNull()
+  })
 })

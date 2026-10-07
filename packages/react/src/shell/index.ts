@@ -7,8 +7,10 @@ export {
 export { Header, type HeaderProps, type NavItem } from "./header/Header.tsx"
 export {
   SideNavigation,
+  type SideNavigationGroup,
   type SideNavigationItem,
   type SideNavigationLeaf,
+  type SideNavigationLink,
   type SideNavigationProps,
 } from "./side-navigation/SideNavigation.tsx"
 export {

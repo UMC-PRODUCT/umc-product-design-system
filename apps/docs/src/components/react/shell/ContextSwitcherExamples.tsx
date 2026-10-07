@@ -1,38 +1,24 @@
 "use client"
 
-import { useState } from "react"
 import { ContextSwitcher, type ContextSwitcherOption } from "@umc-product/react"
+import { useState } from "react"
 
-const options: ContextSwitcherOption<string>[] = [
-  { label: "10기", value: "10" },
-  { label: "11기", value: "11" },
-  { label: "12기", value: "12" },
+type View = "challenger" | "chapter" | "central"
+
+const VIEWS: ContextSwitcherOption<View>[] = [
+  { value: "challenger", label: "챌린저 뷰" },
+  { value: "chapter", label: "지부 운영진 뷰" },
+  { value: "central", label: "중앙 운영진 뷰" },
 ]
 
-const probeStyle: React.CSSProperties = {
-  position: "absolute",
-  left: "-9999px",
-  top: 0,
-}
-
 export function ContextSwitcherDefault() {
-  const [value, setValue] = useState("10")
+  const [view, setView] = useState<View>("chapter")
   return (
-    <>
-      <div className="umc-example">
-        <div data-spec-id="context-switcher-default">
-          <ContextSwitcher
-            options={options}
-            value={value}
-            onValueChange={setValue}
-          />
-        </div>
+    <div className="umc-example umc-example-stack">
+      <div data-spec-id="context-switcher-trigger context-switcher-trigger-icon context-switcher-trigger-hover context-switcher-popup context-switcher-option context-switcher-option-checked">
+        <ContextSwitcher options={VIEWS} value={view} onValueChange={setView} />
       </div>
-      <div
-        className="umc-context-switcher__popup"
-        data-spec-id="context-switcher-selected"
-        style={probeStyle}
-      />
-    </>
+      <p className="m-0 text-sm">현재 맥락: {view}</p>
+    </div>
   )
 }

@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import {
   ContextSwitcher,
   Header,
@@ -9,85 +8,99 @@ import {
   type ContextSwitcherOption,
   type SideNavigationItem,
 } from "@umc-product/react"
+import { PeoplePictogram } from "@umc-product/icons"
+import { useState } from "react"
 
-const navItems = [
+import { PreviewLinks } from "./PreviewLinks.tsx"
+
+const NAV_ITEMS = [
   { label: "소개", href: "/about" },
-  { label: "팀 매칭", href: "/matching" },
+  { label: "운영", href: "/manage" },
   { label: "지원하기", href: "/apply" },
 ]
 
-const generationOptions: ContextSwitcherOption<string>[] = [
-  { label: "10기", value: "10" },
-  { label: "11기", value: "11" },
+const GENERATIONS: ContextSwitcherOption[] = [
+  { value: "10", label: "10기" },
+  { value: "11", label: "11기" },
 ]
 
-const sideItems: SideNavigationItem[] = [
-  { label: "대시보드", href: "/dashboard" },
+const menuIcon = <PeoplePictogram color="currentColor" />
+
+const SIDE_ITEMS: SideNavigationItem[] = [
+  { label: "대시보드", href: "/manage", icon: menuIcon },
   {
     label: "리크루팅",
+    icon: menuIcon,
     children: [
-      { label: "지원자 목록", href: "/recruiting/applications" },
-      { label: "지원자 평가", href: "/recruiting/reviews" },
+      { label: "지원자 목록", href: "/manage/recruiting/applications" },
+      { label: "지원자 평가", href: "/manage/recruiting/reviews" },
     ],
   },
-  { label: "설정", href: "/settings" },
+  { label: "설정", href: "/manage/settings", icon: menuIcon },
 ]
 
+const PAGE_TITLES: Record<string, string> = {
+  "/manage": "대시보드",
+  "/manage/recruiting/applications": "지원자 목록",
+  "/manage/recruiting/reviews": "지원자 평가",
+  "/manage/settings": "설정",
+}
+
 export function WorkFrameDemo() {
+  const [path, setPath] = useState("/manage/recruiting/applications")
   const [generation, setGeneration] = useState("10")
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        height: "480px",
-        border: "1px solid #e2e3e3",
-        borderRadius: 8,
-        overflow: "hidden",
-        fontSize: 14,
-      }}
-    >
-      <div style={{ flexShrink: 0 }}>
-        <Header
-          logo={<span style={{ fontWeight: 700, color: "#02746c" }}>UMC</span>}
-          navItems={navItems}
-          currentPath="/recruiting/applications"
-          className="sticky top-0"
-        />
-      </div>
-      <div style={{ display: "flex", flex: 1, overflow: "hidden" }}>
-        <div style={{ flexShrink: 0 }}>
-          <SideNavigation
-            items={sideItems}
-            currentPath="/recruiting/applications"
-            slot={
-              <ContextSwitcher
-                options={generationOptions}
-                value={generation}
-                onValueChange={setGeneration}
-              />
+    <PreviewLinks onNavigate={setPath}>
+      <div className="umc-example umc-example-flush overflow-x-auto">
+        <div className="flex h-[640px] min-w-[960px] flex-col">
+          <Header
+            logo={
+              <span
+                style={{
+                  fontSize: 22,
+                  fontWeight: 800,
+                  color: "var(--umc-color-text-neutral-strong)",
+                }}
+              >
+                UMC
+              </span>
             }
+            navItems={NAV_ITEMS}
+            currentPath={path}
           />
+          <div className="flex min-h-0 flex-1">
+            <SideNavigation
+              items={SIDE_ITEMS}
+              currentPath={path}
+              slot={
+                <ContextSwitcher
+                  options={GENERATIONS}
+                  value={generation}
+                  onValueChange={setGeneration}
+                />
+              }
+            />
+            <main className="flex min-w-0 flex-1 flex-col gap-8 overflow-auto px-8 pt-12 pb-20">
+              <PageHeader
+                title={PAGE_TITLES[path] ?? "페이지"}
+                description="페이지를 간결하고 명확하게 설명합니다."
+                breadcrumbs={[
+                  { label: "운영", href: "/manage" },
+                  { label: PAGE_TITLES[path] ?? "페이지" },
+                ]}
+              />
+              <div
+                className="min-h-40 flex-1 rounded-xl"
+                style={{
+                  boxShadow:
+                    "inset 0 0 0 1px var(--umc-color-border-neutral-weaker)",
+                }}
+              />
+            </main>
+          </div>
         </div>
-        <main
-          style={{
-            flex: 1,
-            overflow: "auto",
-            padding: "48px 16px 16px 32px",
-            background: "#f8f9fa",
-          }}
-        >
-          <PageHeader
-            title="지원자 목록"
-            description="현재 차수에 지원한 모든 지원자를 확인합니다."
-            breadcrumbs={[
-              { label: "리크루팅", href: "/recruiting" },
-              { label: "지원자 목록" },
-            ]}
-          />
-        </main>
       </div>
-    </div>
+    </PreviewLinks>
   )
 }

@@ -1,58 +1,52 @@
 ---
 title: WorkFrame
-description: 셸 컴포넌트를 조립한 관리자 화면 레이아웃 예시입니다.
+description: 셸 컴포넌트를 조립한 관리자 화면 틀입니다.
 ---
 
 import { WorkFrameDemo } from "../../../../components/react/shell/WorkFrameExamples.tsx"
 
-셸 그룹의 `Header`, `SideNavigation`, `ContextSwitcher`, `PageHeader`를 조립하면 관리자 화면을 구성할 수 있습니다. 피그마 WorkFrame 프레임(node 2929:74971) 기준 레이아웃입니다.
+피그마 `Web Frame`(node 2929:74971)을 셸 컴포넌트로 조립한 예시입니다. 별도 컴포넌트가 아니라 레이아웃 패턴이라 앱에서 직접 짭니다. 메뉴를 누르면 헤더, 사이드 내비게이션, 페이지 헤더가 함께 바뀝니다.
 
 <WorkFrameDemo client:visible />
 
-## 레이아웃 구조
+## 치수
 
-피그마 WorkFrame 치수:
-
-| 영역                 | 너비                                | 높이 | 토큰                                  |
-| -------------------- | ----------------------------------- | ---- | ------------------------------------- |
-| Header               | 전체 너비                           | 80px | `--umc-layout-header-height: 5rem`    |
-| SideNavigation       | 216px                               | 100% | `--umc-layout-sidebar-width: 13.5rem` |
-| 콘텐츠 영역          | Header 아래 · SideNavigation 오른쪽 | —    | —                                     |
-| PageHeader 위쪽 여백 | —                                   | 48px | —                                     |
-| PageHeader 왼쪽 여백 | 32px                                | —    | —                                     |
+| 영역                   | 값                            | 근거                                    |
+| ---------------------- | ----------------------------- | --------------------------------------- |
+| Header 높이            | 80px                          | `--umc-layout-header-height`            |
+| SideNavigation 너비    | 216px                         | `--umc-layout-sidebar-width`            |
+| 콘텐츠 영역 패딩       | 위 48px, 좌우 32px, 아래 80px | `--umc-spacing-margin-48`, `-32`, `-80` |
+| PageHeader와 본문 사이 | 32px                          | `--umc-spacing-padding-32`              |
 
 ```tsx
 import {
   ContextSwitcher,
   Header,
+  LinkProvider,
   PageHeader,
   SideNavigation,
-  LinkProvider,
 } from "@umc-product/react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 export function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
-
   return (
     <LinkProvider component={Link}>
-      <div
-        style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
-      >
+      <div className="flex min-h-screen flex-col">
         <Header
+          className="sticky top-0 z-50"
           logo={<Logo />}
           navItems={navItems}
           currentPath={pathname}
-          className="sticky top-0 z-50"
         />
-        <div style={{ display: "flex", flex: 1 }}>
+        <div className="flex flex-1">
           <SideNavigation
             items={sideItems}
             currentPath={pathname}
             slot={<GenerationSwitcher />}
           />
-          <main style={{ flex: 1, padding: "48px 16px 16px 32px" }}>
+          <main className="flex min-w-0 flex-1 flex-col gap-8 px-8 pt-12 pb-20">
             {children}
           </main>
         </div>
@@ -62,10 +56,4 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
 }
 ```
 
-## sticky 헤더
-
-`Header` 자체에는 `position: sticky`가 없습니다. 레이아웃에서 `className="sticky top-0 z-50"`을 추가합니다.
-
-## ContextSwitcher 슬롯
-
-`SideNavigation`의 `slot` prop에 `ContextSwitcher`를 전달합니다. 피그마 기준 너비는 172px입니다.
+`Header`는 위치를 정하지 않으므로 고정이 필요하면 `className`으로 `sticky`를 줍니다. `SideNavigation`은 `min-height: 100%`라서 부모 높이만큼 늘어납니다.

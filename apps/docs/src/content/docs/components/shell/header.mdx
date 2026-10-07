@@ -1,19 +1,20 @@
 ---
 title: Header
-description: 최상단 네비게이션 바입니다.
+description: 서비스 최상단에 놓는 로고, 메인 내비게이션, 액션 영역입니다.
 ---
 
 import { Aside } from "@astrojs/starlight/components"
 import {
-  HeaderLight,
   HeaderDark,
+  HeaderLight,
 } from "../../../../components/react/shell/HeaderExamples.tsx"
 
-피그마 `Header` 컴포넌트를 구현했습니다. 로고 슬롯, 메인 내비게이션, 액션 슬롯 세 영역으로 구성됩니다. 높이는 `--umc-layout-header-height(5rem)`으로 고정됩니다.
+피그마 `Web/Header`(node 2858:65987)를 구현했습니다. 로고, 가운데 내비게이션 알약, 오른쪽 액션 영역 세 칸으로 나뉩니다. 높이는 `--umc-layout-header-height`(80px)입니다. 양옆 칸이 같은 비율로 늘어나므로 내비게이션은 항상 가운데에 놓입니다.
 
 ```tsx
 import { Header, LinkProvider } from "@umc-product/react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 const navItems = [
   { label: "소개", href: "/about" },
@@ -22,13 +23,14 @@ const navItems = [
 ]
 
 export function AppHeader() {
+  const pathname = usePathname()
   return (
     <LinkProvider component={Link}>
       <Header
         logo={<Logo />}
         navItems={navItems}
         currentPath={pathname}
-        actions={<UserMenu />}
+        actions={<LoginButton />}
       />
     </LinkProvider>
   )
@@ -37,49 +39,53 @@ export function AppHeader() {
 
 ## 라이트 모드
 
-<HeaderLight />
+관리자 화면과 일반 페이지의 기본 모드입니다. 항목을 누르면 선택 상태가 옮겨 갑니다.
+
+<HeaderLight client:visible />
 
 ## 다크 모드
 
-<HeaderDark />
+피그마 설명대로 주로 랜딩 페이지에서 씁니다. 헤더 배경은 투명하고, 뒤에 깔린 히어로 이미지나 배경이 그대로 보입니다. 내비게이션 알약은 반투명 배경에 `backdrop-filter: blur(21px)`를 씁니다.
 
-## isActivePath
+<HeaderDark client:visible />
 
-`currentPath`가 주어지면 `isActivePath(currentPath, href)`를 써서 일치하는 항목에 `aria-current="page"`를 달고 선택 스타일을 적용합니다.
+## 선택 상태
+
+`currentPath`가 항목의 `href`와 같거나 그 하위 경로이면 `aria-current="page"`를 달고 선택 스타일을 적용합니다. 판정은 `isActivePath`가 맡습니다.
 
 ```ts
-isActivePath("/matching/detail/1", "/matching") // true — 하위 경로
-isActivePath("/matching", "/matching") // true — 완전 일치
-isActivePath("/matching", "/m") // false — 단순 prefix 불일치
+isActivePath("/matching/detail/1", "/matching") // true, 하위 경로
+isActivePath("/matching", "/matching") // true, 완전 일치
+isActivePath("/matching", "/m") // false, 경로 단위로만 비교
 ```
 
 <Aside type="note">
-  `href="/"`는 완전 일치만 허용합니다. `currentPath="/about"`일 때 루트는
+  `href="/"`는 완전 일치만 선택합니다. `currentPath="/about"`일 때 루트 항목은
   선택되지 않습니다.
 </Aside>
 
 ## props
 
-| prop          | 타입                | 기본값      | 설명                       |
-| ------------- | ------------------- | ----------- | -------------------------- |
-| `logo`        | `ReactNode`         | —           | 좌측 로고 영역             |
-| `navItems`    | `NavItem[]`         | `[]`        | 중앙 메인 내비게이션 항목  |
-| `currentPath` | `string`            | `undefined` | 현재 경로 (활성 항목 판단) |
-| `actions`     | `ReactNode`         | `undefined` | 우측 액션 영역             |
-| `mode`        | `"light" \| "dark"` | `"light"`   | 색 테마                    |
-| `className`   | `string`            | `undefined` | 루트 요소에 추가할 클래스  |
+| prop          | 타입                | 기본값    | 설명                                     |
+| ------------- | ------------------- | --------- | ---------------------------------------- |
+| `logo`        | `ReactNode`         | 없음      | 왼쪽 로고 영역                           |
+| `navItems`    | `NavItem[]`         | 없음      | 가운데 내비게이션 항목. 비면 알약을 숨김 |
+| `currentPath` | `string`            | 없음      | 현재 경로. 선택 항목 판정에 씀           |
+| `actions`     | `ReactNode`         | 없음      | 오른쪽 액션 영역. 로그인 버튼, 프로필 등 |
+| `mode`        | `"light" \| "dark"` | `"light"` | 색 모드                                  |
+| `className`   | `string`            | 없음      | 루트 `header` 요소에 붙일 클래스         |
 
-### NavItem
+`NavItem`은 `{ label: ReactNode; href: string }`입니다.
 
-| 필드    | 타입     | 설명        |
-| ------- | -------- | ----------- |
-| `label` | `string` | 메뉴 레이블 |
-| `href`  | `string` | 이동 경로   |
+## 고정 배치
 
-## sticky 사용
-
-`Header` 컴포넌트 자체에는 `position: sticky`를 포함하지 않습니다. 레이아웃에서 직접 적용합니다.
+`Header`는 위치를 정하지 않습니다. 스크롤해도 위에 남겨야 하면 레이아웃에서 지정합니다.
 
 ```tsx
-<Header className="sticky top-0 z-50" ... />
+<Header className="sticky top-0 z-50" logo={<Logo />} />
 ```
+
+## 피그마와 다른 점
+
+- 다크 모드 선택 항목: 피그마는 1px 테두리와 좌우 패딩 16px을 씁니다. 선택이 바뀔 때 폭이 흔들리지 않도록 패딩 18px을 유지하고 inset 그림자로 테두리를 그립니다.
+- 내비게이션 알약 radius: 피그마 컨테이너는 9999px 리터럴, 항목은 999px 토큰입니다. 모양이 같으므로 `--umc-radius-full`로 통일했습니다.

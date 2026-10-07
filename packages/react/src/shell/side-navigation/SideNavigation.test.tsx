@@ -104,4 +104,77 @@ describe("SideNavigation", () => {
     render(<SideNavigation items={items} aria-label="관리 메뉴" />)
     expect(screen.getByRole("navigation")).toHaveAccessibleName("관리 메뉴")
   })
+
+  it("경로가 여러 항목과 겹치면 가장 구체적인 항목 하나만 선택한다", () => {
+    const nestedItems = [
+      {
+        label: "매칭 관리",
+        children: [
+          { label: "매칭 목록", href: "/matching" },
+          { label: "매칭 현황", href: "/matching/status" },
+        ],
+      },
+    ]
+    render(
+      <SideNavigation items={nestedItems} currentPath="/matching/status/3" />,
+    )
+    expect(screen.getByRole("link", { name: "매칭 현황" })).toHaveAttribute(
+      "aria-current",
+      "page",
+    )
+    expect(screen.getByRole("link", { name: "매칭 목록" })).not.toHaveAttribute(
+      "aria-current",
+    )
+  })
+
+  it("경로가 닫힌 그룹 안으로 바뀌면 그 그룹을 펼치고 열려 있던 그룹은 유지한다", () => {
+    const groupItems = [
+      { label: "그룹 A", children: [{ label: "A1", href: "/a/1" }] },
+      { label: "그룹 B", children: [{ label: "B1", href: "/b/1" }] },
+    ]
+    const { rerender } = render(
+      <SideNavigation items={groupItems} currentPath="/a/1" />,
+    )
+    expect(screen.queryByRole("link", { name: "B1" })).not.toBeInTheDocument()
+    rerender(<SideNavigation items={groupItems} currentPath="/b/1" />)
+    expect(screen.getByRole("link", { name: "B1" })).toHaveAttribute(
+      "aria-current",
+      "page",
+    )
+    expect(screen.getByRole("link", { name: "A1" })).toBeInTheDocument()
+  })
+
+  it("현재 경로를 담은 그룹 버튼과 링크 항목에 선택 상태를 표시한다", () => {
+    const { container, rerender } = render(
+      <SideNavigation items={items} currentPath="/matching/status" />,
+    )
+    const groupInner = screen
+      .getByRole("button", { name: "팀 매칭" })
+      .querySelector(".umc-side-navigation__item-inner")
+    expect(groupInner).toHaveAttribute("data-selected")
+    rerender(<SideNavigation items={items} currentPath="/settings" />)
+    expect(screen.getByRole("link", { name: "설정" })).toHaveAttribute(
+      "aria-current",
+      "page",
+    )
+    expect(
+      container.querySelectorAll(
+        ".umc-side-navigation__item-inner[data-selected]",
+      ),
+    ).toHaveLength(1)
+  })
+
+  it("아이콘을 장식 요소로 렌더한다", () => {
+    render(
+      <SideNavigation
+        items={[
+          { label: "대시보드", href: "/", icon: <svg data-testid="icon" /> },
+        ]}
+      />,
+    )
+    expect(screen.getByTestId("icon").parentElement).toHaveAttribute(
+      "aria-hidden",
+      "true",
+    )
+  })
 })

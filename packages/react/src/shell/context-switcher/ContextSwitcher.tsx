@@ -1,7 +1,7 @@
 "use client"
 
 import { Menu } from "@base-ui/react"
-import { ExpandMoreIcon } from "@umc-product/icons"
+import { CheckIcon, ExpandMoreIcon } from "@umc-product/icons"
 import type { ReactNode } from "react"
 
 import { cx } from "../../internal/cx.ts"
@@ -9,7 +9,6 @@ import { cx } from "../../internal/cx.ts"
 export type ContextSwitcherOption<V extends string = string> = {
   value: V
   label: ReactNode
-  caption?: ReactNode
 }
 
 export type ContextSwitcherProps<V extends string = string> = {
@@ -19,29 +18,25 @@ export type ContextSwitcherProps<V extends string = string> = {
   className?: string
 }
 
+const ICON_SIZE = 16
+
 export function ContextSwitcher<V extends string = string>({
   options,
   value,
   onValueChange,
   className,
 }: ContextSwitcherProps<V>) {
-  const currentOption = options.find((opt) => opt.value === value)
+  const currentOption = options.find((option) => option.value === value)
 
   return (
     <Menu.Root>
       <Menu.Trigger className={cx("umc-context-switcher", className)}>
-        <span className="umc-context-switcher__current">
+        <span className="umc-context-switcher__label">
           {currentOption?.label}
         </span>
-        {currentOption?.caption && (
-          <span className="umc-context-switcher__caption">
-            {currentOption.caption}
-          </span>
-        )}
         <ExpandMoreIcon
-          className="umc-context-switcher__chevron"
-          size={16}
-          aria-hidden={true}
+          className="umc-context-switcher__icon"
+          size={ICON_SIZE}
         />
       </Menu.Trigger>
       <Menu.Portal>
@@ -49,31 +44,27 @@ export function ContextSwitcher<V extends string = string>({
           className="umc-context-switcher__positioner"
           side="bottom"
           align="start"
-          sideOffset={4}
         >
           <Menu.Popup className="umc-context-switcher__popup">
             <Menu.RadioGroup
               value={value}
               onValueChange={(next) => {
-                const matched = options.find((opt) => opt.value === next)
+                const matched = options.find((option) => option.value === next)
                 if (matched) onValueChange(matched.value)
               }}
             >
-              {options.map((opt) => (
+              {options.map((option) => (
                 <Menu.RadioItem
-                  key={opt.value}
-                  value={opt.value}
+                  key={option.value}
+                  value={option.value}
                   className="umc-context-switcher__option"
                 >
-                  <Menu.RadioItemIndicator className="umc-context-switcher__option-indicator" />
                   <span className="umc-context-switcher__option-label">
-                    {opt.label}
+                    {option.label}
                   </span>
-                  {opt.caption && (
-                    <span className="umc-context-switcher__option-caption">
-                      {opt.caption}
-                    </span>
-                  )}
+                  <Menu.RadioItemIndicator className="umc-context-switcher__option-indicator">
+                    <CheckIcon size={ICON_SIZE} />
+                  </Menu.RadioItemIndicator>
                 </Menu.RadioItem>
               ))}
             </Menu.RadioGroup>
