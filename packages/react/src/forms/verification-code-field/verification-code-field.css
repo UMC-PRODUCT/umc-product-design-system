@@ -1,0 +1,29 @@
+@import "../input-box/input-box.css";
+@import "../field/field.css";
+
+@layer components {
+  .umc-verification-code-field__timer {
+    font-family: var(--umc-typography-label-3-medium-font-family);
+    font-size: var(--umc-typography-label-3-medium-font-size);
+    font-weight: var(--umc-typography-label-3-medium-font-weight);
+    color: var(--umc-color-text-brand-default);
+    flex-shrink: 0;
+  }
+
+  .umc-verification-code-field__info {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--umc-spacing-gap-4);
+    color: var(--umc-color-text-neutral-weak);
+    font-family: var(--umc-typography-caption-1-regular-font-family);
+    font-size: var(--umc-typography-caption-1-regular-font-size);
+    font-weight: var(--umc-typography-caption-1-regular-font-weight);
+    line-height: var(--umc-typography-caption-1-regular-line-height);
+    margin-top: var(--umc-spacing-gap-4);
+  }
+
+  .umc-verification-code-field__info svg {
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+}

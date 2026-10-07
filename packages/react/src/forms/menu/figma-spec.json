@@ -1,0 +1,27 @@
+{
+  "component": "Menu",
+  "figmaSection": "2621:33580",
+  "page": "/components/forms/menu/",
+  "nodes": [
+    {
+      "specId": "menu-popup-default",
+      "node": "2621:33580",
+      "variant": "Type=Menu Popup",
+      "expected": {
+        "background-color": "rgb(255, 255, 255)",
+        "border-top-left-radius": "14px",
+        "border-top-right-radius": "14px",
+        "border-bottom-left-radius": "14px",
+        "border-bottom-right-radius": "14px"
+      }
+    },
+    {
+      "specId": "menu-item-danger",
+      "node": "2621:33598",
+      "variant": "Type=Menu Item, Tone=Danger",
+      "expected": {
+        "color": "rgb(220, 61, 61)"
+      }
+    }
+  ]
+}

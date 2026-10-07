@@ -1,0 +1,21 @@
+{
+  "component": "VerificationCodeField",
+  "figmaSection": "2621:33460",
+  "page": "/components/forms/verification-code-field/",
+  "nodes": [
+    {
+      "specId": "verification-code-field-lg-default",
+      "node": "2621:33460",
+      "variant": "Type=Verification, State=Default, Size=Lg",
+      "target": ".umc-input-box",
+      "expected": {
+        "height": "48px",
+        "border-top-left-radius": "14px",
+        "border-top-right-radius": "14px",
+        "border-bottom-left-radius": "14px",
+        "border-bottom-right-radius": "14px",
+        "background-color": "rgb(255, 255, 255)"
+      }
+    }
+  ]
+}
