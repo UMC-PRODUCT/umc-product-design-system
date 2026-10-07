@@ -13,6 +13,7 @@
     "tokens:check": "pnpm --filter @umc-product/design-tokens tokens:check",
     "icons:build": "pnpm --filter @umc-product/icons icons:build",
     "icons:check": "pnpm --filter @umc-product/icons icons:check",
+    "build:packages": "pnpm --filter \"./packages/**\" build",
     "docs:dev": "pnpm --filter @umc-product/docs dev",
     "docs:build": "pnpm --filter @umc-product/docs build",
     "docs:preview": "pnpm --filter @umc-product/docs preview",

@@ -3,8 +3,7 @@
 @import "@astrojs/starlight-tailwind";
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
-@import "@umc-product/design-tokens/fonts.css";
-@import "@umc-product/design-tokens/base.css";
+@import "@umc-product/react/styles.css";
 @import "@umc-product/design-tokens/tailwind.css";
 
 @source "../../node_modules/@umc-product/design-tokens/dist/index.js";
@@ -200,4 +199,191 @@
     grid-template-columns: 1fr;
     gap: 0.5rem;
   }
+}
+
+.umc-example {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--umc-color-background-default);
+  box-shadow: inset 0 0 0 1px var(--umc-color-border-neutral-weaker);
+}
+
+.umc-example-muted {
+  background: var(--umc-color-background-neutral-weak);
+}
+
+.umc-example-stack {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
+}
+
+.umc-icon-gallery {
+  display: grid;
+  gap: 1rem;
+  margin-block: 1rem 2rem;
+}
+
+.umc-icon-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+}
+
+.umc-icon-search {
+  flex: 1 1 16rem;
+  min-width: 0;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 8px;
+  background: var(--sl-color-bg);
+  color: var(--sl-color-white);
+  font: inherit;
+  font-size: var(--sl-text-sm);
+}
+
+.umc-icon-search:focus-visible {
+  outline: 2px solid var(--sl-color-accent);
+  outline-offset: 2px;
+}
+
+.umc-icon-weights {
+  display: flex;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.umc-icon-weights label {
+  position: relative;
+  cursor: pointer;
+}
+
+.umc-icon-weights input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.umc-icon-weights span {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px var(--sl-color-gray-5);
+  font-size: var(--sl-text-sm);
+}
+
+.umc-icon-weights input:checked + span {
+  background: var(--sl-color-text-accent);
+  box-shadow: none;
+  color: var(--sl-color-black);
+}
+
+.umc-icon-weights input:focus-visible + span {
+  outline: 2px solid var(--sl-color-accent);
+  outline-offset: 2px;
+}
+
+.umc-icon-count,
+.umc-icon-empty {
+  margin: 0;
+  color: var(--sl-color-gray-3);
+  font-size: var(--sl-text-sm);
+}
+
+.umc-icon-usage {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: var(--sl-color-gray-6);
+  font-size: var(--sl-text-sm);
+}
+
+.umc-icon-usage p {
+  margin: 0;
+}
+
+.umc-icon-usage pre {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
+  border-radius: 8px;
+  background: var(--sl-color-bg);
+  font-size: var(--sl-text-xs);
+}
+
+.umc-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.umc-icon-card {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 0.5rem 0.75rem;
+  border: 0;
+  border-radius: 10px;
+  background: var(--umc-color-background-default);
+  box-shadow: inset 0 0 0 1px var(--umc-color-border-neutral-weaker);
+  color: var(--umc-color-icon-neutral-stronger);
+  font: inherit;
+  cursor: pointer;
+}
+
+.umc-icon-card[aria-pressed="true"] {
+  box-shadow: inset 0 0 0 2px var(--umc-color-border-primary-strong);
+}
+
+.umc-icon-card:focus-visible {
+  outline: 2px solid var(--umc-color-border-primary-strong);
+  outline-offset: 2px;
+}
+
+.umc-icon-previews {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2rem;
+}
+
+.umc-icon-name {
+  color: var(--umc-color-text-neutral-medium);
+  font-size: var(--sl-text-xs);
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+.umc-pictogram-grid {
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  margin-block: 1rem 2rem;
+}
+
+.umc-pictogram-card {
+  cursor: default;
+}
+
+.umc-pictogram-mode {
+  display: grid;
+  justify-items: center;
+  gap: 0.25rem;
+  color: var(--umc-color-text-neutral-weak);
+  font-size: var(--sl-text-xs);
 }
