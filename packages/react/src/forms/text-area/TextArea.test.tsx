@@ -1,5 +1,7 @@
 import { render, screen } from "@testing-library/react"
-import { describe, expect, it } from "vitest"
+import userEvent from "@testing-library/user-event"
+import { createRef } from "react"
+import { describe, expect, it, vi } from "vitest"
 
 import { TextArea } from "./TextArea.tsx"
 
@@ -38,5 +40,21 @@ describe("TextArea", () => {
     )
     expect(screen.queryByText("도움말")).not.toBeInTheDocument()
     expect(screen.getByText("필수 입력 항목입니다")).toBeInTheDocument()
+  })
+
+  it("textarea 요소에 ref와 onChange를 그대로 연결한다", async () => {
+    const user = userEvent.setup()
+    const onChange = vi.fn()
+    const ref = createRef<HTMLTextAreaElement>()
+    render(<TextArea label="내용" ref={ref} onChange={onChange} />)
+    expect(ref.current).toBeInstanceOf(HTMLTextAreaElement)
+    await user.type(screen.getByLabelText("내용"), "안녕")
+    expect(onChange).toHaveBeenCalled()
+    expect(onChange.mock.calls[0]?.[0].target).toBe(ref.current)
+  })
+
+  it("기본 2줄 높이로 시작한다", () => {
+    render(<TextArea label="내용" />)
+    expect(screen.getByLabelText("내용")).toHaveAttribute("rows", "2")
   })
 })

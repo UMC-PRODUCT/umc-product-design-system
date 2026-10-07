@@ -1,56 +1,95 @@
 "use client"
 
-import { Field, FieldControl } from "@umc-product/react"
+import {
+  Field,
+  FieldControl,
+  InputBox,
+  TextInfoButton,
+} from "@umc-product/react"
+
+function Control({
+  placeholder,
+  defaultValue,
+}: {
+  placeholder?: string
+  defaultValue?: string
+}) {
+  return (
+    <InputBox>
+      <FieldControl
+        className="umc-input-box__input"
+        placeholder={placeholder}
+        defaultValue={defaultValue}
+      />
+    </InputBox>
+  )
+}
 
 export function FieldDefault() {
   return (
-    <Field label="이름" caption="20자 이내로 입력하세요">
-      <FieldControl render={<input placeholder="홍길동" />} />
-    </Field>
+    <div className="umc-example umc-example-stack">
+      <div
+        className="w-full max-w-[326px]"
+        data-spec-id="field-root field-label field-required field-caption"
+      >
+        <Field label="학교 이메일" required caption="학교 도메인만 받습니다">
+          <Control placeholder="umc@school.ac.kr" />
+        </Field>
+      </div>
+    </div>
   )
 }
 
-export function FieldLabelExample() {
+export function FieldCaptionTones() {
   return (
-    <span className="umc-field__label" data-spec-id="field-label">
-      레이블 예시
-    </span>
+    <div className="umc-example umc-example-stack">
+      <div
+        className="w-full max-w-[326px]"
+        data-spec-id="field-caption-primary"
+      >
+        <Field
+          label="닉네임"
+          caption="사용할 수 있는 닉네임입니다"
+          captionColor="primary"
+        >
+          <Control defaultValue="umc" />
+        </Field>
+      </div>
+      <div
+        className="w-full max-w-[326px]"
+        data-spec-id="field-caption-error field-label-error"
+      >
+        <Field
+          label="닉네임"
+          invalid
+          errorMessage="이미 사용 중인 닉네임입니다"
+        >
+          <Control defaultValue="umc" />
+        </Field>
+      </div>
+      <div
+        className="w-full max-w-[326px]"
+        data-spec-id="field-caption-disabled field-label-disabled"
+      >
+        <Field label="닉네임" caption="수정할 수 없습니다" disabled>
+          <Control defaultValue="umc" />
+        </Field>
+      </div>
+    </div>
   )
 }
 
-export function FieldCaptionExample() {
+export function FieldWithInfo() {
   return (
-    <span className="umc-field__caption" data-spec-id="field-caption">
-      도움말 텍스트
-    </span>
-  )
-}
-
-export function FieldErrorCaptionExample() {
-  return (
-    <span
-      className="umc-field__caption umc-field__caption--error"
-      data-spec-id="field-error-caption"
-    >
-      오류 메시지
-    </span>
-  )
-}
-
-export function FieldRequired() {
-  return (
-    <Field label="이메일" required caption="올바른 이메일 형식으로 입력하세요">
-      <FieldControl
-        render={<input type="email" placeholder="user@example.com" />}
-      />
-    </Field>
-  )
-}
-
-export function FieldInvalid() {
-  return (
-    <Field label="비밀번호" invalid errorMessage="비밀번호가 일치하지 않습니다">
-      <FieldControl render={<input type="password" />} />
-    </Field>
+    <div className="umc-example umc-example-stack">
+      <div className="w-full max-w-[326px]">
+        <Field
+          label="개별 지원 코드"
+          info={<TextInfoButton>개별 지원 코드란?</TextInfoButton>}
+        >
+          <Control placeholder="코드 입력" />
+        </Field>
+      </div>
+    </div>
   )
 }

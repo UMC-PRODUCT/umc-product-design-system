@@ -1,57 +1,124 @@
 "use client"
 
-import { InputBox, TextField } from "@umc-product/react"
+import { TextField } from "@umc-product/react"
 
 export function TextFieldDefault() {
   return (
-    <div data-spec-id="text-field-lg-default">
-      <TextField label="이름" placeholder="홍길동" />
+    <div className="umc-example umc-example-stack">
+      <div
+        className="w-full max-w-[326px]"
+        data-spec-id="text-field-label text-field-box text-field-box-hover text-field-box-focus text-field-placeholder text-field-caption"
+      >
+        <TextField
+          label="이름"
+          placeholder="이름을 입력하세요"
+          caption="실명으로 입력해 주세요"
+          unit="님"
+        />
+      </div>
     </div>
   )
 }
 
-export function TextFieldInputFont() {
+export function TextFieldFilled() {
   return (
-    <InputBox data-spec-id="text-field-input-font">
-      <input className="umc-input-box__input" defaultValue="입력 글꼴" />
-    </InputBox>
+    <div className="umc-example umc-example-stack">
+      <div
+        className="w-full max-w-[326px]"
+        data-spec-id="text-field-value text-field-typing text-field-clear text-field-unit"
+      >
+        <TextField label="금액" defaultValue="30000" unit="원" />
+      </div>
+    </div>
   )
 }
 
-export function TextFieldError() {
+export function TextFieldSizes() {
   return (
-    <div data-spec-id="text-field-lg-error">
-      <TextField
-        label="이메일"
-        invalid
-        errorMessage="올바른 이메일 형식이 아닙니다"
-        defaultValue="invalid"
-      />
+    <div className="umc-example umc-example-stack">
+      <div className="w-full max-w-[350px]">
+        <TextField label="Lg" placeholder="48px" />
+      </div>
+      <div
+        className="w-full max-w-[350px]"
+        data-spec-id="text-field-md text-field-md-input"
+      >
+        <TextField label="Md" size="md" placeholder="44px" unit="개" />
+      </div>
+    </div>
+  )
+}
+
+export function TextFieldPassword() {
+  return (
+    <div className="umc-example umc-example-stack">
+      <div
+        className="w-full max-w-[326px]"
+        data-spec-id="text-field-password-toggle"
+      >
+        <TextField label="비밀번호" type="password" placeholder="비밀번호" />
+      </div>
+    </div>
+  )
+}
+
+export function TextFieldInvalid() {
+  return (
+    <div className="umc-example umc-example-stack">
+      <div
+        className="w-full max-w-[326px]"
+        data-spec-id="text-field-invalid text-field-invalid-label text-field-invalid-caption"
+      >
+        <TextField
+          label="이메일"
+          required
+          placeholder="이메일을 입력하세요"
+          invalid
+          errorMessage="이메일 형식이 아닙니다"
+        />
+      </div>
+      <div
+        className="w-full max-w-[326px]"
+        data-spec-id="text-field-invalid-filled"
+      >
+        <TextField
+          label="이메일"
+          defaultValue="umc@"
+          invalid
+          errorMessage="이메일 형식이 아닙니다"
+        />
+      </div>
     </div>
   )
 }
 
 export function TextFieldDisabled() {
   return (
-    <div data-spec-id="text-field-lg-disabled">
-      <TextField label="이름" disabled defaultValue="홍길동" />
-    </div>
-  )
-}
-
-export function TextFieldPassword() {
-  return <TextField label="비밀번호" type="password" placeholder="••••••••" />
-}
-
-export function TextFieldUnit() {
-  return <TextField label="금액" unit="원" placeholder="0" type="number" />
-}
-
-export function TextFieldSizes() {
-  return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-      <TextField label="Lg (기본)" size="lg" placeholder="48px 높이" />
-      <TextField label="Md" size="md" placeholder="40px 높이" />
+    <div className="umc-example umc-example-stack">
+      <div
+        className="w-full max-w-[326px]"
+        data-spec-id="text-field-disabled text-field-disabled-label text-field-disabled-unit"
+      >
+        <TextField
+          label="이름"
+          placeholder="입력할 수 없습니다"
+          caption="수정 권한이 없습니다"
+          unit="님"
+          disabled
+        />
+      </div>
+      <div
+        className="w-full max-w-[326px]"
+        data-spec-id="text-field-disabled-invalid"
+      >
+        <TextField
+          label="이름"
+          placeholder="입력할 수 없습니다"
+          invalid
+          errorMessage="확인이 필요합니다"
+          disabled
+        />
+      </div>
     </div>
   )
 }

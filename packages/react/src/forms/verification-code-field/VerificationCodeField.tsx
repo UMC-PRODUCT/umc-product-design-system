@@ -1,16 +1,13 @@
 "use client"
 
 import { Field as BaseUIField } from "@base-ui/react"
-import { InfoIcon } from "@umc-product/icons"
-import {
-  type ComponentPropsWithRef,
-  type MutableRefObject,
-  type ReactNode,
-  useRef,
-} from "react"
+import { RemoveCircleIcon } from "@umc-product/icons"
+import { type ComponentPropsWithRef, type ReactNode, useRef } from "react"
 
-import { cx } from "../../internal/cx.ts"
-import { type FieldOwnProps } from "../field/Field.tsx"
+import { mergeRefs } from "../../internal/merge-refs.ts"
+import { Field, type FieldOwnProps } from "../field/Field.tsx"
+import { InputBox } from "../input-box/InputBox.tsx"
+import { clearInputValue, useInputFilled } from "../input-box/input-value.ts"
 
 export type VerificationCodeFieldProps = Omit<
   ComponentPropsWithRef<"input">,
@@ -19,8 +16,11 @@ export type VerificationCodeFieldProps = Omit<
   FieldOwnProps & {
     size?: "lg" | "md"
     timer?: ReactNode
-    infoSlot?: ReactNode
+    info?: ReactNode
+    clearable?: boolean
   }
+
+const CLEAR_LABEL = "인증번호 지우기"
 
 export function VerificationCodeField({
   label,
@@ -31,92 +31,67 @@ export function VerificationCodeField({
   errorMessage,
   size = "lg",
   timer,
-  infoSlot,
+  info,
+  clearable = true,
   disabled,
+  readOnly,
   className,
   onChange,
-  ref: externalRef,
+  ref,
   ...inputProps
 }: VerificationCodeFieldProps) {
   const inputRef = useRef<HTMLInputElement>(null)
-
-  const mergedRef = (el: HTMLInputElement | null) => {
-    ;(inputRef as MutableRefObject<HTMLInputElement | null>).current = el
-    if (typeof externalRef === "function") externalRef(el)
-    else if (externalRef)
-      (externalRef as MutableRefObject<HTMLInputElement | null>).current = el
-  }
-
-  const showError = invalid && errorMessage
+  const [filled, trackFilled] = useInputFilled(
+    inputProps.value,
+    inputProps.defaultValue,
+  )
+  const showClear = clearable && filled && !disabled && !readOnly
 
   return (
-    <BaseUIField.Root
+    <Field
+      label={label}
+      required={required}
+      caption={caption}
+      captionColor={captionColor}
       invalid={invalid}
+      errorMessage={errorMessage}
+      info={info}
       disabled={disabled}
-      className={cx("umc-field", className)}
+      className={className}
     >
-      {label && (
-        <BaseUIField.Label className="umc-field__label">
-          {label}
-          {required && (
-            <span aria-hidden="true" className="umc-field__required">
-              {" "}
-              *
-            </span>
-          )}
-        </BaseUIField.Label>
-      )}
-      <div
-        className="umc-input-box umc-verification-code-field"
-        data-size={size}
-        data-invalid={invalid ? "" : undefined}
-        data-disabled={disabled ? "" : undefined}
+      <InputBox
+        size={size}
+        invalid={invalid}
+        disabled={disabled}
+        data-type="text"
       >
         <BaseUIField.Control
-          {...inputProps}
-          ref={mergedRef}
-          disabled={disabled}
-          required={required}
-          onChange={onChange}
           inputMode="numeric"
-          render={<input className="umc-input-box__input" />}
+          autoComplete="one-time-code"
+          {...inputProps}
+          ref={mergeRefs(inputRef, ref)}
+          disabled={disabled}
+          readOnly={readOnly}
+          required={required}
+          className="umc-input-box__input"
+          onChange={(event) => {
+            trackFilled(event)
+            onChange?.(event)
+          }}
         />
-        {timer && (
-          <span className="umc-input-box__accessory umc-verification-code-field__timer">
-            {timer}
-          </span>
+        {showClear && (
+          <button
+            type="button"
+            className="umc-input-box__clear"
+            aria-label={CLEAR_LABEL}
+            tabIndex={-1}
+            onClick={() => clearInputValue(inputRef.current)}
+          >
+            <RemoveCircleIcon weight="fill" size={24} />
+          </button>
         )}
-      </div>
-      {infoSlot && (
-        <div className="umc-verification-code-field__info">
-          <InfoIcon size={14} aria-hidden="true" />
-          <span>{infoSlot}</span>
-        </div>
-      )}
-      {showError ? (
-        <BaseUIField.Error
-          match={true}
-          render={
-            <span className="umc-field__caption umc-field__caption--error" />
-          }
-        >
-          {errorMessage}
-        </BaseUIField.Error>
-      ) : caption ? (
-        <BaseUIField.Description
-          render={
-            <span
-              className={cx(
-                "umc-field__caption",
-                invalid && "umc-field__caption--error",
-                captionColor === "primary" && "umc-field__caption--primary",
-              )}
-            />
-          }
-        >
-          {caption}
-        </BaseUIField.Description>
-      ) : null}
-    </BaseUIField.Root>
+        {timer && <span className="umc-input-box__timer">{timer}</span>}
+      </InputBox>
+    </Field>
   )
 }

@@ -1,50 +1,75 @@
 @layer components {
   .umc-field {
     --umc-field-label-color: var(--umc-color-text-neutral-medium);
+    --umc-field-label-line-height: 23px;
+    --umc-field-label-letter-spacing: -0.03em;
     --umc-field-caption-color: var(--umc-color-text-neutral-weak);
-    --umc-field-caption-primary-color: var(--umc-color-text-brand-default);
-    --umc-field-caption-error-color: var(--umc-color-text-error);
+    --umc-field-caption-line-height: 17px;
 
     display: flex;
     flex-direction: column;
     gap: var(--umc-spacing-gap-4);
+    box-sizing: border-box;
     width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .umc-field[data-disabled] {
+    --umc-field-label-color: var(--umc-color-teal-grey-400);
+  }
+
+  .umc-field[data-invalid] {
+    --umc-field-label-color: var(--umc-color-text-error);
   }
 
   .umc-field__label {
     display: flex;
     align-items: center;
-    gap: var(--umc-spacing-gap-4);
+    gap: 1px;
     margin: 0;
-    padding: 0;
+    padding-block: 0;
+    padding-inline: var(--umc-spacing-padding-4);
     color: var(--umc-field-label-color);
-    font-family: var(--umc-typography-body-2-medium-font-family);
-    font-size: var(--umc-typography-body-2-medium-font-size);
-    font-weight: var(--umc-typography-body-2-medium-font-weight);
-    line-height: var(--umc-typography-body-2-medium-line-height);
-    letter-spacing: var(--umc-typography-body-2-medium-letter-spacing);
+    font-family: var(--umc-font-family-brand);
+    font-size: var(--umc-font-size-15);
+    font-weight: var(--umc-font-weight-medium);
+    line-height: var(--umc-field-label-line-height);
+    letter-spacing: var(--umc-field-label-letter-spacing);
   }
 
   .umc-field__required {
-    color: var(--umc-field-caption-error-color);
+    color: var(--umc-color-text-error);
   }
 
   .umc-field__caption {
     margin: 0;
-    padding: 0;
+    padding-block: 0;
+    padding-inline: var(--umc-spacing-padding-4);
     color: var(--umc-field-caption-color);
-    font-family: var(--umc-typography-caption-1-regular-font-family);
-    font-size: var(--umc-typography-caption-1-regular-font-size);
-    font-weight: var(--umc-typography-caption-1-regular-font-weight);
-    line-height: var(--umc-typography-caption-1-regular-line-height);
-    letter-spacing: var(--umc-typography-caption-1-regular-letter-spacing);
+    font-family: var(--umc-font-family-brand);
+    font-size: var(--umc-font-size-13);
+    font-weight: var(--umc-font-weight-regular);
+    line-height: var(--umc-field-caption-line-height);
+    letter-spacing: 0;
   }
 
-  .umc-field__caption--primary {
-    color: var(--umc-field-caption-primary-color);
+  .umc-field__caption[data-tone="primary"] {
+    --umc-field-caption-color: var(--umc-color-text-success);
   }
 
-  .umc-field__caption--error {
-    color: var(--umc-field-caption-error-color);
+  .umc-field__caption[data-tone="error"] {
+    --umc-field-caption-color: var(--umc-color-text-error);
+  }
+
+  .umc-field[data-disabled] .umc-field__caption:not([data-tone="error"]) {
+    --umc-field-caption-color: var(--umc-color-teal-grey-400);
+  }
+
+  .umc-field__info {
+    display: flex;
+    align-items: center;
   }
 }

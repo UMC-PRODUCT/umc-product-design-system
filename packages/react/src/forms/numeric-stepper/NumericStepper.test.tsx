@@ -54,4 +54,11 @@ describe("NumericStepper", () => {
     const hiddenInput = document.querySelector('input[name="qty"]')
     expect(hiddenInput).not.toBeNull()
   })
+
+  it("기본 범위는 0부터 999까지다", () => {
+    const { rerender } = render(<NumericStepper defaultValue={0} />)
+    expect(screen.getByLabelText("감소")).toBeDisabled()
+    rerender(<NumericStepper key="max" defaultValue={999} />)
+    expect(screen.getByLabelText("증가")).toBeDisabled()
+  })
 })

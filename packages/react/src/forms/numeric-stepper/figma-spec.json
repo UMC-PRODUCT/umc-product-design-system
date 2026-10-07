@@ -1,29 +1,65 @@
 {
   "component": "NumericStepper",
-  "figmaSection": "2621:33540",
+  "figmaSection": "3032:89173",
   "page": "/components/forms/numeric-stepper/",
   "nodes": [
     {
-      "specId": "numeric-stepper-default",
-      "node": "2621:33540",
-      "variant": "Type=Numeric Stepper, State=Default",
-      "target": ".umc-numeric-stepper",
+      "specId": "numeric-stepper",
+      "node": "2281:6215",
+      "variant": "Numeric Stepper, State=Default",
+      "target": ".umc-numeric-stepper__group",
       "expected": {
-        "height": "48px",
-        "border-top-left-radius": "14px",
-        "border-top-right-radius": "14px",
-        "border-bottom-left-radius": "14px",
-        "border-bottom-right-radius": "14px",
-        "background-color": "rgb(255, 255, 255)"
+        "width": "106px",
+        "height": "38px",
+        "border-top-width": "1px",
+        "border-top-color": "#e2e3e3",
+        "border-top-left-radius": "8px",
+        "background-color": "#fbfcfc",
+        "box-shadow~": "#eceeee85 0px 4px 16px 0px"
       }
     },
     {
-      "specId": "numeric-stepper-btn",
-      "node": "2621:33558",
-      "variant": "Type=Stepper Button",
+      "specId": "numeric-stepper-button",
+      "node": "2281:6227",
+      "variant": ".primitive/Numeric Stepper/Button, Action=Increase, Disabled=False",
+      "target": ".umc-numeric-stepper__button:not(:disabled)",
       "expected": {
-        "width": "48px",
-        "height": "48px"
+        "width": "36px",
+        "color": "#3f4141"
+      }
+    },
+    {
+      "specId": "numeric-stepper-button-disabled",
+      "node": "2281:6221",
+      "variant": ".primitive/Numeric Stepper/Button, Action=Decrease, Disabled=True",
+      "target": ".umc-numeric-stepper__button:disabled",
+      "expected": {
+        "color": "#cccccc"
+      }
+    },
+    {
+      "specId": "numeric-stepper-value",
+      "node": "2281:6218",
+      "variant": "Number",
+      "target": ".umc-numeric-stepper__input",
+      "expected": {
+        "color": "#02746c",
+        "font-size": "16px",
+        "font-weight": "600",
+        "line-height": "22.4px",
+        "letter-spacing": "-0.32px"
+      },
+      "figmaDiffers": {
+        "font-size": "피그마 스타일 이름은 Label/1-Semibold지만 값(16px, -2%)은 Label/3-Semibold다. 보이는 크기를 지키려고 Label/3-Semibold 토큰을 썼다"
+      }
+    },
+    {
+      "specId": "numeric-stepper-disabled",
+      "node": "3032:89177",
+      "variant": "Numeric Stepper, State=Disabled",
+      "target": ".umc-numeric-stepper__input",
+      "expected": {
+        "color": "#cccccc"
       }
     }
   ]

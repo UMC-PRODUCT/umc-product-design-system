@@ -1,9 +1,10 @@
 "use client"
 
-import { Field as BaseUIField, OTPField } from "@base-ui/react"
+import { OTPField } from "@base-ui/react"
+import { type ReactNode, useRef, useState } from "react"
 
 import { cx } from "../../internal/cx.ts"
-import { type FieldOwnProps } from "../field/Field.tsx"
+import { Field, type FieldOwnProps } from "../field/Field.tsx"
 
 export type CodeFieldProps = FieldOwnProps & {
   length?: number
@@ -12,10 +13,13 @@ export type CodeFieldProps = FieldOwnProps & {
   onValueChange?: (value: string) => void
   onValueComplete?: (value: string) => void
   mask?: boolean
+  info?: ReactNode
   name?: string
   disabled?: boolean
   className?: string
 }
+
+const DEFAULT_LENGTH = 6
 
 export function CodeField({
   label,
@@ -24,82 +28,61 @@ export function CodeField({
   captionColor,
   invalid,
   errorMessage,
-  length = 6,
+  length = DEFAULT_LENGTH,
   value,
-  defaultValue,
+  defaultValue = "",
   onValueChange,
   onValueComplete,
   mask,
+  info,
   name,
   disabled,
   className,
 }: CodeFieldProps) {
-  const showError = invalid && errorMessage
+  const rootRef = useRef<HTMLDivElement>(null)
+  const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue)
+  const currentValue = value ?? uncontrolledValue
+
+  const changeValue = (next: string) => {
+    setUncontrolledValue(next)
+    onValueChange?.(next)
+  }
+
+  const restartAfterError = () => {
+    if (!invalid || currentValue === "") return
+    changeValue("")
+    rootRef.current?.querySelector("input")?.focus()
+  }
 
   return (
-    <BaseUIField.Root
+    <Field
+      label={label}
+      required={required}
+      caption={caption}
+      captionColor={captionColor}
       invalid={invalid}
+      errorMessage={errorMessage}
+      info={info}
       disabled={disabled}
-      className={cx("umc-field", className)}
+      className={cx("umc-code-field", className)}
     >
-      {label && (
-        <BaseUIField.Label className="umc-field__label">
-          {label}
-          {required && (
-            <span aria-hidden="true" className="umc-field__required">
-              {" "}
-              *
-            </span>
-          )}
-        </BaseUIField.Label>
-      )}
       <OTPField.Root
+        ref={rootRef}
         length={length}
-        value={value}
-        defaultValue={defaultValue}
-        onValueChange={(v) => onValueChange?.(v)}
-        onValueComplete={(v) => onValueComplete?.(v)}
+        value={currentValue}
+        onValueChange={(next) => changeValue(next)}
+        onValueComplete={(next) => onValueComplete?.(next)}
+        onFocus={restartAfterError}
         mask={mask}
         name={name}
         disabled={disabled}
         required={required}
-        className="umc-code-field"
-        data-invalid={invalid ? "" : undefined}
+        className="umc-code-field__cells"
       >
-        {Array.from({ length }, (_, i) => (
-          <OTPField.Input
-            key={i}
-            className={cx(
-              "umc-code-field__slot",
-              invalid && "umc-code-field__slot--invalid",
-            )}
-          />
+        {Array.from({ length }, (_, index) => (
+          <OTPField.Input key={index} className="umc-code-field__cell" />
         ))}
       </OTPField.Root>
-      {showError ? (
-        <BaseUIField.Error
-          match={true}
-          render={
-            <span className="umc-field__caption umc-field__caption--error" />
-          }
-        >
-          {errorMessage}
-        </BaseUIField.Error>
-      ) : caption ? (
-        <BaseUIField.Description
-          render={
-            <span
-              className={cx(
-                "umc-field__caption",
-                invalid && "umc-field__caption--error",
-                captionColor === "primary" && "umc-field__caption--primary",
-              )}
-            />
-          }
-        >
-          {caption}
-        </BaseUIField.Description>
-      ) : null}
-    </BaseUIField.Root>
+    </Field>
   )
 }

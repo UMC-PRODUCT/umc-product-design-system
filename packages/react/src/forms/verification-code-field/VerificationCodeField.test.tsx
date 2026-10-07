@@ -14,12 +14,9 @@ describe("VerificationCodeField", () => {
     expect(screen.getByText("3:00")).toBeInTheDocument()
   })
 
-  it("infoSlot이 표시된다", () => {
+  it("info가 표시된다", () => {
     render(
-      <VerificationCodeField
-        label="인증번호"
-        infoSlot="인증번호를 입력하세요"
-      />,
+      <VerificationCodeField label="인증번호" info="인증번호를 입력하세요" />,
     )
     expect(screen.getByText("인증번호를 입력하세요")).toBeInTheDocument()
   })

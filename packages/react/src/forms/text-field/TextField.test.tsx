@@ -91,4 +91,27 @@ describe("TextField", () => {
     const input = screen.getByLabelText("이름")
     expect(input.getAttribute("aria-describedby")).toBeTruthy()
   })
+
+  it("비제어 입력에서 글자를 입력하면 지우기 버튼이 나타나고 지우면 사라진다", async () => {
+    const user = userEvent.setup()
+    render(<TextField label="이름" />)
+    const input = screen.getByLabelText("이름")
+    expect(
+      screen.queryByRole("button", { name: "입력 내용 지우기" }),
+    ).not.toBeInTheDocument()
+    await user.type(input, "UMC")
+    await user.click(screen.getByRole("button", { name: "입력 내용 지우기" }))
+    expect(input).toHaveValue("")
+    expect(input).toHaveFocus()
+    expect(
+      screen.queryByRole("button", { name: "입력 내용 지우기" }),
+    ).not.toBeInTheDocument()
+  })
+
+  it("입력 박스에 size와 invalid 상태를 data 속성으로 단다", () => {
+    render(<TextField label="이름" size="md" invalid />)
+    const box = screen.getByLabelText("이름").closest(".umc-input-box")
+    expect(box).toHaveAttribute("data-size", "md")
+    expect(box).toHaveAttribute("data-invalid")
+  })
 })

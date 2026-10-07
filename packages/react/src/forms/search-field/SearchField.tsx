@@ -1,93 +1,72 @@
 "use client"
 
-import { Field as BaseUIField } from "@base-ui/react"
 import { RemoveCircleIcon, SearchIcon } from "@umc-product/icons"
-import {
-  type ComponentPropsWithRef,
-  type MutableRefObject,
-  useRef,
-} from "react"
+import { type ComponentPropsWithRef, useRef } from "react"
 
 import { cx } from "../../internal/cx.ts"
+import { mergeRefs } from "../../internal/merge-refs.ts"
+import { clearInputValue, useInputFilled } from "../input-box/input-value.ts"
 
 export type SearchFieldProps = Omit<
   ComponentPropsWithRef<"input">,
   "size" | "type"
 > & {
-  size?: "lg" | "md"
+  variant?: "default" | "dropdown"
   clearable?: boolean
-  placeholder?: string
-  className?: string
 }
 
+const SEARCH_LABEL = "검색"
 const CLEAR_LABEL = "검색어 지우기"
 
 export function SearchField({
-  size = "lg",
+  variant = "default",
   clearable = true,
   disabled,
+  readOnly,
   className,
   onChange,
-  ref: externalRef,
+  ref,
+  "aria-label": ariaLabel = SEARCH_LABEL,
   ...inputProps
 }: SearchFieldProps) {
   const inputRef = useRef<HTMLInputElement>(null)
-
-  const hasValue = Boolean(inputProps.value || inputProps.defaultValue)
-  const showClear = clearable && hasValue && !disabled
-
-  const handleClear = () => {
-    const input = inputRef.current
-    if (!input) return
-    const nativeSetter = Object.getOwnPropertyDescriptor(
-      HTMLInputElement.prototype,
-      "value",
-    )?.set
-    nativeSetter?.call(input, "")
-    input.dispatchEvent(new Event("input", { bubbles: true }))
-  }
-
-  const mergedRef = (el: HTMLInputElement | null) => {
-    ;(inputRef as MutableRefObject<HTMLInputElement | null>).current = el
-    if (typeof externalRef === "function") externalRef(el)
-    else if (externalRef)
-      (externalRef as MutableRefObject<HTMLInputElement | null>).current = el
-  }
+  const [filled, trackFilled] = useInputFilled(
+    inputProps.value,
+    inputProps.defaultValue,
+  )
+  const showClear = clearable && filled && !disabled && !readOnly
 
   return (
-    <BaseUIField.Root
-      disabled={disabled}
-      className={cx("umc-field", className)}
+    <div
+      className={cx("umc-search-field", className)}
+      data-variant={variant}
+      data-disabled={disabled ? "" : undefined}
     >
-      <div
-        className="umc-input-box umc-search-field"
-        data-size={size}
-        data-disabled={disabled ? "" : undefined}
-      >
-        <BaseUIField.Control
-          {...inputProps}
-          ref={mergedRef}
-          type="search"
-          disabled={disabled}
-          onChange={onChange}
-          render={<input className="umc-input-box__input" />}
-        />
-        {showClear ? (
-          <button
-            type="button"
-            aria-label={CLEAR_LABEL}
-            className="umc-input-box__icon-btn"
-            tabIndex={-1}
-            onClick={handleClear}
-          >
-            <RemoveCircleIcon size={24} aria-hidden="true" />
-          </button>
-        ) : (
-          <span className="umc-input-box__accessory umc-search-field__icon">
-            <SearchIcon size={24} aria-hidden="true" />
-          </span>
-        )}
-      </div>
-    </BaseUIField.Root>
+      <SearchIcon className="umc-search-field__icon" size={24} />
+      <input
+        {...inputProps}
+        ref={mergeRefs(inputRef, ref)}
+        type="search"
+        aria-label={ariaLabel}
+        disabled={disabled}
+        readOnly={readOnly}
+        className="umc-search-field__input"
+        onChange={(event) => {
+          trackFilled(event)
+          onChange?.(event)
+        }}
+      />
+      {showClear && (
+        <button
+          type="button"
+          className="umc-search-field__clear"
+          aria-label={CLEAR_LABEL}
+          tabIndex={-1}
+          onClick={() => clearInputValue(inputRef.current)}
+        >
+          <RemoveCircleIcon weight="fill" size={24} />
+        </button>
+      )}
+    </div>
   )
 }

@@ -72,4 +72,31 @@ describe("Select", () => {
     const hiddenInput = document.querySelector('input[name="fruit"]')
     expect(hiddenInput).not.toBeNull()
   })
+
+  it("값이 있으면 트리거에 값이 아니라 레이블을 보여 준다", () => {
+    render(
+      <Select
+        label="과일"
+        options={[{ value: "apple", label: "사과" }]}
+        defaultValue="apple"
+      />,
+    )
+    expect(screen.getByRole("combobox", { name: "과일" })).toHaveTextContent(
+      "사과",
+    )
+  })
+
+  it("filter 변형과 크기를 트리거 data 속성으로 단다", () => {
+    render(
+      <Select
+        aria-label="정렬"
+        options={[{ value: "recent", label: "최신 순" }]}
+        variant="filter"
+        size="md"
+      />,
+    )
+    const trigger = screen.getByRole("combobox", { name: "정렬" })
+    expect(trigger).toHaveAttribute("data-variant", "filter")
+    expect(trigger).toHaveAttribute("data-size", "md")
+  })
 })

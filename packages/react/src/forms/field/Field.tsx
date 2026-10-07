@@ -15,7 +15,9 @@ export type FieldOwnProps = {
 }
 
 export type FieldProps = FieldOwnProps & {
+  info?: ReactNode
   disabled?: boolean
+  nativeLabel?: boolean
   className?: string
   children: ReactNode
 }
@@ -28,14 +30,16 @@ export function Field({
   label,
   required,
   caption,
-  captionColor,
+  captionColor = "neutral",
   invalid,
   errorMessage,
+  info,
   disabled,
+  nativeLabel = true,
   className,
   children,
 }: FieldProps) {
-  const showError = invalid && errorMessage
+  const showError = Boolean(invalid && errorMessage)
 
   return (
     <BaseUIField.Root
@@ -44,11 +48,14 @@ export function Field({
       className={cx("umc-field", className)}
     >
       {label && (
-        <BaseUIField.Label className="umc-field__label">
+        <BaseUIField.Label
+          className="umc-field__label"
+          nativeLabel={nativeLabel}
+          render={nativeLabel ? undefined : <div />}
+        >
           {label}
           {required && (
             <span aria-hidden="true" className="umc-field__required">
-              {" "}
               *
             </span>
           )}
@@ -58,27 +65,20 @@ export function Field({
       {showError ? (
         <BaseUIField.Error
           match={true}
-          render={
-            <span className="umc-field__caption umc-field__caption--error" />
-          }
+          className="umc-field__caption"
+          data-tone="error"
         >
           {errorMessage}
         </BaseUIField.Error>
       ) : caption ? (
         <BaseUIField.Description
-          render={
-            <span
-              className={cx(
-                "umc-field__caption",
-                invalid && "umc-field__caption--error",
-                captionColor === "primary" && "umc-field__caption--primary",
-              )}
-            />
-          }
+          className="umc-field__caption"
+          data-tone={invalid ? "error" : captionColor}
         >
           {caption}
         </BaseUIField.Description>
       ) : null}
+      {info && <div className="umc-field__info">{info}</div>}
     </BaseUIField.Root>
   )
 }

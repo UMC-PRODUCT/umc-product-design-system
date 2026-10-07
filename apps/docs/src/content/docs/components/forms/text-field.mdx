@@ -1,64 +1,71 @@
 ---
 title: TextField
-description: 레이블, 입력, 캡션을 하나로 묶은 텍스트 입력 필드입니다. 지우기 버튼과 비밀번호 토글을 내장합니다.
+description: 레이블, 한 줄 입력, 도움말을 묶은 텍스트 필드입니다.
 ---
 
 import {
   TextFieldDefault,
   TextFieldDisabled,
-  TextFieldError,
-  TextFieldInputFont,
+  TextFieldFilled,
+  TextFieldInvalid,
   TextFieldPassword,
   TextFieldSizes,
-  TextFieldUnit,
 } from "../../../../components/react/forms/TextFieldExamples.tsx"
 
-피그마 `TextField`(노드 2621:33351)를 구현합니다. `react-hook-form`의 `register()` 반환값을 스프레드로 바로 넘길 수 있습니다.
+피그마 `Text Field/ Box`(node 2621:33350)와 `Text Field/ Input Box`의 `Type=Text`, `Type=Password`를 구현했습니다. 네이티브 `input` 속성과 `ref`를 그대로 받으므로 `react-hook-form`의 `register()` 결과를 펼쳐 넘길 수 있습니다.
 
 ```tsx
 import { TextField } from "@umc-product/react"
 
 const { register } = useForm()
 
-;<TextField label="이메일" required {...register("email")} />
+<TextField label="이메일" required {...register("email")} />
 ```
 
 ## 기본
 
-<TextFieldDefault client:load />
+placeholder 끝에는 온점을 찍지 않습니다(피그마 컴포넌트 설명).
 
-## 입력 글꼴 확인
+<TextFieldDefault client:visible />
 
-<TextFieldInputFont />
+## 값이 있을 때
+
+값이 있으면 지우기 버튼이 나타납니다. 지우기 버튼은 탭 순서에서 빠지고, 누르면 값을 비운 뒤 입력으로 포커스를 돌려 줍니다. `unit`은 오른쪽 끝에 단위를 붙입니다.
+
+<TextFieldFilled client:visible />
 
 ## 크기
 
-<TextFieldSizes client:load />
+<TextFieldSizes client:visible />
 
-## 오류 상태
+## 비밀번호
 
-<TextFieldError client:load />
+`type="password"`이면 눈 아이콘 버튼으로 내용을 보이거나 숨깁니다. 이때는 지우기 버튼을 쓰지 않습니다.
 
-## 비활성 상태
+<TextFieldPassword client:visible />
 
-<TextFieldDisabled client:load />
+## 오류
 
-## 비밀번호 토글
+빈 값 오류는 연한 빨강(red-300) 테두리, 값을 채운 오류는 진한 빨강(red-500) 테두리와 빨간 글자입니다. 다시 포커스하면 글자색이 돌아오고 테두리는 red-400이 됩니다.
 
-<TextFieldPassword client:load />
+<TextFieldInvalid client:visible />
 
-## 단위 표시
+## 비활성
 
-<TextFieldUnit client:load />
+<TextFieldDisabled client:visible />
 
 ## props
 
-| prop           | 타입                             | 기본값  | 설명                                              |
-| -------------- | -------------------------------- | ------- | ------------------------------------------------- |
-| `label`        | `ReactNode`                      | 없음    | 레이블                                            |
-| `size`         | `"lg" \| "md"`                   | `"lg"`  | 높이와 글자 크기                                  |
-| `clearable`    | `boolean`                        | `true`  | 값이 있을 때 지우기 버튼 표시                     |
-| `unit`         | `ReactNode`                      | 없음    | 오른쪽 단위 텍스트                                |
-| `invalid`      | `boolean`                        | `false` | 오류 상태                                         |
-| `errorMessage` | `ReactNode`                      | 없음    | `invalid`일 때 캡션 대신 표시                     |
-| 나머지         | `ComponentPropsWithRef<"input">` | -       | `ref`, `onChange`, `placeholder` 등 네이티브 속성 |
+`Field`의 props(`label`, `required`, `caption`, `captionColor`, `invalid`, `errorMessage`)와 네이티브 `input` 속성을 받습니다.
+
+| prop        | 타입           | 기본값 | 설명                     |
+| ----------- | -------------- | ------ | ------------------------ |
+| `size`      | `"lg" \| "md"` | `"lg"` | 높이 48px 또는 44px      |
+| `unit`      | `ReactNode`    | 없음   | 오른쪽 단위 텍스트       |
+| `clearable` | `boolean`      | `true` | 값이 있을 때 지우기 버튼 |
+
+## 피그마와 다른 점
+
+- Md 비밀번호 필드의 오른쪽 패딩: 피그마는 4px, 일반 Md 필드는 8px입니다. 같은 크기 안에서 오른쪽 여백이 달라지지 않도록 8px로 맞췄습니다.
+- 지우기 아이콘 색 #e2e4e3은 토큰에 없어 컴포넌트 변수로 썼습니다. 오류 상태에서는 피그마대로 #cccccc입니다.
+- Lg 단위 텍스트는 `Mobile Web/Label/1-Medium`(18px/24px, -3%)이라 토큰 대신 피그마 값을 썼습니다.

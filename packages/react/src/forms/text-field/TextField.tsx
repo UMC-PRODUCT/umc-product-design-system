@@ -8,14 +8,15 @@ import {
 } from "@umc-product/icons"
 import {
   type ComponentPropsWithRef,
-  type MutableRefObject,
   type ReactNode,
   useRef,
   useState,
 } from "react"
 
-import { cx } from "../../internal/cx.ts"
-import { type FieldOwnProps } from "../field/Field.tsx"
+import { mergeRefs } from "../../internal/merge-refs.ts"
+import { Field, type FieldOwnProps } from "../field/Field.tsx"
+import { InputBox } from "../input-box/InputBox.tsx"
+import { clearInputValue, useInputFilled } from "../input-box/input-value.ts"
 
 export type TextFieldProps = Omit<ComponentPropsWithRef<"input">, "size"> &
   FieldOwnProps & {
@@ -38,126 +39,83 @@ export function TextField({
   size = "lg",
   unit,
   clearable = true,
-  type: typeProp = "text",
+  type = "text",
   disabled,
+  readOnly,
   className,
   onChange,
-  ref: externalRef,
+  ref,
   ...inputProps
 }: TextFieldProps) {
-  const isPassword = typeProp === "password"
-  const [showPassword, setShowPassword] = useState(false)
-  const actualType = isPassword && showPassword ? "text" : typeProp
   const inputRef = useRef<HTMLInputElement>(null)
-
-  const hasValue = Boolean(inputProps.value || inputProps.defaultValue)
-  const showClear = clearable && !isPassword && hasValue && !disabled
-
-  const handleClear = () => {
-    const input = inputRef.current
-    if (!input) return
-    const nativeSetter = Object.getOwnPropertyDescriptor(
-      HTMLInputElement.prototype,
-      "value",
-    )?.set
-    nativeSetter?.call(input, "")
-    input.dispatchEvent(new Event("input", { bubbles: true }))
-  }
-
-  const showError = invalid && errorMessage
-
-  const mergedRef = (el: HTMLInputElement | null) => {
-    ;(inputRef as MutableRefObject<HTMLInputElement | null>).current = el
-    if (typeof externalRef === "function") externalRef(el)
-    else if (externalRef)
-      (externalRef as MutableRefObject<HTMLInputElement | null>).current = el
-  }
+  const [passwordVisible, setPasswordVisible] = useState(false)
+  const [filled, trackFilled] = useInputFilled(
+    inputProps.value,
+    inputProps.defaultValue,
+  )
+  const isPassword = type === "password"
+  const showClear = clearable && !isPassword && filled && !disabled && !readOnly
 
   return (
-    <BaseUIField.Root
+    <Field
+      label={label}
+      required={required}
+      caption={caption}
+      captionColor={captionColor}
       invalid={invalid}
+      errorMessage={errorMessage}
       disabled={disabled}
-      className={cx("umc-field", className)}
+      className={className}
     >
-      {label && (
-        <BaseUIField.Label className="umc-field__label">
-          {label}
-          {required && (
-            <span aria-hidden="true" className="umc-field__required">
-              {" "}
-              *
-            </span>
-          )}
-        </BaseUIField.Label>
-      )}
-      <div
-        className="umc-input-box"
-        data-size={size}
-        data-invalid={invalid ? "" : undefined}
-        data-disabled={disabled ? "" : undefined}
+      <InputBox
+        size={size}
+        invalid={invalid}
+        disabled={disabled}
+        data-type="text"
       >
         <BaseUIField.Control
           {...inputProps}
-          ref={mergedRef}
-          type={actualType}
+          ref={mergeRefs(inputRef, ref)}
+          type={isPassword && passwordVisible ? "text" : type}
           disabled={disabled}
+          readOnly={readOnly}
           required={required}
-          onChange={onChange}
-          render={<input className="umc-input-box__input" />}
+          className="umc-input-box__input"
+          onChange={(event) => {
+            trackFilled(event)
+            onChange?.(event)
+          }}
         />
-        {unit && <span className="umc-input-box__unit">{unit}</span>}
         {showClear && (
           <button
             type="button"
+            className="umc-input-box__clear"
             aria-label={CLEAR_LABEL}
-            className="umc-input-box__icon-btn"
             tabIndex={-1}
-            onClick={handleClear}
+            onClick={() => clearInputValue(inputRef.current)}
           >
-            <RemoveCircleIcon size={24} aria-hidden="true" />
+            <RemoveCircleIcon weight="fill" size={24} />
           </button>
         )}
         {isPassword && (
           <button
             type="button"
+            className="umc-input-box__password-toggle"
             aria-label={
-              showPassword ? HIDE_PASSWORD_LABEL : SHOW_PASSWORD_LABEL
+              passwordVisible ? HIDE_PASSWORD_LABEL : SHOW_PASSWORD_LABEL
             }
-            className="umc-input-box__icon-btn"
-            onClick={() => setShowPassword((prev) => !prev)}
+            disabled={disabled}
+            onClick={() => setPasswordVisible((visible) => !visible)}
           >
-            {showPassword ? (
-              <EyeInvisibleIcon size={24} aria-hidden="true" />
+            {passwordVisible ? (
+              <EyeInvisibleIcon size={24} />
             ) : (
-              <EyeVisibleIcon size={24} aria-hidden="true" />
+              <EyeVisibleIcon size={24} />
             )}
           </button>
         )}
-      </div>
-      {showError ? (
-        <BaseUIField.Error
-          match={true}
-          render={
-            <span className="umc-field__caption umc-field__caption--error" />
-          }
-        >
-          {errorMessage}
-        </BaseUIField.Error>
-      ) : caption ? (
-        <BaseUIField.Description
-          render={
-            <span
-              className={cx(
-                "umc-field__caption",
-                invalid && "umc-field__caption--error",
-                captionColor === "primary" && "umc-field__caption--primary",
-              )}
-            />
-          }
-        >
-          {caption}
-        </BaseUIField.Description>
-      ) : null}
-    </BaseUIField.Root>
+        {unit && <span className="umc-input-box__unit">{unit}</span>}
+      </InputBox>
+    </Field>
   )
 }

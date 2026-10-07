@@ -1,40 +1,67 @@
 {
   "component": "InputBox",
-  "figmaSection": "2621:33296",
+  "figmaSection": "2621:33115",
   "page": "/components/forms/input-box/",
   "nodes": [
     {
-      "specId": "input-box-lg-default",
-      "node": "2621:33116",
-      "variant": "Type=Text, State=Default, Size=Lg",
+      "specId": "input-box-lg",
+      "node": "2621:33296",
+      "variant": "State=Default, Type=Custom, Size=Lg",
+      "target": ".umc-input-box",
       "expected": {
         "height": "48px",
+        "border-top-width": "1px",
+        "border-top-color": "#cccccc",
         "border-top-left-radius": "14px",
-        "border-top-right-radius": "14px",
-        "border-bottom-left-radius": "14px",
-        "border-bottom-right-radius": "14px",
-        "background-color": "rgb(255, 255, 255)"
+        "background-color": "#ffffff",
+        "padding-top": "8px",
+        "padding-bottom": "8px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "box-shadow~": "#d3d8d826 1px 1px 2px 0px inset, #ffffff40 -1px -1px 1px 0px inset"
       }
     },
     {
-      "specId": "input-box-lg-disabled",
-      "node": "2621:33166",
-      "variant": "Type=Text, State=Disabled, Size=Lg",
+      "specId": "input-box-hover",
+      "interaction": "hover",
+      "node": "2621:33306",
+      "variant": "State=Focused & Hover, Type=Custom, Size=Lg",
+      "target": ".umc-input-box",
       "expected": {
-        "background-color": "rgb(251, 252, 252)"
+        "border-top-color": "#008a80",
+        "background-color": "#ffffff"
+      }
+    },
+    {
+      "specId": "input-box-md",
+      "node": "2621:33301",
+      "variant": "State=Default, Type=Custom, Size=Md",
+      "target": ".umc-input-box",
+      "expected": {
+        "height": "44px"
+      }
+    },
+    {
+      "specId": "input-box-invalid",
+      "node": "2621:33357",
+      "variant": "Text Field/ Box, State=Default, Error=True",
+      "target": ".umc-input-box",
+      "expected": {
+        "border-top-color": "#f88c8c",
+        "background-color": "#fef2f1"
+      }
+    },
+    {
+      "specId": "input-box-disabled",
+      "node": "2621:33323",
+      "variant": "State=Disabled, Type=Custom, Size=Lg",
+      "target": ".umc-input-box",
+      "expected": {
+        "border-top-color": "#eff0f0",
+        "background-color": "#fbfcfc"
       },
       "figmaDiffers": {
-        "box-shadow": "피그마 비활성 테두리 #efedeb(WarmGray-150)는 UMC 토큰에 없어 리터럴로 사용"
-      }
-    },
-    {
-      "specId": "input-box-lg-padding",
-      "node": "2621:33296",
-      "variant": "Type=Custom, State=Default, Size=Lg",
-      "expected": {
-        "height": "48px",
-        "padding-left": "16px",
-        "padding-right": "16px"
+        "border-top-color": "Input Box는 2기 변수 warmgray-150(#efedeb), Text Field/ Box는 TealGrey-100(#eff0f0)을 쓴다. 3기 토큰인 #eff0f0로 통일했다"
       }
     }
   ]

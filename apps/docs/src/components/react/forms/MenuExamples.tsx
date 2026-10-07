@@ -1,68 +1,51 @@
 "use client"
 
-import { Menu } from "@umc-product/react"
-
-const defaultItems = [
-  { label: "수정", onClick: () => {} },
-  { label: "복사", onClick: () => {} },
-  { label: "삭제", tone: "danger" as const, onClick: () => {} },
-]
+import { Button, Menu } from "@umc-product/react"
+import { useState } from "react"
 
 export function MenuDefault() {
+  const [lastAction, setLastAction] = useState("없음")
   return (
-    <Menu
-      trigger={<button className="umc-menu__trigger">메뉴 열기</button>}
-      items={defaultItems}
-    />
-  )
-}
-
-export function MenuWithDisabled() {
-  return (
-    <Menu
-      trigger={<button>옵션</button>}
-      items={[
-        { label: "프로필 보기" },
-        { label: "설정" },
-        { label: "비활성 항목", disabled: true },
-        { label: "로그아웃", tone: "danger" as const },
-      ]}
-    />
-  )
-}
-
-export function MenuDangerItem() {
-  return (
-    <div>
-      <span
-        className="umc-menu__item"
-        data-tone="danger"
-        data-spec-id="menu-item-danger"
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          padding: "0 16px",
-          height: "44px",
-        }}
-      >
-        <span className="umc-menu__item-label">삭제하기</span>
-      </span>
+    <div className="umc-example umc-example-stack">
+      <div data-spec-id="menu-list menu-item">
+        <Menu
+          trigger={
+            <Button variant="weak" color="neutral" size="sm">
+              관리
+            </Button>
+          }
+          items={[
+            { label: "수정", onClick: () => setLastAction("수정") },
+            { label: "복제", onClick: () => setLastAction("복제") },
+            { label: "삭제", onClick: () => setLastAction("삭제") },
+            { label: "보관(준비 중)", disabled: true },
+          ]}
+        />
+      </div>
+      <p className="m-0 text-sm">마지막으로 고른 항목: {lastAction}</p>
     </div>
   )
 }
 
-export function MenuPopupExample() {
+export function MenuSizes() {
   return (
-    <div
-      className="umc-menu__popup"
-      data-spec-id="menu-popup-default"
-      style={{ position: "relative", display: "inline-block" }}
-    >
-      <div className="umc-menu__item">수정</div>
-      <div className="umc-menu__item">복사</div>
-      <div className="umc-menu__item" data-tone="danger">
-        삭제
-      </div>
+    <div className="umc-example">
+      {(["xs", "sm", "md"] as const).map((size) => (
+        <Menu
+          key={size}
+          size={size}
+          trigger={
+            <Button variant="weak" color="neutral" size="sm">
+              {size}
+            </Button>
+          }
+          items={[
+            { label: "최신 순" },
+            { label: "등록 순" },
+            { label: "정렬 순" },
+          ]}
+        />
+      ))}
     </div>
   )
 }

@@ -1,36 +1,101 @@
 {
   "component": "Field",
-  "figmaSection": "2621:33351",
+  "figmaSection": "2621:33350",
   "page": "/components/forms/field/",
   "nodes": [
     {
-      "specId": "field-label",
+      "specId": "field-root",
       "node": "2621:33351",
-      "variant": "Label",
+      "variant": "Text Field/ Box, State=Default, Error=False",
+      "target": ".umc-field",
       "expected": {
+        "row-gap": "4px"
+      }
+    },
+    {
+      "specId": "field-label",
+      "node": "2621:33352",
+      "variant": "Text Field/ Label (Box 안)",
+      "target": ".umc-field__label",
+      "expected": {
+        "color": "#606262",
         "font-size": "15px",
         "font-weight": "500",
-        "color": "rgb(96, 98, 98)"
+        "line-height": "23px",
+        "letter-spacing": "-0.45px",
+        "padding-left": "4px",
+        "column-gap": "1px"
+      },
+      "figmaDiffers": {
+        "color": "Label 원본은 2기 변수 warmgray-600(#544f4b)이고 Box 안에서 TealGrey-600(#606262)으로 덮어쓴다. 3기 토큰인 #606262를 썼다"
+      }
+    },
+    {
+      "specId": "field-required",
+      "node": "2621:33396",
+      "variant": "Text Field/ Label 필수 표시",
+      "target": ".umc-field__required",
+      "expected": {
+        "color": "#dc3d3d"
       }
     },
     {
       "specId": "field-caption",
-      "node": "2621:33394",
-      "variant": "Caption Default",
+      "node": "2621:33343",
+      "variant": "Help Text, Type=Default",
+      "target": ".umc-field__caption",
       "expected": {
+        "color": "#7e7f7f",
         "font-size": "13px",
         "font-weight": "400",
-        "color": "rgb(126, 127, 127)"
+        "line-height": "17px",
+        "letter-spacing": "0px",
+        "padding-left": "4px"
       }
     },
     {
-      "specId": "field-error-caption",
-      "node": "2621:33346",
-      "variant": "Caption Error",
+      "specId": "field-caption-primary",
+      "node": "2621:33345",
+      "variant": "Help Text, Type=Primary",
+      "target": ".umc-field__caption",
       "expected": {
-        "font-size": "13px",
-        "font-weight": "400",
-        "color": "rgb(220, 61, 61)"
+        "color": "#06844c"
+      }
+    },
+    {
+      "specId": "field-caption-error",
+      "node": "2621:33347",
+      "variant": "Help Text, Type=Error",
+      "target": ".umc-field__caption",
+      "expected": {
+        "color": "#dc3d3d"
+      }
+    },
+    {
+      "specId": "field-label-error",
+      "node": "2621:33410",
+      "variant": "Text Field/ Label, State=Error",
+      "target": ".umc-field__label",
+      "expected": {
+        "color": "#dc3d3d"
+      }
+    },
+    {
+      "specId": "field-caption-disabled",
+      "node": "2621:33349",
+      "variant": "Help Text, Type=Disabled",
+      "target": ".umc-field__caption",
+      "expected": {
+        "color": "#adadad"
+      }
+    },
+    {
+      "specId": "field-label-disabled",
+      "node": "2621:33403",
+      "variant": "Text Field/ Label, State=Disabled",
+      "target": ".umc-field__label",
+      "expected": {
+        "color": "#adadad"
       }
     }
   ]

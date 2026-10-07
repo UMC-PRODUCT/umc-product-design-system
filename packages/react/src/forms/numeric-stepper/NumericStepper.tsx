@@ -1,10 +1,9 @@
 "use client"
 
-import { Field as BaseUIField, NumberField } from "@base-ui/react"
+import { NumberField } from "@base-ui/react"
 import { AddIcon, SubtractionIcon } from "@umc-product/icons"
 
-import { cx } from "../../internal/cx.ts"
-import { type FieldOwnProps } from "../field/Field.tsx"
+import { Field, type FieldOwnProps } from "../field/Field.tsx"
 
 export type NumericStepperProps = FieldOwnProps & {
   value?: number | null
@@ -16,9 +15,13 @@ export type NumericStepperProps = FieldOwnProps & {
   name?: string
   disabled?: boolean
   readOnly?: boolean
-  placeholder?: string
   className?: string
+  "aria-label"?: string
 }
+
+const DEFAULT_MIN = 0
+const DEFAULT_MAX = 999
+const ICON_SIZE = 16
 
 export function NumericStepper({
   label,
@@ -30,38 +33,31 @@ export function NumericStepper({
   value,
   defaultValue,
   onValueChange,
-  min,
-  max,
+  min = DEFAULT_MIN,
+  max = DEFAULT_MAX,
   step = 1,
   name,
   disabled,
   readOnly,
-  placeholder,
   className,
+  "aria-label": ariaLabel,
 }: NumericStepperProps) {
-  const showError = invalid && errorMessage
-
   return (
-    <BaseUIField.Root
+    <Field
+      label={label}
+      required={required}
+      caption={caption}
+      captionColor={captionColor}
       invalid={invalid}
+      errorMessage={errorMessage}
       disabled={disabled}
-      className={cx("umc-field", className)}
+      nativeLabel={false}
+      className={className}
     >
-      {label && (
-        <BaseUIField.Label className="umc-field__label" nativeLabel={false}>
-          {label}
-          {required && (
-            <span aria-hidden="true" className="umc-field__required">
-              {" "}
-              *
-            </span>
-          )}
-        </BaseUIField.Label>
-      )}
       <NumberField.Root
         value={value}
         defaultValue={defaultValue}
-        onValueChange={(v) => onValueChange?.(v)}
+        onValueChange={(next) => onValueChange?.(next)}
         min={min}
         max={max}
         step={step}
@@ -70,49 +66,26 @@ export function NumericStepper({
         readOnly={readOnly}
         required={required}
         className="umc-numeric-stepper"
-        data-invalid={invalid ? "" : undefined}
       >
-        <NumberField.Decrement
-          className="umc-numeric-stepper__btn umc-numeric-stepper__btn--decrement"
-          aria-label="감소"
-        >
-          <SubtractionIcon size={20} aria-hidden="true" />
-        </NumberField.Decrement>
-        <NumberField.Input
-          className="umc-numeric-stepper__input"
-          placeholder={placeholder}
-        />
-        <NumberField.Increment
-          className="umc-numeric-stepper__btn umc-numeric-stepper__btn--increment"
-          aria-label="증가"
-        >
-          <AddIcon size={20} aria-hidden="true" />
-        </NumberField.Increment>
+        <NumberField.Group className="umc-numeric-stepper__group">
+          <NumberField.Decrement
+            className="umc-numeric-stepper__button"
+            aria-label="감소"
+          >
+            <SubtractionIcon size={ICON_SIZE} />
+          </NumberField.Decrement>
+          <NumberField.Input
+            className="umc-numeric-stepper__input"
+            aria-label={ariaLabel}
+          />
+          <NumberField.Increment
+            className="umc-numeric-stepper__button"
+            aria-label="증가"
+          >
+            <AddIcon size={ICON_SIZE} />
+          </NumberField.Increment>
+        </NumberField.Group>
       </NumberField.Root>
-      {showError ? (
-        <BaseUIField.Error
-          match={true}
-          render={
-            <span className="umc-field__caption umc-field__caption--error" />
-          }
-        >
-          {errorMessage}
-        </BaseUIField.Error>
-      ) : caption ? (
-        <BaseUIField.Description
-          render={
-            <span
-              className={cx(
-                "umc-field__caption",
-                invalid && "umc-field__caption--error",
-                captionColor === "primary" && "umc-field__caption--primary",
-              )}
-            />
-          }
-        >
-          {caption}
-        </BaseUIField.Description>
-      ) : null}
-    </BaseUIField.Root>
+    </Field>
   )
 }

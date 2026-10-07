@@ -7,9 +7,9 @@ describe("MenuProps 타입", () => {
     expectTypeOf<MenuProps["items"]>().toEqualTypeOf<MenuItemDef[]>()
   })
 
-  it("tone은 default 또는 danger만 허용한다", () => {
-    expectTypeOf<MenuItemDef["tone"]>().toEqualTypeOf<
-      "default" | "danger" | undefined
+  it("size는 Dropdown/Item 크기 xs, sm, md만 받는다", () => {
+    expectTypeOf<MenuProps["size"]>().toEqualTypeOf<
+      "xs" | "sm" | "md" | undefined
     >()
   })
 

@@ -3,9 +3,9 @@ import { describe, expectTypeOf, it } from "vitest"
 import type { SearchFieldProps } from "./SearchField.tsx"
 
 describe("SearchFieldProps 타입", () => {
-  it("size는 lg 또는 md만 받는다", () => {
-    expectTypeOf<SearchFieldProps["size"]>().toEqualTypeOf<
-      "lg" | "md" | undefined
+  it("variant는 default 또는 dropdown만 받는다", () => {
+    expectTypeOf<SearchFieldProps["variant"]>().toEqualTypeOf<
+      "default" | "dropdown" | undefined
     >()
   })
 

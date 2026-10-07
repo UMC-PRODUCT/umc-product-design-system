@@ -1,114 +1,122 @@
 "use client"
 
-import { Select } from "@umc-product/react"
+import { Select, type SelectOption } from "@umc-product/react"
+import { useState } from "react"
 
-const fruitOptions = [
-  { value: "apple", label: "사과" },
-  { value: "banana", label: "바나나", caption: "달콤한 과일" },
-  { value: "cherry", label: "체리", disabled: true },
+type Part = "plan" | "design" | "web" | "android" | "ios" | "spring" | "node"
+
+const PARTS: SelectOption<Part>[] = [
+  { value: "plan", label: "Plan" },
+  { value: "design", label: "Design" },
+  { value: "web", label: "Web" },
+  { value: "android", label: "Android" },
+  { value: "ios", label: "iOS" },
+  { value: "spring", label: "SpringBoot" },
+  { value: "node", label: "Node.js", disabled: true },
 ]
 
-const sizeOptions = [
-  { value: "xs", label: "Extra Small" },
-  { value: "sm", label: "Small" },
-  { value: "md", label: "Medium" },
+const SORTS: SelectOption<"recent" | "registered" | "name">[] = [
+  { value: "recent", label: "최신 순" },
+  { value: "registered", label: "등록 순" },
+  { value: "name", label: "이름 순" },
+]
+
+const SCHOOLS: SelectOption[] = [
+  { value: "dongguk", label: "동국대학교", caption: "서울" },
+  { value: "gachon", label: "가천대학교", caption: "경기" },
+  { value: "inha", label: "인하대학교", caption: "인천" },
 ]
 
 export function SelectDefault() {
+  const [part, setPart] = useState<Part | null>(null)
   return (
-    <div data-spec-id="select-lg-default">
-      <Select
-        label="과일 선택"
-        options={fruitOptions}
-        placeholder="선택하세요"
-      />
+    <div className="umc-example umc-example-stack">
+      <div
+        className="w-full max-w-[350px]"
+        data-spec-id="select-trigger select-trigger-hover select-placeholder select-icon select-list select-item select-item-highlighted"
+      >
+        <Select
+          label="파트"
+          required
+          placeholder="파트를 선택하세요"
+          options={PARTS}
+          value={part}
+          onValueChange={setPart}
+        />
+      </div>
+      <div
+        className="w-full max-w-[350px]"
+        data-spec-id="select-filled select-item-selected"
+      >
+        <Select label="파트" options={PARTS} defaultValue="web" />
+      </div>
+      <div className="w-full max-w-[350px]" data-spec-id="select-md">
+        <Select
+          label="파트"
+          size="md"
+          options={PARTS}
+          placeholder="파트를 선택하세요"
+        />
+      </div>
     </div>
   )
 }
 
-export function SelectMd() {
+export function SelectFilter() {
   return (
-    <div data-spec-id="select-md-default">
-      <Select
-        label="크기"
-        options={sizeOptions}
-        size="md"
-        placeholder="선택하세요"
-      />
+    <div className="umc-example">
+      <div className="w-[140px]" data-spec-id="select-filter">
+        <Select
+          variant="filter"
+          size="md"
+          aria-label="정렬"
+          options={SORTS}
+          defaultValue="registered"
+        />
+      </div>
+      <div className="w-[140px]">
+        <Select variant="filter" size="md" options={SORTS} placeholder="정렬" />
+      </div>
     </div>
   )
 }
 
 export function SelectSearchable() {
   return (
-    <Select
-      label="검색 가능 선택"
-      options={fruitOptions}
-      searchable
-      searchPlaceholder="과일 검색..."
-      placeholder="선택하세요"
-    />
-  )
-}
-
-export function SelectItemSizes() {
-  return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-      <Select
-        label="xs 항목"
-        options={fruitOptions}
-        itemSize="xs"
-        placeholder="선택"
-      />
-      <Select
-        label="sm 항목 (기본)"
-        options={fruitOptions}
-        itemSize="sm"
-        placeholder="선택"
-      />
-      <Select
-        label="md 항목"
-        options={fruitOptions}
-        itemSize="md"
-        placeholder="선택"
-      />
+    <div className="umc-example umc-example-stack">
+      <div className="w-full max-w-[350px]">
+        <Select
+          label="학교"
+          searchable
+          searchPlaceholder="학교 이름으로 검색"
+          itemSize="md"
+          options={SCHOOLS}
+          placeholder="학교를 선택하세요"
+        />
+      </div>
     </div>
   )
 }
 
-export function SelectInvalid() {
+export function SelectStates() {
   return (
-    <Select
-      label="과일 선택"
-      options={fruitOptions}
-      invalid
-      errorMessage="필수 선택 항목입니다"
-      placeholder="선택하세요"
-    />
-  )
-}
-
-export function SelectWithCaption() {
-  return (
-    <Select
-      label="카테고리"
-      options={fruitOptions}
-      caption="선택 항목은 나중에 변경할 수 있습니다"
-      placeholder="선택하세요"
-    />
-  )
-}
-
-export function SelectPopupExample() {
-  return (
-    <div
-      data-spec-id="select-popup"
-      style={{ position: "relative", display: "inline-block" }}
-    >
-      <div className="umc-select__popup" style={{ position: "relative" }}>
-        <div className="umc-select__item">사과</div>
-        <div className="umc-select__item">바나나</div>
-        <div className="umc-select__item">체리</div>
+    <div className="umc-example umc-example-stack">
+      <div className="w-full max-w-[350px]" data-spec-id="select-invalid">
+        <Select
+          label="파트"
+          options={PARTS}
+          placeholder="파트를 선택하세요"
+          invalid
+          errorMessage="파트를 선택해 주세요"
+        />
+      </div>
+      <div className="w-full max-w-[350px]" data-spec-id="select-disabled">
+        <Select
+          label="파트"
+          options={PARTS}
+          placeholder="파트를 선택하세요"
+          disabled
+        />
       </div>
     </div>
   )

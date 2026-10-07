@@ -44,4 +44,31 @@ describe("CodeField", () => {
     await user.type(inputs[0]!, "1")
     expect(onValueChange).toHaveBeenCalled()
   })
+
+  it("오류 상태에서 셀을 다시 누르면 입력한 숫자를 모두 지운다", async () => {
+    const onValueChange = vi.fn()
+    const user = userEvent.setup()
+    render(
+      <CodeField
+        length={4}
+        defaultValue="1234"
+        invalid
+        onValueChange={onValueChange}
+      />,
+    )
+    const inputs = screen.getAllByRole("textbox")
+    await user.click(inputs[2]!)
+    expect(onValueChange).toHaveBeenCalledWith("")
+    for (const input of inputs) {
+      expect(input).toHaveValue("")
+    }
+  })
+
+  it("오류가 아니면 셀을 눌러도 입력을 유지한다", async () => {
+    const user = userEvent.setup()
+    render(<CodeField length={4} defaultValue="1234" />)
+    const inputs = screen.getAllByRole("textbox")
+    await user.click(inputs[1]!)
+    expect(inputs[0]).toHaveValue("1")
+  })
 })

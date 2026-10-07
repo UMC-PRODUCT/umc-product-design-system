@@ -7,7 +7,7 @@ import { Menu } from "./Menu.tsx"
 const baseItems = [
   { label: "수정", onClick: vi.fn() },
   { label: "복사", onClick: vi.fn() },
-  { label: "삭제", tone: "danger" as const, onClick: vi.fn() },
+  { label: "삭제", onClick: vi.fn() },
   { label: "비활성", disabled: true, onClick: vi.fn() },
 ]
 
@@ -34,14 +34,14 @@ describe("Menu", () => {
     expect(onClick).toHaveBeenCalledTimes(1)
   })
 
-  it("tone='danger' 항목에 data-tone 속성이 붙는다", async () => {
+  it("항목에 Dropdown/Item 크기를 data-size로 단다", async () => {
     const user = userEvent.setup()
-    render(<Menu trigger={<button>메뉴</button>} items={baseItems} />)
+    render(<Menu trigger={<button>메뉴</button>} items={baseItems} size="xs" />)
     await user.click(screen.getByText("메뉴"))
     await waitFor(() => screen.getByText("삭제"))
-    expect(screen.getByText("삭제").closest(".umc-menu__item")).toHaveAttribute(
-      "data-tone",
-      "danger",
+    expect(screen.getByRole("menuitem", { name: "삭제" })).toHaveAttribute(
+      "data-size",
+      "xs",
     )
   })
 

@@ -1,53 +1,48 @@
 "use client"
 
 import { NumericStepper } from "@umc-product/react"
+import { useState } from "react"
+
+const PARTS = ["Design", "Frontend", "Backend"]
 
 export function NumericStepperDefault() {
+  const [quota, setQuota] = useState<Record<string, number | null>>({
+    Design: 0,
+    Frontend: 2,
+    Backend: 999,
+  })
   return (
-    <div data-spec-id="numeric-stepper-default" style={{ width: "240px" }}>
-      <NumericStepper label="수량" defaultValue={1} min={1} max={99} />
+    <div className="umc-example umc-example-stack">
+      {PARTS.map((part, index) => (
+        <div
+          key={part}
+          className="flex items-center gap-12"
+          data-spec-id={
+            index === 0
+              ? "numeric-stepper numeric-stepper-button numeric-stepper-button-disabled numeric-stepper-value"
+              : undefined
+          }
+        >
+          <span className="w-16 text-[15px]">{part}</span>
+          <NumericStepper
+            aria-label={`${part} 모집 인원`}
+            value={quota[part]}
+            onValueChange={(value) =>
+              setQuota((current) => ({ ...current, [part]: value }))
+            }
+          />
+        </div>
+      ))}
     </div>
-  )
-}
-
-export function NumericStepperButton() {
-  return (
-    <div style={{ display: "flex" }}>
-      <button
-        className="umc-numeric-stepper__btn umc-numeric-stepper__btn--increment"
-        data-spec-id="numeric-stepper-btn"
-        type="button"
-        aria-label="증가"
-        style={{ width: "48px", height: "48px" }}
-      >
-        +
-      </button>
-    </div>
-  )
-}
-
-export function NumericStepperRange() {
-  return (
-    <NumericStepper
-      label="수량 (1~10)"
-      defaultValue={5}
-      min={1}
-      max={10}
-      step={1}
-    />
-  )
-}
-
-export function NumericStepperInvalid() {
-  return (
-    <NumericStepper
-      label="수량"
-      invalid
-      errorMessage="유효하지 않은 값입니다"
-    />
   )
 }
 
 export function NumericStepperDisabled() {
-  return <NumericStepper label="수량" disabled defaultValue={3} />
+  return (
+    <div className="umc-example">
+      <div data-spec-id="numeric-stepper-disabled">
+        <NumericStepper defaultValue={3} disabled />
+      </div>
+    </div>
+  )
 }

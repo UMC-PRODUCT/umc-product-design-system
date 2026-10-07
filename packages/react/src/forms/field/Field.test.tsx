@@ -63,6 +63,6 @@ describe("Field", () => {
     )
     const caption = screen.getByText("도움말")
     expect(caption).toBeInTheDocument()
-    expect(caption).toHaveClass("umc-field__caption--error")
+    expect(caption).toHaveAttribute("data-tone", "error")
   })
 })

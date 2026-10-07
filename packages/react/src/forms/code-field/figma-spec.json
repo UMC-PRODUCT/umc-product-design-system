@@ -1,29 +1,102 @@
 {
   "component": "CodeField",
-  "figmaSection": "2621:33470",
+  "figmaSection": "2621:36596",
   "page": "/components/forms/code-field/",
   "nodes": [
     {
-      "specId": "code-field-slot-default",
-      "node": "2621:33470",
-      "variant": "Type=OTP Slot, State=Default",
+      "specId": "code-field-root",
+      "node": "2621:36597",
+      "variant": "Text Field/ Code Input, Error=False",
+      "target": ".umc-field",
       "expected": {
-        "height": "56px",
-        "border-top-left-radius": "14px",
-        "border-top-right-radius": "14px",
-        "border-bottom-left-radius": "14px",
-        "border-bottom-right-radius": "14px",
-        "background-color": "rgb(255, 255, 255)",
-        "text-align": "center"
+        "row-gap": "10px"
       }
     },
     {
-      "specId": "code-field-slot-invalid",
-      "node": "2621:33488",
-      "variant": "Type=OTP Slot, State=Error",
+      "specId": "code-field-cells",
+      "node": "2621:36599",
+      "variant": "Cell 묶음",
+      "target": ".umc-code-field__cells",
       "expected": {
-        "background-color": "rgb(254, 242, 241)",
-        "color": "rgb(220, 61, 61)"
+        "column-gap": "10px"
+      }
+    },
+    {
+      "specId": "code-field-cell",
+      "node": "2621:36575",
+      "variant": "Input Box/Code Input/ Cell, State=Default",
+      "target": ".umc-code-field__cell",
+      "expected": {
+        "width": "52px",
+        "height": "52px",
+        "border-top-width": "1px",
+        "border-top-color": "#cccccc",
+        "border-top-left-radius": "16px",
+        "background-color": "#ffffff",
+        "padding-left": "10px",
+        "padding-right": "10px",
+        "font-size": "26px",
+        "font-weight": "600",
+        "line-height": "33.8px",
+        "letter-spacing": "0px",
+        "box-shadow~": "#d3d8d826 1px 1px 2px 0px inset, #ffffff40 -1px -1px 1px 0px inset"
+      },
+      "figmaDiffers": {
+        "font-size": "피그마 스타일 이름은 Heading/4-Semibold지만 26px로 파운데이션 정의(18px)와 다르다. 피그마 값을 컴포넌트 변수로 썼다"
+      }
+    },
+    {
+      "specId": "code-field-cell-hover",
+      "interaction": "hover",
+      "node": "2621:36577",
+      "variant": "Cell, State=Hover",
+      "target": ".umc-code-field__cell",
+      "expected": {
+        "border-top-color": "#7ac7c1",
+        "background-color": "#ffffff"
+      }
+    },
+    {
+      "specId": "code-field-cell-focus",
+      "interaction": "focus",
+      "node": "2621:36581",
+      "variant": "Cell, State=Focus",
+      "target": ".umc-code-field__cell",
+      "expected": {
+        "border-top-color": "#7ac7c1",
+        "background-color": "#f4fbfa"
+      }
+    },
+    {
+      "specId": "code-field-cell-filled",
+      "node": "2621:36579",
+      "variant": "Cell, State=Filled",
+      "target": ".umc-code-field__cell[data-filled]",
+      "expected": {
+        "border-top-color": "#7ac7c1",
+        "color": "#02746c"
+      }
+    },
+    {
+      "specId": "code-field-cell-invalid",
+      "node": "2621:36583",
+      "variant": "Cell, State=Error",
+      "target": ".umc-code-field__cell",
+      "expected": {
+        "border-top-color": "#f88c8c",
+        "color": "#dc3d3d",
+        "background-image~": "#fef2f199"
+      }
+    },
+    {
+      "specId": "code-field-cell-disabled",
+      "node": "2621:36585",
+      "variant": "Cell, State=Disabled",
+      "target": ".umc-code-field__cell",
+      "expected": {
+        "border-top-color": "#cccccc",
+        "background-color": "#fbfcfc",
+        "color": "#cccccc"
       }
     }
   ]

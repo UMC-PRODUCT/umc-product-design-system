@@ -1,48 +1,41 @@
 "use client"
 
 import { Menu as BaseUIMenu } from "@base-ui/react"
-import { type ReactElement, type ReactNode } from "react"
-
-import { cx } from "../../internal/cx.ts"
+import type { ReactElement, ReactNode } from "react"
 
 export type MenuItemDef = {
   label: ReactNode
-  icon?: ReactNode
   onClick?: () => void
   disabled?: boolean
-  tone?: "default" | "danger"
 }
 
 export type MenuProps = {
   trigger: ReactElement
   items: MenuItemDef[]
+  size?: "xs" | "sm" | "md"
   className?: string
 }
 
-export function Menu({ trigger, items, className }: MenuProps) {
+export function Menu({ trigger, items, size = "sm", className }: MenuProps) {
   return (
     <BaseUIMenu.Root>
-      <BaseUIMenu.Trigger
-        className={cx("umc-menu__trigger", className)}
-        render={trigger}
-      />
+      <BaseUIMenu.Trigger className={className} render={trigger} />
       <BaseUIMenu.Portal>
-        <BaseUIMenu.Positioner sideOffset={4}>
-          <BaseUIMenu.Popup className="umc-menu__popup">
+        <BaseUIMenu.Positioner
+          className="umc-dropdown-list__positioner"
+          sideOffset={4}
+          align="start"
+        >
+          <BaseUIMenu.Popup className="umc-dropdown-list">
             {items.map((item, index) => (
               <BaseUIMenu.Item
                 key={index}
                 disabled={item.disabled}
                 onClick={item.onClick}
-                className="umc-menu__item"
-                data-tone={item.tone === "danger" ? "danger" : undefined}
+                className="umc-dropdown-item"
+                data-size={size}
               >
-                {item.icon && (
-                  <span className="umc-menu__item-icon" aria-hidden="true">
-                    {item.icon}
-                  </span>
-                )}
-                <span className="umc-menu__item-label">{item.label}</span>
+                {item.label}
               </BaseUIMenu.Item>
             ))}
           </BaseUIMenu.Popup>

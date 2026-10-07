@@ -1,20 +1,19 @@
 "use client"
 
 import { Field as BaseUIField } from "@base-ui/react"
-import type {
-  ChangeEventHandler,
-  ComponentPropsWithRef,
-  FocusEventHandler,
-  Ref,
-} from "react"
+import { mergeProps } from "@base-ui/react/merge-props"
+import type { ComponentPropsWithRef } from "react"
 
-import { cx } from "../../internal/cx.ts"
-import { type FieldOwnProps } from "../field/Field.tsx"
+import { mergeRefs } from "../../internal/merge-refs.ts"
+import { Field, type FieldOwnProps } from "../field/Field.tsx"
+import { InputBox } from "../input-box/InputBox.tsx"
 
 export type TextAreaProps = Omit<ComponentPropsWithRef<"textarea">, "size"> &
   FieldOwnProps & {
     size?: "lg" | "md"
   }
+
+const DEFAULT_ROWS = 2
 
 export function TextArea({
   label,
@@ -24,93 +23,48 @@ export function TextArea({
   invalid,
   errorMessage,
   size = "lg",
+  rows = DEFAULT_ROWS,
   disabled,
   className,
-  name,
   value,
   defaultValue,
-  onChange,
-  onBlur,
   ref,
-  rows,
-  maxLength,
-  placeholder,
-  readOnly,
-  autoFocus,
-  id: _id,
-  ...restTextareaProps
+  ...textareaProps
 }: TextAreaProps) {
-  const showError = invalid && errorMessage
-
   return (
-    <BaseUIField.Root
+    <Field
+      label={label}
+      required={required}
+      caption={caption}
+      captionColor={captionColor}
       invalid={invalid}
+      errorMessage={errorMessage}
       disabled={disabled}
-      className={cx("umc-field", className)}
+      className={className}
     >
-      {label && (
-        <BaseUIField.Label className="umc-field__label">
-          {label}
-          {required && (
-            <span aria-hidden="true" className="umc-field__required">
-              {" "}
-              *
-            </span>
-          )}
-        </BaseUIField.Label>
-      )}
-      <div
-        className="umc-input-box umc-textarea"
-        data-size={size}
-        data-invalid={invalid ? "" : undefined}
-        data-disabled={disabled ? "" : undefined}
+      <InputBox
+        size={size}
+        invalid={invalid}
+        disabled={disabled}
+        className="umc-text-area"
       >
         <BaseUIField.Control
-          name={name}
-          value={value as string | undefined}
-          defaultValue={defaultValue as string | undefined}
-          onChange={onChange as unknown as ChangeEventHandler<HTMLInputElement>}
-          onBlur={onBlur as unknown as FocusEventHandler<HTMLInputElement>}
-          ref={ref as unknown as Ref<HTMLInputElement>}
+          value={value}
+          defaultValue={defaultValue}
           disabled={disabled}
           required={required}
-          render={
+          render={(controlProps) => (
             <textarea
-              className="umc-input-box__input umc-textarea__input"
-              rows={rows}
-              maxLength={maxLength}
-              placeholder={placeholder}
-              readOnly={readOnly}
-              autoFocus={autoFocus}
-              {...restTextareaProps}
+              {...mergeProps<"textarea">(controlProps, {
+                ...textareaProps,
+                rows,
+                className: "umc-input-box__input umc-text-area__input",
+              })}
+              ref={mergeRefs(controlProps.ref, ref)}
             />
-          }
+          )}
         />
-      </div>
-      {showError ? (
-        <BaseUIField.Error
-          match={true}
-          render={
-            <span className="umc-field__caption umc-field__caption--error" />
-          }
-        >
-          {errorMessage}
-        </BaseUIField.Error>
-      ) : caption ? (
-        <BaseUIField.Description
-          render={
-            <span
-              className={cx(
-                "umc-field__caption",
-                invalid && "umc-field__caption--error",
-                captionColor === "primary" && "umc-field__caption--primary",
-              )}
-            />
-          }
-        >
-          {caption}
-        </BaseUIField.Description>
-      ) : null}
-    </BaseUIField.Root>
+      </InputBox>
+    </Field>
   )
 }

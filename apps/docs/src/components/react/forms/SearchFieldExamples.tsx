@@ -4,32 +4,32 @@ import { SearchField } from "@umc-product/react"
 
 export function SearchFieldDefault() {
   return (
-    <div data-spec-id="search-field-lg-default">
-      <SearchField placeholder="검색어를 입력하세요" />
+    <div className="umc-example umc-example-stack">
+      <div
+        className="w-full max-w-[456px]"
+        data-spec-id="search-field search-field-input search-field-icon"
+      >
+        <SearchField placeholder="프로젝트 이름으로 검색하세요" />
+      </div>
+      <div className="w-full max-w-[456px]" data-spec-id="search-field-clear">
+        <SearchField defaultValue="UMC 프로덕트" />
+      </div>
     </div>
   )
 }
 
-export function SearchFieldMd() {
-  return <SearchField size="md" placeholder="검색" />
-}
-
-export function SearchFieldClearable() {
+export function SearchFieldDropdown() {
   return (
-    <SearchField
-      placeholder="입력하면 지우기 버튼이 나타납니다"
-      defaultValue="검색어"
-      clearable
-    />
-  )
-}
-
-export function SearchFieldNoClear() {
-  return (
-    <SearchField
-      placeholder="항상 검색 아이콘 표시"
-      defaultValue="검색어"
-      clearable={false}
-    />
+    <div className="umc-example">
+      <div
+        className="w-[140px]"
+        data-spec-id="search-field-dropdown search-field-dropdown-hover search-field-dropdown-icon"
+      >
+        <SearchField variant="dropdown" placeholder="검색" />
+      </div>
+      <div className="w-[140px]" data-spec-id="search-field-dropdown-typing">
+        <SearchField variant="dropdown" defaultValue="검색" />
+      </div>
+    </div>
   )
 }

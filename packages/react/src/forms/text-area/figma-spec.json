@@ -1,19 +1,71 @@
 {
   "component": "TextArea",
-  "figmaSection": "2621:33262",
+  "figmaSection": "2621:33115",
   "page": "/components/forms/text-area/",
   "nodes": [
     {
-      "specId": "text-area-lg-default",
+      "specId": "text-area-box",
       "node": "2621:33262",
-      "variant": "Type=Text Area, State=Default, Size=Lg",
-      "target": ".umc-textarea",
+      "variant": "State=Default, Type=Text Area, Size=Lg",
+      "target": ".umc-input-box",
       "expected": {
+        "padding-top": "12px",
+        "padding-bottom": "12px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "border-top-color": "#cccccc",
         "border-top-left-radius": "14px",
-        "border-top-right-radius": "14px",
-        "border-bottom-left-radius": "14px",
-        "border-bottom-right-radius": "14px",
-        "background-color": "rgb(255, 255, 255)"
+        "background-color": "#ffffff"
+      }
+    },
+    {
+      "specId": "text-area-input",
+      "node": "2621:33264",
+      "variant": "Text Area 글자, Size=Lg",
+      "target": ".umc-input-box__input",
+      "expected": {
+        "font-size": "18px",
+        "font-weight": "500",
+        "line-height": "25.2px",
+        "letter-spacing": "-0.36px"
+      }
+    },
+    {
+      "specId": "text-area-md",
+      "node": "2621:33267",
+      "variant": "Text Area 글자, Size=Md",
+      "target": ".umc-input-box__input",
+      "expected": {
+        "font-size": "16px",
+        "font-weight": "500",
+        "line-height": "22.4px",
+        "letter-spacing": "-0.32px"
+      },
+      "figmaDiffers": {
+        "letter-spacing": "피그마 로컬 스타일 Label/3-Medium은 -3%(-0.48px)다. 이름이 같은 파운데이션 정의 -2%(토큰)를 따랐다"
+      }
+    },
+    {
+      "specId": "text-area-invalid",
+      "node": "2621:33383",
+      "variant": "Text Field/ Box, State=Filled, Error=True",
+      "target": ".umc-input-box",
+      "expected": {
+        "border-top-color": "#dc3d3d",
+        "background-color": "#fef2f1"
+      }
+    },
+    {
+      "specId": "text-area-disabled",
+      "node": "2621:33290",
+      "variant": "State=Disabled, Type=Text Area, Size=Lg",
+      "target": ".umc-input-box",
+      "expected": {
+        "border-top-color": "#eff0f0",
+        "background-color": "#fbfcfc"
+      },
+      "figmaDiffers": {
+        "border-top-color": "Input Box는 2기 변수 warmgray-150(#efedeb), Text Field/ Box는 TealGrey-100(#eff0f0)을 쓴다. 3기 토큰인 #eff0f0로 통일했다"
       }
     }
   ]

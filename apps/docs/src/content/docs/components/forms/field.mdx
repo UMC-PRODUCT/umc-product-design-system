@@ -1,65 +1,59 @@
 ---
 title: Field
-description: 레이블, 캡션, 오류 메시지를 묶어 접근성 관계를 자동으로 연결하는 필드 래퍼입니다.
+description: 레이블, 컨트롤, 도움말, 오류 메시지를 묶는 틀입니다.
 ---
 
 import {
-  FieldCaptionExample,
+  FieldCaptionTones,
   FieldDefault,
-  FieldErrorCaptionExample,
-  FieldInvalid,
-  FieldLabelExample,
-  FieldRequired,
+  FieldWithInfo,
 } from "../../../../components/react/forms/FieldExamples.tsx"
 
-피그마 `Field`(노드 2621:33351)의 레이블, 캡션, 오류 메시지를 하나의 컴포넌트로 묶었습니다. Base UI `Field.Root`를 기반으로 하여 `id`, `aria-invalid`, `aria-describedby` 연결을 자동으로 처리합니다.
+피그마 `Text Field/ Box`(node 2621:33350)의 레이블(`Text Field/ Label`)과 도움말(`Help Text`) 부분입니다. `TextField`, `TextArea`, `Select`, `VerificationCodeField`, `CodeField`, `NumericStepper`가 모두 이 틀을 씁니다. 직접 만든 컨트롤을 넣을 때는 `FieldControl`을 함께 씁니다.
 
 ```tsx
-import { Field, FieldControl } from "@umc-product/react"
+import { Field, FieldControl, InputBox } from "@umc-product/react"
 
-;<Field
-  label="이름"
-  required
-  caption="20자 이내"
-  invalid
-  errorMessage="필수 입력"
->
-  <FieldControl render={<input placeholder="홍길동" />} />
+;<Field label="학교 이메일" required caption="학교 도메인만 받습니다">
+  <InputBox>
+    <FieldControl className="umc-input-box__input" />
+  </InputBox>
 </Field>
 ```
 
-## 기본 사용
+<FieldDefault client:visible />
 
-<FieldDefault client:load />
+## 도움말 색
 
-## 필수 표시
+`captionColor="primary"`는 피그마 `Help Text/Primary`로 초록(`--umc-color-text-success`)입니다. `invalid`이면 레이블과 도움말이 빨강으로 바뀌고, `errorMessage`가 있으면 도움말 자리를 오류 메시지가 대신합니다. 비활성이면 레이블과 도움말이 흐려집니다.
 
-<FieldRequired client:load />
+<FieldCaptionTones client:visible />
 
-## 오류 상태
+## 정보 버튼
 
-<FieldInvalid client:load />
+`info`는 도움말 아래에 놓입니다. 피그마 인증번호 필드와 코드 입력 필드의 `Text Info Button` 자리입니다.
 
-## 레이블 스타일
+<FieldWithInfo client:visible />
 
-<FieldLabelExample />
+## 접근성
 
-## 캡션 스타일
-
-<FieldCaptionExample />
-
-## 오류 캡션 스타일
-
-<FieldErrorCaptionExample />
+`FieldControl`은 레이블의 `for`, `aria-describedby`, `aria-invalid`를 자동으로 연결합니다. 필수 표시 `*`는 화면 낭독기에 읽히지 않고, 대신 컨트롤에 `required`가 붙습니다.
 
 ## props
 
-| prop           | 타입                     | 기본값      | 설명                          |
-| -------------- | ------------------------ | ----------- | ----------------------------- |
-| `label`        | `ReactNode`              | 없음        | 레이블 텍스트                 |
-| `required`     | `boolean`                | `false`     | 필수 표시(`*`) 추가           |
-| `caption`      | `ReactNode`              | 없음        | 도움말 텍스트                 |
-| `captionColor` | `"neutral" \| "primary"` | `"neutral"` | 도움말 색상                   |
-| `invalid`      | `boolean`                | `false`     | 오류 상태로 변경              |
-| `errorMessage` | `ReactNode`              | 없음        | `invalid`일 때 캡션 대신 표시 |
-| `disabled`     | `boolean`                | `false`     | 비활성 상태                   |
+| prop           | 타입                     | 기본값      | 설명                              |
+| -------------- | ------------------------ | ----------- | --------------------------------- |
+| `label`        | `ReactNode`              | 없음        | 레이블                            |
+| `required`     | `boolean`                | 없음        | 필수 표시 `*`                     |
+| `caption`      | `ReactNode`              | 없음        | 도움말                            |
+| `captionColor` | `"neutral" \| "primary"` | `"neutral"` | 도움말 색                         |
+| `invalid`      | `boolean`                | 없음        | 오류 상태                         |
+| `errorMessage` | `ReactNode`              | 없음        | 오류일 때 도움말 대신 보일 메시지 |
+| `info`         | `ReactNode`              | 없음        | 아래쪽 정보 버튼 자리             |
+| `disabled`     | `boolean`                | 없음        | 비활성 상태                       |
+| `nativeLabel`  | `boolean`                | `true`      | 버튼형 컨트롤이면 `false`         |
+
+## 피그마와 다른 점
+
+- 레이블 색: `Text Field/ Label` 원본은 2기 변수 `warmgray-600`(#544f4b)이고, `Text Field/ Box` 안에서는 `TealGrey-600`(#606262)으로 덮어씁니다. 3기 토큰인 #606262(`--umc-color-text-neutral-medium`)를 씁니다.
+- 레이블(15px/23px, -3%)과 도움말(13px/17px)은 3기 파운데이션에 없는 `Mobile Web/*` 텍스트 스타일입니다. 토큰에 없는 값이라 피그마 값을 그대로 썼습니다.

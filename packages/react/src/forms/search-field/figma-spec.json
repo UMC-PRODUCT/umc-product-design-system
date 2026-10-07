@@ -1,20 +1,102 @@
 {
   "component": "SearchField",
-  "figmaSection": "2621:33450",
+  "figmaSection": "2621:35605",
   "page": "/components/forms/search-field/",
   "nodes": [
     {
-      "specId": "search-field-lg-default",
-      "node": "2621:33450",
-      "variant": "Type=Search, State=Default, Size=Lg",
+      "specId": "search-field",
+      "node": "2621:35606",
+      "variant": "State=Default, Type=Default",
       "target": ".umc-search-field",
       "expected": {
-        "height": "48px",
-        "border-top-left-radius": "14px",
-        "border-top-right-radius": "14px",
-        "border-bottom-left-radius": "14px",
-        "border-bottom-right-radius": "14px",
-        "background-color": "rgb(255, 255, 255)"
+        "height": "44px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "border-top-left-radius": "12px",
+        "background-color": "#f7f8f8",
+        "box-shadow~": "#d3d8d826 1px 1px 2px 0px inset, #ffffff40 -1px -1px 1px 0px inset"
+      }
+    },
+    {
+      "specId": "search-field-input",
+      "node": "2621:35610",
+      "variant": "검색어 (Body/1-Regular)",
+      "target": ".umc-search-field__input",
+      "expected": {
+        "font-size": "16px",
+        "font-weight": "400",
+        "line-height": "23.2px",
+        "letter-spacing": "-0.16px",
+        "color": "#0f1010"
+      },
+      "figmaDiffers": {
+        "color": "입력 글자는 2기 변수 teal-gray-900(#161919)이다. 같은 단계의 3기 토큰 text-neutral-default(#0f1010)로 바꿨다"
+      }
+    },
+    {
+      "specId": "search-field-icon",
+      "node": "2621:35608",
+      "variant": "Icon/Search 24",
+      "target": ".umc-search-field__icon",
+      "expected": {
+        "width": "24px",
+        "height": "24px",
+        "color": "#adadad"
+      }
+    },
+    {
+      "specId": "search-field-clear",
+      "node": "2621:33329",
+      "variant": ".primitive/ Text Field/ Accessory, Type=Clear",
+      "target": ".umc-search-field__clear",
+      "expected": {
+        "color": "#e2e4e3",
+        "padding-left": "6px",
+        "padding-right": "6px"
+      }
+    },
+    {
+      "specId": "search-field-dropdown",
+      "node": "2621:35614",
+      "variant": "State=Default, Type=with Dropdown List",
+      "target": ".umc-search-field",
+      "expected": {
+        "height": "44px",
+        "padding-left": "12px",
+        "padding-right": "14px",
+        "column-gap": "8px",
+        "border-top-left-radius": "10px",
+        "background-color": "#fbfcfc"
+      }
+    },
+    {
+      "specId": "search-field-dropdown-hover",
+      "interaction": "hover",
+      "node": "2621:35617",
+      "variant": "State=Hover, Type=with Dropdown List",
+      "target": ".umc-search-field",
+      "expected": {
+        "background-color": "#f7f8f8"
+      }
+    },
+    {
+      "specId": "search-field-dropdown-icon",
+      "node": "3430:72330",
+      "variant": "Icon/Search 16",
+      "target": ".umc-search-field__icon",
+      "expected": {
+        "width": "16px",
+        "height": "16px",
+        "color": "#adadad"
+      }
+    },
+    {
+      "specId": "search-field-dropdown-typing",
+      "node": "2621:35620",
+      "variant": "State=Typing, Type=with Dropdown List",
+      "target": ".umc-search-field",
+      "expected": {
+        "padding-right": "4px"
       }
     }
   ]

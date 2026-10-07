@@ -1,11 +1,11 @@
 "use client"
 
-import { Field as BaseUIField, Select as BaseUISelect } from "@base-ui/react"
-import { ExpandLessIcon, ExpandMoreIcon, SearchIcon } from "@umc-product/icons"
+import { Select as BaseUISelect } from "@base-ui/react"
+import { CheckIcon, ExpandMoreIcon } from "@umc-product/icons"
 import { type ReactNode, useState } from "react"
 
-import { cx } from "../../internal/cx.ts"
-import { type FieldOwnProps } from "../field/Field.tsx"
+import { Field, type FieldOwnProps } from "../field/Field.tsx"
+import { SearchField } from "../search-field/SearchField.tsx"
 
 export type SelectOption<V extends string = string> = {
   value: V
@@ -22,12 +22,19 @@ export type SelectProps<V extends string = string> = FieldOwnProps & {
   placeholder?: ReactNode
   size?: "lg" | "md"
   itemSize?: "xs" | "sm" | "md"
+  variant?: "default" | "filter"
   searchable?: boolean
   searchPlaceholder?: string
   disabled?: boolean
   name?: string
   className?: string
+  "aria-label"?: string
 }
+
+const ICON_SIZE = 16
+
+const searchTextOf = <V extends string>(option: SelectOption<V>): string =>
+  typeof option.label === "string" ? option.label : option.value
 
 export function Select<V extends string = string>({
   label,
@@ -38,118 +45,103 @@ export function Select<V extends string = string>({
   errorMessage,
   options,
   value,
-  defaultValue,
+  defaultValue = null,
   onValueChange,
   placeholder = "선택",
   size = "lg",
   itemSize = "sm",
+  variant = "default",
   searchable,
   searchPlaceholder = "검색",
   disabled,
   name,
   className,
+  "aria-label": ariaLabel,
 }: SelectProps<V>) {
-  const [searchQuery, setSearchQuery] = useState("")
-
-  const filteredOptions = searchable
-    ? options.filter((opt) => {
-        const labelStr =
-          typeof opt.label === "string" ? opt.label : String(opt.label)
-        return labelStr.toLowerCase().includes(searchQuery.toLowerCase())
-      })
+  const [query, setQuery] = useState("")
+  const normalizedQuery = query.trim().toLowerCase()
+  const visibleOptions = normalizedQuery
+    ? options.filter((option) =>
+        searchTextOf(option).toLowerCase().includes(normalizedQuery),
+      )
     : options
 
-  const showError = invalid && errorMessage
-
   return (
-    <BaseUIField.Root
+    <Field
+      label={label}
+      required={required}
+      caption={caption}
+      captionColor={captionColor}
       invalid={invalid}
+      errorMessage={errorMessage}
       disabled={disabled}
-      className={cx("umc-field", className)}
+      nativeLabel={false}
+      className={className}
     >
-      {label && (
-        <BaseUIField.Label className="umc-field__label" nativeLabel={false}>
-          {label}
-          {required && (
-            <span aria-hidden="true" className="umc-field__required">
-              {" "}
-              *
-            </span>
-          )}
-        </BaseUIField.Label>
-      )}
       <BaseUISelect.Root
+        items={options}
         value={value}
-        defaultValue={defaultValue ?? null}
-        onValueChange={(v) => {
-          if (v === null) {
-            onValueChange?.(null)
-            return
-          }
-          const matched = options.find((opt) => String(opt.value) === String(v))
-          if (matched) onValueChange?.(matched.value)
+        defaultValue={defaultValue}
+        onValueChange={(next) => onValueChange?.(next)}
+        onOpenChange={(open) => {
+          if (!open) setQuery("")
         }}
         disabled={disabled}
+        required={required}
         name={name}
       >
         <BaseUISelect.Trigger
-          className={cx("umc-input-box", "umc-select__trigger")}
+          className="umc-select__trigger"
+          aria-label={ariaLabel}
           data-size={size}
-          data-invalid={invalid ? "" : undefined}
+          data-variant={variant}
         >
           <BaseUISelect.Value
-            className="umc-input-box__input umc-select__value"
+            className="umc-select__value"
             placeholder={placeholder}
           />
-          <BaseUISelect.Icon
-            className="umc-input-box__accessory umc-select__icon"
-            render={(props, state) => (
-              <span {...props}>
-                {state.open ? (
-                  <ExpandLessIcon size={16} aria-hidden="true" />
-                ) : (
-                  <ExpandMoreIcon size={16} aria-hidden="true" />
-                )}
-              </span>
-            )}
-          />
+          <BaseUISelect.Icon className="umc-select__icon">
+            <ExpandMoreIcon size={ICON_SIZE} />
+          </BaseUISelect.Icon>
         </BaseUISelect.Trigger>
         <BaseUISelect.Portal>
-          <BaseUISelect.Positioner sideOffset={4}>
-            <BaseUISelect.Popup
-              className="umc-select__popup"
-              data-item-size={itemSize}
-            >
+          <BaseUISelect.Positioner
+            className="umc-dropdown-list__positioner"
+            sideOffset={4}
+            alignItemWithTrigger={false}
+          >
+            <BaseUISelect.Popup className="umc-dropdown-list umc-select__popup">
               {searchable && (
-                <div className="umc-select__search">
-                  <SearchIcon size={16} aria-hidden="true" />
-                  <input
-                    className="umc-select__search-input"
-                    placeholder={searchPlaceholder}
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                  />
-                </div>
+                <SearchField
+                  variant="dropdown"
+                  value={query}
+                  placeholder={searchPlaceholder}
+                  aria-label={searchPlaceholder}
+                  onChange={(event) => setQuery(event.target.value)}
+                />
               )}
               <BaseUISelect.List className="umc-select__list">
-                {filteredOptions.map((opt) => (
+                {visibleOptions.map((option) => (
                   <BaseUISelect.Item
-                    key={opt.value}
-                    value={opt.value}
-                    disabled={opt.disabled}
-                    className="umc-select__item"
+                    key={option.value}
+                    value={option.value}
+                    disabled={option.disabled}
+                    className="umc-dropdown-item"
+                    data-size={itemSize}
                   >
-                    <span className="umc-select__item-content">
-                      <BaseUISelect.ItemText className="umc-select__item-label">
-                        {opt.label}
+                    <span className="umc-dropdown-item__content">
+                      <BaseUISelect.ItemText>
+                        {option.label}
                       </BaseUISelect.ItemText>
-                      {opt.caption && (
-                        <span className="umc-select__item-caption">
-                          {opt.caption}
+                      {option.caption && (
+                        <span className="umc-dropdown-item__caption">
+                          {option.caption}
                         </span>
                       )}
                     </span>
-                    <BaseUISelect.ItemIndicator className="umc-select__item-indicator" />
+                    <BaseUISelect.ItemIndicator className="umc-dropdown-item__indicator">
+                      <CheckIcon size={ICON_SIZE} />
+                    </BaseUISelect.ItemIndicator>
                   </BaseUISelect.Item>
                 ))}
               </BaseUISelect.List>
@@ -157,30 +149,6 @@ export function Select<V extends string = string>({
           </BaseUISelect.Positioner>
         </BaseUISelect.Portal>
       </BaseUISelect.Root>
-      {showError ? (
-        <BaseUIField.Error
-          match={true}
-          render={
-            <span className="umc-field__caption umc-field__caption--error" />
-          }
-        >
-          {errorMessage}
-        </BaseUIField.Error>
-      ) : caption ? (
-        <BaseUIField.Description
-          render={
-            <span
-              className={cx(
-                "umc-field__caption",
-                invalid && "umc-field__caption--error",
-                captionColor === "primary" && "umc-field__caption--primary",
-              )}
-            />
-          }
-        >
-          {caption}
-        </BaseUIField.Description>
-      ) : null}
-    </BaseUIField.Root>
+    </Field>
   )
 }
