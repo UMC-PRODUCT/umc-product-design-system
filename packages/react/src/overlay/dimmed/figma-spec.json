@@ -1,0 +1,45 @@
+{
+  "component": "Dimmed",
+  "figmaNodeId": null,
+  "specs": [
+    {
+      "specId": "dimmed-weak",
+      "description": "weak 강도 딤 레이어",
+      "expected": {
+        "position": "fixed"
+      }
+    },
+    {
+      "specId": "dimmed-medium",
+      "description": "medium 강도 딤 레이어",
+      "expected": {
+        "position": "fixed"
+      }
+    },
+    {
+      "specId": "dimmed-strong",
+      "description": "strong 강도 딤 레이어",
+      "expected": {
+        "position": "fixed"
+      }
+    }
+  ],
+  "props": [
+    {
+      "name": "intensity",
+      "type": "\"weak\" | \"medium\" | \"strong\"",
+      "default": "\"medium\""
+    },
+    {
+      "name": "...",
+      "type": "ComponentPropsWithRef<\"div\">"
+    }
+  ],
+  "designNotes": [
+    "weak: --umc-color-dimmed-weak 토큰을 씁니다.",
+    "medium: --umc-color-dimmed-medium 토큰을 씁니다.",
+    "strong: --umc-color-dimmed-strong 토큰을 씁니다.",
+    "position: fixed, inset: 0으로 전체 화면을 덮습니다.",
+    "z-index는 --umc-z-dimmed(1000) 입니다."
+  ]
+}

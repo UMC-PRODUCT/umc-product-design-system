@@ -1,0 +1,42 @@
+---
+title: Dimmed
+description: 모달이나 드로어 뒤에 깔아 배경을 어둡게 만드는 딤 레이어입니다.
+---
+
+import {
+  DimmedIntensities,
+  DimmedStaticPreview,
+} from "../../../../components/react/overlay/DimmedExamples.tsx"
+
+`Dimmed`는 `position: fixed; inset: 0`으로 전체 화면을 덮습니다. 버튼을 눌러 강도별 모양을 확인하고, 딤 영역을 다시 클릭하면 닫힙니다.
+
+```tsx
+import { Dimmed } from "@umc-product/react"
+
+;<Dimmed intensity="medium" onClick={closeModal} />
+```
+
+## 강도 미리보기
+
+<DimmedStaticPreview />
+
+## 강도 (인터랙티브)
+
+<DimmedIntensities />
+
+| intensity | 토큰                        |
+| --------- | --------------------------- |
+| `weak`    | `--umc-color-dimmed-weak`   |
+| `medium`  | `--umc-color-dimmed-medium` |
+| `strong`  | `--umc-color-dimmed-strong` |
+
+## props
+
+| prop        | 타입                             | 기본값     | 설명                                    |
+| ----------- | -------------------------------- | ---------- | --------------------------------------- |
+| `intensity` | `"weak" \| "medium" \| "strong"` | `"medium"` | 배경 불투명도                           |
+| 나머지      | `ComponentPropsWithRef<"div">`   |            | `ref`, `onClick`, `aria-*`, `data-*` 등 |
+
+## 접근성
+
+`Dimmed` 자체에는 `role`이 없습니다. 모달 컨테이너에 `aria-modal="true"`와 `role="dialog"`를 달고, 포커스 트랩과 Esc 닫기는 모달 컴포넌트가 담당합니다.
