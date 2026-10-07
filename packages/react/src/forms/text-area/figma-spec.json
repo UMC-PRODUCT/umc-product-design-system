@@ -1,0 +1,20 @@
+{
+  "component": "TextArea",
+  "figmaSection": "2621:33262",
+  "page": "/components/forms/text-area/",
+  "nodes": [
+    {
+      "specId": "text-area-lg-default",
+      "node": "2621:33262",
+      "variant": "Type=Text Area, State=Default, Size=Lg",
+      "target": ".umc-textarea",
+      "expected": {
+        "border-top-left-radius": "14px",
+        "border-top-right-radius": "14px",
+        "border-bottom-left-radius": "14px",
+        "border-bottom-right-radius": "14px",
+        "background-color": "rgb(255, 255, 255)"
+      }
+    }
+  ]
+}

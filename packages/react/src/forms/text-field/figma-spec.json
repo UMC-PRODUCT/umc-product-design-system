@@ -1,0 +1,53 @@
+{
+  "component": "TextField",
+  "figmaSection": "2621:33095",
+  "page": "/components/forms/text-field/",
+  "nodes": [
+    {
+      "specId": "text-field-lg-default",
+      "node": "2621:33351",
+      "variant": "State=Default, Size=Lg, Type=Text",
+      "target": ".umc-input-box",
+      "expected": {
+        "height": "48px",
+        "border-top-left-radius": "14px",
+        "border-top-right-radius": "14px",
+        "border-bottom-left-radius": "14px",
+        "border-bottom-right-radius": "14px",
+        "background-color": "rgb(255, 255, 255)"
+      }
+    },
+    {
+      "specId": "text-field-input-font",
+      "node": "2621:33379",
+      "variant": "Input Font Lg",
+      "target": ".umc-input-box__input",
+      "expected": {
+        "font-size": "18px",
+        "font-weight": "500"
+      }
+    },
+    {
+      "specId": "text-field-lg-error",
+      "node": "2621:33413",
+      "variant": "State=Filled, Error=True, Size=Lg",
+      "target": ".umc-input-box",
+      "expected": {
+        "box-shadow~": "rgb(220, 61, 61)",
+        "background-color": "rgb(254, 242, 241)"
+      }
+    },
+    {
+      "specId": "text-field-lg-disabled",
+      "node": "2621:33166",
+      "variant": "State=Disabled, Size=Lg",
+      "target": ".umc-input-box",
+      "expected": {
+        "background-color": "rgb(251, 252, 252)"
+      },
+      "figmaDiffers": {
+        "box-shadow": "피그마 비활성 테두리 #efedeb는 UMC 토큰 없음, 리터럴 사용"
+      }
+    }
+  ]
+}

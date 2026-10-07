@@ -1,0 +1,16 @@
+@layer components {
+  .umc-textarea {
+    --umc-textarea-min-height: 96px;
+
+    height: auto;
+    min-height: var(--umc-textarea-min-height);
+    align-items: flex-start;
+    padding-block: var(--umc-spacing-padding-12);
+  }
+
+  .umc-textarea__input {
+    resize: vertical;
+    min-height: calc(var(--umc-textarea-min-height) - 24px);
+    line-height: var(--umc-input-box-line-height, 1.4);
+  }
+}
