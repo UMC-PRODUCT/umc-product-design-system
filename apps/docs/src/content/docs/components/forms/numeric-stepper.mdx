@@ -1,0 +1,65 @@
+---
+title: NumericStepper
+description: 증가·감소 버튼으로 숫자 값을 조정하는 입력 컴포넌트입니다.
+---
+
+import {
+  NumericStepperButton,
+  NumericStepperDefault,
+  NumericStepperDisabled,
+  NumericStepperInvalid,
+  NumericStepperRange,
+} from "../../../../components/react/forms/NumericStepperExamples.tsx"
+
+피그마 `Numeric Stepper`(노드 2621:33540)를 구현합니다. Base UI `NumberField`를 기반으로 하며, 키보드 화살표와 마우스 휠 조작을 지원합니다.
+
+```tsx
+import { NumericStepper } from "@umc-product/react"
+
+;<NumericStepper
+  label="수량"
+  value={qty}
+  onValueChange={(v) => setQty(v)}
+  min={1}
+  max={99}
+  step={1}
+  name="quantity"
+/>
+```
+
+## 기본
+
+<NumericStepperDefault client:load />
+
+## 버튼 스타일 확인
+
+<NumericStepperButton />
+
+## 범위 제한
+
+<NumericStepperRange client:load />
+
+## 오류 상태
+
+<NumericStepperInvalid client:load />
+
+## 비활성 상태
+
+<NumericStepperDisabled client:load />
+
+## props
+
+| prop            | 타입                          | 기본값  | 설명                   |
+| --------------- | ----------------------------- | ------- | ---------------------- |
+| `value`         | `number \| null`              | 없음    | 제어 컴포넌트 값       |
+| `defaultValue`  | `number`                      | 없음    | 비제어 초기값          |
+| `onValueChange` | `(v: number \| null) => void` | 없음    | 값 변경 콜백           |
+| `min`           | `number`                      | 없음    | 최솟값                 |
+| `max`           | `number`                      | 없음    | 최댓값                 |
+| `step`          | `number`                      | `1`     | 증감 단위              |
+| `name`          | `string`                      | 없음    | form 제출 시 필드 이름 |
+| `label`         | `ReactNode`                   | 없음    | 레이블                 |
+| `invalid`       | `boolean`                     | `false` | 오류 상태              |
+| `errorMessage`  | `ReactNode`                   | 없음    | `invalid`일 때 표시    |
+| `disabled`      | `boolean`                     | `false` | 비활성 상태            |
+| `readOnly`      | `boolean`                     | `false` | 읽기 전용              |

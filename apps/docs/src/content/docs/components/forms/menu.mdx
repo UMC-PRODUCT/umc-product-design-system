@@ -1,0 +1,63 @@
+---
+title: Menu
+description: 트리거 요소에 연결된 컨텍스트 메뉴 컴포넌트입니다. tone="danger"로 파괴적 항목을 강조합니다.
+---
+
+import {
+  MenuDangerItem,
+  MenuDefault,
+  MenuPopupExample,
+  MenuWithDisabled,
+} from "../../../../components/react/forms/MenuExamples.tsx"
+
+피그마 `Menu`(노드 2621:33580)를 구현합니다. Base UI `Menu.Root`를 기반으로 하며, `trigger`에 임의의 ReactElement를 넘길 수 있습니다.
+
+```tsx
+import { Menu } from "@umc-product/react"
+
+;<Menu
+  trigger={
+    <Button variant="weak" color="neutral" size="sm">
+      더 보기
+    </Button>
+  }
+  items={[
+    { label: "수정", onClick: handleEdit },
+    { label: "삭제", tone: "danger", onClick: handleDelete },
+  ]}
+/>
+```
+
+## 기본
+
+<MenuDefault client:load />
+
+## 비활성 항목
+
+<MenuWithDisabled client:load />
+
+## 팝업 스타일 확인
+
+<MenuPopupExample />
+
+## 위험 항목 스타일
+
+<MenuDangerItem />
+
+## props
+
+| prop        | 타입            | 기본값 | 설명                    |
+| ----------- | --------------- | ------ | ----------------------- |
+| `trigger`   | `ReactElement`  | 필수   | 메뉴를 여는 트리거 요소 |
+| `items`     | `MenuItemDef[]` | 필수   | 메뉴 항목 목록          |
+| `className` | `string`        | 없음   | 트리거에 추가할 클래스  |
+
+## MenuItemDef 타입
+
+| 필드       | 타입                    | 필수   | 설명                              |
+| ---------- | ----------------------- | ------ | --------------------------------- |
+| `label`    | `ReactNode`             | 예     | 항목 텍스트                       |
+| `icon`     | `ReactNode`             | 아니오 | 왼쪽 아이콘                       |
+| `onClick`  | `() => void`            | 아니오 | 클릭 콜백                         |
+| `disabled` | `boolean`               | 아니오 | 선택 불가 상태                    |
+| `tone`     | `"default" \| "danger"` | 아니오 | `"danger"`이면 빨간 텍스트로 표시 |

@@ -1,0 +1,86 @@
+---
+title: Select
+description: 드롭다운 팝업으로 단일 항목을 선택하는 셀렉트 컴포넌트입니다. 검색 기능을 내장합니다.
+---
+
+import {
+  SelectDefault,
+  SelectInvalid,
+  SelectItemSizes,
+  SelectMd,
+  SelectPopupExample,
+  SelectSearchable,
+  SelectWithCaption,
+} from "../../../../components/react/forms/SelectExamples.tsx"
+
+피그마 `Select`(노드 2621:33492)를 구현합니다. Base UI `Select.Root`를 기반으로 하며, 제네릭 `V extends string`으로 `onValueChange` 타입이 좁혀집니다.
+
+```tsx
+import { Select } from "@umc-product/react"
+
+type Fruit = "apple" | "banana"
+
+const options = [
+  { value: "apple" as Fruit, label: "사과" },
+  { value: "banana" as Fruit, label: "바나나" },
+]
+
+;<Select<Fruit>
+  label="과일 선택"
+  options={options}
+  value={value}
+  onValueChange={(v) => setValue(v)}
+/>
+```
+
+## 기본 (lg)
+
+<SelectDefault client:load />
+
+## Md 크기
+
+<SelectMd client:load />
+
+## 검색 가능
+
+<SelectSearchable client:load />
+
+## 항목 크기
+
+<SelectItemSizes client:load />
+
+## 오류 상태
+
+<SelectInvalid client:load />
+
+## 캡션
+
+<SelectWithCaption client:load />
+
+## 팝업 스타일 확인
+
+<SelectPopupExample />
+
+## props
+
+| prop                | 타입                     | 기본값   | 설명                   |
+| ------------------- | ------------------------ | -------- | ---------------------- |
+| `options`           | `SelectOption<V>[]`      | 필수     | 선택 항목 목록         |
+| `value`             | `V \| null`              | 없음     | 제어 컴포넌트 값       |
+| `defaultValue`      | `V \| null`              | 없음     | 비제어 초기값          |
+| `onValueChange`     | `(v: V \| null) => void` | 없음     | 값 변경 콜백           |
+| `size`              | `"lg" \| "md"`           | `"lg"`   | 트리거 높이            |
+| `itemSize`          | `"xs" \| "sm" \| "md"`   | `"sm"`   | 팝업 항목 높이         |
+| `searchable`        | `boolean`                | `false`  | 검색 입력 표시         |
+| `searchPlaceholder` | `string`                 | `"검색"` | 검색 입력 플레이스홀더 |
+| `placeholder`       | `ReactNode`              | `"선택"` | 미선택 상태 텍스트     |
+| `name`              | `string`                 | 없음     | form 제출 시 필드 이름 |
+
+## SelectOption 타입
+
+| 필드       | 타입        | 필수   | 설명                  |
+| ---------- | ----------- | ------ | --------------------- |
+| `value`    | `V`         | 예     | 제출 값               |
+| `label`    | `ReactNode` | 예     | 표시 텍스트           |
+| `caption`  | `ReactNode` | 아니오 | 항목 아래 보조 텍스트 |
+| `disabled` | `boolean`   | 아니오 | 선택 불가 상태        |
