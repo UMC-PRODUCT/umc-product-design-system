@@ -9,7 +9,7 @@ import {
   HeaderLight,
 } from "../../../../components/react/shell/HeaderExamples.tsx"
 
-피그마 `Web/Header`(node 2858:65987)를 구현했습니다. 로고, 가운데 내비게이션 알약, 오른쪽 액션 영역 세 칸으로 나뉩니다. 높이는 `--umc-layout-header-height`(80px)입니다. 양옆 칸이 같은 비율로 늘어나므로 내비게이션은 항상 가운데에 놓입니다.
+피그마 `Web/Header`(node 2858:65987)를 구현했습니다. 로고, 가운데 내비게이션 알약, 오른쪽 액션 영역 세 칸으로 나뉩니다. 높이는 `--umc-layout-header-height`(80px)입니다. 양옆 칸은 내용보다 좁아지지 않고 남는 폭을 같은 비율로 나눠 가집니다. 양옆 내용 폭이 비슷하면 내비게이션이 가운데에 놓이고, 화면이 좁으면 내비게이션이 가로로 스크롤됩니다.
 
 ```tsx
 import { Header, LinkProvider } from "@umc-product/react"
