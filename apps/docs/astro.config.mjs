@@ -60,7 +60,9 @@ export default defineConfig({
           items: [
             "contributing/token-workflow",
             "contributing/component-guide",
+            "contributing/decisions",
             "contributing/figma-normalization",
+            "contributing/icon-normalization",
           ],
         },
       ],
