@@ -1,0 +1,39 @@
+@layer components {
+  .umc-scroll-fog {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .umc-scroll-fog[data-side="right"] {
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--umc-color-background-default) 90.865%
+    );
+  }
+
+  .umc-scroll-fog[data-side="left"] {
+    background: linear-gradient(
+      to left,
+      transparent 0%,
+      var(--umc-color-background-default) 90.865%
+    );
+  }
+
+  .umc-scroll-fog[data-side="top"] {
+    background: linear-gradient(
+      to top,
+      transparent 0%,
+      var(--umc-color-background-default) 90.865%
+    );
+  }
+
+  .umc-scroll-fog[data-side="bottom"] {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      var(--umc-color-background-default) 90.865%
+    );
+  }
+}
