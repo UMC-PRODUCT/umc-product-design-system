@@ -1,0 +1,2009 @@
+{
+  "fileKey": "U3pRZp6BjQBW5aMljCBwo9",
+  "fetchedAt": "2026-10-07",
+  "tool": "get_design_context asset download",
+  "sources": [
+    {
+      "nodeId": "3060:94171",
+      "kind": "icon",
+      "componentName": "Icon/Add",
+      "variantName": "Weight=Bold",
+      "files": [
+        {
+          "file": "svg/3060-94171.svg",
+          "sha256": "3d2eeba14f075db96c11a25a7ef8ed46992670788ea813e172a9e3a0a240db8f"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "2505:16969",
+      "kind": "icon",
+      "componentName": "Icon/Add",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/2505-16969.svg",
+          "sha256": "6606a2fe736c7d64be323f118863afbe32f4d1b6ce24503ef7f6f42eefe52a14"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:94161",
+      "kind": "icon",
+      "componentName": "Icon/Add",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-94161.svg",
+          "sha256": "257cbdce2ba4903edadee8c7c572260f7cf7de06877f6caf06eadfc31d21a7c0"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96223",
+      "kind": "icon",
+      "componentName": "Icon/Add/Circle",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-96223.svg",
+          "sha256": "8ec6a8711db5cf32477c8b91e6475da90d680f6641e890ed568772d42e593f6a"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96217",
+      "kind": "icon",
+      "componentName": "Icon/Add/Circle",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-96217.svg",
+          "sha256": "8d92fa638000b5b267874da694cdc5530be00cee3571d2439d188913dad9c864"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96211",
+      "kind": "icon",
+      "componentName": "Icon/Add/Circle",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-96211.svg",
+          "sha256": "bc82a13b44c8d06cbf8b8bd5f9de3abad5d217249b690fbe78fef12bdea91ffb"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96491",
+      "kind": "icon",
+      "componentName": "Icon/Bold",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-96491.svg",
+          "sha256": "34bc4688cc13b234a783fdff2e69d79d4e6638c25435839fbf1b96b15fed1f32"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:95765",
+      "kind": "icon",
+      "componentName": "Icon/Calendar",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-95765.svg",
+          "sha256": "8956b60ebaef40f44db52c8354726fc0892ae9616353ef100b6a413fd55d703c"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97340",
+      "kind": "icon",
+      "componentName": "Icon/Camera",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3095-97340.svg",
+          "sha256": "bebeb5c0d014ffcf3195d329780ad80e987bdfb00f70cc9c5da854453d3ec139"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96559",
+      "kind": "icon",
+      "componentName": "Icon/ChatBubbleDots",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-96559.svg",
+          "sha256": "9b9463bcf0a5e16cd732fa3a7e0cc7285064a386212ca3df8c8aa1458cd15417"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96575",
+      "kind": "icon",
+      "componentName": "Icon/ChatBubbleDots",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-96575.svg",
+          "sha256": "f71b7749085e61c970e6fcd3bda3536e7222197a976817490ae8beab9f3be9b5"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:95761",
+      "kind": "icon",
+      "componentName": "Icon/Chatbubbles",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-95761.svg",
+          "sha256": "5b2399c089ae3d4bd1000b70f0301b802b8f2cd475638044294c16c556d02245"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:94647",
+      "kind": "icon",
+      "componentName": "Icon/Check",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-94647.svg",
+          "sha256": "a6bd59f5c308743d7b55a9ce96644f05ae3095d1dbca2b7b418c776f5d5b52b9"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "2505:17076",
+      "kind": "icon",
+      "componentName": "Icon/Check",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/2505-17076.svg",
+          "sha256": "e42a21decc072fabc14d2995d8264fd57d25ea463d115e068242bb10a103c86f"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:94644",
+      "kind": "icon",
+      "componentName": "Icon/Check",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-94644.svg",
+          "sha256": "2a5c43cbad5f010e4002e7eee37518711de3e34da1c0b00b8cccd736bcae346f"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96734",
+      "kind": "icon",
+      "componentName": "Icon/Checkbox",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-96734.svg",
+          "sha256": "eebc6b088a0030520abbc3977e53af97be47a20f2aab9514ab42dc91fe8c4405"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96785",
+      "kind": "icon",
+      "componentName": "Icon/Checkbox",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-96785.svg",
+          "sha256": "70585c0661627598938b0498421b17560177935e1e57ff615686e96b227e3087"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:94618",
+      "kind": "icon",
+      "componentName": "Icon/Chevron_Left",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-94618.svg",
+          "sha256": "6e7dd5fa58c274f164712f41eb0b9e655a677288b13fd88b9b8ea670e93e8904"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:94614",
+      "kind": "icon",
+      "componentName": "Icon/Chevron_Left",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-94614.svg",
+          "sha256": "f094f7d7a29c85bada3aec3faca06eaa8f321b9710687178d7858820b265e249"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:94610",
+      "kind": "icon",
+      "componentName": "Icon/Chevron_Left",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-94610.svg",
+          "sha256": "c409623c03f09f5a7557c0190fdb3ece8e531cf9d098eff79d6da343e291a490"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:94207",
+      "kind": "icon",
+      "componentName": "Icon/Chevron_Right",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-94207.svg",
+          "sha256": "4e6ba17c48e71bfd2e66e0b79c8d1c02e377db4fb4f1c5076eeba23123891fc4"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:94203",
+      "kind": "icon",
+      "componentName": "Icon/Chevron_Right",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-94203.svg",
+          "sha256": "a27785d842b4cd58ec66fb0cb6812ec69899cdcfabf34939a4b944694ad00486"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:94199",
+      "kind": "icon",
+      "componentName": "Icon/Chevron_Right",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-94199.svg",
+          "sha256": "85f198c376518ee9a30f21a80f471da68454c5d681b74e992158fc1ce011cf9c"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:94282",
+      "kind": "icon",
+      "componentName": "Icon/Close",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-94282.svg",
+          "sha256": "497cfc932438f64f5cfe42af956e0e5c8dead238eb92c21481cb2705764ea546"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "2505:17000",
+      "kind": "icon",
+      "componentName": "Icon/Close",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/2505-17000.svg",
+          "sha256": "9ec0e0da1a97a6cf03a010b5e54d9e661834d27b06306a0548ae8a6a00d4c030"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:94290",
+      "kind": "icon",
+      "componentName": "Icon/Close",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-94290.svg",
+          "sha256": "fb2f9ebacf80043a4ae996a3b671ae85f9364d1bd7247c17c68a6c32d4ebd5ff"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "2505:16659",
+      "kind": "icon",
+      "componentName": "Icon/Cloud-upload",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/2505-16659.svg",
+          "sha256": "85efde1f2c83d2a110fcf0f0374750435f7e3391ca74e60190f35e03fc6fc151"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96736",
+      "kind": "icon",
+      "componentName": "Icon/Cloud-upload",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-96736.svg",
+          "sha256": "9523a45f8ec29696a061e9e7361b73889ff0f8a4535862a312961a6e513792df"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96808",
+      "kind": "icon",
+      "componentName": "Icon/Cloud-upload",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-96808.svg",
+          "sha256": "5f354b8db5c9d6dcc942218ceb6c8d6999dfc92f0f54c8e3e21041dab5360ad3"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96731",
+      "kind": "icon",
+      "componentName": "Icon/Collapse-all",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-96731.svg",
+          "sha256": "33424cd8a353f05a02d695dd68f3e01ec3174cfe6c8659d3f1099ff07df2b799"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96992",
+      "kind": "icon",
+      "componentName": "Icon/Collapse-all",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-96992.svg",
+          "sha256": "8ab133ef02b4a05600a7108a5b1da42e09204151a58d3f08dfe91580b5b55fb3"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97390",
+      "kind": "icon",
+      "componentName": "Icon/Copy",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3095-97390.svg",
+          "sha256": "82debeaf290781c208d0c493025093ccdc8ab7cff057f8d8702c0b2e1b79a57a"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97385",
+      "kind": "icon",
+      "componentName": "Icon/Copy",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3095-97385.svg",
+          "sha256": "3917861b048e49ccd875e2b2d146b5324352479060abe89fef1fb302c04dba14"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97406",
+      "kind": "icon",
+      "componentName": "Icon/Copy",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3095-97406.svg",
+          "sha256": "79d764a64b885ee90bab91882c1fa5ce6b73a296149b40e5fb79a89e6103b465"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96582",
+      "kind": "icon",
+      "componentName": "Icon/Document",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-96582.svg",
+          "sha256": "4b032e3536623206a8d300defeb53293e1bbe50bd1e607bd25ec55ee942dad3f"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96583",
+      "kind": "icon",
+      "componentName": "Icon/Document",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-96583.svg",
+          "sha256": "b226ed143d992203966834afd9f67a50ef37afbac857584c9c34df167a4b5e4d"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96584",
+      "kind": "icon",
+      "componentName": "Icon/Document",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-96584.svg",
+          "sha256": "8b67d1d458752d2f8b637cdee6f8037f79e273108c6c3316be5b0649adc29c06"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97194",
+      "kind": "icon",
+      "componentName": "Icon/Download",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3095-97194.svg",
+          "sha256": "3a40c681b314916b37671ce3d5a7870d81f4ed8583660d85a90e4dc91716b88b"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97168",
+      "kind": "icon",
+      "componentName": "Icon/Download",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3095-97168.svg",
+          "sha256": "445a8180ca41de7f41b0f8ac23ec8d9afc86d734e8ecfc24f8f3f9c32f4fcf0c"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97189",
+      "kind": "icon",
+      "componentName": "Icon/Download",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3095-97189.svg",
+          "sha256": "fd485dffa8eee8b8fe669842faa41c4a92d1c5904a5e9ef753a6c5ae2ea25008"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:97066",
+      "kind": "icon",
+      "componentName": "Icon/Edit",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-97066.svg",
+          "sha256": "3fc465d83ced15e1d46e75a0672c25688eeaf4571e1a8bc8773f22d0587666b4"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "2505:16720",
+      "kind": "icon",
+      "componentName": "Icon/Edit",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/2505-16720.svg",
+          "sha256": "d5fc87c91f1861e895ccbf25776f4adc6d3f3e9145e53622f2720141f9abcd58"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:97059",
+      "kind": "icon",
+      "componentName": "Icon/Edit",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-97059.svg",
+          "sha256": "c7c1563d2b6e369ae09d45c4be1469d3280c8022013e8dc9c7823a91db15002b"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96935",
+      "kind": "icon",
+      "componentName": "Icon/Expand-all",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-96935.svg",
+          "sha256": "9f45cfba2007a4aac14ecde61b763940a9db3377fc96c9ce28cd4ecbf29dbed0"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96956",
+      "kind": "icon",
+      "componentName": "Icon/Expand-all",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-96956.svg",
+          "sha256": "4a90003b2bc872fbf077b50ee2942f43c400bac9b6282e850c67686e7d213c02"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:95387",
+      "kind": "icon",
+      "componentName": "Icon/Expand_less",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-95387.svg",
+          "sha256": "5e2be43c94b08fc28fbe66cfe936b7ec951e3fc75b0f40ba5ca14e317382bc0a"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "2505:17239",
+      "kind": "icon",
+      "componentName": "Icon/Expand_less",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/2505-17239.svg",
+          "sha256": "86368494804b5b5a4e6d8a24bae06e65387bf80d5dbd9d22a2f4837ff3ff0cfa"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:95384",
+      "kind": "icon",
+      "componentName": "Icon/Expand_less",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-95384.svg",
+          "sha256": "baab409509d54ba31e18085e00e2b9651279ca9d72a6990b22ed83e6d768e7d0"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:94726",
+      "kind": "icon",
+      "componentName": "Icon/Expand_more",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-94726.svg",
+          "sha256": "48d1ffec8805cc0324b55f49d85bdf1a2e89205173d6fdd55357db9beb531600"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "2505:17175",
+      "kind": "icon",
+      "componentName": "Icon/Expand_more",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/2505-17175.svg",
+          "sha256": "332a71878b26bb101b6edab5a4e5beea937af16f14271bc25dd4f9af74386a43"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:95354",
+      "kind": "icon",
+      "componentName": "Icon/Expand_more",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-95354.svg",
+          "sha256": "fa5c580057125fc1f55cc867cfb4a2d886ca8b9eaddeacc93ee4938fc27dacf7"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97143",
+      "kind": "icon",
+      "componentName": "Icon/Eye_invisable",
+      "variantName": "Property 1=Regular",
+      "files": [
+        {
+          "file": "svg/3095-97143.svg",
+          "sha256": "c2fe71f8ca2b32603f13d1f2abf7d8f03a46a486015041372875cc3105223052"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97142",
+      "kind": "icon",
+      "componentName": "Icon/Eye_visable",
+      "variantName": "Property 1=Fill",
+      "files": [
+        {
+          "file": "svg/3095-97142.svg",
+          "sha256": "205aaeebbc959736e7c5af9a22df39c8e1c2abf090ba8971d9313f554e36d209"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96738",
+      "kind": "icon",
+      "componentName": "Icon/File-upload",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-96738.svg",
+          "sha256": "0077cadbaebfcc3c5781ed1dbd319225af36997b64de3306b2fc48463f510ca1"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96832",
+      "kind": "icon",
+      "componentName": "Icon/File-upload",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-96832.svg",
+          "sha256": "5ccb523b78a52dca450bdede84703f55ccd00f1961d81239aa3600282a62bfa4"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96870",
+      "kind": "icon",
+      "componentName": "Icon/Filter",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-96870.svg",
+          "sha256": "a88fd1fa0f8e5dfe228ffc2e251ca137f305053fb771cfb47bfcc396917844b2"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "2505:17095",
+      "kind": "icon",
+      "componentName": "Icon/Filter",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/2505-17095.svg",
+          "sha256": "05ef7d5faf15ea35a807c6338d82dc8410aaf5173706ce72191feae7090dca68"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96863",
+      "kind": "icon",
+      "componentName": "Icon/Filter",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-96863.svg",
+          "sha256": "705c1c6cdde6e02d69c139d71c045483b9fde413447e31a9b78cb35f50118032"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97484",
+      "kind": "icon",
+      "componentName": "Icon/Flag",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3095-97484.svg",
+          "sha256": "3554159260703c4da17b3bdf83dcf624596d3759a3c7843ab6061487e224ffd7"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96730",
+      "kind": "icon",
+      "componentName": "Icon/Funnel",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-96730.svg",
+          "sha256": "992afc8539c32eeecca7e5b4be9d7fde64bfef4afb798e12b52600d6dde6bc93"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96848",
+      "kind": "icon",
+      "componentName": "Icon/Funnel",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-96848.svg",
+          "sha256": "4613e7d380bd02daf8fe84e87a99126271cd77b6eb8e5390878478b28a1edb48"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96758",
+      "kind": "icon",
+      "componentName": "Icon/Goal",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-96758.svg",
+          "sha256": "a5a9a0142261dff6cb5f8e96c3235ac6bd51f8d6e8134b339354c966c16f64ac"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96735",
+      "kind": "icon",
+      "componentName": "Icon/Goal",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-96735.svg",
+          "sha256": "76517f6434bbe6d5e77e513b1b822e615f03283746219ef713985e48d7ec4e54"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96752",
+      "kind": "icon",
+      "componentName": "Icon/Goal",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-96752.svg",
+          "sha256": "28945f4316562a3332b55a76c3ca67114a3cf78cfa7fad711e72427ed59bf7af"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97355",
+      "kind": "icon",
+      "componentName": "Icon/GraduationCap",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3095-97355.svg",
+          "sha256": "108d1b3780d42bb1117c562878cb7552bb94aeb3fae898ced20755a3d9e7ef82"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97229",
+      "kind": "icon",
+      "componentName": "Icon/Info",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3095-97229.svg",
+          "sha256": "6957eea646206807c2a277c8234541ef2e4d415fe47909dc82eab53cdf44e0af"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97223",
+      "kind": "icon",
+      "componentName": "Icon/Info",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3095-97223.svg",
+          "sha256": "920a3c2516907307c07ce29114fde2c017ca15f9214bc00e922863ad2fd52e81"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97217",
+      "kind": "icon",
+      "componentName": "Icon/Info",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3095-97217.svg",
+          "sha256": "c195f0640ac83a35a224ac9132d9b3bec3bfebdc6da0ab8748727e0fa072dae1"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96492",
+      "kind": "icon",
+      "componentName": "Icon/Italic",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-96492.svg",
+          "sha256": "1484a1f976050ee150b8b74a9a33da71051688ce2b92b7f3abc77c5fe404eac0"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97369",
+      "kind": "icon",
+      "componentName": "Icon/Link",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3095-97369.svg",
+          "sha256": "7adf75871aebec794ddef522914d8d108f69c396143eefd62f70c21826ca8446"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97372",
+      "kind": "icon",
+      "componentName": "Icon/Link",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3095-97372.svg",
+          "sha256": "94d40d40404ff3da73e85bd436becbecfaefd3f43520f39be9f2d4e34d6efebe"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97376",
+      "kind": "icon",
+      "componentName": "Icon/Link",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3095-97376.svg",
+          "sha256": "8458fefdacece8cebb05e72f695b187a895bc4b02ba0973946636d0a944f456d"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96638",
+      "kind": "icon",
+      "componentName": "Icon/List",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-96638.svg",
+          "sha256": "584113beaedbdf1c864ef2ee5f15ceb698e945acd43a912db923ac5df99a9bbc"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96625",
+      "kind": "icon",
+      "componentName": "Icon/List",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-96625.svg",
+          "sha256": "3d3d3d176e399645e41dc5a3ad07f440903a01f6a553e5f2f96453b7dc4f3874"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97336",
+      "kind": "icon",
+      "componentName": "Icon/Lock",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3095-97336.svg",
+          "sha256": "5673434133e3515c359806fd82bb93ad82b089a94c8d198ba48c311e73a9602f"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97475",
+      "kind": "icon",
+      "componentName": "Icon/Megaphone",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3095-97475.svg",
+          "sha256": "f96d8817100c4f702d3804a831d2c2f31dbe32fb210f1f620e633625fa3c6748"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "2505:17248",
+      "kind": "icon",
+      "componentName": "Icon/More_Vertical",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/2505-17248.svg",
+          "sha256": "50092d3ce0d06b279b6c0826d018237bf7c97d8509b0a7e1975ccc6347f727b1"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:95439",
+      "kind": "icon",
+      "componentName": "Icon/More_Vertical",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-95439.svg",
+          "sha256": "c045d39106c2c6ad8787ac927349f1a99597611d60c2c81673e1512f602ce3ce"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:95443",
+      "kind": "icon",
+      "componentName": "Icon/More_Vertical",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-95443.svg",
+          "sha256": "d2e7d7a79a3670d35aab184e30765befff76fc16e9a2e9177076f60b3c5b159a"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "2505:17245",
+      "kind": "icon",
+      "componentName": "Icon/More_horiz",
+      "variantName": "Weight=Bold",
+      "files": [
+        {
+          "file": "svg/2505-17245.svg",
+          "sha256": "8001e7b68ce638ed72e1c346816776ffd8c1f3f1a65efacafde31e2cb1a38394"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:95473",
+      "kind": "icon",
+      "componentName": "Icon/More_horiz",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-95473.svg",
+          "sha256": "4ec100ecf8adb0301fa9bd61b138a6910a6da61e377ffd0e6e39b56ef55ba244"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:95468",
+      "kind": "icon",
+      "componentName": "Icon/More_horiz",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-95468.svg",
+          "sha256": "81c007d7f1632e7947ac43d9e28beb97107f7d29c3e515573d7bcb2070314860"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:93949",
+      "kind": "icon",
+      "componentName": "Icon/Notification",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-93949.svg",
+          "sha256": "490b39b7296fe1ca8bca26c6ff2fc1fcb3aaa889ff630d0c12ebb5aca952571b"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "2505:16945",
+      "kind": "icon",
+      "componentName": "Icon/Notification",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/2505-16945.svg",
+          "sha256": "a03b9f639e77ba50f062afa1a8428b9875c71a1772326a7eabca7f3e84b957ac"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:93970",
+      "kind": "icon",
+      "componentName": "Icon/Notification-Off",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-93970.svg",
+          "sha256": "45fabf1288df585859156f1e9a28fedd48495ca2f8e3a7927c45a01ba1f67d25"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:93965",
+      "kind": "icon",
+      "componentName": "Icon/Notification-Off",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-93965.svg",
+          "sha256": "5ac7c35550a13631cc4b73bfa5c2e54bb5ad829634d98a47e84d16f75c2a7e0c"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:97035",
+      "kind": "icon",
+      "componentName": "Icon/Open-new",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-97035.svg",
+          "sha256": "2c9495d61d920f106a4cc49eca609c816d46f09b42d693207e1e2d8ebc553633"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "2505:16716",
+      "kind": "icon",
+      "componentName": "Icon/Open-new",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/2505-16716.svg",
+          "sha256": "fa38f24762ba583d56957f61415eb3ed965b1f2efce66493d402bde0be794635"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:97025",
+      "kind": "icon",
+      "componentName": "Icon/Open-new",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-97025.svg",
+          "sha256": "2fbfcae01d0fa978b9b493bcd2a2ff2f73734cc9dda97ee58aec53dbfd7e518a"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96612",
+      "kind": "icon",
+      "componentName": "Icon/Paperclip",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-96612.svg",
+          "sha256": "039296c829aad1e3e3a1ffb3426ce9b9e9385819fb4a366a6a33eb503532b0e7"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96607",
+      "kind": "icon",
+      "componentName": "Icon/Paperclip",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-96607.svg",
+          "sha256": "d97f6fc412372b861002117c88f5297444131c77a8ab2ce47d43fbc95a0942b6"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96620",
+      "kind": "icon",
+      "componentName": "Icon/Paperclip",
+      "variantName": "Weight=Weight4",
+      "files": [
+        {
+          "file": "svg/3060-96620.svg",
+          "sha256": "680341e2cc91fed69849e0eca43029939a0b42fefcf7501a2c075ae38f94ef08"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:93819",
+      "kind": "icon",
+      "componentName": "Icon/Person",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-93819.svg",
+          "sha256": "bc5894efacc4e2e21391586cd203294c529679f8f32aec1e0a718cca55d81029"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "2505:16490",
+      "kind": "icon",
+      "componentName": "Icon/Person",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/2505-16490.svg",
+          "sha256": "70ee65b50d361b43286b33b1278bea7c7c64948537825aef2928db5bdbc0132f"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97327",
+      "kind": "icon",
+      "componentName": "Icon/Picture",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3095-97327.svg",
+          "sha256": "1b394b398aec0c25621419ad30b4cea7c5c707046b2f02b730e90ef69a99c63c"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96768",
+      "kind": "icon",
+      "componentName": "Icon/Radio",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-96768.svg",
+          "sha256": "5088d22b1c46c12ef013c5ad1e1731fffe3140bdfda912be6e84cd1dbc67d00f"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96732",
+      "kind": "icon",
+      "componentName": "Icon/Radio",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-96732.svg",
+          "sha256": "f6e1ded976e882364f504adac1feecf2896312ea37d70698a20f2cf294fe6e72"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97434",
+      "kind": "icon",
+      "componentName": "Icon/Repeat",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3095-97434.svg",
+          "sha256": "582bcbbead39d501a50f4bbd5b8589fe3319e116678c5e350ba1e0ae1eb60c71"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97444",
+      "kind": "icon",
+      "componentName": "Icon/Repeat",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3095-97444.svg",
+          "sha256": "a0b9b5909ea9d4058c8db1b5d85af94df006cd8061e895c958497a369691a27b"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97454",
+      "kind": "icon",
+      "componentName": "Icon/Repeat",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3095-97454.svg",
+          "sha256": "8d237f3c66e37e72e58b1652500cc4b4464d3573ba9c048a05e21e84ff816d64"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96544",
+      "kind": "icon",
+      "componentName": "Icon/Reset",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-96544.svg",
+          "sha256": "940590a5a81c012b90accf994e97b1f108bd03c5afd54dafb2800230ab89df0a"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96545",
+      "kind": "icon",
+      "componentName": "Icon/Reset",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-96545.svg",
+          "sha256": "fdc9b78c9a2be9808434c850e11dbaa3fd649e94824f5de5123f0aa161328e09"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96555",
+      "kind": "icon",
+      "componentName": "Icon/Reset",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-96555.svg",
+          "sha256": "44f911d8640ea5a7e3717f339767cb935736b314673e27bcbfb422db18181c8f"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3331:44045",
+      "kind": "icon",
+      "componentName": "Icon/Search",
+      "variantName": "Weight=Weight2",
+      "files": [
+        {
+          "file": "svg/3331-44045.svg",
+          "sha256": "466ed274d0ed1b85d5fc732b24f0729550f7d962a8a9ccbd8daafb6a678db3c1"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:94086",
+      "kind": "icon",
+      "componentName": "Icon/Setting",
+      "variantName": "Size=24 icon, Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-94086.svg",
+          "sha256": "3c3cd33552acc474f96acd22d28c7379e848eb452845664dc198ff52c276b742"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "2505:16951",
+      "kind": "icon",
+      "componentName": "Icon/Setting",
+      "variantName": "Size=24 icon, Weight=Regular",
+      "files": [
+        {
+          "file": "svg/2505-16951.svg",
+          "sha256": "3fa52dd441b44111f4ad7f57e330f95fbb6c4f1c39b0e0e57879b870805a906c"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:95564",
+      "kind": "icon",
+      "componentName": "Icon/Share",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-95564.svg",
+          "sha256": "e59a466b192a5590b75bf5d63b63098150e665582aa855393608af37b1385ec0"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:95562",
+      "kind": "icon",
+      "componentName": "Icon/Share",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-95562.svg",
+          "sha256": "dd8ede680d451c2d8f11f84ca84bfd49bcb0b10150fe2aab9566037f9f95cbd7"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96494",
+      "kind": "icon",
+      "componentName": "Icon/Strikethrough",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-96494.svg",
+          "sha256": "eb9c36dcc84b0c7b322237040f92b9ad1fe877ba0a1568e76ea80d1c8c33674e"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "2505:16990",
+      "kind": "icon",
+      "componentName": "Icon/Subtraction",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/2505-16990.svg",
+          "sha256": "33612ca3b744b67267a91bad6910b99f16b5e54f7c78f4e6a3e6f5eb5de1ceaf"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "2505:16987",
+      "kind": "icon",
+      "componentName": "Icon/Subtraction",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/2505-16987.svg",
+          "sha256": "2ae43f51ee4bd604ef9b499fe9a035d2ead876b20eeea2c085a9451fa261510c"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:94325",
+      "kind": "icon",
+      "componentName": "Icon/Subtraction",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-94325.svg",
+          "sha256": "e9623f93ffbffcd2278e21218c6b1d42b9ae7080c2038e44ff8016fb5c220a92"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97362",
+      "kind": "icon",
+      "componentName": "Icon/Text",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3095-97362.svg",
+          "sha256": "8486d64a4c579d14378e2d0d90dc241af006adf6e55912ce70f8726990c751c2"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97511",
+      "kind": "icon",
+      "componentName": "Icon/ThumbsUp",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3095-97511.svg",
+          "sha256": "55196d24a720d7ce95e942f3bb90370d4320dd8bfc78d82611200f41f58ec0fc"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97510",
+      "kind": "icon",
+      "componentName": "Icon/ThumbsUp",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3095-97510.svg",
+          "sha256": "4bda70b28bb7de575aa2a1f6447212179c19179699d681e7c367ec5d5ca25c2b"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97517",
+      "kind": "icon",
+      "componentName": "Icon/ThumbsUp",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3095-97517.svg",
+          "sha256": "2f97a372b4065cfaf7622627fa444dbdd49831c363d0db1a18505570c250ece8"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96072",
+      "kind": "icon",
+      "componentName": "Icon/Time",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-96072.svg",
+          "sha256": "ec4fafe135227ee5a2b237b3f0097d418a7606142e250bca97f48c259215e195"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96068",
+      "kind": "icon",
+      "componentName": "Icon/Time",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-96068.svg",
+          "sha256": "1c8a0444c3b4167e437937b08dd83ad3ee19e12fdddbf3ccc592fa34bb64e76e"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96154",
+      "kind": "icon",
+      "componentName": "Icon/Time",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-96154.svg",
+          "sha256": "8bc6f2be6c5821e4c4a15ca2d695548615f1371bb86608b730de2b01518cce23"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:95495",
+      "kind": "icon",
+      "componentName": "Icon/Trash",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-95495.svg",
+          "sha256": "f9085306dcf169d0cf5004aa0342a6b29d3f42601f804c4811c579de892befa8"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:95505",
+      "kind": "icon",
+      "componentName": "Icon/Trash",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-95505.svg",
+          "sha256": "bf2bc0110f21b5c8e4b1792605853f7a4df85533c68f61ee0a61b652d3d7e6ac"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96493",
+      "kind": "icon",
+      "componentName": "Icon/Underline",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-96493.svg",
+          "sha256": "90ff753a66a14219a42f4fdc89fc374d2d613f63511feb94ac1cdd932408b701"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:97361",
+      "kind": "icon",
+      "componentName": "Icon/Users",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3095-97361.svg",
+          "sha256": "211dd7c3214c0ea9917c729dc1aca653126bf29b898cad7972e0d2d2bcde4279"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:95773",
+      "kind": "icon",
+      "componentName": "Icon/home",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-95773.svg",
+          "sha256": "9ccd9abf652053c9e0f58e8b3259630a8b76b46eaca2a6a8106907c55411904c"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3140:48668",
+      "kind": "icon",
+      "componentName": "Icon_Check_circle",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3140-48668.svg",
+          "sha256": "63c20933dcc5ce0ca4240f3074d957d53a78f3528b4eb418c2692b1048bc1af7"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3140:48662",
+      "kind": "icon",
+      "componentName": "Icon_Check_circle",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3140-48662.svg",
+          "sha256": "1b106e9a84dff89b534a29eeb0c7c5e7a55ada748f06d3c1f9725c19a3d2657d"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3140:48656",
+      "kind": "icon",
+      "componentName": "Icon_Check_circle",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3140-48656.svg",
+          "sha256": "349a42ffca01f654ae42767a07dc79dd58f9cf5497e3333542ed3cafb77bef87"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96435",
+      "kind": "icon",
+      "componentName": "Icon_Location",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-96435.svg",
+          "sha256": "6dccd4da6e536ed0835ff7dd57c23a10ee9407928b8b0b91b2f4211a82954ba9"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96430",
+      "kind": "icon",
+      "componentName": "Icon_Location",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-96430.svg",
+          "sha256": "0a24aa0bf32c07743471bc1ea270eac2120072b7fb1ac47eb45a3b61ad064a0a"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96478",
+      "kind": "icon",
+      "componentName": "Icon_Location",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-96478.svg",
+          "sha256": "f70547672883ad5b913f0dd26d39e238b41d9a958dc3cc320427ba6d07ee7f9e"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96418",
+      "kind": "icon",
+      "componentName": "Icon_Subtract_Circle",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-96418.svg",
+          "sha256": "a0116f7acc23d902fbb2c44f80db8fdfde3f3d1345be77109a1fed9407e4834a"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96412",
+      "kind": "icon",
+      "componentName": "Icon_Subtract_Circle",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-96412.svg",
+          "sha256": "feea11e0c30bbec91d0a8d515bfcba5097f2197ff0846bc6db6f5779c522e8b4"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96406",
+      "kind": "icon",
+      "componentName": "Icon_Subtract_Circle",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-96406.svg",
+          "sha256": "f42d90162b4df869e2737a80405ae8dd1a45c003183589204555251499dbe03e"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:93844",
+      "kind": "icon",
+      "componentName": "Icon_menu",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-93844.svg",
+          "sha256": "c32f34802e0f1a0af7cfe8ac720f0531847f5889da86b1834d12833fd7aca756"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:93842",
+      "kind": "icon",
+      "componentName": "Icon_menu",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-93842.svg",
+          "sha256": "bf42b8f7a57a52a87336f79f76a706a05f9b1de422cdbba746fd5dba8e38a9cd"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:93840",
+      "kind": "icon",
+      "componentName": "Icon_menu",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-93840.svg",
+          "sha256": "83718d6e2bd52691975c8d72fa2b30726166fae44e4d9161c5c05a783ace73b2"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96337",
+      "kind": "icon",
+      "componentName": "Icon_remove_circle",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-96337.svg",
+          "sha256": "13f1fe4c07bcaeb0be8c4ed449722f96b61d0759be98978f6c58571258c77685"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96330",
+      "kind": "icon",
+      "componentName": "Icon_remove_circle",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-96330.svg",
+          "sha256": "9981df9f58a007c319f4fcc81288f06d2803b60c142e2b33c72c48a0e15c8342"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96323",
+      "kind": "icon",
+      "componentName": "Icon_remove_circle",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-96323.svg",
+          "sha256": "aa21ab54785ab2e1816422422efec5971bc0f48dd00ccc56746449a3c22b0900"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96170",
+      "kind": "icon",
+      "componentName": "Icon_warning",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3060-96170.svg",
+          "sha256": "ac20d628ffa1095fce96dc7af41abac56133702eebc21c93dd66377a8daf31fd"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96165",
+      "kind": "icon",
+      "componentName": "Icon_warning",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3060-96165.svg",
+          "sha256": "6fa538b9dc8ea05625a79ee82ffee96c96426ae923f13263e50dd43f09c9e1c1"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3060:96160",
+      "kind": "icon",
+      "componentName": "Icon_warning",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3060-96160.svg",
+          "sha256": "cba462d4aa52ababc0589368a3a7beb0bf5721a53462d73aaf30497999d019e3"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:99530",
+      "kind": "pictogram",
+      "componentName": "Pictogram/Document",
+      "variantName": "",
+      "files": [
+        {
+          "file": "svg/3095-99530.svg",
+          "sha256": "a6e75538eff9f32f7816da5ced7492cdf17ae3ae13a4a2c06727efb3b0475204"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:99528",
+      "kind": "pictogram",
+      "componentName": "Pictogram/Flag",
+      "variantName": "",
+      "files": [
+        {
+          "file": "svg/3095-99528.svg",
+          "sha256": "f9b8ae940022ff76761897683cab1cd585f398f0b3753e10c45cf070578db4fc"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:99529",
+      "kind": "pictogram",
+      "componentName": "Pictogram/Goal",
+      "variantName": "",
+      "files": [
+        {
+          "file": "svg/3095-99529.svg",
+          "sha256": "683f9a5a3f41cb4ad5ab4443bab498eb785fbdadecd1f84108f9d0b01ae635db"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:99527",
+      "kind": "pictogram",
+      "componentName": "Pictogram/GraduationCap",
+      "variantName": "",
+      "files": [
+        {
+          "file": "svg/3095-99527.svg",
+          "sha256": "5e61974ff277fffcce17144516bfcc51731870e3b4e41eea9cfbed8b157bb168"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "2903:72069",
+      "kind": "pictogram",
+      "componentName": "Pictogram/People",
+      "variantName": "",
+      "files": [
+        {
+          "file": "svg/2903-72069.svg",
+          "sha256": "5ca61ac70fa2556c27753051386e23211f7ca4c5be1fe66ea37762b12300bc78"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "2505:16868",
+      "kind": "pictogram",
+      "componentName": "Pictogram/Person",
+      "variantName": "",
+      "files": [
+        {
+          "file": "svg/2505-16868.png",
+          "sha256": "86e7ec831b037a8e282ba9137f513224fd9783d911a42b9c637c069796c31077"
+        }
+      ],
+      "status": "png"
+    },
+    {
+      "nodeId": "2505:16879",
+      "kind": "pictogram",
+      "componentName": "Pictogram/School",
+      "variantName": "Size=30px",
+      "files": [
+        {
+          "file": "svg/2505-16879.svg",
+          "sha256": "be22824f24ae5dd4f5705af3a2fd2334bb92a56acfae5bb8c1659400212c3bcc"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3156:42994",
+      "kind": "pictogram",
+      "componentName": "Pictogram/Under-construction",
+      "variantName": "Varient=Dark",
+      "files": [
+        {
+          "file": "svg/3156-42994.svg",
+          "sha256": "6f22d25911bb292199b3a59402589a7832b1b292da6ba91157d559f5c3cbd9b4"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3156:42932",
+      "kind": "pictogram",
+      "componentName": "Pictogram/Under-construction",
+      "variantName": "Varient=Light",
+      "files": [
+        {
+          "file": "svg/3156-42932.svg",
+          "sha256": "46e9e787e560c36db6e19fed38299b1db1ee0b088962b6b5f3dd670203ef09fc"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:99549",
+      "kind": "pictogram",
+      "componentName": "Pictogram/User shield",
+      "variantName": "",
+      "files": [
+        {
+          "file": "svg/3095-99549.svg",
+          "sha256": "1174ab3f1f098ebc6b363d0f161526b09cc36a324260f51b53cc471b05843d10"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:99526",
+      "kind": "pictogram",
+      "componentName": "Pictogram/Users",
+      "variantName": "",
+      "files": [
+        {
+          "file": "svg/3095-99526.svg",
+          "sha256": "3b86194157a80dc0d41f901b7ddaf91aa398f69324b5ea98d1b6c0a8c2ba6940"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3095:99535",
+      "kind": "pictogram",
+      "componentName": "Pictogram/Vote",
+      "variantName": "",
+      "files": [
+        {
+          "file": "svg/3095-99535.svg",
+          "sha256": "9ce3ef0b3b718cc4bc179f5c2e4002eeb6842bcc15f6d82981334b78a2eec632"
+        }
+      ],
+      "status": "ok"
+    }
+  ]
+}

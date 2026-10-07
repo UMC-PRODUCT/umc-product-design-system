@@ -11,6 +11,8 @@
     "tokens:normalize": "pnpm --filter @umc-product/design-tokens tokens:normalize",
     "tokens:build": "pnpm --filter @umc-product/design-tokens tokens:build",
     "tokens:check": "pnpm --filter @umc-product/design-tokens tokens:check",
+    "icons:build": "pnpm --filter @umc-product/icons icons:build",
+    "icons:check": "pnpm --filter @umc-product/icons icons:check",
     "docs:dev": "pnpm --filter @umc-product/docs dev",
     "docs:build": "pnpm --filter @umc-product/docs build",
     "docs:preview": "pnpm --filter @umc-product/docs preview",

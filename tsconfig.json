@@ -2,6 +2,7 @@
   "files": [],
   "references": [
     { "path": "./packages/design-tokens" },
+    { "path": "./packages/icons" },
     { "path": "./apps/preview" }
   ]
 }

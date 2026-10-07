@@ -5,3 +5,6 @@ packages/design-tokens/figma
 packages/design-tokens/tokens
 packages/design-tokens/src/generated
 packages/design-tokens/reports
+packages/icons/figma
+packages/icons/src/generated
+packages/icons/reports
