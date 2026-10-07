@@ -1,0 +1,81 @@
+---
+title: Header
+description: 최상단 네비게이션 바입니다.
+---
+
+import { Aside } from "@astrojs/starlight/components"
+import {
+  HeaderLight,
+  HeaderDark,
+} from "../../../../components/react/shell/HeaderExamples.tsx"
+
+피그마 `Header` 컴포넌트를 구현했습니다. 로고 슬롯, 메인 내비게이션, 액션 슬롯 세 영역으로 구성됩니다. 높이는 `--umc-layout-header-height(5rem)`으로 고정됩니다.
+
+```tsx
+import { Header, LinkProvider } from "@umc-product/react/shell"
+import Link from "next/link"
+
+const navItems = [
+  { label: "소개", href: "/about" },
+  { label: "팀 매칭", href: "/matching" },
+  { label: "지원하기", href: "/apply" },
+]
+
+export function AppHeader() {
+  return (
+    <LinkProvider component={Link}>
+      <Header
+        logo={<Logo />}
+        navItems={navItems}
+        currentPath={pathname}
+        actions={<UserMenu />}
+      />
+    </LinkProvider>
+  )
+}
+```
+
+## 라이트 모드
+
+<HeaderLight />
+
+## 다크 모드
+
+<HeaderDark />
+
+## isActivePath
+
+`currentPath`가 주어지면 `isActivePath(currentPath, href)`를 써서 일치하는 항목에 `aria-current="page"`를 달고 선택 스타일을 적용합니다.
+
+```ts
+isActivePath("/matching/detail/1", "/matching") // true — 하위 경로
+isActivePath("/matching", "/matching")          // true — 완전 일치
+isActivePath("/matching", "/m")                 // false — 단순 prefix 불일치
+```
+
+<Aside type="note">
+  `href="/"`는 완전 일치만 허용합니다. `currentPath="/about"`일 때 루트는
+  선택되지 않습니다.
+</Aside>
+
+## props
+
+| prop          | 타입                    | 기본값    | 설명                              |
+| ------------- | ----------------------- | --------- | --------------------------------- |
+| `logo`        | `ReactNode`             | —         | 좌측 로고 영역                    |
+| `navItems`    | `NavItem[]`             | `[]`      | 중앙 메인 내비게이션 항목         |
+| `currentPath` | `string`                | `undefined` | 현재 경로 (활성 항목 판단)       |
+| `actions`     | `ReactNode`             | `undefined` | 우측 액션 영역                   |
+| `mode`        | `"light" \| "dark"`    | `"light"` | 색 테마                           |
+| `className`   | `string`                | `undefined` | 루트 요소에 추가할 클래스        |
+
+### NavItem
+
+| 필드    | 타입     | 설명           |
+| ------- | -------- | -------------- |
+| `label` | `string` | 메뉴 레이블    |
+| `href`  | `string` | 이동 경로      |
+
+## 디자인 팀 확인 사항
+
+- 다크 모드 값 일부를 토큰에서 근사했습니다. 피그마 다크 모드 변형과 대조가 필요합니다.

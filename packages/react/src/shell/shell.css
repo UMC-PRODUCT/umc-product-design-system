@@ -1,2 +1,7 @@
+@import "./header/header.css";
+@import "./side-navigation/side-navigation.css";
+@import "./context-switcher/context-switcher.css";
+@import "./page-header/page-header.css";
+
 @layer components {
 }

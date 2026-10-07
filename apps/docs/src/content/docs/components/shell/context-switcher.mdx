@@ -1,0 +1,46 @@
+---
+title: ContextSwitcher
+description: 현재 선택된 맥락(기수 등)을 전환하는 드롭다운입니다.
+---
+
+import { ContextSwitcherDefault } from "../../../../components/react/shell/ContextSwitcherExamples.tsx"
+
+피그마 `ContextSwitcher` 컴포넌트를 구현했습니다. 헤더나 사이드바 상단에 놓고 기수, 지부, 환경 등 전역 맥락을 전환할 때 씁니다. `value` 타입을 제네릭으로 받아 타입 안전하게 씁니다.
+
+```tsx
+import { ContextSwitcher } from "@umc-product/react/shell"
+
+const options = [
+  { label: "10기", value: "10" },
+  { label: "11기", value: "11" },
+]
+
+export function GenerationSwitcher() {
+  const [generation, setGeneration] = useState("10")
+  return (
+    <ContextSwitcher
+      options={options}
+      value={generation}
+      onValueChange={setGeneration}
+    />
+  )
+}
+```
+
+<ContextSwitcherDefault />
+
+## props
+
+| prop            | 타입                           | 설명                        |
+| --------------- | ------------------------------ | --------------------------- |
+| `options`       | `ContextSwitcherOption<V>[]`   | 선택 항목 목록              |
+| `value`         | `V`                            | 현재 선택 값                |
+| `onValueChange` | `(value: V) => void`           | 값 변경 콜백                |
+| `className`     | `string`                       | 트리거 버튼 추가 클래스     |
+
+### ContextSwitcherOption
+
+| 필드    | 타입     | 설명            |
+| ------- | -------- | --------------- |
+| `label` | `string` | 표시 레이블     |
+| `value` | `V`      | 선택 값         |
