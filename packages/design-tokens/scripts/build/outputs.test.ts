@@ -70,6 +70,15 @@ describe("base.css", () => {
     )
   })
 
+  it("그림자는 px 그대로, 여러 층은 쉼표로 잇는다", () => {
+    expect(css).toContain(
+      "--umc-shadow-drop-neutral-1: 0 4px 16px 0 #40444329;",
+    )
+    expect(css).toContain(
+      "--umc-shadow-inner-neutral-2: inset 1px 1px 2px 0 #d3d8d826, inset -1px -1px 1px 0 #ffffff40;",
+    )
+  })
+
   it("변수 이름이 겹치지 않는다", () => {
     expect(new Set(declarationNames).size).toBe(declarationNames.length)
   })
@@ -101,10 +110,24 @@ describe("index.ts", () => {
     expect(listed).toEqual(declarationNames)
   })
 
-  it("텍스트 스타일 유틸리티 42개를 내보낸다", () => {
+  it("텍스트 스타일 유틸리티 48개를 내보낸다", () => {
     expect([
       ...blockOf("textStyleUtilities").matchAll(/"(text-[a-z0-9-]+)"/g),
-    ]).toHaveLength(42)
+    ]).toHaveLength(48)
+  })
+
+  it("그림자 유틸리티 5개를 tailwind-merge 등록용으로 내보낸다", () => {
+    expect(
+      [...blockOf("shadowUtilities").matchAll(/"(shadow-[a-z0-9-]+)"/g)].map(
+        (match) => match[1],
+      ),
+    ).toEqual([
+      "shadow-drop-neutral-1",
+      "shadow-drop-neutral-2",
+      "shadow-drop-neutral-3",
+      "shadow-inner-neutral-1",
+      "shadow-inner-neutral-2",
+    ])
   })
 
   it("semantic 컬러 151개의 CSS 변수와 Tailwind 이름을 짝지어 내보낸다", () => {
@@ -128,6 +151,16 @@ describe("manifest.ts", () => {
       alias: "color.teal-grey.900",
       figmaName: "Semantic/Text/Neutral-Default",
       utility: "fg-neutral-default",
+    })
+    expect(
+      tokenManifest.find((token) => token.name === "shadow.drop.neutral-1"),
+    ).toMatchObject({
+      tier: "shadow",
+      type: "shadow",
+      value: "0 4px 16px 0 #40444329",
+      alias: null,
+      figmaName: "Shadow/Drop/Neutral_1",
+      utility: "shadow-drop-neutral-1",
     })
     expect(
       tokenManifest.find((token) => token.name === "typography.display-1-bold")
@@ -172,6 +205,7 @@ describe("Tailwind 어댑터", () => {
     )
     const css = compiler.build([
       "text-body-1-regular",
+      "shadow-drop-neutral-1",
       "gap-x-grid-gutter",
       "px-grid-margin-desktop",
       "px-grid-margin-mobile",
@@ -185,6 +219,8 @@ describe("Tailwind 어댑터", () => {
     expect(css).toMatch(
       /\.gap-x-grid-gutter \{\s+column-gap: var\(--umc-grid-gutter\);/,
     )
+    expect(css).toContain(".shadow-drop-neutral-1 {")
+    expect(css).toContain("var(--umc-shadow-drop-neutral-1)")
     expect(css).toMatch(
       /\.px-grid-margin-desktop \{\s+padding-inline: var\(--umc-grid-margin-desktop\);/,
     )

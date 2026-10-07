@@ -214,6 +214,17 @@ export const vars = {
       strong: "var(--umc-color-dimmed-strong)",
     },
   },
+  shadow: {
+    drop: {
+      neutral1: "var(--umc-shadow-drop-neutral-1)",
+      neutral2: "var(--umc-shadow-drop-neutral-2)",
+      neutral3: "var(--umc-shadow-drop-neutral-3)",
+    },
+    inner: {
+      neutral1: "var(--umc-shadow-inner-neutral-1)",
+      neutral2: "var(--umc-shadow-inner-neutral-2)",
+    },
+  },
   grid: {
     columns: "var(--umc-grid-columns)",
     gutter: "var(--umc-grid-gutter)",
@@ -253,6 +264,13 @@ export const typography = {
     fontWeight: "var(--umc-typography-display-3-bold-font-weight)",
     lineHeight: "var(--umc-typography-display-3-bold-line-height)",
     letterSpacing: "var(--umc-typography-display-3-bold-letter-spacing)",
+  },
+  display4Bold: {
+    fontFamily: "var(--umc-typography-display-4-bold-font-family)",
+    fontSize: "var(--umc-typography-display-4-bold-font-size)",
+    fontWeight: "var(--umc-typography-display-4-bold-font-weight)",
+    lineHeight: "var(--umc-typography-display-4-bold-line-height)",
+    letterSpacing: "var(--umc-typography-display-4-bold-letter-spacing)",
   },
   heading1Semibold: {
     fontFamily: "var(--umc-typography-heading-1-semibold-font-family)",
@@ -302,6 +320,34 @@ export const typography = {
     fontWeight: "var(--umc-typography-heading-5-medium-font-weight)",
     lineHeight: "var(--umc-typography-heading-5-medium-line-height)",
     letterSpacing: "var(--umc-typography-heading-5-medium-letter-spacing)",
+  },
+  title1Semibold: {
+    fontFamily: "var(--umc-typography-title-1-semibold-font-family)",
+    fontSize: "var(--umc-typography-title-1-semibold-font-size)",
+    fontWeight: "var(--umc-typography-title-1-semibold-font-weight)",
+    lineHeight: "var(--umc-typography-title-1-semibold-line-height)",
+    letterSpacing: "var(--umc-typography-title-1-semibold-letter-spacing)",
+  },
+  title2Semibold: {
+    fontFamily: "var(--umc-typography-title-2-semibold-font-family)",
+    fontSize: "var(--umc-typography-title-2-semibold-font-size)",
+    fontWeight: "var(--umc-typography-title-2-semibold-font-weight)",
+    lineHeight: "var(--umc-typography-title-2-semibold-line-height)",
+    letterSpacing: "var(--umc-typography-title-2-semibold-letter-spacing)",
+  },
+  title2Medium: {
+    fontFamily: "var(--umc-typography-title-2-medium-font-family)",
+    fontSize: "var(--umc-typography-title-2-medium-font-size)",
+    fontWeight: "var(--umc-typography-title-2-medium-font-weight)",
+    lineHeight: "var(--umc-typography-title-2-medium-line-height)",
+    letterSpacing: "var(--umc-typography-title-2-medium-letter-spacing)",
+  },
+  title3Medium: {
+    fontFamily: "var(--umc-typography-title-3-medium-font-family)",
+    fontSize: "var(--umc-typography-title-3-medium-font-size)",
+    fontWeight: "var(--umc-typography-title-3-medium-font-weight)",
+    lineHeight: "var(--umc-typography-title-3-medium-line-height)",
+    letterSpacing: "var(--umc-typography-title-3-medium-letter-spacing)",
   },
   title4Semibold: {
     fontFamily: "var(--umc-typography-title-4-semibold-font-family)",
@@ -498,6 +544,13 @@ export const typography = {
     fontWeight: "var(--umc-typography-caption-1-regular-font-weight)",
     lineHeight: "var(--umc-typography-caption-1-regular-line-height)",
     letterSpacing: "var(--umc-typography-caption-1-regular-letter-spacing)",
+  },
+  caption2Bold: {
+    fontFamily: "var(--umc-typography-caption-2-bold-font-family)",
+    fontSize: "var(--umc-typography-caption-2-bold-font-size)",
+    fontWeight: "var(--umc-typography-caption-2-bold-font-weight)",
+    lineHeight: "var(--umc-typography-caption-2-bold-line-height)",
+    letterSpacing: "var(--umc-typography-caption-2-bold-letter-spacing)",
   },
   caption2Medium: {
     fontFamily: "var(--umc-typography-caption-2-medium-font-family)",

@@ -20,6 +20,9 @@ export const tailwindColorName = (path: TokenPath): string => {
 export const textStyleUtility = (path: TokenPath): string =>
   `text-${path.slice(1).join("-")}`
 
+export const shadowUtility = (path: TokenPath): string =>
+  `shadow-${path.slice(1).join("-")}`
+
 const renderSpacingAliases = (entries: readonly ModelEntry[]): string[] => {
   const declaredPaths = new Set(entries.map((entry) => entry.path.join(".")))
   return TAILWIND_SPACING_ALIASES.map(({ name, path }) => {
@@ -49,9 +52,17 @@ export const renderTailwindCss = (entries: readonly ModelEntry[]): string => {
       (entry) =>
         `  --color-${tailwindColorName(entry.path)}: var(${toCssVariable(entry.path)});`,
     )
-  const themeSections = [colorAliases, renderSpacingAliases(entries)].filter(
-    (lines) => lines.length > 0,
-  )
+  const shadowAliases = entries
+    .filter((entry) => entry.file === "shadow.json")
+    .map(
+      (entry) =>
+        `  --${shadowUtility(entry.path)}: var(${toCssVariable(entry.path)});`,
+    )
+  const themeSections = [
+    colorAliases,
+    renderSpacingAliases(entries),
+    shadowAliases,
+  ].filter((lines) => lines.length > 0)
   const utilities = entries
     .filter((entry) => entry.file === "typography.json")
     .map(renderTextStyleUtility)

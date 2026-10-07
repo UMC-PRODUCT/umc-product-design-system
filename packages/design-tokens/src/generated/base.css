@@ -330,6 +330,11 @@
     --umc-typography-display-3-bold-font-weight: var(--umc-font-weight-bold);
     --umc-typography-display-3-bold-line-height: 1.2;
     --umc-typography-display-3-bold-letter-spacing: -0.015em;
+    --umc-typography-display-4-bold-font-family: var(--umc-font-family-brand);
+    --umc-typography-display-4-bold-font-size: var(--umc-font-size-32);
+    --umc-typography-display-4-bold-font-weight: var(--umc-font-weight-bold);
+    --umc-typography-display-4-bold-line-height: 1.2;
+    --umc-typography-display-4-bold-letter-spacing: -0.015em;
     --umc-typography-heading-1-semibold-font-family: var(--umc-font-family-brand);
     --umc-typography-heading-1-semibold-font-size: var(--umc-font-size-28);
     --umc-typography-heading-1-semibold-font-weight: var(--umc-font-weight-semibold);
@@ -365,6 +370,26 @@
     --umc-typography-heading-5-medium-font-weight: var(--umc-font-weight-medium);
     --umc-typography-heading-5-medium-line-height: 1.4;
     --umc-typography-heading-5-medium-letter-spacing: -0.025em;
+    --umc-typography-title-1-semibold-font-family: var(--umc-font-family-brand);
+    --umc-typography-title-1-semibold-font-size: var(--umc-font-size-22);
+    --umc-typography-title-1-semibold-font-weight: var(--umc-font-weight-semibold);
+    --umc-typography-title-1-semibold-line-height: 1.4;
+    --umc-typography-title-1-semibold-letter-spacing: -0.01em;
+    --umc-typography-title-2-semibold-font-family: var(--umc-font-family-brand);
+    --umc-typography-title-2-semibold-font-size: var(--umc-font-size-20);
+    --umc-typography-title-2-semibold-font-weight: var(--umc-font-weight-semibold);
+    --umc-typography-title-2-semibold-line-height: 1.4;
+    --umc-typography-title-2-semibold-letter-spacing: -0.01em;
+    --umc-typography-title-2-medium-font-family: var(--umc-font-family-brand);
+    --umc-typography-title-2-medium-font-size: var(--umc-font-size-20);
+    --umc-typography-title-2-medium-font-weight: var(--umc-font-weight-medium);
+    --umc-typography-title-2-medium-line-height: 1.4;
+    --umc-typography-title-2-medium-letter-spacing: -0.02em;
+    --umc-typography-title-3-medium-font-family: var(--umc-font-family-brand);
+    --umc-typography-title-3-medium-font-size: var(--umc-font-size-18);
+    --umc-typography-title-3-medium-font-weight: var(--umc-font-weight-medium);
+    --umc-typography-title-3-medium-line-height: 1.4;
+    --umc-typography-title-3-medium-letter-spacing: 0em;
     --umc-typography-title-4-semibold-font-family: var(--umc-font-family-brand);
     --umc-typography-title-4-semibold-font-size: var(--umc-font-size-16);
     --umc-typography-title-4-semibold-font-weight: var(--umc-font-weight-semibold);
@@ -505,6 +530,11 @@
     --umc-typography-caption-1-regular-font-weight: var(--umc-font-weight-regular);
     --umc-typography-caption-1-regular-line-height: 1.45;
     --umc-typography-caption-1-regular-letter-spacing: 0em;
+    --umc-typography-caption-2-bold-font-family: var(--umc-font-family-brand);
+    --umc-typography-caption-2-bold-font-size: 0.75rem;
+    --umc-typography-caption-2-bold-font-weight: var(--umc-font-weight-bold);
+    --umc-typography-caption-2-bold-line-height: 1.5;
+    --umc-typography-caption-2-bold-letter-spacing: -0.02em;
     --umc-typography-caption-2-medium-font-family: var(--umc-font-family-brand);
     --umc-typography-caption-2-medium-font-size: var(--umc-font-size-12);
     --umc-typography-caption-2-medium-font-weight: var(--umc-font-weight-medium);
@@ -525,6 +555,12 @@
     --umc-typography-caption-3-regular-font-weight: var(--umc-font-weight-regular);
     --umc-typography-caption-3-regular-line-height: 1.5;
     --umc-typography-caption-3-regular-letter-spacing: 0em;
+
+    --umc-shadow-drop-neutral-1: 0 4px 16px 0 #40444329;
+    --umc-shadow-drop-neutral-2: 0 4px 16px 0 #eceeee85;
+    --umc-shadow-drop-neutral-3: 0 4px 16px 0 #eff0f04d;
+    --umc-shadow-inner-neutral-1: inset 1px 1px 3px 0 #0b6b6421, inset -1px -1px 1px 0 #ffffff40;
+    --umc-shadow-inner-neutral-2: inset 1px 1px 2px 0 #d3d8d826, inset -1px -1px 1px 0 #ffffff40;
 
     --umc-grid-columns: 12;
     --umc-grid-gutter: 1rem;

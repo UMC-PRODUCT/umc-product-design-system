@@ -7,6 +7,12 @@
 | 파일 | 출처 | 노드 또는 원래 이름 | 받은 날 |
 | --- | --- | --- | --- |
 | `mcp/get-variable-defs.2268-1706.json` | get_variable_defs | 2268:1706 | 2026-10-06 |
+| `mcp/get-variable-defs.2858-65987.json` | get_variable_defs | 2858:65987 | 2026-10-07 |
+| `mcp/get-variable-defs.2621-33487.json` | get_variable_defs | 2621:33487 | 2026-10-07 |
+| `mcp/get-variable-defs.2621-36220.json` | get_variable_defs | 2621:36220 | 2026-10-07 |
+| `mcp/get-variable-defs.3155-19976.json` | get_variable_defs | 3155:19976 | 2026-10-07 |
+| `mcp/get-variable-defs.3155-19501.json` | get_variable_defs | 3155:19501 | 2026-10-07 |
+| `mcp/get-variable-defs.2621-32882.json` | get_variable_defs | 2621:32882 | 2026-10-07 |
 | `export/color.mode-1.tokens.json` | Figma Variables Export modes (Color 컬렉션) | Mode 1.tokens.json | 2026-10-06 |
 | `export/token.mode-1.tokens.json` | Figma Variables Export modes (Token 컬렉션) | Mode 1.tokens 2.json | 2026-10-06 |
 
@@ -33,6 +39,9 @@
 12. `Label`(문자열 변수)과 `Radius/Primitive/48`(문자열 타입에 FONT_FAMILY scope)은 용도가 무엇인가요? 코드에서는 제외했습니다.
 13. scope 정리가 필요해 보입니다. `Border/Neutral/Default`에는 채우기 scope가, `Border/Disabled/Disalbed`에는 ALL_SCOPES가 붙어 있고, primitive 대부분이 ALL_SCOPES입니다. 모드 이름 `Mode 1`도 `Default`로 바꿀 수 있나요?
 14. 그리드: 브레이크포인트 경계값, 모바일 컬럼 수와 거터, 1440px 초과 시 최대 폭, Layout No.2의 컬럼 폭 문구를 확인해 주세요. 콘텐츠 폭은 1224px(1440 - 사이드바 216)이어야 문서의 컬럼 폭 82px과 맞습니다. 1220px이면 81.67px이 됩니다.
+15. 같은 이름에 정의가 여러 개인 스타일이 있습니다(아래 '같은 이름의 다른 정의' 표). 글꼴을 값으로 직접 적은 정의는 2기 라이브러리, 3기 변수에 연결됐지만 값이 다른 정의는 예전에 게시한 라이브러리 버전으로 보입니다. 컴포넌트를 3기 스타일로 다시 연결하고 라이브러리를 재게시해 주세요.
+16. `Shadow/Inner/Neutral_1`은 Toast와 Desktop Layout에서 청록 2겹(inset 1 1 3 `#0B6B6421` + inset -1 -1 1 `#FFFFFF40`), Side Navigation과 Option Button에서 회색 1겹(inset 1 1 2 `#D3D8D833`)입니다. 코드는 청록 2겹을 토큰으로 삼았습니다. 어느 쪽이 맞나요?
+17. `Title/2-Bold`, `Title/3-Semibold`는 라이브러리에 있지만 어떤 노드도 쓰지 않아 값을 읽지 못했습니다. 계속 쓸 스타일이면 문서 프레임에 적용해 주세요.
 
 ## 변수 이름 규칙
 
@@ -113,7 +122,7 @@ primitive를 참조하지 않고 값을 직접 가진 semantic이다. 투명도�
 텍스트 스타일 원문(MCP)이 참조하는 변수 값은 export 값과 모두 같다.
 
 - export에 없는 변수 이름: `Typography/Base/Fontweight/Bold`, `Typography/Base/Fontfamily/Brand`
-- 어떤 텍스트 스타일도 쓰지 않는 토큰: `font-size.22`, `font-size.32`
+- 어떤 텍스트 스타일도 쓰지 않는 토큰: 없음
 
 ## 제외한 텍스트 스타일
 
@@ -131,6 +140,52 @@ primitive를 참조하지 않고 값을 직접 가진 semantic이다. 투명도�
 | `Label/2-Medium` | 크기 17px가 변수에 연결되지 않았습니다 |
 | `Caption/3-Medium` | 크기 11px가 변수에 연결되지 않았습니다 |
 | `Caption/3-Regular` | 크기 11px가 변수에 연결되지 않았습니다 |
+| `Caption/2-Bold` | 크기 12px가 변수에 연결되지 않았습니다 |
+
+## 스타일 원문 우선순위
+
+| 순서 | 파일 | 노드 | 쓰임 |
+| --- | --- | --- | --- |
+| 1 | `get-variable-defs.2268-1706.json` | Mobile.Web Typography | 텍스트 스타일 기준 원문. 같은 이름이면 이 정의가 이긴다 |
+| 2 | `get-variable-defs.2858-65987.json` | Web/Header | Drop/Neutral_3, Inner/Neutral_2, Title/3-Medium |
+| 3 | `get-variable-defs.2621-33487.json` | Toast | Drop/Neutral_1, Inner/Neutral_1 |
+| 4 | `get-variable-defs.2621-36220.json` | Tooltip | Caption/2-Bold |
+| 5 | `get-variable-defs.3155-19976.json` | Dialog | Title/2-Semibold |
+| 6 | `get-variable-defs.3155-19501.json` | App/Top Navigation | Title/1-Semibold |
+| 7 | `get-variable-defs.2621-32882.json` | Option Button | Title/2-Medium, Drop/Neutral_2 |
+
+## 그림자 effect 스타일
+
+| 피그마 스타일 | 코드 토큰 | 정의를 가져온 원문 |
+| --- | --- | --- |
+| `Shadow/Drop/Neutral_1` | `shadow.drop.neutral-1` | `get-variable-defs.2621-33487.json` |
+| `Shadow/Drop/Neutral_2` | `shadow.drop.neutral-2` | `get-variable-defs.2621-32882.json` |
+| `Shadow/Drop/Neutral_3` | `shadow.drop.neutral-3` | `get-variable-defs.2858-65987.json` |
+| `Shadow/Inner/Neutral_1` | `shadow.inner.neutral-1` | `get-variable-defs.2621-33487.json` |
+| `Shadow/Inner/Neutral_2` | `shadow.inner.neutral-2` | `get-variable-defs.2858-65987.json` |
+
+## 같은 이름의 다른 정의
+
+| 피그마 이름 | 원문 | 정의 | 처리 |
+| --- | --- | --- | --- |
+| `Label/3-Medium` | `get-variable-defs.2858-65987.json`, `get-variable-defs.3155-19976.json`, `get-variable-defs.2621-32882.json` | `Font(family: "Typography/Base/FontFamily/Brand", style: Typography/Base/FontWeight/Medium, size: Typography/Base/FontSize/16px, weight: 500, lineHeight: 1.399999976158142, letterSpacing: -3)` | 같은 이름의 다른 정의. 기준 원문 또는 먼저 나온 원문의 정의를 썼다 |
+| `Label/1-Medium` | `get-variable-defs.2621-33487.json`, `get-variable-defs.2621-32882.json` | `Font(family: "Pretendard Variable", style: Medium, size: 16, weight: 500, lineHeight: 1.399999976158142, letterSpacing: -2)` | 같은 이름의 다른 정의. 기준 원문 또는 먼저 나온 원문의 정의를 썼다 |
+| `Body/1-Regular` | `get-variable-defs.2621-32882.json` | `Font(family: "Pretendard Variable", style: Regular, size: 16, weight: 400, lineHeight: 1.4500000476837158, letterSpacing: -1)` | 같은 이름의 다른 정의. 기준 원문 또는 먼저 나온 원문의 정의를 썼다 |
+| `Body/2-Medium` | `get-variable-defs.2621-32882.json` | `Font(family: "Pretendard Variable", style: Medium, size: 14, weight: 500, lineHeight: 1.5, letterSpacing: -1)` | 같은 이름의 다른 정의. 기준 원문 또는 먼저 나온 원문의 정의를 썼다 |
+| `Body/2-Regular` | `get-variable-defs.2621-32882.json` | `Font(family: "Pretendard Variable", style: Regular, size: 14, weight: 400, lineHeight: 1.5, letterSpacing: -1)` | 같은 이름의 다른 정의. 기준 원문 또는 먼저 나온 원문의 정의를 썼다 |
+| `Label/1-Semibold` | `get-variable-defs.2621-32882.json` | `Font(family: "Pretendard Variable", style: SemiBold, size: 16, weight: 600, lineHeight: 1.399999976158142, letterSpacing: -2)` | 같은 이름의 다른 정의. 기준 원문 또는 먼저 나온 원문의 정의를 썼다 |
+| `Body/1-Medium` | `get-variable-defs.2621-32882.json` | `Font(family: "Pretendard Variable", style: Medium, size: 16, weight: 500, lineHeight: 1.4500000476837158, letterSpacing: -1)` | 같은 이름의 다른 정의. 기준 원문 또는 먼저 나온 원문의 정의를 썼다 |
+| `Shadow/Inner/Neutral_2` | `get-variable-defs.2621-32882.json` | `Effect(type: INNER_SHADOW, color: #E4E4E433, offset: (-1, 2.5), radius: 4, spread: 0)` | 같은 이름의 다른 정의. 기준 원문 또는 먼저 나온 원문의 정의를 썼다 |
+| `Shadow/Inner/Neutral_1` | `get-variable-defs.2621-32882.json` | `Effect(type: INNER_SHADOW, color: #D3D8D833, offset: (1, 1), radius: 2, spread: 0)` | 같은 이름의 다른 정의. 기준 원문 또는 먼저 나온 원문의 정의를 썼다 |
+
+## 토큰에 넣지 않은 스타일
+
+| 피그마 이름 | 원문 | 정의 | 이유 |
+| --- | --- | --- | --- |
+| `Heading/5-Semibold` | `get-variable-defs.2621-32882.json` | `Font(family: "Pretendard Variable", style: SemiBold, size: 24, weight: 600, lineHeight: 1.350000023841858, letterSpacing: -2)` | 글꼴을 값으로 직접 적은 정의(2기 스타일로 보임) |
+| `Subtitle/3-Semibold` | `get-variable-defs.2621-32882.json` | `Font(family: "Pretendard Variable", style: SemiBold, size: 16, weight: 600, lineHeight: 1.5, letterSpacing: -1)` | 이름 규칙 밖의 스타일 |
+| `Heading/7-Semibold` | `get-variable-defs.2621-32882.json` | `Font(family: "Pretendard Variable", style: SemiBold, size: 18, weight: 600, lineHeight: 1.399999976158142, letterSpacing: -1)` | 글꼴을 값으로 직접 적은 정의(2기 스타일로 보임) |
+| `Subtitle/2-Medium` | `get-variable-defs.2621-32882.json` | `Font(family: "Pretendard Variable", style: Medium, size: 18, weight: 500, lineHeight: 1.5, letterSpacing: -1)` | 이름 규칙 밖의 스타일 |
 
 ## 이름 대응표
 

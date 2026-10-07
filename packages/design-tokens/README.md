@@ -2,8 +2,8 @@
 
 UMC 3기 피그마 파운데이션을 코드로 옮긴 디자인 토큰 패키지입니다. 피그마 값은 `tokens/`의 JSON 하나에만 있고, CSS 변수와 Tailwind, vanilla-extract 산출물은 모두 그 JSON에서 생성합니다.
 
-- 기준일: 2026-10-06
-- 상태: 컬러(primitive 78, semantic 151), 타이포그래피(기본 변수 20, 텍스트 스타일 42), spacing 44, radius 17, 그리드와 레이아웃을 옮겼습니다. 브레이크포인트만 디자인 팀 합의를 기다립니다
+- 기준일: 2026-10-07
+- 상태: 컬러(primitive 78, semantic 151), 타이포그래피(기본 변수 20, 텍스트 스타일 48), spacing 44, radius 17, 그림자 5, 그리드와 레이아웃을 옮겼습니다. 브레이크포인트만 디자인 팀 합의를 기다립니다
 - 배포: 아직 배포하지 않았습니다(`private: true`). GitHub Packages 배포는 별도 작업입니다
 
 ## 사용법
@@ -36,7 +36,8 @@ vanilla-extract만 쓰는 앱은 `tailwind.css`를 빼고 `fonts.css`, `base.css
 
 | 유틸리티                                          | 토큰                                                                                |
 | ------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `text-<스타일>` (42개, 예: `text-body-1-regular`) | 텍스트 스타일 한 벌(서체, 크기, 굵기, 행간, 자간)                                   |
+| `text-<스타일>` (48개, 예: `text-body-1-regular`) | 텍스트 스타일 한 벌(서체, 크기, 굵기, 행간, 자간)                                   |
+| `shadow-drop-neutral-1` 등 5개                    | 피그마 effect 스타일 그림자                                                         |
 | `bg-`, `text-`, `border-` + semantic 컬러 151개   | 예: `bg-surface-default`, `text-fg-neutral-default`, `border-border-primary-strong` |
 | `gap-x-grid-gutter`                               | 거터 16px                                                                           |
 | `px-grid-margin-desktop`, `px-grid-margin-mobile` | 좌우 마진 32px, 16px                                                                |
@@ -70,16 +71,17 @@ export const content = style({
 
 ### tailwind-merge 등록
 
-텍스트 스타일 유틸리티는 Tailwind 기본 이름이 아니라서, 등록하지 않으면 `cn()`이 색상 클래스로 오인해 지울 수 있습니다. tailwind-merge v3 이상(Tailwind v4용)에서 아래처럼 등록합니다.
+텍스트 스타일과 그림자 유틸리티는 Tailwind 기본 이름이 아니라서, 등록하지 않으면 `cn()`이 다른 그룹의 클래스로 오인해 지울 수 있습니다. tailwind-merge v3 이상(Tailwind v4용)에서 아래처럼 등록합니다.
 
 ```ts
-import { textStyleUtilities } from "@umc-product/design-tokens"
+import { shadowUtilities, textStyleUtilities } from "@umc-product/design-tokens"
 import { extendTailwindMerge } from "tailwind-merge"
 
 export const twMerge = extendTailwindMerge({
   extend: {
     classGroups: {
       "font-size": [...textStyleUtilities],
+      shadow: [...shadowUtilities],
     },
   },
 })

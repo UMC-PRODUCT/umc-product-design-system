@@ -1,0 +1,42 @@
+---
+title: 그림자
+description: 피그마 effect 스타일에서 옮긴 그림자 토큰 5개입니다.
+---
+
+import { Aside } from "@astrojs/starlight/components"
+import DimensionTokens from "../../../components/DimensionTokens.astro"
+
+그림자는 피그마 effect 스타일 이름을 그대로 따릅니다. Drop은 요소를 띄워 보이게 하는 바깥 그림자이고, Inner는 눌린 느낌을 주는 안쪽 그림자입니다. 값은 피그마의 blur 반경을 CSS `box-shadow`의 blur로 옮겼고, 단위는 화면 배율과 상관없이 같은 두께가 나오도록 px로 두었습니다.
+
+<DimensionTokens prefix="shadow." visual="shadow" />
+
+## 쓰는 방법
+
+| 도구            | 예                                             |
+| --------------- | ---------------------------------------------- |
+| CSS             | `box-shadow: var(--umc-shadow-drop-neutral-1)` |
+| Tailwind        | `shadow-drop-neutral-1`                        |
+| vanilla-extract | `vars.shadow.drop.neutral1`                    |
+
+Tailwind 유틸리티는 기본 이름이 아니라서 `cn()`에 tailwind-merge를 쓰면 등록해야 합니다. `shadowUtilities`를 `shadow` 그룹에 넣으면 됩니다.
+
+```ts
+import { shadowUtilities, textStyleUtilities } from "@umc-product/design-tokens"
+import { extendTailwindMerge } from "tailwind-merge"
+
+export const twMerge = extendTailwindMerge({
+  extend: {
+    classGroups: {
+      "font-size": [...textStyleUtilities],
+      shadow: [...shadowUtilities],
+    },
+  },
+})
+```
+
+<Aside type="caution" title="같은 이름의 다른 정의">
+  피그마에는 이름이 같은데 값이 다른 그림자가 섞여 있습니다. 토큰은 3기
+  컴포넌트(Header, Toast, Button)가 쓰는 정의를 골랐고, 나머지는 [피그마 정규화
+  리포트](/contributing/figma-normalization/)의 "같은 이름의 다른 정의" 표에
+  남겼습니다.
+</Aside>

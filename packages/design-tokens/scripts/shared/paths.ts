@@ -7,6 +7,7 @@ export const paths = {
   packageRoot,
   figmaExportDir: join(packageRoot, "figma", "export"),
   figmaManifest: join(packageRoot, "figma", "manifest.json"),
+  mcpDir: join(packageRoot, "figma", "mcp"),
   textStylesSource: join(
     packageRoot,
     "figma",

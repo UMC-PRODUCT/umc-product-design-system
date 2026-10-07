@@ -7,7 +7,11 @@ import {
   type NestedRecord,
 } from "./serialize-ts.ts"
 
-const VARS_SOURCE_FILES = new Set(["color.semantic.json", "layout.json"])
+const VARS_SOURCE_FILES = new Set([
+  "color.semantic.json",
+  "shadow.json",
+  "layout.json",
+])
 
 export const renderVanillaExtract = (
   entries: readonly ModelEntry[],

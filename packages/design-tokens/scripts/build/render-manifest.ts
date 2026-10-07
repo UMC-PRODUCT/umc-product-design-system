@@ -2,8 +2,10 @@ import { parseAlias, toCssVariable, type TokenPath } from "../shared/naming.ts"
 import type { CanonicalToken } from "../shared/schema.ts"
 import type { TokenFileName } from "../shared/token-files.ts"
 import type { Dimension } from "../shared/units.ts"
+import { formatShadow } from "./declarations.ts"
 import type { ModelEntry } from "./model.ts"
 import {
+  shadowUtility,
   TAILWIND_SPACING_ALIASES,
   tailwindColorName,
   textStyleUtility,
@@ -16,6 +18,7 @@ const TIER_BY_FILE: Record<TokenFileName, string> = {
   "spacing.json": "spacing",
   "radius.json": "radius",
   "typography.json": "typography",
+  "shadow.json": "shadow",
   "layout.json": "layout",
 }
 
@@ -90,6 +93,9 @@ const utilityOf = (entry: ModelEntry): string | null => {
   if (entry.file === "typography.json") {
     return textStyleUtility(entry.path)
   }
+  if (entry.file === "shadow.json") {
+    return shadowUtility(entry.path)
+  }
   const spacingAlias = TAILWIND_SPACING_ALIASES.find(
     (alias) => alias.path.join(".") === entry.path.join("."),
   )
@@ -113,15 +119,25 @@ export const renderManifest = (entries: readonly ModelEntry[]): string => {
             letterSpacing: formatDesignDimension(token.$value.letterSpacing),
           }
         : null
+    const value = (() => {
+      if (typography) {
+        return `${typography.fontSize} / ${typography.fontWeight} / ${typography.lineHeight} / ${typography.letterSpacing}`
+      }
+      if (token.$type === "shadow") {
+        return formatShadow(token.$value)
+      }
+      return resolveValue(token.$value)
+    })()
     return {
       name: pathName(entry.path),
       cssVariable: toCssVariable(entry.path),
       tier: TIER_BY_FILE[entry.file],
       type: token.$type,
-      value: typography
-        ? `${typography.fontSize} / ${typography.fontWeight} / ${typography.lineHeight} / ${typography.letterSpacing}`
-        : resolveValue(token.$value),
-      alias: token.$type === "typography" ? null : aliasName(token.$value),
+      value,
+      alias:
+        token.$type === "typography" || token.$type === "shadow"
+          ? null
+          : aliasName(token.$value),
       figmaName: figmaNameOf(token),
       utility: utilityOf(entry),
       typography,
@@ -133,7 +149,7 @@ export const renderManifest = (entries: readonly ModelEntry[]): string => {
     "  name: string",
     "  cssVariable: string",
     "  tier: string",
-    '  type: "color" | "dimension" | "number" | "fontFamily" | "fontWeight" | "typography"',
+    '  type: "color" | "dimension" | "number" | "fontFamily" | "fontWeight" | "typography" | "shadow"',
     "  value: string",
     "  alias: string | null",
     "  figmaName: string | null",

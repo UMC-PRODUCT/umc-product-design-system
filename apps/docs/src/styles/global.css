@@ -186,6 +186,15 @@
   box-shadow: inset 0 0 0 1px var(--umc-color-border-primary-medium);
 }
 
+.umc-shadow-box {
+  display: block;
+  width: 4rem;
+  height: 3rem;
+  margin: 0.5rem;
+  border-radius: var(--umc-radius-12);
+  background: var(--umc-color-fill-neutral-default);
+}
+
 @media (max-width: 50rem) {
   .umc-type-row {
     grid-template-columns: 1fr;

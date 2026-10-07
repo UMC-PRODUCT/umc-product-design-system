@@ -1,6 +1,12 @@
 import type { ManifestSource } from "../shared/manifest.ts"
 import type { FontCrossCheck } from "./font-check.ts"
-import type { Exclusion, RuleStatus, VariableRule } from "./rules.ts"
+import type {
+  Exclusion,
+  RuleStatus,
+  StyleSourceRule,
+  VariableRule,
+} from "./rules.ts"
+import type { StyleNote, StyleNoteReason } from "./style-sources.ts"
 import type { TextStyleWarning } from "./text-styles.ts"
 import type {
   CodeSyntaxDuplicate,
@@ -32,8 +38,31 @@ export type ReportInput = {
   fontCrossCheck: FontCrossCheck
   textStyleExclusions: readonly Exclusion[]
   textStyleWarnings: readonly TextStyleWarning[]
+  styleSources: readonly StyleSourceRule[]
+  effectStyles: readonly { figmaName: string; file: string; path: string }[]
+  styleNotes: readonly StyleNote[]
   mappings: readonly VariableMapping[]
 }
+
+const NOTE_REASON_LABEL: Record<StyleNoteReason, string> = {
+  differs: "같은 이름의 다른 정의. 기준 원문 또는 먼저 나온 원문의 정의를 썼다",
+  "unbound-family": "글꼴을 값으로 직접 적은 정의(2기 스타일로 보임)",
+  "outside-pattern": "이름 규칙 밖의 스타일",
+  "outside-library": "3기 라이브러리에 없는 effect 스타일",
+}
+
+const noteRows = (
+  notes: readonly StyleNote[],
+  reasons: readonly StyleNoteReason[],
+): string[][] =>
+  notes
+    .filter((note) => reasons.includes(note.reason))
+    .map((note) => [
+      code(note.figmaName),
+      note.files.map(code).join(", "),
+      code(note.definition),
+      NOTE_REASON_LABEL[note.reason],
+    ])
 
 const cell = (value: string): string => value.replaceAll("|", "\\|")
 
@@ -161,6 +190,47 @@ export const renderNormalizationReport = (input: ReportInput): string => {
         input.textStyleWarnings.map((warning) => [
           code(warning.figmaName),
           warning.message,
+        ]),
+      ),
+    ),
+    ...section(
+      "스타일 원문 우선순위",
+      table(
+        ["순서", "파일", "노드", "쓰임"],
+        input.styleSources.map((source, index) => [
+          String(index + 1),
+          code(source.file),
+          source.nodeName,
+          source.reason,
+        ]),
+      ),
+    ),
+    ...section(
+      "그림자 effect 스타일",
+      table(
+        ["피그마 스타일", "코드 토큰", "정의를 가져온 원문"],
+        input.effectStyles.map((effect) => [
+          code(effect.figmaName),
+          code(effect.path),
+          code(effect.file),
+        ]),
+      ),
+    ),
+    ...section(
+      "같은 이름의 다른 정의",
+      table(
+        ["피그마 이름", "원문", "정의", "처리"],
+        noteRows(input.styleNotes, ["differs"]),
+      ),
+    ),
+    ...section(
+      "토큰에 넣지 않은 스타일",
+      table(
+        ["피그마 이름", "원문", "정의", "이유"],
+        noteRows(input.styleNotes, [
+          "unbound-family",
+          "outside-pattern",
+          "outside-library",
         ]),
       ),
     ),

@@ -34,6 +34,7 @@ export default defineConfig({
             "foundations/grid",
             "foundations/spacing",
             "foundations/radius",
+            "foundations/shadow",
           ],
         },
         {

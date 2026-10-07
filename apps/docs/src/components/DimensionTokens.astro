@@ -4,7 +4,7 @@ import { tokenManifest } from "@umc-product/design-tokens/manifest"
 interface Props {
   prefix: string
   source?: "value" | "alias" | "all"
-  visual?: "bar" | "radius" | "none"
+  visual?: "bar" | "radius" | "shadow" | "none"
 }
 
 const { prefix, source = "all", visual = "none" } = Astro.props
@@ -45,6 +45,14 @@ const tokens = tokenManifest.filter(
                 <span
                   class="umc-radius-box"
                   style={`border-radius: var(${token.cssVariable})`}
+                />
+              </td>
+            )}
+            {visual === "shadow" && (
+              <td>
+                <span
+                  class="umc-shadow-box"
+                  style={`box-shadow: var(${token.cssVariable})`}
                 />
               </td>
             )}

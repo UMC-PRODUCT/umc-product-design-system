@@ -2,7 +2,7 @@ export type TokenManifestEntry = {
   name: string
   cssVariable: string
   tier: string
-  type: "color" | "dimension" | "number" | "fontFamily" | "fontWeight" | "typography"
+  type: "color" | "dimension" | "number" | "fontFamily" | "fontWeight" | "typography" | "shadow"
   value: string
   alias: string | null
   figmaName: string | null
@@ -3479,6 +3479,23 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     }
   },
   {
+    "name": "typography.display-4-bold",
+    "cssVariable": "--umc-typography-display-4-bold",
+    "tier": "typography",
+    "type": "typography",
+    "value": "32px / 700 / 1.2 / -0.015em",
+    "alias": null,
+    "figmaName": "Display/4-Bold",
+    "utility": "text-display-4-bold",
+    "typography": {
+      "fontFamily": "Pretendard Variable",
+      "fontSize": "32px",
+      "fontWeight": "700",
+      "lineHeight": "1.2",
+      "letterSpacing": "-0.015em"
+    }
+  },
+  {
     "name": "typography.heading-1-semibold",
     "cssVariable": "--umc-typography-heading-1-semibold",
     "tier": "typography",
@@ -3595,6 +3612,74 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
       "fontWeight": "500",
       "lineHeight": "1.4",
       "letterSpacing": "-0.025em"
+    }
+  },
+  {
+    "name": "typography.title-1-semibold",
+    "cssVariable": "--umc-typography-title-1-semibold",
+    "tier": "typography",
+    "type": "typography",
+    "value": "22px / 600 / 1.4 / -0.01em",
+    "alias": null,
+    "figmaName": "Title/1-Semibold",
+    "utility": "text-title-1-semibold",
+    "typography": {
+      "fontFamily": "Pretendard Variable",
+      "fontSize": "22px",
+      "fontWeight": "600",
+      "lineHeight": "1.4",
+      "letterSpacing": "-0.01em"
+    }
+  },
+  {
+    "name": "typography.title-2-semibold",
+    "cssVariable": "--umc-typography-title-2-semibold",
+    "tier": "typography",
+    "type": "typography",
+    "value": "20px / 600 / 1.4 / -0.01em",
+    "alias": null,
+    "figmaName": "Title/2-Semibold",
+    "utility": "text-title-2-semibold",
+    "typography": {
+      "fontFamily": "Pretendard Variable",
+      "fontSize": "20px",
+      "fontWeight": "600",
+      "lineHeight": "1.4",
+      "letterSpacing": "-0.01em"
+    }
+  },
+  {
+    "name": "typography.title-2-medium",
+    "cssVariable": "--umc-typography-title-2-medium",
+    "tier": "typography",
+    "type": "typography",
+    "value": "20px / 500 / 1.4 / -0.02em",
+    "alias": null,
+    "figmaName": "Title/2-Medium",
+    "utility": "text-title-2-medium",
+    "typography": {
+      "fontFamily": "Pretendard Variable",
+      "fontSize": "20px",
+      "fontWeight": "500",
+      "lineHeight": "1.4",
+      "letterSpacing": "-0.02em"
+    }
+  },
+  {
+    "name": "typography.title-3-medium",
+    "cssVariable": "--umc-typography-title-3-medium",
+    "tier": "typography",
+    "type": "typography",
+    "value": "18px / 500 / 1.4 / 0em",
+    "alias": null,
+    "figmaName": "Title/3-Medium",
+    "utility": "text-title-3-medium",
+    "typography": {
+      "fontFamily": "Pretendard Variable",
+      "fontSize": "18px",
+      "fontWeight": "500",
+      "lineHeight": "1.4",
+      "letterSpacing": "0em"
     }
   },
   {
@@ -4074,6 +4159,23 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     }
   },
   {
+    "name": "typography.caption-2-bold",
+    "cssVariable": "--umc-typography-caption-2-bold",
+    "tier": "typography",
+    "type": "typography",
+    "value": "12px / 700 / 1.5 / -0.02em",
+    "alias": null,
+    "figmaName": "Caption/2-Bold",
+    "utility": "text-caption-2-bold",
+    "typography": {
+      "fontFamily": "Pretendard Variable",
+      "fontSize": "12px",
+      "fontWeight": "700",
+      "lineHeight": "1.5",
+      "letterSpacing": "-0.02em"
+    }
+  },
+  {
     "name": "typography.caption-2-medium",
     "cssVariable": "--umc-typography-caption-2-medium",
     "tier": "typography",
@@ -4140,6 +4242,61 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
       "lineHeight": "1.5",
       "letterSpacing": "0em"
     }
+  },
+  {
+    "name": "shadow.drop.neutral-1",
+    "cssVariable": "--umc-shadow-drop-neutral-1",
+    "tier": "shadow",
+    "type": "shadow",
+    "value": "0 4px 16px 0 #40444329",
+    "alias": null,
+    "figmaName": "Shadow/Drop/Neutral_1",
+    "utility": "shadow-drop-neutral-1",
+    "typography": null
+  },
+  {
+    "name": "shadow.drop.neutral-2",
+    "cssVariable": "--umc-shadow-drop-neutral-2",
+    "tier": "shadow",
+    "type": "shadow",
+    "value": "0 4px 16px 0 #eceeee85",
+    "alias": null,
+    "figmaName": "Shadow/Drop/Neutral_2",
+    "utility": "shadow-drop-neutral-2",
+    "typography": null
+  },
+  {
+    "name": "shadow.drop.neutral-3",
+    "cssVariable": "--umc-shadow-drop-neutral-3",
+    "tier": "shadow",
+    "type": "shadow",
+    "value": "0 4px 16px 0 #eff0f04d",
+    "alias": null,
+    "figmaName": "Shadow/Drop/Neutral_3",
+    "utility": "shadow-drop-neutral-3",
+    "typography": null
+  },
+  {
+    "name": "shadow.inner.neutral-1",
+    "cssVariable": "--umc-shadow-inner-neutral-1",
+    "tier": "shadow",
+    "type": "shadow",
+    "value": "inset 1px 1px 3px 0 #0b6b6421, inset -1px -1px 1px 0 #ffffff40",
+    "alias": null,
+    "figmaName": "Shadow/Inner/Neutral_1",
+    "utility": "shadow-inner-neutral-1",
+    "typography": null
+  },
+  {
+    "name": "shadow.inner.neutral-2",
+    "cssVariable": "--umc-shadow-inner-neutral-2",
+    "tier": "shadow",
+    "type": "shadow",
+    "value": "inset 1px 1px 2px 0 #d3d8d826, inset -1px -1px 1px 0 #ffffff40",
+    "alias": null,
+    "figmaName": "Shadow/Inner/Neutral_2",
+    "utility": "shadow-inner-neutral-2",
+    "typography": null
   },
   {
     "name": "grid.columns",

@@ -1,12 +1,10 @@
-import { readFileSync } from "node:fs"
 import { join } from "node:path"
-
-import { z } from "zod"
 
 import type { Outputs } from "../shared/files.ts"
 import { readManifest } from "../shared/manifest.ts"
 import { paths } from "../shared/paths.ts"
 import { parseTokenTree } from "../shared/schema.ts"
+import { collectEffectStyles } from "./effects.ts"
 import {
   listExportFiles,
   PREVIOUS_SNAPSHOT_COUNT,
@@ -16,14 +14,14 @@ import { crossCheckFonts } from "./font-check.ts"
 import { renderNormalizationReport } from "./report.ts"
 import {
   EXCLUDED_TEXT_STYLES,
+  MCP_STYLE_SOURCES,
   OPEN_QUESTIONS,
   VARIABLE_RULES,
 } from "./rules.ts"
+import { mergeTextStyleSources, readStyleSources } from "./style-sources.ts"
 import { parseTextStyles, splitVariableDefs } from "./text-styles.ts"
 import { findUnusedRules } from "./variable-path.ts"
 import { normalizeVariables } from "./variables.ts"
-
-const variableDefsSchema = z.record(z.string(), z.string())
 
 const serializeTokens = (tree: unknown, fileName: string): string => {
   parseTokenTree(tree, fileName)
@@ -38,12 +36,12 @@ export const normalizeAll = (): Outputs => {
     )
   }
 
-  const raw = variableDefsSchema.parse(
-    JSON.parse(readFileSync(paths.textStylesSource, "utf8")),
-  )
-  const mcpVariables = splitVariableDefs(raw).variables
+  const styleSources = readStyleSources()
+  const mergedTextStyles = mergeTextStyleSources(styleSources)
+  const mcpVariables = splitVariableDefs(mergedTextStyles.raw).variables
   const variables = normalizeVariables(exportVariables)
-  const textStyles = parseTextStyles(raw)
+  const textStyles = parseTextStyles(mergedTextStyles.raw)
+  const effects = collectEffectStyles(styleSources)
   const exportVariableNames = new Set(
     exportVariables.map((variable) => variable.name),
   )
@@ -79,6 +77,10 @@ export const normalizeAll = (): Outputs => {
       serializeTokens(textStyles.tree, "typography.json"),
     ],
     [
+      join(paths.tokensDir, "shadow.json"),
+      serializeTokens(effects.tree, "shadow.json"),
+    ],
+    [
       paths.normalizationReport,
       renderNormalizationReport({
         sources: readManifest().sources,
@@ -98,6 +100,9 @@ export const normalizeAll = (): Outputs => {
         fontCrossCheck,
         textStyleExclusions: EXCLUDED_TEXT_STYLES,
         textStyleWarnings: textStyles.warnings,
+        styleSources: MCP_STYLE_SOURCES,
+        effectStyles: effects.chosen,
+        styleNotes: [...mergedTextStyles.notes, ...effects.notes],
         mappings: variables.mappings,
       }),
     ],

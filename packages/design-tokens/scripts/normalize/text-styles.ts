@@ -127,6 +127,9 @@ export const parseFontExpression = (
   }
 }
 
+export const isTextStyleName = (figmaName: string): boolean =>
+  TEXT_STYLE_NAME_PATTERN.test(figmaName)
+
 const parseTextStyleName = (figmaName: string): TextStyleName | null => {
   const match = TEXT_STYLE_NAME_PATTERN.exec(figmaName)
   const category = match?.[1]

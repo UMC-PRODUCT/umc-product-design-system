@@ -54,6 +54,24 @@
         }
       }
     },
+    "display-4-bold": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font-family.brand}",
+        "fontSize": "{font-size.32}",
+        "fontWeight": "{font-weight.bold}",
+        "lineHeight": 1.2,
+        "letterSpacing": {
+          "value": -0.015,
+          "unit": "em"
+        }
+      },
+      "$extensions": {
+        "umc.figma": {
+          "style": "Display/4-Bold"
+        }
+      }
+    },
     "heading-1-semibold": {
       "$type": "typography",
       "$value": {
@@ -177,6 +195,78 @@
       "$extensions": {
         "umc.figma": {
           "style": "Heading/5-Medium"
+        }
+      }
+    },
+    "title-1-semibold": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font-family.brand}",
+        "fontSize": "{font-size.22}",
+        "fontWeight": "{font-weight.semibold}",
+        "lineHeight": 1.4,
+        "letterSpacing": {
+          "value": -0.01,
+          "unit": "em"
+        }
+      },
+      "$extensions": {
+        "umc.figma": {
+          "style": "Title/1-Semibold"
+        }
+      }
+    },
+    "title-2-semibold": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font-family.brand}",
+        "fontSize": "{font-size.20}",
+        "fontWeight": "{font-weight.semibold}",
+        "lineHeight": 1.4,
+        "letterSpacing": {
+          "value": -0.01,
+          "unit": "em"
+        }
+      },
+      "$extensions": {
+        "umc.figma": {
+          "style": "Title/2-Semibold"
+        }
+      }
+    },
+    "title-2-medium": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font-family.brand}",
+        "fontSize": "{font-size.20}",
+        "fontWeight": "{font-weight.medium}",
+        "lineHeight": 1.4,
+        "letterSpacing": {
+          "value": -0.02,
+          "unit": "em"
+        }
+      },
+      "$extensions": {
+        "umc.figma": {
+          "style": "Title/2-Medium"
+        }
+      }
+    },
+    "title-3-medium": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font-family.brand}",
+        "fontSize": "{font-size.18}",
+        "fontWeight": "{font-weight.medium}",
+        "lineHeight": 1.4,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "em"
+        }
+      },
+      "$extensions": {
+        "umc.figma": {
+          "style": "Title/3-Medium"
         }
       }
     },
@@ -690,6 +780,27 @@
       "$extensions": {
         "umc.figma": {
           "style": "Caption/1-Regular"
+        }
+      }
+    },
+    "caption-2-bold": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font-family.brand}",
+        "fontSize": {
+          "value": 12,
+          "unit": "px"
+        },
+        "fontWeight": "{font-weight.bold}",
+        "lineHeight": 1.5,
+        "letterSpacing": {
+          "value": -0.02,
+          "unit": "em"
+        }
+      },
+      "$extensions": {
+        "umc.figma": {
+          "style": "Caption/2-Bold"
         }
       }
     },

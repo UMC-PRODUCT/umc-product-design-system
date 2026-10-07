@@ -1,0 +1,203 @@
+{
+  "shadow": {
+    "drop": {
+      "neutral-1": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "inset": false,
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 4,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 16,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            },
+            "color": "#40444329"
+          }
+        ],
+        "$extensions": {
+          "umc.figma": {
+            "style": "Shadow/Drop/Neutral_1",
+            "source": "get-variable-defs.2621-33487.json"
+          }
+        }
+      },
+      "neutral-2": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "inset": false,
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 4,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 16,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            },
+            "color": "#eceeee85"
+          }
+        ],
+        "$extensions": {
+          "umc.figma": {
+            "style": "Shadow/Drop/Neutral_2",
+            "source": "get-variable-defs.2621-32882.json"
+          }
+        }
+      },
+      "neutral-3": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "inset": false,
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 4,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 16,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            },
+            "color": "#eff0f04d"
+          }
+        ],
+        "$extensions": {
+          "umc.figma": {
+            "style": "Shadow/Drop/Neutral_3",
+            "source": "get-variable-defs.2858-65987.json"
+          }
+        }
+      }
+    },
+    "inner": {
+      "neutral-1": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "inset": true,
+            "offsetX": {
+              "value": 1,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 1,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 3,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            },
+            "color": "#0b6b6421"
+          },
+          {
+            "inset": true,
+            "offsetX": {
+              "value": -1,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": -1,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 1,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            },
+            "color": "#ffffff40"
+          }
+        ],
+        "$extensions": {
+          "umc.figma": {
+            "style": "Shadow/Inner/Neutral_1",
+            "source": "get-variable-defs.2621-33487.json"
+          }
+        }
+      },
+      "neutral-2": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "inset": true,
+            "offsetX": {
+              "value": 1,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 1,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 2,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            },
+            "color": "#d3d8d826"
+          },
+          {
+            "inset": true,
+            "offsetX": {
+              "value": -1,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": -1,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 1,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            },
+            "color": "#ffffff40"
+          }
+        ],
+        "$extensions": {
+          "umc.figma": {
+            "style": "Shadow/Inner/Neutral_2",
+            "source": "get-variable-defs.2858-65987.json"
+          }
+        }
+      }
+    }
+  }
+}

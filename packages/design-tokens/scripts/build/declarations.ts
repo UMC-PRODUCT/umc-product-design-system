@@ -1,6 +1,6 @@
 import { parseAlias, toCssVariable } from "../shared/naming.ts"
 import type { CanonicalToken } from "../shared/schema.ts"
-import { formatDimension, type Dimension } from "../shared/units.ts"
+import { formatDimension, round4, type Dimension } from "../shared/units.ts"
 import type { ModelEntry } from "./model.ts"
 
 const FONT_FAMILY_FALLBACK =
@@ -23,6 +23,27 @@ export const TYPOGRAPHY_PROPERTIES = [
 }[]
 
 type TypographyKey = (typeof TYPOGRAPHY_PROPERTIES)[number]["key"]
+
+type ShadowLayer = Extract<
+  CanonicalToken,
+  { $type: "shadow" }
+>["$value"][number]
+
+const formatShadowLength = ({ value, unit }: Dimension): string =>
+  value === 0 ? "0" : `${round4(value)}${unit}`
+
+const formatShadowLayer = (layer: ShadowLayer): string =>
+  [
+    ...(layer.inset ? ["inset"] : []),
+    formatShadowLength(layer.offsetX),
+    formatShadowLength(layer.offsetY),
+    formatShadowLength(layer.blur),
+    formatShadowLength(layer.spread),
+    layer.color,
+  ].join(" ")
+
+export const formatShadow = (layers: readonly ShadowLayer[]): string =>
+  layers.map(formatShadowLayer).join(", ")
 
 export type Declaration = {
   name: string
@@ -83,5 +104,7 @@ export const toDeclarations = (entry: ModelEntry): Declaration[] => {
         name: typographyVariable(entry, cssProperty),
         value: formatTypographyField(token.$value, key),
       }))
+    case "shadow":
+      return [{ name, value: formatShadow(token.$value) }]
   }
 }

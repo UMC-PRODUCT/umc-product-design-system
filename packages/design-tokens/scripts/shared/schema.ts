@@ -61,6 +61,21 @@ const typographyToken = z.object({
   ...meta,
 })
 
+const shadowLayer = z.object({
+  inset: z.boolean(),
+  offsetX: dimension,
+  offsetY: dimension,
+  blur: dimension,
+  spread: dimension,
+  color: z.string().regex(HEX_COLOR_PATTERN),
+})
+
+const shadowToken = z.object({
+  $type: z.literal("shadow"),
+  $value: z.array(shadowLayer).min(1),
+  ...meta,
+})
+
 export const canonicalTokenSchema = z.discriminatedUnion("$type", [
   colorToken,
   dimensionToken,
@@ -68,6 +83,7 @@ export const canonicalTokenSchema = z.discriminatedUnion("$type", [
   fontFamilyToken,
   fontWeightToken,
   typographyToken,
+  shadowToken,
 ])
 
 export type CanonicalToken = z.infer<typeof canonicalTokenSchema>

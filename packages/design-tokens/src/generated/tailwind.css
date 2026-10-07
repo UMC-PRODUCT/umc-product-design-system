@@ -156,6 +156,12 @@
   --spacing-grid-margin-mobile: var(--umc-grid-margin-mobile);
   --spacing-header: var(--umc-layout-header-height);
   --spacing-sidebar: var(--umc-layout-sidebar-width);
+
+  --shadow-drop-neutral-1: var(--umc-shadow-drop-neutral-1);
+  --shadow-drop-neutral-2: var(--umc-shadow-drop-neutral-2);
+  --shadow-drop-neutral-3: var(--umc-shadow-drop-neutral-3);
+  --shadow-inner-neutral-1: var(--umc-shadow-inner-neutral-1);
+  --shadow-inner-neutral-2: var(--umc-shadow-inner-neutral-2);
 }
 
 @utility text-display-1-bold {
@@ -180,6 +186,14 @@
   font-weight: var(--umc-typography-display-3-bold-font-weight);
   line-height: var(--umc-typography-display-3-bold-line-height);
   letter-spacing: var(--umc-typography-display-3-bold-letter-spacing);
+}
+
+@utility text-display-4-bold {
+  font-family: var(--umc-typography-display-4-bold-font-family);
+  font-size: var(--umc-typography-display-4-bold-font-size);
+  font-weight: var(--umc-typography-display-4-bold-font-weight);
+  line-height: var(--umc-typography-display-4-bold-line-height);
+  letter-spacing: var(--umc-typography-display-4-bold-letter-spacing);
 }
 
 @utility text-heading-1-semibold {
@@ -236,6 +250,38 @@
   font-weight: var(--umc-typography-heading-5-medium-font-weight);
   line-height: var(--umc-typography-heading-5-medium-line-height);
   letter-spacing: var(--umc-typography-heading-5-medium-letter-spacing);
+}
+
+@utility text-title-1-semibold {
+  font-family: var(--umc-typography-title-1-semibold-font-family);
+  font-size: var(--umc-typography-title-1-semibold-font-size);
+  font-weight: var(--umc-typography-title-1-semibold-font-weight);
+  line-height: var(--umc-typography-title-1-semibold-line-height);
+  letter-spacing: var(--umc-typography-title-1-semibold-letter-spacing);
+}
+
+@utility text-title-2-semibold {
+  font-family: var(--umc-typography-title-2-semibold-font-family);
+  font-size: var(--umc-typography-title-2-semibold-font-size);
+  font-weight: var(--umc-typography-title-2-semibold-font-weight);
+  line-height: var(--umc-typography-title-2-semibold-line-height);
+  letter-spacing: var(--umc-typography-title-2-semibold-letter-spacing);
+}
+
+@utility text-title-2-medium {
+  font-family: var(--umc-typography-title-2-medium-font-family);
+  font-size: var(--umc-typography-title-2-medium-font-size);
+  font-weight: var(--umc-typography-title-2-medium-font-weight);
+  line-height: var(--umc-typography-title-2-medium-line-height);
+  letter-spacing: var(--umc-typography-title-2-medium-letter-spacing);
+}
+
+@utility text-title-3-medium {
+  font-family: var(--umc-typography-title-3-medium-font-family);
+  font-size: var(--umc-typography-title-3-medium-font-size);
+  font-weight: var(--umc-typography-title-3-medium-font-weight);
+  line-height: var(--umc-typography-title-3-medium-line-height);
+  letter-spacing: var(--umc-typography-title-3-medium-letter-spacing);
 }
 
 @utility text-title-4-semibold {
@@ -460,6 +506,14 @@
   font-weight: var(--umc-typography-caption-1-regular-font-weight);
   line-height: var(--umc-typography-caption-1-regular-line-height);
   letter-spacing: var(--umc-typography-caption-1-regular-letter-spacing);
+}
+
+@utility text-caption-2-bold {
+  font-family: var(--umc-typography-caption-2-bold-font-family);
+  font-size: var(--umc-typography-caption-2-bold-font-size);
+  font-weight: var(--umc-typography-caption-2-bold-font-weight);
+  line-height: var(--umc-typography-caption-2-bold-line-height);
+  letter-spacing: var(--umc-typography-caption-2-bold-letter-spacing);
 }
 
 @utility text-caption-2-medium {

@@ -5,6 +5,7 @@ export const TOKEN_FILE_ORDER = [
   "radius.json",
   "color.semantic.json",
   "typography.json",
+  "shadow.json",
   "layout.json",
 ] as const
 
