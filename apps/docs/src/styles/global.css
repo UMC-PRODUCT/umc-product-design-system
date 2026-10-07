@@ -8,6 +8,12 @@
 
 @source "../../node_modules/@umc-product/design-tokens/dist/index.js";
 
+@layer starlight {
+  .sl-markdown-content :is([class*="umc-"], [class*="umc-"] *) {
+    margin-top: 0;
+  }
+}
+
 @theme {
   --font-sans: var(--umc-font-family-brand);
   --color-accent-50: var(--umc-color-teal-50);
