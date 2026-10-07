@@ -1,0 +1,56 @@
+{
+  "component": "PageHeader",
+  "figmaSection": "2809:63751",
+  "page": "/components/shell/page-header/",
+  "nodes": [
+    {
+      "specId": "page-header-full",
+      "node": "2809:63752",
+      "variant": "Default (with breadcrumbs and description)",
+      "expected": {
+        "padding-left": "12px",
+        "gap": "26px"
+      }
+    },
+    {
+      "specId": "page-header-breadcrumb-item",
+      "node": "2809:63770",
+      "variant": "Breadcrumb Item Default",
+      "expected": {
+        "height": "22px",
+        "color": "#adadad",
+        "font-size": "14px",
+        "font-weight": "500",
+        "line-height": "21px",
+        "letter-spacing": "0px"
+      },
+      "figmaDiffers": {
+        "color": "피그마 마지막 항목도 #adadad. 현재 경로 항목에 시각적 구분을 위해 aria-current='page'만 추가. 디자이너가 색 구분을 원하면 --umc-color-text-neutral-default로 변경 필요"
+      }
+    },
+    {
+      "specId": "page-header-title",
+      "node": "2809:63766",
+      "variant": "Page Title",
+      "expected": {
+        "color": "#0f1010",
+        "font-size": "24px",
+        "font-weight": "600",
+        "line-height": "32.4px",
+        "letter-spacing": "-0.24px"
+      }
+    },
+    {
+      "specId": "page-header-description",
+      "node": "2809:63751",
+      "variant": "Description",
+      "expected": {
+        "color": "#606262",
+        "font-size": "14px",
+        "font-weight": "400",
+        "line-height": "21px",
+        "letter-spacing": "0px"
+      }
+    }
+  ]
+}
