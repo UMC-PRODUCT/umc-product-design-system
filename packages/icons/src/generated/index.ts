@@ -62,6 +62,7 @@ import { TrashIcon } from "./icons/TrashIcon.tsx"
 import { UnderlineIcon } from "./icons/UnderlineIcon.tsx"
 import { UsersIcon } from "./icons/UsersIcon.tsx"
 import { WarningIcon } from "./icons/WarningIcon.tsx"
+import { UmcLogo } from "./logos/UmcLogo.tsx"
 import { DocumentPictogram } from "./pictograms/DocumentPictogram.tsx"
 import { FlagPictogram } from "./pictograms/FlagPictogram.tsx"
 import { GoalPictogram } from "./pictograms/GoalPictogram.tsx"
@@ -138,6 +139,7 @@ export {
   UnderlineIcon,
   UsersIcon,
   WarningIcon,
+  UmcLogo,
   DocumentPictogram,
   FlagPictogram,
   GoalPictogram,
@@ -228,4 +230,8 @@ export const pictogramCatalog = [
   { name: "UserShieldPictogram", figmaName: "Pictogram/User shield", modes: ["light"], component: UserShieldPictogram },
   { name: "UsersPictogram", figmaName: "Pictogram/Users", modes: ["light"], component: UsersPictogram },
   { name: "VotePictogram", figmaName: "Pictogram/Vote", modes: ["light"], component: VotePictogram },
+] as const
+
+export const logoCatalog = [
+  { name: "UmcLogo", figmaName: "Logo/UMC", component: UmcLogo },
 ] as const

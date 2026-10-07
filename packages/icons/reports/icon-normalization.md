@@ -5,7 +5,7 @@
 ## 입력
 
 - 피그마 파일 `U3pRZp6BjQBW5aMljCBwo9`, get_design_context asset download, 받은 날 2026-10-07
-- 노드 154개, 컴포넌트 74개(아이콘 64, 픽토그램 10)
+- 노드 155개, 컴포넌트 75개(아이콘 64, 픽토그램 10, 로고 1)
 
 ## 디자인 팀 확인 요청
 
@@ -56,6 +56,7 @@
 | 대상 | 피그마 색 | 코드 |
 | --- | --- | --- |
 | 아이콘 주색 | #3f4141 | `currentColor`(글자색을 따른다) |
+| 로고 주색 | #3f4141 | `currentColor`(글자색을 따른다) |
 | 아이콘 고정색 | #dc3d3d | style `var(--umc-color-red-500)` |
 | 아이콘 고정색 | #ffffff | style `var(--umc-color-white)` |
 | 픽토그램 주색 | #02746c | `currentColor`, 기본 `color`는 `var(--umc-color-icon-brand-strong)` |
@@ -133,6 +134,7 @@
 | `Icon/Underline` | `UnderlineIcon` | fill(3060:96493) |
 | `Icon/Users` | `UsersIcon` | fill(3095:97361) |
 | `Icon_warning` | `WarningIcon` | thin(3060:96160), regular(3060:96165), fill(3060:96170) |
+| `Logo/UMC` | `UmcLogo` | default(2678:52296) |
 | `Pictogram/Document` | `DocumentPictogram` | light(3095:99530) |
 | `Pictogram/Flag` | `FlagPictogram` | light(3095:99528) |
 | `Pictogram/Goal` | `GoalPictogram` | light(3095:99529) |

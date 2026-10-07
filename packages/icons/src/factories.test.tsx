@@ -3,6 +3,7 @@ import { createRef, type ComponentProps } from "react"
 import { describe, expect, expectTypeOf, it } from "vitest"
 
 import { createIcon } from "./create-icon.tsx"
+import { createLogo } from "./create-logo.tsx"
 import { createPictogram } from "./create-pictogram.tsx"
 
 const SampleIcon = createIcon({
@@ -127,5 +128,40 @@ describe("createPictogram", () => {
     )
     expect(svg.style.color).toBe("red")
     expect(svg.style.display).toBe("block")
+  })
+})
+
+const SampleLogo = createLogo({
+  name: "SampleLogo",
+  frame: { width: 148, height: 44 },
+  content: <path d="M4 4Z" fill="currentColor" />,
+})
+
+describe("createLogo", () => {
+  it("기본은 높이 22px이고 폭은 viewBox 비율을 따른다", () => {
+    const svg = render(<SampleLogo />).container.querySelector("svg")
+    expect(svg?.getAttribute("height")).toBe("22")
+    expect(svg?.getAttribute("width")).toBe("74")
+    expect(svg?.getAttribute("viewBox")).toBe("0 0 148 44")
+    expect(svg?.getAttribute("aria-hidden")).toBe("true")
+  })
+
+  it("height를 바꾸면 폭도 같은 비율로 바뀐다", () => {
+    const svg = render(<SampleLogo height={44} />).container.querySelector(
+      "svg",
+    )
+    expect(svg?.getAttribute("width")).toBe("148")
+  })
+
+  it("aria-label이 있으면 의미 있는 이미지로 노출한다", () => {
+    const svg = render(<SampleLogo aria-label="UMC" />).container.querySelector(
+      "svg",
+    )
+    expect(svg?.getAttribute("role")).toBe("img")
+    expect(svg?.hasAttribute("aria-hidden")).toBe(false)
+  })
+
+  it("displayName을 붙인다", () => {
+    expect(SampleLogo.displayName).toBe("SampleLogo")
   })
 })

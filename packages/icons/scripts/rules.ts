@@ -161,6 +161,8 @@ export const VIEWBOX_EXCEPTIONS: readonly ViewBoxException[] = [
 
 export const ICON_PRIMARY_COLOR = "#3f4141"
 
+export const LOGO_PRIMARY_COLOR = "#3f4141"
+
 export const ICON_FIXED_COLORS: Readonly<Record<string, ColorReplacement>> = {
   "#dc3d3d": { style: "var(--umc-color-red-500)" },
   "#ffffff": { style: "var(--umc-color-white)" },
@@ -191,6 +193,13 @@ export const mapIconColor = (color: string): ColorReplacement => {
     throw new Error(`아이콘 색 ${color}에 대응하는 규칙이 없습니다`)
   }
   return fixed
+}
+
+export const mapLogoColor = (color: string): ColorReplacement => {
+  if (color === LOGO_PRIMARY_COLOR) {
+    return CURRENT_COLOR
+  }
+  throw new Error(`로고 색 ${color}에 대응하는 규칙이 없습니다`)
 }
 
 export const mapPictogramColor = (color: string): ColorReplacement => {

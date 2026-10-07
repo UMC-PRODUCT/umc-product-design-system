@@ -2004,6 +2004,19 @@
         }
       ],
       "status": "ok"
+    },
+    {
+      "nodeId": "2678:52296",
+      "kind": "logo",
+      "componentName": "Logo/UMC",
+      "variantName": "",
+      "files": [
+        {
+          "file": "svg/2678-52296.svg",
+          "sha256": "bc1f082c4d82a4ff99136b4233fab4be7a2813b9bd9e4433f24c6c451c5c1a39"
+        }
+      ],
+      "status": "ok"
     }
   ]
 }

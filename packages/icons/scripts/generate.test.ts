@@ -2,7 +2,10 @@ import { describe, expect, it } from "vitest"
 
 import {
   assertIconPrimaryColor,
+  assertLogoPrimaryColor,
   buildComponents,
+  frameSize,
+  generateAll,
   pictogramDefaultColor,
   readIconManifest,
   resolveCanvas,
@@ -104,6 +107,19 @@ describe("색 규칙", () => {
     expect(() => assertIconPrimaryColor(["#ffffff"])).toThrow("주색")
   })
 
+  it("로고에 주색이 없으면 실패한다", () => {
+    expect(() => assertLogoPrimaryColor(["#3f4141"])).not.toThrow()
+    expect(() => assertLogoPrimaryColor([])).toThrow("로고 주색")
+  })
+
+  it("프레임은 0 0에서 시작하고 너비와 높이가 양수여야 한다", () => {
+    expect(frameSize("0 0 148 44")).toEqual({ width: 148, height: 44 })
+    expect(frameSize("0  0 148  44")).toEqual({ width: 148, height: 44 })
+    expect(() => frameSize("0 0 148")).toThrow("형식")
+    expect(() => frameSize("0 0 148 0")).toThrow("형식")
+    expect(() => frameSize("1 0 148 44")).toThrow("형식")
+  })
+
   it("픽토그램 기본색은 주색의 토큰이고 주색이 하나가 아니면 실패한다", () => {
     expect(pictogramDefaultColor(["#02746c", "#ddf4f1"])).toBe(
       "var(--umc-color-icon-brand-strong)",
@@ -183,6 +199,25 @@ describe("buildComponents", () => {
     expect(
       components.some((component) => component.name === "PersonPictogram"),
     ).toBe(false)
+  })
+
+  it("Logo/UMC를 currentColor로 그리는 UmcLogo로 만든다", () => {
+    const logo = byName("UmcLogo")
+    expect(logo.kind).toBe("logo")
+    expect(logo.figmaName).toBe("Logo/UMC")
+    expect(logo.variants.map((variant) => variant.viewBox)).toEqual([
+      "0 0 148 44",
+    ])
+    expect(logo.variants[0]?.jsx).toContain('fill="currentColor"')
+    expect(logo.variants[0]?.jsx).not.toMatch(/#[0-9a-f]{6}/i)
+  })
+
+  it("로고 모듈은 프레임 크기를 숫자로 넘겨 화면에서 viewBox를 읽지 않는다", () => {
+    const module = [...generateAll()].find(([file]) =>
+      file.endsWith("UmcLogo.tsx"),
+    )?.[1]
+    expect(module).toContain("frame: { width: 148, height: 44 },")
+    expect(module).not.toContain("viewBox")
   })
 
   it("피그마에서 바로잡힌 변형 이름 규칙이 남아 있으면 실패한다", () => {

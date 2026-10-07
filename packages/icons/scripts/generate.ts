@@ -12,7 +12,9 @@ import {
   ICON_PRIMARY_COLOR,
   ICON_VIEWBOX,
   ICON_WEIGHT_ORDER,
+  LOGO_PRIMARY_COLOR,
   mapIconColor,
+  mapLogoColor,
   mapPictogramColor,
   MODE_PROPERTY_NAMES,
   MODE_RULES,
@@ -57,7 +59,7 @@ const manifestSchema = z.object({
   sources: z.array(
     z.object({
       nodeId: z.string(),
-      kind: z.enum(["icon", "pictogram"]),
+      kind: z.enum(["icon", "pictogram", "logo"]),
       componentName: z.string(),
       variantName: z.string(),
       files: z.array(
@@ -84,7 +86,7 @@ type Variant = {
 }
 
 export type GeneratedComponent = {
-  kind: "icon" | "pictogram"
+  kind: ManifestSource["kind"]
   name: string
   figmaName: string
   variants: Variant[]
@@ -118,7 +120,7 @@ export const parseVariant = (variantName: string): Map<string, string> =>
 
 const nameWords = (componentName: string): string[] =>
   componentName
-    .replace(/^(Icon|Pictogram)[/_]/, "")
+    .replace(/^(Icon|Pictogram|Logo)[/_]/, "")
     .replace(/([a-z0-9])([A-Z])/g, "$1 $2")
     .split(/[\s/_-]+/)
     .filter(Boolean)
@@ -129,7 +131,7 @@ const nameWords = (componentName: string): string[] =>
 
 export const toComponentName = (
   componentName: string,
-  suffix: "Icon" | "Pictogram",
+  suffix: "Icon" | "Pictogram" | "Logo",
 ): string =>
   `${nameWords(componentName)
     .map((word) => `${word.charAt(0).toUpperCase()}${word.slice(1)}`)
@@ -195,12 +197,20 @@ const inSource = <T>(source: ManifestSource, run: () => T): T => {
   }
 }
 
-const standardViewBox = (kind: ManifestSource["kind"]): string =>
-  kind === "icon" ? ICON_VIEWBOX : PICTOGRAM_VIEWBOX
+const STANDARD_VIEWBOXES: Readonly<
+  Record<ManifestSource["kind"], string | undefined>
+> = {
+  icon: ICON_VIEWBOX,
+  pictogram: PICTOGRAM_VIEWBOX,
+  logo: undefined,
+}
 
-const frameSize = (viewBox: string) => {
-  const [minX, minY, width, height] = viewBox.split(" ").map(Number)
-  if (minX !== 0 || minY !== 0 || width === undefined || height === undefined) {
+const isLength = (value: number | undefined): value is number =>
+  value !== undefined && Number.isFinite(value) && value > 0
+
+export const frameSize = (viewBox: string) => {
+  const [minX, minY, width, height] = viewBox.trim().split(/\s+/).map(Number)
+  if (minX !== 0 || minY !== 0 || !isLength(width) || !isLength(height)) {
     throw new Error(`프레임 ${viewBox}는 "0 0 너비 높이" 형식이어야 합니다`)
   }
   return { width, height }
@@ -231,8 +241,8 @@ export const resolveCanvas = (
   }
   const expected =
     VIEWBOX_EXCEPTIONS.find((rule) => rule.nodeIds.includes(source.nodeId))
-      ?.viewBox ?? standardViewBox(source.kind)
-  if (exported.viewBox !== expected) {
+      ?.viewBox ?? STANDARD_VIEWBOXES[source.kind]
+  if (expected !== undefined && exported.viewBox !== expected) {
     throw new Error(
       `viewBox ${exported.viewBox}가 ${expected}가 아닙니다. 피그마 프레임을 확인하고 rules.ts에 배치나 viewBox 규칙을 추가하세요`,
     )
@@ -244,6 +254,14 @@ export const assertIconPrimaryColor = (colors: readonly string[]): void => {
   if (!colors.includes(ICON_PRIMARY_COLOR)) {
     throw new Error(
       `아이콘 주색 ${ICON_PRIMARY_COLOR}이 없습니다(${colors.join(", ") || "색 없음"})`,
+    )
+  }
+}
+
+export const assertLogoPrimaryColor = (colors: readonly string[]): void => {
+  if (!colors.includes(LOGO_PRIMARY_COLOR)) {
+    throw new Error(
+      `로고 주색 ${LOGO_PRIMARY_COLOR}이 없습니다(${colors.join(", ") || "색 없음"})`,
     )
   }
 }
@@ -403,6 +421,46 @@ const buildPictogram = (sources: ManifestSource[]): GeneratedComponent => {
   }
 }
 
+const buildLogo = (sources: ManifestSource[]): GeneratedComponent => {
+  const [source, ...rest] = sources
+  if (!source || rest.length > 0) {
+    throw new Error("로고는 변형이 하나여야 합니다")
+  }
+  const variant = inSource(source, () => {
+    const exported = exportSource(
+      source,
+      toKebab(source.componentName),
+      mapLogoColor,
+    )
+    assertLogoPrimaryColor(exported.colors)
+    frameSize(exported.viewBox)
+    return {
+      key: "default",
+      source,
+      viewBox: exported.viewBox,
+      jsx: exported.jsx,
+    }
+  })
+  return {
+    kind: "logo",
+    name: toComponentName(source.componentName, "Logo"),
+    figmaName: source.componentName,
+    variants: [variant],
+    weightNotes: [],
+  }
+}
+
+const BUILDERS: Readonly<
+  Record<
+    ManifestSource["kind"],
+    (sources: ManifestSource[]) => GeneratedComponent
+  >
+> = {
+  icon: buildIcon,
+  pictogram: buildPictogram,
+  logo: buildLogo,
+}
+
 export const buildComponents = (
   manifest: IconManifest,
 ): GeneratedComponent[] => {
@@ -453,11 +511,7 @@ export const buildComponents = (
         (source) => !excludedNames.has(source.componentName),
       ),
     ).values(),
-  ].map((sources) =>
-    sources[0]?.kind === "pictogram"
-      ? buildPictogram(sources)
-      : buildIcon(sources),
-  )
+  ].map((sources) => BUILDERS[sources[0]?.kind ?? "icon"](sources))
   assertUniqueKeys(
     "컴포넌트 이름",
     components.map((component) => component.name),
@@ -484,7 +538,28 @@ const renderVariant = (variant: Variant): string[] => [
   "    },",
 ]
 
+const renderLogoModule = (component: GeneratedComponent): string => {
+  const [variant] = component.variants
+  if (!variant) {
+    throw new Error(`${component.name}: 로고 원문이 없습니다`)
+  }
+  const frame = frameSize(variant.viewBox)
+  return [
+    'import { createLogo } from "../../create-logo.tsx"',
+    "",
+    `export const ${component.name} = createLogo({`,
+    `  name: "${component.name}",`,
+    `  frame: { width: ${frame.width}, height: ${frame.height} },`,
+    `  content: ${variant.jsx},`,
+    "})",
+    "",
+  ].join("\n")
+}
+
 const renderComponentModule = (component: GeneratedComponent): string => {
+  if (component.kind === "logo") {
+    return renderLogoModule(component)
+  }
   const isIcon = component.kind === "icon"
   return [
     isIcon
@@ -504,14 +579,21 @@ const renderComponentModule = (component: GeneratedComponent): string => {
   ].join("\n")
 }
 
+const FOLDERS: Readonly<Record<ManifestSource["kind"], string>> = {
+  icon: "icons",
+  pictogram: "pictograms",
+  logo: "logos",
+}
+
 const folderOf = (component: GeneratedComponent): string =>
-  component.kind === "icon" ? "icons" : "pictograms"
+  FOLDERS[component.kind]
 
 const renderIndex = (components: readonly GeneratedComponent[]): string => {
   const icons = components.filter((component) => component.kind === "icon")
   const pictograms = components.filter(
     (component) => component.kind === "pictogram",
   )
+  const logos = components.filter((component) => component.kind === "logo")
   const variantKeys = (component: GeneratedComponent) =>
     `[${component.variants.map((variant) => `"${variant.key}"`).join(", ")}]`
   return [
@@ -535,6 +617,13 @@ const renderIndex = (components: readonly GeneratedComponent[]): string => {
     ...pictograms.map(
       (component) =>
         `  { name: "${component.name}", figmaName: "${component.figmaName}", modes: ${variantKeys(component)}, component: ${component.name} },`,
+    ),
+    "] as const",
+    "",
+    "export const logoCatalog = [",
+    ...logos.map(
+      (component) =>
+        `  { name: "${component.name}", figmaName: "${component.figmaName}", component: ${component.name} },`,
     ),
     "] as const",
     "",
@@ -588,7 +677,7 @@ const renderReport = (
     "## 입력",
     "",
     `- 피그마 파일 \`${manifest.fileKey}\`, ${manifest.tool}, 받은 날 ${manifest.fetchedAt}`,
-    `- 노드 ${manifest.sources.length}개, 컴포넌트 ${components.length}개(아이콘 ${components.filter((component) => component.kind === "icon").length}, 픽토그램 ${components.filter((component) => component.kind === "pictogram").length})`,
+    `- 노드 ${manifest.sources.length}개, 컴포넌트 ${components.length}개(아이콘 ${components.filter((component) => component.kind === "icon").length}, 픽토그램 ${components.filter((component) => component.kind === "pictogram").length}, 로고 ${components.filter((component) => component.kind === "logo").length})`,
     "",
     "## 디자인 팀 확인 요청",
     "",
@@ -642,6 +731,7 @@ const renderReport = (
       ["대상", "피그마 색", "코드"],
       [
         ["아이콘 주색", ICON_PRIMARY_COLOR, "`currentColor`(글자색을 따른다)"],
+        ["로고 주색", LOGO_PRIMARY_COLOR, "`currentColor`(글자색을 따른다)"],
         ...Object.entries(ICON_FIXED_COLORS).map(([color, replacement]) => [
           "아이콘 고정색",
           color,
