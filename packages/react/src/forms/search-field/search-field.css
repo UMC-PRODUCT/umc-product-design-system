@@ -1,0 +1,26 @@
+@import "../input-box/input-box.css";
+
+@layer components {
+  .umc-search-field {
+    box-shadow: none;
+    background-color: var(--umc-color-fill-neutral-default);
+  }
+
+  .umc-search-field:focus-within {
+    box-shadow: none;
+    background-color: var(--umc-color-fill-neutral-default);
+  }
+
+  .umc-search-field[data-disabled] {
+    box-shadow: none;
+  }
+
+  .umc-search-field__icon {
+    color: var(--umc-color-icon-neutral-medium);
+  }
+
+  .umc-search-field input[type="search"]::-webkit-search-decoration,
+  .umc-search-field input[type="search"]::-webkit-search-cancel-button {
+    appearance: none;
+  }
+}

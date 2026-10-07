@@ -1,0 +1,21 @@
+{
+  "component": "SearchField",
+  "figmaSection": "2621:33450",
+  "page": "/components/forms/search-field/",
+  "nodes": [
+    {
+      "specId": "search-field-lg-default",
+      "node": "2621:33450",
+      "variant": "Type=Search, State=Default, Size=Lg",
+      "target": ".umc-search-field",
+      "expected": {
+        "height": "48px",
+        "border-top-left-radius": "14px",
+        "border-top-right-radius": "14px",
+        "border-bottom-left-radius": "14px",
+        "border-bottom-right-radius": "14px",
+        "background-color": "rgb(255, 255, 255)"
+      }
+    }
+  ]
+}
