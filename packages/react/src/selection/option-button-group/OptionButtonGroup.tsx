@@ -1,10 +1,13 @@
 "use client"
 
 import { CheckboxGroup, Checkbox, RadioGroup, Radio } from "@base-ui/react"
-import { CheckIcon } from "@umc-product/icons"
-import type { ReactNode } from "react"
+import type { ReactElement, ReactNode } from "react"
 
 import { cx } from "../../internal/cx.ts"
+import {
+  SegmentedCheck16Glyph,
+  SegmentedCheck20Glyph,
+} from "../../internal/glyphs.tsx"
 
 export type OptionItem<V extends string = string> = {
   value: V
@@ -12,10 +15,12 @@ export type OptionItem<V extends string = string> = {
   disabled?: boolean
 }
 
+type OptionButtonSize = "xl" | "sm" | "xs"
+
 type OptionButtonGroupCommon<V extends string> = {
   options: OptionItem<V>[]
   variant?: "weak" | "strong"
-  size?: "xl" | "sm" | "xs"
+  size?: OptionButtonSize
   disabled?: boolean
   name?: string
   className?: string
@@ -49,7 +54,11 @@ const resolvePosition = (
   return "middle"
 }
 
-const checkIcon = <CheckIcon weight="fill" />
+const CHECK_GLYPHS: Record<OptionButtonSize, ReactElement> = {
+  xl: <SegmentedCheck20Glyph />,
+  sm: <SegmentedCheck16Glyph />,
+  xs: <SegmentedCheck16Glyph />,
+}
 
 function OptionButtonGroupSingle<V extends string>({
   options,
@@ -89,7 +98,7 @@ function OptionButtonGroupSingle<V extends string>({
           data-position={resolvePosition(index, options.length)}
         >
           <Radio.Indicator className="umc-option-button__indicator">
-            {checkIcon}
+            {CHECK_GLYPHS[size]}
           </Radio.Indicator>
           <span className="umc-option-button__label">{option.label}</span>
         </Radio.Root>
@@ -138,7 +147,7 @@ function OptionButtonGroupMultiple<V extends string>({
           data-position={resolvePosition(index, options.length)}
         >
           <Checkbox.Indicator className="umc-option-button__indicator">
-            {checkIcon}
+            {CHECK_GLYPHS[size]}
           </Checkbox.Indicator>
           <span className="umc-option-button__label">{option.label}</span>
         </Checkbox.Root>

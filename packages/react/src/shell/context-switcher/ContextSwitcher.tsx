@@ -1,10 +1,13 @@
 "use client"
 
 import { Menu } from "@base-ui/react"
-import { CheckIcon, ExpandMoreIcon } from "@umc-product/icons"
 import type { ReactNode } from "react"
 
 import { cx } from "../../internal/cx.ts"
+import {
+  LegacyCheckGlyph,
+  LegacyExpandMoreGlyph,
+} from "../../internal/glyphs.tsx"
 
 export type ContextSwitcherOption<V extends string = string> = {
   value: V
@@ -17,8 +20,6 @@ export type ContextSwitcherProps<V extends string = string> = {
   onValueChange: (value: V) => void
   className?: string
 }
-
-const ICON_SIZE = 16
 
 export function ContextSwitcher<V extends string = string>({
   options,
@@ -34,10 +35,7 @@ export function ContextSwitcher<V extends string = string>({
         <span className="umc-context-switcher__label">
           {currentOption?.label}
         </span>
-        <ExpandMoreIcon
-          className="umc-context-switcher__icon"
-          size={ICON_SIZE}
-        />
+        <LegacyExpandMoreGlyph className="umc-context-switcher__icon" />
       </Menu.Trigger>
       <Menu.Portal>
         <Menu.Positioner
@@ -63,7 +61,7 @@ export function ContextSwitcher<V extends string = string>({
                     {option.label}
                   </span>
                   <Menu.RadioItemIndicator className="umc-context-switcher__option-indicator">
-                    <CheckIcon size={ICON_SIZE} />
+                    <LegacyCheckGlyph />
                   </Menu.RadioItemIndicator>
                 </Menu.RadioItem>
               ))}

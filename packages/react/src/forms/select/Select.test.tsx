@@ -1,7 +1,10 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
+import { ExpandMoreIcon } from "@umc-product/icons"
+import type { ReactElement } from "react"
 import { describe, expect, it, vi } from "vitest"
 
+import { LegacyCheckGlyph } from "../../internal/glyphs.tsx"
 import { Select } from "./Select.tsx"
 
 const baseOptions = [
@@ -9,6 +12,14 @@ const baseOptions = [
   { value: "banana", label: "바나나" },
   { value: "cherry", label: "체리", disabled: true },
 ]
+
+const svgOf = (element: ReactElement) =>
+  render(element).container.querySelector("svg")
+
+const drawingOf = (svg: Element | null | undefined) => ({
+  viewBox: svg?.getAttribute("viewBox"),
+  content: svg?.innerHTML,
+})
 
 describe("Select", () => {
   it("placeholder가 트리거에 표시된다", () => {
@@ -98,5 +109,27 @@ describe("Select", () => {
     const trigger = screen.getByRole("combobox", { name: "정렬" })
     expect(trigger).toHaveAttribute("data-variant", "filter")
     expect(trigger).toHaveAttribute("data-size", "md")
+  })
+
+  it("트리거 화살표는 피그마처럼 Expand_more Fill을 16px로 그린다", () => {
+    render(<Select options={baseOptions} aria-label="과일" />)
+    const icon = screen
+      .getByRole("combobox", { name: "과일" })
+      .querySelector(".umc-select__icon svg")
+    expect(icon).toHaveAttribute("width", "16")
+    expect(drawingOf(icon)).toEqual(
+      drawingOf(svgOf(<ExpandMoreIcon weight="fill" />)),
+    )
+  })
+
+  it("선택한 항목의 체크는 피그마 드롭다운의 16px 체크 그림이다", async () => {
+    const user = userEvent.setup()
+    render(
+      <Select options={baseOptions} aria-label="과일" defaultValue="apple" />,
+    )
+    await user.click(screen.getByRole("combobox", { name: "과일" }))
+    const selected = await screen.findByRole("option", { name: "사과" })
+    const check = selected.querySelector(".umc-dropdown-item__indicator svg")
+    expect(drawingOf(check)).toEqual(drawingOf(svgOf(<LegacyCheckGlyph />)))
   })
 })

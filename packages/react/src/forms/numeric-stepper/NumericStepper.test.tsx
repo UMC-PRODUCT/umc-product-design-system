@@ -1,8 +1,18 @@
 import { render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
+import { AddIcon, SubtractionIcon } from "@umc-product/icons"
+import type { ReactElement } from "react"
 import { describe, expect, it, vi } from "vitest"
 
 import { NumericStepper } from "./NumericStepper.tsx"
+
+const svgOf = (element: ReactElement) =>
+  render(element).container.querySelector("svg")
+
+const drawingOf = (svg: Element | null | undefined) => ({
+  viewBox: svg?.getAttribute("viewBox"),
+  content: svg?.innerHTML,
+})
 
 describe("NumericStepper", () => {
   it("label이 표시된다", () => {
@@ -60,5 +70,19 @@ describe("NumericStepper", () => {
     expect(screen.getByLabelText("감소")).toBeDisabled()
     rerender(<NumericStepper key="max" defaultValue={999} />)
     expect(screen.getByLabelText("증가")).toBeDisabled()
+  })
+
+  it("증감 버튼은 피그마처럼 Add와 Subtraction의 Fill을 16px로 그린다", () => {
+    render(<NumericStepper defaultValue={1} />)
+    const increment = screen.getByLabelText("증가").querySelector("svg")
+    const decrement = screen.getByLabelText("감소").querySelector("svg")
+    expect(increment).toHaveAttribute("width", "16")
+    expect(decrement).toHaveAttribute("width", "16")
+    expect(drawingOf(increment)).toEqual(
+      drawingOf(svgOf(<AddIcon weight="fill" />)),
+    )
+    expect(drawingOf(decrement)).toEqual(
+      drawingOf(svgOf(<SubtractionIcon weight="fill" />)),
+    )
   })
 })

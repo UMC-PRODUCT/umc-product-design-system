@@ -1,4 +1,5 @@
 import { act, fireEvent, render, screen } from "@testing-library/react"
+import type { ReactElement } from "react"
 import {
   afterEach,
   beforeAll,
@@ -9,6 +10,7 @@ import {
   vi,
 } from "vitest"
 
+import { LegacyCloseGlyph } from "../../internal/glyphs.tsx"
 import { ToastProvider } from "./Toast.tsx"
 import { useToast } from "./useToast.ts"
 
@@ -64,6 +66,14 @@ function ShowCloseApp({ message }: { message: string }) {
     </div>
   )
 }
+
+const svgOf = (element: ReactElement) =>
+  render(element).container.querySelector("svg")
+
+const drawingOf = (svg: Element | null | undefined) => ({
+  viewBox: svg?.getAttribute("viewBox"),
+  content: svg?.innerHTML,
+})
 
 describe("ToastProvider & useToast", () => {
   beforeEach(() => {
@@ -182,6 +192,19 @@ describe("ToastProvider & useToast", () => {
     expect(main).not.toBeNull()
     const message = main?.querySelector(".umc-toast__message")
     expect(message).not.toBeNull()
+  })
+
+  it("닫기 버튼은 피그마 토스트의 24px 닫기 그림이다", () => {
+    render(
+      <ToastProvider>
+        <ShowApp message="닫기 그림" />
+      </ToastProvider>,
+    )
+    act(() => {
+      fireEvent.click(screen.getByRole("button", { name: "보여줘" }))
+    })
+    const glyph = document.querySelector(".umc-toast__close svg")
+    expect(drawingOf(glyph)).toEqual(drawingOf(svgOf(<LegacyCloseGlyph />)))
   })
 
   it("close(id)를 호출하면 해당 토스트가 닫힌다", async () => {

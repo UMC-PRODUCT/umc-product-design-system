@@ -72,7 +72,7 @@ export function NumericStepper({
             className="umc-numeric-stepper__button"
             aria-label="감소"
           >
-            <SubtractionIcon size={ICON_SIZE} />
+            <SubtractionIcon weight="fill" size={ICON_SIZE} />
           </NumberField.Decrement>
           <NumberField.Input
             className="umc-numeric-stepper__input"
@@ -82,7 +82,7 @@ export function NumericStepper({
             className="umc-numeric-stepper__button"
             aria-label="증가"
           >
-            <AddIcon size={ICON_SIZE} />
+            <AddIcon weight="fill" size={ICON_SIZE} />
           </NumberField.Increment>
         </NumberField.Group>
       </NumberField.Root>

@@ -3,7 +3,7 @@
 import { Toast } from "@base-ui/react"
 import type { ReactNode } from "react"
 
-import { CloseIcon } from "@umc-product/icons"
+import { LegacyCloseGlyph } from "../../internal/glyphs.tsx"
 
 export type ToastOptions = {
   message: ReactNode
@@ -68,7 +68,7 @@ function ToastViewportPortal({ placement }: { placement: "top" | "bottom" }) {
                 </button>
               ) : (
                 <Toast.Close className="umc-toast__close" aria-label="닫기">
-                  <CloseIcon size={24} aria-hidden={true} />
+                  <LegacyCloseGlyph />
                 </Toast.Close>
               )}
             </Toast.Root>

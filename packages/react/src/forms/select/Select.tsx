@@ -1,9 +1,10 @@
 "use client"
 
 import { Select as BaseUISelect } from "@base-ui/react"
-import { CheckIcon, ExpandMoreIcon } from "@umc-product/icons"
+import { ExpandMoreIcon } from "@umc-product/icons"
 import { type ReactNode, useState } from "react"
 
+import { LegacyCheckGlyph } from "../../internal/glyphs.tsx"
 import { Field, type FieldOwnProps } from "../field/Field.tsx"
 import { SearchField } from "../search-field/SearchField.tsx"
 
@@ -101,7 +102,7 @@ export function Select<V extends string = string>({
             placeholder={placeholder}
           />
           <BaseUISelect.Icon className="umc-select__icon">
-            <ExpandMoreIcon size={ICON_SIZE} />
+            <ExpandMoreIcon weight="fill" size={ICON_SIZE} />
           </BaseUISelect.Icon>
         </BaseUISelect.Trigger>
         <BaseUISelect.Portal>
@@ -140,7 +141,7 @@ export function Select<V extends string = string>({
                       )}
                     </span>
                     <BaseUISelect.ItemIndicator className="umc-dropdown-item__indicator">
-                      <CheckIcon size={ICON_SIZE} />
+                      <LegacyCheckGlyph />
                     </BaseUISelect.ItemIndicator>
                   </BaseUISelect.Item>
                 ))}

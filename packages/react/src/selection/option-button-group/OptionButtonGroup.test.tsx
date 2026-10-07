@@ -1,7 +1,12 @@
 import { render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
+import type { ReactElement } from "react"
 import { describe, expect, it, vi } from "vitest"
 
+import {
+  SegmentedCheck16Glyph,
+  SegmentedCheck20Glyph,
+} from "../../internal/glyphs.tsx"
 import { OptionButtonGroup } from "./OptionButtonGroup.tsx"
 
 const SINGLE_OPTIONS = [
@@ -15,6 +20,20 @@ const MULTI_OPTIONS = [
   { value: "ts", label: "TypeScript" },
   { value: "node", label: "Node.js" },
 ] as const
+
+const svgOf = (element: ReactElement) =>
+  render(element).container.querySelector("svg")
+
+const drawingOf = (svg: Element | null | undefined) => ({
+  viewBox: svg?.getAttribute("viewBox"),
+  content: svg?.innerHTML,
+})
+
+const CHECK_BY_SIZE: [size: "xl" | "sm" | "xs", glyph: ReactElement][] = [
+  ["xl", <SegmentedCheck20Glyph />],
+  ["sm", <SegmentedCheck16Glyph />],
+  ["xs", <SegmentedCheck16Glyph />],
+]
 
 describe("OptionButtonGroup single", () => {
   it("radiogroup 역할을 가진다", () => {
@@ -141,6 +160,24 @@ describe("OptionButtonGroup single", () => {
     expect(iconOf("프론트엔드")).toBeNull()
     expect(iconOf("백엔드")).not.toBeNull()
   })
+
+  it.each(CHECK_BY_SIZE)(
+    "%s 크기는 피그마 체크 primitive에서 같은 크기 변형을 그린다",
+    (size, glyph) => {
+      render(
+        <OptionButtonGroup
+          options={[...SINGLE_OPTIONS]}
+          aria-label="파트"
+          size={size}
+          defaultValue="fe"
+        />,
+      )
+      const icon = screen
+        .getByRole("radio", { name: "프론트엔드" })
+        .querySelector(".umc-option-button__indicator svg")
+      expect(drawingOf(icon)).toEqual(drawingOf(svgOf(glyph)))
+    },
+  )
 })
 
 describe("OptionButtonGroup multiple", () => {
