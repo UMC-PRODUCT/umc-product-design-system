@@ -1,0 +1,138 @@
+@layer components {
+  .umc-header {
+    --umc-header-bg: var(--umc-color-surface-neutral-weak);
+    --umc-header-shadow: var(--umc-shadow-drop-neutral-3);
+    --umc-header-nav-bg: var(--umc-color-teal-grey-50);
+    --umc-header-nav-border-color: var(--umc-color-teal-grey-75);
+    --umc-header-nav-box-shadow: 0 0 8px rgba(10, 86, 80, 0.04);
+    --umc-header-nav-item-text: var(--umc-color-text-neutral-medium);
+    --umc-header-nav-item-text-selected: var(--umc-color-text-brand-default);
+    --umc-header-nav-item-bg-hover: var(--umc-color-fill-neutral-medium);
+    --umc-header-nav-item-bg-selected: var(--umc-color-surface-brand-medium);
+    --umc-header-nav-item-shadow-selected: var(--umc-shadow-inner-neutral-1);
+    --umc-header-nav-item-padding-inline: 18px;
+
+    position: sticky;
+    top: 0;
+    z-index: var(--umc-z-dropdown);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: var(--umc-layout-header-height);
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: var(--umc-header-bg);
+    box-shadow: var(--umc-header-shadow);
+  }
+
+  .umc-header[data-mode="dark"] {
+    --umc-header-dark-bg: var(--umc-color-surface-neutral-inverse);
+    --umc-header-dark-nav-border: var(--umc-color-teal-grey-700);
+    --umc-header-dark-nav-item-text: var(--umc-color-text-inverse);
+    --umc-header-dark-nav-item-bg-hover: var(--umc-color-teal-grey-700);
+    --umc-header-dark-nav-item-bg-selected: var(--umc-color-teal-700);
+    --umc-header-bg: var(--umc-header-dark-bg);
+    --umc-header-nav-border-color: var(--umc-header-dark-nav-border);
+    --umc-header-nav-item-text: var(--umc-header-dark-nav-item-text);
+    --umc-header-nav-item-text-selected: var(--umc-header-dark-nav-item-text);
+    --umc-header-nav-item-bg-hover: var(--umc-header-dark-nav-item-bg-hover);
+    --umc-header-nav-item-bg-selected: var(
+      --umc-header-dark-nav-item-bg-selected
+    );
+  }
+
+  .umc-header__logo {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    padding-inline-start: 60px;
+  }
+
+  .umc-header__nav {
+    display: flex;
+    align-items: center;
+    flex: 0 1 auto;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .umc-header__nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .umc-header__nav-list {
+    display: flex;
+    align-items: center;
+    gap: var(--umc-spacing-gap-6);
+    padding: var(--umc-spacing-padding-6);
+    margin: 0;
+    list-style: none;
+    border: 1px solid var(--umc-header-nav-border-color);
+    border-radius: var(--umc-radius-full);
+    background-color: var(--umc-header-nav-bg);
+    box-shadow: var(--umc-header-nav-box-shadow);
+  }
+
+  .umc-header__nav-item {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+
+  .umc-header__nav-link {
+    display: flex;
+    align-items: center;
+    height: 36px;
+    padding-inline: var(--umc-header-nav-item-padding-inline);
+    border: 0;
+    border-radius: var(--umc-radius-full);
+    background-color: transparent;
+    box-shadow: none;
+    color: var(--umc-header-nav-item-text);
+    font-family: var(--umc-typography-body-1-medium-font-family);
+    font-size: var(--umc-typography-body-1-medium-font-size);
+    font-weight: var(--umc-typography-body-1-medium-font-weight);
+    line-height: var(--umc-typography-body-1-medium-line-height);
+    letter-spacing: var(--umc-typography-body-1-medium-letter-spacing);
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color var(--umc-motion-duration) ease;
+  }
+
+  .umc-header__nav-link[aria-current="page"] {
+    background-color: var(--umc-header-nav-item-bg-selected);
+    box-shadow: var(--umc-header-nav-item-shadow-selected);
+    color: var(--umc-header-nav-item-text-selected);
+    font-weight: var(--umc-typography-body-1-semibold-font-weight);
+  }
+
+  @media (hover: hover) {
+    .umc-header__nav-link:hover:not([aria-current="page"]) {
+      background-color: var(--umc-header-nav-item-bg-hover);
+    }
+  }
+
+  .umc-header__nav-link:focus-visible {
+    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline-offset: 2px;
+  }
+
+  .umc-header__actions {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: var(--umc-spacing-gap-16);
+    padding-inline-end: 34px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .umc-header__nav-link {
+      transition: none;
+    }
+  }
+}
