@@ -47,6 +47,19 @@ describe("Header", () => {
     )
   })
 
+  it("logo를 넘기지 않으면 UMC 홈 링크를 그린다", () => {
+    render(<Header />)
+    expect(screen.getByRole("link", { name: "UMC" })).toHaveAttribute(
+      "href",
+      "/",
+    )
+  })
+
+  it("logo={null}이면 로고 칸을 비운다", () => {
+    const { container } = render(<Header logo={null} />)
+    expect(container.querySelector(".umc-header__logo")).toBeEmptyDOMElement()
+  })
+
   it("navItems가 없으면 nav 요소를 렌더하지 않는다", () => {
     render(<Header logo={<span>UMC</span>} />)
     expect(screen.queryByRole("navigation")).not.toBeInTheDocument()

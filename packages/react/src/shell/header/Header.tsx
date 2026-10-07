@@ -3,6 +3,7 @@
 import type { ReactNode } from "react"
 
 import { cx } from "../../internal/cx.ts"
+import { HeaderHomeLink } from "../header-home-link/HeaderHomeLink.tsx"
 import { isActivePath } from "../is-active-path/isActivePath.ts"
 import { useLinkComponent } from "../link-provider/LinkProvider.tsx"
 
@@ -12,7 +13,7 @@ export type NavItem = {
 }
 
 export type HeaderProps = {
-  logo: ReactNode
+  logo?: ReactNode
   navItems?: NavItem[]
   currentPath?: string
   actions?: ReactNode
@@ -21,7 +22,7 @@ export type HeaderProps = {
 }
 
 export function Header({
-  logo,
+  logo = <HeaderHomeLink />,
   navItems,
   currentPath,
   actions,
