@@ -3,6 +3,7 @@
   "references": [
     { "path": "./packages/design-tokens" },
     { "path": "./packages/icons" },
+    { "path": "./packages/react" },
     { "path": "./apps/preview" }
   ]
 }

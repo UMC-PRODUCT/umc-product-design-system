@@ -1,0 +1,466 @@
+{
+  "component": "Button",
+  "figmaSection": "2621:33584",
+  "page": "/components/actions/button/",
+  "nodes": [
+    {
+      "specId": "button-fill-primary-lg-default",
+      "node": "2621:33607",
+      "variant": "Size=Lg, Color=Primary, Style=Fill, State=Default",
+      "expected": {
+        "background-color": "#008a80",
+        "color": "#ffffff",
+        "height": "56px",
+        "min-width": "96px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "border-top-left-radius": "16px",
+        "font-size": "18px",
+        "font-weight": "500",
+        "line-height": "25.2px",
+        "letter-spacing": "-0.36px"
+      }
+    },
+    {
+      "specId": "button-fill-primary-lg-default",
+      "interaction": "hover",
+      "node": "2621:33754",
+      "variant": "Size=Lg, Color=Primary, Style=Fill, State=Pressed",
+      "expected": {
+        "background-color": "#015a54",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "button-fill-primary-lg-disabled",
+      "node": "2621:33828",
+      "variant": "Size=Lg, Color=Primary, Style=Fill, State=Disabled",
+      "expected": {
+        "background-color": "#7ac7c1",
+        "color": "#ddf4f1"
+      }
+    },
+    {
+      "specId": "button-fill-primary-lg-loading",
+      "node": "2621:33697",
+      "variant": "Size=Lg, Color=Primary, Style=Fill, State=Loading",
+      "expected": {
+        "background-color": "#015a54",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "button-weak-primary-lg-default",
+      "node": "2621:33918",
+      "variant": "Size=Lg, Color=Primary, Style=Weak, State=Default",
+      "expected": {
+        "background-color": "#ddf4f1",
+        "color": "#02746c",
+        "height": "56px",
+        "min-width": "96px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "border-top-left-radius": "16px",
+        "font-size": "18px",
+        "font-weight": "500",
+        "line-height": "25.2px",
+        "letter-spacing": "-0.36px"
+      }
+    },
+    {
+      "specId": "button-weak-primary-lg-default",
+      "interaction": "hover",
+      "node": "2621:34033",
+      "variant": "Size=Lg, Color=Primary, Style=Weak, State=Pressed",
+      "expected": {
+        "background-color": "#ddf4f1",
+        "color": "#02746c",
+        "background-image~": "rgba(1, 90, 84, 0.08)"
+      }
+    },
+    {
+      "specId": "button-weak-primary-lg-disabled",
+      "node": "2621:34098",
+      "variant": "Size=Lg, Color=Primary, Style=Weak, State=Disabled",
+      "expected": {
+        "background-color": "#ddf4f1",
+        "color": "#7ac7c1"
+      }
+    },
+    {
+      "specId": "button-weak-primary-lg-loading",
+      "node": "2621:33981",
+      "variant": "Size=Lg, Color=Primary, Style=Weak, State=Loading",
+      "expected": {
+        "background-color": "#ddf4f1",
+        "color": "#02746c",
+        "background-image~": "rgba(1, 90, 84, 0.08)"
+      }
+    },
+    {
+      "specId": "button-fill-neutral-lg-default",
+      "node": "2621:33599",
+      "variant": "Size=Lg, Color=Neutral, Style=Fill, State=Default",
+      "expected": {
+        "background-color": "#adadad",
+        "color": "#ffffff",
+        "height": "56px",
+        "min-width": "96px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "border-top-left-radius": "16px",
+        "font-size": "18px",
+        "font-weight": "500",
+        "line-height": "25.2px",
+        "letter-spacing": "-0.36px"
+      }
+    },
+    {
+      "specId": "button-fill-neutral-lg-default",
+      "interaction": "hover",
+      "node": "2621:33746",
+      "variant": "Size=Lg, Color=Neutral, Style=Fill, State=Pressed",
+      "expected": {
+        "background-color": "#3f4141",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "button-fill-neutral-lg-disabled",
+      "node": "2621:33819",
+      "variant": "Size=Lg, Color=Neutral, Style=Fill, State=Disabled",
+      "expected": {
+        "background-color": "#adadad",
+        "color": "#cccccc"
+      }
+    },
+    {
+      "specId": "button-fill-neutral-lg-loading",
+      "node": "2621:33677",
+      "variant": "Size=Lg, Color=Neutral, Style=Fill, State=Loading",
+      "expected": {
+        "background-color": "#3f4141",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "button-weak-neutral-lg-default",
+      "node": "2621:33914",
+      "variant": "Size=Lg, Color=Neutral, Style=Weak, State=Default",
+      "expected": {
+        "background-color": "#eff0f0",
+        "color": "#606262",
+        "height": "56px",
+        "min-width": "96px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "border-top-left-radius": "16px",
+        "font-size": "18px",
+        "font-weight": "500",
+        "line-height": "25.2px",
+        "letter-spacing": "-0.36px"
+      }
+    },
+    {
+      "specId": "button-weak-neutral-lg-default",
+      "interaction": "hover",
+      "node": "2621:34028",
+      "variant": "Size=Lg, Color=Neutral, Style=Weak, State=Pressed",
+      "expected": {
+        "background-color": "#fbfcfc",
+        "color": "#606262",
+        "background-image~": "rgba(126, 127, 127, 0.15)"
+      }
+    },
+    {
+      "specId": "button-weak-neutral-lg-disabled",
+      "node": "2621:34092",
+      "variant": "Size=Lg, Color=Neutral, Style=Weak, State=Disabled",
+      "expected": {
+        "background-color": "#cccccc",
+        "color": "#cccccc",
+        "background-image~": "rgba(255, 255, 255, 0.7)"
+      }
+    },
+    {
+      "specId": "button-weak-neutral-lg-loading",
+      "node": "2621:33970",
+      "variant": "Size=Lg, Color=Neutral, Style=Weak, State=Loading",
+      "expected": {
+        "background-color": "#fbfcfc",
+        "color": "#606262",
+        "background-image~": "rgba(126, 127, 127, 0.15)"
+      }
+    },
+    {
+      "specId": "button-fill-red-lg-default",
+      "node": "2621:33613",
+      "variant": "Size=Lg, Color=Red, Style=Fill, State=Default",
+      "expected": {
+        "background-color": "#dc3d3d",
+        "color": "#ffffff",
+        "height": "56px",
+        "min-width": "96px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "border-top-left-radius": "16px",
+        "font-size": "18px",
+        "font-weight": "500",
+        "line-height": "25.2px",
+        "letter-spacing": "-0.36px"
+      }
+    },
+    {
+      "specId": "button-fill-red-lg-default",
+      "interaction": "hover",
+      "node": "2621:33760",
+      "variant": "Size=Lg, Color=Red, Style=Fill, State=Pressed",
+      "expected": {
+        "background-color": "#a60303",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "button-fill-red-lg-disabled",
+      "node": "2621:33834",
+      "variant": "Size=Lg, Color=Red, Style=Fill, State=Disabled",
+      "expected": {
+        "background-color": "#f88c8c",
+        "color": "#fdb4b4"
+      }
+    },
+    {
+      "specId": "button-fill-red-lg-loading",
+      "node": "2621:33712",
+      "variant": "Size=Lg, Color=Red, Style=Fill, State=Loading",
+      "expected": {
+        "background-color": "#a60303",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "button-weak-red-lg-default",
+      "node": "2621:33920",
+      "variant": "Size=Lg, Color=Red, Style=Weak, State=Default",
+      "expected": {
+        "background-color": "#ffe7e5",
+        "color": "#c21f14",
+        "height": "56px",
+        "min-width": "96px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "border-top-left-radius": "16px",
+        "font-size": "18px",
+        "font-weight": "500",
+        "line-height": "25.2px",
+        "letter-spacing": "-0.36px"
+      }
+    },
+    {
+      "specId": "button-weak-red-lg-default",
+      "interaction": "hover",
+      "node": "2621:34036",
+      "variant": "Size=Lg, Color=Red, Style=Weak, State=Pressed",
+      "expected": {
+        "background-color": "#fdb4b4",
+        "color": "#c21f14"
+      }
+    },
+    {
+      "specId": "button-weak-red-lg-disabled",
+      "node": "2621:34086",
+      "variant": "Size=Lg, Color=Red, Style=Weak, State=Disabled",
+      "expected": {
+        "background-color": "#fdb4b4",
+        "color": "#f88c8c",
+        "background-image~": "rgba(255, 255, 255, 0.7)"
+      }
+    },
+    {
+      "specId": "button-weak-red-lg-loading",
+      "node": "2621:33987",
+      "variant": "Size=Lg, Color=Red, Style=Weak, State=Loading",
+      "expected": {
+        "background-color": "#fdb4b4",
+        "color": "#c21f14"
+      }
+    },
+    {
+      "specId": "button-fill-white-lg-default",
+      "node": "2621:33609",
+      "variant": "Size=Lg, Color=White, Style=Fill, State=Default",
+      "expected": {
+        "background-color": "#ffffff",
+        "color": "#606262",
+        "height": "56px",
+        "min-width": "96px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "border-top-left-radius": "16px",
+        "font-size": "18px",
+        "font-weight": "500",
+        "line-height": "25.2px",
+        "letter-spacing": "-0.36px",
+        "box-shadow~": "rgb(239, 240, 240) 0px 0px 0px 1px inset"
+      }
+    },
+    {
+      "specId": "button-fill-white-lg-default",
+      "interaction": "hover",
+      "node": "2621:33756",
+      "variant": "Size=Lg, Color=White, Style=Fill, State=Pressed",
+      "expected": {
+        "background-color": "#fbfcfc",
+        "color": "#606262",
+        "box-shadow~": "rgba(211, 216, 216, 0.15) 1px 1px 2px 0px inset"
+      }
+    },
+    {
+      "specId": "button-fill-white-lg-disabled",
+      "node": "2621:33830",
+      "variant": "Size=Lg, Color=White, Style=Fill, State=Disabled",
+      "expected": {
+        "background-color": "#ffffff",
+        "color": "#cccccc"
+      }
+    },
+    {
+      "specId": "button-fill-white-lg-loading",
+      "node": "2621:33702",
+      "variant": "Size=Lg, Color=White, Style=Fill, State=Loading",
+      "expected": {
+        "background-color": "#fbfcfc",
+        "color": "#606262"
+      }
+    },
+    {
+      "specId": "button-weak-white-lg-default",
+      "node": "2621:33611",
+      "variant": "Size=Lg, Color=White, Style=Weak, State=Default",
+      "expected": {
+        "background-color": "#ffffff",
+        "color": "#606262",
+        "height": "56px",
+        "min-width": "96px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "border-top-left-radius": "16px",
+        "font-size": "18px",
+        "font-weight": "500",
+        "line-height": "25.2px",
+        "letter-spacing": "-0.36px"
+      }
+    },
+    {
+      "specId": "button-weak-white-lg-default",
+      "interaction": "hover",
+      "node": "2621:33758",
+      "variant": "Size=Lg, Color=White, Style=Weak, State=Pressed",
+      "expected": {
+        "background-color": "#fbfcfc",
+        "color": "#606262",
+        "box-shadow~": "rgba(211, 216, 216, 0.15) 1px 1px 2px 0px inset"
+      }
+    },
+    {
+      "specId": "button-weak-white-lg-disabled",
+      "node": "2621:33832",
+      "variant": "Size=Lg, Color=White, Style=Weak, State=Disabled",
+      "expected": {
+        "background-color": "#ffffff",
+        "color": "#cccccc"
+      }
+    },
+    {
+      "specId": "button-weak-white-lg-loading",
+      "node": "2621:33707",
+      "variant": "Size=Lg, Color=White, Style=Weak, State=Loading",
+      "expected": {
+        "background-color": "#fbfcfc",
+        "color": "#606262"
+      }
+    },
+    {
+      "specId": "button-fill-primary-md-default",
+      "node": "2621:33595",
+      "variant": "Size=Md, Color=Primary, Style=Fill, State=Default",
+      "expected": {
+        "background-color": "#008a80",
+        "color": "#ffffff",
+        "height": "48px",
+        "min-width": "80px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "border-top-left-radius": "14px",
+        "font-size": "17px",
+        "font-weight": "500",
+        "line-height": "23.8px",
+        "letter-spacing": "-0.34px"
+      }
+    },
+    {
+      "specId": "button-fill-primary-sm-default",
+      "node": "2621:33636",
+      "variant": "Size=Sm, Color=Primary, Style=Fill, State=Default",
+      "expected": {
+        "background-color": "#008a80",
+        "color": "#ffffff",
+        "height": "40px",
+        "min-width": "64px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "border-top-left-radius": "12px",
+        "font-size": "16px",
+        "font-weight": "500",
+        "line-height": "22.4px",
+        "letter-spacing": "-0.32px"
+      },
+      "figmaDiffers": {
+        "letter-spacing": "피그마 컴포넌트는 -0.48px. 구버전 Label/3-Medium(자간 -3%)을 참조하고 있어 토큰 값(-2%)을 기준으로 삼았다"
+      }
+    },
+    {
+      "specId": "button-fill-primary-xs-default",
+      "node": "2621:34152",
+      "variant": "Size=XS, Color=Primary, Style=Fill, State=Default",
+      "expected": {
+        "background-color": "#008a80",
+        "color": "#ffffff",
+        "height": "36px",
+        "min-width": "60px",
+        "padding-left": "14px",
+        "padding-right": "14px",
+        "border-top-left-radius": "10px",
+        "font-size": "15px",
+        "font-weight": "500",
+        "line-height": "21px",
+        "letter-spacing": "-0.3px"
+      }
+    },
+    {
+      "specId": "button-fill-neutral-md-leading-icon",
+      "node": "2621:33621",
+      "variant": "Size=Md, Color=Neutral, Style=Fill, Icon Position=Left",
+      "expected": {
+        "padding-left": "14px",
+        "padding-right": "16px",
+        "column-gap": "4px"
+      },
+      "figmaDiffers": {
+        "background-color": "피그마 아이콘 변형은 #7e7f7f. 아이콘 없는 변형의 #adadad로 통일했다"
+      }
+    },
+    {
+      "specId": "button-fill-primary-sm-trailing-icon",
+      "node": "2621:33649",
+      "variant": "Size=Sm, Color=Primary, Style=Fill, Icon Position=Right",
+      "expected": {
+        "padding-left": "16px",
+        "padding-right": "10px"
+      },
+      "figmaDiffers": {
+        "background-color": "피그마 아이콘 변형은 #02746c. 아이콘 없는 변형의 #008a80으로 통일했다"
+      }
+    }
+  ]
+}
