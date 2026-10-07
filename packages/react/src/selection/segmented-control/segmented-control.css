@@ -1,0 +1,76 @@
+@layer components {
+  .umc-segmented-control {
+    display: inline-flex;
+    align-items: stretch;
+    background-color: var(--umc-color-fill-neutral-medium);
+    border-radius: var(--umc-radius-segmented-control-xs);
+    overflow: hidden;
+    padding: 4px;
+    gap: 4px;
+    margin: 0;
+    border: 0;
+  }
+
+  .umc-segmented-control__item {
+    --umc-segmented-control-item-bg: transparent;
+    --umc-segmented-control-item-fg: var(--umc-color-text-neutral-medium);
+    --umc-segmented-control-item-font-weight: var(
+      --umc-typography-label-3-medium-font-weight
+    );
+    --umc-segmented-control-item-shadow: none;
+
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding-block: var(--umc-spacing-padding-8);
+    padding-inline: var(--umc-spacing-padding-12);
+    background-color: var(--umc-segmented-control-item-bg);
+    box-shadow: var(--umc-segmented-control-item-shadow);
+    border-radius: var(--umc-radius-8);
+    border: 0;
+    margin: 0;
+    color: var(--umc-segmented-control-item-fg);
+    font-family: var(--umc-typography-label-3-medium-font-family);
+    font-size: var(--umc-typography-label-3-medium-font-size);
+    font-weight: var(--umc-segmented-control-item-font-weight);
+    line-height: var(--umc-typography-label-3-medium-line-height);
+    letter-spacing: var(--umc-typography-label-3-medium-letter-spacing);
+    white-space: nowrap;
+    appearance: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+  }
+
+  .umc-segmented-control__item[data-checked] {
+    --umc-segmented-control-selected-shadow-teal: #63c4b833;
+    --umc-segmented-control-selected-shadow-grey: #9ca3a34d;
+    --umc-segmented-control-item-bg: var(--umc-color-fill-neutral-default);
+    --umc-segmented-control-item-fg: var(--umc-color-text-neutral-strong);
+    --umc-segmented-control-item-font-weight: var(
+      --umc-typography-label-3-semibold-font-weight
+    );
+    --umc-segmented-control-item-shadow:
+      0px 1px 2px var(--umc-segmented-control-selected-shadow-teal),
+      0px 0px 10px var(--umc-segmented-control-selected-shadow-grey);
+  }
+
+  @media (hover: hover) {
+    .umc-segmented-control__item:hover:not([data-checked]) {
+      --umc-segmented-control-item-bg: var(
+        --umc-color-fill-neutral-medium-hover-pressed
+      );
+    }
+  }
+
+  .umc-segmented-control__item:focus-visible {
+    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline-offset: -2px;
+  }
+
+  .umc-segmented-control__label {
+    pointer-events: none;
+  }
+}

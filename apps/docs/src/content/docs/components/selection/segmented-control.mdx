@@ -1,0 +1,48 @@
+---
+title: SegmentedControl
+description: 상호 배타적인 보기 모드나 필터를 전환하는 라디오 그룹 컴포넌트입니다.
+---
+
+import {
+  SegmentedControlBasic,
+  SegmentedControlControlled,
+} from "../../../../components/react/selection/SegmentedControlExamples.tsx"
+
+`RadioGroup` 기반으로 항목을 하나만 선택할 수 있습니다. 화면 너비가 좁을 때도 항목이 자동으로 줄어들지 않으므로 항목 수는 3~4개로 제한하는 것을 권장합니다.
+
+```tsx
+import { SegmentedControl } from "@umc-product/react"
+
+;<SegmentedControl
+  items={[
+    { value: "list", label: "목록" },
+    { value: "grid", label: "그리드" },
+  ]}
+  aria-label="보기 방식"
+  defaultValue="list"
+/>
+```
+
+## 기본
+
+<SegmentedControlBasic client:visible />
+
+## 제어 모드
+
+`value`와 `onValueChange`로 외부에서 선택 상태를 관리합니다.
+
+<SegmentedControlControlled client:visible />
+
+## props
+
+| prop            | 타입                      | 기본값 | 설명                |
+| --------------- | ------------------------- | ------ | ------------------- |
+| `items`         | `SegmentedControlItem[]`  | 필수   | 선택 항목 목록      |
+| `value`         | `string`                  | 없음   | 제어 선택값         |
+| `defaultValue`  | `string`                  | 없음   | 비제어 초기값       |
+| `onValueChange` | `(value: string) => void` | 없음   | 선택 변경 핸들러    |
+| `aria-label`    | `string`                  | 없음   | 그룹 접근 가능 이름 |
+
+## 디자인 팀 확인 사항
+
+- 선택 항목의 그림자 값(`#63c4b833`, `#9ca3a34d`)이 현재 토큰 밖에 있습니다.
