@@ -9,7 +9,6 @@ describe("SegmentedControlProps", () => {
       Array<{
         value: "a" | "b"
         label: import("react").ReactNode
-        "data-spec-id"?: string
       }>
     >()
   })

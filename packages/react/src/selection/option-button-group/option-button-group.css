@@ -118,9 +118,8 @@
 
   .umc-option-button-group[data-variant="strong"]
     .umc-option-button[data-checked] {
-    --umc-option-button-bg: var(
-      --umc-color-fill-primary-inverse-medium-hover-pressed
-    );
+    --umc-option-button-strong-checked-bg: #0b6b64;
+    --umc-option-button-bg: var(--umc-option-button-strong-checked-bg);
     --umc-option-button-fg: var(--umc-color-text-inverse);
     --umc-option-button-border-color: transparent;
   }

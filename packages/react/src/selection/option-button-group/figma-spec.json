@@ -2,17 +2,12 @@
   "component": "OptionButtonGroup",
   "figmaSection": "2621:32882",
   "page": "/components/selection/option-button-group/",
-  "specIdMap": {
-    "option-button-weak-xl-selected": "OptionButtonGroupVariants의 weak/xl 그룹에서 첫 번째(fe) 항목",
-    "option-button-strong-xl-selected": "OptionButtonGroupVariants의 strong/xl 그룹에서 첫 번째(fe) 항목",
-    "option-button-unselected-xl": "OptionButtonGroupVariants의 weak/xl 그룹에서 두 번째(be) 항목",
-    "option-button-unselected-xl-disabled": "OptionButtonGroupDisabled의 두 번째(be, disabled) 항목"
-  },
   "nodes": [
     {
       "specId": "option-button-weak-xl-selected",
       "node": "2621:32896",
       "variant": "Selected=True, Type=Weak, Direction=Left, Size=Xl, Disabled=False",
+      "target": ".umc-option-button[data-position=\"start\"]",
       "expected": {
         "background-color": "#e9f7f5",
         "color": "#02746c",
@@ -36,8 +31,9 @@
       "specId": "option-button-strong-xl-selected",
       "node": "2621:32904",
       "variant": "Selected=True, Type=Strong, Direction=Left, Size=Xl, Disabled=False",
+      "target": ".umc-option-button[data-position=\"start\"]",
       "expected": {
-        "background-color": "#02746c",
+        "background-color": "#0b6b64",
         "color": "#ffffff",
         "height": "48px",
         "border-top-left-radius": "8px",
@@ -46,13 +42,14 @@
         "font-weight": "400"
       },
       "figmaDiffers": {
-        "background-color": "피그마 strong 선택 배경은 var(--color-teal-600)=#0b6b64(피그마 내 resolved). 3기 토큰 --umc-color-teal-600=#02746c와 다름. --umc-color-fill-primary-inverse-medium-hover-pressed(#02746c)로 대체"
+        "background-color": "피그마 strong 선택 배경은 var(--color-teal-600)=#0b6b64(피그마 내 resolved). 탭 밑줄과 같은 규칙으로 --umc-option-button-strong-checked-bg: #0b6b64 역할 변수에 직접 사용. 3기 --umc-color-teal-600=#02746c와 다름"
       }
     },
     {
       "specId": "option-button-unselected-xl",
       "node": "2621:32958",
       "variant": "Selected=False, Type=Default, Direction=Left, Size=Xl, Disabled=False",
+      "target": ".umc-option-button[data-position=\"middle\"]",
       "expected": {
         "background-color": "#ffffff",
         "color": "#282a2a",
@@ -66,6 +63,7 @@
       "specId": "option-button-unselected-xl-disabled",
       "node": "2621:32962",
       "variant": "Selected=False, Type=Default, Direction=Left, Size=Xl, Disabled=True",
+      "target": ".umc-option-button[data-disabled]",
       "expected": {
         "background-color": "#ffffff",
         "color": "#cccccc"

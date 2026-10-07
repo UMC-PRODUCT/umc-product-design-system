@@ -25,7 +25,6 @@ export type TabProps = {
   icon?: ReactNode
   className?: string
   "aria-label"?: string
-  "data-spec-id"?: string
 }
 
 export type TabPanelProps = {
@@ -76,7 +75,6 @@ export function Tab({
   icon,
   className,
   "aria-label": ariaLabel,
-  "data-spec-id": dataSpecId,
 }: TabProps) {
   return (
     <BaseTabs.Tab
@@ -84,7 +82,6 @@ export function Tab({
       aria-label={ariaLabel}
       className={cx("umc-tab", className)}
       data-icon={icon ? "" : undefined}
-      data-spec-id={dataSpecId}
     >
       {icon ? (
         <span className="umc-tab__icon" aria-hidden="true">

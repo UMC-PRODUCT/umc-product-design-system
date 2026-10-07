@@ -2,15 +2,12 @@
   "component": "SegmentedControl",
   "figmaSection": "2505:14204",
   "page": "/components/selection/segmented-control/",
-  "specIdMap": {
-    "segmented-control-item-selected": "SegmentedControlBasic의 첫 번째(list) 항목 (defaultValue=list)",
-    "segmented-control-item-unselected": "SegmentedControlBasic의 두 번째(grid) 항목"
-  },
   "nodes": [
     {
       "specId": "segmented-control-item-selected",
       "node": "2281:6417",
       "variant": "State=Selected, Type=Default",
+      "target": ".umc-segmented-control__item[data-checked]",
       "expected": {
         "background-color": "#ffffff",
         "color": "#282a2a",
@@ -36,6 +33,7 @@
       "specId": "segmented-control-item-unselected",
       "node": "2281:6405",
       "variant": "State=Unselected, Type=Default",
+      "target": ".umc-segmented-control__item:nth-child(2)",
       "expected": {
         "background-color": "rgba(0, 0, 0, 0)",
         "color": "#606262",

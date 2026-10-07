@@ -5,7 +5,6 @@ import { cx } from "../../internal/cx.ts"
 export type StepNavigationProps = {
   steps: ReactNode[]
   currentStep: number
-  stepSpecIds?: (string | undefined)[]
   className?: string
   "aria-label"?: string
 }
@@ -13,7 +12,6 @@ export type StepNavigationProps = {
 export function StepNavigation({
   steps,
   currentStep,
-  stepSpecIds,
   className,
   "aria-label": ariaLabel,
 }: StepNavigationProps) {
@@ -32,7 +30,6 @@ export function StepNavigation({
               className="umc-step-navigation__step"
               aria-current={isActive ? "step" : undefined}
               data-active={isActive ? "" : undefined}
-              data-spec-id={stepSpecIds?.[index]}
             >
               <span className="umc-step-navigation__badge" aria-hidden="true">
                 {stepNumber}

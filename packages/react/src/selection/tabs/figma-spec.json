@@ -2,16 +2,12 @@
   "component": "Tabs",
   "figmaSection": "3325:62141",
   "page": "/components/selection/tabs/",
-  "specIdMap": {
-    "tab-selected-default": "TabsBasic의 첫 번째(notice) 탭 — defaultValue=notice이므로 활성",
-    "tab-unselected-default": "TabsBasic의 두 번째(faq) 탭 — 비활성",
-    "tab-icon-unselected": "TabsWithIcon의 두 번째(list) 아이콘 탭 — defaultValue=filter이므로 비활성"
-  },
   "nodes": [
     {
       "specId": "tab-selected-default",
       "node": "2621:35318",
       "variant": "State=Selected, Type=Default",
+      "target": ".umc-tab[data-active]",
       "expected": {
         "background-color": "rgba(0, 0, 0, 0)",
         "color": "#02746c",
@@ -35,6 +31,7 @@
       "specId": "tab-unselected-default",
       "node": "2621:35310",
       "variant": "State=Unselected, Type=Default",
+      "target": ".umc-tab:nth-child(2)",
       "expected": {
         "background-color": "rgba(0, 0, 0, 0)",
         "color": "#606262",
@@ -49,6 +46,7 @@
       "specId": "tab-icon-unselected",
       "node": "2621:35312",
       "variant": "State=Unselected, Type=Icon",
+      "target": ".umc-tab[data-icon]:nth-child(2)",
       "expected": {
         "padding-left": "12px",
         "padding-right": "12px"

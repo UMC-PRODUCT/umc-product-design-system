@@ -9,7 +9,6 @@ export type OptionItem<V extends string = string> = {
   value: V
   label: ReactNode
   disabled?: boolean
-  "data-spec-id"?: string
 }
 
 type OptionButtonGroupCommon<V extends string> = {
@@ -86,7 +85,6 @@ function OptionButtonGroupSingle<V extends string>({
           disabled={option.disabled}
           className="umc-option-button"
           data-position={resolvePosition(index, options.length)}
-          data-spec-id={option["data-spec-id"]}
         >
           <span className="umc-option-button__label">{option.label}</span>
         </Radio.Root>
@@ -133,7 +131,6 @@ function OptionButtonGroupMultiple<V extends string>({
           disabled={option.disabled}
           className="umc-option-button"
           data-position={resolvePosition(index, options.length)}
-          data-spec-id={option["data-spec-id"]}
         >
           <span className="umc-option-button__label">{option.label}</span>
         </Checkbox.Root>

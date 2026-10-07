@@ -8,7 +8,6 @@ import { cx } from "../../internal/cx.ts"
 export type SegmentedControlItem<V extends string = string> = {
   value: V
   label: ReactNode
-  "data-spec-id"?: string
 }
 
 export type SegmentedControlProps<V extends string = string> = {
@@ -44,7 +43,6 @@ export function SegmentedControl<V extends string = string>({
           key={item.value}
           value={item.value}
           className="umc-segmented-control__item"
-          data-spec-id={item["data-spec-id"]}
         >
           <span className="umc-segmented-control__label">{item.label}</span>
         </Radio.Root>
