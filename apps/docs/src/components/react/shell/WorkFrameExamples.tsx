@@ -3,6 +3,7 @@
 import {
   ContextSwitcher,
   Header,
+  HeaderHomeLink,
   PageHeader,
   SideNavigation,
   type ContextSwitcherOption,
@@ -56,15 +57,10 @@ export function WorkFrameDemo() {
         <div className="flex h-[640px] min-w-[960px] flex-col">
           <Header
             logo={
-              <span
-                style={{
-                  fontSize: 22,
-                  fontWeight: 800,
-                  color: "var(--umc-color-text-neutral-strong)",
-                }}
-              >
-                UMC
-              </span>
+              <HeaderHomeLink
+                context="operation"
+                generation={Number(generation)}
+              />
             }
             navItems={NAV_ITEMS}
             currentPath={path}

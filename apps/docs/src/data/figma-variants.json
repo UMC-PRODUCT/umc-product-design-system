@@ -808,6 +808,62 @@
         "Context=Product Tech"
       ]
     },
+    "header-home-link-umc": {
+      "node": "2732:58093",
+      "name": ".primitive/Web/Header/Home Link/UMC",
+      "axes": {
+        "State": ["Default", "Hover & Pressed"],
+        "Mode": ["Light", "Dark"]
+      },
+      "variants": [
+        "State=Default, Mode=Light",
+        "State=Default, Mode=Dark",
+        "State=Hover & Pressed, Mode=Light",
+        "State=Hover & Pressed, Mode=Dark"
+      ]
+    },
+    "header-home-link-operation": {
+      "node": "2858:66562",
+      "name": ".primitive/Web/Header/Home Link/Operation",
+      "axes": {
+        "State": ["Default", "Hover & Pressed"],
+        "Mode": ["Light", "Dark"]
+      },
+      "variants": [
+        "State=Default, Mode=Light",
+        "State=Default, Mode=Dark",
+        "State=Hover & Pressed, Mode=Light",
+        "State=Hover & Pressed, Mode=Dark"
+      ]
+    },
+    "header-home-link-study": {
+      "node": "2858:66648",
+      "name": ".primitive/Web/Header/Home Link/Study",
+      "axes": {
+        "State": ["Default", "Hover & Pressed"],
+        "Mode": ["Light", "Dark"]
+      },
+      "variants": [
+        "State=Default, Mode=Light",
+        "State=Default, Mode=Dark",
+        "State=Hover & Pressed, Mode=Light",
+        "State=Hover & Pressed, Mode=Dark"
+      ]
+    },
+    "header-home-link-product-tech": {
+      "node": "2858:66604",
+      "name": ".primitive/Web/Header/Home Link/ProductTech",
+      "axes": {
+        "State": ["Default", "Hover & Pressed"],
+        "Mode": ["Light", "Dark"]
+      },
+      "variants": [
+        "State=Default, Mode=Light",
+        "State=Default, Mode=Dark",
+        "State=Hover & Pressed, Mode=Light",
+        "State=Hover & Pressed, Mode=Dark"
+      ]
+    },
     "side-navigation": {
       "node": "2929:72290",
       "name": "Web/Side Navigation",

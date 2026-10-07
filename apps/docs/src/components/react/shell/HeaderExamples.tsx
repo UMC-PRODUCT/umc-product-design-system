@@ -1,11 +1,21 @@
 "use client"
 
-import { Button, Header, HeaderActionButton } from "@umc-product/react"
+import {
+  Button,
+  Header,
+  HeaderActionButton,
+  HeaderHomeLink,
+  type HeaderHomeLinkProps,
+} from "@umc-product/react"
 import { ExpandMoreIcon } from "@umc-product/icons"
 import { useState } from "react"
 
 import { ForceState, NotImplemented } from "../variants/VariantCells.tsx"
-import { lookup, type FigmaVariant } from "../variants/figma-variants.ts"
+import {
+  lookup,
+  type FigmaVariant,
+  type VariantSetKey,
+} from "../variants/figma-variants.ts"
 import { VariantGrid } from "../variants/VariantGrid.tsx"
 import { PreviewLinks } from "./PreviewLinks.tsx"
 
@@ -17,8 +27,17 @@ const NAV_ITEMS = [
 
 const DARK_BACKDROP = "linear-gradient(180deg, #56625f 0%, #a9b1af 100%)"
 
-function Logo({ color }: { color: string }) {
-  return <span style={{ fontSize: 22, fontWeight: 800, color }}>UMC</span>
+const MAIN_HOME_LINK: HeaderHomeLinkProps = {}
+const OPERATION_HOME_LINK: HeaderHomeLinkProps = {
+  context: "operation",
+  generation: 11,
+}
+const STUDY_HOME_LINK: HeaderHomeLinkProps = {
+  context: "study",
+  generation: 11,
+}
+const PRODUCT_TECH_HOME_LINK: HeaderHomeLinkProps = {
+  context: "product-tech",
 }
 
 export function HeaderLight() {
@@ -28,10 +47,9 @@ export function HeaderLight() {
       <PreviewLinks onNavigate={setPath}>
         <div
           className="min-w-[720px]"
-          data-spec-id="header-light header-light-logo header-light-navigation header-light-item header-light-item-hover header-light-item-selected header-light-actions"
+          data-spec-id="header-light header-light-logo header-light-navigation header-light-item header-light-item-hover header-light-item-selected header-light-actions home-link-main home-link-main-logo home-link-main-hover"
         >
           <Header
-            logo={<Logo color="var(--umc-color-text-neutral-strong)" />}
             navItems={NAV_ITEMS}
             currentPath={path}
             actions={<Button size="md">로그인</Button>}
@@ -52,14 +70,26 @@ export function HeaderDark() {
       <PreviewLinks onNavigate={setPath}>
         <div
           className="min-w-[720px]"
-          data-spec-id="header-dark header-dark-navigation header-dark-item header-dark-item-hover header-dark-item-selected"
+          data-spec-id="header-dark header-dark-navigation header-dark-item header-dark-item-hover header-dark-item-selected home-link-dark home-link-dark-hover"
         >
-          <Header
-            mode="dark"
-            logo={<Logo color="var(--umc-color-text-inverse)" />}
-            navItems={NAV_ITEMS}
-            currentPath={path}
-          />
+          <Header mode="dark" navItems={NAV_ITEMS} currentPath={path} />
+        </div>
+      </PreviewLinks>
+    </div>
+  )
+}
+
+export function HeaderHomeLinks() {
+  return (
+    <div className="umc-example umc-example-flush overflow-x-auto">
+      <PreviewLinks>
+        <div className="grid min-w-[320px]">
+          <Header logo={<HeaderHomeLink {...MAIN_HOME_LINK} />} />
+          <div data-spec-id="home-link-labeled-slot home-link-labeled home-link-labeled-body home-link-labeled-logo home-link-labeled-title home-link-labeled-subtitle">
+            <Header logo={<HeaderHomeLink {...OPERATION_HOME_LINK} />} />
+          </div>
+          <Header logo={<HeaderHomeLink {...STUDY_HOME_LINK} />} />
+          <Header logo={<HeaderHomeLink {...PRODUCT_TECH_HOME_LINK} />} />
         </div>
       </PreviewLinks>
     </div>
@@ -73,7 +103,6 @@ export function HeaderActions() {
       <PreviewLinks onNavigate={setPath}>
         <div className="min-w-[720px]">
           <Header
-            logo={<Logo color="var(--umc-color-text-neutral-strong)" />}
             navItems={NAV_ITEMS}
             currentPath={path}
             actions={
@@ -97,16 +126,28 @@ export function HeaderActions() {
 
 const HEADER_MODES = { Light: "light", Dark: "dark" } as const
 
+const HOME_LINK_CONTEXTS = {
+  Main: MAIN_HOME_LINK,
+  Operation: OPERATION_HOME_LINK,
+  Study: STUDY_HOME_LINK,
+  "Product Tech": PRODUCT_TECH_HOME_LINK,
+}
+
+const HOME_LINK_PRIMITIVE_SETS: ReadonlyArray<{
+  set: VariantSetKey
+  homeLink: HeaderHomeLinkProps
+}> = [
+  { set: "header-home-link-umc", homeLink: MAIN_HOME_LINK },
+  { set: "header-home-link-operation", homeLink: OPERATION_HOME_LINK },
+  { set: "header-home-link-study", homeLink: STUDY_HOME_LINK },
+  { set: "header-home-link-product-tech", homeLink: PRODUCT_TECH_HOME_LINK },
+]
+
 const LOGGED_IN_REASON =
   "로그인 상태의 프로필 아바타 에셋이 정해지지 않아 아직 없습니다"
 
 const darkTone = (variant: FigmaVariant) =>
   variant.props["Mode"] === "Dark" ? "dark" : undefined
-
-const logoColorOf = (mode: "light" | "dark") =>
-  mode === "dark"
-    ? "var(--umc-color-text-inverse)"
-    : "var(--umc-color-text-neutral-strong)"
 
 function LoggedOutActions({ withCta }: { withCta: boolean }) {
   return (
@@ -124,12 +165,10 @@ function HeaderVariantCell({ variant }: { variant: FigmaVariant }) {
   if (variant.props["Login Status"] === "Logged In") {
     return <NotImplemented reason={LOGGED_IN_REASON} />
   }
-  const mode = lookup(HEADER_MODES, variant, "Mode")
   return (
     <div className="min-w-[720px]">
       <Header
-        mode={mode}
-        logo={<Logo color={logoColorOf(mode)} />}
+        mode={lookup(HEADER_MODES, variant, "Mode")}
         navItems={NAV_ITEMS}
         currentPath="/matching"
         actions={
@@ -173,6 +212,27 @@ function NavigationItemCell({ variant }: { variant: FigmaVariant }) {
   )
 }
 
+function HomeLinkPrimitiveCell({
+  variant,
+  homeLink,
+}: {
+  variant: FigmaVariant
+  homeLink: HeaderHomeLinkProps
+}) {
+  return (
+    <ForceState
+      states={
+        variant.props["State"] === "Hover & Pressed" ? ["hover", "active"] : []
+      }
+    >
+      <Header
+        mode={lookup(HEADER_MODES, variant, "Mode")}
+        logo={<HeaderHomeLink {...homeLink} />}
+      />
+    </ForceState>
+  )
+}
+
 const MODE_ORDER = { Mode: ["Light", "Dark"] }
 
 export function HeaderAllVariants() {
@@ -195,10 +255,29 @@ export function HeaderAllVariants() {
         set="header-home-link"
         rows={["Context"]}
         columns={[]}
-        render={() => (
-          <NotImplemented reason="맥락별 로고 에셋을 받지 못했습니다. 지금은 앱이 logo로 로고를 넘깁니다" />
+        render={(variant) => (
+          <Header
+            logo={
+              <HeaderHomeLink
+                {...lookup(HOME_LINK_CONTEXTS, variant, "Context")}
+              />
+            }
+          />
         )}
       />
+      {HOME_LINK_PRIMITIVE_SETS.map(({ set, homeLink }) => (
+        <VariantGrid
+          key={set}
+          set={set}
+          rows={["State"]}
+          columns={["Mode"]}
+          order={MODE_ORDER}
+          tone={darkTone}
+          render={(variant) => (
+            <HomeLinkPrimitiveCell variant={variant} homeLink={homeLink} />
+          )}
+        />
+      ))}
       <VariantGrid
         set="header-navigation"
         rows={["Mode"]}

@@ -8,10 +8,11 @@ import {
   HeaderActions,
   HeaderAllVariants,
   HeaderDark,
+  HeaderHomeLinks,
   HeaderLight,
 } from "../../../../components/react/shell/HeaderExamples.tsx"
 
-피그마 `Web/Header`(node 2858:65987)를 구현했습니다. 로고, 가운데 내비게이션 알약, 오른쪽 액션 영역 세 칸으로 나뉩니다. 높이는 `--umc-layout-header-height`(80px)입니다. 양옆 칸은 내용보다 좁아지지 않고 남는 폭을 같은 비율로 나눠 가집니다. 양옆 내용 폭이 비슷하면 내비게이션이 가운데에 놓이고, 화면이 좁으면 내비게이션이 가로로 스크롤됩니다.
+피그마 `Web/Header`(node 2858:65987)를 구현했습니다. 로고, 가운데 내비게이션 알약, 오른쪽 액션 영역 세 칸으로 나뉩니다. `logo`를 넘기지 않으면 UMC 홈 링크가 들어갑니다. 높이는 `--umc-layout-header-height`(80px)입니다. 양옆 칸은 내용보다 좁아지지 않고 남는 폭을 같은 비율로 나눠 가집니다. 양옆 내용 폭이 비슷하면 내비게이션이 가운데에 놓이고, 화면이 좁으면 내비게이션이 가로로 스크롤됩니다.
 
 ```tsx
 import { Header, LinkProvider } from "@umc-product/react"
@@ -29,7 +30,6 @@ export function AppHeader() {
   return (
     <LinkProvider component={Link}>
       <Header
-        logo={<Logo />}
         navItems={navItems}
         currentPath={pathname}
         actions={<LoginButton />}
@@ -51,6 +51,40 @@ export function AppHeader() {
 
 <HeaderDark client:visible />
 
+## 홈 링크
+
+`HeaderHomeLink`는 피그마 `Web/Header/Home Link`입니다. 로고를 누르면 `href`(기본값 `/`)로 갑니다. `Header`에 `logo`를 넘기지 않으면 맥락 없는 홈 링크가 들어갑니다. 운영진, 스터디, 프로덕트 화면에서는 `context`로 로고 옆에 맥락 이름을 붙입니다.
+
+```tsx
+import { Header, HeaderHomeLink } from "@umc-product/react"
+
+<Header navItems={navItems} />
+<Header logo={<HeaderHomeLink context="operation" generation={11} />} />
+<Header logo={<HeaderHomeLink context="study" generation={11} href="/study" />} />
+<Header logo={<HeaderHomeLink context="product-tech" />} />
+```
+
+<HeaderHomeLinks client:visible />
+
+| prop         | 타입                                                 | 기본값   | 설명                                                                                                |
+| ------------ | ---------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------- |
+| `context`    | `"main" \| "operation" \| "study" \| "product-tech"` | `"main"` | 로고 옆에 붙일 맥락 이름                                                                            |
+| `generation` | `number`                                             | 없음     | 기수. `operation`, `study`에서만 받고, 이때는 꼭 넘김. 1 이상의 정수가 아니면 기수 줄을 그리지 않음 |
+| `href`       | `string`                                             | `"/"`    | 로고를 누르면 갈 경로                                                                               |
+| `className`  | `string`                                             | 없음     | 링크 요소에 붙일 클래스                                                                             |
+
+- 기수는 `11th`처럼 영어 서수로 씁니다. `generation={1}`은 `1st`, `generation={22}`는 `22nd`가 됩니다.
+- 맥락 이름 글꼴은 Orbitron Bold입니다. `@umc-product/react/styles.css`가 글꼴 파일을 함께 불러옵니다.
+- 색은 감싼 `Header`의 `mode`를 따릅니다. 마우스를 올리거나 누르면 라이트 모드에서 teal-600, 다크 모드에서 teal-200으로 바뀝니다.
+- 링크 이름은 로고의 `aria-label`("UMC")에 맥락 이름을 이은 것입니다. DOM에는 `Operation 11th`로 들어 있고, 크롬은 대문자 변환을 반영해 `UMC OPERATION 11TH`로 노출합니다.
+- 라벨이 있으면 로고 칸의 왼쪽 여백이 60px에서 34px로 줄어듭니다. 피그마 `Web/Header/Home Link`의 맥락별 여백입니다.
+- 라벨 칸은 최소 200px입니다. 그래서 라벨 있는 로고 칸은 250px이고, Main(182px)보다 넓습니다. 좁은 화면 규칙은 아래 [고정 배치](#고정-배치)를 봅니다.
+
+<Aside type="note">
+  라벨 있는 홈 링크에는 피그마 주석 "가제"가 붙어 있어 맥락 이름이 바뀔 수
+  있습니다. 이름이 바뀌어도 앱 코드는 그대로 두고 `HeaderHomeLink`만 고칩니다.
+</Aside>
+
 ## 액션 버튼
 
 `HeaderActionButton`은 피그마 `.primitive/Web/Header/Action Button`입니다. 로그인한 사용자에게 보이는 문의, 계정 메뉴 같은 보조 동작을 `actions`에 놓을 때 씁니다. 높이 40px 알약 모양이고, hover하면 테두리가 사라지고 배경이 짙어집니다. `suffix`에는 펼침 화살표 같은 16px 아이콘을 넣습니다.
@@ -60,7 +94,6 @@ import { Header, HeaderActionButton } from "@umc-product/react"
 import { ExpandMoreIcon } from "@umc-product/icons"
 
 <Header
-  logo={<Logo />}
   actions={
     <>
       <HeaderActionButton onClick={openInquiry}>문의사항</HeaderActionButton>
@@ -72,7 +105,7 @@ import { ExpandMoreIcon } from "@umc-product/icons"
 
 <HeaderActions client:visible />
 
-네이티브 `button` 속성을 받고 `type`의 기본값은 `"button"`입니다. 피그마의 `Profile`(원형 아바타)과 로고 hover는 에셋이 정해지지 않아 아직 컴포넌트로 만들지 않았습니다.
+네이티브 `button` 속성을 받고 `type`의 기본값은 `"button"`입니다. 피그마의 `Profile`(원형 아바타)은 기본 아바타 이미지가 정해지지 않아 아직 컴포넌트로 만들지 않았습니다.
 
 ## 선택 상태
 
@@ -91,7 +124,7 @@ isActivePath("/matching", "/m") // false, 경로 단위로만 비교
 
 ## 모든 변형
 
-피그마 `Web/Header` 8개, `Home Link` 4개, `Navigation` 2개, `Navigation Item` 6개, `Actions` 6개, `Action Button` 4개를 그렸습니다. 항목 하나의 변형은 그 항목만 든 헤더로 보여 줍니다. 칸에 마우스를 올리면 피그마 변형 이름이 보입니다. Hover처럼 마우스가 있어야 보이는 상태는 문서에서 켜 둔 모습입니다.
+피그마 `Web/Header` 8개, `Home Link` 4개와 primitive 16개, `Navigation` 2개, `Navigation Item` 6개, `Actions` 6개, `Action Button` 4개를 그렸습니다. 항목 하나의 변형은 그 항목만 든 헤더로 보여 줍니다. 칸에 마우스를 올리면 피그마 변형 이름이 보입니다. Hover처럼 마우스가 있어야 보이는 상태는 문서에서 켜 둔 모습입니다.
 
 <HeaderAllVariants client:visible />
 
@@ -99,7 +132,7 @@ isActivePath("/matching", "/m") // false, 경로 단위로만 비교
 
 | prop          | 타입                | 기본값    | 설명                                     |
 | ------------- | ------------------- | --------- | ---------------------------------------- |
-| `logo`        | `ReactNode`         | 없음      | 왼쪽 로고 영역                           |
+| `logo`        | `ReactNode`         | 홈 링크   | 왼쪽 로고 영역. `null`이면 비움          |
 | `navItems`    | `NavItem[]`         | 없음      | 가운데 내비게이션 항목. 비면 알약을 숨김 |
 | `currentPath` | `string`            | 없음      | 현재 경로. 선택 항목 판정에 씀           |
 | `actions`     | `ReactNode`         | 없음      | 오른쪽 액션 영역. 로그인 버튼, 프로필 등 |
@@ -113,10 +146,14 @@ isActivePath("/matching", "/m") // false, 경로 단위로만 비교
 `Header`는 위치를 정하지 않습니다. 스크롤해도 위에 남겨야 하면 레이아웃에서 지정합니다.
 
 ```tsx
-<Header className="sticky top-0 z-50" logo={<Logo />} />
+<Header className="sticky top-0 z-50" />
 ```
+
+피그마에 좁은 화면용 헤더가 없고 브레이크포인트도 정해지지 않아, `Header`는 화면 폭과 관계없이 데스크톱 값을 씁니다. 라벨 있는 홈 링크에 액션 버튼을 함께 두면 375px 화면에서 가로로 넘칩니다. 규칙이 정해지기 전까지는 앱이 좁은 화면에서 로고 칸 여백을 줄입니다. 이 문서 사이트는 800px 미만에서 `.umc-header__logo`의 좌우 여백을 16px로 줄입니다.
 
 ## 피그마와 다른 점
 
 - 다크 모드 선택 항목: 피그마는 1px 테두리와 좌우 패딩 16px을 씁니다. 선택이 바뀔 때 폭이 흔들리지 않도록 패딩 18px을 유지하고 inset 그림자로 테두리를 그립니다.
 - 내비게이션 알약 radius: 피그마 컨테이너는 9999px 리터럴, 항목은 999px 토큰입니다. 모양이 같으므로 `--umc-radius-full`로 통일했습니다.
+- 홈 링크 모드: 피그마 primitive에는 `Mode` 속성이 있지만 `HeaderHomeLink`에는 `mode` prop을 두지 않았습니다. 홈 링크는 언제나 헤더 안에 있으므로 감싼 `Header`의 `mode`를 따릅니다. 두 곳에 모드를 따로 넘기다 어긋나는 일을 막기 위해서입니다.
+- 홈 링크 포커스: 피그마에 포커스 상태가 없어 다른 헤더 항목과 같은 2px `border-primary-strong` 외곽선을 씁니다.
