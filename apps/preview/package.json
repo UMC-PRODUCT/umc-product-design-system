@@ -1,0 +1,19 @@
+{
+  "name": "@umc-product/preview",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --filter @umc-product/design-tokens build && vite",
+    "build": "pnpm --filter @umc-product/design-tokens build && tsc -b && vite build",
+    "typecheck": "tsc -b"
+  },
+  "dependencies": {
+    "@umc-product/design-tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.2",
+    "tailwindcss": "^4.2.2",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.1"
+  }
+}

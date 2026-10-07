@@ -1,0 +1,26 @@
+{
+  "name": "umc-product-design-system",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.28.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "figma:inspect": "pnpm --filter @umc-product/design-tokens figma:inspect",
+    "tokens:normalize": "pnpm --filter @umc-product/design-tokens tokens:normalize",
+    "tokens:build": "pnpm --filter @umc-product/design-tokens tokens:build",
+    "tokens:check": "pnpm --filter @umc-product/design-tokens tokens:check",
+    "docs:dev": "pnpm --filter @umc-product/docs dev",
+    "docs:build": "pnpm --filter @umc-product/docs build",
+    "docs:preview": "pnpm --filter @umc-product/docs preview",
+    "test": "pnpm -r test",
+    "typecheck": "tsc -b && pnpm --filter @umc-product/docs typecheck",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "prettier": "^3.8.1",
+    "typescript": "~5.9.3"
+  }
+}

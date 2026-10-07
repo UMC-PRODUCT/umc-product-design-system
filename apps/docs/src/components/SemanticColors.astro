@@ -1,0 +1,50 @@
+---
+import { tokenManifest } from "@umc-product/design-tokens/manifest"
+
+interface Props {
+  group: string
+}
+
+const { group } = Astro.props
+const tokens = tokenManifest.filter(
+  (token) =>
+    token.tier === "color-semantic" && token.name.split(".")[1] === group,
+)
+---
+
+<div class="not-content umc-scroll">
+  <table class="umc-table">
+    <thead>
+      <tr>
+        <th>색</th>
+        <th>Tailwind 이름</th>
+        <th>값</th>
+        <th>참조</th>
+        <th>피그마 변수</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        tokens.map((token) => (
+          <tr>
+            <td>
+              <span
+                class="umc-swatch"
+                style={`background: var(${token.cssVariable})`}
+              />
+            </td>
+            <td>
+              <code>{token.utility}</code>
+              <div class="umc-sub">{token.cssVariable}</div>
+            </td>
+            <td>
+              <code>{token.value}</code>
+            </td>
+            <td>{token.alias ? <code>{token.alias}</code> : "-"}</td>
+            <td class="umc-sub">{token.figmaName}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>

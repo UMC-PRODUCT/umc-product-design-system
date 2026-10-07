@@ -1,0 +1,43 @@
+---
+title: 설치와 불러오기
+description: 디자인 토큰 패키지를 앱에 연결하는 방법입니다.
+---
+
+import { Aside } from "@astrojs/starlight/components"
+
+`@umc-product/design-tokens`는 피그마 토큰을 CSS 변수, Tailwind v4 어댑터, vanilla-extract 객체로 내보내는 패키지입니다. 모든 산출물은 같은 `--umc-*` CSS 변수를 가리키기 때문에, 앱이 어떤 스타일 도구를 쓰든 같은 값이 나옵니다.
+
+<Aside type="caution" title="배포 전">
+  아직 GitHub Packages에 배포하지 않았습니다. 지금은 이 저장소의 워크스페이스
+  안에서만 설치할 수 있습니다. 배포 방식이 정해지면 이 페이지를 갱신합니다.
+</Aside>
+
+## 산출물
+
+| 경로                                         | 내용                                                   | 쓰는 곳              |
+| -------------------------------------------- | ------------------------------------------------------ | -------------------- |
+| `@umc-product/design-tokens/base.css`        | 모든 토큰의 `--umc-*` CSS 변수                         | 모든 앱              |
+| `@umc-product/design-tokens/fonts.css`       | Pretendard Variable 웹폰트                             | 모든 앱              |
+| `@umc-product/design-tokens/tailwind.css`    | Tailwind v4 별칭과 텍스트 스타일 유틸리티              | Tailwind 앱          |
+| `@umc-product/design-tokens/vanilla-extract` | `vars`, `typography` 객체                              | vanilla-extract 앱   |
+| `@umc-product/design-tokens`                 | `textStyleUtilities`, `semanticColors`, `cssVariables` | tailwind-merge, 도구 |
+| `@umc-product/design-tokens/manifest`        | 토큰별 최종 값, 참조, 피그마 이름                      | 문서, 도구           |
+
+## CSS 불러오기
+
+순서가 중요합니다.
+
+```css
+@import "tailwindcss";
+@import "@umc-product/design-tokens/fonts.css";
+@import "@umc-product/design-tokens/base.css";
+@import "@umc-product/design-tokens/tailwind.css";
+```
+
+`base.css`를 빠뜨리면 유틸리티가 빈 변수를 참조해, 오류 없이 스타일만 사라집니다. vanilla-extract만 쓰는 앱은 `tailwind.css`를 빼고 나머지 두 파일만 전역에서 한 번 불러옵니다.
+
+## 주의할 점
+
+- **Tailwind 기본 팔레트가 남습니다.** `bg-teal-500`은 UMC teal이 아니라 Tailwind 기본 teal입니다. 앱에서는 semantic 이름만 쓰는 편이 안전합니다.
+- **덮어쓰기는 레이어 밖에서 합니다.** 토큰은 `@layer umc.tokens`에 선언되어 있어서 `@layer base` 안에서 `--umc-*`를 바꾸면 적용되지 않습니다.
+- **브레이크포인트 토큰은 아직 없습니다.** 디자인 팀과 경계값을 정할 때까지 앱의 기존 브레이크포인트를 씁니다.

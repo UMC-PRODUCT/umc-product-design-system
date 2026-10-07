@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import "@umc-product/design-tokens/fonts.css";
+@import "@umc-product/design-tokens/base.css";
+@import "@umc-product/design-tokens/tailwind.css";
+
+@source "../node_modules/@umc-product/design-tokens/dist/index.js";
+
+@layer base {
+  body {
+    font-family: var(--umc-font-family-brand);
+  }
+}

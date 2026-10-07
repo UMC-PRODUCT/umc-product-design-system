@@ -1,0 +1,35 @@
+---
+import { tokenManifest } from "@umc-product/design-tokens/manifest"
+
+const STEP_SUFFIX_PATTERN = /\.\d+$/
+const COLOR_PREFIX_PATTERN = /^color\./
+
+const primitives = tokenManifest.filter(
+  (token) => token.tier === "color-primitive",
+)
+const palettes = Map.groupBy(primitives, (token) =>
+  token.name.replace(STEP_SUFFIX_PATTERN, "").replace(COLOR_PREFIX_PATTERN, ""),
+)
+---
+
+<div class="not-content umc-palettes">
+  {
+    [...palettes].map(([palette, tokens]) => (
+      <section>
+        <p class="umc-palette-name">{palette}</p>
+        <ul class="umc-palette-row">
+          {tokens.map((token) => (
+            <li>
+              <span
+                class="umc-chip"
+                style={`background: var(${token.cssVariable})`}
+              />
+              <span class="umc-step">{token.name.split(".").at(-1)}</span>
+              <code class="umc-sub">{token.value}</code>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+</div>

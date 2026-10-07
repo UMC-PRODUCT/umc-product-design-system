@@ -1,0 +1,40 @@
+---
+title: UMC 디자인 시스템
+description: UMC 프로덕트 팀의 피그마 파운데이션을 코드로 옮긴 디자인 토큰과 사용 가이드입니다.
+template: splash
+hero:
+  tagline: 피그마 파운데이션을 코드로 옮긴 디자인 토큰과, 다른 저장소에서 토큰을 쓰는 방법을 정리했습니다.
+  actions:
+    - text: 시작하기
+      link: /getting-started/installation/
+      icon: right-arrow
+    - text: 파운데이션 보기
+      link: /foundations/color/
+      variant: minimal
+---
+
+import { Aside, Card, CardGrid } from "@astrojs/starlight/components"
+
+<Aside type="note" title="현재 상태 (2026-10-06)">
+  컬러, 타이포그래피, 그리드, 간격, 모서리 토큰을 옮겼습니다. 패키지는 아직 배포
+  전이라 이 저장소 안에서만 쓸 수 있고, 브레이크포인트는 디자인 팀 합의를
+  기다리고 있습니다.
+</Aside>
+
+<CardGrid>
+  <Card title="컬러" icon="star">
+    semantic 151개와 primitive 78개입니다. 앱에서는 역할을 나타내는 semantic만
+    씁니다.
+  </Card>
+  <Card title="타이포그래피" icon="pencil">
+    Pretendard Variable 기반 텍스트 스타일 42개입니다. 유틸리티 하나로 서체,
+    크기, 굵기, 행간, 자간을 함께 적용합니다.
+  </Card>
+  <Card title="그리드" icon="document">
+    12컬럼, 마진 32px, 거터 16px입니다. 값은 토큰으로 두고 배치는 CSS Grid로
+    합니다.
+  </Card>
+  <Card title="기여하기" icon="setting">
+    피그마가 바뀌었을 때 토큰을 다시 만드는 순서와 자동 검사를 정리했습니다.
+  </Card>
+</CardGrid>

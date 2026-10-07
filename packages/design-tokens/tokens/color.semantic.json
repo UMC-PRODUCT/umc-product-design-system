@@ -1,0 +1,1576 @@
+{
+  "color": {
+    "icon": {
+      "disabled": {
+        "$type": "color",
+        "$value": "{color.teal-grey.300}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Icon/Disabled",
+            "variableId": "VariableID:2185:572"
+          }
+        }
+      },
+      "inverse": {
+        "$type": "color",
+        "$value": "{color.white}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Icon/Inverse",
+            "variableId": "VariableID:2185:573"
+          }
+        }
+      },
+      "neutral-weak": {
+        "$type": "color",
+        "$value": "{color.teal-grey.400}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Icon/Neutral-Weak-400",
+            "variableId": "VariableID:2515:23522"
+          }
+        }
+      },
+      "neutral-medium": {
+        "$type": "color",
+        "$value": "{color.teal-grey.500}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Icon/Neutral-Medium-500",
+            "variableId": "VariableID:2185:571"
+          }
+        }
+      },
+      "neutral-strong": {
+        "$type": "color",
+        "$value": "{color.teal-grey.600}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Icon/Neutral-Strong-600",
+            "variableId": "VariableID:2185:570"
+          }
+        }
+      },
+      "neutral-stronger": {
+        "$type": "color",
+        "$value": "{color.teal-grey.700}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Icon/Neutral-Stronger-700",
+            "variableId": "VariableID:2185:569"
+          }
+        }
+      },
+      "brand-medium": {
+        "$type": "color",
+        "$value": "{color.teal.500}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Icon/Brand-Medium-500",
+            "variableId": "VariableID:2185:574"
+          }
+        }
+      },
+      "brand-strong": {
+        "$type": "color",
+        "$value": "{color.teal.600}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Icon/Brand-Strong-600",
+            "variableId": "VariableID:2903:72125"
+          }
+        }
+      },
+      "success": {
+        "$type": "color",
+        "$value": "{color.green.500}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Icon/Success",
+            "variableId": "VariableID:2183:8200"
+          }
+        }
+      },
+      "error": {
+        "$type": "color",
+        "$value": "{color.red.500}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Icon/Error",
+            "variableId": "VariableID:2183:8204"
+          }
+        }
+      },
+      "warning": {
+        "$type": "color",
+        "$value": "{color.yellow.500}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Icon/Warning",
+            "variableId": "VariableID:2183:8208"
+          }
+        }
+      }
+    },
+    "fill": {
+      "disabled": {
+        "$type": "color",
+        "$value": "{color.teal-grey.100}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Fill/Disabled/Disalbed",
+            "variableId": "VariableID:2479:20765"
+          }
+        }
+      },
+      "neutral": {
+        "weaker": {
+          "$type": "color",
+          "$value": "{color.teal-grey.50}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Neutral/Weaker-50",
+              "variableId": "VariableID:2196:8422"
+            }
+          }
+        },
+        "weaker-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.teal-grey.100}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Neutral/Weaker-Hover(Pressed)",
+              "variableId": "VariableID:2196:8424"
+            }
+          }
+        },
+        "weak": {
+          "$type": "color",
+          "$value": "{color.teal-grey.75}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Neutral/Weak-75",
+              "variableId": "VariableID:2196:8423"
+            }
+          }
+        },
+        "weak-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.teal-grey.200}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Neutral/Weak-Hover(Pressed)",
+              "variableId": "VariableID:2196:8425"
+            }
+          }
+        },
+        "medium": {
+          "$type": "color",
+          "$value": "{color.teal-grey.100}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Neutral/Medium-100",
+              "variableId": "VariableID:2479:20731"
+            }
+          }
+        },
+        "medium-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.teal-grey.200}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Neutral/Medium-Hover(Pressed)",
+              "variableId": "VariableID:2479:20730"
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": "{color.teal-grey.200}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Neutral/Strong-200",
+              "variableId": "VariableID:2512:7872"
+            }
+          }
+        },
+        "strong-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.teal-grey.300}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Neutral/Strong-Hover(Pressed)",
+              "variableId": "VariableID:2196:8420"
+            }
+          }
+        },
+        "default": {
+          "$type": "color",
+          "$value": "{color.white}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Neutral/Default",
+              "variableId": "VariableID:2505:17677"
+            }
+          }
+        }
+      },
+      "neutral-inverse": {
+        "weak": {
+          "$type": "color",
+          "$value": "{color.teal-grey.400}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Neutral-Inverse/Weak-400",
+              "variableId": "VariableID:2535:8894"
+            }
+          }
+        },
+        "weak-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.teal-grey.600}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Neutral-Inverse/Weak-Hover(Pressed)",
+              "variableId": "VariableID:2535:8893"
+            }
+          }
+        },
+        "medium": {
+          "$type": "color",
+          "$value": "{color.teal-grey.500}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Neutral-Inverse/Medium-500",
+              "variableId": "VariableID:2946:40572"
+            }
+          }
+        },
+        "medium-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.teal-grey.700}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Neutral-Inverse/Medium-Hover(Pressed)",
+              "variableId": "VariableID:2946:40571"
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": "{color.teal-grey.600}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Neutral-Inverse/Strong-600",
+              "variableId": "VariableID:2196:8419"
+            }
+          }
+        },
+        "strong-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.teal-grey.800}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Neutral-Inverse/Strong-Hover(Pressed)",
+              "variableId": "VariableID:2512:7898"
+            }
+          }
+        },
+        "stronger": {
+          "$type": "color",
+          "$value": "{color.teal-grey.700}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Neutral-Inverse/Stronger-700",
+              "variableId": "VariableID:2541:25176"
+            }
+          }
+        },
+        "stronger-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.teal-grey.500}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Neutral-Inverse/Stronger-Hover(Pressed)",
+              "variableId": "VariableID:2541:25175"
+            }
+          }
+        }
+      },
+      "primary": {
+        "weaker": {
+          "$type": "color",
+          "$value": "{color.teal.50}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Primary/Weaker-50",
+              "variableId": "VariableID:2195:8319"
+            }
+          }
+        },
+        "weaker-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.teal.100}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Primary/Weaker-Hover(Pressed)",
+              "variableId": "VariableID:2251:14800"
+            }
+          }
+        },
+        "weak": {
+          "$type": "color",
+          "$value": "{color.teal.75}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Primary/Weak-75",
+              "variableId": "VariableID:2946:30516"
+            }
+          }
+        },
+        "weak-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.teal.200}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Primary/Weak-Hover(Pressed)",
+              "variableId": "VariableID:2946:30515"
+            }
+          }
+        },
+        "medium": {
+          "$type": "color",
+          "$value": "{color.teal.100}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Primary/Medium-100",
+              "variableId": "VariableID:2196:8364"
+            }
+          }
+        },
+        "medium-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.teal.200}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Primary/Medium-Hover(Pressed)",
+              "variableId": "VariableID:2195:8329"
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": "{color.teal.200}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Primary/Strong-200",
+              "variableId": "VariableID:2946:40792"
+            }
+          }
+        },
+        "strong-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.teal.300}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Primary/Strong-Hover(Pressed)",
+              "variableId": "VariableID:2946:40791"
+            }
+          }
+        },
+        "stronger": {
+          "$type": "color",
+          "$value": "{color.teal.300}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Primary/Stronger-300",
+              "variableId": "VariableID:3405:71588"
+            }
+          }
+        },
+        "stronger-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.teal.400}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Primary/Stronger-Hover(Pressed)-400",
+              "variableId": "VariableID:3405:71587"
+            }
+          }
+        }
+      },
+      "primary-inverse": {
+        "medium": {
+          "$type": "color",
+          "$value": "{color.teal.400}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Primary-Inverse/Medium-400",
+              "variableId": "VariableID:2929:79580"
+            }
+          }
+        },
+        "medium-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.teal.600}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Primary-Inverse/Medium-Hover(Pressed)",
+              "variableId": "VariableID:2929:79584"
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": "{color.teal.500}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Primary-Inverse/Strong-500",
+              "variableId": "VariableID:2186:569"
+            }
+          }
+        },
+        "strong-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.teal.700}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Primary-Inverse/Strong-Hover(Pressed)",
+              "variableId": "VariableID:2186:571"
+            }
+          }
+        },
+        "stronger": {
+          "$type": "color",
+          "$value": "{color.teal.600}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Primary-Inverse/Stronger-600",
+              "variableId": "VariableID:2581:16042"
+            }
+          }
+        },
+        "stronger-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.teal.800}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Primary-Inverse/Stronger-Hover(Pressed)",
+              "variableId": "VariableID:2581:16046"
+            }
+          }
+        }
+      },
+      "error": {
+        "weak": {
+          "$type": "color",
+          "$value": "{color.red.50}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Error/Weak-50",
+              "variableId": "VariableID:2196:8415"
+            }
+          }
+        },
+        "weak-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.red.200}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Error/Weak-Hover(Pressed)",
+              "variableId": "VariableID:2196:8417"
+            }
+          }
+        },
+        "medium": {
+          "$type": "color",
+          "$value": "{color.red.100}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Error/Medium-100",
+              "variableId": "VariableID:2196:8416"
+            }
+          }
+        },
+        "medium-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.red.300}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Error/Medium-Hover(Pressed)",
+              "variableId": "VariableID:2196:8418"
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": "{color.red.500}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Error/Strong-500",
+              "variableId": "VariableID:2196:8412"
+            }
+          }
+        },
+        "strong-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.red.700}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Error/Strong-Hover(Pressed)",
+              "variableId": "VariableID:2196:8414"
+            }
+          }
+        }
+      },
+      "warning": {
+        "weak": {
+          "$type": "color",
+          "$value": "{color.yellow.50}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Warning/Weak",
+              "variableId": "VariableID:2196:8435"
+            }
+          }
+        },
+        "weak-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.yellow.200}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Warning/Weak-Hover(Pressed)",
+              "variableId": "VariableID:2267:15458"
+            }
+          }
+        },
+        "medium": {
+          "$type": "color",
+          "$value": "{color.yellow.100}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Warning/Medium",
+              "variableId": "VariableID:2196:8436"
+            }
+          }
+        },
+        "medium-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.yellow.300}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Warning/Medium-Hover(Pressed)",
+              "variableId": "VariableID:2196:8438"
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": "{color.yellow.500}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Warning/Strong",
+              "variableId": "VariableID:2196:8432"
+            }
+          }
+        },
+        "strong-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.yellow.700}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Warning/Strong-Hover(Pressed)",
+              "variableId": "VariableID:2196:8434"
+            }
+          }
+        }
+      },
+      "success": {
+        "weak": {
+          "$type": "color",
+          "$value": "{color.green.50}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Success/Weak",
+              "variableId": "VariableID:2196:8442"
+            }
+          }
+        },
+        "weak-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.green.200}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Success/Weak-Hover(Pressed)",
+              "variableId": "VariableID:2267:15462"
+            }
+          }
+        },
+        "medium": {
+          "$type": "color",
+          "$value": "{color.green.100}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Success/Medium",
+              "variableId": "VariableID:2196:8443"
+            }
+          }
+        },
+        "medium-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.green.300}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Success/Medium-Hover(Pressed)",
+              "variableId": "VariableID:2196:8445"
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": "{color.green.500}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Success/Strong",
+              "variableId": "VariableID:2196:8439"
+            }
+          }
+        },
+        "strong-hover-pressed": {
+          "$type": "color",
+          "$value": "{color.green.700}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Fill/Success/Strong-Hover(Pressed)",
+              "variableId": "VariableID:2196:8441"
+            }
+          }
+        }
+      }
+    },
+    "background": {
+      "default": {
+        "$type": "color",
+        "$value": "{color.white}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Background/Default",
+            "variableId": "VariableID:2118:10663"
+          }
+        }
+      },
+      "neutral-weak": {
+        "$type": "color",
+        "$value": "{color.teal-grey.50}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Background/Neutral-Weak",
+            "variableId": "VariableID:2118:10664"
+          }
+        }
+      },
+      "neutral-medium": {
+        "$type": "color",
+        "$value": "{color.teal-grey.75}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Background/Neutral-Medium",
+            "variableId": "VariableID:3155:20215"
+          }
+        }
+      },
+      "brand-weak": {
+        "$type": "color",
+        "$value": "{color.teal.50}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Background/Brand-Weak",
+            "variableId": "VariableID:2132:8023"
+          }
+        }
+      },
+      "brand-medium": {
+        "$type": "color",
+        "$value": "{color.teal.75}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Background/Brand-Medium",
+            "variableId": "VariableID:3155:24490"
+          }
+        }
+      }
+    },
+    "surface": {
+      "default": {
+        "$type": "color",
+        "$value": "{color.white}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Surface/Default",
+            "variableId": "VariableID:2167:569"
+          }
+        }
+      },
+      "disabled": {
+        "$type": "color",
+        "$value": "{color.teal-grey.200}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Surface/Disabled",
+            "variableId": "VariableID:2167:572"
+          }
+        }
+      },
+      "neutral-weak": {
+        "$type": "color",
+        "$value": "{color.teal-grey.50}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Surface/Neutral-Weak",
+            "variableId": "VariableID:2167:570"
+          }
+        }
+      },
+      "neutral-medium": {
+        "$type": "color",
+        "$value": "{color.teal-grey.75}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Surface/Neutral-Medium",
+            "variableId": "VariableID:2251:13508"
+          }
+        }
+      },
+      "neutral-inverse": {
+        "$type": "color",
+        "$value": "{color.teal-grey.700}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Surface/Neutral-Inverse",
+            "variableId": "VariableID:2176:2900"
+          }
+        }
+      },
+      "brand-weak": {
+        "$type": "color",
+        "$value": "{color.teal.50}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Surface/Brand-Weak",
+            "variableId": "VariableID:2167:573"
+          }
+        }
+      },
+      "brand-medium": {
+        "$type": "color",
+        "$value": "{color.teal.75}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Surface/Brand-Medium",
+            "variableId": "VariableID:3155:24478"
+          }
+        }
+      },
+      "brand-inverse": {
+        "$type": "color",
+        "$value": "{color.teal.500}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Surface/Brand-Inverse",
+            "variableId": "VariableID:2176:2896"
+          }
+        }
+      }
+    },
+    "text": {
+      "inverse": {
+        "$type": "color",
+        "$value": "{color.white}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Text/Inverse",
+            "variableId": "VariableID:2178:573"
+          }
+        }
+      },
+      "disabled": {
+        "$type": "color",
+        "$value": "{color.teal-grey.300}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Text/Disabled",
+            "variableId": "VariableID:2178:572"
+          }
+        }
+      },
+      "placeholder": {
+        "$type": "color",
+        "$value": "{color.teal-grey.400}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Text/Placeholder",
+            "variableId": "VariableID:2176:7908"
+          }
+        }
+      },
+      "neutral-weak": {
+        "$type": "color",
+        "$value": "{color.teal-grey.500}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Text/Neutral-Weak-500",
+            "variableId": "VariableID:2505:14365"
+          }
+        }
+      },
+      "neutral-medium": {
+        "$type": "color",
+        "$value": "{color.teal-grey.600}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Text/Neutral-Medium-600",
+            "variableId": "VariableID:2178:571"
+          }
+        }
+      },
+      "neutral-strong": {
+        "$type": "color",
+        "$value": "{color.teal-grey.800}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Text/Neutral-Strong-800",
+            "variableId": "VariableID:2505:17835"
+          }
+        }
+      },
+      "neutral-default": {
+        "$type": "color",
+        "$value": "{color.teal-grey.900}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Text/Neutral-Default",
+            "variableId": "VariableID:2178:570"
+          }
+        }
+      },
+      "brand-disabled": {
+        "$type": "color",
+        "$value": "{color.teal.300}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Text/Brand-Disabled",
+            "variableId": "VariableID:2581:16038"
+          }
+        }
+      },
+      "brand-default": {
+        "$type": "color",
+        "$value": "{color.teal.600}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Text/Brand-Default",
+            "variableId": "VariableID:2267:15466"
+          }
+        }
+      },
+      "brand-strong": {
+        "$type": "color",
+        "$value": "{color.teal.800}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Text/Brand-Strong",
+            "variableId": "VariableID:2929:85192"
+          }
+        }
+      },
+      "success": {
+        "$type": "color",
+        "$value": "{color.green.600}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Text/Success",
+            "variableId": "VariableID:2176:7912"
+          }
+        }
+      },
+      "error": {
+        "$type": "color",
+        "$value": "{color.red.500}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Text/Error",
+            "variableId": "VariableID:2183:7916"
+          }
+        }
+      },
+      "warning": {
+        "$type": "color",
+        "$value": "{color.yellow.600}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Text/Warning",
+            "variableId": "VariableID:2183:7948"
+          }
+        }
+      }
+    },
+    "border": {
+      "disabled": {
+        "$type": "color",
+        "$value": "{color.teal-grey.200}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Border/Disabled/Disalbed",
+            "variableId": "VariableID:2479:20769"
+          }
+        }
+      },
+      "neutral": {
+        "weaker": {
+          "$type": "color",
+          "$value": "{color.teal-grey.100}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Border/Neutral/Weaker-100",
+              "variableId": "VariableID:2181:569"
+            }
+          }
+        },
+        "weak": {
+          "$type": "color",
+          "$value": "{color.teal-grey.200}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Border/Neutral/Weak-200",
+              "variableId": "VariableID:2196:8391"
+            }
+          }
+        },
+        "medium": {
+          "$type": "color",
+          "$value": "{color.teal-grey.300}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Border/Neutral/Medium-300",
+              "variableId": "VariableID:2181:570"
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": "{color.teal-grey.400}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Border/Neutral/Strong-400",
+              "variableId": "VariableID:2181:571"
+            }
+          }
+        },
+        "stronger": {
+          "$type": "color",
+          "$value": "{color.teal-grey.600}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Border/Neutral/Stronger-600",
+              "variableId": "VariableID:3108:35146"
+            }
+          }
+        },
+        "default": {
+          "$type": "color",
+          "$value": "{color.white}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Border/Neutral/Default",
+              "variableId": "VariableID:2533:5351"
+            }
+          }
+        }
+      },
+      "primary": {
+        "weaker": {
+          "$type": "color",
+          "$value": "{color.teal.100}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Border/Primary/Weaker-100",
+              "variableId": "VariableID:2196:8404"
+            }
+          }
+        },
+        "weak": {
+          "$type": "color",
+          "$value": "{color.teal.200}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Border/Primary/Weak-200",
+              "variableId": "VariableID:2196:8405"
+            }
+          }
+        },
+        "medium": {
+          "$type": "color",
+          "$value": "{color.teal.300}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Border/Primary/Medium-300",
+              "variableId": "VariableID:2196:8406"
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": "{color.teal.500}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Border/Primary/Strong-500",
+              "variableId": "VariableID:2363:19510"
+            }
+          }
+        }
+      },
+      "error": {
+        "weaker": {
+          "$type": "color",
+          "$value": "{color.red.100}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Border/Error/Weaker-100",
+              "variableId": "VariableID:2196:8408"
+            }
+          }
+        },
+        "weak": {
+          "$type": "color",
+          "$value": "{color.red.200}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Border/Error/Weak-200",
+              "variableId": "VariableID:2196:8409"
+            }
+          }
+        },
+        "medium": {
+          "$type": "color",
+          "$value": "{color.red.300}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Border/Error/Medium-300",
+              "variableId": "VariableID:2196:8410"
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": "{color.red.500}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Border/Error/Strong-500",
+              "variableId": "VariableID:2363:19552"
+            }
+          }
+        }
+      },
+      "warning": {
+        "weaker": {
+          "$type": "color",
+          "$value": "{color.yellow.100}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Border/Warning/Weaker-100",
+              "variableId": "VariableID:2314:1669"
+            }
+          }
+        },
+        "weak": {
+          "$type": "color",
+          "$value": "{color.yellow.200}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Border/Warning/Weak-200",
+              "variableId": "VariableID:2314:1670"
+            }
+          }
+        },
+        "medium": {
+          "$type": "color",
+          "$value": "{color.yellow.300}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Border/Warning/Medium-300",
+              "variableId": "VariableID:2314:1671"
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": "{color.yellow.500}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Border/Warning/Strong-500",
+              "variableId": "VariableID:2363:19556"
+            }
+          }
+        }
+      },
+      "success": {
+        "weaker": {
+          "$type": "color",
+          "$value": "{color.green.100}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Border/Success/Weaker",
+              "variableId": "VariableID:2314:1673"
+            }
+          }
+        },
+        "weak": {
+          "$type": "color",
+          "$value": "{color.green.200}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Border/Success/Weak",
+              "variableId": "VariableID:2314:1674"
+            }
+          }
+        },
+        "medium": {
+          "$type": "color",
+          "$value": "{color.green.300}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Border/Success/Medium",
+              "variableId": "VariableID:2314:1675"
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": "{color.green.500}",
+          "$extensions": {
+            "umc.figma": {
+              "name": "Semantic/Border/Success/Strong",
+              "variableId": "VariableID:2363:19560"
+            }
+          }
+        }
+      }
+    },
+    "tag": {
+      "part": {
+        "pm": {
+          "weaker": {
+            "$type": "color",
+            "$value": "{color.violet.50}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Part/PM/Weaker",
+                "variableId": "VariableID:2190:569"
+              }
+            }
+          },
+          "weak": {
+            "$type": "color",
+            "$value": "{color.violet.100}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Part/PM/Weak",
+                "variableId": "VariableID:2183:8249"
+              }
+            }
+          },
+          "medium": {
+            "$type": "color",
+            "$value": "{color.violet.500}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Part/PM/Medium",
+                "variableId": "VariableID:2190:570"
+              }
+            }
+          },
+          "strong": {
+            "$type": "color",
+            "$value": "{color.violet.600}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Part/PM/Strong",
+                "variableId": "VariableID:2190:571"
+              }
+            }
+          }
+        },
+        "design": {
+          "weaker": {
+            "$type": "color",
+            "$value": "{color.pink.50}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Part/Design/Weaker",
+                "variableId": "VariableID:2190:572"
+              }
+            }
+          },
+          "weak": {
+            "$type": "color",
+            "$value": "{color.pink.100}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Part/Design/Weak",
+                "variableId": "VariableID:2183:8253"
+              }
+            }
+          },
+          "medium": {
+            "$type": "color",
+            "$value": "{color.pink.500}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Part/Design/Medium",
+                "variableId": "VariableID:2190:573"
+              }
+            }
+          },
+          "strong": {
+            "$type": "color",
+            "$value": "{color.pink.600}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Part/Design/Strong",
+                "variableId": "VariableID:2190:574"
+              }
+            }
+          }
+        },
+        "mobile-pe": {
+          "weaker": {
+            "$type": "color",
+            "$value": "{color.cobalt.50}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Part/Mobile-PE/Weaker",
+                "variableId": "VariableID:2191:569"
+              }
+            }
+          },
+          "weak": {
+            "$type": "color",
+            "$value": "{color.cobalt.100}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Part/Mobile-PE/Weak",
+                "variableId": "VariableID:2183:8257"
+              }
+            }
+          },
+          "medium": {
+            "$type": "color",
+            "$value": "{color.cobalt.500}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Part/Mobile-PE/Medium",
+                "variableId": "VariableID:2191:570"
+              }
+            }
+          },
+          "strong": {
+            "$type": "color",
+            "$value": "{color.cobalt.600}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Part/Mobile-PE/Strong",
+                "variableId": "VariableID:2191:571"
+              }
+            }
+          }
+        },
+        "web-pe": {
+          "weaker": {
+            "$type": "color",
+            "$value": "{color.yellow.50}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Part/Web-PE/Weaker",
+                "variableId": "VariableID:2191:572"
+              }
+            }
+          },
+          "weak": {
+            "$type": "color",
+            "$value": "{color.yellow.100}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Part/Web-PE/Weak",
+                "variableId": "VariableID:2183:8261"
+              }
+            }
+          },
+          "medium": {
+            "$type": "color",
+            "$value": "{color.yellow.500}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Part/Web-PE/Medium",
+                "variableId": "VariableID:2191:573"
+              }
+            }
+          },
+          "strong": {
+            "$type": "color",
+            "$value": "{color.yellow.600}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Part/Web-PE/Strong",
+                "variableId": "VariableID:2191:574"
+              }
+            }
+          }
+        }
+      },
+      "role": {
+        "central": {
+          "weaker": {
+            "$type": "color",
+            "$value": "{color.purple.50}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Role/Central/Weaker",
+                "variableId": "VariableID:2193:569"
+              }
+            }
+          },
+          "weak": {
+            "$type": "color",
+            "$value": "{color.purple.100}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Role/Central/Weak",
+                "variableId": "VariableID:2183:8282"
+              }
+            }
+          },
+          "medium": {
+            "$type": "color",
+            "$value": "{color.purple.500}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Role/Central/Medium",
+                "variableId": "VariableID:2193:570"
+              }
+            }
+          },
+          "strong": {
+            "$type": "color",
+            "$value": "{color.purple.600}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Role/Central/Strong",
+                "variableId": "VariableID:2193:571"
+              }
+            }
+          }
+        },
+        "chapter": {
+          "weaker": {
+            "$type": "color",
+            "$value": "{color.brown.50}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Role/Chapter/Weaker",
+                "variableId": "VariableID:2193:572"
+              }
+            }
+          },
+          "weak": {
+            "$type": "color",
+            "$value": "{color.brown.100}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Role/Chapter/Weak",
+                "variableId": "VariableID:2183:8286"
+              }
+            }
+          },
+          "medium": {
+            "$type": "color",
+            "$value": "{color.brown.500}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Role/Chapter/Medium",
+                "variableId": "VariableID:2193:573"
+              }
+            }
+          },
+          "strong": {
+            "$type": "color",
+            "$value": "{color.brown.600}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Role/Chapter/Strong",
+                "variableId": "VariableID:2193:574"
+              }
+            }
+          }
+        },
+        "campus": {
+          "weaker": {
+            "$type": "color",
+            "$value": "{color.blue.50}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Role/Campus/Weaker",
+                "variableId": "VariableID:2193:575"
+              }
+            }
+          },
+          "weak": {
+            "$type": "color",
+            "$value": "{color.blue.100}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Role/Campus/Weak",
+                "variableId": "VariableID:2195:8306"
+              }
+            }
+          },
+          "medium": {
+            "$type": "color",
+            "$value": "{color.blue.500}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Role/Campus/Medium",
+                "variableId": "VariableID:2193:576"
+              }
+            }
+          },
+          "strong": {
+            "$type": "color",
+            "$value": "{color.blue.600}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Role/Campus/Strong",
+                "variableId": "VariableID:2193:577"
+              }
+            }
+          }
+        },
+        "challenger-super-admin": {
+          "weaker": {
+            "$type": "color",
+            "$value": "{color.teal.50}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Role/Challenger&Super-Admin/Weaker",
+                "variableId": "VariableID:2194:572"
+              }
+            }
+          },
+          "weak": {
+            "$type": "color",
+            "$value": "{color.teal.100}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Role/Challenger&Super-Admin/Weak",
+                "variableId": "VariableID:2195:8310"
+              }
+            }
+          },
+          "medium": {
+            "$type": "color",
+            "$value": "{color.teal.100}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Role/Challenger&Super-Admin/Medium",
+                "variableId": "VariableID:2194:573"
+              }
+            }
+          },
+          "strong": {
+            "$type": "color",
+            "$value": "{color.teal.600}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Role/Challenger&Super-Admin/Strong",
+                "variableId": "VariableID:2194:574"
+              }
+            }
+          }
+        },
+        "product": {
+          "weaker": {
+            "$type": "color",
+            "$value": "{color.teal-grey.75}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Role/Product/Weaker",
+                "variableId": "VariableID:2194:575"
+              }
+            }
+          },
+          "weak": {
+            "$type": "color",
+            "$value": "{color.teal-grey.100}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Role/Product/Weak",
+                "variableId": "VariableID:2183:8302"
+              }
+            }
+          },
+          "medium": {
+            "$type": "color",
+            "$value": "{color.teal-grey.100}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Role/Product/Medium",
+                "variableId": "VariableID:2194:576"
+              }
+            }
+          },
+          "strong": {
+            "$type": "color",
+            "$value": "{color.teal-grey.800}",
+            "$extensions": {
+              "umc.figma": {
+                "name": "Semantic/Tag/Role/Product/Strong",
+                "variableId": "VariableID:2194:577"
+              }
+            }
+          }
+        }
+      }
+    },
+    "dimmed": {
+      "weak": {
+        "$type": "color",
+        "$value": "#0f101033",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Dimmed/Weak",
+            "variableId": "VariableID:3385:25466"
+          }
+        }
+      },
+      "medium": {
+        "$type": "color",
+        "$value": "#0f1010a6",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Dimmed/Medium",
+            "variableId": "VariableID:3385:25476"
+          }
+        }
+      },
+      "strong": {
+        "$type": "color",
+        "$value": "#0f1010d9",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Semantic/Dimmed/Strong",
+            "variableId": "VariableID:3385:25487"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+---
+title: 컬러
+description: semantic 151개와 primitive 78개 컬러 토큰입니다.
+---
+
+import { Aside } from "@astrojs/starlight/components"
+import PrimitivePalettes from "../../../components/PrimitivePalettes.astro"
+import SemanticColors from "../../../components/SemanticColors.astro"
+
+앱에서는 역할을 나타내는 semantic 컬러만 씁니다. primitive는 semantic이 참조하는 원재료라서 유틸리티를 만들지 않았습니다.
+
+<Aside title="이름 읽는 법">
+  `fill-primary-strong`은 피그마 `Semantic/Fill/Primary/Strong-200`을 옮긴
+  이름입니다. 이름 끝의 단계 숫자는 지금 규칙에서 뺐고, 디자인 팀 확인을
+  기다리고 있습니다. 전체 대응은 [피그마 정규화
+  리포트](/contributing/figma-normalization/)에 있습니다.
+</Aside>
+
+## Semantic
+
+### Text
+
+<SemanticColors group="text" />
+
+### Background
+
+<SemanticColors group="background" />
+
+### Surface
+
+<SemanticColors group="surface" />
+
+### Fill
+
+<SemanticColors group="fill" />
+
+### Border
+
+<SemanticColors group="border" />
+
+### Icon
+
+<SemanticColors group="icon" />
+
+### Tag
+
+<SemanticColors group="tag" />
+
+### Dimmed
+
+Dimmed는 primitive를 참조하지 않습니다. TealGrey-900에 불투명도 20%, 65%, 85%를 섞은 값입니다.
+
+<SemanticColors group="dimmed" />
+
+## Primitive
+
+<PrimitivePalettes />

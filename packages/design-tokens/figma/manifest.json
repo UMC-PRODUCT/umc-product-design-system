@@ -1,0 +1,27 @@
+{
+  "fileKey": "U3pRZp6BjQBW5aMljCBwo9",
+  "sources": [
+    {
+      "file": "mcp/get-variable-defs.2268-1706.json",
+      "tool": "get_variable_defs",
+      "nodeId": "2268:1706",
+      "nodeName": "Mobile.Web Typography",
+      "fetchedAt": "2026-10-06",
+      "sha256": "0b61f1d785e9c5d8a36608eddfe6829caa5cf1b85d22f251a9cdd58d627090d7"
+    },
+    {
+      "file": "export/color.mode-1.tokens.json",
+      "tool": "Figma Variables Export modes (Color 컬렉션)",
+      "originalName": "Mode 1.tokens.json",
+      "fetchedAt": "2026-10-06",
+      "sha256": "d7d9ad4a7ec2d68ed113819e1ca18c817498bc341e4ce3442267e52694c6f9a3"
+    },
+    {
+      "file": "export/token.mode-1.tokens.json",
+      "tool": "Figma Variables Export modes (Token 컬렉션)",
+      "originalName": "Mode 1.tokens 2.json",
+      "fetchedAt": "2026-10-06",
+      "sha256": "d4ae9e0c0ec5a3e911f9f52db7581fbadd98d9d32f578c0079e9bb0941660605"
+    }
+  ]
+}

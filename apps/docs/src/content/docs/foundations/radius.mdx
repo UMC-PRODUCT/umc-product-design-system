@@ -1,0 +1,16 @@
+---
+title: 모서리
+description: 기본 모서리 값과 컴포넌트별 모서리 토큰입니다.
+---
+
+import DimensionTokens from "../../../components/DimensionTokens.astro"
+
+모서리는 기본 값과 컴포넌트별 이름으로 나뉩니다. 컴포넌트별 이름은 기본 값을 참조합니다. 유틸리티는 만들지 않았으니 CSS 변수로 씁니다(예: `rounded-(--umc-radius-button-12)`).
+
+## 기본 값
+
+<DimensionTokens prefix="radius." source="value" visual="radius" />
+
+## 컴포넌트별
+
+<DimensionTokens prefix="radius." source="alias" visual="radius" />

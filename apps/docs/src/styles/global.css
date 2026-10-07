@@ -1,0 +1,194 @@
+@layer base, starlight, theme, components, utilities;
+
+@import "@astrojs/starlight-tailwind";
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@import "@umc-product/design-tokens/fonts.css";
+@import "@umc-product/design-tokens/base.css";
+@import "@umc-product/design-tokens/tailwind.css";
+
+@source "../../node_modules/@umc-product/design-tokens/dist/index.js";
+
+@theme {
+  --font-sans: var(--umc-font-family-brand);
+  --color-accent-50: var(--umc-color-teal-50);
+  --color-accent-100: var(--umc-color-teal-100);
+  --color-accent-200: var(--umc-color-teal-200);
+  --color-accent-300: var(--umc-color-teal-300);
+  --color-accent-400: var(--umc-color-teal-400);
+  --color-accent-500: var(--umc-color-teal-500);
+  --color-accent-600: var(--umc-color-teal-600);
+  --color-accent-700: var(--umc-color-teal-700);
+  --color-accent-800: var(--umc-color-teal-800);
+  --color-accent-900: var(--umc-color-teal-900);
+  --color-accent-950: var(--umc-color-teal-900);
+  --color-gray-50: var(--umc-color-teal-grey-50);
+  --color-gray-100: var(--umc-color-teal-grey-100);
+  --color-gray-200: var(--umc-color-teal-grey-200);
+  --color-gray-300: var(--umc-color-teal-grey-300);
+  --color-gray-400: var(--umc-color-teal-grey-400);
+  --color-gray-500: var(--umc-color-teal-grey-500);
+  --color-gray-600: var(--umc-color-teal-grey-600);
+  --color-gray-700: var(--umc-color-teal-grey-700);
+  --color-gray-800: var(--umc-color-teal-grey-800);
+  --color-gray-900: var(--umc-color-teal-grey-900);
+  --color-gray-950: var(--umc-color-teal-grey-900);
+}
+
+.umc-canvas {
+  background: var(--umc-color-background-default);
+  color: var(--umc-color-text-neutral-default);
+}
+
+.umc-scroll {
+  overflow-x: auto;
+  margin-block: 1rem 2rem;
+}
+
+.umc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--sl-text-sm);
+}
+
+.umc-table th,
+.umc-table td {
+  padding: 0.625rem 0.75rem;
+  border-bottom: 1px solid var(--sl-color-hairline);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.umc-table th {
+  color: var(--sl-color-gray-3);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.umc-table code {
+  white-space: nowrap;
+}
+
+.umc-sub {
+  color: var(--sl-color-gray-3);
+  font-size: var(--sl-text-xs);
+  overflow-wrap: anywhere;
+}
+
+.umc-swatch {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  box-shadow: inset 0 0 0 1px var(--sl-color-hairline);
+}
+
+.umc-palettes {
+  display: grid;
+  gap: 1.5rem;
+  margin-block: 1rem 2rem;
+}
+
+.umc-palette-name {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.umc-palette-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(5.5rem, 1fr));
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
+
+.umc-palette-row li {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.umc-chip {
+  display: block;
+  height: 3rem;
+  border-radius: 0.5rem;
+  box-shadow: inset 0 0 0 1px var(--sl-color-hairline);
+}
+
+.umc-step {
+  font-size: var(--sl-text-xs);
+  font-weight: 600;
+}
+
+.umc-type-list {
+  list-style: none;
+  padding: 0;
+  margin-block: 1rem 2rem;
+}
+
+.umc-type-row {
+  display: grid;
+  grid-template-columns: minmax(12rem, 16rem) 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--sl-color-hairline);
+}
+
+.umc-type-sample {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.umc-grid-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-block: 1rem 0.5rem;
+  font-size: var(--sl-text-sm);
+}
+
+.umc-grid-frame {
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0 1px var(--sl-color-hairline);
+}
+
+.umc-grid-column {
+  display: flex;
+  justify-content: center;
+  height: 10rem;
+  padding-top: 0.5rem;
+  border-radius: 2px;
+  background: rgb(220 61 61 / 0.15);
+  color: var(--umc-color-text-error);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.umc-bar {
+  display: block;
+  height: 0.75rem;
+  min-width: 1px;
+  border-radius: 2px;
+  background: var(--umc-color-icon-brand-medium);
+}
+
+.umc-radius-box {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  background: var(--umc-color-fill-primary-medium);
+  box-shadow: inset 0 0 0 1px var(--umc-color-border-primary-medium);
+}
+
+@media (max-width: 50rem) {
+  .umc-type-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}

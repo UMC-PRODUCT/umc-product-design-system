@@ -1,0 +1,27 @@
+---
+import { tokenManifest } from "@umc-product/design-tokens/manifest"
+
+const SAMPLE_TEXT = "UMC 세상의 틀을 깰 챌린저들이 하나로 모이는 곳"
+
+const styles = tokenManifest.filter((token) => token.tier === "typography")
+---
+
+<ul class="not-content umc-type-list">
+  {
+    styles.map((token) => (
+      <li class="umc-type-row">
+        <div>
+          <code>{token.utility}</code>
+          <div class="umc-sub">{token.figmaName}</div>
+          <div class="umc-sub">
+            {token.typography &&
+              `${token.typography.fontSize}, 굵기 ${token.typography.fontWeight}, 행간 ${token.typography.lineHeight}, 자간 ${token.typography.letterSpacing}`}
+          </div>
+        </div>
+        <p class:list={["umc-canvas", "umc-type-sample", token.utility]}>
+          {SAMPLE_TEXT}
+        </p>
+      </li>
+    ))
+  }
+</ul>
