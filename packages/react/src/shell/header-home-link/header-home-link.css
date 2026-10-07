@@ -1,0 +1,90 @@
+@import "@fontsource/orbitron/latin-700.css";
+
+@layer components {
+  .umc-header-home-link {
+    --umc-header-home-link-fg: var(--umc-color-icon-neutral-stronger);
+    --umc-header-home-link-active-fg: var(--umc-color-icon-brand-strong);
+
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 54px;
+    padding: var(--umc-spacing-padding-16);
+    color: var(--umc-header-home-link-fg);
+    text-decoration: none;
+    transition: color var(--umc-motion-duration) ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .umc-header-home-link:has(.umc-header-home-link__label) {
+    min-width: 200px;
+  }
+
+  .umc-header__logo:has(.umc-header-home-link__label) {
+    padding-inline-start: 34px;
+  }
+
+  .umc-header[data-mode="dark"] .umc-header-home-link {
+    --umc-header-home-link-fg: var(--umc-color-teal-50);
+    --umc-header-home-link-active-fg: var(--umc-color-teal-200);
+  }
+
+  .umc-header-home-link:active {
+    color: var(--umc-header-home-link-active-fg);
+  }
+
+  @media (hover: hover) {
+    .umc-header-home-link:hover {
+      color: var(--umc-header-home-link-active-fg);
+    }
+  }
+
+  .umc-header-home-link:focus-visible {
+    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline-offset: 2px;
+  }
+
+  .umc-header-home-link__body {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 4.28px;
+  }
+
+  .umc-header-home-link__logo {
+    flex: none;
+  }
+
+  .umc-header-home-link__body:has(.umc-header-home-link__label)
+    .umc-header-home-link__logo {
+    margin-top: 3.6px;
+  }
+
+  .umc-header-home-link__label {
+    display: flex;
+    flex-direction: column;
+    font-family: "Orbitron", var(--umc-font-family-brand);
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .umc-header-home-link__title {
+    font-size: 13.487px;
+    letter-spacing: -0.025em;
+  }
+
+  .umc-header-home-link__subtitle {
+    margin-top: calc(14.03px - 1.2 * 13.487px);
+    font-size: 11.689px;
+    letter-spacing: -0.025em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .umc-header-home-link {
+      transition: none;
+    }
+  }
+}

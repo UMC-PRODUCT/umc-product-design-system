@@ -6,6 +6,10 @@ export {
 } from "./link-provider/LinkProvider.tsx"
 export { Header, type HeaderProps, type NavItem } from "./header/Header.tsx"
 export {
+  HeaderHomeLink,
+  type HeaderHomeLinkProps,
+} from "./header-home-link/HeaderHomeLink.tsx"
+export {
   HeaderActionButton,
   type HeaderActionButtonProps,
 } from "./header-action-button/HeaderActionButton.tsx"
