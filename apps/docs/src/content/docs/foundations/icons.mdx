@@ -1,11 +1,12 @@
 ---
 title: 아이콘
-description: 피그마 아이콘 64종과 픽토그램 10종을 옮긴 React 컴포넌트입니다.
+description: 피그마 아이콘 64종, 픽토그램 10종, 로고 1종을 옮긴 React 컴포넌트입니다.
 ---
 
 import { Aside } from "@astrojs/starlight/components"
 import {
   IconGallery,
+  LogoGallery,
   PictogramGallery,
 } from "../../../components/react/IconGallery.tsx"
 
@@ -71,6 +72,21 @@ import { SchoolPictogram, UnderConstructionPictogram } from "@umc-product/icons"
 ```
 
 <PictogramGallery />
+
+## 로고
+
+`Logo/UMC`(node 2678:52296)는 `UmcLogo`입니다. 아이콘과 달리 가로로 긴 그림이라 `size` 대신 `height`를 받고, 너비는 피그마 비율(148:44)로 정합니다. 기본 높이는 헤더 홈 링크와 같은 22px입니다. 주색은 아이콘처럼 `currentColor`를 따릅니다.
+
+```tsx
+import { UmcLogo } from "@umc-product/icons"
+
+<UmcLogo />
+<UmcLogo height={44} aria-label="UMC" />
+```
+
+<LogoGallery />
+
+헤더에 로고를 놓을 때는 `UmcLogo`를 직접 쓰지 말고 [Header](/components/shell/header/)의 `HeaderHomeLink`를 씁니다. 링크, 맥락 이름, hover 색까지 피그마 `Web/Header/Home Link`대로 맞춰 둔 컴포넌트입니다.
 
 ## 피그마와 다른 점
 

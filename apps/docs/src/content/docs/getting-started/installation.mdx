@@ -10,7 +10,7 @@ import { Aside } from "@astrojs/starlight/components"
 | 패키지                       | 내용                                                   | 의존                   |
 | ---------------------------- | ------------------------------------------------------ | ---------------------- |
 | `@umc-product/design-tokens` | 피그마 토큰을 CSS 변수, Tailwind v4, vanilla-extract로 | 없음                   |
-| `@umc-product/icons`         | 아이콘 64종, 픽토그램 10종 React 컴포넌트              | React 19               |
+| `@umc-product/icons`         | 아이콘 64종, 픽토그램 10종, 로고 React 컴포넌트        | React 19               |
 | `@umc-product/react`         | Base UI 위에 만든 컴포넌트와 미리 빌드한 CSS           | React 19, 위 두 패키지 |
 
 모든 산출물은 같은 `--umc-*` CSS 변수를 가리키기 때문에, 앱이 어떤 스타일 도구를 쓰든 같은 값이 나옵니다.
@@ -33,7 +33,7 @@ import { Aside } from "@astrojs/starlight/components"
 
 ## CSS 불러오기
 
-컴포넌트를 쓰는 앱은 `@umc-product/react/styles.css` 하나를 불러옵니다. 이 파일이 `fonts.css`와 `base.css`를 함께 불러오므로 토큰 CSS를 따로 넣지 않아도 됩니다. Tailwind 유틸리티로 토큰을 쓰려면 `tailwind.css`를 더합니다.
+컴포넌트를 쓰는 앱은 `@umc-product/react/styles.css` 하나를 불러옵니다. 이 파일이 `fonts.css`, `base.css`, 헤더 홈 링크의 Orbitron 글꼴을 함께 불러오므로 토큰 CSS를 따로 넣지 않아도 됩니다. Tailwind 유틸리티로 토큰을 쓰려면 `tailwind.css`를 더합니다.
 
 ```css
 @import "tailwindcss";

@@ -1,5 +1,6 @@
 import {
   iconCatalog,
+  logoCatalog,
   pictogramCatalog,
   type IconProps,
   type IconWeight,
@@ -171,6 +172,21 @@ export function PictogramGallery() {
           </li>
         )
       })}
+    </ul>
+  )
+}
+
+export function LogoGallery() {
+  return (
+    <ul className="umc-icon-grid umc-pictogram-grid not-content">
+      {logoCatalog.map(({ name, component: Logo }) => (
+        <li key={name} className="umc-icon-card umc-pictogram-card">
+          <span className="umc-icon-previews">
+            <Logo />
+          </span>
+          <span className="umc-icon-name">{name}</span>
+        </li>
+      ))}
     </ul>
   )
 }
