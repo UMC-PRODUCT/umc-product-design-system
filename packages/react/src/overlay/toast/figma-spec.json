@@ -1,0 +1,64 @@
+{
+  "component": "ToastProvider / useToast",
+  "figmaNodeId": null,
+  "specs": [
+    {
+      "specId": "toast-primary-default",
+      "description": "primary 색상 토스트",
+      "expected": {
+        "background-color~": "rgba("
+      }
+    },
+    {
+      "specId": "toast-error-default",
+      "description": "error 색상 토스트",
+      "expected": {
+        "background-color": "var(--umc-color-fill-error-medium)"
+      }
+    }
+  ],
+  "props": [
+    {
+      "name": "placement",
+      "type": "\"top\" | \"bottom\"",
+      "default": "\"bottom\"",
+      "component": "ToastProvider"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": true,
+      "component": "ToastProvider"
+    },
+    {
+      "name": "message",
+      "type": "ReactNode",
+      "required": true,
+      "component": "ToastOptions"
+    },
+    {
+      "name": "color",
+      "type": "\"primary\" | \"neutral\" | \"error\"",
+      "default": "\"primary\"",
+      "component": "ToastOptions"
+    },
+    { "name": "icon", "type": "ReactNode", "component": "ToastOptions" },
+    {
+      "name": "action",
+      "type": "{ label: ReactNode; onClick: () => void }",
+      "component": "ToastOptions"
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "description": "기본값: action 없으면 3000ms, 있으면 6000ms",
+      "component": "ToastOptions"
+    }
+  ],
+  "designNotes": [
+    "neutral 색상 배경이 rgba(63, 65, 65, 0.8)이나 토큰이 없어 컴포넌트 변수로 선언합니다.",
+    "error 색상은 --umc-color-fill-error-medium 토큰을 씁니다.",
+    "placement=top: 위에서 112px, placement=bottom: 아래에서 86px 위치에 렌더합니다.",
+    "가로 400px, 최소 높이 48px. 창 폭이 좁으면 calc(100vw - 32px)로 줄어듭니다."
+  ]
+}
