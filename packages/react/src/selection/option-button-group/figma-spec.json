@@ -1,0 +1,69 @@
+{
+  "component": "OptionButtonGroup",
+  "figmaSection": "2621:32882",
+  "page": "/components/selection/option-button-group/",
+  "nodes": [
+    {
+      "specId": "option-button-weak-xl-selected",
+      "node": "2621:32896",
+      "variant": "Selected=True, Type=Weak, Direction=Left, Size=Xl, Disabled=False",
+      "expected": {
+        "background-color": "#e9f7f5",
+        "color": "#02746c",
+        "height": "48px",
+        "padding-top": "4px",
+        "padding-bottom": "4px",
+        "padding-left": "28px",
+        "padding-right": "28px",
+        "border-top-left-radius": "8px",
+        "border-bottom-left-radius": "8px",
+        "border-top-right-radius": "0px",
+        "border-bottom-right-radius": "0px",
+        "font-size": "20px",
+        "font-weight": "400",
+        "line-height": "28px",
+        "letter-spacing": "-0.4px",
+        "box-shadow": "inset 0 0 0 1px #b3e5e1"
+      }
+    },
+    {
+      "specId": "option-button-strong-xl-selected",
+      "node": "2621:32904",
+      "variant": "Selected=True, Type=Strong, Direction=Left, Size=Xl, Disabled=False",
+      "expected": {
+        "background-color": "#02746c",
+        "color": "#ffffff",
+        "height": "48px",
+        "border-top-left-radius": "8px",
+        "border-top-right-radius": "0px",
+        "font-size": "20px",
+        "font-weight": "400"
+      },
+      "figmaDiffers": {
+        "color": "피그마 #0b6b64 = teal-600 primitive. 토큰에 없는 값이라 --umc-color-fill-primary-inverse-medium-hover-pressed (#02746c) 사용"
+      }
+    },
+    {
+      "specId": "option-button-unselected-xl",
+      "node": "2621:32958",
+      "variant": "Selected=False, Type=Default, Direction=Left, Size=Xl, Disabled=False",
+      "expected": {
+        "background-color": "#ffffff",
+        "color": "#282a2a",
+        "height": "48px",
+        "border-top-left-radius": "8px",
+        "font-size": "20px",
+        "font-weight": "400"
+      }
+    },
+    {
+      "specId": "option-button-unselected-xl-disabled",
+      "node": "2621:32962",
+      "variant": "Selected=False, Type=Default, Direction=Left, Size=Xl, Disabled=True",
+      "expected": {
+        "background-color": "#ffffff",
+        "color": "#cccccc"
+      }
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+---
+title: OptionButtonGroup
+description: 단일 선택(라디오)·다중 선택(체크박스)을 버튼 그룹 형태로 제공하는 컴포넌트입니다.
+---
+
+import { Aside } from "@astrojs/starlight/components"
+import {
+  OptionButtonGroupSingle,
+  OptionButtonGroupMultiple,
+  OptionButtonGroupVariants,
+  OptionButtonGroupSizes,
+  OptionButtonGroupDisabled,
+  OptionButtonGroupControlled,
+} from "../../../../components/react/selection/OptionButtonGroupExamples.tsx"
+
+`type="single"`(기본)이면 `RadioGroup`으로, `type="multiple"`이면 `CheckboxGroup`으로 렌더됩니다. 두 모드 모두 키보드 탐색과 ARIA 역할을 자동으로 처리합니다.
+
+```tsx
+import { OptionButtonGroup } from "@umc-product/react"
+
+;<OptionButtonGroup
+  options={[
+    { value: "fe", label: "프론트엔드" },
+    { value: "be", label: "백엔드" },
+  ]}
+  aria-label="파트 선택"
+  defaultValue="fe"
+/>
+```
+
+## 단일 선택
+
+<OptionButtonGroupSingle client:visible />
+
+## 다중 선택
+
+<OptionButtonGroupMultiple client:visible />
+
+## 변형
+
+`variant="weak"`(기본)은 선택 항목에 브랜드 색 배경을 옅게 적용합니다. `variant="strong"`은 진한 틸 배경과 흰 글자로 강조합니다.
+
+<OptionButtonGroupVariants client:visible />
+
+## 크기
+
+| size | 높이 | 좌우 여백 | 글자             |
+| ---- | ---- | --------- | ---------------- |
+| `xl` | 44px | 28px      | 20px Regular     |
+| `sm` | 36px | 12px      | `label-3-medium` |
+| `xs` | 28px | 8px       | `label-3-medium` |
+
+<OptionButtonGroupSizes client:visible />
+
+## 비활성 항목
+
+`disabled: true`로 개별 항목을 비활성화합니다.
+
+<OptionButtonGroupDisabled client:visible />
+
+## 제어 모드
+
+`value`와 `onValueChange`로 외부 상태와 연결합니다. React Hook Form을 쓸 때는 `Controller`의 `field.value`를 `value`에, `field.onChange`를 `onValueChange`에 연결합니다.
+
+<OptionButtonGroupControlled client:visible />
+
+## props
+
+| prop            | 타입                     | 기본값     | 설명                |
+| --------------- | ------------------------ | ---------- | ------------------- |
+| `type`          | `"single" \| "multiple"` | `"single"` | 선택 모드           |
+| `options`       | `OptionItem[]`           | 필수       | 선택 항목 목록      |
+| `variant`       | `"weak" \| "strong"`     | `"weak"`   | 선택 색 강도        |
+| `size`          | `"xl" \| "sm" \| "xs"`   | `"sm"`     | 버튼 크기           |
+| `value`         | `string` 또는 `string[]` | 없음       | 제어 선택값         |
+| `defaultValue`  | `string` 또는 `string[]` | 없음       | 비제어 초기값       |
+| `onValueChange` | `(value) => void`        | 없음       | 선택 변경 핸들러    |
+| `name`          | `string`                 | 없음       | form `name` 속성    |
+| `aria-label`    | `string`                 | 없음       | 그룹 접근 가능 이름 |
+
+## 디자인 팀 확인 사항
+
+- `xl` 크기 글자(20px/Regular)는 현재 타이포그래피 토큰 밖에 있습니다.
+- `strong` 변형의 비활성 배경 스펙이 피그마에 없어 `--umc-color-text-disabled`를 임시 적용했습니다.
