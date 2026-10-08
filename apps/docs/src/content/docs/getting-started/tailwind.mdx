@@ -1,32 +1,60 @@
 ---
 title: Tailwind CSS에서 쓰기
-description: Tailwind v4 앱에서 토큰 유틸리티를 쓰는 방법입니다.
+description: 피그마 변수 이름을 Tailwind v4 클래스로 바꿔 쓰는 방법입니다.
 ---
 
 import { Aside } from "@astrojs/starlight/components"
 
-`tailwind.css`를 불러오면 semantic 컬러, 텍스트 스타일, 그리드와 레이아웃 유틸리티가 생깁니다. primitive 컬러는 유틸리티를 만들지 않으니 앱에서는 semantic 이름만 씁니다.
+`tailwind.css`를 불러오면 피그마 변수 이름을 그대로 딴 클래스가 생깁니다. Tailwind 기본 팔레트(`blue-500`, `zinc-900` 등)는 지우고 UMC 색만 남깁니다.
 
-## 유틸리티 이름
+## 피그마 변수에서 클래스로
 
-| 종류             | 형식                                           | 예                                                                     |
-| ---------------- | ---------------------------------------------- | ---------------------------------------------------------------------- |
-| 텍스트 색        | `text-fg-…`                                    | `text-fg-neutral-default`, `text-fg-brand-default`                     |
-| 배경과 면        | `bg-background-…`, `bg-surface-…`, `bg-fill-…` | `bg-surface-default`, `bg-fill-primary-strong-200`                     |
-| 테두리           | `border-border-…`                              | `border-border-neutral-weak-200`                                       |
-| 아이콘           | `text-icon-…`                                  | `text-icon-neutral-strong-600`                                         |
-| 태그             | `bg-tag-…`, `text-tag-…`                       | `bg-tag-part-pm-weaker`, `text-tag-part-pm-strong`                     |
-| 텍스트 스타일    | `text-<스타일>`                                | `text-body-1-regular`                                                  |
-| 그리드, 레이아웃 | 간격과 크기 유틸리티                           | `gap-x-grid-gutter`, `px-grid-margin-desktop`, `h-header`, `w-sidebar` |
+피그마 변수 경로에서 `Semantic/`을 떼고 소문자 kebab-case로 바꾸면 토큰 이름입니다. 끝의 단계 숫자도 그대로 둡니다. 클래스 앞에 붙는 말은 그룹마다 다릅니다.
 
-Text 그룹만 `text-text-…`가 되지 않도록 `fg`로 바꿨습니다. 전체 이름은 [컬러](/foundations/color/) 페이지에 있습니다.
+| 피그마 그룹           | 클래스                                      | 예(피그마 → 클래스)                                       |
+| --------------------- | ------------------------------------------- | --------------------------------------------------------- |
+| `Semantic/Text`       | `text-<이름>`                               | `Text/Neutral-Medium-600` → `text-neutral-medium-600`     |
+| `Semantic/Border`     | `border-<이름>`                             | `Border/Neutral/Strong-400` → `border-neutral-strong-400` |
+| `Semantic/Icon`       | `text-icon-<이름>`                          | `Icon/Brand-Medium-500` → `text-icon-brand-medium-500`    |
+| `Semantic/Fill`       | `bg-fill-<이름>`                            | `Fill/Neutral/Weak-75` → `bg-fill-neutral-weak-75`        |
+| `Semantic/Background` | `bg-background-<이름>`                      | `Background/Default` → `bg-background-default`            |
+| `Semantic/Surface`    | `bg-surface-<이름>`                         | `Surface/Default` → `bg-surface-default`                  |
+| `Semantic/Dimmed`     | `bg-dimmed-<이름>`                          | `Dimmed/Weak` → `bg-dimmed-weak`                          |
+| `Semantic/Tag`        | `bg-`, `text-`, `border-` 뒤에 `tag-<이름>` | `Tag/Part/PM/Weaker` → `bg-tag-part-pm-weaker`            |
+| `Primitives`          | 색 클래스 뒤에 `<팔레트>-<단계>`            | `Teal/Teal-700` → `text-teal-700`                         |
+| 텍스트 스타일         | `text-<스타일>`                             | `Body/1-Regular` → `text-body-1-regular`                  |
+| 그림자 스타일         | `shadow-<스타일>`                           | `Shadow/Drop/Neutral_1` → `shadow-drop-neutral-1`         |
+
+토큰마다 정확한 클래스는 [컬러](/foundations/color/) 페이지의 표에 있습니다.
+
+### 왜 그룹마다 다른가
+
+Text는 글자색, Border는 테두리 색에만 씁니다. 그래서 두 그룹은 그룹 이름을 떼고 해당 속성 클래스만 만듭니다. `text-text-…`, `border-border-…` 같은 클래스는 없습니다.
+
+나머지 그룹은 그룹 이름이 클래스에 남습니다. 그룹 이름을 떼면 Background와 Surface가 둘 다 `bg-default`가 되기 때문입니다. Icon은 아이콘이 `currentColor`로 칠해지므로 `text-icon-…`으로 색을 줍니다.
+
+Tag는 단계마다 쓰는 자리가 다릅니다. 피그마 Dev Mode 이름을 보면 Weaker는 배경, Medium은 테두리, Strong은 글자에 쓰고, Weak는 태그마다 배경이거나 테두리입니다. 그래서 `bg-`, `text-`, `border-` 어디에나 붙도록 Tailwind 색으로 등록했습니다.
+
+### primitive는 피그마가 바로 칠한 곳에만
+
+화면은 역할을 담은 semantic 클래스로 만듭니다. 피그마가 primitive 변수를 바로 칠한 곳만 primitive 클래스를 씁니다. 예를 들어 Text Button의 hover 아이콘은 피그마가 `Teal-700`을 칠해 두었으므로 `text-teal-700`이 맞습니다.
+
+## Dev Mode의 CSS 이름은 쓰지 않는다
+
+<Aside type="caution">
+  피그마 Dev Mode 코드 패널에 보이는 `var(--color-action-primary-default)` 같은
+  이름은 코드에 없습니다. 같은 이름이 여러 변수에 붙어 있어 색 하나를 가리키지
+  못합니다. 예를 들어 `--color-action-primary-default` 하나를 변수 31개(Fill
+  30개, Border 1개)가 함께 씁니다.
+  Dev Mode의 변수 목록에 보이는 변수 이름(`Fill/Neutral/Weak-75`)으로 찾으세요.
+</Aside>
 
 ## 예시
 
-<div class="not-content umc-canvas rounded-xl border border-border-neutral-weak-200 p-6">
-  <p class="text-label-5-semibold text-fg-brand-default">UMC 11기</p>
-  <p class="text-heading-2-bold text-fg-neutral-default mt-1">챌린저 모집</p>
-  <p class="text-body-2-regular text-fg-neutral-medium-600 mt-2">
+<div class="not-content umc-canvas rounded-xl border border-neutral-weak-200 p-6">
+  <p class="text-label-5-semibold text-brand-default">UMC 11기</p>
+  <p class="text-heading-2-bold text-neutral-default mt-1">챌린저 모집</p>
+  <p class="text-body-2-regular text-neutral-medium-600 mt-2">
     세상의 틀을 깰 챌린저들이 하나로 모이는 곳
   </p>
   <span class="text-label-6-semibold mt-4 inline-block rounded-full bg-tag-part-pm-weaker px-3 py-1 text-tag-part-pm-strong">
@@ -35,16 +63,46 @@ Text 그룹만 `text-text-…`가 되지 않도록 `fg`로 바꿨습니다. 전�
 </div>
 
 ```html
-<div class="rounded-xl border border-border-neutral-weak-200 p-6">
-  <p class="text-label-5-semibold text-fg-brand-default">UMC 11기</p>
-  <p class="text-heading-2-bold text-fg-neutral-default mt-1">챌린저 모집</p>
-  <p class="text-body-2-regular text-fg-neutral-medium-600 mt-2">…</p>
+<div class="rounded-xl border border-neutral-weak-200 p-6">
+  <p class="text-label-5-semibold text-brand-default">UMC 11기</p>
+  <p class="text-heading-2-bold text-neutral-default mt-1">챌린저 모집</p>
+  <p class="text-body-2-regular text-neutral-medium-600 mt-2">…</p>
   <span
     class="text-label-6-semibold rounded-full bg-tag-part-pm-weaker px-3 py-1 text-tag-part-pm-strong"
   >
     PM
   </span>
 </div>
+```
+
+## Text·Border 색을 다른 속성에 쓰기
+
+Text와 Border 색은 `text-`와 `border-` 클래스(`border-t-`, `border-x-` 같은 변 방향 포함)로만 만들었습니다. 불투명도(`/50`)를 붙이거나 outline, ring, divide, decoration에 쓰려면 CSS 변수를 괄호에 넣습니다.
+
+```html
+<button class="outline-2 outline-(--umc-color-border-primary-strong-500)">
+  …
+</button>
+<ul class="divide-y divide-(--umc-color-border-neutral-weak-200)">
+  …
+</ul>
+```
+
+나머지 그룹과 primitive는 Tailwind 색이라 `bg-fill-neutral-weak-75/50`, `ring-teal-300`처럼 바로 씁니다.
+
+## 기본 팔레트와 앱 색
+
+`tailwind.css`는 `--color-*: initial`로 Tailwind 기본 팔레트를 지웁니다. 그래서 `text-teal-300`은 Tailwind의 teal이 아니라 피그마 `Teal-300`입니다. 피그마에 없는 이름(`indigo-500`, `orange-500` 등)은 클래스가 생기지 않습니다. `bg-transparent`, `text-current`, `bg-inherit`은 그대로 쓸 수 있습니다.
+
+피그마에 없는 색이 꼭 필요하면 `tailwind.css`를 불러온 **뒤**에 `@theme`으로 더합니다. 앞에 두면 초기화에 함께 지워집니다.
+
+```css
+@import "tailwindcss";
+@import "@umc-product/design-tokens/tailwind.css";
+
+@theme {
+  --color-kakao: #fee500;
+}
 ```
 
 ## 간격과 모서리
@@ -59,16 +117,17 @@ Text 그룹만 `text-text-…`가 되지 않도록 `fg`로 바꿨습니다. 전�
 
 ## tailwind-merge 등록
 
-텍스트 스타일 유틸리티는 Tailwind 기본 이름이 아니라서, 등록하지 않으면 `cn()`이 색상 클래스로 오인해 지울 수 있습니다.
+색 클래스는 기본 설정에서도 색으로 분류되므로 등록하지 않아도 됩니다. 텍스트 스타일과 그림자 클래스는 Tailwind 기본 이름이 아닙니다. 등록하지 않으면 `cn()`이 색 클래스로 오인해 지울 수 있습니다.
 
 ```ts
-import { textStyleUtilities } from "@umc-product/design-tokens"
+import { shadowUtilities, textStyleUtilities } from "@umc-product/design-tokens"
 import { extendTailwindMerge } from "tailwind-merge"
 
 export const twMerge = extendTailwindMerge({
   extend: {
     classGroups: {
       "font-size": [...textStyleUtilities],
+      shadow: [...shadowUtilities],
     },
   },
 })

@@ -16,9 +16,6 @@ export const serializeRecord = (record: NestedRecord, depth = 0): string => {
   return `{\n${lines.join("\n")}\n${INDENT.repeat(depth)}}`
 }
 
-export const serializeRecordList = (records: readonly NestedRecord[]): string =>
-  `[\n${records.map((record) => `${INDENT}${serializeRecord(record, 1)},`).join("\n")}\n]`
-
 export const serializeList = (values: readonly string[]): string =>
   `[\n${values.map((value) => `${INDENT}${JSON.stringify(value)},`).join("\n")}\n]`
 

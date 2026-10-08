@@ -7,6 +7,7 @@ export type TokenManifestEntry = {
   alias: string | null
   figmaName: string | null
   utility: string | null
+  tailwindName: string | null
   typography: {
     fontFamily: string
     fontSize: string
@@ -26,6 +27,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Base/White",
     "utility": null,
+    "tailwindName": "white",
     "typography": null
   },
   {
@@ -37,6 +39,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Base/Black",
     "utility": null,
+    "tailwindName": "black",
     "typography": null
   },
   {
@@ -48,6 +51,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Grey/TealGrey-50",
     "utility": null,
+    "tailwindName": "teal-grey-50",
     "typography": null
   },
   {
@@ -59,6 +63,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Grey/TealGrey-75",
     "utility": null,
+    "tailwindName": "teal-grey-75",
     "typography": null
   },
   {
@@ -70,6 +75,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Grey/TealGrey-100",
     "utility": null,
+    "tailwindName": "teal-grey-100",
     "typography": null
   },
   {
@@ -81,6 +87,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Grey/TealGrey-200",
     "utility": null,
+    "tailwindName": "teal-grey-200",
     "typography": null
   },
   {
@@ -92,6 +99,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Grey/TealGrey-300",
     "utility": null,
+    "tailwindName": "teal-grey-300",
     "typography": null
   },
   {
@@ -103,6 +111,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Grey/TealGrey-400",
     "utility": null,
+    "tailwindName": "teal-grey-400",
     "typography": null
   },
   {
@@ -114,6 +123,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Grey/TealGrey-500",
     "utility": null,
+    "tailwindName": "teal-grey-500",
     "typography": null
   },
   {
@@ -125,6 +135,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Grey/TealGrey-600",
     "utility": null,
+    "tailwindName": "teal-grey-600",
     "typography": null
   },
   {
@@ -136,6 +147,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Grey/TealGrey-700",
     "utility": null,
+    "tailwindName": "teal-grey-700",
     "typography": null
   },
   {
@@ -147,6 +159,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Grey/TealGrey-800",
     "utility": null,
+    "tailwindName": "teal-grey-800",
     "typography": null
   },
   {
@@ -158,6 +171,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Grey/TealGrey-900",
     "utility": null,
+    "tailwindName": "teal-grey-900",
     "typography": null
   },
   {
@@ -169,6 +183,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Teal/Teal-50",
     "utility": null,
+    "tailwindName": "teal-50",
     "typography": null
   },
   {
@@ -180,6 +195,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Teal/Teal-75",
     "utility": null,
+    "tailwindName": "teal-75",
     "typography": null
   },
   {
@@ -191,6 +207,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Teal/Teal-100",
     "utility": null,
+    "tailwindName": "teal-100",
     "typography": null
   },
   {
@@ -202,6 +219,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Teal/Teal-200",
     "utility": null,
+    "tailwindName": "teal-200",
     "typography": null
   },
   {
@@ -213,6 +231,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Teal/Teal-300",
     "utility": null,
+    "tailwindName": "teal-300",
     "typography": null
   },
   {
@@ -224,6 +243,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Teal/Teal-400",
     "utility": null,
+    "tailwindName": "teal-400",
     "typography": null
   },
   {
@@ -235,6 +255,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Teal/Teal-500",
     "utility": null,
+    "tailwindName": "teal-500",
     "typography": null
   },
   {
@@ -246,6 +267,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Teal/Teal-600",
     "utility": null,
+    "tailwindName": "teal-600",
     "typography": null
   },
   {
@@ -257,6 +279,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Teal/Teal-700",
     "utility": null,
+    "tailwindName": "teal-700",
     "typography": null
   },
   {
@@ -268,6 +291,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Teal/Teal-800",
     "utility": null,
+    "tailwindName": "teal-800",
     "typography": null
   },
   {
@@ -279,6 +303,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Teal/Teal-900",
     "utility": null,
+    "tailwindName": "teal-900",
     "typography": null
   },
   {
@@ -290,6 +315,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Red/Red-50",
     "utility": null,
+    "tailwindName": "red-50",
     "typography": null
   },
   {
@@ -301,6 +327,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Red/Red-100",
     "utility": null,
+    "tailwindName": "red-100",
     "typography": null
   },
   {
@@ -312,6 +339,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Red/Red-200",
     "utility": null,
+    "tailwindName": "red-200",
     "typography": null
   },
   {
@@ -323,6 +351,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Red/Red-300",
     "utility": null,
+    "tailwindName": "red-300",
     "typography": null
   },
   {
@@ -334,6 +363,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Red/Red-400",
     "utility": null,
+    "tailwindName": "red-400",
     "typography": null
   },
   {
@@ -345,6 +375,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Red/Red-500",
     "utility": null,
+    "tailwindName": "red-500",
     "typography": null
   },
   {
@@ -356,6 +387,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Red/Red-600",
     "utility": null,
+    "tailwindName": "red-600",
     "typography": null
   },
   {
@@ -367,6 +399,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Red/Red-700",
     "utility": null,
+    "tailwindName": "red-700",
     "typography": null
   },
   {
@@ -378,6 +411,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Red/Red-800",
     "utility": null,
+    "tailwindName": "red-800",
     "typography": null
   },
   {
@@ -389,6 +423,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Red/Red-900",
     "utility": null,
+    "tailwindName": "red-900",
     "typography": null
   },
   {
@@ -400,6 +435,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Yellow/Yellow-50",
     "utility": null,
+    "tailwindName": "yellow-50",
     "typography": null
   },
   {
@@ -411,6 +447,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Yellow/Yellow-100",
     "utility": null,
+    "tailwindName": "yellow-100",
     "typography": null
   },
   {
@@ -422,6 +459,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Yellow/Yellow-200",
     "utility": null,
+    "tailwindName": "yellow-200",
     "typography": null
   },
   {
@@ -433,6 +471,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Yellow/Yellow-300",
     "utility": null,
+    "tailwindName": "yellow-300",
     "typography": null
   },
   {
@@ -444,6 +483,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Yellow/Yellow-400",
     "utility": null,
+    "tailwindName": "yellow-400",
     "typography": null
   },
   {
@@ -455,6 +495,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Yellow/Yellow-500",
     "utility": null,
+    "tailwindName": "yellow-500",
     "typography": null
   },
   {
@@ -466,6 +507,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Yellow/Yellow-600",
     "utility": null,
+    "tailwindName": "yellow-600",
     "typography": null
   },
   {
@@ -477,6 +519,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Yellow/Yellow-700",
     "utility": null,
+    "tailwindName": "yellow-700",
     "typography": null
   },
   {
@@ -488,6 +531,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Yellow/Yellow-800",
     "utility": null,
+    "tailwindName": "yellow-800",
     "typography": null
   },
   {
@@ -499,6 +543,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Yellow/Yellow-900",
     "utility": null,
+    "tailwindName": "yellow-900",
     "typography": null
   },
   {
@@ -510,6 +555,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Green/Green-50",
     "utility": null,
+    "tailwindName": "green-50",
     "typography": null
   },
   {
@@ -521,6 +567,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Green/Green-100",
     "utility": null,
+    "tailwindName": "green-100",
     "typography": null
   },
   {
@@ -532,6 +579,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Green/Green-200",
     "utility": null,
+    "tailwindName": "green-200",
     "typography": null
   },
   {
@@ -543,6 +591,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Green/Green-300",
     "utility": null,
+    "tailwindName": "green-300",
     "typography": null
   },
   {
@@ -554,6 +603,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Green/Green-400",
     "utility": null,
+    "tailwindName": "green-400",
     "typography": null
   },
   {
@@ -565,6 +615,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Green/Green-500",
     "utility": null,
+    "tailwindName": "green-500",
     "typography": null
   },
   {
@@ -576,6 +627,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Green/Green-600",
     "utility": null,
+    "tailwindName": "green-600",
     "typography": null
   },
   {
@@ -587,6 +639,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Green/Green-700",
     "utility": null,
+    "tailwindName": "green-700",
     "typography": null
   },
   {
@@ -598,6 +651,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Green/Green-800",
     "utility": null,
+    "tailwindName": "green-800",
     "typography": null
   },
   {
@@ -609,6 +663,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Green/Green-900",
     "utility": null,
+    "tailwindName": "green-900",
     "typography": null
   },
   {
@@ -620,6 +675,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Violet/Violet-50",
     "utility": null,
+    "tailwindName": "violet-50",
     "typography": null
   },
   {
@@ -631,6 +687,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Violet/Violet-100",
     "utility": null,
+    "tailwindName": "violet-100",
     "typography": null
   },
   {
@@ -642,6 +699,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Violet/Violet-500",
     "utility": null,
+    "tailwindName": "violet-500",
     "typography": null
   },
   {
@@ -653,6 +711,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Violet/Violet-600",
     "utility": null,
+    "tailwindName": "violet-600",
     "typography": null
   },
   {
@@ -664,6 +723,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Purple/Purple-50",
     "utility": null,
+    "tailwindName": "purple-50",
     "typography": null
   },
   {
@@ -675,6 +735,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Purple/Purple-100",
     "utility": null,
+    "tailwindName": "purple-100",
     "typography": null
   },
   {
@@ -686,6 +747,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Purple/Purple-500",
     "utility": null,
+    "tailwindName": "purple-500",
     "typography": null
   },
   {
@@ -697,6 +759,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Purple/Purple-600",
     "utility": null,
+    "tailwindName": "purple-600",
     "typography": null
   },
   {
@@ -708,6 +771,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Pink/Pink-50",
     "utility": null,
+    "tailwindName": "pink-50",
     "typography": null
   },
   {
@@ -719,6 +783,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Pink/Pink-100",
     "utility": null,
+    "tailwindName": "pink-100",
     "typography": null
   },
   {
@@ -730,6 +795,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Pink/Pink-500",
     "utility": null,
+    "tailwindName": "pink-500",
     "typography": null
   },
   {
@@ -741,6 +807,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Pink/Pink-600",
     "utility": null,
+    "tailwindName": "pink-600",
     "typography": null
   },
   {
@@ -752,6 +819,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Cobalt/Cobalt-50",
     "utility": null,
+    "tailwindName": "cobalt-50",
     "typography": null
   },
   {
@@ -763,6 +831,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Cobalt/Cobalt-100",
     "utility": null,
+    "tailwindName": "cobalt-100",
     "typography": null
   },
   {
@@ -774,6 +843,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Cobalt/Cobalt-500",
     "utility": null,
+    "tailwindName": "cobalt-500",
     "typography": null
   },
   {
@@ -785,6 +855,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Cobalt/Cobalt-600",
     "utility": null,
+    "tailwindName": "cobalt-600",
     "typography": null
   },
   {
@@ -796,6 +867,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Blue/Blue-50",
     "utility": null,
+    "tailwindName": "blue-50",
     "typography": null
   },
   {
@@ -807,6 +879,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Blue/Blue-100",
     "utility": null,
+    "tailwindName": "blue-100",
     "typography": null
   },
   {
@@ -818,6 +891,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Blue/Blue-500",
     "utility": null,
+    "tailwindName": "blue-500",
     "typography": null
   },
   {
@@ -829,6 +903,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Blue/Blue-600",
     "utility": null,
+    "tailwindName": "blue-600",
     "typography": null
   },
   {
@@ -840,6 +915,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Brown/Brown-50",
     "utility": null,
+    "tailwindName": "brown-50",
     "typography": null
   },
   {
@@ -851,6 +927,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Brown/Brown-100",
     "utility": null,
+    "tailwindName": "brown-100",
     "typography": null
   },
   {
@@ -862,6 +939,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Brown/Brown-500",
     "utility": null,
+    "tailwindName": "brown-500",
     "typography": null
   },
   {
@@ -873,6 +951,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Primitives/Brown/Brown-600",
     "utility": null,
+    "tailwindName": "brown-600",
     "typography": null
   },
   {
@@ -884,6 +963,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Typography/Base/FontSize/11px",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -895,6 +975,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Typography/Base/FontSize/12px",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -906,6 +987,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Typography/Base/FontSize/13px",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -917,6 +999,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Typography/Base/FontSize/14px",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -928,6 +1011,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Typography/Base/FontSize/15px",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -939,6 +1023,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Typography/Base/FontSize/16px",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -950,6 +1035,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Typography/Base/FontSize/18px",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -961,6 +1047,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Typography/Base/FontSize/20px",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -972,6 +1059,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Typography/Base/FontSize/22px",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -983,6 +1071,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Typography/Base/FontSize/24px",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -994,6 +1083,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Typography/Base/FontSize/28px",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1005,6 +1095,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Typography/Base/FontSize/32px",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1016,6 +1107,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Typography/Base/FontSize/36px",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1027,6 +1119,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Typography/Base/FontSize/40px",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1038,6 +1131,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Typography/Base/FontSize/48px",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1049,6 +1143,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Typography/Base/FontFamily/Brand",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1060,6 +1155,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Typography/Base/FontWeight/Regular",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1071,6 +1167,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Typography/Base/FontWeight/Medium",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1082,6 +1179,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Typography/Base/FontWeight/Semibold",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1093,6 +1191,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Typography/Base/FontWeight/Bold",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1104,6 +1203,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Spacing/Primitive/0",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1115,6 +1215,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Spacing/Primitive/2",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1126,6 +1227,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Spacing/Primitive/4",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1137,6 +1239,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Spacing/Primitive/6",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1148,6 +1251,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Spacing/Primitive/8",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1159,6 +1263,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Spacing/Primitive/10",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1170,6 +1275,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Spacing/Primitive/12",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1181,6 +1287,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Spacing/Primitive/16",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1192,6 +1299,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Spacing/Primitive/20",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1203,6 +1311,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Spacing/Primitive/24",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1214,6 +1323,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Spacing/Primitive/28",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1225,6 +1335,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Spacing/Primitive/32",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1236,6 +1347,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Spacing/Primitive/48",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1247,6 +1359,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Spacing/Primitive/64",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1258,6 +1371,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Spacing/Primitive/80",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1269,6 +1383,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.0",
     "figmaName": "Spacing/Semantic/Padding/Padding 0",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1280,6 +1395,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.4",
     "figmaName": "Spacing/Semantic/Padding/Padding 4",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1291,6 +1407,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.6",
     "figmaName": "Spacing/Semantic/Padding/Padding 6",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1302,6 +1419,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.8",
     "figmaName": "Spacing/Semantic/Padding/Padding 8",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1313,6 +1431,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.10",
     "figmaName": "Spacing/Semantic/Padding/Padding 10",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1324,6 +1443,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.12",
     "figmaName": "Spacing/Semantic/Padding/Padding 12",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1335,6 +1455,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.16",
     "figmaName": "Spacing/Semantic/Padding/Padding 16",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1346,6 +1467,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.20",
     "figmaName": "Spacing/Semantic/Padding/Padding 20",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1357,6 +1479,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.24",
     "figmaName": "Spacing/Semantic/Padding/Padding 24",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1368,6 +1491,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.28",
     "figmaName": "Spacing/Semantic/Padding/Padding 28",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1379,6 +1503,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.32",
     "figmaName": "Spacing/Semantic/Padding/Padding 32",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1390,6 +1515,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.0",
     "figmaName": "Spacing/Semantic/Gap/Gap 0",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1401,6 +1527,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.4",
     "figmaName": "Spacing/Semantic/Gap/Gap 4",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1412,6 +1539,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.6",
     "figmaName": "Spacing/Semantic/Gap/Gap 6",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1423,6 +1551,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.8",
     "figmaName": "Spacing/Semantic/Gap/Gap 8",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1434,6 +1563,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.10",
     "figmaName": "Spacing/Semantic/Gap/Gap 10",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1445,6 +1575,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.12",
     "figmaName": "Spacing/Semantic/Gap/Gap 12",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1456,6 +1587,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.16",
     "figmaName": "Spacing/Semantic/Gap/Gap 16",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1467,6 +1599,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.20",
     "figmaName": "Spacing/Semantic/Gap/Gap 20",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1478,6 +1611,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.24",
     "figmaName": "Spacing/Semantic/Gap/Gap 24",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1489,6 +1623,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.28",
     "figmaName": "Spacing/Semantic/Gap/Gap 28",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1500,6 +1635,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.32",
     "figmaName": "Spacing/Semantic/Gap/Gap 32",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1511,6 +1647,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.0",
     "figmaName": "Spacing/Semantic/Margin/Margin 0",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1522,6 +1659,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.16",
     "figmaName": "Spacing/Semantic/Margin/Margin 16",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1533,6 +1671,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.24",
     "figmaName": "Spacing/Semantic/Margin/Margin 24",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1544,6 +1683,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.32",
     "figmaName": "Spacing/Semantic/Margin/Margin 32",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1555,6 +1695,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.48",
     "figmaName": "Spacing/Semantic/Margin/Margin 48",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1566,6 +1707,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.64",
     "figmaName": "Spacing/Semantic/Margin/Margin 64",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1577,6 +1719,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "spacing.80",
     "figmaName": "Spacing/Semantic/Margin/Margin 80",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1588,6 +1731,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Radius/Primitive/6",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1599,6 +1743,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Radius/Primitive/8",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1610,6 +1755,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Radius/Primitive/10",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1621,6 +1767,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Radius/Primitive/12",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1632,6 +1779,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Radius/Primitive/14",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1643,6 +1791,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Radius/Primitive/16",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1654,6 +1803,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Radius/Primitive/18",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1665,6 +1815,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Radius/Primitive/20",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1676,6 +1827,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Radius/Primitive/24",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1687,6 +1839,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Radius/Primitive/Full",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1698,6 +1851,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "radius.14",
     "figmaName": "Radius/Semantic/Text Field/Box",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1709,6 +1863,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "radius.10",
     "figmaName": "Radius/Semantic/Button/R Button 10",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1720,6 +1875,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "radius.12",
     "figmaName": "Radius/Semantic/Button/R Button 12",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1731,6 +1887,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "radius.14",
     "figmaName": "Radius/Semantic/Button/R Button 14",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1742,6 +1899,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "radius.16",
     "figmaName": "Radius/Semantic/Button/R Button 16",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1753,6 +1911,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "radius.14",
     "figmaName": "Radius/Semantic/Toast/Toast",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1764,6 +1923,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "radius.12",
     "figmaName": "Radius/Semantic/Segmented Control/XS",
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -1774,7 +1934,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#cccccc",
     "alias": "color.teal-grey.300",
     "figmaName": "Semantic/Icon/Disabled",
-    "utility": "icon-disabled",
+    "utility": "text-icon-disabled",
+    "tailwindName": "icon-disabled",
     "typography": null
   },
   {
@@ -1785,7 +1946,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#ffffff",
     "alias": "color.white",
     "figmaName": "Semantic/Icon/Inverse",
-    "utility": "icon-inverse",
+    "utility": "text-icon-inverse",
+    "tailwindName": "icon-inverse",
     "typography": null
   },
   {
@@ -1796,7 +1958,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#adadad",
     "alias": "color.teal-grey.400",
     "figmaName": "Semantic/Icon/Neutral-Weak-400",
-    "utility": "icon-neutral-weak-400",
+    "utility": "text-icon-neutral-weak-400",
+    "tailwindName": "icon-neutral-weak-400",
     "typography": null
   },
   {
@@ -1807,7 +1970,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#7e7f7f",
     "alias": "color.teal-grey.500",
     "figmaName": "Semantic/Icon/Neutral-Medium-500",
-    "utility": "icon-neutral-medium-500",
+    "utility": "text-icon-neutral-medium-500",
+    "tailwindName": "icon-neutral-medium-500",
     "typography": null
   },
   {
@@ -1818,7 +1982,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#606262",
     "alias": "color.teal-grey.600",
     "figmaName": "Semantic/Icon/Neutral-Strong-600",
-    "utility": "icon-neutral-strong-600",
+    "utility": "text-icon-neutral-strong-600",
+    "tailwindName": "icon-neutral-strong-600",
     "typography": null
   },
   {
@@ -1829,7 +1994,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#3f4141",
     "alias": "color.teal-grey.700",
     "figmaName": "Semantic/Icon/Neutral-Stronger-700",
-    "utility": "icon-neutral-stronger-700",
+    "utility": "text-icon-neutral-stronger-700",
+    "tailwindName": "icon-neutral-stronger-700",
     "typography": null
   },
   {
@@ -1840,7 +2006,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#008a80",
     "alias": "color.teal.500",
     "figmaName": "Semantic/Icon/Brand-Medium-500",
-    "utility": "icon-brand-medium-500",
+    "utility": "text-icon-brand-medium-500",
+    "tailwindName": "icon-brand-medium-500",
     "typography": null
   },
   {
@@ -1851,7 +2018,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#02746c",
     "alias": "color.teal.600",
     "figmaName": "Semantic/Icon/Brand-Strong-600",
-    "utility": "icon-brand-strong-600",
+    "utility": "text-icon-brand-strong-600",
+    "tailwindName": "icon-brand-strong-600",
     "typography": null
   },
   {
@@ -1862,7 +2030,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#06a768",
     "alias": "color.green.500",
     "figmaName": "Semantic/Icon/Success",
-    "utility": "icon-success",
+    "utility": "text-icon-success",
+    "tailwindName": "icon-success",
     "typography": null
   },
   {
@@ -1873,7 +2042,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#dc3d3d",
     "alias": "color.red.500",
     "figmaName": "Semantic/Icon/Error",
-    "utility": "icon-error",
+    "utility": "text-icon-error",
+    "tailwindName": "icon-error",
     "typography": null
   },
   {
@@ -1884,7 +2054,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#f59b00",
     "alias": "color.yellow.500",
     "figmaName": "Semantic/Icon/Warning",
-    "utility": "icon-warning",
+    "utility": "text-icon-warning",
+    "tailwindName": "icon-warning",
     "typography": null
   },
   {
@@ -1895,7 +2066,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#eff0f0",
     "alias": "color.teal-grey.100",
     "figmaName": "Semantic/Fill/Disabled/Disalbed",
-    "utility": "fill-disabled",
+    "utility": "bg-fill-disabled",
+    "tailwindName": "fill-disabled",
     "typography": null
   },
   {
@@ -1906,7 +2078,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#fbfcfc",
     "alias": "color.teal-grey.50",
     "figmaName": "Semantic/Fill/Neutral/Weaker-50",
-    "utility": "fill-neutral-weaker-50",
+    "utility": "bg-fill-neutral-weaker-50",
+    "tailwindName": "fill-neutral-weaker-50",
     "typography": null
   },
   {
@@ -1917,7 +2090,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#eff0f0",
     "alias": "color.teal-grey.100",
     "figmaName": "Semantic/Fill/Neutral/Weaker-Hover(Pressed)",
-    "utility": "fill-neutral-weaker-hover-pressed",
+    "utility": "bg-fill-neutral-weaker-hover-pressed",
+    "tailwindName": "fill-neutral-weaker-hover-pressed",
     "typography": null
   },
   {
@@ -1928,7 +2102,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#f7f8f8",
     "alias": "color.teal-grey.75",
     "figmaName": "Semantic/Fill/Neutral/Weak-75",
-    "utility": "fill-neutral-weak-75",
+    "utility": "bg-fill-neutral-weak-75",
+    "tailwindName": "fill-neutral-weak-75",
     "typography": null
   },
   {
@@ -1939,7 +2114,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#e2e3e3",
     "alias": "color.teal-grey.200",
     "figmaName": "Semantic/Fill/Neutral/Weak-Hover(Pressed)",
-    "utility": "fill-neutral-weak-hover-pressed",
+    "utility": "bg-fill-neutral-weak-hover-pressed",
+    "tailwindName": "fill-neutral-weak-hover-pressed",
     "typography": null
   },
   {
@@ -1950,7 +2126,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#eff0f0",
     "alias": "color.teal-grey.100",
     "figmaName": "Semantic/Fill/Neutral/Medium-100",
-    "utility": "fill-neutral-medium-100",
+    "utility": "bg-fill-neutral-medium-100",
+    "tailwindName": "fill-neutral-medium-100",
     "typography": null
   },
   {
@@ -1961,7 +2138,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#e2e3e3",
     "alias": "color.teal-grey.200",
     "figmaName": "Semantic/Fill/Neutral/Medium-Hover(Pressed)",
-    "utility": "fill-neutral-medium-hover-pressed",
+    "utility": "bg-fill-neutral-medium-hover-pressed",
+    "tailwindName": "fill-neutral-medium-hover-pressed",
     "typography": null
   },
   {
@@ -1972,7 +2150,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#e2e3e3",
     "alias": "color.teal-grey.200",
     "figmaName": "Semantic/Fill/Neutral/Strong-200",
-    "utility": "fill-neutral-strong-200",
+    "utility": "bg-fill-neutral-strong-200",
+    "tailwindName": "fill-neutral-strong-200",
     "typography": null
   },
   {
@@ -1983,7 +2162,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#cccccc",
     "alias": "color.teal-grey.300",
     "figmaName": "Semantic/Fill/Neutral/Strong-Hover(Pressed)",
-    "utility": "fill-neutral-strong-hover-pressed",
+    "utility": "bg-fill-neutral-strong-hover-pressed",
+    "tailwindName": "fill-neutral-strong-hover-pressed",
     "typography": null
   },
   {
@@ -1994,7 +2174,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#ffffff",
     "alias": "color.white",
     "figmaName": "Semantic/Fill/Neutral/Default",
-    "utility": "fill-neutral-default",
+    "utility": "bg-fill-neutral-default",
+    "tailwindName": "fill-neutral-default",
     "typography": null
   },
   {
@@ -2005,7 +2186,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#adadad",
     "alias": "color.teal-grey.400",
     "figmaName": "Semantic/Fill/Neutral-Inverse/Weak-400",
-    "utility": "fill-neutral-inverse-weak-400",
+    "utility": "bg-fill-neutral-inverse-weak-400",
+    "tailwindName": "fill-neutral-inverse-weak-400",
     "typography": null
   },
   {
@@ -2016,7 +2198,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#606262",
     "alias": "color.teal-grey.600",
     "figmaName": "Semantic/Fill/Neutral-Inverse/Weak-Hover(Pressed)",
-    "utility": "fill-neutral-inverse-weak-hover-pressed",
+    "utility": "bg-fill-neutral-inverse-weak-hover-pressed",
+    "tailwindName": "fill-neutral-inverse-weak-hover-pressed",
     "typography": null
   },
   {
@@ -2027,7 +2210,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#7e7f7f",
     "alias": "color.teal-grey.500",
     "figmaName": "Semantic/Fill/Neutral-Inverse/Medium-500",
-    "utility": "fill-neutral-inverse-medium-500",
+    "utility": "bg-fill-neutral-inverse-medium-500",
+    "tailwindName": "fill-neutral-inverse-medium-500",
     "typography": null
   },
   {
@@ -2038,7 +2222,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#3f4141",
     "alias": "color.teal-grey.700",
     "figmaName": "Semantic/Fill/Neutral-Inverse/Medium-Hover(Pressed)",
-    "utility": "fill-neutral-inverse-medium-hover-pressed",
+    "utility": "bg-fill-neutral-inverse-medium-hover-pressed",
+    "tailwindName": "fill-neutral-inverse-medium-hover-pressed",
     "typography": null
   },
   {
@@ -2049,7 +2234,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#606262",
     "alias": "color.teal-grey.600",
     "figmaName": "Semantic/Fill/Neutral-Inverse/Strong-600",
-    "utility": "fill-neutral-inverse-strong-600",
+    "utility": "bg-fill-neutral-inverse-strong-600",
+    "tailwindName": "fill-neutral-inverse-strong-600",
     "typography": null
   },
   {
@@ -2060,7 +2246,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#282a2a",
     "alias": "color.teal-grey.800",
     "figmaName": "Semantic/Fill/Neutral-Inverse/Strong-Hover(Pressed)",
-    "utility": "fill-neutral-inverse-strong-hover-pressed",
+    "utility": "bg-fill-neutral-inverse-strong-hover-pressed",
+    "tailwindName": "fill-neutral-inverse-strong-hover-pressed",
     "typography": null
   },
   {
@@ -2071,7 +2258,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#3f4141",
     "alias": "color.teal-grey.700",
     "figmaName": "Semantic/Fill/Neutral-Inverse/Stronger-700",
-    "utility": "fill-neutral-inverse-stronger-700",
+    "utility": "bg-fill-neutral-inverse-stronger-700",
+    "tailwindName": "fill-neutral-inverse-stronger-700",
     "typography": null
   },
   {
@@ -2082,7 +2270,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#7e7f7f",
     "alias": "color.teal-grey.500",
     "figmaName": "Semantic/Fill/Neutral-Inverse/Stronger-Hover(Pressed)",
-    "utility": "fill-neutral-inverse-stronger-hover-pressed",
+    "utility": "bg-fill-neutral-inverse-stronger-hover-pressed",
+    "tailwindName": "fill-neutral-inverse-stronger-hover-pressed",
     "typography": null
   },
   {
@@ -2093,7 +2282,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#f4fbfa",
     "alias": "color.teal.50",
     "figmaName": "Semantic/Fill/Primary/Weaker-50",
-    "utility": "fill-primary-weaker-50",
+    "utility": "bg-fill-primary-weaker-50",
+    "tailwindName": "fill-primary-weaker-50",
     "typography": null
   },
   {
@@ -2104,7 +2294,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#ddf4f1",
     "alias": "color.teal.100",
     "figmaName": "Semantic/Fill/Primary/Weaker-Hover(Pressed)",
-    "utility": "fill-primary-weaker-hover-pressed",
+    "utility": "bg-fill-primary-weaker-hover-pressed",
+    "tailwindName": "fill-primary-weaker-hover-pressed",
     "typography": null
   },
   {
@@ -2115,7 +2306,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#e9f7f5",
     "alias": "color.teal.75",
     "figmaName": "Semantic/Fill/Primary/Weak-75",
-    "utility": "fill-primary-weak-75",
+    "utility": "bg-fill-primary-weak-75",
+    "tailwindName": "fill-primary-weak-75",
     "typography": null
   },
   {
@@ -2126,7 +2318,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#b3e5e1",
     "alias": "color.teal.200",
     "figmaName": "Semantic/Fill/Primary/Weak-Hover(Pressed)",
-    "utility": "fill-primary-weak-hover-pressed",
+    "utility": "bg-fill-primary-weak-hover-pressed",
+    "tailwindName": "fill-primary-weak-hover-pressed",
     "typography": null
   },
   {
@@ -2137,7 +2330,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#ddf4f1",
     "alias": "color.teal.100",
     "figmaName": "Semantic/Fill/Primary/Medium-100",
-    "utility": "fill-primary-medium-100",
+    "utility": "bg-fill-primary-medium-100",
+    "tailwindName": "fill-primary-medium-100",
     "typography": null
   },
   {
@@ -2148,7 +2342,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#b3e5e1",
     "alias": "color.teal.200",
     "figmaName": "Semantic/Fill/Primary/Medium-Hover(Pressed)",
-    "utility": "fill-primary-medium-hover-pressed",
+    "utility": "bg-fill-primary-medium-hover-pressed",
+    "tailwindName": "fill-primary-medium-hover-pressed",
     "typography": null
   },
   {
@@ -2159,7 +2354,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#b3e5e1",
     "alias": "color.teal.200",
     "figmaName": "Semantic/Fill/Primary/Strong-200",
-    "utility": "fill-primary-strong-200",
+    "utility": "bg-fill-primary-strong-200",
+    "tailwindName": "fill-primary-strong-200",
     "typography": null
   },
   {
@@ -2170,7 +2366,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#7ac7c1",
     "alias": "color.teal.300",
     "figmaName": "Semantic/Fill/Primary/Strong-Hover(Pressed)",
-    "utility": "fill-primary-strong-hover-pressed",
+    "utility": "bg-fill-primary-strong-hover-pressed",
+    "tailwindName": "fill-primary-strong-hover-pressed",
     "typography": null
   },
   {
@@ -2181,7 +2378,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#7ac7c1",
     "alias": "color.teal.300",
     "figmaName": "Semantic/Fill/Primary/Stronger-300",
-    "utility": "fill-primary-stronger-300",
+    "utility": "bg-fill-primary-stronger-300",
+    "tailwindName": "fill-primary-stronger-300",
     "typography": null
   },
   {
@@ -2192,7 +2390,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#39a9a1",
     "alias": "color.teal.400",
     "figmaName": "Semantic/Fill/Primary/Stronger-Hover(Pressed)-400",
-    "utility": "fill-primary-stronger-hover-pressed-400",
+    "utility": "bg-fill-primary-stronger-hover-pressed-400",
+    "tailwindName": "fill-primary-stronger-hover-pressed-400",
     "typography": null
   },
   {
@@ -2203,7 +2402,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#39a9a1",
     "alias": "color.teal.400",
     "figmaName": "Semantic/Fill/Primary-Inverse/Medium-400",
-    "utility": "fill-primary-inverse-medium-400",
+    "utility": "bg-fill-primary-inverse-medium-400",
+    "tailwindName": "fill-primary-inverse-medium-400",
     "typography": null
   },
   {
@@ -2214,7 +2414,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#02746c",
     "alias": "color.teal.600",
     "figmaName": "Semantic/Fill/Primary-Inverse/Medium-Hover(Pressed)",
-    "utility": "fill-primary-inverse-medium-hover-pressed",
+    "utility": "bg-fill-primary-inverse-medium-hover-pressed",
+    "tailwindName": "fill-primary-inverse-medium-hover-pressed",
     "typography": null
   },
   {
@@ -2225,7 +2426,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#008a80",
     "alias": "color.teal.500",
     "figmaName": "Semantic/Fill/Primary-Inverse/Strong-500",
-    "utility": "fill-primary-inverse-strong-500",
+    "utility": "bg-fill-primary-inverse-strong-500",
+    "tailwindName": "fill-primary-inverse-strong-500",
     "typography": null
   },
   {
@@ -2236,7 +2438,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#015a54",
     "alias": "color.teal.700",
     "figmaName": "Semantic/Fill/Primary-Inverse/Strong-Hover(Pressed)",
-    "utility": "fill-primary-inverse-strong-hover-pressed",
+    "utility": "bg-fill-primary-inverse-strong-hover-pressed",
+    "tailwindName": "fill-primary-inverse-strong-hover-pressed",
     "typography": null
   },
   {
@@ -2247,7 +2450,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#02746c",
     "alias": "color.teal.600",
     "figmaName": "Semantic/Fill/Primary-Inverse/Stronger-600",
-    "utility": "fill-primary-inverse-stronger-600",
+    "utility": "bg-fill-primary-inverse-stronger-600",
+    "tailwindName": "fill-primary-inverse-stronger-600",
     "typography": null
   },
   {
@@ -2258,7 +2462,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#01423d",
     "alias": "color.teal.800",
     "figmaName": "Semantic/Fill/Primary-Inverse/Stronger-Hover(Pressed)",
-    "utility": "fill-primary-inverse-stronger-hover-pressed",
+    "utility": "bg-fill-primary-inverse-stronger-hover-pressed",
+    "tailwindName": "fill-primary-inverse-stronger-hover-pressed",
     "typography": null
   },
   {
@@ -2269,7 +2474,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#fef2f1",
     "alias": "color.red.50",
     "figmaName": "Semantic/Fill/Error/Weak-50",
-    "utility": "fill-error-weak-50",
+    "utility": "bg-fill-error-weak-50",
+    "tailwindName": "fill-error-weak-50",
     "typography": null
   },
   {
@@ -2280,7 +2486,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#fdb4b4",
     "alias": "color.red.200",
     "figmaName": "Semantic/Fill/Error/Weak-Hover(Pressed)",
-    "utility": "fill-error-weak-hover-pressed",
+    "utility": "bg-fill-error-weak-hover-pressed",
+    "tailwindName": "fill-error-weak-hover-pressed",
     "typography": null
   },
   {
@@ -2291,7 +2498,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#ffe7e5",
     "alias": "color.red.100",
     "figmaName": "Semantic/Fill/Error/Medium-100",
-    "utility": "fill-error-medium-100",
+    "utility": "bg-fill-error-medium-100",
+    "tailwindName": "fill-error-medium-100",
     "typography": null
   },
   {
@@ -2302,7 +2510,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#f88c8c",
     "alias": "color.red.300",
     "figmaName": "Semantic/Fill/Error/Medium-Hover(Pressed)",
-    "utility": "fill-error-medium-hover-pressed",
+    "utility": "bg-fill-error-medium-hover-pressed",
+    "tailwindName": "fill-error-medium-hover-pressed",
     "typography": null
   },
   {
@@ -2313,7 +2522,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#dc3d3d",
     "alias": "color.red.500",
     "figmaName": "Semantic/Fill/Error/Strong-500",
-    "utility": "fill-error-strong-500",
+    "utility": "bg-fill-error-strong-500",
+    "tailwindName": "fill-error-strong-500",
     "typography": null
   },
   {
@@ -2324,7 +2534,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#a60303",
     "alias": "color.red.700",
     "figmaName": "Semantic/Fill/Error/Strong-Hover(Pressed)",
-    "utility": "fill-error-strong-hover-pressed",
+    "utility": "bg-fill-error-strong-hover-pressed",
+    "tailwindName": "fill-error-strong-hover-pressed",
     "typography": null
   },
   {
@@ -2335,7 +2546,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#fff7e0",
     "alias": "color.yellow.50",
     "figmaName": "Semantic/Fill/Warning/Weak",
-    "utility": "fill-warning-weak",
+    "utility": "bg-fill-warning-weak",
+    "tailwindName": "fill-warning-weak",
     "typography": null
   },
   {
@@ -2346,7 +2558,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#ffe79e",
     "alias": "color.yellow.200",
     "figmaName": "Semantic/Fill/Warning/Weak-Hover(Pressed)",
-    "utility": "fill-warning-weak-hover-pressed",
+    "utility": "bg-fill-warning-weak-hover-pressed",
+    "tailwindName": "fill-warning-weak-hover-pressed",
     "typography": null
   },
   {
@@ -2357,7 +2570,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#fff0c2",
     "alias": "color.yellow.100",
     "figmaName": "Semantic/Fill/Warning/Medium",
-    "utility": "fill-warning-medium",
+    "utility": "bg-fill-warning-medium",
+    "tailwindName": "fill-warning-medium",
     "typography": null
   },
   {
@@ -2368,7 +2582,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#fed971",
     "alias": "color.yellow.300",
     "figmaName": "Semantic/Fill/Warning/Medium-Hover(Pressed)",
-    "utility": "fill-warning-medium-hover-pressed",
+    "utility": "bg-fill-warning-medium-hover-pressed",
+    "tailwindName": "fill-warning-medium-hover-pressed",
     "typography": null
   },
   {
@@ -2379,7 +2594,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#f59b00",
     "alias": "color.yellow.500",
     "figmaName": "Semantic/Fill/Warning/Strong",
-    "utility": "fill-warning-strong",
+    "utility": "bg-fill-warning-strong",
+    "tailwindName": "fill-warning-strong",
     "typography": null
   },
   {
@@ -2390,7 +2606,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#c25d05",
     "alias": "color.yellow.700",
     "figmaName": "Semantic/Fill/Warning/Strong-Hover(Pressed)",
-    "utility": "fill-warning-strong-hover-pressed",
+    "utility": "bg-fill-warning-strong-hover-pressed",
+    "tailwindName": "fill-warning-strong-hover-pressed",
     "typography": null
   },
   {
@@ -2401,7 +2618,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#edfdf3",
     "alias": "color.green.50",
     "figmaName": "Semantic/Fill/Success/Weak",
-    "utility": "fill-success-weak",
+    "utility": "bg-fill-success-weak",
+    "tailwindName": "fill-success-weak",
     "typography": null
   },
   {
@@ -2412,7 +2630,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#b3efc6",
     "alias": "color.green.200",
     "figmaName": "Semantic/Fill/Success/Weak-Hover(Pressed)",
-    "utility": "fill-success-weak-hover-pressed",
+    "utility": "bg-fill-success-weak-hover-pressed",
+    "tailwindName": "fill-success-weak-hover-pressed",
     "typography": null
   },
   {
@@ -2423,7 +2642,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#d9f7e3",
     "alias": "color.green.100",
     "figmaName": "Semantic/Fill/Success/Medium",
-    "utility": "fill-success-medium",
+    "utility": "bg-fill-success-medium",
+    "tailwindName": "fill-success-medium",
     "typography": null
   },
   {
@@ -2434,7 +2654,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#81e4a9",
     "alias": "color.green.300",
     "figmaName": "Semantic/Fill/Success/Medium-Hover(Pressed)",
-    "utility": "fill-success-medium-hover-pressed",
+    "utility": "bg-fill-success-medium-hover-pressed",
+    "tailwindName": "fill-success-medium-hover-pressed",
     "typography": null
   },
   {
@@ -2445,7 +2666,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#06a768",
     "alias": "color.green.500",
     "figmaName": "Semantic/Fill/Success/Strong",
-    "utility": "fill-success-strong",
+    "utility": "bg-fill-success-strong",
+    "tailwindName": "fill-success-strong",
     "typography": null
   },
   {
@@ -2456,7 +2678,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#076940",
     "alias": "color.green.700",
     "figmaName": "Semantic/Fill/Success/Strong-Hover(Pressed)",
-    "utility": "fill-success-strong-hover-pressed",
+    "utility": "bg-fill-success-strong-hover-pressed",
+    "tailwindName": "fill-success-strong-hover-pressed",
     "typography": null
   },
   {
@@ -2467,7 +2690,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#ffffff",
     "alias": "color.white",
     "figmaName": "Semantic/Background/Default",
-    "utility": "background-default",
+    "utility": "bg-background-default",
+    "tailwindName": "background-default",
     "typography": null
   },
   {
@@ -2478,7 +2702,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#fbfcfc",
     "alias": "color.teal-grey.50",
     "figmaName": "Semantic/Background/Neutral-Weak",
-    "utility": "background-neutral-weak",
+    "utility": "bg-background-neutral-weak",
+    "tailwindName": "background-neutral-weak",
     "typography": null
   },
   {
@@ -2489,7 +2714,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#f7f8f8",
     "alias": "color.teal-grey.75",
     "figmaName": "Semantic/Background/Neutral-Medium",
-    "utility": "background-neutral-medium",
+    "utility": "bg-background-neutral-medium",
+    "tailwindName": "background-neutral-medium",
     "typography": null
   },
   {
@@ -2500,7 +2726,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#f4fbfa",
     "alias": "color.teal.50",
     "figmaName": "Semantic/Background/Brand-Weak",
-    "utility": "background-brand-weak",
+    "utility": "bg-background-brand-weak",
+    "tailwindName": "background-brand-weak",
     "typography": null
   },
   {
@@ -2511,7 +2738,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#e9f7f5",
     "alias": "color.teal.75",
     "figmaName": "Semantic/Background/Brand-Medium",
-    "utility": "background-brand-medium",
+    "utility": "bg-background-brand-medium",
+    "tailwindName": "background-brand-medium",
     "typography": null
   },
   {
@@ -2522,7 +2750,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#ffffff",
     "alias": "color.white",
     "figmaName": "Semantic/Surface/Default",
-    "utility": "surface-default",
+    "utility": "bg-surface-default",
+    "tailwindName": "surface-default",
     "typography": null
   },
   {
@@ -2533,7 +2762,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#e2e3e3",
     "alias": "color.teal-grey.200",
     "figmaName": "Semantic/Surface/Disabled",
-    "utility": "surface-disabled",
+    "utility": "bg-surface-disabled",
+    "tailwindName": "surface-disabled",
     "typography": null
   },
   {
@@ -2544,7 +2774,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#fbfcfc",
     "alias": "color.teal-grey.50",
     "figmaName": "Semantic/Surface/Neutral-Weak",
-    "utility": "surface-neutral-weak",
+    "utility": "bg-surface-neutral-weak",
+    "tailwindName": "surface-neutral-weak",
     "typography": null
   },
   {
@@ -2555,7 +2786,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#f7f8f8",
     "alias": "color.teal-grey.75",
     "figmaName": "Semantic/Surface/Neutral-Medium",
-    "utility": "surface-neutral-medium",
+    "utility": "bg-surface-neutral-medium",
+    "tailwindName": "surface-neutral-medium",
     "typography": null
   },
   {
@@ -2566,7 +2798,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#3f4141",
     "alias": "color.teal-grey.700",
     "figmaName": "Semantic/Surface/Neutral-Inverse",
-    "utility": "surface-neutral-inverse",
+    "utility": "bg-surface-neutral-inverse",
+    "tailwindName": "surface-neutral-inverse",
     "typography": null
   },
   {
@@ -2577,7 +2810,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#f4fbfa",
     "alias": "color.teal.50",
     "figmaName": "Semantic/Surface/Brand-Weak",
-    "utility": "surface-brand-weak",
+    "utility": "bg-surface-brand-weak",
+    "tailwindName": "surface-brand-weak",
     "typography": null
   },
   {
@@ -2588,7 +2822,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#e9f7f5",
     "alias": "color.teal.75",
     "figmaName": "Semantic/Surface/Brand-Medium",
-    "utility": "surface-brand-medium",
+    "utility": "bg-surface-brand-medium",
+    "tailwindName": "surface-brand-medium",
     "typography": null
   },
   {
@@ -2599,7 +2834,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#008a80",
     "alias": "color.teal.500",
     "figmaName": "Semantic/Surface/Brand-Inverse",
-    "utility": "surface-brand-inverse",
+    "utility": "bg-surface-brand-inverse",
+    "tailwindName": "surface-brand-inverse",
     "typography": null
   },
   {
@@ -2610,7 +2846,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#ffffff",
     "alias": "color.white",
     "figmaName": "Semantic/Text/Inverse",
-    "utility": "fg-inverse",
+    "utility": "text-inverse",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2621,7 +2858,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#cccccc",
     "alias": "color.teal-grey.300",
     "figmaName": "Semantic/Text/Disabled",
-    "utility": "fg-disabled",
+    "utility": "text-disabled",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2632,7 +2870,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#adadad",
     "alias": "color.teal-grey.400",
     "figmaName": "Semantic/Text/Placeholder",
-    "utility": "fg-placeholder",
+    "utility": "text-placeholder",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2643,7 +2882,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#7e7f7f",
     "alias": "color.teal-grey.500",
     "figmaName": "Semantic/Text/Neutral-Weak-500",
-    "utility": "fg-neutral-weak-500",
+    "utility": "text-neutral-weak-500",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2654,7 +2894,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#606262",
     "alias": "color.teal-grey.600",
     "figmaName": "Semantic/Text/Neutral-Medium-600",
-    "utility": "fg-neutral-medium-600",
+    "utility": "text-neutral-medium-600",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2665,7 +2906,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#282a2a",
     "alias": "color.teal-grey.800",
     "figmaName": "Semantic/Text/Neutral-Strong-800",
-    "utility": "fg-neutral-strong-800",
+    "utility": "text-neutral-strong-800",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2676,7 +2918,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#0f1010",
     "alias": "color.teal-grey.900",
     "figmaName": "Semantic/Text/Neutral-Default",
-    "utility": "fg-neutral-default",
+    "utility": "text-neutral-default",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2687,7 +2930,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#7ac7c1",
     "alias": "color.teal.300",
     "figmaName": "Semantic/Text/Brand-Disabled",
-    "utility": "fg-brand-disabled",
+    "utility": "text-brand-disabled",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2698,7 +2942,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#02746c",
     "alias": "color.teal.600",
     "figmaName": "Semantic/Text/Brand-Default",
-    "utility": "fg-brand-default",
+    "utility": "text-brand-default",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2709,7 +2954,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#01423d",
     "alias": "color.teal.800",
     "figmaName": "Semantic/Text/Brand-Strong",
-    "utility": "fg-brand-strong",
+    "utility": "text-brand-strong",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2720,7 +2966,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#06844c",
     "alias": "color.green.600",
     "figmaName": "Semantic/Text/Success",
-    "utility": "fg-success",
+    "utility": "text-success",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2731,7 +2978,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#dc3d3d",
     "alias": "color.red.500",
     "figmaName": "Semantic/Text/Error",
-    "utility": "fg-error",
+    "utility": "text-error",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2742,7 +2990,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#ed8002",
     "alias": "color.yellow.600",
     "figmaName": "Semantic/Text/Warning",
-    "utility": "fg-warning",
+    "utility": "text-warning",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2754,6 +3003,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.teal-grey.200",
     "figmaName": "Semantic/Border/Disabled/Disalbed",
     "utility": "border-disabled",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2765,6 +3015,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.teal-grey.100",
     "figmaName": "Semantic/Border/Neutral/Weaker-100",
     "utility": "border-neutral-weaker-100",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2776,6 +3027,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.teal-grey.200",
     "figmaName": "Semantic/Border/Neutral/Weak-200",
     "utility": "border-neutral-weak-200",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2787,6 +3039,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.teal-grey.300",
     "figmaName": "Semantic/Border/Neutral/Medium-300",
     "utility": "border-neutral-medium-300",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2798,6 +3051,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.teal-grey.400",
     "figmaName": "Semantic/Border/Neutral/Strong-400",
     "utility": "border-neutral-strong-400",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2809,6 +3063,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.teal-grey.600",
     "figmaName": "Semantic/Border/Neutral/Stronger-600",
     "utility": "border-neutral-stronger-600",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2820,6 +3075,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.white",
     "figmaName": "Semantic/Border/Neutral/Default",
     "utility": "border-neutral-default",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2831,6 +3087,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.teal.100",
     "figmaName": "Semantic/Border/Primary/Weaker-100",
     "utility": "border-primary-weaker-100",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2842,6 +3099,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.teal.200",
     "figmaName": "Semantic/Border/Primary/Weak-200",
     "utility": "border-primary-weak-200",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2853,6 +3111,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.teal.300",
     "figmaName": "Semantic/Border/Primary/Medium-300",
     "utility": "border-primary-medium-300",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2864,6 +3123,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.teal.500",
     "figmaName": "Semantic/Border/Primary/Strong-500",
     "utility": "border-primary-strong-500",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2875,6 +3135,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.red.100",
     "figmaName": "Semantic/Border/Error/Weaker-100",
     "utility": "border-error-weaker-100",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2886,6 +3147,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.red.200",
     "figmaName": "Semantic/Border/Error/Weak-200",
     "utility": "border-error-weak-200",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2897,6 +3159,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.red.300",
     "figmaName": "Semantic/Border/Error/Medium-300",
     "utility": "border-error-medium-300",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2908,6 +3171,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.red.500",
     "figmaName": "Semantic/Border/Error/Strong-500",
     "utility": "border-error-strong-500",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2919,6 +3183,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.yellow.100",
     "figmaName": "Semantic/Border/Warning/Weaker-100",
     "utility": "border-warning-weaker-100",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2930,6 +3195,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.yellow.200",
     "figmaName": "Semantic/Border/Warning/Weak-200",
     "utility": "border-warning-weak-200",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2941,6 +3207,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.yellow.300",
     "figmaName": "Semantic/Border/Warning/Medium-300",
     "utility": "border-warning-medium-300",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2952,6 +3219,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.yellow.500",
     "figmaName": "Semantic/Border/Warning/Strong-500",
     "utility": "border-warning-strong-500",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2963,6 +3231,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.green.100",
     "figmaName": "Semantic/Border/Success/Weaker",
     "utility": "border-success-weaker",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2974,6 +3243,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.green.200",
     "figmaName": "Semantic/Border/Success/Weak",
     "utility": "border-success-weak",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2985,6 +3255,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.green.300",
     "figmaName": "Semantic/Border/Success/Medium",
     "utility": "border-success-medium",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -2996,6 +3267,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": "color.green.500",
     "figmaName": "Semantic/Border/Success/Strong",
     "utility": "border-success-strong",
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -3006,7 +3278,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#f6f0ff",
     "alias": "color.violet.50",
     "figmaName": "Semantic/Tag/Part/PM/Weaker",
-    "utility": "tag-part-pm-weaker",
+    "utility": null,
+    "tailwindName": "tag-part-pm-weaker",
     "typography": null
   },
   {
@@ -3017,7 +3290,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#eee3fc",
     "alias": "color.violet.100",
     "figmaName": "Semantic/Tag/Part/PM/Weak",
-    "utility": "tag-part-pm-weak",
+    "utility": null,
+    "tailwindName": "tag-part-pm-weak",
     "typography": null
   },
   {
@@ -3028,7 +3302,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#ad6feb",
     "alias": "color.violet.500",
     "figmaName": "Semantic/Tag/Part/PM/Medium",
-    "utility": "tag-part-pm-medium",
+    "utility": null,
+    "tailwindName": "tag-part-pm-medium",
     "typography": null
   },
   {
@@ -3039,7 +3314,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#7f39c6",
     "alias": "color.violet.600",
     "figmaName": "Semantic/Tag/Part/PM/Strong",
-    "utility": "tag-part-pm-strong",
+    "utility": null,
+    "tailwindName": "tag-part-pm-strong",
     "typography": null
   },
   {
@@ -3050,7 +3326,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#fff0f7",
     "alias": "color.pink.50",
     "figmaName": "Semantic/Tag/Part/Design/Weaker",
-    "utility": "tag-part-design-weaker",
+    "utility": null,
+    "tailwindName": "tag-part-design-weaker",
     "typography": null
   },
   {
@@ -3061,7 +3338,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#ffe0f1",
     "alias": "color.pink.100",
     "figmaName": "Semantic/Tag/Part/Design/Weak",
-    "utility": "tag-part-design-weak",
+    "utility": null,
+    "tailwindName": "tag-part-design-weak",
     "typography": null
   },
   {
@@ -3072,7 +3350,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#ee63a9",
     "alias": "color.pink.500",
     "figmaName": "Semantic/Tag/Part/Design/Medium",
-    "utility": "tag-part-design-medium",
+    "utility": null,
+    "tailwindName": "tag-part-design-medium",
     "typography": null
   },
   {
@@ -3083,7 +3362,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#d92680",
     "alias": "color.pink.600",
     "figmaName": "Semantic/Tag/Part/Design/Strong",
-    "utility": "tag-part-design-strong",
+    "utility": null,
+    "tailwindName": "tag-part-design-strong",
     "typography": null
   },
   {
@@ -3094,7 +3374,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#f0f4ff",
     "alias": "color.cobalt.50",
     "figmaName": "Semantic/Tag/Part/Mobile-PE/Weaker",
-    "utility": "tag-part-mobile-pe-weaker",
+    "utility": null,
+    "tailwindName": "tag-part-mobile-pe-weaker",
     "typography": null
   },
   {
@@ -3105,7 +3386,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#e0e8ff",
     "alias": "color.cobalt.100",
     "figmaName": "Semantic/Tag/Part/Mobile-PE/Weak",
-    "utility": "tag-part-mobile-pe-weak",
+    "utility": null,
+    "tailwindName": "tag-part-mobile-pe-weak",
     "typography": null
   },
   {
@@ -3116,7 +3398,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#5e7ff2",
     "alias": "color.cobalt.500",
     "figmaName": "Semantic/Tag/Part/Mobile-PE/Medium",
-    "utility": "tag-part-mobile-pe-medium",
+    "utility": null,
+    "tailwindName": "tag-part-mobile-pe-medium",
     "typography": null
   },
   {
@@ -3127,7 +3410,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#385cdc",
     "alias": "color.cobalt.600",
     "figmaName": "Semantic/Tag/Part/Mobile-PE/Strong",
-    "utility": "tag-part-mobile-pe-strong",
+    "utility": null,
+    "tailwindName": "tag-part-mobile-pe-strong",
     "typography": null
   },
   {
@@ -3138,7 +3422,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#fff7e0",
     "alias": "color.yellow.50",
     "figmaName": "Semantic/Tag/Part/Web-PE/Weaker",
-    "utility": "tag-part-web-pe-weaker",
+    "utility": null,
+    "tailwindName": "tag-part-web-pe-weaker",
     "typography": null
   },
   {
@@ -3149,7 +3434,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#fff0c2",
     "alias": "color.yellow.100",
     "figmaName": "Semantic/Tag/Part/Web-PE/Weak",
-    "utility": "tag-part-web-pe-weak",
+    "utility": null,
+    "tailwindName": "tag-part-web-pe-weak",
     "typography": null
   },
   {
@@ -3160,7 +3446,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#f59b00",
     "alias": "color.yellow.500",
     "figmaName": "Semantic/Tag/Part/Web-PE/Medium",
-    "utility": "tag-part-web-pe-medium",
+    "utility": null,
+    "tailwindName": "tag-part-web-pe-medium",
     "typography": null
   },
   {
@@ -3171,7 +3458,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#ed8002",
     "alias": "color.yellow.600",
     "figmaName": "Semantic/Tag/Part/Web-PE/Strong",
-    "utility": "tag-part-web-pe-strong",
+    "utility": null,
+    "tailwindName": "tag-part-web-pe-strong",
     "typography": null
   },
   {
@@ -3182,7 +3470,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#f5f3fc",
     "alias": "color.purple.50",
     "figmaName": "Semantic/Tag/Role/Central/Weaker",
-    "utility": "tag-role-central-weaker",
+    "utility": null,
+    "tailwindName": "tag-role-central-weaker",
     "typography": null
   },
   {
@@ -3193,7 +3482,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#eae5fb",
     "alias": "color.purple.100",
     "figmaName": "Semantic/Tag/Role/Central/Weak",
-    "utility": "tag-role-central-weak",
+    "utility": null,
+    "tailwindName": "tag-role-central-weak",
     "typography": null
   },
   {
@@ -3204,7 +3494,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#8771e0",
     "alias": "color.purple.500",
     "figmaName": "Semantic/Tag/Role/Central/Medium",
-    "utility": "tag-role-central-medium",
+    "utility": null,
+    "tailwindName": "tag-role-central-medium",
     "typography": null
   },
   {
@@ -3215,7 +3506,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#634ac9",
     "alias": "color.purple.600",
     "figmaName": "Semantic/Tag/Role/Central/Strong",
-    "utility": "tag-role-central-strong",
+    "utility": null,
+    "tailwindName": "tag-role-central-strong",
     "typography": null
   },
   {
@@ -3226,7 +3518,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#f8f5f1",
     "alias": "color.brown.50",
     "figmaName": "Semantic/Tag/Role/Chapter/Weaker",
-    "utility": "tag-role-chapter-weaker",
+    "utility": null,
+    "tailwindName": "tag-role-chapter-weaker",
     "typography": null
   },
   {
@@ -3237,7 +3530,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#eee6dd",
     "alias": "color.brown.100",
     "figmaName": "Semantic/Tag/Role/Chapter/Weak",
-    "utility": "tag-role-chapter-weak",
+    "utility": null,
+    "tailwindName": "tag-role-chapter-weak",
     "typography": null
   },
   {
@@ -3248,7 +3542,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#ac835d",
     "alias": "color.brown.500",
     "figmaName": "Semantic/Tag/Role/Chapter/Medium",
-    "utility": "tag-role-chapter-medium",
+    "utility": null,
+    "tailwindName": "tag-role-chapter-medium",
     "typography": null
   },
   {
@@ -3259,7 +3554,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#886544",
     "alias": "color.brown.600",
     "figmaName": "Semantic/Tag/Role/Chapter/Strong",
-    "utility": "tag-role-chapter-strong",
+    "utility": null,
+    "tailwindName": "tag-role-chapter-strong",
     "typography": null
   },
   {
@@ -3270,7 +3566,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#ebf4ff",
     "alias": "color.blue.50",
     "figmaName": "Semantic/Tag/Role/Campus/Weaker",
-    "utility": "tag-role-campus-weaker",
+    "utility": null,
+    "tailwindName": "tag-role-campus-weaker",
     "typography": null
   },
   {
@@ -3281,7 +3578,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#dbecff",
     "alias": "color.blue.100",
     "figmaName": "Semantic/Tag/Role/Campus/Weak",
-    "utility": "tag-role-campus-weak",
+    "utility": null,
+    "tailwindName": "tag-role-campus-weak",
     "typography": null
   },
   {
@@ -3292,7 +3590,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#2e8fff",
     "alias": "color.blue.500",
     "figmaName": "Semantic/Tag/Role/Campus/Medium",
-    "utility": "tag-role-campus-medium",
+    "utility": null,
+    "tailwindName": "tag-role-campus-medium",
     "typography": null
   },
   {
@@ -3303,7 +3602,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#0068e0",
     "alias": "color.blue.600",
     "figmaName": "Semantic/Tag/Role/Campus/Strong",
-    "utility": "tag-role-campus-strong",
+    "utility": null,
+    "tailwindName": "tag-role-campus-strong",
     "typography": null
   },
   {
@@ -3314,7 +3614,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#f4fbfa",
     "alias": "color.teal.50",
     "figmaName": "Semantic/Tag/Role/Challenger&Super-Admin/Weaker",
-    "utility": "tag-role-challenger-super-admin-weaker",
+    "utility": null,
+    "tailwindName": "tag-role-challenger-super-admin-weaker",
     "typography": null
   },
   {
@@ -3325,7 +3626,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#ddf4f1",
     "alias": "color.teal.100",
     "figmaName": "Semantic/Tag/Role/Challenger&Super-Admin/Weak",
-    "utility": "tag-role-challenger-super-admin-weak",
+    "utility": null,
+    "tailwindName": "tag-role-challenger-super-admin-weak",
     "typography": null
   },
   {
@@ -3336,7 +3638,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#ddf4f1",
     "alias": "color.teal.100",
     "figmaName": "Semantic/Tag/Role/Challenger&Super-Admin/Medium",
-    "utility": "tag-role-challenger-super-admin-medium",
+    "utility": null,
+    "tailwindName": "tag-role-challenger-super-admin-medium",
     "typography": null
   },
   {
@@ -3347,7 +3650,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#02746c",
     "alias": "color.teal.600",
     "figmaName": "Semantic/Tag/Role/Challenger&Super-Admin/Strong",
-    "utility": "tag-role-challenger-super-admin-strong",
+    "utility": null,
+    "tailwindName": "tag-role-challenger-super-admin-strong",
     "typography": null
   },
   {
@@ -3358,7 +3662,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#f7f8f8",
     "alias": "color.teal-grey.75",
     "figmaName": "Semantic/Tag/Role/Product/Weaker",
-    "utility": "tag-role-product-weaker",
+    "utility": null,
+    "tailwindName": "tag-role-product-weaker",
     "typography": null
   },
   {
@@ -3369,7 +3674,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#eff0f0",
     "alias": "color.teal-grey.100",
     "figmaName": "Semantic/Tag/Role/Product/Weak",
-    "utility": "tag-role-product-weak",
+    "utility": null,
+    "tailwindName": "tag-role-product-weak",
     "typography": null
   },
   {
@@ -3380,7 +3686,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#eff0f0",
     "alias": "color.teal-grey.100",
     "figmaName": "Semantic/Tag/Role/Product/Medium",
-    "utility": "tag-role-product-medium",
+    "utility": null,
+    "tailwindName": "tag-role-product-medium",
     "typography": null
   },
   {
@@ -3391,7 +3698,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#282a2a",
     "alias": "color.teal-grey.800",
     "figmaName": "Semantic/Tag/Role/Product/Strong",
-    "utility": "tag-role-product-strong",
+    "utility": null,
+    "tailwindName": "tag-role-product-strong",
     "typography": null
   },
   {
@@ -3402,7 +3710,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#0f101033",
     "alias": null,
     "figmaName": "Semantic/Dimmed/Weak",
-    "utility": "dimmed-weak",
+    "utility": "bg-dimmed-weak",
+    "tailwindName": "dimmed-weak",
     "typography": null
   },
   {
@@ -3413,7 +3722,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#0f1010a6",
     "alias": null,
     "figmaName": "Semantic/Dimmed/Medium",
-    "utility": "dimmed-medium",
+    "utility": "bg-dimmed-medium",
+    "tailwindName": "dimmed-medium",
     "typography": null
   },
   {
@@ -3424,7 +3734,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "#0f1010d9",
     "alias": null,
     "figmaName": "Semantic/Dimmed/Strong",
-    "utility": "dimmed-strong",
+    "utility": "bg-dimmed-strong",
+    "tailwindName": "dimmed-strong",
     "typography": null
   },
   {
@@ -3436,6 +3747,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Display/1-Bold",
     "utility": "text-display-1-bold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "48px",
@@ -3453,6 +3765,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Display/2-SemiBold",
     "utility": "text-display-2-semibold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "40px",
@@ -3470,6 +3783,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Display/3-Bold",
     "utility": "text-display-3-bold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "36px",
@@ -3487,6 +3801,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Display/4-Bold",
     "utility": "text-display-4-bold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "32px",
@@ -3504,6 +3819,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Heading/1-Semibold",
     "utility": "text-heading-1-semibold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "28px",
@@ -3521,6 +3837,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Heading/2-Bold",
     "utility": "text-heading-2-bold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "24px",
@@ -3538,6 +3855,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Heading/2-SemiBold",
     "utility": "text-heading-2-semibold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "24px",
@@ -3555,6 +3873,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Heading/3-Bold",
     "utility": "text-heading-3-bold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "20px",
@@ -3572,6 +3891,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Heading/3-Semibold",
     "utility": "text-heading-3-semibold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "20px",
@@ -3589,6 +3909,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Heading/4-Semibold",
     "utility": "text-heading-4-semibold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "18px",
@@ -3606,6 +3927,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Heading/5-Medium",
     "utility": "text-heading-5-medium",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "16px",
@@ -3623,6 +3945,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Title/1-Semibold",
     "utility": "text-title-1-semibold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "22px",
@@ -3640,6 +3963,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Title/2-Semibold",
     "utility": "text-title-2-semibold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "20px",
@@ -3657,6 +3981,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Title/2-Medium",
     "utility": "text-title-2-medium",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "20px",
@@ -3674,6 +3999,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Title/3-Medium",
     "utility": "text-title-3-medium",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "18px",
@@ -3691,6 +4017,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Title/4-Semibold",
     "utility": "text-title-4-semibold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "16px",
@@ -3708,6 +4035,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Title/4-Medium",
     "utility": "text-title-4-medium",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "16px",
@@ -3725,6 +4053,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Body/1-Semibold",
     "utility": "text-body-1-semibold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "16px",
@@ -3742,6 +4071,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Body/1-Medium",
     "utility": "text-body-1-medium",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "16px",
@@ -3759,6 +4089,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Body/1-Regular",
     "utility": "text-body-1-regular",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "16px",
@@ -3776,6 +4107,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Body/2-Semibold",
     "utility": "text-body-2-semibold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "15px",
@@ -3793,6 +4125,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Body/2-Medium",
     "utility": "text-body-2-medium",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "15px",
@@ -3810,6 +4143,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Body/2-Regular",
     "utility": "text-body-2-regular",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "15px",
@@ -3827,6 +4161,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Body/3-Semibold",
     "utility": "text-body-3-semibold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "14px",
@@ -3844,6 +4179,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Body/3-Medium",
     "utility": "text-body-3-medium",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "14px",
@@ -3861,6 +4197,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Body/3-Regular",
     "utility": "text-body-3-regular",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "14px",
@@ -3878,6 +4215,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Body/4-Semibold",
     "utility": "text-body-4-semibold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "13px",
@@ -3895,6 +4233,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Label/1-Semibold",
     "utility": "text-label-1-semibold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "18px",
@@ -3912,6 +4251,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Label/1-Medium",
     "utility": "text-label-1-medium",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "18px",
@@ -3929,6 +4269,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Label/2-Semibold",
     "utility": "text-label-2-semibold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "17px",
@@ -3946,6 +4287,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Label/2-Medium",
     "utility": "text-label-2-medium",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "17px",
@@ -3963,6 +4305,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Label/3-Semibold",
     "utility": "text-label-3-semibold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "16px",
@@ -3980,6 +4323,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Label/3-Medium",
     "utility": "text-label-3-medium",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "16px",
@@ -3997,6 +4341,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Label/4-Semibold",
     "utility": "text-label-4-semibold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "15px",
@@ -4014,6 +4359,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Label/4-Medium",
     "utility": "text-label-4-medium",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "15px",
@@ -4031,6 +4377,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Label/5-Semibold",
     "utility": "text-label-5-semibold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "14px",
@@ -4048,6 +4395,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Label/5-Medium",
     "utility": "text-label-5-medium",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "14px",
@@ -4065,6 +4413,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Label/6-Semibold",
     "utility": "text-label-6-semibold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "12px",
@@ -4082,6 +4431,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Label/6-Medium",
     "utility": "text-label-6-medium",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "12px",
@@ -4099,6 +4449,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Label/7-Semibold",
     "utility": "text-label-7-semibold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "11px",
@@ -4116,6 +4467,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Label/7-Medium",
     "utility": "text-label-7-medium",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "11px",
@@ -4133,6 +4485,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Caption/1-Medium",
     "utility": "text-caption-1-medium",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "13px",
@@ -4150,6 +4503,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Caption/1-Regular",
     "utility": "text-caption-1-regular",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "13px",
@@ -4167,6 +4521,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Caption/2-Bold",
     "utility": "text-caption-2-bold",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "12px",
@@ -4184,6 +4539,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Caption/2-Medium",
     "utility": "text-caption-2-medium",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "12px",
@@ -4201,6 +4557,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Caption/2-Regular",
     "utility": "text-caption-2-regular",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "12px",
@@ -4218,6 +4575,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Caption/3-Medium",
     "utility": "text-caption-3-medium",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "11px",
@@ -4235,6 +4593,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Caption/3-Regular",
     "utility": "text-caption-3-regular",
+    "tailwindName": null,
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "11px",
@@ -4252,6 +4611,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Shadow/Drop/Neutral_1",
     "utility": "shadow-drop-neutral-1",
+    "tailwindName": "drop-neutral-1",
     "typography": null
   },
   {
@@ -4263,6 +4623,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Shadow/Drop/Neutral_2",
     "utility": "shadow-drop-neutral-2",
+    "tailwindName": "drop-neutral-2",
     "typography": null
   },
   {
@@ -4274,6 +4635,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Shadow/Drop/Neutral_3",
     "utility": "shadow-drop-neutral-3",
+    "tailwindName": "drop-neutral-3",
     "typography": null
   },
   {
@@ -4285,6 +4647,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Shadow/Inner/Neutral_1",
     "utility": "shadow-inner-neutral-1",
+    "tailwindName": "inner-neutral-1",
     "typography": null
   },
   {
@@ -4296,6 +4659,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": "Shadow/Inner/Neutral_2",
     "utility": "shadow-inner-neutral-2",
+    "tailwindName": "inner-neutral-2",
     "typography": null
   },
   {
@@ -4307,6 +4671,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "alias": null,
     "figmaName": null,
     "utility": null,
+    "tailwindName": null,
     "typography": null
   },
   {
@@ -4317,7 +4682,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "16px",
     "alias": null,
     "figmaName": null,
-    "utility": "grid-gutter",
+    "utility": null,
+    "tailwindName": "grid-gutter",
     "typography": null
   },
   {
@@ -4328,7 +4694,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "32px",
     "alias": null,
     "figmaName": null,
-    "utility": "grid-margin-desktop",
+    "utility": null,
+    "tailwindName": "grid-margin-desktop",
     "typography": null
   },
   {
@@ -4339,7 +4706,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "16px",
     "alias": "spacing.margin.16",
     "figmaName": null,
-    "utility": "grid-margin-mobile",
+    "utility": null,
+    "tailwindName": "grid-margin-mobile",
     "typography": null
   },
   {
@@ -4350,7 +4718,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "80px",
     "alias": null,
     "figmaName": null,
-    "utility": "header",
+    "utility": null,
+    "tailwindName": "header",
     "typography": null
   },
   {
@@ -4361,7 +4730,8 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "216px",
     "alias": null,
     "figmaName": null,
-    "utility": "sidebar",
+    "utility": null,
+    "tailwindName": "sidebar",
     "typography": null
   }
 ]

@@ -2,7 +2,7 @@
 
 UMC 3기 피그마 파운데이션을 코드로 옮긴 디자인 토큰 패키지입니다. 피그마 값은 `tokens/`의 JSON 하나에만 있고, CSS 변수와 Tailwind, vanilla-extract 산출물은 모두 그 JSON에서 생성합니다.
 
-- 기준일: 2026-10-07
+- 기준일: 2026-10-08
 - 상태: 컬러(primitive 78, semantic 151), 타이포그래피(기본 변수 20, 텍스트 스타일 48), spacing 44, radius 17, 그림자 5, 그리드와 레이아웃을 옮겼습니다. 브레이크포인트만 디자인 팀 합의를 기다립니다
 - 배포: 아직 배포하지 않았습니다(`private: true`). GitHub Packages 배포는 별도 작업입니다
 
@@ -24,29 +24,34 @@ vanilla-extract만 쓰는 앱은 `tailwind.css`를 빼고 `fonts.css`, `base.css
 ### Tailwind
 
 ```html
-<h1 class="text-display-1-bold text-fg-neutral-default">UMC</h1>
+<h1 class="text-display-1-bold text-neutral-default">UMC</h1>
 <main class="grid grid-cols-12 gap-x-grid-gutter px-grid-margin-desktop">
-  <article class="border border-border-neutral-weak-200 bg-surface-default">
-    …
-  </article>
+  <article class="border border-neutral-weak-200 bg-surface-default">…</article>
 </main>
 <aside class="w-sidebar bg-background-neutral-weak"></aside>
 <header class="h-header"></header>
 ```
 
-| 유틸리티                                          | 토큰                                                                                    |
-| ------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `text-<스타일>` (48개, 예: `text-body-1-regular`) | 텍스트 스타일 한 벌(서체, 크기, 굵기, 행간, 자간)                                       |
-| `shadow-drop-neutral-1` 등 5개                    | 피그마 effect 스타일 그림자                                                             |
-| `bg-`, `text-`, `border-` + semantic 컬러 151개   | 예: `bg-surface-default`, `text-fg-neutral-default`, `border-border-primary-strong-500` |
-| `gap-x-grid-gutter`                               | 거터 16px                                                                               |
-| `px-grid-margin-desktop`, `px-grid-margin-mobile` | 좌우 마진 32px, 16px                                                                    |
-| `h-header`                                        | 헤더 높이 80px                                                                          |
-| `w-sidebar`                                       | 사이드바 폭 216px                                                                       |
+| 유틸리티                                                      | 토큰                                              |
+| ------------------------------------------------------------- | ------------------------------------------------- |
+| `text-<이름>` (예: `text-neutral-medium-600`)                 | `Semantic/Text` 글자색                            |
+| `border-<이름>`, `border-t-<이름>` 등                         | `Semantic/Border` 테두리 색                       |
+| `text-icon-<이름>` (예: `text-icon-brand-medium-500`)         | `Semantic/Icon` 아이콘 색(`currentColor`)         |
+| `bg-fill-…`, `bg-background-…`, `bg-surface-…`, `bg-dimmed-…` | 같은 이름의 semantic 그룹                         |
+| `bg-tag-…`, `text-tag-…`, `border-tag-…`                      | `Semantic/Tag`                                    |
+| `bg-teal-300`, `text-teal-grey-900` 등                        | primitive 78개(피그마 값)                         |
+| `text-<스타일>` (48개, 예: `text-body-1-regular`)             | 텍스트 스타일 한 벌(서체, 크기, 굵기, 행간, 자간) |
+| `shadow-drop-neutral-1` 등 5개                                | 피그마 effect 스타일 그림자                       |
+| `gap-x-grid-gutter`                                           | 거터 16px                                         |
+| `px-grid-margin-desktop`, `px-grid-margin-mobile`             | 좌우 마진 32px, 16px                              |
+| `h-header`                                                    | 헤더 높이 80px                                    |
+| `w-sidebar`                                                   | 사이드바 폭 216px                                 |
 
-- 컬러는 semantic만 유틸리티로 만듭니다. primitive(`teal-500` 등)는 CSS 변수로만 있습니다
-- Text 그룹은 `text-text-…`가 되지 않도록 `fg`로 바꿉니다(예: `text-fg-neutral-default`). 전체 대응은 `semanticColors`로 내보냅니다
+- 이름은 피그마 변수 경로를 kebab-case로 바꾼 것이고 단계 숫자도 남깁니다(`Fill/Neutral/Weak-75` → `bg-fill-neutral-weak-75`)
+- Text와 Border는 `text-`, `border-` 속성 클래스로만 만듭니다. `text-text-…`, `border-border-…`는 없고, 불투명도 수식어(`/50`)도 붙지 않습니다. 다른 속성에는 `outline-(--umc-color-border-primary-strong-500)`처럼 CSS 변수로 씁니다
+- 나머지 semantic과 primitive는 Tailwind 색(`--color-*`)으로 등록해 `bg-`, `text-`, `border-`, `ring-` 어디에나 붙습니다
 - spacing과 radius는 유틸리티 대신 CSS 변수로 씁니다(예: `p-(--umc-spacing-padding-16)`, `rounded-(--umc-radius-button-12)`)
+- 토큰마다 추천 클래스와 Tailwind 이름은 `@umc-product/design-tokens/manifest`의 `utility`, `tailwindName`에 있습니다
 
 ### vanilla-extract
 
@@ -89,7 +94,7 @@ export const twMerge = extendTailwindMerge({
 
 ## 주의할 점
 
-- **Tailwind 기본 팔레트가 남습니다.** `bg-teal-500`은 UMC teal이 아니라 Tailwind 기본 teal입니다. 팔레트를 비우려면 앱의 CSS에서 `@theme { --color-*: initial; }`를 쓰되, 결과가 import 순서에 좌우되므로 패키지가 강제하지 않습니다
+- **Tailwind 기본 팔레트를 지웁니다.** `tailwind.css`가 `--color-*: initial`로 기본 색을 지우고 피그마 색만 등록합니다. 그래서 `bg-teal-500`은 UMC `Teal-500`이고 `bg-indigo-500`은 생기지 않습니다. 앱에만 필요한 색은 `tailwind.css`를 불러온 뒤의 `@theme`에 더합니다. 앞에 두면 함께 지워집니다
 - **덮어쓰기는 레이어 밖에서 합니다.** 토큰은 `@layer umc.tokens`에 선언되어 있어서 `@layer base` 안에서 `--umc-*`를 바꾸면 적용되지 않습니다
 - **브레이크포인트는 아직 없습니다.** 디자인 팀과 경계값을 정한 뒤 추가합니다. 그때까지는 앱의 기존 브레이크포인트를 씁니다
 

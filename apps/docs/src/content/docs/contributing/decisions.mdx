@@ -1,11 +1,11 @@
 ---
 title: 결정 기록
-description: 컴포넌트 패키지를 만들며 되돌리기 어려운 결정 6개를 ADR 형식으로 남깁니다.
+description: 디자인 시스템을 만들며 되돌리기 어려운 결정 7개를 ADR 형식으로 남깁니다.
 ---
 
 - 독자: 디자인 시스템을 고치거나 소비하는 웹 파트 개발자
 - 소유자: 웹 파트
-- 기준일: 2026-10-07
+- 기준일: 2026-10-08
 
 결정마다 결정, 문제, 대안, 포기한 것, 성공 기준, 재검토 조건을 적습니다. 재검토 조건에 해당하는 일이 생기면 이 문서부터 고칩니다.
 
@@ -66,3 +66,14 @@ React Aria는 날짜, 숫자 국제화와 터치 동작이 중요한 컴포넌�
 - **포기한 것**: SVGO의 경로 최적화로 줄일 수 있는 파일 크기
 - **성공 기준**: `pnpm icons:check`로 재생성 결과가 커밋된 파일과 같습니다. 문서 대조에서 아이콘 위치가 피그마와 0.2px 안에서 맞습니다.
 - **재검토 조건**: 아이콘이 수백 개로 늘어 번들 크기가 문제가 될 때. 그때는 변환기 앞에 SVGO 경로 최적화를 붙입니다.
+
+## 7. 토큰 이름은 피그마 변수 이름을 그대로 따른다
+
+- **결정**: 토큰 이름은 피그마 변수 경로를 kebab-case로 바꾼 것이고 단계 숫자도 남깁니다(`Fill/Neutral/Weak-75` → `--umc-color-fill-neutral-weak-75`). Tailwind에서 Text와 Border는 `text-<이름>`, `border-<이름>` 속성 클래스로만 만듭니다. 나머지 semantic과 primitive는 Tailwind 색으로 등록하고 기본 팔레트는 지웁니다.
+- **문제**: 피그마를 보고 구현하려면 이름을 두 번 바꿔야 했습니다. `Text/Neutral-Medium-600`이 토큰에서는 단계 숫자를 뺀 `neutral-medium`, Tailwind에서는 그룹 이름을 바꾼 `text-fg-neutral-medium`이었습니다. primitive는 클래스가 없는데 기본 팔레트가 남아 있어서, `text-teal-300`이 오류 없이 Tailwind의 teal을 칠했습니다. 피그마 컴포넌트는 primitive를 바로 칠한 곳이 많습니다(Text Button `Teal-700`, Checkbox `Red-400`).
+- **대안**: 모든 그룹을 Tailwind 색으로 등록하기(`text-text-…`, `border-border-…`), Text 그룹만 `fg`로 바꾸기(이전 방식), 피그마 Dev Mode의 codeSyntax 이름 쓰기, 단계 숫자 빼기
+- **포기한 것**: Text·Border 색에는 불투명도 수식어(`/50`)와 outline, ring 같은 다른 속성 클래스가 없습니다. 이런 곳은 `outline-(--umc-color-border-primary-strong-500)`처럼 CSS 변수로 씁니다. 기본 팔레트에 기대던 앱 코드는 `@theme`으로 색을 다시 등록해야 합니다. 피그마에서 변수 값만 바꾸면 이름의 단계 숫자와 실제 값이 어긋날 수 있습니다.
+- **성공 기준**: 피그마 변수 이름과 [Tailwind 대응 표](/getting-started/tailwind/) 하나로 클래스를 맞힙니다. 그룹 이름이 겹친 클래스와 피그마에 없는 기본 팔레트 클래스는 생성되지 않습니다(`outputs.test.ts`).
+- **재검토 조건**: 디자인 팀이 codeSyntax를 변수마다 다른 `var(--umc-color-…)`로 정리할 때, 다크 모드처럼 모드가 생길 때, Text·Border 색을 다른 속성에 쓰는 코드가 늘어날 때
+
+codeSyntax 이름은 변수마다 유일해지면 더 낫습니다. Dev Mode 코드 패널을 그대로 옮겨도 되기 때문입니다. 지금은 `var(--color-action-primary-default)` 하나를 변수 31개가 나눠 써서 색을 가리키지 못합니다.

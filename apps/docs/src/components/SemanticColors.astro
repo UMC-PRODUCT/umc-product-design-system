@@ -17,7 +17,7 @@ const tokens = tokenManifest.filter(
     <thead>
       <tr>
         <th>색</th>
-        <th>Tailwind 이름</th>
+        <th>Tailwind</th>
         <th>값</th>
         <th>참조</th>
         <th>피그마 변수</th>
@@ -34,7 +34,7 @@ const tokens = tokenManifest.filter(
               />
             </td>
             <td>
-              <code>{token.utility}</code>
+              <code>{token.utility ?? token.tailwindName}</code>
               <div class="umc-sub">{token.cssVariable}</div>
             </td>
             <td>

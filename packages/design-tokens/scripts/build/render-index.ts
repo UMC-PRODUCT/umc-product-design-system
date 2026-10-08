@@ -1,12 +1,7 @@
-import { toCssVariable } from "../shared/naming.ts"
 import { toDeclarations } from "./declarations.ts"
 import type { ModelEntry } from "./model.ts"
-import {
-  shadowUtility,
-  tailwindColorName,
-  textStyleUtility,
-} from "./render-tailwind-css.ts"
-import { serializeList, serializeRecordList } from "./serialize-ts.ts"
+import { shadowUtility, textStyleUtility } from "./render-tailwind-css.ts"
+import { serializeList } from "./serialize-ts.ts"
 
 export const renderIndex = (entries: readonly ModelEntry[]): string => {
   const utilities = entries
@@ -15,12 +10,6 @@ export const renderIndex = (entries: readonly ModelEntry[]): string => {
   const shadows = entries
     .filter((entry) => entry.file === "shadow.json")
     .map((entry) => shadowUtility(entry.path))
-  const semanticColors = entries
-    .filter((entry) => entry.file === "color.semantic.json")
-    .map((entry) => ({
-      cssVariable: toCssVariable(entry.path),
-      tailwindColor: tailwindColorName(entry.path),
-    }))
   const variables = entries
     .flatMap(toDeclarations)
     .map((declaration) => declaration.name)
@@ -33,10 +22,6 @@ export const renderIndex = (entries: readonly ModelEntry[]): string => {
     `export const shadowUtilities = ${serializeList(shadows)} as const`,
     "",
     "export type ShadowUtility = (typeof shadowUtilities)[number]",
-    "",
-    `export const semanticColors = ${serializeRecordList(semanticColors)} as const`,
-    "",
-    "export type SemanticColor = (typeof semanticColors)[number]",
     "",
     `export const cssVariables = ${serializeList(variables)} as const`,
     "",

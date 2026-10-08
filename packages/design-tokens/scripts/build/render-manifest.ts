@@ -4,12 +4,7 @@ import type { TokenFileName } from "../shared/token-files.ts"
 import type { Dimension } from "../shared/units.ts"
 import { formatShadow } from "./declarations.ts"
 import type { ModelEntry } from "./model.ts"
-import {
-  shadowUtility,
-  TAILWIND_SPACING_ALIASES,
-  tailwindColorName,
-  textStyleUtility,
-} from "./render-tailwind-css.ts"
+import { tailwindNameOf, tailwindUtilityOf } from "./render-tailwind-css.ts"
 
 const TIER_BY_FILE: Record<TokenFileName, string> = {
   "color.primitive.json": "color-primitive",
@@ -39,6 +34,7 @@ type ManifestEntry = {
   alias: string | null
   figmaName: string | null
   utility: string | null
+  tailwindName: string | null
   typography: ResolvedTypography | null
 }
 
@@ -86,22 +82,6 @@ const figmaNameOf = (token: CanonicalToken): string | null => {
   return null
 }
 
-const utilityOf = (entry: ModelEntry): string | null => {
-  if (entry.file === "color.semantic.json") {
-    return tailwindColorName(entry.path)
-  }
-  if (entry.file === "typography.json") {
-    return textStyleUtility(entry.path)
-  }
-  if (entry.file === "shadow.json") {
-    return shadowUtility(entry.path)
-  }
-  const spacingAlias = TAILWIND_SPACING_ALIASES.find(
-    (alias) => alias.path.join(".") === entry.path.join("."),
-  )
-  return spacingAlias?.name ?? null
-}
-
 const pathName = (path: TokenPath): string => path.join(".")
 
 export const renderManifest = (entries: readonly ModelEntry[]): string => {
@@ -139,7 +119,8 @@ export const renderManifest = (entries: readonly ModelEntry[]): string => {
           ? null
           : aliasName(token.$value),
       figmaName: figmaNameOf(token),
-      utility: utilityOf(entry),
+      utility: tailwindUtilityOf(entry),
+      tailwindName: tailwindNameOf(entry),
       typography,
     }
   })
@@ -154,6 +135,7 @@ export const renderManifest = (entries: readonly ModelEntry[]): string => {
     "  alias: string | null",
     "  figmaName: string | null",
     "  utility: string | null",
+    "  tailwindName: string | null",
     "  typography: {",
     "    fontFamily: string",
     "    fontSize: string",

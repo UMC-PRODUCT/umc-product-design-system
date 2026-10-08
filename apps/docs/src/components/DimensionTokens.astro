@@ -59,8 +59,10 @@ const tokens = tokenManifest.filter(
             <td>
               <code>{token.name}</code>
               <div class="umc-sub">{token.cssVariable}</div>
-              {token.utility && (
-                <div class="umc-sub">Tailwind: {token.utility}</div>
+              {(token.utility ?? token.tailwindName) && (
+                <div class="umc-sub">
+                  Tailwind: {token.utility ?? token.tailwindName}
+                </div>
               )}
             </td>
             <td>

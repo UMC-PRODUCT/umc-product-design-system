@@ -7,7 +7,7 @@ import { Aside } from "@astrojs/starlight/components"
 import PrimitivePalettes from "../../../components/PrimitivePalettes.astro"
 import SemanticColors from "../../../components/SemanticColors.astro"
 
-앱에서는 역할을 나타내는 semantic 컬러만 씁니다. primitive는 semantic이 참조하는 원재료라서 유틸리티를 만들지 않았습니다.
+화면은 역할을 담은 semantic 컬러로 만듭니다. primitive는 semantic이 참조하는 원재료라서, 피그마가 primitive를 바로 칠한 곳에만 씁니다. 표의 Tailwind 칸이 그대로 쓸 클래스입니다. Tag와 primitive는 `bg-`, `text-`, `border-` 뒤에 이름을 붙입니다. 규칙은 [Tailwind CSS에서 쓰기](/getting-started/tailwind/)에 있습니다.
 
 <Aside title="이름 읽는 법">
   `fill-primary-strong-200`은 피그마 `Semantic/Fill/Primary/Strong-200`을 옮긴
