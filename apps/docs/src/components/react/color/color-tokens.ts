@@ -4,6 +4,7 @@ export type ColorTokenRow = {
   cssVariable: string
   utility: string | null
   tailwindName: string | null
+  vanillaExtract: string | null
   value: string
   reference: string | null
 }
@@ -67,6 +68,7 @@ const searchKeysOf = (row: ColorTokenRow): string[] =>
     row.cssVariable,
     row.utility,
     row.tailwindName,
+    row.vanillaExtract,
   ].flatMap((key) => (key === null ? [] : [key.toLowerCase()]))
 
 const isExactMatch = (row: ColorTokenRow, needles: readonly string[]) => {

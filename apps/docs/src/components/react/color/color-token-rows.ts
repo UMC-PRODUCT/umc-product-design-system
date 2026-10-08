@@ -19,6 +19,7 @@ const toColorTokenRow = (token: TokenManifestEntry): ColorTokenRow => ({
   cssVariable: token.cssVariable,
   utility: token.utility,
   tailwindName: token.tailwindName,
+  vanillaExtract: token.vanillaExtract,
   value: token.value,
   reference: referenceOf(token.alias),
 })

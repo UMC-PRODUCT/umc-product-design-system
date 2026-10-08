@@ -11,8 +11,13 @@ const styles = tokenManifest.filter((token) => token.tier === "typography")
     styles.map((token) => (
       <li class="umc-type-row">
         <div>
-          <code>{token.utility}</code>
-          <div class="umc-sub">{token.figmaName}</div>
+          <code>{token.figmaName}</code>
+          <div class="umc-token-class">
+            <span class="umc-sub">Tailwind</span> <code>{token.utility}</code>
+          </div>
+          <div class="umc-sub">
+            vanilla-extract <code>{token.vanillaExtract}</code>
+          </div>
           <div class="umc-sub">
             {token.typography &&
               `${token.typography.fontSize}, 굵기 ${token.typography.fontWeight}, 행간 ${token.typography.lineHeight}, 자간 ${token.typography.letterSpacing}`}

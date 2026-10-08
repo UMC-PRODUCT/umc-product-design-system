@@ -9,6 +9,7 @@ export type TokenManifestEntry = {
   codeSyntax: string | null
   utility: string | null
   tailwindName: string | null
+  vanillaExtract: string | null
   typography: {
     fontFamily: string
     fontSize: string
@@ -30,6 +31,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "white",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -43,6 +45,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "black",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -56,6 +59,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "teal-grey-50",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -69,6 +73,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "teal-grey-75",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -82,6 +87,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "teal-grey-100",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -95,6 +101,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "teal-grey-200",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -108,6 +115,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "teal-grey-300",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -121,6 +129,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "teal-grey-400",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -134,6 +143,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "teal-grey-500",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -147,6 +157,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "teal-grey-600",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -160,6 +171,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "teal-grey-700",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -173,6 +185,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "teal-grey-800",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -186,6 +199,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "teal-grey-900",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -199,6 +213,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "teal-50",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -212,6 +227,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "teal-75",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -225,6 +241,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "teal-100",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -238,6 +255,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "teal-200",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -251,6 +269,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "teal-300",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -264,6 +283,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "teal-400",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -277,6 +297,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "teal-500",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -290,6 +311,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "teal-600",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -303,6 +325,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "teal-700",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -316,6 +339,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "teal-800",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -329,6 +353,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "teal-900",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -342,6 +367,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "red-50",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -355,6 +381,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "red-100",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -368,6 +395,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "red-200",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -381,6 +409,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "red-300",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -394,6 +423,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "red-400",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -407,6 +437,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "red-500",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -420,6 +451,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "red-600",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -433,6 +465,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "red-700",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -446,6 +479,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "red-800",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -459,6 +493,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "red-900",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -472,6 +507,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "yellow-50",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -485,6 +521,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "yellow-100",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -498,6 +535,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "yellow-200",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -511,6 +549,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "yellow-300",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -524,6 +563,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "yellow-400",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -537,6 +577,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "yellow-500",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -550,6 +591,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "yellow-600",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -563,6 +605,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "yellow-700",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -576,6 +619,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "yellow-800",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -589,6 +633,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "yellow-900",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -602,6 +647,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "green-50",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -615,6 +661,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "green-100",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -628,6 +675,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "green-200",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -641,6 +689,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "green-300",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -654,6 +703,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "green-400",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -667,6 +717,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "green-500",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -680,6 +731,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "green-600",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -693,6 +745,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "green-700",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -706,6 +759,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "green-800",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -719,6 +773,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "green-900",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -732,6 +787,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "violet-50",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -745,6 +801,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "violet-100",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -758,6 +815,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "violet-500",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -771,6 +829,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "violet-600",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -784,6 +843,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "purple-50",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -797,6 +857,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "purple-100",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -810,6 +871,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "purple-500",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -823,6 +885,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "purple-600",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -836,6 +899,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "pink-50",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -849,6 +913,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "pink-100",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -862,6 +927,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "pink-500",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -875,6 +941,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "pink-600",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -888,6 +955,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "cobalt-50",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -901,6 +969,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "cobalt-100",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -914,6 +983,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "cobalt-500",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -927,6 +997,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "cobalt-600",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -940,6 +1011,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "blue-50",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -953,6 +1025,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "blue-100",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -966,6 +1039,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "blue-500",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -979,6 +1053,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "blue-600",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -992,6 +1067,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "brown-50",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1005,6 +1081,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "brown-100",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1018,6 +1095,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "brown-500",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1031,6 +1109,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "brown-600",
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1044,6 +1123,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1057,6 +1137,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1070,6 +1151,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1083,6 +1165,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1096,6 +1179,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1109,6 +1193,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1122,6 +1207,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1135,6 +1221,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1148,6 +1235,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1161,6 +1249,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1174,6 +1263,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1187,6 +1277,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1200,6 +1291,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1213,6 +1305,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1226,6 +1319,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1239,6 +1333,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1252,6 +1347,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1265,6 +1361,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1278,6 +1375,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1291,6 +1389,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1304,6 +1403,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1317,6 +1417,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1330,6 +1431,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1343,6 +1445,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1356,6 +1459,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1369,6 +1473,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1382,6 +1487,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1395,6 +1501,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1408,6 +1515,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1421,6 +1529,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1434,6 +1543,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1447,6 +1557,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1460,6 +1571,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1473,6 +1585,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1486,6 +1599,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1499,6 +1613,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1512,6 +1627,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1525,6 +1641,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1538,6 +1655,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1551,6 +1669,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1564,6 +1683,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1577,6 +1697,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1590,6 +1711,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1603,6 +1725,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1616,6 +1739,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1629,6 +1753,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1642,6 +1767,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1655,6 +1781,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1668,6 +1795,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1681,6 +1809,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1694,6 +1823,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1707,6 +1837,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1720,6 +1851,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1733,6 +1865,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1746,6 +1879,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1759,6 +1893,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1772,6 +1907,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1785,6 +1921,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1798,6 +1935,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1811,6 +1949,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1824,6 +1963,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1837,6 +1977,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1850,6 +1991,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1863,6 +2005,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1876,6 +2019,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1889,6 +2033,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1902,6 +2047,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1915,6 +2061,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1928,6 +2075,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1941,6 +2089,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1954,6 +2103,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1967,6 +2117,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1980,6 +2131,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -1993,6 +2145,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -2006,6 +2159,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -2019,6 +2173,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -2032,6 +2187,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -2045,6 +2201,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -2058,6 +2215,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -2071,6 +2229,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -2084,6 +2243,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": null,
     "typography": null
   },
   {
@@ -2097,6 +2257,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-icon-disabled)",
     "utility": "text-icon-disabled",
     "tailwindName": "icon-disabled",
+    "vanillaExtract": "vars.color.icon.disabled",
     "typography": null
   },
   {
@@ -2110,6 +2271,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-icon-inverse)",
     "utility": "text-icon-inverse",
     "tailwindName": "icon-inverse",
+    "vanillaExtract": "vars.color.icon.inverse",
     "typography": null
   },
   {
@@ -2123,6 +2285,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-icon-subtle)",
     "utility": "text-icon-neutral-weak-400",
     "tailwindName": "icon-neutral-weak-400",
+    "vanillaExtract": "vars.color.icon.neutralWeak400",
     "typography": null
   },
   {
@@ -2136,6 +2299,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-icon-subtle)",
     "utility": "text-icon-neutral-medium-500",
     "tailwindName": "icon-neutral-medium-500",
+    "vanillaExtract": "vars.color.icon.neutralMedium500",
     "typography": null
   },
   {
@@ -2149,6 +2313,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-icon-default)",
     "utility": "text-icon-neutral-strong-600",
     "tailwindName": "icon-neutral-strong-600",
+    "vanillaExtract": "vars.color.icon.neutralStrong600",
     "typography": null
   },
   {
@@ -2162,6 +2327,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-icon-strong)",
     "utility": "text-icon-neutral-stronger-700",
     "tailwindName": "icon-neutral-stronger-700",
+    "vanillaExtract": "vars.color.icon.neutralStronger700",
     "typography": null
   },
   {
@@ -2175,6 +2341,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-icon-brand)",
     "utility": "text-icon-brand-medium-500",
     "tailwindName": "icon-brand-medium-500",
+    "vanillaExtract": "vars.color.icon.brandMedium500",
     "typography": null
   },
   {
@@ -2188,6 +2355,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-icon-brand)",
     "utility": "text-icon-brand-strong-600",
     "tailwindName": "icon-brand-strong-600",
+    "vanillaExtract": "vars.color.icon.brandStrong600",
     "typography": null
   },
   {
@@ -2201,6 +2369,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-icon-brand)",
     "utility": "text-icon-success",
     "tailwindName": "icon-success",
+    "vanillaExtract": "vars.color.icon.success",
     "typography": null
   },
   {
@@ -2214,6 +2383,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-icon-brand)",
     "utility": "text-icon-error",
     "tailwindName": "icon-error",
+    "vanillaExtract": "vars.color.icon.error",
     "typography": null
   },
   {
@@ -2227,6 +2397,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-icon-brand)",
     "utility": "text-icon-warning",
     "tailwindName": "icon-warning",
+    "vanillaExtract": "vars.color.icon.warning",
     "typography": null
   },
   {
@@ -2240,6 +2411,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "bg-fill-disabled",
     "tailwindName": "fill-disabled",
+    "vanillaExtract": "vars.color.fill.disabled",
     "typography": null
   },
   {
@@ -2253,6 +2425,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-neutral-weaker-50",
     "tailwindName": "fill-neutral-weaker-50",
+    "vanillaExtract": "vars.color.fill.neutral.weaker50",
     "typography": null
   },
   {
@@ -2266,6 +2439,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-hover)",
     "utility": "bg-fill-neutral-weaker-hover-pressed",
     "tailwindName": "fill-neutral-weaker-hover-pressed",
+    "vanillaExtract": "vars.color.fill.neutral.weakerHoverPressed",
     "typography": null
   },
   {
@@ -2279,6 +2453,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-neutral-weak-75",
     "tailwindName": "fill-neutral-weak-75",
+    "vanillaExtract": "vars.color.fill.neutral.weak75",
     "typography": null
   },
   {
@@ -2292,6 +2467,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-pressed)",
     "utility": "bg-fill-neutral-weak-hover-pressed",
     "tailwindName": "fill-neutral-weak-hover-pressed",
+    "vanillaExtract": "vars.color.fill.neutral.weakHoverPressed",
     "typography": null
   },
   {
@@ -2305,6 +2481,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-neutral-medium-100",
     "tailwindName": "fill-neutral-medium-100",
+    "vanillaExtract": "vars.color.fill.neutral.medium100",
     "typography": null
   },
   {
@@ -2318,6 +2495,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-pressed)",
     "utility": "bg-fill-neutral-medium-hover-pressed",
     "tailwindName": "fill-neutral-medium-hover-pressed",
+    "vanillaExtract": "vars.color.fill.neutral.mediumHoverPressed",
     "typography": null
   },
   {
@@ -2331,6 +2509,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-neutral-strong-200",
     "tailwindName": "fill-neutral-strong-200",
+    "vanillaExtract": "vars.color.fill.neutral.strong200",
     "typography": null
   },
   {
@@ -2344,6 +2523,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-hover)",
     "utility": "bg-fill-neutral-strong-hover-pressed",
     "tailwindName": "fill-neutral-strong-hover-pressed",
+    "vanillaExtract": "vars.color.fill.neutral.strongHoverPressed",
     "typography": null
   },
   {
@@ -2357,6 +2537,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-neutral-default",
     "tailwindName": "fill-neutral-default",
+    "vanillaExtract": "vars.color.fill.neutral.default",
     "typography": null
   },
   {
@@ -2370,6 +2551,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-neutral-inverse-weak-400",
     "tailwindName": "fill-neutral-inverse-weak-400",
+    "vanillaExtract": "vars.color.fill.neutralInverse.weak400",
     "typography": null
   },
   {
@@ -2383,6 +2565,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-pressed)",
     "utility": "bg-fill-neutral-inverse-weak-hover-pressed",
     "tailwindName": "fill-neutral-inverse-weak-hover-pressed",
+    "vanillaExtract": "vars.color.fill.neutralInverse.weakHoverPressed",
     "typography": null
   },
   {
@@ -2396,6 +2579,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-neutral-inverse-medium-500",
     "tailwindName": "fill-neutral-inverse-medium-500",
+    "vanillaExtract": "vars.color.fill.neutralInverse.medium500",
     "typography": null
   },
   {
@@ -2409,6 +2593,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-pressed)",
     "utility": "bg-fill-neutral-inverse-medium-hover-pressed",
     "tailwindName": "fill-neutral-inverse-medium-hover-pressed",
+    "vanillaExtract": "vars.color.fill.neutralInverse.mediumHoverPressed",
     "typography": null
   },
   {
@@ -2422,6 +2607,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-neutral-inverse-strong-600",
     "tailwindName": "fill-neutral-inverse-strong-600",
+    "vanillaExtract": "vars.color.fill.neutralInverse.strong600",
     "typography": null
   },
   {
@@ -2435,6 +2621,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-pressed)",
     "utility": "bg-fill-neutral-inverse-strong-hover-pressed",
     "tailwindName": "fill-neutral-inverse-strong-hover-pressed",
+    "vanillaExtract": "vars.color.fill.neutralInverse.strongHoverPressed",
     "typography": null
   },
   {
@@ -2448,6 +2635,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-neutral-inverse-stronger-700",
     "tailwindName": "fill-neutral-inverse-stronger-700",
+    "vanillaExtract": "vars.color.fill.neutralInverse.stronger700",
     "typography": null
   },
   {
@@ -2461,6 +2649,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-pressed)",
     "utility": "bg-fill-neutral-inverse-stronger-hover-pressed",
     "tailwindName": "fill-neutral-inverse-stronger-hover-pressed",
+    "vanillaExtract": "vars.color.fill.neutralInverse.strongerHoverPressed",
     "typography": null
   },
   {
@@ -2474,6 +2663,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-primary-weaker-50",
     "tailwindName": "fill-primary-weaker-50",
+    "vanillaExtract": "vars.color.fill.primary.weaker50",
     "typography": null
   },
   {
@@ -2487,6 +2677,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-primary-weaker-hover-pressed",
     "tailwindName": "fill-primary-weaker-hover-pressed",
+    "vanillaExtract": "vars.color.fill.primary.weakerHoverPressed",
     "typography": null
   },
   {
@@ -2500,6 +2691,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-primary-weak-75",
     "tailwindName": "fill-primary-weak-75",
+    "vanillaExtract": "vars.color.fill.primary.weak75",
     "typography": null
   },
   {
@@ -2513,6 +2705,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-primary-weak-hover-pressed",
     "tailwindName": "fill-primary-weak-hover-pressed",
+    "vanillaExtract": "vars.color.fill.primary.weakHoverPressed",
     "typography": null
   },
   {
@@ -2526,6 +2719,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-primary-medium-100",
     "tailwindName": "fill-primary-medium-100",
+    "vanillaExtract": "vars.color.fill.primary.medium100",
     "typography": null
   },
   {
@@ -2539,6 +2733,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-pressed)",
     "utility": "bg-fill-primary-medium-hover-pressed",
     "tailwindName": "fill-primary-medium-hover-pressed",
+    "vanillaExtract": "vars.color.fill.primary.mediumHoverPressed",
     "typography": null
   },
   {
@@ -2552,6 +2747,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-primary-strong-200",
     "tailwindName": "fill-primary-strong-200",
+    "vanillaExtract": "vars.color.fill.primary.strong200",
     "typography": null
   },
   {
@@ -2565,6 +2761,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-pressed)",
     "utility": "bg-fill-primary-strong-hover-pressed",
     "tailwindName": "fill-primary-strong-hover-pressed",
+    "vanillaExtract": "vars.color.fill.primary.strongHoverPressed",
     "typography": null
   },
   {
@@ -2578,6 +2775,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-primary-stronger-300",
     "tailwindName": "fill-primary-stronger-300",
+    "vanillaExtract": "vars.color.fill.primary.stronger300",
     "typography": null
   },
   {
@@ -2591,6 +2789,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-pressed)",
     "utility": "bg-fill-primary-stronger-hover-pressed-400",
     "tailwindName": "fill-primary-stronger-hover-pressed-400",
+    "vanillaExtract": "vars.color.fill.primary.strongerHoverPressed400",
     "typography": null
   },
   {
@@ -2604,6 +2803,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-primary-inverse-medium-400",
     "tailwindName": "fill-primary-inverse-medium-400",
+    "vanillaExtract": "vars.color.fill.primaryInverse.medium400",
     "typography": null
   },
   {
@@ -2617,6 +2817,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-primary-inverse-medium-hover-pressed",
     "tailwindName": "fill-primary-inverse-medium-hover-pressed",
+    "vanillaExtract": "vars.color.fill.primaryInverse.mediumHoverPressed",
     "typography": null
   },
   {
@@ -2630,6 +2831,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-primary-inverse-strong-500",
     "tailwindName": "fill-primary-inverse-strong-500",
+    "vanillaExtract": "vars.color.fill.primaryInverse.strong500",
     "typography": null
   },
   {
@@ -2643,6 +2845,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-pressed)",
     "utility": "bg-fill-primary-inverse-strong-hover-pressed",
     "tailwindName": "fill-primary-inverse-strong-hover-pressed",
+    "vanillaExtract": "vars.color.fill.primaryInverse.strongHoverPressed",
     "typography": null
   },
   {
@@ -2656,6 +2859,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-primary-inverse-stronger-600",
     "tailwindName": "fill-primary-inverse-stronger-600",
+    "vanillaExtract": "vars.color.fill.primaryInverse.stronger600",
     "typography": null
   },
   {
@@ -2669,6 +2873,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-primary-inverse-stronger-hover-pressed",
     "tailwindName": "fill-primary-inverse-stronger-hover-pressed",
+    "vanillaExtract": "vars.color.fill.primaryInverse.strongerHoverPressed",
     "typography": null
   },
   {
@@ -2682,6 +2887,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-error-weak-50",
     "tailwindName": "fill-error-weak-50",
+    "vanillaExtract": "vars.color.fill.error.weak50",
     "typography": null
   },
   {
@@ -2695,6 +2901,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-hover)",
     "utility": "bg-fill-error-weak-hover-pressed",
     "tailwindName": "fill-error-weak-hover-pressed",
+    "vanillaExtract": "vars.color.fill.error.weakHoverPressed",
     "typography": null
   },
   {
@@ -2708,6 +2915,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-error-medium-100",
     "tailwindName": "fill-error-medium-100",
+    "vanillaExtract": "vars.color.fill.error.medium100",
     "typography": null
   },
   {
@@ -2721,6 +2929,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-pressed)",
     "utility": "bg-fill-error-medium-hover-pressed",
     "tailwindName": "fill-error-medium-hover-pressed",
+    "vanillaExtract": "vars.color.fill.error.mediumHoverPressed",
     "typography": null
   },
   {
@@ -2734,6 +2943,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-error-strong-500",
     "tailwindName": "fill-error-strong-500",
+    "vanillaExtract": "vars.color.fill.error.strong500",
     "typography": null
   },
   {
@@ -2747,6 +2957,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-pressed)",
     "utility": "bg-fill-error-strong-hover-pressed",
     "tailwindName": "fill-error-strong-hover-pressed",
+    "vanillaExtract": "vars.color.fill.error.strongHoverPressed",
     "typography": null
   },
   {
@@ -2760,6 +2971,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-warning-weak",
     "tailwindName": "fill-warning-weak",
+    "vanillaExtract": "vars.color.fill.warning.weak",
     "typography": null
   },
   {
@@ -2773,6 +2985,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-pressed)",
     "utility": "bg-fill-warning-weak-hover-pressed",
     "tailwindName": "fill-warning-weak-hover-pressed",
+    "vanillaExtract": "vars.color.fill.warning.weakHoverPressed",
     "typography": null
   },
   {
@@ -2786,6 +2999,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-warning-medium",
     "tailwindName": "fill-warning-medium",
+    "vanillaExtract": "vars.color.fill.warning.medium",
     "typography": null
   },
   {
@@ -2799,6 +3013,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-pressed)",
     "utility": "bg-fill-warning-medium-hover-pressed",
     "tailwindName": "fill-warning-medium-hover-pressed",
+    "vanillaExtract": "vars.color.fill.warning.mediumHoverPressed",
     "typography": null
   },
   {
@@ -2812,6 +3027,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-warning-strong",
     "tailwindName": "fill-warning-strong",
+    "vanillaExtract": "vars.color.fill.warning.strong",
     "typography": null
   },
   {
@@ -2825,6 +3041,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-pressed)",
     "utility": "bg-fill-warning-strong-hover-pressed",
     "tailwindName": "fill-warning-strong-hover-pressed",
+    "vanillaExtract": "vars.color.fill.warning.strongHoverPressed",
     "typography": null
   },
   {
@@ -2838,6 +3055,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-success-weak",
     "tailwindName": "fill-success-weak",
+    "vanillaExtract": "vars.color.fill.success.weak",
     "typography": null
   },
   {
@@ -2851,6 +3069,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-pressed)",
     "utility": "bg-fill-success-weak-hover-pressed",
     "tailwindName": "fill-success-weak-hover-pressed",
+    "vanillaExtract": "vars.color.fill.success.weakHoverPressed",
     "typography": null
   },
   {
@@ -2864,6 +3083,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-success-medium",
     "tailwindName": "fill-success-medium",
+    "vanillaExtract": "vars.color.fill.success.medium",
     "typography": null
   },
   {
@@ -2877,6 +3097,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-pressed)",
     "utility": "bg-fill-success-medium-hover-pressed",
     "tailwindName": "fill-success-medium-hover-pressed",
+    "vanillaExtract": "vars.color.fill.success.mediumHoverPressed",
     "typography": null
   },
   {
@@ -2890,6 +3111,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "bg-fill-success-strong",
     "tailwindName": "fill-success-strong",
+    "vanillaExtract": "vars.color.fill.success.strong",
     "typography": null
   },
   {
@@ -2903,6 +3125,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-pressed)",
     "utility": "bg-fill-success-strong-hover-pressed",
     "tailwindName": "fill-success-strong-hover-pressed",
+    "vanillaExtract": "vars.color.fill.success.strongHoverPressed",
     "typography": null
   },
   {
@@ -2916,6 +3139,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-bg-default)",
     "utility": "bg-background-default",
     "tailwindName": "background-default",
+    "vanillaExtract": "vars.color.background.default",
     "typography": null
   },
   {
@@ -2929,6 +3153,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-bg-subtle)",
     "utility": "bg-background-neutral-weak",
     "tailwindName": "background-neutral-weak",
+    "vanillaExtract": "vars.color.background.neutralWeak",
     "typography": null
   },
   {
@@ -2942,6 +3167,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-bg-subtle)",
     "utility": "bg-background-neutral-medium",
     "tailwindName": "background-neutral-medium",
+    "vanillaExtract": "vars.color.background.neutralMedium",
     "typography": null
   },
   {
@@ -2955,6 +3181,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-bg-brand-subtle)",
     "utility": "bg-background-brand-weak",
     "tailwindName": "background-brand-weak",
+    "vanillaExtract": "vars.color.background.brandWeak",
     "typography": null
   },
   {
@@ -2968,6 +3195,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-bg-brand-subtle)",
     "utility": "bg-background-brand-medium",
     "tailwindName": "background-brand-medium",
+    "vanillaExtract": "vars.color.background.brandMedium",
     "typography": null
   },
   {
@@ -2981,6 +3209,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-surface-default)",
     "utility": "bg-surface-default",
     "tailwindName": "surface-default",
+    "vanillaExtract": "vars.color.surface.default",
     "typography": null
   },
   {
@@ -2994,6 +3223,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-surface-disabled)",
     "utility": "bg-surface-disabled",
     "tailwindName": "surface-disabled",
+    "vanillaExtract": "vars.color.surface.disabled",
     "typography": null
   },
   {
@@ -3007,6 +3237,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-surface-subtle)",
     "utility": "bg-surface-neutral-weak",
     "tailwindName": "surface-neutral-weak",
+    "vanillaExtract": "vars.color.surface.neutralWeak",
     "typography": null
   },
   {
@@ -3020,6 +3251,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-surface-subtle)",
     "utility": "bg-surface-neutral-medium",
     "tailwindName": "surface-neutral-medium",
+    "vanillaExtract": "vars.color.surface.neutralMedium",
     "typography": null
   },
   {
@@ -3033,6 +3265,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-surface-subtle)",
     "utility": "bg-surface-neutral-inverse",
     "tailwindName": "surface-neutral-inverse",
+    "vanillaExtract": "vars.color.surface.neutralInverse",
     "typography": null
   },
   {
@@ -3046,6 +3279,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-surface-inverse)",
     "utility": "bg-surface-brand-weak",
     "tailwindName": "surface-brand-weak",
+    "vanillaExtract": "vars.color.surface.brandWeak",
     "typography": null
   },
   {
@@ -3059,6 +3293,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-surface-inverse)",
     "utility": "bg-surface-brand-medium",
     "tailwindName": "surface-brand-medium",
+    "vanillaExtract": "vars.color.surface.brandMedium",
     "typography": null
   },
   {
@@ -3072,6 +3307,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-surface-inverse)",
     "utility": "bg-surface-brand-inverse",
     "tailwindName": "surface-brand-inverse",
+    "vanillaExtract": "vars.color.surface.brandInverse",
     "typography": null
   },
   {
@@ -3085,6 +3321,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-text-inverse)",
     "utility": "text-inverse",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.text.inverse",
     "typography": null
   },
   {
@@ -3098,6 +3335,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-text-disabled)",
     "utility": "text-disabled",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.text.disabled",
     "typography": null
   },
   {
@@ -3111,6 +3349,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-text-disabled)",
     "utility": "text-placeholder",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.text.placeholder",
     "typography": null
   },
   {
@@ -3124,6 +3363,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-text-subtle)",
     "utility": "text-neutral-weak-500",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.text.neutralWeak500",
     "typography": null
   },
   {
@@ -3137,6 +3377,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-text-subtle)",
     "utility": "text-neutral-medium-600",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.text.neutralMedium600",
     "typography": null
   },
   {
@@ -3150,6 +3391,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-text-subtle)",
     "utility": "text-neutral-strong-800",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.text.neutralStrong800",
     "typography": null
   },
   {
@@ -3163,6 +3405,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-text-default)",
     "utility": "text-neutral-default",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.text.neutralDefault",
     "typography": null
   },
   {
@@ -3176,6 +3419,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-text-brand)",
     "utility": "text-brand-disabled",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.text.brandDisabled",
     "typography": null
   },
   {
@@ -3189,6 +3433,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-text-brand)",
     "utility": "text-brand-default",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.text.brandDefault",
     "typography": null
   },
   {
@@ -3202,6 +3447,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-text-brand)",
     "utility": "text-brand-strong",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.text.brandStrong",
     "typography": null
   },
   {
@@ -3215,6 +3461,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-text-link)",
     "utility": "text-success",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.text.success",
     "typography": null
   },
   {
@@ -3228,6 +3475,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-text-link)",
     "utility": "text-error",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.text.error",
     "typography": null
   },
   {
@@ -3241,6 +3489,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-text-link)",
     "utility": "text-warning",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.text.warning",
     "typography": null
   },
   {
@@ -3254,6 +3503,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "border-disabled",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.disabled",
     "typography": null
   },
   {
@@ -3267,6 +3517,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-border-subtle)",
     "utility": "border-neutral-weaker-100",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.neutral.weaker100",
     "typography": null
   },
   {
@@ -3280,6 +3531,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-border-subtle)",
     "utility": "border-neutral-weak-200",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.neutral.weak200",
     "typography": null
   },
   {
@@ -3293,6 +3545,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-border-default)",
     "utility": "border-neutral-medium-300",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.neutral.medium300",
     "typography": null
   },
   {
@@ -3306,6 +3559,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-border-strong)",
     "utility": "border-neutral-strong-400",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.neutral.strong400",
     "typography": null
   },
   {
@@ -3319,6 +3573,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-border-strong)",
     "utility": "border-neutral-stronger-600",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.neutral.stronger600",
     "typography": null
   },
   {
@@ -3332,6 +3587,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-action-primary-default)",
     "utility": "border-neutral-default",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.neutral.default",
     "typography": null
   },
   {
@@ -3345,6 +3601,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-border-subtle)",
     "utility": "border-primary-weaker-100",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.primary.weaker100",
     "typography": null
   },
   {
@@ -3358,6 +3615,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-border-default)",
     "utility": "border-primary-weak-200",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.primary.weak200",
     "typography": null
   },
   {
@@ -3371,6 +3629,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-border-strong)",
     "utility": "border-primary-medium-300",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.primary.medium300",
     "typography": null
   },
   {
@@ -3384,6 +3643,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-border-strong)",
     "utility": "border-primary-strong-500",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.primary.strong500",
     "typography": null
   },
   {
@@ -3397,6 +3657,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-border-subtle)",
     "utility": "border-error-weaker-100",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.error.weaker100",
     "typography": null
   },
   {
@@ -3410,6 +3671,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-border-default)",
     "utility": "border-error-weak-200",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.error.weak200",
     "typography": null
   },
   {
@@ -3423,6 +3685,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-border-strong)",
     "utility": "border-error-medium-300",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.error.medium300",
     "typography": null
   },
   {
@@ -3436,6 +3699,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-border-strong)",
     "utility": "border-error-strong-500",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.error.strong500",
     "typography": null
   },
   {
@@ -3449,6 +3713,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-border-subtle)",
     "utility": "border-warning-weaker-100",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.warning.weaker100",
     "typography": null
   },
   {
@@ -3462,6 +3727,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-border-default)",
     "utility": "border-warning-weak-200",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.warning.weak200",
     "typography": null
   },
   {
@@ -3475,6 +3741,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-border-strong)",
     "utility": "border-warning-medium-300",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.warning.medium300",
     "typography": null
   },
   {
@@ -3488,6 +3755,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-border-strong)",
     "utility": "border-warning-strong-500",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.warning.strong500",
     "typography": null
   },
   {
@@ -3501,6 +3769,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-border-subtle)",
     "utility": "border-success-weaker",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.success.weaker",
     "typography": null
   },
   {
@@ -3514,6 +3783,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-border-default)",
     "utility": "border-success-weak",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.success.weak",
     "typography": null
   },
   {
@@ -3527,6 +3797,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-border-strong)",
     "utility": "border-success-medium",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.success.medium",
     "typography": null
   },
   {
@@ -3540,6 +3811,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-border-strong)",
     "utility": "border-success-strong",
     "tailwindName": null,
+    "vanillaExtract": "vars.color.border.success.strong",
     "typography": null
   },
   {
@@ -3553,6 +3825,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-part-pm-bg)",
     "utility": null,
     "tailwindName": "tag-part-pm-weaker",
+    "vanillaExtract": "vars.color.tag.part.pm.weaker",
     "typography": null
   },
   {
@@ -3566,6 +3839,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-part-pm-bg)",
     "utility": null,
     "tailwindName": "tag-part-pm-weak",
+    "vanillaExtract": "vars.color.tag.part.pm.weak",
     "typography": null
   },
   {
@@ -3579,6 +3853,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-part-pm-border)",
     "utility": null,
     "tailwindName": "tag-part-pm-medium",
+    "vanillaExtract": "vars.color.tag.part.pm.medium",
     "typography": null
   },
   {
@@ -3592,6 +3867,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-part-pm-text)",
     "utility": null,
     "tailwindName": "tag-part-pm-strong",
+    "vanillaExtract": "vars.color.tag.part.pm.strong",
     "typography": null
   },
   {
@@ -3605,6 +3881,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-part-design-bg)",
     "utility": null,
     "tailwindName": "tag-part-design-weaker",
+    "vanillaExtract": "vars.color.tag.part.design.weaker",
     "typography": null
   },
   {
@@ -3618,6 +3895,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-part-design-bg)",
     "utility": null,
     "tailwindName": "tag-part-design-weak",
+    "vanillaExtract": "vars.color.tag.part.design.weak",
     "typography": null
   },
   {
@@ -3631,6 +3909,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-part-design-border)",
     "utility": null,
     "tailwindName": "tag-part-design-medium",
+    "vanillaExtract": "vars.color.tag.part.design.medium",
     "typography": null
   },
   {
@@ -3644,6 +3923,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-part-design-text)",
     "utility": null,
     "tailwindName": "tag-part-design-strong",
+    "vanillaExtract": "vars.color.tag.part.design.strong",
     "typography": null
   },
   {
@@ -3657,6 +3937,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-part-mobile-pe-bg)",
     "utility": null,
     "tailwindName": "tag-part-mobile-pe-weaker",
+    "vanillaExtract": "vars.color.tag.part.mobilePe.weaker",
     "typography": null
   },
   {
@@ -3670,6 +3951,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-part-mobile-pe-bg)",
     "utility": null,
     "tailwindName": "tag-part-mobile-pe-weak",
+    "vanillaExtract": "vars.color.tag.part.mobilePe.weak",
     "typography": null
   },
   {
@@ -3683,6 +3965,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-part-mobile-pe-border)",
     "utility": null,
     "tailwindName": "tag-part-mobile-pe-medium",
+    "vanillaExtract": "vars.color.tag.part.mobilePe.medium",
     "typography": null
   },
   {
@@ -3696,6 +3979,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-part-mobile-pe-text)",
     "utility": null,
     "tailwindName": "tag-part-mobile-pe-strong",
+    "vanillaExtract": "vars.color.tag.part.mobilePe.strong",
     "typography": null
   },
   {
@@ -3709,6 +3993,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-part-web-pe-bg)",
     "utility": null,
     "tailwindName": "tag-part-web-pe-weaker",
+    "vanillaExtract": "vars.color.tag.part.webPe.weaker",
     "typography": null
   },
   {
@@ -3722,6 +4007,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-part-web-pe-bg)",
     "utility": null,
     "tailwindName": "tag-part-web-pe-weak",
+    "vanillaExtract": "vars.color.tag.part.webPe.weak",
     "typography": null
   },
   {
@@ -3735,6 +4021,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-part-web-pe-border)",
     "utility": null,
     "tailwindName": "tag-part-web-pe-medium",
+    "vanillaExtract": "vars.color.tag.part.webPe.medium",
     "typography": null
   },
   {
@@ -3748,6 +4035,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-part-web-pe-text)",
     "utility": null,
     "tailwindName": "tag-part-web-pe-strong",
+    "vanillaExtract": "vars.color.tag.part.webPe.strong",
     "typography": null
   },
   {
@@ -3761,6 +4049,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-role-central-bg)",
     "utility": null,
     "tailwindName": "tag-role-central-weaker",
+    "vanillaExtract": "vars.color.tag.role.central.weaker",
     "typography": null
   },
   {
@@ -3774,6 +4063,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-role-central-border)",
     "utility": null,
     "tailwindName": "tag-role-central-weak",
+    "vanillaExtract": "vars.color.tag.role.central.weak",
     "typography": null
   },
   {
@@ -3787,6 +4077,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-role-central-border)",
     "utility": null,
     "tailwindName": "tag-role-central-medium",
+    "vanillaExtract": "vars.color.tag.role.central.medium",
     "typography": null
   },
   {
@@ -3800,6 +4091,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-role-central-text)",
     "utility": null,
     "tailwindName": "tag-role-central-strong",
+    "vanillaExtract": "vars.color.tag.role.central.strong",
     "typography": null
   },
   {
@@ -3813,6 +4105,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-role-chapter-bg)",
     "utility": null,
     "tailwindName": "tag-role-chapter-weaker",
+    "vanillaExtract": "vars.color.tag.role.chapter.weaker",
     "typography": null
   },
   {
@@ -3826,6 +4119,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-role-chapter-border)",
     "utility": null,
     "tailwindName": "tag-role-chapter-weak",
+    "vanillaExtract": "vars.color.tag.role.chapter.weak",
     "typography": null
   },
   {
@@ -3839,6 +4133,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-role-chapter-border)",
     "utility": null,
     "tailwindName": "tag-role-chapter-medium",
+    "vanillaExtract": "vars.color.tag.role.chapter.medium",
     "typography": null
   },
   {
@@ -3852,6 +4147,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-role-chapter-text)",
     "utility": null,
     "tailwindName": "tag-role-chapter-strong",
+    "vanillaExtract": "vars.color.tag.role.chapter.strong",
     "typography": null
   },
   {
@@ -3865,6 +4161,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-role-campus-bg)",
     "utility": null,
     "tailwindName": "tag-role-campus-weaker",
+    "vanillaExtract": "vars.color.tag.role.campus.weaker",
     "typography": null
   },
   {
@@ -3878,6 +4175,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-role-campus-bg)",
     "utility": null,
     "tailwindName": "tag-role-campus-weak",
+    "vanillaExtract": "vars.color.tag.role.campus.weak",
     "typography": null
   },
   {
@@ -3891,6 +4189,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-role-campus-border)",
     "utility": null,
     "tailwindName": "tag-role-campus-medium",
+    "vanillaExtract": "vars.color.tag.role.campus.medium",
     "typography": null
   },
   {
@@ -3904,6 +4203,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-role-campus-text)",
     "utility": null,
     "tailwindName": "tag-role-campus-strong",
+    "vanillaExtract": "vars.color.tag.role.campus.strong",
     "typography": null
   },
   {
@@ -3917,6 +4217,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-role-super-admin-bg)",
     "utility": null,
     "tailwindName": "tag-role-challenger-super-admin-weaker",
+    "vanillaExtract": "vars.color.tag.role.challengerSuperAdmin.weaker",
     "typography": null
   },
   {
@@ -3930,6 +4231,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-role-super-admin-bg)",
     "utility": null,
     "tailwindName": "tag-role-challenger-super-admin-weak",
+    "vanillaExtract": "vars.color.tag.role.challengerSuperAdmin.weak",
     "typography": null
   },
   {
@@ -3943,6 +4245,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-role-super-admin-border)",
     "utility": null,
     "tailwindName": "tag-role-challenger-super-admin-medium",
+    "vanillaExtract": "vars.color.tag.role.challengerSuperAdmin.medium",
     "typography": null
   },
   {
@@ -3956,6 +4259,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-role-super-admin-text)",
     "utility": null,
     "tailwindName": "tag-role-challenger-super-admin-strong",
+    "vanillaExtract": "vars.color.tag.role.challengerSuperAdmin.strong",
     "typography": null
   },
   {
@@ -3969,6 +4273,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-role-product-bg)",
     "utility": null,
     "tailwindName": "tag-role-product-weaker",
+    "vanillaExtract": "vars.color.tag.role.product.weaker",
     "typography": null
   },
   {
@@ -3982,6 +4287,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-role-product-border)",
     "utility": null,
     "tailwindName": "tag-role-product-weak",
+    "vanillaExtract": "vars.color.tag.role.product.weak",
     "typography": null
   },
   {
@@ -3995,6 +4301,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-role-product-border)",
     "utility": null,
     "tailwindName": "tag-role-product-medium",
+    "vanillaExtract": "vars.color.tag.role.product.medium",
     "typography": null
   },
   {
@@ -4008,6 +4315,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": "var(--color-tag-role-product-text)",
     "utility": null,
     "tailwindName": "tag-role-product-strong",
+    "vanillaExtract": "vars.color.tag.role.product.strong",
     "typography": null
   },
   {
@@ -4021,6 +4329,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "bg-dimmed-weak",
     "tailwindName": "dimmed-weak",
+    "vanillaExtract": "vars.color.dimmed.weak",
     "typography": null
   },
   {
@@ -4034,6 +4343,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "bg-dimmed-medium",
     "tailwindName": "dimmed-medium",
+    "vanillaExtract": "vars.color.dimmed.medium",
     "typography": null
   },
   {
@@ -4047,6 +4357,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "bg-dimmed-strong",
     "tailwindName": "dimmed-strong",
+    "vanillaExtract": "vars.color.dimmed.strong",
     "typography": null
   },
   {
@@ -4060,6 +4371,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-display-1-bold",
     "tailwindName": null,
+    "vanillaExtract": "typography.display1Bold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "48px",
@@ -4079,6 +4391,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-display-2-semibold",
     "tailwindName": null,
+    "vanillaExtract": "typography.display2Semibold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "40px",
@@ -4098,6 +4411,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-display-3-bold",
     "tailwindName": null,
+    "vanillaExtract": "typography.display3Bold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "36px",
@@ -4117,6 +4431,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-display-4-bold",
     "tailwindName": null,
+    "vanillaExtract": "typography.display4Bold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "32px",
@@ -4136,6 +4451,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-heading-1-semibold",
     "tailwindName": null,
+    "vanillaExtract": "typography.heading1Semibold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "28px",
@@ -4155,6 +4471,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-heading-2-bold",
     "tailwindName": null,
+    "vanillaExtract": "typography.heading2Bold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "24px",
@@ -4174,6 +4491,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-heading-2-semibold",
     "tailwindName": null,
+    "vanillaExtract": "typography.heading2Semibold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "24px",
@@ -4193,6 +4511,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-heading-3-bold",
     "tailwindName": null,
+    "vanillaExtract": "typography.heading3Bold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "20px",
@@ -4212,6 +4531,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-heading-3-semibold",
     "tailwindName": null,
+    "vanillaExtract": "typography.heading3Semibold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "20px",
@@ -4231,6 +4551,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-heading-4-semibold",
     "tailwindName": null,
+    "vanillaExtract": "typography.heading4Semibold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "18px",
@@ -4250,6 +4571,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-heading-5-medium",
     "tailwindName": null,
+    "vanillaExtract": "typography.heading5Medium",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "16px",
@@ -4269,6 +4591,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-title-1-semibold",
     "tailwindName": null,
+    "vanillaExtract": "typography.title1Semibold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "22px",
@@ -4288,6 +4611,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-title-2-semibold",
     "tailwindName": null,
+    "vanillaExtract": "typography.title2Semibold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "20px",
@@ -4307,6 +4631,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-title-2-medium",
     "tailwindName": null,
+    "vanillaExtract": "typography.title2Medium",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "20px",
@@ -4326,6 +4651,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-title-3-medium",
     "tailwindName": null,
+    "vanillaExtract": "typography.title3Medium",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "18px",
@@ -4345,6 +4671,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-title-4-semibold",
     "tailwindName": null,
+    "vanillaExtract": "typography.title4Semibold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "16px",
@@ -4364,6 +4691,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-title-4-medium",
     "tailwindName": null,
+    "vanillaExtract": "typography.title4Medium",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "16px",
@@ -4383,6 +4711,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-body-1-semibold",
     "tailwindName": null,
+    "vanillaExtract": "typography.body1Semibold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "16px",
@@ -4402,6 +4731,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-body-1-medium",
     "tailwindName": null,
+    "vanillaExtract": "typography.body1Medium",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "16px",
@@ -4421,6 +4751,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-body-1-regular",
     "tailwindName": null,
+    "vanillaExtract": "typography.body1Regular",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "16px",
@@ -4440,6 +4771,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-body-2-semibold",
     "tailwindName": null,
+    "vanillaExtract": "typography.body2Semibold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "15px",
@@ -4459,6 +4791,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-body-2-medium",
     "tailwindName": null,
+    "vanillaExtract": "typography.body2Medium",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "15px",
@@ -4478,6 +4811,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-body-2-regular",
     "tailwindName": null,
+    "vanillaExtract": "typography.body2Regular",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "15px",
@@ -4497,6 +4831,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-body-3-semibold",
     "tailwindName": null,
+    "vanillaExtract": "typography.body3Semibold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "14px",
@@ -4516,6 +4851,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-body-3-medium",
     "tailwindName": null,
+    "vanillaExtract": "typography.body3Medium",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "14px",
@@ -4535,6 +4871,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-body-3-regular",
     "tailwindName": null,
+    "vanillaExtract": "typography.body3Regular",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "14px",
@@ -4554,6 +4891,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-body-4-semibold",
     "tailwindName": null,
+    "vanillaExtract": "typography.body4Semibold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "13px",
@@ -4573,6 +4911,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-label-1-semibold",
     "tailwindName": null,
+    "vanillaExtract": "typography.label1Semibold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "18px",
@@ -4592,6 +4931,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-label-1-medium",
     "tailwindName": null,
+    "vanillaExtract": "typography.label1Medium",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "18px",
@@ -4611,6 +4951,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-label-2-semibold",
     "tailwindName": null,
+    "vanillaExtract": "typography.label2Semibold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "17px",
@@ -4630,6 +4971,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-label-2-medium",
     "tailwindName": null,
+    "vanillaExtract": "typography.label2Medium",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "17px",
@@ -4649,6 +4991,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-label-3-semibold",
     "tailwindName": null,
+    "vanillaExtract": "typography.label3Semibold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "16px",
@@ -4668,6 +5011,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-label-3-medium",
     "tailwindName": null,
+    "vanillaExtract": "typography.label3Medium",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "16px",
@@ -4687,6 +5031,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-label-4-semibold",
     "tailwindName": null,
+    "vanillaExtract": "typography.label4Semibold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "15px",
@@ -4706,6 +5051,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-label-4-medium",
     "tailwindName": null,
+    "vanillaExtract": "typography.label4Medium",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "15px",
@@ -4725,6 +5071,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-label-5-semibold",
     "tailwindName": null,
+    "vanillaExtract": "typography.label5Semibold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "14px",
@@ -4744,6 +5091,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-label-5-medium",
     "tailwindName": null,
+    "vanillaExtract": "typography.label5Medium",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "14px",
@@ -4763,6 +5111,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-label-6-semibold",
     "tailwindName": null,
+    "vanillaExtract": "typography.label6Semibold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "12px",
@@ -4782,6 +5131,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-label-6-medium",
     "tailwindName": null,
+    "vanillaExtract": "typography.label6Medium",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "12px",
@@ -4801,6 +5151,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-label-7-semibold",
     "tailwindName": null,
+    "vanillaExtract": "typography.label7Semibold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "11px",
@@ -4820,6 +5171,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-label-7-medium",
     "tailwindName": null,
+    "vanillaExtract": "typography.label7Medium",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "11px",
@@ -4839,6 +5191,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-caption-1-medium",
     "tailwindName": null,
+    "vanillaExtract": "typography.caption1Medium",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "13px",
@@ -4858,6 +5211,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-caption-1-regular",
     "tailwindName": null,
+    "vanillaExtract": "typography.caption1Regular",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "13px",
@@ -4877,6 +5231,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-caption-2-bold",
     "tailwindName": null,
+    "vanillaExtract": "typography.caption2Bold",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "12px",
@@ -4896,6 +5251,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-caption-2-medium",
     "tailwindName": null,
+    "vanillaExtract": "typography.caption2Medium",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "12px",
@@ -4915,6 +5271,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-caption-2-regular",
     "tailwindName": null,
+    "vanillaExtract": "typography.caption2Regular",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "12px",
@@ -4934,6 +5291,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-caption-3-medium",
     "tailwindName": null,
+    "vanillaExtract": "typography.caption3Medium",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "11px",
@@ -4953,6 +5311,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "text-caption-3-regular",
     "tailwindName": null,
+    "vanillaExtract": "typography.caption3Regular",
     "typography": {
       "fontFamily": "Pretendard Variable",
       "fontSize": "11px",
@@ -4972,6 +5331,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "shadow-drop-neutral-1",
     "tailwindName": "drop-neutral-1",
+    "vanillaExtract": "vars.shadow.drop.neutral1",
     "typography": null
   },
   {
@@ -4985,6 +5345,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "shadow-drop-neutral-2",
     "tailwindName": "drop-neutral-2",
+    "vanillaExtract": "vars.shadow.drop.neutral2",
     "typography": null
   },
   {
@@ -4998,6 +5359,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "shadow-drop-neutral-3",
     "tailwindName": "drop-neutral-3",
+    "vanillaExtract": "vars.shadow.drop.neutral3",
     "typography": null
   },
   {
@@ -5011,6 +5373,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "shadow-inner-neutral-1",
     "tailwindName": "inner-neutral-1",
+    "vanillaExtract": "vars.shadow.inner.neutral1",
     "typography": null
   },
   {
@@ -5024,6 +5387,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": "shadow-inner-neutral-2",
     "tailwindName": "inner-neutral-2",
+    "vanillaExtract": "vars.shadow.inner.neutral2",
     "typography": null
   },
   {
@@ -5037,6 +5401,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
+    "vanillaExtract": "vars.grid.columns",
     "typography": null
   },
   {
@@ -5050,6 +5415,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "grid-gutter",
+    "vanillaExtract": "vars.grid.gutter",
     "typography": null
   },
   {
@@ -5063,6 +5429,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "grid-margin-desktop",
+    "vanillaExtract": "vars.grid.margin.desktop",
     "typography": null
   },
   {
@@ -5076,6 +5443,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "grid-margin-mobile",
+    "vanillaExtract": "vars.grid.margin.mobile",
     "typography": null
   },
   {
@@ -5089,6 +5457,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "header",
+    "vanillaExtract": "vars.layout.header.height",
     "typography": null
   },
   {
@@ -5102,6 +5471,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "codeSyntax": null,
     "utility": null,
     "tailwindName": "sidebar",
+    "vanillaExtract": "vars.layout.sidebar.width",
     "typography": null
   }
 ]

@@ -6,6 +6,16 @@ const INDENT = "  "
 const formatKey = (key: string): string =>
   IDENTIFIER_PATTERN.test(key) ? key : JSON.stringify(key)
 
+export const formatPropertyAccess = (
+  root: string,
+  keys: readonly string[],
+): string =>
+  `${root}${keys
+    .map((key) =>
+      IDENTIFIER_PATTERN.test(key) ? `.${key}` : `[${JSON.stringify(key)}]`,
+    )
+    .join("")}`
+
 export const serializeRecord = (record: NestedRecord, depth = 0): string => {
   const indent = INDENT.repeat(depth + 1)
   const lines = Object.entries(record).map(([key, value]) =>

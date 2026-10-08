@@ -7,6 +7,7 @@ import type { Dimension } from "../shared/units.ts"
 import { formatShadow } from "./declarations.ts"
 import type { ModelEntry } from "./model.ts"
 import { tailwindNameOf, tailwindUtilityOf } from "./render-tailwind-css.ts"
+import { vanillaExtractAccessorOf } from "./render-vanilla-extract.ts"
 
 const TIER_BY_FILE: Record<TokenFileName, string> = {
   "color.primitive.json": "color-primitive",
@@ -38,6 +39,7 @@ type ManifestEntry = {
   codeSyntax: string | null
   utility: string | null
   tailwindName: string | null
+  vanillaExtract: string | null
   typography: ResolvedTypography | null
 }
 
@@ -121,6 +123,7 @@ export const renderManifest = (entries: readonly ModelEntry[]): string => {
       codeSyntax: figma?.codeSyntax ?? null,
       utility: tailwindUtilityOf(entry),
       tailwindName: tailwindNameOf(entry),
+      vanillaExtract: vanillaExtractAccessorOf(entry),
       typography,
     }
   })
@@ -137,6 +140,7 @@ export const renderManifest = (entries: readonly ModelEntry[]): string => {
     "  codeSyntax: string | null",
     "  utility: string | null",
     "  tailwindName: string | null",
+    "  vanillaExtract: string | null",
     "  typography: {",
     "    fontFamily: string",
     "    fontSize: string",

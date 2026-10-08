@@ -8,13 +8,13 @@ type ColorTokenTableProps = {
 function TailwindName({ row }: { row: ColorTokenRow }) {
   if (row.utility !== null) {
     return (
-      <div className="umc-color-class">
+      <div className="umc-token-class">
         <span className="umc-sub">Tailwind</span> <code>{row.utility}</code>
       </div>
     )
   }
   return (
-    <div className="umc-color-class">
+    <div className="umc-token-class">
       <span className="umc-sub">Tailwind</span> <code>{row.tailwindName}</code>{" "}
       <span className="umc-sub">앞에 bg-, text-, border-</span>
     </div>
@@ -68,6 +68,12 @@ export function ColorTokenTable({
                 <TailwindName row={row} />
                 <div className="umc-sub">
                   CSS <code>{row.cssVariable}</code>
+                  {row.vanillaExtract === null ? null : (
+                    <>
+                      {" "}
+                      · vanilla-extract <code>{row.vanillaExtract}</code>
+                    </>
+                  )}
                 </div>
                 {row.codeSyntax === null ? null : (
                   <DevModeName

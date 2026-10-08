@@ -133,7 +133,7 @@
 
 .umc-type-row {
   display: grid;
-  grid-template-columns: minmax(12rem, 16rem) 1fr;
+  grid-template-columns: minmax(14rem, 18rem) 1fr;
   gap: 1.5rem;
   align-items: center;
   padding-block: 1rem;
@@ -336,11 +336,11 @@
   font-size: var(--sl-text-sm);
 }
 
-.umc-color-class {
+.umc-token-class {
   margin-top: 0.25rem;
 }
 
-.umc-color-class code {
+.umc-token-class code {
   color: var(--sl-color-text-accent);
   font-weight: 600;
 }

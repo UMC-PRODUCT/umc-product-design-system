@@ -146,6 +146,18 @@ describe("manifest.ts", () => {
       tailwindName: null,
     })
     expect(tokenNamed("color.teal.300")?.codeSyntax).toBeNull()
+  })
+
+  it.each([
+    ["color.fill.neutral.weak-75", "vars.color.fill.neutral.weak75"],
+    ["color.text.neutral-default", "vars.color.text.neutralDefault"],
+    ["shadow.drop.neutral-1", "vars.shadow.drop.neutral1"],
+    ["grid.gutter", "vars.grid.gutter"],
+    ["typography.body-1-regular", "typography.body1Regular"],
+    ["color.teal.300", null],
+    ["spacing.padding.16", null],
+  ])("%s의 vanilla-extract 접근 경로는 %s다", (name, vanillaExtract) => {
+    expect(tokenNamed(name)?.vanillaExtract).toBe(vanillaExtract)
     expect(
       tokenManifest.find((token) => token.name === "shadow.drop.neutral-1"),
     ).toMatchObject({
