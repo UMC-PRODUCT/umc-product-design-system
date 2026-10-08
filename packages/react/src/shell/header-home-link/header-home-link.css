@@ -2,8 +2,8 @@
 
 @layer components {
   .umc-header-home-link {
-    --umc-header-home-link-fg: var(--umc-color-icon-neutral-stronger);
-    --umc-header-home-link-active-fg: var(--umc-color-icon-brand-strong);
+    --umc-header-home-link-fg: var(--umc-color-icon-neutral-stronger-700);
+    --umc-header-home-link-active-fg: var(--umc-color-icon-brand-strong-600);
 
     display: inline-flex;
     flex: 0 0 auto;
@@ -42,7 +42,7 @@
   }
 
   .umc-header-home-link:focus-visible {
-    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
     outline-offset: 2px;
   }
 

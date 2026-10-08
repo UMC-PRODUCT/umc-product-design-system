@@ -1,16 +1,16 @@
 @layer components {
   .umc-header {
-    --umc-header-bg: var(--umc-color-fill-neutral-weaker);
+    --umc-header-bg: var(--umc-color-fill-neutral-weaker-50);
     --umc-header-nav-bg: var(--umc-color-teal-grey-50);
     --umc-header-nav-border-color: var(--umc-color-teal-grey-75);
     --umc-header-nav-shadow-color: #0a56500a;
     --umc-header-nav-backdrop: none;
-    --umc-header-item-bg: var(--umc-color-fill-neutral-weaker);
-    --umc-header-item-fg: var(--umc-color-text-neutral-medium);
-    --umc-header-item-hover-bg: var(--umc-color-fill-neutral-weak);
-    --umc-header-item-hover-fg: var(--umc-color-text-neutral-medium);
+    --umc-header-item-bg: var(--umc-color-fill-neutral-weaker-50);
+    --umc-header-item-fg: var(--umc-color-text-neutral-medium-600);
+    --umc-header-item-hover-bg: var(--umc-color-fill-neutral-weak-75);
+    --umc-header-item-hover-fg: var(--umc-color-text-neutral-medium-600);
     --umc-header-item-hover-shadow: var(--umc-shadow-inner-neutral-2);
-    --umc-header-item-selected-bg: var(--umc-color-fill-primary-weak);
+    --umc-header-item-selected-bg: var(--umc-color-fill-primary-weak-75);
     --umc-header-item-selected-fg: var(--umc-color-text-brand-default);
     --umc-header-item-selected-shadow: none;
 
@@ -132,7 +132,7 @@
   }
 
   .umc-header__nav-link:focus-visible {
-    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
     outline-offset: 2px;
   }
 

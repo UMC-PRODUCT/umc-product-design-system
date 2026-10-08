@@ -32,7 +32,7 @@ import { Switch } from "@umc-product/react"
 | `sm` | 36×20 | 14px → 16px         | `body-2-regular`(15px) | 24px      |
 | `md` | 44×24 | 16px → 20px         | `body-1-regular`(16px) | 26px      |
 
-켜지면 손잡이가 커지면서 오른쪽 끝에서 2px 안쪽으로 옮겨 갑니다. 꺼진 손잡이는 Sm 3px, Md 4px 안쪽에 있습니다. 트랙은 꺼짐 `fill-neutral-strong`, 켜짐 `fill-primary-inverse-medium`이고, 비활성이면 각각 `fill-disabled`, `fill-primary-strong`입니다.
+켜지면 손잡이가 커지면서 오른쪽 끝에서 2px 안쪽으로 옮겨 갑니다. 꺼진 손잡이는 Sm 3px, Md 4px 안쪽에 있습니다. 트랙은 꺼짐 `fill-neutral-strong-200`, 켜짐 `fill-primary-inverse-medium-400`이고, 비활성이면 각각 `fill-disabled`, `fill-primary-strong-200`입니다.
 
 <SwitchStates client:visible />
 
@@ -59,7 +59,7 @@ import { Switch } from "@umc-product/react"
 ## 피그마와 다른 점
 
 - 피그마의 `State=On/Off`는 `checked`로 옮겼습니다.
-- 트랙 색 두 개(꺼짐, 켜짐)가 변수에 연결되어 있지 않습니다. 켜짐 `#39a9a1`은 같은 값의 `fill-primary-inverse-medium`을 씁니다. 꺼짐은 내보낸 값이 `#e2e4e3`이고, 가장 가까운 `fill-neutral-strong`(`#e2e3e3`)을 씁니다.
+- 트랙 색 두 개(꺼짐, 켜짐)가 변수에 연결되어 있지 않습니다. 켜짐 `#39a9a1`은 같은 값의 `fill-primary-inverse-medium-400`을 씁니다. 꺼짐은 내보낸 값이 `#e2e4e3`이고, 가장 가까운 `fill-neutral-strong-200`(`#e2e3e3`)을 씁니다.
 - Sm 켜짐에만 안쪽 그림자(`#d3d8d833`, 0.8 0.8 1.6)가 있어 그대로 옮겼습니다. Md 켜짐에는 그림자가 없습니다.
-- 포커스 상태가 없어 다른 컨트롤과 같은 2px `border-primary-strong` 외곽선을 넣었습니다.
+- 포커스 상태가 없어 다른 컨트롤과 같은 2px `border-primary-strong-500` 외곽선을 넣었습니다.
 - 켜고 끌 때 손잡이가 150ms 동안 움직입니다. 움직임 줄이기 설정에서는 바로 바뀝니다.

@@ -71,16 +71,16 @@
   }
 
   .umc-toast[data-color="primary"] {
-    --umc-toast-bg: var(--umc-color-fill-primary-strong);
+    --umc-toast-bg: var(--umc-color-fill-primary-strong-200);
     --umc-toast-fg: var(--umc-color-teal-700);
-    --umc-toast-icon: var(--umc-color-icon-brand-medium);
+    --umc-toast-icon: var(--umc-color-icon-brand-medium-500);
     --umc-toast-action: var(--umc-color-teal-500);
   }
 
   .umc-toast[data-color="neutral"] {
     --umc-toast-bg: var(--umc-toast-neutral-bg);
     --umc-toast-fg: var(--umc-color-text-inverse);
-    --umc-toast-icon: var(--umc-color-icon-brand-medium);
+    --umc-toast-icon: var(--umc-color-icon-brand-medium-500);
     --umc-toast-action: var(--umc-color-text-inverse);
   }
 
@@ -158,7 +158,7 @@
   }
 
   .umc-toast__action:focus-visible {
-    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
     outline-offset: 2px;
   }
 
@@ -172,12 +172,12 @@
     padding: 0;
     border: 0;
     background: none;
-    color: var(--umc-color-icon-neutral-weak);
+    color: var(--umc-color-icon-neutral-weak-400);
     cursor: pointer;
   }
 
   .umc-toast__close:focus-visible {
-    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
     outline-offset: 2px;
   }
 }

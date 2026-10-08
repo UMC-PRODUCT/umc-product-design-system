@@ -74,10 +74,10 @@ describe("resolveVariablePath", () => {
   it.each([
     ["Primitives/Teal/Teal-500", "color.teal.500"],
     ["Primitives/Grey/TealGrey-75", "color.teal-grey.75"],
-    ["Semantic/Icon/Neutral-Weak-400", "color.icon.neutral-weak"],
+    ["Semantic/Icon/Neutral-Weak-400", "color.icon.neutral-weak-400"],
     [
       "Semantic/Fill/Primary/Stronger-Hover(Pressed)-400",
-      "color.fill.primary.stronger-hover-pressed",
+      "color.fill.primary.stronger-hover-pressed-400",
     ],
     ["Semantic/Border/Disabled/Disalbed", "color.border.disabled"],
     ["Spacing/Semantic/Padding/Padding 16", "spacing.padding.16"],
@@ -118,8 +118,8 @@ describe("normalizeVariables: 피그마 export 전체", () => {
     ["color.teal-grey.75", "#f7f8f8"],
     ["color.white", "#ffffff"],
     ["color.text.neutral-default", "{color.teal-grey.900}"],
-    ["color.icon.neutral-weak", "{color.teal-grey.400}"],
-    ["color.fill.primary.stronger-hover-pressed", "{color.teal.400}"],
+    ["color.icon.neutral-weak-400", "{color.teal-grey.400}"],
+    ["color.fill.primary.stronger-hover-pressed-400", "{color.teal.400}"],
     ["color.border.disabled", "{color.teal-grey.200}"],
     ["color.tag.role.challenger-super-admin.strong", "{color.teal.600}"],
     ["color.dimmed.weak", "#0f101033"],
@@ -209,12 +209,18 @@ describe("normalizeVariables: 실패 규칙", () => {
       normalizeVariables(
         readFixture({
           ...teal900,
-          "Semantic/Text/Weak-100": aliasOf("Primitives/Teal/Teal-900"),
-          "Semantic/Text/Weak-200": aliasOf("Primitives/Teal/Teal-900"),
+          "Semantic/Text/Weak-Hover(Pressed)": aliasOf(
+            "Primitives/Teal/Teal-900",
+          ),
+          "Semantic/Text/Weak-Hover-Pressed": aliasOf(
+            "Primitives/Teal/Teal-900",
+          ),
         }),
         [],
       ),
-    ).toThrow(/Semantic\/Text\/Weak-100와 같은 경로 color\.text\.weak가 됩니다/)
+    ).toThrow(
+      /Semantic\/Text\/Weak-Hover\(Pressed\)와 같은 경로 color\.text\.weak-hover-pressed가 됩니다/,
+    )
   })
 
   it("규칙과 타입이 다르면 실패한다", () => {

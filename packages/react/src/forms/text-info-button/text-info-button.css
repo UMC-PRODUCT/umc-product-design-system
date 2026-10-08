@@ -1,7 +1,7 @@
 @layer components {
   .umc-text-info-button {
     --umc-text-info-button-color: var(--umc-color-text-placeholder);
-    --umc-text-info-button-icon-color: var(--umc-color-icon-neutral-weak);
+    --umc-text-info-button-icon-color: var(--umc-color-icon-neutral-weak-400);
 
     display: inline-flex;
     align-items: center;
@@ -24,14 +24,16 @@
 
   @media (hover: hover) {
     .umc-text-info-button:hover {
-      --umc-text-info-button-color: var(--umc-color-text-neutral-weak);
-      --umc-text-info-button-icon-color: var(--umc-color-icon-neutral-medium);
+      --umc-text-info-button-color: var(--umc-color-text-neutral-weak-500);
+      --umc-text-info-button-icon-color: var(
+        --umc-color-icon-neutral-medium-500
+      );
     }
   }
 
   .umc-text-info-button:focus-visible {
     border-radius: var(--umc-radius-6);
-    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
     outline-offset: 2px;
   }
 

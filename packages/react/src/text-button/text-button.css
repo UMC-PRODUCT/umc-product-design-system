@@ -24,17 +24,17 @@
     --umc-text-button-fg: var(--umc-color-text-brand-default);
     --umc-text-button-fg-pressed: var(--umc-color-text-brand-strong);
     --umc-text-button-fg-disabled: var(--umc-color-text-brand-disabled);
-    --umc-text-button-icon: var(--umc-color-icon-brand-strong);
+    --umc-text-button-icon: var(--umc-color-icon-brand-strong-600);
     --umc-text-button-icon-pressed: var(--umc-color-teal-700);
     --umc-text-button-icon-disabled: var(--umc-color-teal-300);
   }
 
   .umc-text-button[data-color="neutral"] {
-    --umc-text-button-fg: var(--umc-color-text-neutral-medium);
-    --umc-text-button-fg-pressed: var(--umc-color-text-neutral-strong);
+    --umc-text-button-fg: var(--umc-color-text-neutral-medium-600);
+    --umc-text-button-fg-pressed: var(--umc-color-text-neutral-strong-800);
     --umc-text-button-fg-disabled: var(--umc-color-text-disabled);
-    --umc-text-button-icon: var(--umc-color-icon-neutral-strong);
-    --umc-text-button-icon-pressed: var(--umc-color-icon-neutral-stronger);
+    --umc-text-button-icon: var(--umc-color-icon-neutral-strong-600);
+    --umc-text-button-icon-pressed: var(--umc-color-icon-neutral-stronger-700);
     --umc-text-button-icon-disabled: var(--umc-color-icon-disabled);
   }
 
@@ -119,7 +119,7 @@
 
   .umc-text-button:focus-visible {
     border-radius: var(--umc-radius-6);
-    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
     outline-offset: 2px;
   }
 

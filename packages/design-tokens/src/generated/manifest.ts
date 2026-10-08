@@ -1789,69 +1789,69 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
-    "name": "color.icon.neutral-weak",
-    "cssVariable": "--umc-color-icon-neutral-weak",
+    "name": "color.icon.neutral-weak-400",
+    "cssVariable": "--umc-color-icon-neutral-weak-400",
     "tier": "color-semantic",
     "type": "color",
     "value": "#adadad",
     "alias": "color.teal-grey.400",
     "figmaName": "Semantic/Icon/Neutral-Weak-400",
-    "utility": "icon-neutral-weak",
+    "utility": "icon-neutral-weak-400",
     "typography": null
   },
   {
-    "name": "color.icon.neutral-medium",
-    "cssVariable": "--umc-color-icon-neutral-medium",
+    "name": "color.icon.neutral-medium-500",
+    "cssVariable": "--umc-color-icon-neutral-medium-500",
     "tier": "color-semantic",
     "type": "color",
     "value": "#7e7f7f",
     "alias": "color.teal-grey.500",
     "figmaName": "Semantic/Icon/Neutral-Medium-500",
-    "utility": "icon-neutral-medium",
+    "utility": "icon-neutral-medium-500",
     "typography": null
   },
   {
-    "name": "color.icon.neutral-strong",
-    "cssVariable": "--umc-color-icon-neutral-strong",
+    "name": "color.icon.neutral-strong-600",
+    "cssVariable": "--umc-color-icon-neutral-strong-600",
     "tier": "color-semantic",
     "type": "color",
     "value": "#606262",
     "alias": "color.teal-grey.600",
     "figmaName": "Semantic/Icon/Neutral-Strong-600",
-    "utility": "icon-neutral-strong",
+    "utility": "icon-neutral-strong-600",
     "typography": null
   },
   {
-    "name": "color.icon.neutral-stronger",
-    "cssVariable": "--umc-color-icon-neutral-stronger",
+    "name": "color.icon.neutral-stronger-700",
+    "cssVariable": "--umc-color-icon-neutral-stronger-700",
     "tier": "color-semantic",
     "type": "color",
     "value": "#3f4141",
     "alias": "color.teal-grey.700",
     "figmaName": "Semantic/Icon/Neutral-Stronger-700",
-    "utility": "icon-neutral-stronger",
+    "utility": "icon-neutral-stronger-700",
     "typography": null
   },
   {
-    "name": "color.icon.brand-medium",
-    "cssVariable": "--umc-color-icon-brand-medium",
+    "name": "color.icon.brand-medium-500",
+    "cssVariable": "--umc-color-icon-brand-medium-500",
     "tier": "color-semantic",
     "type": "color",
     "value": "#008a80",
     "alias": "color.teal.500",
     "figmaName": "Semantic/Icon/Brand-Medium-500",
-    "utility": "icon-brand-medium",
+    "utility": "icon-brand-medium-500",
     "typography": null
   },
   {
-    "name": "color.icon.brand-strong",
-    "cssVariable": "--umc-color-icon-brand-strong",
+    "name": "color.icon.brand-strong-600",
+    "cssVariable": "--umc-color-icon-brand-strong-600",
     "tier": "color-semantic",
     "type": "color",
     "value": "#02746c",
     "alias": "color.teal.600",
     "figmaName": "Semantic/Icon/Brand-Strong-600",
-    "utility": "icon-brand-strong",
+    "utility": "icon-brand-strong-600",
     "typography": null
   },
   {
@@ -1899,14 +1899,14 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
-    "name": "color.fill.neutral.weaker",
-    "cssVariable": "--umc-color-fill-neutral-weaker",
+    "name": "color.fill.neutral.weaker-50",
+    "cssVariable": "--umc-color-fill-neutral-weaker-50",
     "tier": "color-semantic",
     "type": "color",
     "value": "#fbfcfc",
     "alias": "color.teal-grey.50",
     "figmaName": "Semantic/Fill/Neutral/Weaker-50",
-    "utility": "fill-neutral-weaker",
+    "utility": "fill-neutral-weaker-50",
     "typography": null
   },
   {
@@ -1921,14 +1921,14 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
-    "name": "color.fill.neutral.weak",
-    "cssVariable": "--umc-color-fill-neutral-weak",
+    "name": "color.fill.neutral.weak-75",
+    "cssVariable": "--umc-color-fill-neutral-weak-75",
     "tier": "color-semantic",
     "type": "color",
     "value": "#f7f8f8",
     "alias": "color.teal-grey.75",
     "figmaName": "Semantic/Fill/Neutral/Weak-75",
-    "utility": "fill-neutral-weak",
+    "utility": "fill-neutral-weak-75",
     "typography": null
   },
   {
@@ -1943,14 +1943,14 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
-    "name": "color.fill.neutral.medium",
-    "cssVariable": "--umc-color-fill-neutral-medium",
+    "name": "color.fill.neutral.medium-100",
+    "cssVariable": "--umc-color-fill-neutral-medium-100",
     "tier": "color-semantic",
     "type": "color",
     "value": "#eff0f0",
     "alias": "color.teal-grey.100",
     "figmaName": "Semantic/Fill/Neutral/Medium-100",
-    "utility": "fill-neutral-medium",
+    "utility": "fill-neutral-medium-100",
     "typography": null
   },
   {
@@ -1965,14 +1965,14 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
-    "name": "color.fill.neutral.strong",
-    "cssVariable": "--umc-color-fill-neutral-strong",
+    "name": "color.fill.neutral.strong-200",
+    "cssVariable": "--umc-color-fill-neutral-strong-200",
     "tier": "color-semantic",
     "type": "color",
     "value": "#e2e3e3",
     "alias": "color.teal-grey.200",
     "figmaName": "Semantic/Fill/Neutral/Strong-200",
-    "utility": "fill-neutral-strong",
+    "utility": "fill-neutral-strong-200",
     "typography": null
   },
   {
@@ -1998,14 +1998,14 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
-    "name": "color.fill.neutral-inverse.weak",
-    "cssVariable": "--umc-color-fill-neutral-inverse-weak",
+    "name": "color.fill.neutral-inverse.weak-400",
+    "cssVariable": "--umc-color-fill-neutral-inverse-weak-400",
     "tier": "color-semantic",
     "type": "color",
     "value": "#adadad",
     "alias": "color.teal-grey.400",
     "figmaName": "Semantic/Fill/Neutral-Inverse/Weak-400",
-    "utility": "fill-neutral-inverse-weak",
+    "utility": "fill-neutral-inverse-weak-400",
     "typography": null
   },
   {
@@ -2020,14 +2020,14 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
-    "name": "color.fill.neutral-inverse.medium",
-    "cssVariable": "--umc-color-fill-neutral-inverse-medium",
+    "name": "color.fill.neutral-inverse.medium-500",
+    "cssVariable": "--umc-color-fill-neutral-inverse-medium-500",
     "tier": "color-semantic",
     "type": "color",
     "value": "#7e7f7f",
     "alias": "color.teal-grey.500",
     "figmaName": "Semantic/Fill/Neutral-Inverse/Medium-500",
-    "utility": "fill-neutral-inverse-medium",
+    "utility": "fill-neutral-inverse-medium-500",
     "typography": null
   },
   {
@@ -2042,14 +2042,14 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
-    "name": "color.fill.neutral-inverse.strong",
-    "cssVariable": "--umc-color-fill-neutral-inverse-strong",
+    "name": "color.fill.neutral-inverse.strong-600",
+    "cssVariable": "--umc-color-fill-neutral-inverse-strong-600",
     "tier": "color-semantic",
     "type": "color",
     "value": "#606262",
     "alias": "color.teal-grey.600",
     "figmaName": "Semantic/Fill/Neutral-Inverse/Strong-600",
-    "utility": "fill-neutral-inverse-strong",
+    "utility": "fill-neutral-inverse-strong-600",
     "typography": null
   },
   {
@@ -2064,14 +2064,14 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
-    "name": "color.fill.neutral-inverse.stronger",
-    "cssVariable": "--umc-color-fill-neutral-inverse-stronger",
+    "name": "color.fill.neutral-inverse.stronger-700",
+    "cssVariable": "--umc-color-fill-neutral-inverse-stronger-700",
     "tier": "color-semantic",
     "type": "color",
     "value": "#3f4141",
     "alias": "color.teal-grey.700",
     "figmaName": "Semantic/Fill/Neutral-Inverse/Stronger-700",
-    "utility": "fill-neutral-inverse-stronger",
+    "utility": "fill-neutral-inverse-stronger-700",
     "typography": null
   },
   {
@@ -2086,14 +2086,14 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
-    "name": "color.fill.primary.weaker",
-    "cssVariable": "--umc-color-fill-primary-weaker",
+    "name": "color.fill.primary.weaker-50",
+    "cssVariable": "--umc-color-fill-primary-weaker-50",
     "tier": "color-semantic",
     "type": "color",
     "value": "#f4fbfa",
     "alias": "color.teal.50",
     "figmaName": "Semantic/Fill/Primary/Weaker-50",
-    "utility": "fill-primary-weaker",
+    "utility": "fill-primary-weaker-50",
     "typography": null
   },
   {
@@ -2108,14 +2108,14 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
-    "name": "color.fill.primary.weak",
-    "cssVariable": "--umc-color-fill-primary-weak",
+    "name": "color.fill.primary.weak-75",
+    "cssVariable": "--umc-color-fill-primary-weak-75",
     "tier": "color-semantic",
     "type": "color",
     "value": "#e9f7f5",
     "alias": "color.teal.75",
     "figmaName": "Semantic/Fill/Primary/Weak-75",
-    "utility": "fill-primary-weak",
+    "utility": "fill-primary-weak-75",
     "typography": null
   },
   {
@@ -2130,14 +2130,14 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
-    "name": "color.fill.primary.medium",
-    "cssVariable": "--umc-color-fill-primary-medium",
+    "name": "color.fill.primary.medium-100",
+    "cssVariable": "--umc-color-fill-primary-medium-100",
     "tier": "color-semantic",
     "type": "color",
     "value": "#ddf4f1",
     "alias": "color.teal.100",
     "figmaName": "Semantic/Fill/Primary/Medium-100",
-    "utility": "fill-primary-medium",
+    "utility": "fill-primary-medium-100",
     "typography": null
   },
   {
@@ -2152,14 +2152,14 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
-    "name": "color.fill.primary.strong",
-    "cssVariable": "--umc-color-fill-primary-strong",
+    "name": "color.fill.primary.strong-200",
+    "cssVariable": "--umc-color-fill-primary-strong-200",
     "tier": "color-semantic",
     "type": "color",
     "value": "#b3e5e1",
     "alias": "color.teal.200",
     "figmaName": "Semantic/Fill/Primary/Strong-200",
-    "utility": "fill-primary-strong",
+    "utility": "fill-primary-strong-200",
     "typography": null
   },
   {
@@ -2174,36 +2174,36 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
-    "name": "color.fill.primary.stronger",
-    "cssVariable": "--umc-color-fill-primary-stronger",
+    "name": "color.fill.primary.stronger-300",
+    "cssVariable": "--umc-color-fill-primary-stronger-300",
     "tier": "color-semantic",
     "type": "color",
     "value": "#7ac7c1",
     "alias": "color.teal.300",
     "figmaName": "Semantic/Fill/Primary/Stronger-300",
-    "utility": "fill-primary-stronger",
+    "utility": "fill-primary-stronger-300",
     "typography": null
   },
   {
-    "name": "color.fill.primary.stronger-hover-pressed",
-    "cssVariable": "--umc-color-fill-primary-stronger-hover-pressed",
+    "name": "color.fill.primary.stronger-hover-pressed-400",
+    "cssVariable": "--umc-color-fill-primary-stronger-hover-pressed-400",
     "tier": "color-semantic",
     "type": "color",
     "value": "#39a9a1",
     "alias": "color.teal.400",
     "figmaName": "Semantic/Fill/Primary/Stronger-Hover(Pressed)-400",
-    "utility": "fill-primary-stronger-hover-pressed",
+    "utility": "fill-primary-stronger-hover-pressed-400",
     "typography": null
   },
   {
-    "name": "color.fill.primary-inverse.medium",
-    "cssVariable": "--umc-color-fill-primary-inverse-medium",
+    "name": "color.fill.primary-inverse.medium-400",
+    "cssVariable": "--umc-color-fill-primary-inverse-medium-400",
     "tier": "color-semantic",
     "type": "color",
     "value": "#39a9a1",
     "alias": "color.teal.400",
     "figmaName": "Semantic/Fill/Primary-Inverse/Medium-400",
-    "utility": "fill-primary-inverse-medium",
+    "utility": "fill-primary-inverse-medium-400",
     "typography": null
   },
   {
@@ -2218,14 +2218,14 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
-    "name": "color.fill.primary-inverse.strong",
-    "cssVariable": "--umc-color-fill-primary-inverse-strong",
+    "name": "color.fill.primary-inverse.strong-500",
+    "cssVariable": "--umc-color-fill-primary-inverse-strong-500",
     "tier": "color-semantic",
     "type": "color",
     "value": "#008a80",
     "alias": "color.teal.500",
     "figmaName": "Semantic/Fill/Primary-Inverse/Strong-500",
-    "utility": "fill-primary-inverse-strong",
+    "utility": "fill-primary-inverse-strong-500",
     "typography": null
   },
   {
@@ -2240,14 +2240,14 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
-    "name": "color.fill.primary-inverse.stronger",
-    "cssVariable": "--umc-color-fill-primary-inverse-stronger",
+    "name": "color.fill.primary-inverse.stronger-600",
+    "cssVariable": "--umc-color-fill-primary-inverse-stronger-600",
     "tier": "color-semantic",
     "type": "color",
     "value": "#02746c",
     "alias": "color.teal.600",
     "figmaName": "Semantic/Fill/Primary-Inverse/Stronger-600",
-    "utility": "fill-primary-inverse-stronger",
+    "utility": "fill-primary-inverse-stronger-600",
     "typography": null
   },
   {
@@ -2262,14 +2262,14 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
-    "name": "color.fill.error.weak",
-    "cssVariable": "--umc-color-fill-error-weak",
+    "name": "color.fill.error.weak-50",
+    "cssVariable": "--umc-color-fill-error-weak-50",
     "tier": "color-semantic",
     "type": "color",
     "value": "#fef2f1",
     "alias": "color.red.50",
     "figmaName": "Semantic/Fill/Error/Weak-50",
-    "utility": "fill-error-weak",
+    "utility": "fill-error-weak-50",
     "typography": null
   },
   {
@@ -2284,14 +2284,14 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
-    "name": "color.fill.error.medium",
-    "cssVariable": "--umc-color-fill-error-medium",
+    "name": "color.fill.error.medium-100",
+    "cssVariable": "--umc-color-fill-error-medium-100",
     "tier": "color-semantic",
     "type": "color",
     "value": "#ffe7e5",
     "alias": "color.red.100",
     "figmaName": "Semantic/Fill/Error/Medium-100",
-    "utility": "fill-error-medium",
+    "utility": "fill-error-medium-100",
     "typography": null
   },
   {
@@ -2306,14 +2306,14 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
-    "name": "color.fill.error.strong",
-    "cssVariable": "--umc-color-fill-error-strong",
+    "name": "color.fill.error.strong-500",
+    "cssVariable": "--umc-color-fill-error-strong-500",
     "tier": "color-semantic",
     "type": "color",
     "value": "#dc3d3d",
     "alias": "color.red.500",
     "figmaName": "Semantic/Fill/Error/Strong-500",
-    "utility": "fill-error-strong",
+    "utility": "fill-error-strong-500",
     "typography": null
   },
   {
@@ -2636,36 +2636,36 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
-    "name": "color.text.neutral-weak",
-    "cssVariable": "--umc-color-text-neutral-weak",
+    "name": "color.text.neutral-weak-500",
+    "cssVariable": "--umc-color-text-neutral-weak-500",
     "tier": "color-semantic",
     "type": "color",
     "value": "#7e7f7f",
     "alias": "color.teal-grey.500",
     "figmaName": "Semantic/Text/Neutral-Weak-500",
-    "utility": "fg-neutral-weak",
+    "utility": "fg-neutral-weak-500",
     "typography": null
   },
   {
-    "name": "color.text.neutral-medium",
-    "cssVariable": "--umc-color-text-neutral-medium",
+    "name": "color.text.neutral-medium-600",
+    "cssVariable": "--umc-color-text-neutral-medium-600",
     "tier": "color-semantic",
     "type": "color",
     "value": "#606262",
     "alias": "color.teal-grey.600",
     "figmaName": "Semantic/Text/Neutral-Medium-600",
-    "utility": "fg-neutral-medium",
+    "utility": "fg-neutral-medium-600",
     "typography": null
   },
   {
-    "name": "color.text.neutral-strong",
-    "cssVariable": "--umc-color-text-neutral-strong",
+    "name": "color.text.neutral-strong-800",
+    "cssVariable": "--umc-color-text-neutral-strong-800",
     "tier": "color-semantic",
     "type": "color",
     "value": "#282a2a",
     "alias": "color.teal-grey.800",
     "figmaName": "Semantic/Text/Neutral-Strong-800",
-    "utility": "fg-neutral-strong",
+    "utility": "fg-neutral-strong-800",
     "typography": null
   },
   {
@@ -2757,58 +2757,58 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
-    "name": "color.border.neutral.weaker",
-    "cssVariable": "--umc-color-border-neutral-weaker",
+    "name": "color.border.neutral.weaker-100",
+    "cssVariable": "--umc-color-border-neutral-weaker-100",
     "tier": "color-semantic",
     "type": "color",
     "value": "#eff0f0",
     "alias": "color.teal-grey.100",
     "figmaName": "Semantic/Border/Neutral/Weaker-100",
-    "utility": "border-neutral-weaker",
+    "utility": "border-neutral-weaker-100",
     "typography": null
   },
   {
-    "name": "color.border.neutral.weak",
-    "cssVariable": "--umc-color-border-neutral-weak",
+    "name": "color.border.neutral.weak-200",
+    "cssVariable": "--umc-color-border-neutral-weak-200",
     "tier": "color-semantic",
     "type": "color",
     "value": "#e2e3e3",
     "alias": "color.teal-grey.200",
     "figmaName": "Semantic/Border/Neutral/Weak-200",
-    "utility": "border-neutral-weak",
+    "utility": "border-neutral-weak-200",
     "typography": null
   },
   {
-    "name": "color.border.neutral.medium",
-    "cssVariable": "--umc-color-border-neutral-medium",
+    "name": "color.border.neutral.medium-300",
+    "cssVariable": "--umc-color-border-neutral-medium-300",
     "tier": "color-semantic",
     "type": "color",
     "value": "#cccccc",
     "alias": "color.teal-grey.300",
     "figmaName": "Semantic/Border/Neutral/Medium-300",
-    "utility": "border-neutral-medium",
+    "utility": "border-neutral-medium-300",
     "typography": null
   },
   {
-    "name": "color.border.neutral.strong",
-    "cssVariable": "--umc-color-border-neutral-strong",
+    "name": "color.border.neutral.strong-400",
+    "cssVariable": "--umc-color-border-neutral-strong-400",
     "tier": "color-semantic",
     "type": "color",
     "value": "#adadad",
     "alias": "color.teal-grey.400",
     "figmaName": "Semantic/Border/Neutral/Strong-400",
-    "utility": "border-neutral-strong",
+    "utility": "border-neutral-strong-400",
     "typography": null
   },
   {
-    "name": "color.border.neutral.stronger",
-    "cssVariable": "--umc-color-border-neutral-stronger",
+    "name": "color.border.neutral.stronger-600",
+    "cssVariable": "--umc-color-border-neutral-stronger-600",
     "tier": "color-semantic",
     "type": "color",
     "value": "#606262",
     "alias": "color.teal-grey.600",
     "figmaName": "Semantic/Border/Neutral/Stronger-600",
-    "utility": "border-neutral-stronger",
+    "utility": "border-neutral-stronger-600",
     "typography": null
   },
   {
@@ -2823,135 +2823,135 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
-    "name": "color.border.primary.weaker",
-    "cssVariable": "--umc-color-border-primary-weaker",
+    "name": "color.border.primary.weaker-100",
+    "cssVariable": "--umc-color-border-primary-weaker-100",
     "tier": "color-semantic",
     "type": "color",
     "value": "#ddf4f1",
     "alias": "color.teal.100",
     "figmaName": "Semantic/Border/Primary/Weaker-100",
-    "utility": "border-primary-weaker",
+    "utility": "border-primary-weaker-100",
     "typography": null
   },
   {
-    "name": "color.border.primary.weak",
-    "cssVariable": "--umc-color-border-primary-weak",
+    "name": "color.border.primary.weak-200",
+    "cssVariable": "--umc-color-border-primary-weak-200",
     "tier": "color-semantic",
     "type": "color",
     "value": "#b3e5e1",
     "alias": "color.teal.200",
     "figmaName": "Semantic/Border/Primary/Weak-200",
-    "utility": "border-primary-weak",
+    "utility": "border-primary-weak-200",
     "typography": null
   },
   {
-    "name": "color.border.primary.medium",
-    "cssVariable": "--umc-color-border-primary-medium",
+    "name": "color.border.primary.medium-300",
+    "cssVariable": "--umc-color-border-primary-medium-300",
     "tier": "color-semantic",
     "type": "color",
     "value": "#7ac7c1",
     "alias": "color.teal.300",
     "figmaName": "Semantic/Border/Primary/Medium-300",
-    "utility": "border-primary-medium",
+    "utility": "border-primary-medium-300",
     "typography": null
   },
   {
-    "name": "color.border.primary.strong",
-    "cssVariable": "--umc-color-border-primary-strong",
+    "name": "color.border.primary.strong-500",
+    "cssVariable": "--umc-color-border-primary-strong-500",
     "tier": "color-semantic",
     "type": "color",
     "value": "#008a80",
     "alias": "color.teal.500",
     "figmaName": "Semantic/Border/Primary/Strong-500",
-    "utility": "border-primary-strong",
+    "utility": "border-primary-strong-500",
     "typography": null
   },
   {
-    "name": "color.border.error.weaker",
-    "cssVariable": "--umc-color-border-error-weaker",
+    "name": "color.border.error.weaker-100",
+    "cssVariable": "--umc-color-border-error-weaker-100",
     "tier": "color-semantic",
     "type": "color",
     "value": "#ffe7e5",
     "alias": "color.red.100",
     "figmaName": "Semantic/Border/Error/Weaker-100",
-    "utility": "border-error-weaker",
+    "utility": "border-error-weaker-100",
     "typography": null
   },
   {
-    "name": "color.border.error.weak",
-    "cssVariable": "--umc-color-border-error-weak",
+    "name": "color.border.error.weak-200",
+    "cssVariable": "--umc-color-border-error-weak-200",
     "tier": "color-semantic",
     "type": "color",
     "value": "#fdb4b4",
     "alias": "color.red.200",
     "figmaName": "Semantic/Border/Error/Weak-200",
-    "utility": "border-error-weak",
+    "utility": "border-error-weak-200",
     "typography": null
   },
   {
-    "name": "color.border.error.medium",
-    "cssVariable": "--umc-color-border-error-medium",
+    "name": "color.border.error.medium-300",
+    "cssVariable": "--umc-color-border-error-medium-300",
     "tier": "color-semantic",
     "type": "color",
     "value": "#f88c8c",
     "alias": "color.red.300",
     "figmaName": "Semantic/Border/Error/Medium-300",
-    "utility": "border-error-medium",
+    "utility": "border-error-medium-300",
     "typography": null
   },
   {
-    "name": "color.border.error.strong",
-    "cssVariable": "--umc-color-border-error-strong",
+    "name": "color.border.error.strong-500",
+    "cssVariable": "--umc-color-border-error-strong-500",
     "tier": "color-semantic",
     "type": "color",
     "value": "#dc3d3d",
     "alias": "color.red.500",
     "figmaName": "Semantic/Border/Error/Strong-500",
-    "utility": "border-error-strong",
+    "utility": "border-error-strong-500",
     "typography": null
   },
   {
-    "name": "color.border.warning.weaker",
-    "cssVariable": "--umc-color-border-warning-weaker",
+    "name": "color.border.warning.weaker-100",
+    "cssVariable": "--umc-color-border-warning-weaker-100",
     "tier": "color-semantic",
     "type": "color",
     "value": "#fff0c2",
     "alias": "color.yellow.100",
     "figmaName": "Semantic/Border/Warning/Weaker-100",
-    "utility": "border-warning-weaker",
+    "utility": "border-warning-weaker-100",
     "typography": null
   },
   {
-    "name": "color.border.warning.weak",
-    "cssVariable": "--umc-color-border-warning-weak",
+    "name": "color.border.warning.weak-200",
+    "cssVariable": "--umc-color-border-warning-weak-200",
     "tier": "color-semantic",
     "type": "color",
     "value": "#ffe79e",
     "alias": "color.yellow.200",
     "figmaName": "Semantic/Border/Warning/Weak-200",
-    "utility": "border-warning-weak",
+    "utility": "border-warning-weak-200",
     "typography": null
   },
   {
-    "name": "color.border.warning.medium",
-    "cssVariable": "--umc-color-border-warning-medium",
+    "name": "color.border.warning.medium-300",
+    "cssVariable": "--umc-color-border-warning-medium-300",
     "tier": "color-semantic",
     "type": "color",
     "value": "#fed971",
     "alias": "color.yellow.300",
     "figmaName": "Semantic/Border/Warning/Medium-300",
-    "utility": "border-warning-medium",
+    "utility": "border-warning-medium-300",
     "typography": null
   },
   {
-    "name": "color.border.warning.strong",
-    "cssVariable": "--umc-color-border-warning-strong",
+    "name": "color.border.warning.strong-500",
+    "cssVariable": "--umc-color-border-warning-strong-500",
     "tier": "color-semantic",
     "type": "color",
     "value": "#f59b00",
     "alias": "color.yellow.500",
     "figmaName": "Semantic/Border/Warning/Strong-500",
-    "utility": "border-warning-strong",
+    "utility": "border-warning-strong-500",
     "typography": null
   },
   {

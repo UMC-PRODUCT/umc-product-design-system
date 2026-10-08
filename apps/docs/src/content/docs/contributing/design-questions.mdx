@@ -11,7 +11,7 @@ description: 피그마를 코드로 옮기며 판단이 필요했던 항목을 �
 
 ## 공통
 
-1. 3기 변수가 아닌 2기 변수와 연결 안 된 값이 남아 있습니다. 이름이 같은 단계의 3기 토큰이 있으면 그 토큰으로 바꿨고(`teal-gray-200`→`--umc-color-border-neutral-weak`, `teal-gray-400`→`--umc-color-text-placeholder`, `teal-gray-900`→`--umc-color-text-neutral-default`, `warmgray-150`→`--umc-color-border-neutral-weaker`, `warmgray-600`→`--umc-color-text-neutral-medium`), 없으면 피그마 값을 컴포넌트 변수에 그대로 담았습니다(`#0b6b64`, `#fed7d7`, `#e2e4e3`, `#f4fbfa99`, `#fef2f199`). 이 대응이 맞는지, 남은 값을 어떤 3기 변수로 연결할지 알려 주세요.
+1. 3기 변수가 아닌 2기 변수와 연결 안 된 값이 남아 있습니다. 이름이 같은 단계의 3기 토큰이 있으면 그 토큰으로 바꿨고(`teal-gray-200`→`--umc-color-border-neutral-weak-200`, `teal-gray-400`→`--umc-color-text-placeholder`, `teal-gray-900`→`--umc-color-text-neutral-default`, `warmgray-150`→`--umc-color-border-neutral-weaker-100`, `warmgray-600`→`--umc-color-text-neutral-medium-600`), 없으면 피그마 값을 컴포넌트 변수에 그대로 담았습니다(`#0b6b64`, `#fed7d7`, `#e2e4e3`, `#f4fbfa99`, `#fef2f199`). 이 대응이 맞는지, 남은 값을 어떤 3기 변수로 연결할지 알려 주세요.
 2. 이름은 같은데 정의가 다른 스타일이 있습니다. 코드는 이름이 같으면 파운데이션 정의(토큰)를 따릅니다.
    - `Shadow/Inner/Neutral_1`: 파운데이션은 청록 2겹인데, Side Navigation hover와 Segmented Control hover는 같은 이름으로 `#D3D8D833` 1겹(1, 1, 2)을 씁니다. 코드는 토큰 정의를 씁니다.
    - 같은 `#D3D8D833` 1겹이 이름 없이 붙은 곳도 있습니다(Context Switcher 눌림, Dropdown/Item Active). 이름이 없어 피그마 값을 컴포넌트 변수로 썼습니다. 어느 스타일에 연결할지 알려 주세요.
@@ -22,13 +22,13 @@ description: 피그마를 코드로 옮기며 판단이 필요했던 항목을 �
    - Dropdown/Item 선택 체크: `16 icon`
    - Context Switcher 체크와 화살표: `icon/Check/16 icon/Regular`, `icon/Expand_more/16 icon/Regular`
    - Toast 닫기: `24 icon`(라이브러리 `Icon/Close`보다 작은 13px X)
-6. Hover와 Focus 상태가 없는 컴포넌트가 많습니다. 포커스 표시는 2px `border-primary-strong` 외곽선으로 통일했습니다.
+6. Hover와 Focus 상태가 없는 컴포넌트가 많습니다. 포커스 표시는 2px `border-primary-strong-500` 외곽선으로 통일했습니다.
 7. 나타나고 사라지는 움직임 정의가 없습니다. 150ms 투명도 전환을 기본으로 넣었고, 움직임 줄이기 설정에서는 끕니다.
 8. 노션 명명 규칙과 다른 이름이 있습니다: `Regular=Weight`, `Property 1`, `Pressed(Hover)`, `Focused & Hover`, Tooltip의 `Appearance`, Option Button의 `Direction`, 오타 `Disalbed`, `Defalut`, `Numberic`, `Varient`, `Meue`, `Sub Meue`, `Eye_visable`, `Solt`.
 
 ## 토큰
 
-변수 이름, codeSyntax 중복, 단계 숫자, 그림자와 텍스트 스타일의 중복 정의 등 17개 항목은 [피그마 정규화 리포트](/contributing/figma-normalization/)의 "디자인 팀 확인 요청"에 있습니다.
+변수 이름, codeSyntax 중복, 그림자와 텍스트 스타일의 중복 정의 등 16개 항목은 [피그마 정규화 리포트](/contributing/figma-normalization/)의 "디자인 팀 확인 요청"에 있습니다.
 
 2026-10-08에 `Label/3-Medium` 자간이 -3%로 바뀐 것을 반영했습니다. 새 컴포넌트에는 `Semantic/Border/Neutral/Disabled`, `Semantic/Fill/Neutral/Disalbed` 같은 새 변수 이름이 보입니다. 저장된 변수 스냅샷(2026-10-06)에는 `Border/Disabled/Disalbed` 같은 옛 이름만 있습니다. 변수 구조를 바꾸셨다면 알려 주세요. Export modes로 다시 받아 토큰 이름을 맞추겠습니다.
 
@@ -67,18 +67,18 @@ description: 피그마를 코드로 옮기며 판단이 필요했던 항목을 �
 5. Segmented Control 선택 항목과 Step Navigation 현재 단계의 그림자(`0 1px 2px #63c4b833`, `0 0 10px #9ca3a34d`)가 이름 없는 값입니다. 그림자 스타일로 등록할지 알려 주세요.
 6. Step Navigation에서 완료한 단계와 남은 단계의 모양 차이가 없습니다. 완료 표시가 필요한지 알려 주세요. 피그마 번호형 버튼에는 Hover가 있지만, 코드는 누를 수 없는 진행 표시로 만들어 hover를 넣지 않았습니다. 단계를 눌러 이동해야 하는지도 알려 주세요.
 7. Tabs 활성 밑줄 색 `#0b6b64`가 2기 변수입니다. 3기 Teal-600(`#02746c`)으로 바꿔도 되는지 알려 주세요.
-8. Tabs에 아이콘 탭 + 선택 조합이 없어 `--umc-color-icon-neutral-stronger`를 임시로 씁니다.
+8. Tabs에 아이콘 탭 + 선택 조합이 없어 `--umc-color-icon-neutral-stronger-700`를 임시로 씁니다.
 9. Check Box의 Error 변형 일부가 이름은 `Disabled=True`인데 그림은 활성 오류 상태입니다(`Check Box` 네 개, `Control`의 `Color=Error, Size=Lg, Selected=True`). 코드는 그림을 따랐습니다. 이름을 `Disabled=False`로 고칠 수 있나요?
 10. Check Box 비활성은 Lg가 `Color=Brand`, Md가 `Color=Neutral` 이름으로만 있고 모양은 같습니다. 비활성에는 색 구분이 없다고 보고 `disabled`가 색과 오류보다 앞서게 했습니다.
 11. Check Box 오류 선택 채움은 `Red-400`(`#ed6464`), 오류 테두리는 `Red-500`(`#dc3d3d`)입니다. 단계가 다른 것이 의도인지 알려 주세요. `Red-400`에 맞는 semantic 토큰이 없어 primitive를 씁니다.
 12. Check Box 비활성 체크 선이 2기 변수 `WarmGray-50`(`#fcfbfa`)입니다. 3기 `teal-grey-50`(`#fbfcfc`)으로 옮겼습니다.
 13. 체크 그림이 세 가지입니다. Check Box는 Md 20px(선 1.8)과 Lg 24px(선 2)을 따로 그렸고, Check Button은 옛 16px 체크를 24px로 키운 그림(선 2.4)입니다. 셋 다 라이브러리 `Icon/Check`와 다릅니다. 한 아이콘으로 맞출지 알려 주세요.
 14. Check Button에 비활성과 Hover 모양이 없습니다. 지금은 비활성이어도 색이 그대로라 활성과 구분되지 않습니다(커서만 바뀜). 비활성 색을 알려 주세요.
-15. Switch 트랙 색 두 개가 변수에 연결되어 있지 않습니다. 꺼짐은 내보낸 값이 `#e2e4e3`이고 켜짐은 `#39a9a1`입니다. 코드는 `fill-neutral-strong`(`#e2e3e3`)과 같은 값의 `fill-primary-inverse-medium`을 씁니다.
+15. Switch 트랙 색 두 개가 변수에 연결되어 있지 않습니다. 꺼짐은 내보낸 값이 `#e2e4e3`이고 켜짐은 `#39a9a1`입니다. 코드는 `fill-neutral-strong-200`(`#e2e3e3`)과 같은 값의 `fill-primary-inverse-medium-400`을 씁니다.
 16. Switch Sm 켜짐에만 안쪽 그림자(`#D3D8D833`, 0.8 0.8 1.6)가 있습니다. Md에도 필요한지, `Shadow/Inner/Neutral_1`을 줄인 것이라면 이름 있는 그림자로 연결할지 알려 주세요.
 17. 라벨 스타일이 컨트롤마다 다릅니다. Check Box는 `Label`(굵기 500, `#282a2a`), Switch는 `Body`(굵기 400, `#0f1010`)입니다. 같은 폼에 함께 놓일 때도 다르게 보이는 것이 의도인지 알려 주세요.
 18. Radio의 `Color=Primary, Selected=False`(틸 테두리)를 언제 쓰는지 알려 주세요. Hover인지 강조인지에 따라 코드가 달라집니다. Neutral 선택 변형이 없어, 선택하면 색과 관계없이 Primary 선택 모양을 씁니다.
-19. Radio 테두리는 `Teal-400`, Check Box Brand 테두리는 `Teal-300`(`border-primary-medium`)입니다. 단계가 다른 것이 의도인지 알려 주세요.
+19. Radio 테두리는 `Teal-400`, Check Box Brand 테두리는 `Teal-300`(`border-primary-medium-300`)입니다. 단계가 다른 것이 의도인지 알려 주세요.
 20. 라벨이 붙은 Radio 본체와 목록 간격은 "Form 형태와 함께 제작 예정"이라 컨트롤만 만들었습니다. 그룹은 임시로 세로 목록, 간격 8px입니다.
 21. 같은 틸 강조를 컴포넌트마다 `Color=Brand`(Check Box, Text Button)와 `Color=Primary`(Radio, Button)로 다르게 부릅니다. 코드는 피그마 이름대로 `brand`와 `primary`를 씁니다. 하나로 맞출지 알려 주세요.
 
@@ -108,7 +108,7 @@ description: 피그마를 코드로 옮기며 판단이 필요했던 항목을 �
 10. 라벨 있는 Home Link(Operation, Study, ProductTech)에 "가제" 주석이 있습니다. 맥락 이름과 `11th` 같은 기수 표기가 확정되면 알려 주세요. 코드는 기수를 영어 서수(1st, 2nd, 3rd, 11th)로 만듭니다.
 11. 라벨 있는 Home Link의 로고는 `Logo/UMC` 인스턴스가 아닙니다. 떼어 낸 그림을 73.76×21.93으로 줄였고, 라이브러리 로고는 74×22입니다. 코드는 피그마 크기를 따랐습니다. 인스턴스로 바꿀지 알려 주세요.
 12. Home Link 라벨의 Orbitron Bold와 글자 크기 13.487px, 11.689px은 텍스트 스타일에도 변수에도 없습니다. 로고와 함께 비율로 줄인 값으로 보고 그대로 옮겼습니다. Orbitron을 브랜드 글꼴 토큰으로 등록할지 알려 주세요.
-13. Home Link 색 변수의 codeSyntax `--color-action-primary-default` 하나가 `#3f4141`(라이트), `#02746c`(라이트 hover), `#f4fbfa`(다크) 세 값을 가리킵니다. 어느 변수인지 알 수 없어 코드는 값이 같은 `icon-neutral-stronger`, `icon-brand-strong`, `teal-50`, `teal-200`을 씁니다.
+13. Home Link 색 변수의 codeSyntax `--color-action-primary-default` 하나가 `#3f4141`(라이트), `#02746c`(라이트 hover), `#f4fbfa`(다크) 세 값을 가리킵니다. 어느 변수인지 알 수 없어 코드는 값이 같은 `icon-neutral-stronger-700`, `icon-brand-strong-600`, `teal-50`, `teal-200`을 씁니다.
 14. `Web/Header/Home Link`의 왼쪽 여백은 Main이 60px, 라벨 있는 맥락이 34px입니다. 라벨 칸 200px 안에서 내용을 가운데 두므로 로고 시작 위치가 맥락마다 다릅니다(헤더 왼쪽에서 Main 76px, Operation 51.5px, Study 68.5px, Product Tech 57.8px). 맥락이 바뀌어도 로고 위치가 같아야 하는지 알려 주세요.
 15. 좁은 화면용 Header가 없습니다. 라벨 있는 홈 링크는 로고 칸이 250px(여백 34px과 16px, 링크 200px)이라, 375px 화면에서 액션 버튼과 함께 두면 가로로 넘칩니다. 모바일 헤더 규칙과 브레이크포인트를 알려 주세요.
 

@@ -2,11 +2,11 @@
   .umc-input-box {
     --umc-input-box-typing-bg: #f4fbfa99;
     --umc-input-box-clear-color: #e2e4e3;
-    --umc-input-box-border-color: var(--umc-color-border-neutral-medium);
+    --umc-input-box-border-color: var(--umc-color-border-neutral-medium-300);
     --umc-input-box-bg: var(--umc-color-fill-neutral-default);
     --umc-input-box-fg: var(--umc-color-text-neutral-default);
     --umc-input-box-placeholder-color: var(--umc-color-text-placeholder);
-    --umc-input-box-accessory-color: var(--umc-color-icon-neutral-medium);
+    --umc-input-box-accessory-color: var(--umc-color-icon-neutral-medium-500);
     --umc-input-box-unit-color: var(--umc-color-text-neutral-default);
     --umc-input-box-timer-color: var(--umc-color-text-brand-default);
 
@@ -68,12 +68,12 @@
 
   @media (hover: hover) {
     .umc-input-box:not([data-disabled]):hover {
-      --umc-input-box-border-color: var(--umc-color-border-primary-strong);
+      --umc-input-box-border-color: var(--umc-color-border-primary-strong-500);
     }
   }
 
   .umc-input-box:not([data-disabled]):focus-within {
-    --umc-input-box-border-color: var(--umc-color-border-primary-strong);
+    --umc-input-box-border-color: var(--umc-color-border-primary-strong-500);
   }
 
   .umc-input-box:focus-within:has(:where([data-filled])) {
@@ -81,8 +81,8 @@
   }
 
   .umc-input-box[data-invalid] {
-    --umc-input-box-border-color: var(--umc-color-border-error-medium);
-    --umc-input-box-bg: var(--umc-color-fill-error-weak);
+    --umc-input-box-border-color: var(--umc-color-border-error-medium-300);
+    --umc-input-box-bg: var(--umc-color-fill-error-weak-50);
     --umc-input-box-fg: var(--umc-color-text-error);
     --umc-input-box-placeholder-color: var(--umc-color-red-200);
     --umc-input-box-clear-color: var(--umc-color-teal-grey-300);
@@ -91,7 +91,7 @@
   }
 
   .umc-input-box[data-invalid]:has(:where([data-filled])) {
-    --umc-input-box-border-color: var(--umc-color-border-error-strong);
+    --umc-input-box-border-color: var(--umc-color-border-error-strong-500);
   }
 
   @media (hover: hover) {
@@ -102,13 +102,13 @@
 
   .umc-input-box[data-invalid]:not([data-disabled]):focus-within {
     --umc-input-box-border-color: var(--umc-color-red-400);
-    --umc-input-box-bg: var(--umc-color-fill-error-weak);
+    --umc-input-box-bg: var(--umc-color-fill-error-weak-50);
     --umc-input-box-fg: var(--umc-color-text-neutral-default);
   }
 
   .umc-input-box[data-disabled] {
-    --umc-input-box-border-color: var(--umc-color-border-neutral-weaker);
-    --umc-input-box-bg: var(--umc-color-fill-neutral-weaker);
+    --umc-input-box-border-color: var(--umc-color-border-neutral-weaker-100);
+    --umc-input-box-bg: var(--umc-color-fill-neutral-weaker-50);
     --umc-input-box-fg: var(--umc-color-text-disabled);
     --umc-input-box-placeholder-color: var(--umc-color-text-disabled);
     --umc-input-box-accessory-color: var(--umc-color-icon-disabled);
@@ -117,8 +117,8 @@
   }
 
   .umc-input-box[data-disabled][data-invalid] {
-    --umc-input-box-border-color: var(--umc-color-border-error-weak);
-    --umc-input-box-bg: var(--umc-color-fill-error-weak);
+    --umc-input-box-border-color: var(--umc-color-border-error-weak-200);
+    --umc-input-box-bg: var(--umc-color-fill-error-weak-50);
     --umc-input-box-unit-color: var(--umc-color-text-disabled);
   }
 
@@ -182,7 +182,7 @@
   .umc-input-box__clear:focus-visible,
   .umc-input-box__password-toggle:focus-visible {
     border-radius: var(--umc-radius-8);
-    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
     outline-offset: -2px;
   }
 

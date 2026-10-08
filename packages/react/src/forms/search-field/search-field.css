@@ -1,7 +1,7 @@
 @layer components {
   .umc-search-field {
     --umc-search-field-clear-color: #e2e4e3;
-    --umc-search-field-bg: var(--umc-color-fill-neutral-weak);
+    --umc-search-field-bg: var(--umc-color-fill-neutral-weak-75);
 
     display: flex;
     align-items: center;
@@ -20,7 +20,7 @@
   }
 
   .umc-search-field[data-variant="dropdown"] {
-    --umc-search-field-bg: var(--umc-color-fill-neutral-weaker);
+    --umc-search-field-bg: var(--umc-color-fill-neutral-weaker-50);
 
     gap: var(--umc-spacing-gap-8);
     padding-inline: var(--umc-spacing-padding-12) 14px;
@@ -33,18 +33,18 @@
 
   @media (hover: hover) {
     .umc-search-field[data-variant="dropdown"]:not([data-disabled]):hover {
-      --umc-search-field-bg: var(--umc-color-fill-neutral-weak);
+      --umc-search-field-bg: var(--umc-color-fill-neutral-weak-75);
     }
   }
 
   .umc-search-field[data-variant="dropdown"]:focus-within {
-    --umc-search-field-bg: var(--umc-color-fill-neutral-weak);
+    --umc-search-field-bg: var(--umc-color-fill-neutral-weak-75);
   }
 
   .umc-search-field__icon {
     flex: 0 0 auto;
     order: 3;
-    color: var(--umc-color-icon-neutral-weak);
+    color: var(--umc-color-icon-neutral-weak-400);
   }
 
   .umc-search-field[data-variant="dropdown"] .umc-search-field__icon {

@@ -45,14 +45,14 @@
 
   @media (hover: hover) {
     a.umc-page-header__breadcrumb-link:hover {
-      color: var(--umc-color-text-neutral-medium);
+      color: var(--umc-color-text-neutral-medium-600);
       font-weight: var(--umc-typography-body-3-semibold-font-weight);
       text-decoration: underline;
     }
   }
 
   a.umc-page-header__breadcrumb-link:focus-visible {
-    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
     outline-offset: 2px;
   }
 
@@ -81,7 +81,7 @@
   .umc-page-header__description {
     margin: 0;
     padding: 0;
-    color: var(--umc-color-text-neutral-medium);
+    color: var(--umc-color-text-neutral-medium-600);
     font-family: var(--umc-typography-body-3-regular-font-family);
     font-size: var(--umc-typography-body-3-regular-font-size);
     font-weight: var(--umc-typography-body-3-regular-font-weight);

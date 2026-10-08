@@ -90,7 +90,7 @@ export function WorkFrameDemo() {
                 className="min-h-40 flex-1 rounded-xl"
                 style={{
                   boxShadow:
-                    "inset 0 0 0 1px var(--umc-color-border-neutral-weaker)",
+                    "inset 0 0 0 1px var(--umc-color-border-neutral-weaker-100)",
                 }}
               />
             </main>

@@ -122,10 +122,10 @@ describe("색 규칙", () => {
 
   it("픽토그램 기본색은 주색의 토큰이고 주색이 하나가 아니면 실패한다", () => {
     expect(pictogramDefaultColor(["#02746c", "#ddf4f1"])).toBe(
-      "var(--umc-color-icon-brand-strong)",
+      "var(--umc-color-icon-brand-strong-600)",
     )
     expect(pictogramDefaultColor(["#008a80", "#b3e6e1"])).toBe(
-      "var(--umc-color-icon-brand-medium)",
+      "var(--umc-color-icon-brand-medium-500)",
     )
     expect(pictogramDefaultColor(["#0b6b64"])).toBe("#0b6b64")
     expect(() => pictogramDefaultColor(["#02746c", "#008a80"])).toThrow(
@@ -266,8 +266,8 @@ describe("buildComponents", () => {
         underConstruction.map((variant) => [variant.key, variant.color]),
       ),
     ).toEqual({
-      light: "var(--umc-color-icon-brand-strong)",
-      dark: "var(--umc-color-icon-brand-medium)",
+      light: "var(--umc-color-icon-brand-strong-600)",
+      dark: "var(--umc-color-icon-brand-medium-500)",
     })
   })
 

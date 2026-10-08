@@ -1,15 +1,15 @@
 @layer components {
   .umc-checkbox {
     --umc-checkbox-bg: var(--umc-color-fill-neutral-default);
-    --umc-checkbox-border: var(--umc-color-border-neutral-strong);
-    --umc-checkbox-checked-bg: var(--umc-color-fill-neutral-inverse-strong);
+    --umc-checkbox-border: var(--umc-color-border-neutral-strong-400);
+    --umc-checkbox-checked-bg: var(--umc-color-fill-neutral-inverse-strong-600);
     --umc-checkbox-check: var(--umc-color-icon-inverse);
 
     display: inline-flex;
     align-items: flex-start;
     gap: var(--umc-checkbox-gap);
     min-height: 24px;
-    color: var(--umc-color-text-neutral-strong);
+    color: var(--umc-color-text-neutral-strong-800);
     font-family: var(--umc-checkbox-font-family);
     font-size: var(--umc-checkbox-font-size);
     font-weight: var(--umc-checkbox-font-weight);
@@ -20,21 +20,21 @@
   }
 
   .umc-checkbox[data-color="brand"] {
-    --umc-checkbox-border: var(--umc-color-border-primary-medium);
-    --umc-checkbox-checked-bg: var(--umc-color-fill-primary-inverse-strong);
+    --umc-checkbox-border: var(--umc-color-border-primary-medium-300);
+    --umc-checkbox-checked-bg: var(--umc-color-fill-primary-inverse-strong-500);
   }
 
   .umc-checkbox:has(
     > .umc-checkbox__control:is([data-invalid], [aria-invalid="true"])
   ) {
-    --umc-checkbox-border: var(--umc-color-border-error-strong);
+    --umc-checkbox-border: var(--umc-color-border-error-strong-500);
     --umc-checkbox-checked-bg: var(--umc-color-red-400);
   }
 
   .umc-checkbox:has(> .umc-checkbox__control[data-disabled]) {
-    --umc-checkbox-bg: var(--umc-color-fill-neutral-weak);
+    --umc-checkbox-bg: var(--umc-color-fill-neutral-weak-75);
     --umc-checkbox-border: var(--umc-color-border-disabled);
-    --umc-checkbox-checked-bg: var(--umc-color-fill-neutral-strong);
+    --umc-checkbox-checked-bg: var(--umc-color-fill-neutral-strong-200);
     --umc-checkbox-check: var(--umc-color-teal-grey-50);
 
     cursor: default;
@@ -114,7 +114,7 @@
   }
 
   .umc-checkbox__control:focus-visible {
-    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
     outline-offset: 2px;
   }
 

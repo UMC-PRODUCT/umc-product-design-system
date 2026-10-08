@@ -1,8 +1,6 @@
 import { toSegment, type TokenPath } from "../shared/naming.ts"
 import { VARIABLE_RULES, type VariableRule } from "./rules.ts"
 
-const STEP_SUFFIX_PATTERN = /-\d+$/
-
 export type ResolvedVariable = {
   path: TokenPath
   rule: VariableRule
@@ -41,9 +39,6 @@ export const resolveVariable = (
     .split("/")
     .filter((segment) => segment.length > 0)
     .map(toSegment)
-    .map((segment) =>
-      rule.stripStepSuffix ? segment.replace(STEP_SUFFIX_PATTERN, "") : segment,
-    )
   return {
     path: [...rule.tokenPath, ...dropRepeatedParentName(segments)],
     rule,

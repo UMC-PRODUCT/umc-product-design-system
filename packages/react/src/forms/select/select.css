@@ -4,11 +4,11 @@
 
 @layer components {
   .umc-select__trigger {
-    --umc-select-border-color: var(--umc-color-border-neutral-medium);
+    --umc-select-border-color: var(--umc-color-border-neutral-medium-300);
     --umc-select-bg: var(--umc-color-fill-neutral-default);
     --umc-select-fg: var(--umc-color-text-neutral-default);
     --umc-select-placeholder-color: var(--umc-color-text-placeholder);
-    --umc-select-icon-color: var(--umc-color-icon-neutral-medium);
+    --umc-select-icon-color: var(--umc-color-icon-neutral-medium-500);
 
     display: flex;
     align-items: center;
@@ -62,35 +62,35 @@
 
   @media (hover: hover) {
     .umc-select__trigger:not([data-disabled]):hover {
-      --umc-select-bg: var(--umc-color-fill-neutral-weaker);
+      --umc-select-bg: var(--umc-color-fill-neutral-weaker-50);
     }
   }
 
   .umc-select__trigger[data-popup-open] {
-    --umc-select-bg: var(--umc-color-fill-neutral-weaker);
+    --umc-select-bg: var(--umc-color-fill-neutral-weaker-50);
   }
 
   .umc-select__trigger:focus-visible {
-    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
     outline-offset: 2px;
   }
 
   .umc-select__trigger[data-variant="filter"][data-filled] {
-    --umc-select-border-color: var(--umc-color-border-primary-medium);
-    --umc-select-bg: var(--umc-color-fill-primary-weaker);
+    --umc-select-border-color: var(--umc-color-border-primary-medium-300);
+    --umc-select-bg: var(--umc-color-fill-primary-weaker-50);
     --umc-select-fg: var(--umc-color-text-brand-default);
-    --umc-select-icon-color: var(--umc-color-icon-brand-medium);
+    --umc-select-icon-color: var(--umc-color-icon-brand-medium-500);
   }
 
   .umc-select__trigger[data-invalid] {
-    --umc-select-border-color: var(--umc-color-border-error-medium);
-    --umc-select-bg: var(--umc-color-fill-error-weak);
+    --umc-select-border-color: var(--umc-color-border-error-medium-300);
+    --umc-select-bg: var(--umc-color-fill-error-weak-50);
     --umc-select-fg: var(--umc-color-text-error);
     --umc-select-placeholder-color: var(--umc-color-red-200);
   }
 
   .umc-select__trigger[data-invalid][data-filled] {
-    --umc-select-border-color: var(--umc-color-border-error-strong);
+    --umc-select-border-color: var(--umc-color-border-error-strong-500);
   }
 
   @media (hover: hover) {
@@ -100,8 +100,8 @@
   }
 
   .umc-select__trigger[data-disabled] {
-    --umc-select-border-color: var(--umc-color-border-neutral-weaker);
-    --umc-select-bg: var(--umc-color-fill-neutral-weaker);
+    --umc-select-border-color: var(--umc-color-border-neutral-weaker-100);
+    --umc-select-bg: var(--umc-color-fill-neutral-weaker-50);
     --umc-select-fg: var(--umc-color-text-disabled);
     --umc-select-placeholder-color: var(--umc-color-text-disabled);
     --umc-select-icon-color: var(--umc-color-icon-disabled);

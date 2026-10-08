@@ -72,13 +72,13 @@
   }
 
   .umc-dropdown-item[data-highlighted] {
-    background-color: var(--umc-color-fill-neutral-weaker);
+    background-color: var(--umc-color-fill-neutral-weaker-50);
     box-shadow: var(--umc-shadow-inner-neutral-2);
   }
 
   .umc-dropdown-item[data-selected] {
     padding-inline-end: var(--umc-dropdown-item-active-padding-end);
-    background-color: var(--umc-color-fill-primary-weaker);
+    background-color: var(--umc-color-fill-primary-weaker-50);
     box-shadow: inset 1px 1px 2px 0 var(--umc-dropdown-item-active-shadow-color);
     color: var(--umc-color-text-brand-default);
     font-weight: var(--umc-font-weight-medium);
@@ -110,6 +110,6 @@
   .umc-dropdown-item__indicator {
     display: inline-flex;
     flex: 0 0 auto;
-    color: var(--umc-color-icon-brand-strong);
+    color: var(--umc-color-icon-brand-strong-600);
   }
 }

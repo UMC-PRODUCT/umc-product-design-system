@@ -24,8 +24,8 @@
   }
 
   .umc-tab {
-    --umc-tab-fg: var(--umc-color-text-neutral-medium);
-    --umc-tab-underline: var(--umc-color-border-neutral-weak);
+    --umc-tab-fg: var(--umc-color-text-neutral-medium-600);
+    --umc-tab-underline: var(--umc-color-border-neutral-weak-200);
 
     position: relative;
     display: inline-flex;
@@ -68,13 +68,13 @@
 
   @media (hover: hover) {
     .umc-tab:hover:not([data-active]) {
-      --umc-tab-underline: var(--umc-color-border-neutral-strong);
-      --umc-tab-fg: var(--umc-color-text-neutral-medium);
+      --umc-tab-underline: var(--umc-color-border-neutral-strong-400);
+      --umc-tab-fg: var(--umc-color-text-neutral-medium-600);
     }
   }
 
   .umc-tab:focus-visible {
-    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
     outline-offset: -2px;
   }
 
@@ -87,7 +87,7 @@
     flex-shrink: 0;
     width: 24px;
     height: 24px;
-    color: var(--umc-color-icon-neutral-stronger);
+    color: var(--umc-color-icon-neutral-stronger-700);
     pointer-events: none;
   }
 

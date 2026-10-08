@@ -59,8 +59,8 @@
 | 로고 주색 | #3f4141 | `currentColor`(글자색을 따른다) |
 | 아이콘 고정색 | #dc3d3d | style `var(--umc-color-red-500)` |
 | 아이콘 고정색 | #ffffff | style `var(--umc-color-white)` |
-| 픽토그램 주색 | #02746c | `currentColor`, 기본 `color`는 `var(--umc-color-icon-brand-strong)` |
-| 픽토그램 주색 | #008a80 | `currentColor`, 기본 `color`는 `var(--umc-color-icon-brand-medium)` |
+| 픽토그램 주색 | #02746c | `currentColor`, 기본 `color`는 `var(--umc-color-icon-brand-strong-600)` |
+| 픽토그램 주색 | #008a80 | `currentColor`, 기본 `color`는 `var(--umc-color-icon-brand-medium-500)` |
 | 픽토그램 주색 | #0b6b64 | `currentColor`, 기본 `color`는 `#0b6b64` |
 | 픽토그램 고정색 | #ddf4f1 | style `var(--umc-color-teal-100)` |
 | 픽토그램 고정색 | #ffffff | style `var(--umc-color-white)` |

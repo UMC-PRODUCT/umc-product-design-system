@@ -26,7 +26,7 @@ vanilla-extract만 쓰는 앱은 `tailwind.css`를 빼고 `fonts.css`, `base.css
 ```html
 <h1 class="text-display-1-bold text-fg-neutral-default">UMC</h1>
 <main class="grid grid-cols-12 gap-x-grid-gutter px-grid-margin-desktop">
-  <article class="border border-border-neutral-weak bg-surface-default">
+  <article class="border border-border-neutral-weak-200 bg-surface-default">
     …
   </article>
 </main>
@@ -34,15 +34,15 @@ vanilla-extract만 쓰는 앱은 `tailwind.css`를 빼고 `fonts.css`, `base.css
 <header class="h-header"></header>
 ```
 
-| 유틸리티                                          | 토큰                                                                                |
-| ------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `text-<스타일>` (48개, 예: `text-body-1-regular`) | 텍스트 스타일 한 벌(서체, 크기, 굵기, 행간, 자간)                                   |
-| `shadow-drop-neutral-1` 등 5개                    | 피그마 effect 스타일 그림자                                                         |
-| `bg-`, `text-`, `border-` + semantic 컬러 151개   | 예: `bg-surface-default`, `text-fg-neutral-default`, `border-border-primary-strong` |
-| `gap-x-grid-gutter`                               | 거터 16px                                                                           |
-| `px-grid-margin-desktop`, `px-grid-margin-mobile` | 좌우 마진 32px, 16px                                                                |
-| `h-header`                                        | 헤더 높이 80px                                                                      |
-| `w-sidebar`                                       | 사이드바 폭 216px                                                                   |
+| 유틸리티                                          | 토큰                                                                                    |
+| ------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `text-<스타일>` (48개, 예: `text-body-1-regular`) | 텍스트 스타일 한 벌(서체, 크기, 굵기, 행간, 자간)                                       |
+| `shadow-drop-neutral-1` 등 5개                    | 피그마 effect 스타일 그림자                                                             |
+| `bg-`, `text-`, `border-` + semantic 컬러 151개   | 예: `bg-surface-default`, `text-fg-neutral-default`, `border-border-primary-strong-500` |
+| `gap-x-grid-gutter`                               | 거터 16px                                                                               |
+| `px-grid-margin-desktop`, `px-grid-margin-mobile` | 좌우 마진 32px, 16px                                                                    |
+| `h-header`                                        | 헤더 높이 80px                                                                          |
+| `w-sidebar`                                       | 사이드바 폭 216px                                                                       |
 
 - 컬러는 semantic만 유틸리티로 만듭니다. primitive(`teal-500` 등)는 CSS 변수로만 있습니다
 - Text 그룹은 `text-text-…`가 되지 않도록 `fg`로 바꿉니다(예: `text-fg-neutral-default`). 전체 대응은 `semanticColors`로 내보냅니다

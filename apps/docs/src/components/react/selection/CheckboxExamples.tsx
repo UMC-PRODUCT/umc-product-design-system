@@ -116,7 +116,7 @@ export function CheckboxRecruitingForm() {
   return (
     <div className="umc-example umc-example-stack">
       <div className="flex flex-wrap items-center gap-8">
-        <span className="text-[15px] text-[var(--umc-color-text-neutral-medium)]">
+        <span className="text-[15px] text-[var(--umc-color-text-neutral-medium-600)]">
           모집 파트
         </span>
         <div className="flex flex-wrap items-center gap-6">

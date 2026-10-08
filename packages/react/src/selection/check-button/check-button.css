@@ -11,7 +11,7 @@
   }
 
   .umc-check-button[data-checked] {
-    color: var(--umc-color-icon-brand-medium);
+    color: var(--umc-color-icon-brand-medium-500);
   }
 
   .umc-check-button[data-disabled] {
@@ -20,7 +20,7 @@
 
   .umc-check-button:focus-visible {
     border-radius: var(--umc-radius-6);
-    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
     outline-offset: 2px;
   }
 

@@ -71,13 +71,13 @@
   }
 
   .umc-tooltip__popup[data-mode="dark"] {
-    --umc-tooltip-bg: var(--umc-color-icon-neutral-strong);
+    --umc-tooltip-bg: var(--umc-color-icon-neutral-strong-600);
     --umc-tooltip-fg: var(--umc-color-text-inverse);
   }
 
   .umc-tooltip__popup[data-mode="light"] {
     --umc-tooltip-bg: var(--umc-color-fill-neutral-default);
-    --umc-tooltip-fg: var(--umc-color-text-neutral-strong);
+    --umc-tooltip-fg: var(--umc-color-text-neutral-strong-800);
 
     filter: var(--umc-tooltip-light-shadow);
   }

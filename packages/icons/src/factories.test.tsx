@@ -38,12 +38,12 @@ const SamplePictogram = createPictogram({
   modes: {
     light: {
       viewBox: "0 0 30 30",
-      color: "var(--umc-color-icon-brand-strong)",
+      color: "var(--umc-color-icon-brand-strong-600)",
       content: <path d="M4 4Z" fill="currentColor" />,
     },
     dark: {
       viewBox: "0 0 30 30",
-      color: "var(--umc-color-icon-brand-medium)",
+      color: "var(--umc-color-icon-brand-medium-500)",
       content: <path d="M5 5Z" fill="currentColor" />,
     },
   },
@@ -117,8 +117,8 @@ describe("createPictogram", () => {
     const light = svgOf(render(<SamplePictogram />).container)
     const dark = svgOf(render(<SamplePictogram mode="dark" />).container)
     expect(light.getAttribute("width")).toBe("30")
-    expect(light.style.color).toBe("var(--umc-color-icon-brand-strong)")
-    expect(dark.style.color).toBe("var(--umc-color-icon-brand-medium)")
+    expect(light.style.color).toBe("var(--umc-color-icon-brand-strong-600)")
+    expect(dark.style.color).toBe("var(--umc-color-icon-brand-medium-500)")
   })
 
   it("color로 색을 바꾸고 style을 합친다", () => {

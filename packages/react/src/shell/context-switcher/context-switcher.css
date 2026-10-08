@@ -14,8 +14,8 @@
     padding-inline: var(--umc-spacing-padding-12) var(--umc-spacing-padding-8);
     border: 0;
     border-radius: var(--umc-radius-8);
-    background-color: var(--umc-color-fill-neutral-medium);
-    color: var(--umc-color-text-neutral-medium);
+    background-color: var(--umc-color-fill-neutral-medium-100);
+    color: var(--umc-color-text-neutral-medium-600);
     font-family: var(--umc-typography-body-3-regular-font-family);
     font-size: var(--umc-typography-body-3-regular-font-size);
     font-weight: var(--umc-typography-body-3-regular-font-weight);
@@ -45,7 +45,7 @@
   }
 
   .umc-context-switcher:focus-visible {
-    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
     outline-offset: 2px;
   }
 
@@ -58,7 +58,7 @@
 
   .umc-context-switcher__icon {
     flex: 0 0 auto;
-    color: var(--umc-color-icon-neutral-medium);
+    color: var(--umc-color-icon-neutral-medium-500);
   }
 
   .umc-context-switcher__positioner {
@@ -102,13 +102,13 @@
   }
 
   .umc-context-switcher__option[data-highlighted] {
-    background-color: var(--umc-color-fill-neutral-weaker);
+    background-color: var(--umc-color-fill-neutral-weaker-50);
     box-shadow: var(--umc-shadow-inner-neutral-2);
   }
 
   .umc-context-switcher__option[data-checked] {
     padding-inline-end: var(--umc-spacing-padding-8);
-    background-color: var(--umc-color-fill-primary-weaker);
+    background-color: var(--umc-color-fill-primary-weaker-50);
     box-shadow: inset 1px 1px 2px 0
       var(--umc-context-switcher-checked-shadow-color);
     color: var(--umc-color-text-brand-default);
@@ -125,7 +125,7 @@
   .umc-context-switcher__option-indicator {
     display: flex;
     flex: 0 0 auto;
-    color: var(--umc-color-icon-brand-strong);
+    color: var(--umc-color-icon-brand-strong-600);
   }
 
   @media (prefers-reduced-motion: reduce) {

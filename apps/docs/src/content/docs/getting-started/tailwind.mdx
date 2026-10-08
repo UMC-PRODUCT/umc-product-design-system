@@ -12,9 +12,9 @@ import { Aside } from "@astrojs/starlight/components"
 | 종류             | 형식                                           | 예                                                                     |
 | ---------------- | ---------------------------------------------- | ---------------------------------------------------------------------- |
 | 텍스트 색        | `text-fg-…`                                    | `text-fg-neutral-default`, `text-fg-brand-default`                     |
-| 배경과 면        | `bg-background-…`, `bg-surface-…`, `bg-fill-…` | `bg-surface-default`, `bg-fill-primary-strong`                         |
-| 테두리           | `border-border-…`                              | `border-border-neutral-weak`                                           |
-| 아이콘           | `text-icon-…`                                  | `text-icon-neutral-strong`                                             |
+| 배경과 면        | `bg-background-…`, `bg-surface-…`, `bg-fill-…` | `bg-surface-default`, `bg-fill-primary-strong-200`                     |
+| 테두리           | `border-border-…`                              | `border-border-neutral-weak-200`                                       |
+| 아이콘           | `text-icon-…`                                  | `text-icon-neutral-strong-600`                                         |
 | 태그             | `bg-tag-…`, `text-tag-…`                       | `bg-tag-part-pm-weaker`, `text-tag-part-pm-strong`                     |
 | 텍스트 스타일    | `text-<스타일>`                                | `text-body-1-regular`                                                  |
 | 그리드, 레이아웃 | 간격과 크기 유틸리티                           | `gap-x-grid-gutter`, `px-grid-margin-desktop`, `h-header`, `w-sidebar` |
@@ -23,10 +23,10 @@ Text 그룹만 `text-text-…`가 되지 않도록 `fg`로 바꿨습니다. 전�
 
 ## 예시
 
-<div class="not-content umc-canvas rounded-xl border border-border-neutral-weak p-6">
+<div class="not-content umc-canvas rounded-xl border border-border-neutral-weak-200 p-6">
   <p class="text-label-5-semibold text-fg-brand-default">UMC 11기</p>
   <p class="text-heading-2-bold text-fg-neutral-default mt-1">챌린저 모집</p>
-  <p class="text-body-2-regular text-fg-neutral-medium mt-2">
+  <p class="text-body-2-regular text-fg-neutral-medium-600 mt-2">
     세상의 틀을 깰 챌린저들이 하나로 모이는 곳
   </p>
   <span class="text-label-6-semibold mt-4 inline-block rounded-full bg-tag-part-pm-weaker px-3 py-1 text-tag-part-pm-strong">
@@ -35,10 +35,10 @@ Text 그룹만 `text-text-…`가 되지 않도록 `fg`로 바꿨습니다. 전�
 </div>
 
 ```html
-<div class="rounded-xl border border-border-neutral-weak p-6">
+<div class="rounded-xl border border-border-neutral-weak-200 p-6">
   <p class="text-label-5-semibold text-fg-brand-default">UMC 11기</p>
   <p class="text-heading-2-bold text-fg-neutral-default mt-1">챌린저 모집</p>
-  <p class="text-body-2-regular text-fg-neutral-medium mt-2">…</p>
+  <p class="text-body-2-regular text-fg-neutral-medium-600 mt-2">…</p>
   <span
     class="text-label-6-semibold rounded-full bg-tag-part-pm-weaker px-3 py-1 text-tag-part-pm-strong"
   >

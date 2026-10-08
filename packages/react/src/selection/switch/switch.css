@@ -1,7 +1,9 @@
 @layer components {
   .umc-switch {
-    --umc-switch-track: var(--umc-color-fill-neutral-strong);
-    --umc-switch-track-checked: var(--umc-color-fill-primary-inverse-medium);
+    --umc-switch-track: var(--umc-color-fill-neutral-strong-200);
+    --umc-switch-track-checked: var(
+      --umc-color-fill-primary-inverse-medium-400
+    );
     --umc-switch-thumb: var(--umc-color-fill-neutral-default);
     --umc-switch-checked-shadow: none;
 
@@ -21,8 +23,8 @@
 
   .umc-switch:has(> .umc-switch__track[data-disabled]) {
     --umc-switch-track: var(--umc-color-fill-disabled);
-    --umc-switch-track-checked: var(--umc-color-fill-primary-strong);
-    --umc-switch-thumb: var(--umc-color-fill-neutral-weaker);
+    --umc-switch-track-checked: var(--umc-color-fill-primary-strong-200);
+    --umc-switch-thumb: var(--umc-color-fill-neutral-weaker-50);
 
     cursor: default;
   }
@@ -93,7 +95,7 @@
   }
 
   .umc-switch__track:focus-visible {
-    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
     outline-offset: 2px;
   }
 

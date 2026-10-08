@@ -16,7 +16,7 @@
     --umc-code-field-error-tint: #fef2f199;
     --umc-code-field-font-size: 26px;
     --umc-code-field-line-height: 1.3;
-    --umc-code-field-border-color: var(--umc-color-border-neutral-medium);
+    --umc-code-field-border-color: var(--umc-color-border-neutral-medium-300);
 
     box-sizing: border-box;
     width: 52px;
@@ -45,22 +45,22 @@
 
   @media (hover: hover) {
     .umc-code-field__cell:not(:disabled):hover {
-      --umc-code-field-border-color: var(--umc-color-border-primary-medium);
+      --umc-code-field-border-color: var(--umc-color-border-primary-medium-300);
     }
   }
 
   .umc-code-field__cell[data-filled] {
-    --umc-code-field-border-color: var(--umc-color-border-primary-medium);
+    --umc-code-field-border-color: var(--umc-color-border-primary-medium-300);
   }
 
   .umc-code-field__cell:focus {
-    --umc-code-field-border-color: var(--umc-color-border-primary-medium);
+    --umc-code-field-border-color: var(--umc-color-border-primary-medium-300);
 
-    background-color: var(--umc-color-fill-primary-weaker);
+    background-color: var(--umc-color-fill-primary-weaker-50);
   }
 
   .umc-code-field__cell[data-invalid] {
-    --umc-code-field-border-color: var(--umc-color-border-error-medium);
+    --umc-code-field-border-color: var(--umc-color-border-error-medium-300);
 
     background-image: linear-gradient(
       var(--umc-code-field-error-tint),
@@ -70,9 +70,9 @@
   }
 
   .umc-code-field__cell:disabled {
-    --umc-code-field-border-color: var(--umc-color-border-neutral-medium);
+    --umc-code-field-border-color: var(--umc-color-border-neutral-medium-300);
 
-    background-color: var(--umc-color-fill-neutral-weaker);
+    background-color: var(--umc-color-fill-neutral-weaker-50);
     background-image: none;
     color: var(--umc-color-text-disabled);
   }

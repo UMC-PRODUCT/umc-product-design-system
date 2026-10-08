@@ -240,8 +240,8 @@ describe("Tailwind 어댑터", () => {
     const css = compiler.build([
       "text-fg-neutral-default",
       "bg-surface-default",
-      "border-border-neutral-medium",
-      "bg-fill-primary-strong",
+      "border-border-neutral-medium-300",
+      "bg-fill-primary-strong-200",
       "bg-dimmed-weak",
       "bg-teal-grey-500",
       "text-teal-grey-900",
@@ -254,9 +254,9 @@ describe("Tailwind 어댑터", () => {
       /\.bg-surface-default \{\s+background-color: var\(--umc-color-surface-default\);/,
     )
     expect(css).toMatch(
-      /\.border-border-neutral-medium \{\s+border-color: var\(--umc-color-border-neutral-medium\);/,
+      /\.border-border-neutral-medium-300 \{\s+border-color: var\(--umc-color-border-neutral-medium-300\);/,
     )
-    expect(css).toContain(".bg-fill-primary-strong {")
+    expect(css).toContain(".bg-fill-primary-strong-200 {")
     expect(css).toContain(".bg-dimmed-weak {")
     expect(css).not.toContain(".bg-teal-grey-500")
     expect(css).not.toContain(".text-teal-grey-900")

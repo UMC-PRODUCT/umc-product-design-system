@@ -1,9 +1,9 @@
 @layer components {
   .umc-field {
-    --umc-field-label-color: var(--umc-color-text-neutral-medium);
+    --umc-field-label-color: var(--umc-color-text-neutral-medium-600);
     --umc-field-label-line-height: 23px;
     --umc-field-label-letter-spacing: -0.03em;
-    --umc-field-caption-color: var(--umc-color-text-neutral-weak);
+    --umc-field-caption-color: var(--umc-color-text-neutral-weak-500);
     --umc-field-caption-line-height: 17px;
 
     display: flex;

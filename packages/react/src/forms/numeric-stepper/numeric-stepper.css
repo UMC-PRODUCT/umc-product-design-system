@@ -12,9 +12,9 @@
     width: 106px;
     height: 38px;
     margin: 0;
-    border: 1px solid var(--umc-color-border-neutral-weak);
+    border: 1px solid var(--umc-color-border-neutral-weak-200);
     border-radius: var(--umc-radius-8);
-    background-color: var(--umc-color-fill-neutral-weaker);
+    background-color: var(--umc-color-fill-neutral-weaker-50);
     box-shadow: var(--umc-shadow-drop-neutral-2);
   }
 
@@ -30,7 +30,7 @@
     border: 0;
     border-radius: var(--umc-radius-8);
     background: none;
-    color: var(--umc-color-icon-neutral-stronger);
+    color: var(--umc-color-icon-neutral-stronger-700);
     cursor: pointer;
     appearance: none;
     -webkit-tap-highlight-color: transparent;
@@ -42,7 +42,7 @@
   }
 
   .umc-numeric-stepper__button:focus-visible {
-    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
     outline-offset: -2px;
   }
 

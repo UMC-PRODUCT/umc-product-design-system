@@ -11,7 +11,6 @@ export type VariableRule = {
   file: TokenFileName
   tokenPath: TokenPath
   kind: ValueKind
-  stripStepSuffix: boolean
   reason: string
   status: RuleStatus
 }
@@ -29,7 +28,6 @@ export const VARIABLE_RULES: readonly VariableRule[] = [
     file: "color.semantic.json",
     tokenPath: ["color", "fill", "disabled"],
     kind: "color",
-    stripStepSuffix: false,
     reason: "오타 Disalbed를 뺀 Disabled 한 단계로 읽음",
     status: "pending",
   },
@@ -39,7 +37,6 @@ export const VARIABLE_RULES: readonly VariableRule[] = [
     file: "color.semantic.json",
     tokenPath: ["color", "border", "disabled"],
     kind: "color",
-    stripStepSuffix: false,
     reason: "오타 Disalbed를 뺀 Disabled 한 단계로 읽음",
     status: "pending",
   },
@@ -49,7 +46,6 @@ export const VARIABLE_RULES: readonly VariableRule[] = [
     file: "color.primitive.json",
     tokenPath: ["color"],
     kind: "color",
-    stripStepSuffix: false,
     reason: "흰색과 검은색은 color 바로 아래에 둠",
     status: "accepted",
   },
@@ -59,7 +55,6 @@ export const VARIABLE_RULES: readonly VariableRule[] = [
     file: "color.primitive.json",
     tokenPath: ["color", "teal-grey"],
     kind: "color",
-    stripStepSuffix: false,
     reason: "Grey 그룹의 TealGrey 팔레트를 teal-grey로 둠",
     status: "accepted",
   },
@@ -69,7 +64,6 @@ export const VARIABLE_RULES: readonly VariableRule[] = [
     file: "color.primitive.json",
     tokenPath: ["color"],
     kind: "color",
-    stripStepSuffix: false,
     reason: "팔레트 이름 반복 제거(Teal/Teal-500 → teal.500)",
     status: "accepted",
   },
@@ -79,10 +73,9 @@ export const VARIABLE_RULES: readonly VariableRule[] = [
     file: "color.semantic.json",
     tokenPath: ["color"],
     kind: "color",
-    stripStepSuffix: true,
     reason:
-      "이름 끝의 primitive 단계 숫자 제거(Neutral-Weak-400 → neutral-weak)",
-    status: "pending",
+      "피그마 이름 그대로, 단계 숫자도 남김(Neutral-Weak-400 → neutral-weak-400)",
+    status: "accepted",
   },
   {
     figmaName: "Typography/Base/FontSize/",
@@ -90,7 +83,6 @@ export const VARIABLE_RULES: readonly VariableRule[] = [
     file: "font.json",
     tokenPath: ["font-size"],
     kind: "px",
-    stripStepSuffix: false,
     reason: "타이포 기본 크기",
     status: "accepted",
   },
@@ -100,7 +92,6 @@ export const VARIABLE_RULES: readonly VariableRule[] = [
     file: "font.json",
     tokenPath: ["font-weight"],
     kind: "font-weight",
-    stripStepSuffix: false,
     reason: "타이포 기본 굵기, 이름을 숫자로 바꿈",
     status: "accepted",
   },
@@ -110,7 +101,6 @@ export const VARIABLE_RULES: readonly VariableRule[] = [
     file: "font.json",
     tokenPath: ["font-weight"],
     kind: "font-weight",
-    stripStepSuffix: false,
     reason: "export에 없는 대소문자 변형, Display/3-Bold만 참조",
     status: "pending",
   },
@@ -120,7 +110,6 @@ export const VARIABLE_RULES: readonly VariableRule[] = [
     file: "font.json",
     tokenPath: ["font-family"],
     kind: "font-family",
-    stripStepSuffix: false,
     reason: "타이포 기본 서체",
     status: "accepted",
   },
@@ -130,7 +119,6 @@ export const VARIABLE_RULES: readonly VariableRule[] = [
     file: "font.json",
     tokenPath: ["font-family"],
     kind: "font-family",
-    stripStepSuffix: false,
     reason: "export에 없는 대소문자 변형, Display/3-Bold만 참조",
     status: "pending",
   },
@@ -140,7 +128,6 @@ export const VARIABLE_RULES: readonly VariableRule[] = [
     file: "spacing.json",
     tokenPath: ["spacing"],
     kind: "px",
-    stripStepSuffix: false,
     reason: "간격 기본 값",
     status: "accepted",
   },
@@ -150,7 +137,6 @@ export const VARIABLE_RULES: readonly VariableRule[] = [
     file: "spacing.json",
     tokenPath: ["spacing"],
     kind: "px",
-    stripStepSuffix: false,
     reason: "그룹 이름 반복 제거(Padding/Padding 16 → padding.16)",
     status: "accepted",
   },
@@ -160,7 +146,6 @@ export const VARIABLE_RULES: readonly VariableRule[] = [
     file: "radius.json",
     tokenPath: ["radius"],
     kind: "px",
-    stripStepSuffix: false,
     reason: "모서리 기본 값",
     status: "accepted",
   },
@@ -170,7 +155,6 @@ export const VARIABLE_RULES: readonly VariableRule[] = [
     file: "radius.json",
     tokenPath: ["radius", "button"],
     kind: "px",
-    stripStepSuffix: false,
     reason: "R Button 접두어 제거(R Button 12 → button.12)",
     status: "pending",
   },
@@ -180,7 +164,6 @@ export const VARIABLE_RULES: readonly VariableRule[] = [
     file: "radius.json",
     tokenPath: ["radius"],
     kind: "px",
-    stripStepSuffix: false,
     reason: "그룹 이름 반복 제거(Toast/Toast → toast)",
     status: "accepted",
   },
@@ -274,7 +257,6 @@ export const EFFECT_STYLES: readonly string[] = [
 
 export const OPEN_QUESTIONS: readonly string[] = [
   "codeSyntax(WEB)가 여러 변수에 중복으로 붙어 있습니다. 예를 들어 `var(--color-border-default)`는 `Border/Neutral/Medium-300`(회색)과 `Border/Primary/Weak-200`(틸)에 함께 붙어 있습니다. 코드는 변수 이름을 기준으로 삼았습니다. codeSyntax를 정리할지, 이 리포트의 이름 대응표를 기준으로 확정할지 정해 주세요.",
-  "semantic 이름 끝의 primitive 단계 숫자(`Neutral-Weak-400`, `Weak-200`)를 코드 이름에서 뺐습니다(`neutral-weak`, `weak`). 단계 숫자는 색 값이 바뀌면 거짓이 되기 때문입니다. 이대로 확정해도 될까요?",
   "`Fill/Disabled/Disalbed`, `Border/Disabled/Disalbed`의 오타를 빼고 `fill.disabled`, `border.disabled`로 읽었습니다. 피그마 이름도 고칠 수 있나요?",
   "같은 틸 역할을 Fill과 Border는 `Primary`, Background, Surface, Text, Icon은 `Brand`로 부릅니다. 한 이름으로 맞출 수 있나요?",
   "`Display/3-Bold`가 Token 컬렉션에 없는 `Typography/Base/Fontfamily/Brand`, `Fontweight/Bold`를 참조합니다(다른 라이브러리 변수로 보입니다). `FontFamily`, `FontWeight`로 다시 연결해 주세요.",

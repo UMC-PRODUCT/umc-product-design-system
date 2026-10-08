@@ -7,14 +7,16 @@
     padding: 0;
     border: 0;
     border-radius: var(--umc-radius-8);
-    background-color: var(--umc-color-fill-neutral-medium);
+    background-color: var(--umc-color-fill-neutral-medium-100);
     overflow-x: auto;
   }
 
   .umc-option-button {
     --umc-option-button-bg: var(--umc-color-fill-neutral-default);
-    --umc-option-button-fg: var(--umc-color-text-neutral-strong);
-    --umc-option-button-border-color: var(--umc-color-border-neutral-weaker);
+    --umc-option-button-fg: var(--umc-color-text-neutral-strong-800);
+    --umc-option-button-border-color: var(
+      --umc-color-border-neutral-weaker-100
+    );
     --umc-option-button-border-start: 0px;
     --umc-option-button-border-end: 0px;
     --umc-option-button-border:
@@ -24,14 +26,14 @@
         var(--umc-option-button-border-color),
       inset calc(-1 * var(--umc-option-button-border-end)) 0 0 0
         var(--umc-option-button-border-color);
-    --umc-option-button-checked-bg: var(--umc-color-fill-primary-weak);
+    --umc-option-button-checked-bg: var(--umc-color-fill-primary-weak-75);
     --umc-option-button-checked-fg: var(--umc-color-text-brand-default);
     --umc-option-button-checked-border-color: var(
-      --umc-color-border-primary-weak
+      --umc-color-border-primary-weak-200
     );
     --umc-option-button-checked-border: inset 0 0 0 1px
       var(--umc-option-button-checked-border-color);
-    --umc-option-button-icon-color: var(--umc-color-icon-brand-medium);
+    --umc-option-button-icon-color: var(--umc-color-icon-brand-medium-500);
 
     position: relative;
     display: inline-flex;
@@ -198,7 +200,7 @@
 
   .umc-option-button-group[data-variant="strong"] .umc-option-button {
     --umc-option-button-checked-bg: var(
-      --umc-color-fill-primary-inverse-stronger
+      --umc-color-fill-primary-inverse-stronger-600
     );
     --umc-option-button-checked-fg: var(--umc-color-text-inverse);
     --umc-option-button-checked-border: none;
@@ -248,7 +250,7 @@
   }
 
   .umc-option-button:focus-visible {
-    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
     outline-offset: -2px;
   }
 

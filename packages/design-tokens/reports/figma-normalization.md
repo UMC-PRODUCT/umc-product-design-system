@@ -26,22 +26,21 @@
 ## 디자인 팀 확인 요청
 
 1. codeSyntax(WEB)가 여러 변수에 중복으로 붙어 있습니다. 예를 들어 `var(--color-border-default)`는 `Border/Neutral/Medium-300`(회색)과 `Border/Primary/Weak-200`(틸)에 함께 붙어 있습니다. 코드는 변수 이름을 기준으로 삼았습니다. codeSyntax를 정리할지, 이 리포트의 이름 대응표를 기준으로 확정할지 정해 주세요.
-2. semantic 이름 끝의 primitive 단계 숫자(`Neutral-Weak-400`, `Weak-200`)를 코드 이름에서 뺐습니다(`neutral-weak`, `weak`). 단계 숫자는 색 값이 바뀌면 거짓이 되기 때문입니다. 이대로 확정해도 될까요?
-3. `Fill/Disabled/Disalbed`, `Border/Disabled/Disalbed`의 오타를 빼고 `fill.disabled`, `border.disabled`로 읽었습니다. 피그마 이름도 고칠 수 있나요?
-4. 같은 틸 역할을 Fill과 Border는 `Primary`, Background, Surface, Text, Icon은 `Brand`로 부릅니다. 한 이름으로 맞출 수 있나요?
-5. `Display/3-Bold`가 Token 컬렉션에 없는 `Typography/Base/Fontfamily/Brand`, `Fontweight/Bold`를 참조합니다(다른 라이브러리 변수로 보입니다). `FontFamily`, `FontWeight`로 다시 연결해 주세요.
-6. Primitive 컬러 문서 프레임에 쓰인 `primitives/orange/*`, `Base/Grey/Grey 900`, `Grey 800`, `Medium/H1`(PingFang SC)은 Color 컬렉션 export에 없습니다. 다른 라이브러리 것인지, 정리 대상인지 알려 주세요.
-7. Violet, Purple, Pink, Cobalt, Blue, Brown 팔레트에는 50, 100, 500, 600 단계만 있습니다. 의도인가요?
-8. `Body/4-Semibold`(13px), `Label/2`(17px), `Caption/3`(11px)의 크기가 변수에 연결되어 있지 않습니다. 17px은 `FontSize` 변수가 없으니 추가가 필요합니다. 반대로 `FontSize/22px`, `32px`은 어떤 텍스트 스타일에도 쓰이지 않습니다.
-9. `Heading/Heading3-Semibold`(22px), `Mobile Web/Body/4-Regular`(행간 20px)는 폐기 대상인가요? 노드 2268:1706에 쓰인 텍스트 스타일이 전체 목록인지도 알려 주세요.
-10. Display 3 문서 표에는 자간이 -2%로 적혀 있지만 실제 스타일 `Display/3-Bold`는 -1.5%입니다. 어느 쪽이 맞나요?
-11. `Tag/Role/Challenger&Super-Admin`과 `Tag/Role/Product`는 Weak와 Medium이 같은 색입니다(Teal-100, TealGrey-100). 의도인가요?
-12. `Label`(문자열 변수)과 `Radius/Primitive/48`(문자열 타입에 FONT_FAMILY scope)은 용도가 무엇인가요? 코드에서는 제외했습니다.
-13. scope 정리가 필요해 보입니다. `Border/Neutral/Default`에는 채우기 scope가, `Border/Disabled/Disalbed`에는 ALL_SCOPES가 붙어 있고, primitive 대부분이 ALL_SCOPES입니다. 모드 이름 `Mode 1`도 `Default`로 바꿀 수 있나요?
-14. 그리드: 브레이크포인트 경계값, 모바일 컬럼 수와 거터, 1440px 초과 시 최대 폭, Layout No.2의 컬럼 폭 문구를 확인해 주세요. 콘텐츠 폭은 1224px(1440 - 사이드바 216)이어야 문서의 컬럼 폭 82px과 맞습니다. 1220px이면 81.67px이 됩니다.
-15. 같은 이름에 정의가 여러 개인 스타일이 있습니다(아래 '같은 이름의 다른 정의' 표). 글꼴을 값으로 직접 적은 정의는 2기 라이브러리, 3기 변수에 연결됐지만 값이 다른 정의는 예전에 게시한 라이브러리 버전으로 보입니다. 컴포넌트를 3기 스타일로 다시 연결하고 라이브러리를 재게시해 주세요.
-16. `Shadow/Inner/Neutral_1`은 Toast와 Desktop Layout에서 청록 2겹(inset 1 1 3 `#0B6B6421` + inset -1 -1 1 `#FFFFFF40`), Side Navigation과 Option Button에서 회색 1겹(inset 1 1 2 `#D3D8D833`)입니다. 코드는 청록 2겹을 토큰으로 삼았습니다. 어느 쪽이 맞나요?
-17. `Title/2-Bold`, `Title/3-Semibold`는 라이브러리에 있지만 어떤 노드도 쓰지 않아 값을 읽지 못했습니다. 계속 쓸 스타일이면 문서 프레임에 적용해 주세요.
+2. `Fill/Disabled/Disalbed`, `Border/Disabled/Disalbed`의 오타를 빼고 `fill.disabled`, `border.disabled`로 읽었습니다. 피그마 이름도 고칠 수 있나요?
+3. 같은 틸 역할을 Fill과 Border는 `Primary`, Background, Surface, Text, Icon은 `Brand`로 부릅니다. 한 이름으로 맞출 수 있나요?
+4. `Display/3-Bold`가 Token 컬렉션에 없는 `Typography/Base/Fontfamily/Brand`, `Fontweight/Bold`를 참조합니다(다른 라이브러리 변수로 보입니다). `FontFamily`, `FontWeight`로 다시 연결해 주세요.
+5. Primitive 컬러 문서 프레임에 쓰인 `primitives/orange/*`, `Base/Grey/Grey 900`, `Grey 800`, `Medium/H1`(PingFang SC)은 Color 컬렉션 export에 없습니다. 다른 라이브러리 것인지, 정리 대상인지 알려 주세요.
+6. Violet, Purple, Pink, Cobalt, Blue, Brown 팔레트에는 50, 100, 500, 600 단계만 있습니다. 의도인가요?
+7. `Body/4-Semibold`(13px), `Label/2`(17px), `Caption/3`(11px)의 크기가 변수에 연결되어 있지 않습니다. 17px은 `FontSize` 변수가 없으니 추가가 필요합니다. 반대로 `FontSize/22px`, `32px`은 어떤 텍스트 스타일에도 쓰이지 않습니다.
+8. `Heading/Heading3-Semibold`(22px), `Mobile Web/Body/4-Regular`(행간 20px)는 폐기 대상인가요? 노드 2268:1706에 쓰인 텍스트 스타일이 전체 목록인지도 알려 주세요.
+9. Display 3 문서 표에는 자간이 -2%로 적혀 있지만 실제 스타일 `Display/3-Bold`는 -1.5%입니다. 어느 쪽이 맞나요?
+10. `Tag/Role/Challenger&Super-Admin`과 `Tag/Role/Product`는 Weak와 Medium이 같은 색입니다(Teal-100, TealGrey-100). 의도인가요?
+11. `Label`(문자열 변수)과 `Radius/Primitive/48`(문자열 타입에 FONT_FAMILY scope)은 용도가 무엇인가요? 코드에서는 제외했습니다.
+12. scope 정리가 필요해 보입니다. `Border/Neutral/Default`에는 채우기 scope가, `Border/Disabled/Disalbed`에는 ALL_SCOPES가 붙어 있고, primitive 대부분이 ALL_SCOPES입니다. 모드 이름 `Mode 1`도 `Default`로 바꿀 수 있나요?
+13. 그리드: 브레이크포인트 경계값, 모바일 컬럼 수와 거터, 1440px 초과 시 최대 폭, Layout No.2의 컬럼 폭 문구를 확인해 주세요. 콘텐츠 폭은 1224px(1440 - 사이드바 216)이어야 문서의 컬럼 폭 82px과 맞습니다. 1220px이면 81.67px이 됩니다.
+14. 같은 이름에 정의가 여러 개인 스타일이 있습니다(아래 '같은 이름의 다른 정의' 표). 글꼴을 값으로 직접 적은 정의는 2기 라이브러리, 3기 변수에 연결됐지만 값이 다른 정의는 예전에 게시한 라이브러리 버전으로 보입니다. 컴포넌트를 3기 스타일로 다시 연결하고 라이브러리를 재게시해 주세요.
+15. `Shadow/Inner/Neutral_1`은 Toast와 Desktop Layout에서 청록 2겹(inset 1 1 3 `#0B6B6421` + inset -1 -1 1 `#FFFFFF40`), Side Navigation과 Option Button에서 회색 1겹(inset 1 1 2 `#D3D8D833`)입니다. 코드는 청록 2겹을 토큰으로 삼았습니다. 어느 쪽이 맞나요?
+16. `Title/2-Bold`, `Title/3-Semibold`는 라이브러리에 있지만 어떤 노드도 쓰지 않아 값을 읽지 못했습니다. 계속 쓸 스타일이면 문서 프레임에 적용해 주세요.
 
 ## 변수 이름 규칙
 
@@ -52,7 +51,7 @@
 | `Primitives/Base/` | 접두사 | `color` | 흰색과 검은색은 color 바로 아래에 둠 | 확정 |
 | `Primitives/Grey/TealGrey-` | 접두사 | `color.teal-grey` | Grey 그룹의 TealGrey 팔레트를 teal-grey로 둠 | 확정 |
 | `Primitives/` | 접두사 | `color` | 팔레트 이름 반복 제거(Teal/Teal-500 → teal.500) | 확정 |
-| `Semantic/` | 접두사 | `color` | 이름 끝의 primitive 단계 숫자 제거(Neutral-Weak-400 → neutral-weak) | 확인 대기 |
+| `Semantic/` | 접두사 | `color` | 피그마 이름 그대로, 단계 숫자도 남김(Neutral-Weak-400 → neutral-weak-400) | 확정 |
 | `Typography/Base/FontSize/` | 접두사 | `font-size` | 타이포 기본 크기 | 확정 |
 | `Typography/Base/FontWeight/` | 접두사 | `font-weight` | 타이포 기본 굵기, 이름을 숫자로 바꿈 | 확정 |
 | `Typography/Base/Fontweight/` | 접두사 | `font-weight` | export에 없는 대소문자 변형, Display/3-Bold만 참조 | 확인 대기 |
@@ -192,54 +191,54 @@ primitive를 참조하지 않고 값을 직접 가진 semantic이다. 투명도�
 | --- | --- | --- |
 | `Semantic/Icon/Disabled` | `color.icon.disabled` | color.semantic.json |
 | `Semantic/Icon/Inverse` | `color.icon.inverse` | color.semantic.json |
-| `Semantic/Icon/Neutral-Weak-400` | `color.icon.neutral-weak` | color.semantic.json |
-| `Semantic/Icon/Neutral-Medium-500` | `color.icon.neutral-medium` | color.semantic.json |
-| `Semantic/Icon/Neutral-Strong-600` | `color.icon.neutral-strong` | color.semantic.json |
-| `Semantic/Icon/Neutral-Stronger-700` | `color.icon.neutral-stronger` | color.semantic.json |
-| `Semantic/Icon/Brand-Medium-500` | `color.icon.brand-medium` | color.semantic.json |
-| `Semantic/Icon/Brand-Strong-600` | `color.icon.brand-strong` | color.semantic.json |
+| `Semantic/Icon/Neutral-Weak-400` | `color.icon.neutral-weak-400` | color.semantic.json |
+| `Semantic/Icon/Neutral-Medium-500` | `color.icon.neutral-medium-500` | color.semantic.json |
+| `Semantic/Icon/Neutral-Strong-600` | `color.icon.neutral-strong-600` | color.semantic.json |
+| `Semantic/Icon/Neutral-Stronger-700` | `color.icon.neutral-stronger-700` | color.semantic.json |
+| `Semantic/Icon/Brand-Medium-500` | `color.icon.brand-medium-500` | color.semantic.json |
+| `Semantic/Icon/Brand-Strong-600` | `color.icon.brand-strong-600` | color.semantic.json |
 | `Semantic/Icon/Success` | `color.icon.success` | color.semantic.json |
 | `Semantic/Icon/Error` | `color.icon.error` | color.semantic.json |
 | `Semantic/Icon/Warning` | `color.icon.warning` | color.semantic.json |
 | `Semantic/Fill/Disabled/Disalbed` | `color.fill.disabled` | color.semantic.json |
-| `Semantic/Fill/Neutral/Weaker-50` | `color.fill.neutral.weaker` | color.semantic.json |
+| `Semantic/Fill/Neutral/Weaker-50` | `color.fill.neutral.weaker-50` | color.semantic.json |
 | `Semantic/Fill/Neutral/Weaker-Hover(Pressed)` | `color.fill.neutral.weaker-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Neutral/Weak-75` | `color.fill.neutral.weak` | color.semantic.json |
+| `Semantic/Fill/Neutral/Weak-75` | `color.fill.neutral.weak-75` | color.semantic.json |
 | `Semantic/Fill/Neutral/Weak-Hover(Pressed)` | `color.fill.neutral.weak-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Neutral/Medium-100` | `color.fill.neutral.medium` | color.semantic.json |
+| `Semantic/Fill/Neutral/Medium-100` | `color.fill.neutral.medium-100` | color.semantic.json |
 | `Semantic/Fill/Neutral/Medium-Hover(Pressed)` | `color.fill.neutral.medium-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Neutral/Strong-200` | `color.fill.neutral.strong` | color.semantic.json |
+| `Semantic/Fill/Neutral/Strong-200` | `color.fill.neutral.strong-200` | color.semantic.json |
 | `Semantic/Fill/Neutral/Strong-Hover(Pressed)` | `color.fill.neutral.strong-hover-pressed` | color.semantic.json |
 | `Semantic/Fill/Neutral/Default` | `color.fill.neutral.default` | color.semantic.json |
-| `Semantic/Fill/Neutral-Inverse/Weak-400` | `color.fill.neutral-inverse.weak` | color.semantic.json |
+| `Semantic/Fill/Neutral-Inverse/Weak-400` | `color.fill.neutral-inverse.weak-400` | color.semantic.json |
 | `Semantic/Fill/Neutral-Inverse/Weak-Hover(Pressed)` | `color.fill.neutral-inverse.weak-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Neutral-Inverse/Medium-500` | `color.fill.neutral-inverse.medium` | color.semantic.json |
+| `Semantic/Fill/Neutral-Inverse/Medium-500` | `color.fill.neutral-inverse.medium-500` | color.semantic.json |
 | `Semantic/Fill/Neutral-Inverse/Medium-Hover(Pressed)` | `color.fill.neutral-inverse.medium-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Neutral-Inverse/Strong-600` | `color.fill.neutral-inverse.strong` | color.semantic.json |
+| `Semantic/Fill/Neutral-Inverse/Strong-600` | `color.fill.neutral-inverse.strong-600` | color.semantic.json |
 | `Semantic/Fill/Neutral-Inverse/Strong-Hover(Pressed)` | `color.fill.neutral-inverse.strong-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Neutral-Inverse/Stronger-700` | `color.fill.neutral-inverse.stronger` | color.semantic.json |
+| `Semantic/Fill/Neutral-Inverse/Stronger-700` | `color.fill.neutral-inverse.stronger-700` | color.semantic.json |
 | `Semantic/Fill/Neutral-Inverse/Stronger-Hover(Pressed)` | `color.fill.neutral-inverse.stronger-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Primary/Weaker-50` | `color.fill.primary.weaker` | color.semantic.json |
+| `Semantic/Fill/Primary/Weaker-50` | `color.fill.primary.weaker-50` | color.semantic.json |
 | `Semantic/Fill/Primary/Weaker-Hover(Pressed)` | `color.fill.primary.weaker-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Primary/Weak-75` | `color.fill.primary.weak` | color.semantic.json |
+| `Semantic/Fill/Primary/Weak-75` | `color.fill.primary.weak-75` | color.semantic.json |
 | `Semantic/Fill/Primary/Weak-Hover(Pressed)` | `color.fill.primary.weak-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Primary/Medium-100` | `color.fill.primary.medium` | color.semantic.json |
+| `Semantic/Fill/Primary/Medium-100` | `color.fill.primary.medium-100` | color.semantic.json |
 | `Semantic/Fill/Primary/Medium-Hover(Pressed)` | `color.fill.primary.medium-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Primary/Strong-200` | `color.fill.primary.strong` | color.semantic.json |
+| `Semantic/Fill/Primary/Strong-200` | `color.fill.primary.strong-200` | color.semantic.json |
 | `Semantic/Fill/Primary/Strong-Hover(Pressed)` | `color.fill.primary.strong-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Primary/Stronger-300` | `color.fill.primary.stronger` | color.semantic.json |
-| `Semantic/Fill/Primary/Stronger-Hover(Pressed)-400` | `color.fill.primary.stronger-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Primary-Inverse/Medium-400` | `color.fill.primary-inverse.medium` | color.semantic.json |
+| `Semantic/Fill/Primary/Stronger-300` | `color.fill.primary.stronger-300` | color.semantic.json |
+| `Semantic/Fill/Primary/Stronger-Hover(Pressed)-400` | `color.fill.primary.stronger-hover-pressed-400` | color.semantic.json |
+| `Semantic/Fill/Primary-Inverse/Medium-400` | `color.fill.primary-inverse.medium-400` | color.semantic.json |
 | `Semantic/Fill/Primary-Inverse/Medium-Hover(Pressed)` | `color.fill.primary-inverse.medium-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Primary-Inverse/Strong-500` | `color.fill.primary-inverse.strong` | color.semantic.json |
+| `Semantic/Fill/Primary-Inverse/Strong-500` | `color.fill.primary-inverse.strong-500` | color.semantic.json |
 | `Semantic/Fill/Primary-Inverse/Strong-Hover(Pressed)` | `color.fill.primary-inverse.strong-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Primary-Inverse/Stronger-600` | `color.fill.primary-inverse.stronger` | color.semantic.json |
+| `Semantic/Fill/Primary-Inverse/Stronger-600` | `color.fill.primary-inverse.stronger-600` | color.semantic.json |
 | `Semantic/Fill/Primary-Inverse/Stronger-Hover(Pressed)` | `color.fill.primary-inverse.stronger-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Error/Weak-50` | `color.fill.error.weak` | color.semantic.json |
+| `Semantic/Fill/Error/Weak-50` | `color.fill.error.weak-50` | color.semantic.json |
 | `Semantic/Fill/Error/Weak-Hover(Pressed)` | `color.fill.error.weak-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Error/Medium-100` | `color.fill.error.medium` | color.semantic.json |
+| `Semantic/Fill/Error/Medium-100` | `color.fill.error.medium-100` | color.semantic.json |
 | `Semantic/Fill/Error/Medium-Hover(Pressed)` | `color.fill.error.medium-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Error/Strong-500` | `color.fill.error.strong` | color.semantic.json |
+| `Semantic/Fill/Error/Strong-500` | `color.fill.error.strong-500` | color.semantic.json |
 | `Semantic/Fill/Error/Strong-Hover(Pressed)` | `color.fill.error.strong-hover-pressed` | color.semantic.json |
 | `Semantic/Fill/Warning/Weak` | `color.fill.warning.weak` | color.semantic.json |
 | `Semantic/Fill/Warning/Weak-Hover(Pressed)` | `color.fill.warning.weak-hover-pressed` | color.semantic.json |
@@ -269,9 +268,9 @@ primitive를 참조하지 않고 값을 직접 가진 semantic이다. 투명도�
 | `Semantic/Text/Inverse` | `color.text.inverse` | color.semantic.json |
 | `Semantic/Text/Disabled` | `color.text.disabled` | color.semantic.json |
 | `Semantic/Text/Placeholder` | `color.text.placeholder` | color.semantic.json |
-| `Semantic/Text/Neutral-Weak-500` | `color.text.neutral-weak` | color.semantic.json |
-| `Semantic/Text/Neutral-Medium-600` | `color.text.neutral-medium` | color.semantic.json |
-| `Semantic/Text/Neutral-Strong-800` | `color.text.neutral-strong` | color.semantic.json |
+| `Semantic/Text/Neutral-Weak-500` | `color.text.neutral-weak-500` | color.semantic.json |
+| `Semantic/Text/Neutral-Medium-600` | `color.text.neutral-medium-600` | color.semantic.json |
+| `Semantic/Text/Neutral-Strong-800` | `color.text.neutral-strong-800` | color.semantic.json |
 | `Semantic/Text/Neutral-Default` | `color.text.neutral-default` | color.semantic.json |
 | `Semantic/Text/Brand-Disabled` | `color.text.brand-disabled` | color.semantic.json |
 | `Semantic/Text/Brand-Default` | `color.text.brand-default` | color.semantic.json |
@@ -280,24 +279,24 @@ primitive를 참조하지 않고 값을 직접 가진 semantic이다. 투명도�
 | `Semantic/Text/Error` | `color.text.error` | color.semantic.json |
 | `Semantic/Text/Warning` | `color.text.warning` | color.semantic.json |
 | `Semantic/Border/Disabled/Disalbed` | `color.border.disabled` | color.semantic.json |
-| `Semantic/Border/Neutral/Weaker-100` | `color.border.neutral.weaker` | color.semantic.json |
-| `Semantic/Border/Neutral/Weak-200` | `color.border.neutral.weak` | color.semantic.json |
-| `Semantic/Border/Neutral/Medium-300` | `color.border.neutral.medium` | color.semantic.json |
-| `Semantic/Border/Neutral/Strong-400` | `color.border.neutral.strong` | color.semantic.json |
-| `Semantic/Border/Neutral/Stronger-600` | `color.border.neutral.stronger` | color.semantic.json |
+| `Semantic/Border/Neutral/Weaker-100` | `color.border.neutral.weaker-100` | color.semantic.json |
+| `Semantic/Border/Neutral/Weak-200` | `color.border.neutral.weak-200` | color.semantic.json |
+| `Semantic/Border/Neutral/Medium-300` | `color.border.neutral.medium-300` | color.semantic.json |
+| `Semantic/Border/Neutral/Strong-400` | `color.border.neutral.strong-400` | color.semantic.json |
+| `Semantic/Border/Neutral/Stronger-600` | `color.border.neutral.stronger-600` | color.semantic.json |
 | `Semantic/Border/Neutral/Default` | `color.border.neutral.default` | color.semantic.json |
-| `Semantic/Border/Primary/Weaker-100` | `color.border.primary.weaker` | color.semantic.json |
-| `Semantic/Border/Primary/Weak-200` | `color.border.primary.weak` | color.semantic.json |
-| `Semantic/Border/Primary/Medium-300` | `color.border.primary.medium` | color.semantic.json |
-| `Semantic/Border/Primary/Strong-500` | `color.border.primary.strong` | color.semantic.json |
-| `Semantic/Border/Error/Weaker-100` | `color.border.error.weaker` | color.semantic.json |
-| `Semantic/Border/Error/Weak-200` | `color.border.error.weak` | color.semantic.json |
-| `Semantic/Border/Error/Medium-300` | `color.border.error.medium` | color.semantic.json |
-| `Semantic/Border/Error/Strong-500` | `color.border.error.strong` | color.semantic.json |
-| `Semantic/Border/Warning/Weaker-100` | `color.border.warning.weaker` | color.semantic.json |
-| `Semantic/Border/Warning/Weak-200` | `color.border.warning.weak` | color.semantic.json |
-| `Semantic/Border/Warning/Medium-300` | `color.border.warning.medium` | color.semantic.json |
-| `Semantic/Border/Warning/Strong-500` | `color.border.warning.strong` | color.semantic.json |
+| `Semantic/Border/Primary/Weaker-100` | `color.border.primary.weaker-100` | color.semantic.json |
+| `Semantic/Border/Primary/Weak-200` | `color.border.primary.weak-200` | color.semantic.json |
+| `Semantic/Border/Primary/Medium-300` | `color.border.primary.medium-300` | color.semantic.json |
+| `Semantic/Border/Primary/Strong-500` | `color.border.primary.strong-500` | color.semantic.json |
+| `Semantic/Border/Error/Weaker-100` | `color.border.error.weaker-100` | color.semantic.json |
+| `Semantic/Border/Error/Weak-200` | `color.border.error.weak-200` | color.semantic.json |
+| `Semantic/Border/Error/Medium-300` | `color.border.error.medium-300` | color.semantic.json |
+| `Semantic/Border/Error/Strong-500` | `color.border.error.strong-500` | color.semantic.json |
+| `Semantic/Border/Warning/Weaker-100` | `color.border.warning.weaker-100` | color.semantic.json |
+| `Semantic/Border/Warning/Weak-200` | `color.border.warning.weak-200` | color.semantic.json |
+| `Semantic/Border/Warning/Medium-300` | `color.border.warning.medium-300` | color.semantic.json |
+| `Semantic/Border/Warning/Strong-500` | `color.border.warning.strong-500` | color.semantic.json |
 | `Semantic/Border/Success/Weaker` | `color.border.success.weaker` | color.semantic.json |
 | `Semantic/Border/Success/Weak` | `color.border.success.weak` | color.semantic.json |
 | `Semantic/Border/Success/Medium` | `color.border.success.medium` | color.semantic.json |

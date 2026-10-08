@@ -3,7 +3,7 @@ import { ScrollFog } from "@umc-product/react"
 const ITEMS = Array.from({ length: 12 }, (_, index) => `항목 ${index + 1}`)
 
 const itemStyle = {
-  background: "var(--umc-color-fill-neutral-medium)",
+  background: "var(--umc-color-fill-neutral-medium-100)",
 }
 
 export function ScrollFogHorizontal() {

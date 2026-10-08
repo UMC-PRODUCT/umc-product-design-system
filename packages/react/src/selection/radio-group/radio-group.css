@@ -8,8 +8,8 @@
 
   .umc-radio {
     --umc-radio-bg: var(--umc-color-fill-neutral-default);
-    --umc-radio-border: var(--umc-color-border-neutral-strong);
-    --umc-radio-dot: var(--umc-color-icon-brand-medium);
+    --umc-radio-border: var(--umc-color-border-neutral-strong-400);
+    --umc-radio-dot: var(--umc-color-icon-brand-medium-500);
 
     position: relative;
     display: inline-flex;
@@ -32,15 +32,15 @@
   }
 
   .umc-radio[data-disabled] {
-    --umc-radio-bg: var(--umc-color-fill-neutral-weak);
+    --umc-radio-bg: var(--umc-color-fill-neutral-weak-75);
     --umc-radio-border: var(--umc-color-border-disabled);
-    --umc-radio-dot: var(--umc-color-fill-neutral-strong);
+    --umc-radio-dot: var(--umc-color-fill-neutral-strong-200);
 
     cursor: default;
   }
 
   .umc-radio:focus-visible {
-    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
     outline-offset: 2px;
   }
 

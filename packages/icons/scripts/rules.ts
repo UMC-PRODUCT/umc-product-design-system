@@ -169,8 +169,8 @@ export const ICON_FIXED_COLORS: Readonly<Record<string, ColorReplacement>> = {
 }
 
 export const PICTOGRAM_PRIMARY_COLORS: Readonly<Record<string, string>> = {
-  "#02746c": "var(--umc-color-icon-brand-strong)",
-  "#008a80": "var(--umc-color-icon-brand-medium)",
+  "#02746c": "var(--umc-color-icon-brand-strong-600)",
+  "#008a80": "var(--umc-color-icon-brand-medium-500)",
   "#0b6b64": "#0b6b64",
 }
 

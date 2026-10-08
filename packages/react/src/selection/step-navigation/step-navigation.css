@@ -17,7 +17,7 @@
     padding: var(--umc-spacing-padding-4);
     border: 0;
     border-radius: var(--umc-radius-14);
-    background-color: var(--umc-color-fill-neutral-weak);
+    background-color: var(--umc-color-fill-neutral-weak-75);
     box-shadow: var(--umc-shadow-inner-neutral-2);
     list-style: none;
     overflow-x: auto;
@@ -54,7 +54,7 @@
   .umc-step-navigation__step[aria-current="step"] {
     background-color: var(--umc-color-fill-neutral-default);
     box-shadow: var(--umc-step-navigation-current-shadow);
-    color: var(--umc-color-text-neutral-strong);
+    color: var(--umc-color-text-neutral-strong-800);
   }
 
   .umc-step-navigation__badge {
@@ -67,8 +67,8 @@
     height: 20px;
     padding-inline: var(--umc-spacing-padding-4);
     border-radius: var(--umc-radius-full);
-    background-color: var(--umc-color-fill-neutral-medium);
-    color: var(--umc-color-text-neutral-medium);
+    background-color: var(--umc-color-fill-neutral-medium-100);
+    color: var(--umc-color-text-neutral-medium-600);
     font-family: var(--umc-typography-label-5-semibold-font-family);
     font-size: var(--umc-typography-label-5-semibold-font-size);
     font-weight: var(--umc-typography-label-5-semibold-font-weight);
