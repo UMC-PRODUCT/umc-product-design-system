@@ -1,0 +1,189 @@
+{
+  "component": "TextButton",
+  "figmaSection": "3696:101234",
+  "page": "/components/actions/text-button/",
+  "nodes": [
+    {
+      "specId": "text-button-brand-plain-xs",
+      "node": "3573:95929",
+      "variant": "Color=Brand, State=Default, Size=Xs, Type=Plain",
+      "expected": {
+        "color": "#02746c",
+        "font-size": "16px",
+        "font-weight": "500",
+        "line-height": "22.4px",
+        "letter-spacing": "-0.48px",
+        "padding-top": "0px",
+        "padding-left": "0px",
+        "background-color": "#00000000"
+      }
+    },
+    {
+      "specId": "text-button-brand-trailing-xs",
+      "node": "3573:95926",
+      "variant": "Color=Brand, State=Default, Size=Xs, Type=Tailling Acc",
+      "expected": {
+        "column-gap": "3px",
+        "color": "#02746c"
+      }
+    },
+    {
+      "specId": "text-button-brand-trailing-xs-icon",
+      "node": "3573:96436",
+      "variant": "Icon/Chevron_Right, Weight=Fill",
+      "target": ".umc-text-button__icon",
+      "expected": {
+        "width": "16px",
+        "height": "16px",
+        "color": "#02746c"
+      }
+    },
+    {
+      "specId": "text-button-brand-underline-xs",
+      "node": "3573:95931",
+      "variant": "Color=Brand, State=Default, Size=Xs, Type=Underline",
+      "target": ".umc-text-button__label",
+      "expected": {
+        "color": "#02746c",
+        "text-decoration-line": "underline"
+      }
+    },
+    {
+      "specId": "text-button-brand-disabled-xs",
+      "node": "3573:95936",
+      "variant": "Color=Brand, State=Disabled, Size=Xs, Type=Plain",
+      "expected": {
+        "color": "#7ac7c1"
+      }
+    },
+    {
+      "specId": "text-button-neutral-plain-xs",
+      "node": "3573:95943",
+      "variant": "Color=Neutral, State=Default, Size=Xs, Type=Plain",
+      "expected": {
+        "color": "#606262"
+      }
+    },
+    {
+      "specId": "text-button-neutral-leading-xs-icon",
+      "node": "3696:101496",
+      "variant": "Color=Neutral, State=Default, Size=Xs, Type=Leading Acc",
+      "target": ".umc-text-button__icon",
+      "expected": {
+        "width": "16px",
+        "height": "16px",
+        "color": "#606262"
+      }
+    },
+    {
+      "specId": "text-button-neutral-disabled-xs",
+      "node": "3573:95950",
+      "variant": "Color=Neutral, State=Disabled, Size=Xs, Type=Plain",
+      "expected": {
+        "color": "#cccccc"
+      }
+    },
+    {
+      "specId": "text-button-size-xs",
+      "node": "3573:95926",
+      "variant": "Color=Brand, State=Default, Size=Xs, Type=Tailling Acc",
+      "expected": {
+        "font-size": "16px",
+        "line-height": "22.4px",
+        "letter-spacing": "-0.48px"
+      }
+    },
+    {
+      "specId": "text-button-size-xs-icon",
+      "node": "3573:96436",
+      "variant": "Icon/Chevron_Right, Weight=Fill",
+      "target": ".umc-text-button__icon",
+      "expected": {
+        "width": "16px",
+        "height": "16px"
+      }
+    },
+    {
+      "specId": "text-button-size-sm",
+      "node": "3690:99348",
+      "variant": "Color=Brand, State=Default, Size=Sm, Type=Tailling Acc",
+      "expected": {
+        "font-size": "18px",
+        "font-weight": "500",
+        "line-height": "25.2px",
+        "letter-spacing": "-0.36px",
+        "column-gap": "3px"
+      }
+    },
+    {
+      "specId": "text-button-size-sm-icon",
+      "node": "3690:99348",
+      "variant": "Color=Brand, State=Default, Size=Sm, Type=Tailling Acc",
+      "target": ".umc-text-button__icon",
+      "expected": {
+        "width": "16px",
+        "height": "16px"
+      }
+    },
+    {
+      "specId": "text-button-size-md",
+      "node": "3690:99480",
+      "variant": "Color=Brand, State=Default, Size=Md, Type=Tailling Acc",
+      "expected": {
+        "font-size": "20px",
+        "font-weight": "500",
+        "line-height": "28px",
+        "letter-spacing": "-0.4px",
+        "column-gap": "3px"
+      }
+    },
+    {
+      "specId": "text-button-size-md-icon",
+      "node": "3690:99480",
+      "variant": "Color=Brand, State=Default, Size=Md, Type=Tailling Acc",
+      "target": ".umc-text-button__icon",
+      "expected": {
+        "width": "20px",
+        "height": "20px"
+      }
+    },
+    {
+      "specId": "text-button-brand-hover",
+      "interaction": "hover",
+      "node": "3600:96968",
+      "variant": "Color=Brand, State=Hover·Pressed, Size=Xs, Type=Tailling Acc",
+      "expected": {
+        "color": "#01423d"
+      }
+    },
+    {
+      "specId": "text-button-brand-hover-icon",
+      "interaction": "hover",
+      "node": "3600:96968",
+      "variant": "Color=Brand, State=Hover·Pressed, Size=Xs, Type=Tailling Acc",
+      "target": ".umc-text-button__icon",
+      "expected": {
+        "color": "#015a54"
+      }
+    },
+    {
+      "specId": "text-button-neutral-hover",
+      "interaction": "hover",
+      "node": "3573:96471",
+      "variant": "Color=Neutral, State=Hover·Pressed, Size=Xs, Type=Tailling Acc",
+      "expected": {
+        "color": "#282a2a"
+      }
+    },
+    {
+      "specId": "text-button-neutral-hover-icon",
+      "interaction": "hover",
+      "node": "3573:96471",
+      "variant": "Color=Neutral, State=Hover·Pressed, Size=Xs, Type=Tailling Acc",
+      "target": ".umc-text-button__icon",
+      "expected": {
+        "color": "#3f4141"
+      }
+    }
+  ]
+}
