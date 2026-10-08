@@ -90,3 +90,27 @@ export function SegmentedCheck20Glyph({ className }: GlyphProps) {
     </GlyphFrame>
   )
 }
+
+export function CheckboxCheckMdGlyph({ className }: GlyphProps) {
+  return (
+    <GlyphFrame size={20} className={className}>
+      <StrokePath d="M5 9.73077L8.5 13.5L15 6.5" width={1.8} />
+    </GlyphFrame>
+  )
+}
+
+export function CheckboxCheckLgGlyph({ className }: GlyphProps) {
+  return (
+    <GlyphFrame size={24} className={className}>
+      <StrokePath d="M6 11.6769L10.2 16.2L18 7.8" width={2} />
+    </GlyphFrame>
+  )
+}
+
+export function CheckButtonGlyph({ className }: GlyphProps) {
+  return (
+    <GlyphFrame size={24} className={className}>
+      <StrokePath d="M5 11.3462L9.9 17L19 6.5" width={2.4} />
+    </GlyphFrame>
+  )
+}

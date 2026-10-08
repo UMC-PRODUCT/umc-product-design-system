@@ -1,0 +1,32 @@
+@layer components {
+  .umc-check-button {
+    display: inline-flex;
+    flex: none;
+    width: 24px;
+    height: 24px;
+    color: var(--umc-color-teal-grey-200);
+    cursor: pointer;
+    transition: color var(--umc-motion-duration) ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .umc-check-button[data-checked] {
+    color: var(--umc-color-icon-brand-medium);
+  }
+
+  .umc-check-button[data-disabled] {
+    cursor: default;
+  }
+
+  .umc-check-button:focus-visible {
+    border-radius: var(--umc-radius-6);
+    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .umc-check-button {
+      transition: none;
+    }
+  }
+}

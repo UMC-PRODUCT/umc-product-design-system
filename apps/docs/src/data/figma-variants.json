@@ -695,6 +695,70 @@
         "State=Selected, Type=Default"
       ]
     },
+    "check-box": {
+      "node": "3696:100405",
+      "name": "Check Box",
+      "axes": {
+        "Color": ["Neutral", "Brand", "Error"],
+        "Size": ["Lg", "Md"],
+        "Selected": ["False", "True"],
+        "Disabled": ["False", "True"]
+      },
+      "variants": [
+        "Color=Neutral, Size=Lg, Selected=False, Disabled=False",
+        "Color=Brand, Size=Lg, Selected=False, Disabled=False",
+        "Color=Brand, Size=Lg, Selected=False, Disabled=True",
+        "Color=Error, Size=Lg, Selected=False, Disabled=True",
+        "Color=Neutral, Size=Lg, Selected=True, Disabled=False",
+        "Color=Brand, Size=Lg, Selected=True, Disabled=False",
+        "Color=Brand, Size=Lg, Selected=True, Disabled=True",
+        "Color=Error, Size=Lg, Selected=True, Disabled=True",
+        "Color=Neutral, Size=Md, Selected=False, Disabled=False",
+        "Color=Brand, Size=Md, Selected=False, Disabled=False",
+        "Color=Neutral, Size=Md, Selected=True, Disabled=False",
+        "Color=Brand, Size=Md, Selected=True, Disabled=False",
+        "Color=Neutral, Size=Md, Selected=False, Disabled=True",
+        "Color=Error, Size=Md, Selected=False, Disabled=True",
+        "Color=Neutral, Size=Md, Selected=True, Disabled=True",
+        "Color=Error, Size=Md, Selected=True, Disabled=True"
+      ]
+    },
+    "check-box-control": {
+      "node": "3696:100372",
+      "name": ".primitive/Check Box/Control",
+      "axes": {
+        "Color": ["Brand", "Error", "Neutral"],
+        "Size": ["Md", "Lg"],
+        "Selected": ["False", "True"],
+        "Disabled": ["False", "True"]
+      },
+      "variants": [
+        "Color=Brand, Size=Md, Selected=False, Disabled=False",
+        "Color=Brand, Size=Lg, Selected=False, Disabled=False",
+        "Color=Brand, Size=Lg, Selected=True, Disabled=True",
+        "Color=Error, Size=Md, Selected=False, Disabled=False",
+        "Color=Error, Size=Md, Selected=True, Disabled=False",
+        "Color=Error, Size=Lg, Selected=False, Disabled=False",
+        "Color=Error, Size=Lg, Selected=True, Disabled=True",
+        "Color=Brand, Size=Md, Selected=True, Disabled=False",
+        "Color=Neutral, Size=Md, Selected=True, Disabled=False",
+        "Color=Brand, Size=Lg, Selected=True, Disabled=False",
+        "Color=Neutral, Size=Lg, Selected=True, Disabled=False",
+        "Color=Neutral, Size=Md, Selected=False, Disabled=False",
+        "Color=Neutral, Size=Lg, Selected=False, Disabled=False",
+        "Color=Neutral, Size=Md, Selected=False, Disabled=True",
+        "Color=Neutral, Size=Md, Selected=True, Disabled=True",
+        "Color=Neutral, Size=Lg, Selected=False, Disabled=True"
+      ]
+    },
+    "check-button": {
+      "node": "3696:100254",
+      "name": "Check Button",
+      "axes": {
+        "Selected": ["False", "True"]
+      },
+      "variants": ["Selected=False", "Selected=True"]
+    },
     "tooltip": {
       "node": "2621:36221",
       "name": "Tooltip",

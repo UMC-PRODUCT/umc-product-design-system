@@ -3,6 +3,9 @@ import type { ReactElement } from "react"
 import { describe, expect, it } from "vitest"
 
 import {
+  CheckButtonGlyph,
+  CheckboxCheckLgGlyph,
+  CheckboxCheckMdGlyph,
   LegacyCheckGlyph,
   LegacyCloseGlyph,
   LegacyExpandMoreGlyph,
@@ -16,6 +19,9 @@ const GLYPHS: [name: string, element: ReactElement, size: number][] = [
   ["LegacyCloseGlyph", <LegacyCloseGlyph />, 24],
   ["SegmentedCheck16Glyph", <SegmentedCheck16Glyph />, 16],
   ["SegmentedCheck20Glyph", <SegmentedCheck20Glyph />, 20],
+  ["CheckboxCheckMdGlyph", <CheckboxCheckMdGlyph />, 20],
+  ["CheckboxCheckLgGlyph", <CheckboxCheckLgGlyph />, 24],
+  ["CheckButtonGlyph", <CheckButtonGlyph />, 24],
 ]
 
 const svgOf = (element: ReactElement) =>
