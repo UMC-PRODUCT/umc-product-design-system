@@ -22,10 +22,8 @@ export type TokenTree = { [key: string]: TokenTree | CanonicalToken }
 
 export type VariableMapping = {
   figmaName: string
-  tokenPath: string
   cssVariable: string
   codeSyntax: string | null
-  file: TokenFileName
 }
 
 export type VariableWarning = {
@@ -276,10 +274,8 @@ export const normalizeVariables = (
       ownerByPath.set(pathKey, variable.name)
       mappings.push({
         figmaName: variable.name,
-        tokenPath: pathKey,
         cssVariable: toCssVariable(target.path),
         codeSyntax: variable.webCodeSyntax ?? null,
-        file: target.rule.file,
       })
     } catch (error) {
       problems.push(
