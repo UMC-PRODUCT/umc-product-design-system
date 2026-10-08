@@ -15,9 +15,6 @@ const primitiveColors = tokenManifest.filter(
 const groupNameOf = (token: TokenManifestEntry): string =>
   token.name.split(".")[1] ?? ""
 
-const stepNameOf = (token: TokenManifestEntry): string =>
-  token.name.split(".").at(-1) ?? ""
-
 const chip = (cssVariable: string, className: string): HTMLElement => {
   const node = element("div", `rounded-lg ring-1 ring-black/10 ${className}`)
   node.style.background = `var(${cssVariable})`
@@ -65,7 +62,9 @@ const renderPrimitivePalettes = (): HTMLElement[] => {
         colors.map((token) =>
           element("li", "", [
             chip(token.cssVariable, "h-12"),
-            element("p", "text-caption-3-medium mt-1", [stepNameOf(token)]),
+            element("p", "text-caption-3-medium mt-1", [
+              token.tailwindName ?? "",
+            ]),
             element("p", "text-caption-3-regular text-black/50", [
               readVariable(token.cssVariable),
             ]),

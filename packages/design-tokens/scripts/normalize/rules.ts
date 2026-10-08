@@ -256,7 +256,7 @@ export const EFFECT_STYLES: readonly string[] = [
 ]
 
 export const OPEN_QUESTIONS: readonly string[] = [
-  "codeSyntax(WEB)가 여러 변수에 중복으로 붙어 있습니다. 예를 들어 `var(--color-border-default)`는 `Border/Neutral/Medium-300`(회색)과 `Border/Primary/Weak-200`(틸)에 함께 붙어 있습니다. Dev Mode 코드 패널과 피그마 MCP는 이 이름을 보여 주는데, 코드에는 없는 이름이라 개발자와 AI 도구가 길을 잃습니다. 아래 '이름 대응표와 codeSyntax 제안'의 제안 값(`var(--umc-color-…)`)으로 바꿔 줄 수 있나요? primitive와 Token 컬렉션 변수에도 같은 규칙으로 넣어 주시면 Dev Mode에 보이는 이름이 코드와 같아집니다.",
+  "codeSyntax(WEB)가 여러 변수에 중복으로 붙어 있습니다. 예를 들어 `var(--color-border-default)`는 `Border/Neutral/Medium-300`(회색)과 `Border/Primary/Weak-200`(틸)에 함께 붙어 있습니다. Dev Mode 코드 패널과 피그마 MCP는 이 이름을 보여 주는데, 코드의 CSS 변수(`--umc-color-…`)와 다른 이름이라 개발자와 AI 도구가 길을 잃습니다. 아래 '이름 대응표와 codeSyntax 제안'의 제안 값(`var(--umc-color-…)`)으로 바꿔 줄 수 있나요? primitive와 Token 컬렉션 변수에도 같은 규칙으로 넣어 주시면 Dev Mode에 보이는 이름이 코드와 같아집니다.",
   "`Fill/Disabled/Disalbed`, `Border/Disabled/Disalbed`의 오타를 빼고 `fill.disabled`, `border.disabled`로 읽었습니다. 피그마 이름도 고칠 수 있나요?",
   "같은 틸 역할을 Fill과 Border는 `Primary`, Background, Surface, Text, Icon은 `Brand`로 부릅니다. 한 이름으로 맞출 수 있나요?",
   "`Display/3-Bold`가 Token 컬렉션에 없는 `Typography/Base/Fontfamily/Brand`, `Fontweight/Bold`를 참조합니다(다른 라이브러리 변수로 보입니다). `FontFamily`, `FontWeight`로 다시 연결해 주세요.",

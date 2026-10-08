@@ -5,7 +5,7 @@ description: 피그마 변수 이름을 Tailwind v4 클래스로 바꿔 쓰는 �
 
 import { Aside } from "@astrojs/starlight/components"
 
-`tailwind.css`를 불러오면 피그마 변수 이름을 그대로 딴 클래스가 생깁니다. Tailwind 기본 팔레트(`blue-500`, `zinc-900` 등)는 지우고 UMC 색만 남깁니다.
+`tailwind.css`를 불러오면 피그마 변수 이름을 그대로 딴 클래스가 생깁니다. Tailwind 기본 팔레트(`indigo-500`, `zinc-900` 등)는 지우고 UMC 색만 남깁니다.
 
 ## 피그마 변수에서 클래스로
 
@@ -43,7 +43,7 @@ Tag는 단계마다 쓰는 자리가 다릅니다. 피그마 Dev Mode 이름을 
 
 <Aside type="caution">
   피그마 Dev Mode 코드 패널에 보이는 `var(--color-action-primary-default)` 같은
-  이름은 코드에 없습니다. 같은 이름이 여러 변수에 붙어 있어 색 하나를 가리키지
+  이름은 코드의 CSS 변수(`--umc-color-…`)와 다릅니다. 같은 이름이 여러 변수에 붙어 있어 색 하나를 가리키지
   못합니다. 예를 들어 `--color-action-primary-default` 하나를 변수 31개(Fill
   30개, Border 1개)가 함께 씁니다.
   Dev Mode의 변수 목록에 보이는 변수 이름(`Fill/Neutral/Weak-75`)으로 찾으세요.
@@ -77,7 +77,7 @@ Tag는 단계마다 쓰는 자리가 다릅니다. 피그마 Dev Mode 이름을 
 
 ## Text·Border 색을 다른 속성에 쓰기
 
-Text와 Border 색은 `text-`와 `border-` 클래스(`border-t-`, `border-x-` 같은 변 방향 포함)로만 만들었습니다. 불투명도(`/50`)를 붙이거나 outline, ring, divide, decoration에 쓰려면 CSS 변수를 괄호에 넣습니다.
+Text와 Border 색은 `text-`와 `border-` 클래스(`border-t-`, `border-x-` 같은 변 방향 포함)로만 만들었습니다. 불투명도(`/50`)를 붙이거나 outline, ring, divide, decoration에 쓰려면 CSS 변수를 괄호에 넣습니다. 불투명도는 `text-(--umc-color-text-neutral-default)/50`처럼 괄호 뒤에 붙입니다.
 
 ```html
 <button class="outline-2 outline-(--umc-color-border-primary-strong-500)">
@@ -92,7 +92,9 @@ Text와 Border 색은 `text-`와 `border-` 클래스(`border-t-`, `border-x-` �
 
 ## 기본 팔레트와 앱 색
 
-`tailwind.css`는 `--color-*: initial`로 Tailwind 기본 팔레트를 지웁니다. 그래서 `text-teal-300`은 Tailwind의 teal이 아니라 피그마 `Teal-300`입니다. 피그마에 없는 이름(`indigo-500`, `orange-500` 등)은 클래스가 생기지 않습니다. `bg-transparent`, `text-current`, `bg-inherit`은 그대로 쓸 수 있습니다.
+`tailwind.css`는 `--color-*: initial`로 Tailwind 기본 팔레트를 지웁니다. 그래서 `text-teal-300`은 Tailwind의 teal이 아니라 피그마 `Teal-300`입니다. 피그마에도 있는 이름(`teal-500`, `blue-500`, `red-500` 등)은 클래스가 그대로 생기지만 값은 UMC 색입니다. 피그마에 없는 이름(`indigo-500`, `orange-500` 등)은 클래스가 생기지 않습니다. `bg-transparent`, `text-current`, `bg-inherit`은 그대로 쓸 수 있습니다.
+
+초기화는 `@import "tailwindcss"` 뒤에서만 듣습니다. `tailwind.css`를 `@import "tailwindcss"`보다 먼저 불러오면 기본 팔레트가 되살아납니다.
 
 피그마에 없는 색이 꼭 필요하면 `tailwind.css`를 불러온 **뒤**에 `@theme`으로 더합니다. 앞에 두면 초기화에 함께 지워집니다.
 
