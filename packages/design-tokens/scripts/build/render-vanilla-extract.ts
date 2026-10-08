@@ -53,6 +53,9 @@ export const renderVanillaExtract = (
     if (typographyKey === null) {
       continue
     }
+    if (typographyKey in typography) {
+      throw new Error(`typography.${typographyKey} 키가 이미 있습니다`)
+    }
     typography[typographyKey] = Object.fromEntries(
       TYPOGRAPHY_PROPERTIES.map(({ key, cssProperty }) => [
         key,

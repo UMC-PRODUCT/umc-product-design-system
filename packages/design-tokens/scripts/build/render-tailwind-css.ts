@@ -2,7 +2,7 @@ import { toCssVariable, type TokenPath } from "../shared/naming.ts"
 import { TYPOGRAPHY_PROPERTIES, typographyVariable } from "./declarations.ts"
 import type { ModelEntry } from "./model.ts"
 
-export const TAILWIND_SPACING_ALIASES = [
+const TAILWIND_SPACING_ALIASES = [
   { name: "grid-gutter", path: ["grid", "gutter"] },
   { name: "grid-margin-desktop", path: ["grid", "margin", "desktop"] },
   { name: "grid-margin-mobile", path: ["grid", "margin", "mobile"] },
@@ -30,12 +30,20 @@ export const COLOR_PROPERTY_UTILITIES = {
 
 type PropertyColorGroup = keyof typeof COLOR_PROPERTY_UTILITIES
 
-const BACKGROUND_COLOR_GROUPS: ReadonlySet<string> = new Set([
-  "background",
-  "surface",
-  "fill",
-  "dimmed",
-])
+type SemanticGroupRule =
+  | { kind: "property"; group: PropertyColorGroup }
+  | { kind: "color"; utilityPrefix: string | null }
+
+const SEMANTIC_GROUP_RULES: Readonly<Record<string, SemanticGroupRule>> = {
+  text: { kind: "property", group: "text" },
+  border: { kind: "property", group: "border" },
+  icon: { kind: "color", utilityPrefix: "text" },
+  background: { kind: "color", utilityPrefix: "bg" },
+  surface: { kind: "color", utilityPrefix: "bg" },
+  fill: { kind: "color", utilityPrefix: "bg" },
+  dimmed: { kind: "color", utilityPrefix: "bg" },
+  tag: { kind: "color", utilityPrefix: null },
+}
 
 type Utility = {
   name: string
@@ -48,12 +56,15 @@ const nameAfterRoot = (path: TokenPath): string => path.slice(1).join("-")
 
 const nameAfterGroup = (path: TokenPath): string => path.slice(2).join("-")
 
-const semanticGroupOf = (entry: ModelEntry): string | null =>
-  entry.file === "color.semantic.json" ? (entry.path[1] ?? null) : null
-
-const propertyColorGroupOf = (entry: ModelEntry): PropertyColorGroup | null => {
-  const group = semanticGroupOf(entry)
-  return group === "text" || group === "border" ? group : null
+const semanticGroupRuleOf = (entry: ModelEntry): SemanticGroupRule => {
+  const group = entry.path[1] ?? ""
+  const rule = SEMANTIC_GROUP_RULES[group]
+  if (rule === undefined) {
+    throw new Error(
+      `semantic 그룹 ${group}을 Tailwind로 내는 규칙이 없습니다. SEMANTIC_GROUP_RULES에 더하세요`,
+    )
+  }
+  return rule
 }
 
 export const textStyleUtility = (path: TokenPath): string =>
@@ -67,7 +78,9 @@ export const tailwindNameOf = (entry: ModelEntry): string | null => {
     return nameAfterRoot(entry.path)
   }
   if (entry.file === "color.semantic.json") {
-    return propertyColorGroupOf(entry) ? null : nameAfterRoot(entry.path)
+    return semanticGroupRuleOf(entry).kind === "property"
+      ? null
+      : nameAfterRoot(entry.path)
   }
   const spacingAlias = TAILWIND_SPACING_ALIASES.find(
     (alias) => pathKey(alias.path) === pathKey(entry.path),
@@ -76,17 +89,14 @@ export const tailwindNameOf = (entry: ModelEntry): string | null => {
 }
 
 const semanticColorUtility = (entry: ModelEntry): string | null => {
-  const group = semanticGroupOf(entry)
-  if (group === "text" || group === "border") {
-    return `${group}-${nameAfterGroup(entry.path)}`
+  const rule = semanticGroupRuleOf(entry)
+  if (rule.kind === "property") {
+    const [primary] = COLOR_PROPERTY_UTILITIES[rule.group]
+    return `${primary.prefix}-${nameAfterGroup(entry.path)}`
   }
-  if (group === "icon") {
-    return `text-${nameAfterRoot(entry.path)}`
-  }
-  if (group !== null && BACKGROUND_COLOR_GROUPS.has(group)) {
-    return `bg-${nameAfterRoot(entry.path)}`
-  }
-  return null
+  return rule.utilityPrefix === null
+    ? null
+    : `${rule.utilityPrefix}-${nameAfterRoot(entry.path)}`
 }
 
 export const tailwindUtilityOf = (entry: ModelEntry): string | null => {
@@ -103,11 +113,11 @@ export const tailwindUtilityOf = (entry: ModelEntry): string | null => {
 }
 
 const colorPropertyRules = (entry: ModelEntry): Utility[] => {
-  const group = propertyColorGroupOf(entry)
-  if (group === null) {
+  const rule = semanticGroupRuleOf(entry)
+  if (rule.kind !== "property") {
     return []
   }
-  return COLOR_PROPERTY_UTILITIES[group].map(({ prefix, property }) => ({
+  return COLOR_PROPERTY_UTILITIES[rule.group].map(({ prefix, property }) => ({
     name: `${prefix}-${nameAfterGroup(entry.path)}`,
     declarations: [`${property}: var(${toCssVariable(entry.path)});`],
   }))

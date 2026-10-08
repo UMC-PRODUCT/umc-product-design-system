@@ -5,12 +5,18 @@ import { compile } from "@tailwindcss/node"
 import { describe, expect, it } from "vitest"
 
 import { tokenManifest } from "../../src/generated/manifest.ts"
+import { typography, vars } from "../../src/generated/vanilla-extract.ts"
 import { normalizeAll } from "../normalize/normalize-all.ts"
 import { findStaleOutputs } from "../shared/files.ts"
 import { paths } from "../shared/paths.ts"
 import { toDeclarations } from "./declarations.ts"
-import { loadTokenModel } from "./model.ts"
+import { loadTokenModel, type ModelEntry } from "./model.ts"
 import { renderAll } from "./render-all.ts"
+import {
+  COLOR_PROPERTY_UTILITIES,
+  renderTailwindCss,
+} from "./render-tailwind-css.ts"
+import { renderVanillaExtract } from "./render-vanilla-extract.ts"
 
 const entries = loadTokenModel()
 const outputs = renderAll(entries)
@@ -146,6 +152,21 @@ describe("manifest.ts", () => {
       tailwindName: null,
     })
     expect(tokenNamed("color.teal.300")?.codeSyntax).toBeNull()
+    expect(tokenNamed("shadow.drop.neutral-1")).toMatchObject({
+      tier: "shadow",
+      type: "shadow",
+      value: "0 4px 16px 0 #40444329",
+      alias: null,
+      figmaName: "Shadow/Drop/Neutral_1",
+      utility: "shadow-drop-neutral-1",
+    })
+    expect(tokenNamed("typography.display-1-bold")?.typography).toEqual({
+      fontFamily: "Pretendard Variable",
+      fontSize: "48px",
+      fontWeight: "700",
+      lineHeight: "1.2",
+      letterSpacing: "-0.03em",
+    })
   })
 
   it.each([
@@ -158,26 +179,6 @@ describe("manifest.ts", () => {
     ["spacing.padding.16", null],
   ])("%s의 vanilla-extract 접근 경로는 %s다", (name, vanillaExtract) => {
     expect(tokenNamed(name)?.vanillaExtract).toBe(vanillaExtract)
-    expect(
-      tokenManifest.find((token) => token.name === "shadow.drop.neutral-1"),
-    ).toMatchObject({
-      tier: "shadow",
-      type: "shadow",
-      value: "0 4px 16px 0 #40444329",
-      alias: null,
-      figmaName: "Shadow/Drop/Neutral_1",
-      utility: "shadow-drop-neutral-1",
-    })
-    expect(
-      tokenManifest.find((token) => token.name === "typography.display-1-bold")
-        ?.typography,
-    ).toEqual({
-      fontFamily: "Pretendard Variable",
-      fontSize: "48px",
-      fontWeight: "700",
-      lineHeight: "1.2",
-      letterSpacing: "-0.03em",
-    })
   })
 
   it.each([
@@ -212,6 +213,61 @@ describe("manifest.ts", () => {
 })
 
 describe("vanilla-extract.ts", () => {
+  const ACCESSOR_KEY_PATTERN = /\.([A-Za-z_$][\w$]*)|\[("(?:[^"\\]|\\.)*")\]/g
+
+  const isRecord = (value: unknown): value is Record<string, unknown> =>
+    typeof value === "object" && value !== null
+
+  const valueAt = (accessor: string): unknown => {
+    const roots: Record<string, unknown> = { vars, typography }
+    const rootName = /^[A-Za-z_$][\w$]*/.exec(accessor)?.[0] ?? ""
+    const keys = [...accessor.matchAll(ACCESSOR_KEY_PATTERN)].map(
+      (match) => match[1] ?? (JSON.parse(match[2] ?? '""') as string),
+    )
+    return keys.reduce<unknown>(
+      (node, key) => (isRecord(node) ? node[key] : undefined),
+      roots[rootName],
+    )
+  }
+
+  const countLeaves = (node: unknown): number =>
+    isRecord(node)
+      ? Object.values(node).reduce<number>(
+          (total, child) => total + countLeaves(child),
+          0,
+        )
+      : 1
+
+  it("manifest의 vanilla-extract 경로가 모두 생성물에서 해당 CSS 변수를 가리킨다", () => {
+    const accessible = tokenManifest.flatMap((token) =>
+      token.vanillaExtract === null
+        ? []
+        : [{ accessor: token.vanillaExtract, token }],
+    )
+    const mismatched = accessible.filter(({ accessor, token }) => {
+      const value = valueAt(accessor)
+      return token.type === "typography"
+        ? !isRecord(value) ||
+            value.fontFamily !== `var(${token.cssVariable}-font-family)`
+        : value !== `var(${token.cssVariable})`
+    })
+
+    expect(mismatched.map(({ accessor }) => accessor)).toEqual([])
+    expect(accessible).toHaveLength(
+      countLeaves(vars) + Object.keys(typography).length,
+    )
+  })
+
+  it("텍스트 스타일 키가 겹치면 생성을 멈춘다", () => {
+    const style = entries.find((entry) => entry.file === "typography.json")
+    if (style === undefined) {
+      throw new Error("텍스트 스타일 토큰이 없습니다")
+    }
+    expect(() => renderVanillaExtract([style, style])).toThrow(
+      /typography\.display1Bold 키가 이미 있습니다/,
+    )
+  })
+
   it("모든 값이 --umc 변수 참조다", () => {
     const values = [
       ...output("vanilla-extract.ts").matchAll(/: "([^"]+)",/g),
@@ -249,6 +305,66 @@ describe("Tailwind 어댑터", () => {
     const start = css.indexOf(`${selector} {`)
     return start === -1 ? "" : css.slice(start, css.indexOf("}", start) + 1)
   }
+
+  it("생성한 유틸리티는 선언한 속성만 낸다(Tailwind 기본 유틸리티와 합쳐지지 않는다)", async () => {
+    const declared = [
+      ...output("tailwind.css").matchAll(
+        /^@utility ([a-z0-9-]+) \{\n([^}]*)\n\}/gm,
+      ),
+    ].map(([, name = "", body = ""]) => ({
+      name,
+      body: body.replace(/\s+/g, " ").trim(),
+    }))
+    const css = await buildCss(declared.map(({ name }) => name))
+    const mismatched = declared.filter(({ name, body }) => {
+      const rule = ruleOf(css, `.${name}`)
+      const generated = rule
+        .slice(rule.indexOf("{") + 1, rule.lastIndexOf("}"))
+        .replace(/\s+/g, " ")
+        .trim()
+      return generated !== body
+    })
+
+    expect(declared).toHaveLength(268)
+    expect(mismatched.map(({ name }) => name)).toEqual([])
+  })
+
+  it("변 방향 테두리 9종은 Tailwind 기본 테두리 색과 같은 속성, 같은 순서를 쓴다", async () => {
+    const prefixes = COLOR_PROPERTY_UTILITIES.border.map(({ prefix }) => prefix)
+    const css = await buildCss(
+      prefixes.flatMap((prefix) => [
+        `${prefix}-red-500`,
+        `${prefix}-error-strong-500`,
+      ]),
+    )
+    const propertyOf = (selector: string) =>
+      /\{\s*([a-z-]+):/.exec(ruleOf(css, selector))?.[1]
+    const rankOf = (suffix: string) => {
+      const positions = prefixes.map((prefix) =>
+        css.indexOf(`.${prefix}-${suffix} {`),
+      )
+      const sorted = [...positions].sort((left, right) => left - right)
+      return positions.map((position) => sorted.indexOf(position))
+    }
+
+    for (const prefix of prefixes) {
+      expect(propertyOf(`.${prefix}-error-strong-500`)).toBe(
+        propertyOf(`.${prefix}-red-500`),
+      )
+    }
+    expect(rankOf("error-strong-500")).toEqual(rankOf("red-500"))
+  })
+
+  it("규칙이 없는 semantic 그룹이 오면 생성을 멈춘다", () => {
+    const linkColor: ModelEntry = {
+      path: ["color", "link", "default"],
+      token: { $type: "color", $value: "#000000" },
+      file: "color.semantic.json",
+    }
+    expect(() => renderTailwindCss([...entries, linkColor])).toThrow(
+      /semantic 그룹 link/,
+    )
+  })
 
   it("텍스트 스타일과 그리드, 레이아웃 유틸리티를 만든다", async () => {
     const css = await buildCss([
