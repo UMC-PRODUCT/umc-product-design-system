@@ -1,0 +1,85 @@
+{
+  "component": "Radio",
+  "figmaSection": "3719:103053",
+  "page": "/components/selection/radio/",
+  "nodes": [
+    {
+      "specId": "radio-neutral",
+      "node": "3600:97106",
+      "variant": "Color=Neutral, Selected=False, Disabled=False",
+      "target": ".umc-radio",
+      "expected": {
+        "width": "20px",
+        "height": "20px",
+        "margin-top": "2px",
+        "margin-left": "2px",
+        "border-top-left-radius": "999px",
+        "background-color": "#ffffff",
+        "box-shadow~": "#adadad 0px 0px 0px 1.5px inset"
+      },
+      "figmaDiffers": {
+        "border-top-left-radius": "피그마는 9999px 리터럴이다. 모양이 같은 radius-full(999px) 토큰을 썼다"
+      }
+    },
+    {
+      "specId": "radio-primary",
+      "node": "3600:97108",
+      "variant": "Color=Primary, Selected=False, Disabled=False",
+      "target": ".umc-radio",
+      "expected": {
+        "background-color": "#ffffff",
+        "box-shadow~": "#39a9a1 0px 0px 0px 1.5px inset"
+      }
+    },
+    {
+      "specId": "radio-checked",
+      "node": "3600:97110",
+      "variant": "Color=Primary, Selected=True, Disabled=False",
+      "target": ".umc-radio",
+      "expected": {
+        "background-color": "#ffffff",
+        "box-shadow~": "#39a9a1 0px 0px 0px 1.5px inset"
+      }
+    },
+    {
+      "specId": "radio-checked-dot",
+      "node": "3600:97110",
+      "variant": "Color=Primary, Selected=True, Disabled=False",
+      "target": ".umc-radio__dot",
+      "expected": {
+        "width": "12px",
+        "height": "12px",
+        "background-color": "#008a80"
+      }
+    },
+    {
+      "specId": "radio-disabled",
+      "node": "3600:97104",
+      "variant": "Color=Neutral, Selected=False, Disabled=True",
+      "target": ".umc-radio",
+      "expected": {
+        "background-color": "#f7f8f8",
+        "box-shadow~": "#e2e3e3 0px 0px 0px 1.5px inset"
+      }
+    },
+    {
+      "specId": "radio-disabled-checked",
+      "node": "3600:97113",
+      "variant": "Color=Primary, Selected=True, Disabled=True",
+      "target": ".umc-radio",
+      "expected": {
+        "background-color": "#f7f8f8",
+        "box-shadow~": "#e2e3e3 0px 0px 0px 1.5px inset"
+      }
+    },
+    {
+      "specId": "radio-disabled-checked-dot",
+      "node": "3600:97113",
+      "variant": "Color=Primary, Selected=True, Disabled=True",
+      "target": ".umc-radio__dot",
+      "expected": {
+        "background-color": "#e2e3e3"
+      }
+    }
+  ]
+}

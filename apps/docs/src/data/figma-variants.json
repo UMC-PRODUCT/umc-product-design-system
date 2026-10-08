@@ -778,6 +778,22 @@
         "State=On, Disabled=True, Size=Md"
       ]
     },
+    "radio-button": {
+      "node": "3600:96628",
+      "name": "Radio Button",
+      "axes": {
+        "Color": ["Neutral", "Primary"],
+        "Selected": ["False", "True"],
+        "Disabled": ["True", "False"]
+      },
+      "variants": [
+        "Color=Neutral, Selected=False, Disabled=True",
+        "Color=Neutral, Selected=False, Disabled=False",
+        "Color=Primary, Selected=False, Disabled=False",
+        "Color=Primary, Selected=True, Disabled=False",
+        "Color=Primary, Selected=True, Disabled=True"
+      ]
+    },
     "tooltip": {
       "node": "2621:36221",
       "name": "Tooltip",
