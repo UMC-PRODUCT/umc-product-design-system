@@ -105,10 +105,7 @@
         "font-size": "16px",
         "font-weight": "500",
         "line-height": "22.4px",
-        "letter-spacing": "-0.32px"
-      },
-      "figmaDiffers": {
-        "letter-spacing": "피그마는 -0.48px(-3%)다. 예전에 게시된 Label/3-Medium을 참조한 차이로 보고 Button Sm과 같이 토큰 값(-2%)을 썼다"
+        "letter-spacing": "-0.48px"
       }
     },
     {

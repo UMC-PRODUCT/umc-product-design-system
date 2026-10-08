@@ -39,10 +39,7 @@
         "font-size": "16px",
         "font-weight": "500",
         "line-height": "22.4px",
-        "letter-spacing": "-0.32px"
-      },
-      "figmaDiffers": {
-        "letter-spacing": "피그마 로컬 스타일 Label/3-Medium은 -3%(-0.48px)다. 이름이 같은 파운데이션 정의 -2%(토큰)를 따랐다"
+        "letter-spacing": "-0.48px"
       }
     },
     {
