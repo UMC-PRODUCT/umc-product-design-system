@@ -28,7 +28,7 @@
     border-radius: var(--umc-radius-16);
     background-color: var(--umc-color-fill-neutral-default);
     box-shadow: var(--umc-shadow-inner-neutral-2);
-    color: var(--umc-color-text-brand-default);
+    color: var(--umc-color-text-brand-default-600);
     caret-color: var(--umc-color-teal-500);
     font-family: var(--umc-font-family-brand);
     font-size: var(--umc-code-field-font-size);

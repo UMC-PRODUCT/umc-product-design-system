@@ -79,7 +79,8 @@ describe("resolveVariablePath", () => {
       "Semantic/Fill/Primary/Stronger-Hover(Pressed)-400",
       "color.fill.primary.stronger-hover-pressed-400",
     ],
-    ["Semantic/Border/Disabled/Disalbed", "color.border.disabled"],
+    ["Semantic/Fill/Neutral/Disalbed", "color.fill.neutral.disabled"],
+    ["Semantic/Border/Neutral/Disabled", "color.border.neutral.disabled"],
     ["Spacing/Semantic/Padding/Padding 16", "spacing.padding.16"],
     ["Radius/Semantic/Button/R Button 12", "radius.button.12"],
     ["Radius/Semantic/Toast/Toast", "radius.toast"],
@@ -105,7 +106,7 @@ describe("normalizeVariables: 피그마 export 전체", () => {
       ]),
     )
     expect(counts).toEqual({
-      "color.semantic.json": 151,
+      "color.semantic.json": 152,
       "color.primitive.json": 78,
       "font.json": 20,
       "spacing.json": 44,
@@ -117,10 +118,10 @@ describe("normalizeVariables: 피그마 export 전체", () => {
     ["color.teal.500", "#008a80"],
     ["color.teal-grey.75", "#f7f8f8"],
     ["color.white", "#ffffff"],
-    ["color.text.neutral-default", "{color.teal-grey.900}"],
+    ["color.text.neutral-default-900", "{color.teal-grey.900}"],
     ["color.icon.neutral-weak-400", "{color.teal-grey.400}"],
     ["color.fill.primary.stronger-hover-pressed-400", "{color.teal.400}"],
-    ["color.border.disabled", "{color.teal-grey.200}"],
+    ["color.border.neutral.disabled", "{color.teal-grey.200}"],
     ["color.tag.role.challenger-super-admin.strong", "{color.teal.600}"],
     ["color.dimmed.weak", "#0f101033"],
     ["color.dimmed.strong", "#0f1010d9"],
@@ -187,7 +188,7 @@ describe("normalizeVariables: 피그마 export 전체", () => {
     ])
     expect(result.scopeWarnings.map((warning) => warning.figmaName)).toEqual([
       "Primitives/*",
-      "Semantic/Border/Disabled/Disalbed",
+      "Semantic/Border/Neutral/Disabled",
       "Semantic/Border/Neutral/Default",
     ])
   })

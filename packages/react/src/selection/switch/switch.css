@@ -1,9 +1,7 @@
 @layer components {
   .umc-switch {
     --umc-switch-track: var(--umc-color-fill-neutral-strong-200);
-    --umc-switch-track-checked: var(
-      --umc-color-fill-primary-inverse-medium-400
-    );
+    --umc-switch-track-checked: var(--umc-color-fill-primary-inverse-weak-400);
     --umc-switch-thumb: var(--umc-color-fill-neutral-default);
     --umc-switch-checked-shadow: none;
 
@@ -11,7 +9,7 @@
     align-items: flex-start;
     gap: var(--umc-spacing-gap-8);
     min-height: var(--umc-switch-min-height);
-    color: var(--umc-color-text-neutral-default);
+    color: var(--umc-color-text-neutral-default-900);
     font-family: var(--umc-switch-font-family);
     font-size: var(--umc-switch-font-size);
     font-weight: var(--umc-switch-font-weight);
@@ -22,7 +20,7 @@
   }
 
   .umc-switch:has(> .umc-switch__track[data-disabled]) {
-    --umc-switch-track: var(--umc-color-fill-disabled);
+    --umc-switch-track: var(--umc-color-fill-neutral-disabled);
     --umc-switch-track-checked: var(--umc-color-fill-primary-strong-200);
     --umc-switch-thumb: var(--umc-color-fill-neutral-weaker-50);
 

@@ -61,7 +61,7 @@
     padding: 0;
     border: 0;
     background: transparent;
-    color: var(--umc-color-text-neutral-default);
+    color: var(--umc-color-text-neutral-default-900);
     caret-color: var(--umc-color-teal-500);
     font-family: var(--umc-typography-body-1-regular-font-family);
     font-size: var(--umc-typography-body-1-regular-font-size);

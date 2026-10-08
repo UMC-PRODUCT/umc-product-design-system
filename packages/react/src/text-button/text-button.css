@@ -21,9 +21,9 @@
   }
 
   .umc-text-button[data-color="brand"] {
-    --umc-text-button-fg: var(--umc-color-text-brand-default);
-    --umc-text-button-fg-pressed: var(--umc-color-text-brand-strong);
-    --umc-text-button-fg-disabled: var(--umc-color-text-brand-disabled);
+    --umc-text-button-fg: var(--umc-color-text-brand-default-600);
+    --umc-text-button-fg-pressed: var(--umc-color-text-brand-strong-800);
+    --umc-text-button-fg-disabled: var(--umc-color-text-brand-disabled-300);
     --umc-text-button-icon: var(--umc-color-icon-brand-strong-600);
     --umc-text-button-icon-pressed: var(--umc-color-teal-700);
     --umc-text-button-icon-disabled: var(--umc-color-teal-300);

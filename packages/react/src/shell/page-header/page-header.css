@@ -70,7 +70,7 @@
   .umc-page-header__title {
     margin: 0;
     padding: 0;
-    color: var(--umc-color-text-neutral-default);
+    color: var(--umc-color-text-neutral-default-900);
     font-family: var(--umc-typography-heading-2-semibold-font-family);
     font-size: var(--umc-typography-heading-2-semibold-font-size);
     font-weight: var(--umc-typography-heading-2-semibold-font-weight);

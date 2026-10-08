@@ -78,7 +78,7 @@ const renderPrimitivePalettes = (): HTMLElement[] => {
 export const renderColorSection = (): HTMLElement =>
   section(
     "컬러",
-    `semantic ${semanticColors.length}개와 primitive ${primitiveColors.length}개입니다. 이름 아래 글자는 Tailwind 클래스입니다(예: bg-surface-default, text-neutral-default). Tag와 primitive는 bg-, text-, border- 뒤에 붙입니다.`,
+    `semantic ${semanticColors.length}개와 primitive ${primitiveColors.length}개입니다. 이름 아래 글자는 Tailwind 클래스입니다(예: bg-surface-default, text-neutral-default-900). Tag와 primitive는 bg-, text-, border- 뒤에 붙입니다.`,
     [
       element("div", "", renderSemanticGroups()),
       element("h3", "text-heading-4-semibold mt-12", ["Primitive"]),

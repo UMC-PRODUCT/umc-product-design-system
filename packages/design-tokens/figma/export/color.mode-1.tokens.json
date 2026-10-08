@@ -179,7 +179,23 @@
       }
     },
     "Fill": {
-      "Disabled": {
+      "Neutral": {
+        "Default": {
+          "$type": "color",
+          "$value": "{Primitives.Base.White}",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:2505:17677",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-action-primary-default)",
+              "ANDROID": "colorActionPrimaryDefault",
+              "iOS": "Color.actionPrimaryDefault"
+            }
+          }
+        },
         "Disalbed": {
           "$type": "color",
           "$value": "{Primitives.Grey.TealGrey-100}",
@@ -190,9 +206,7 @@
               "SHAPE_FILL"
             ]
           }
-        }
-      },
-      "Neutral": {
+        },
         "Weaker-50": {
           "$type": "color",
           "$value": "{Primitives.Grey.TealGrey-50}",
@@ -321,11 +335,11 @@
             }
           }
         },
-        "Default": {
+        "Stronger-300": {
           "$type": "color",
-          "$value": "{Primitives.Base.White}",
+          "$value": "{Primitives.Grey.TealGrey-200}",
           "$extensions": {
-            "com.figma.variableId": "VariableID:2505:17677",
+            "com.figma.variableId": "VariableID:3650:24328",
             "com.figma.scopes": [
               "FRAME_FILL",
               "SHAPE_FILL"
@@ -334,6 +348,22 @@
               "WEB": "var(--color-action-primary-default)",
               "ANDROID": "colorActionPrimaryDefault",
               "iOS": "Color.actionPrimaryDefault"
+            }
+          }
+        },
+        "Stronger-Hover(Pressed)": {
+          "$type": "color",
+          "$value": "{Primitives.Grey.TealGrey-300}",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3650:24327",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-action-primary-hover)",
+              "ANDROID": "colorActionPrimaryHover",
+              "iOS": "Color.actionPrimaryHover"
             }
           }
         }
@@ -631,7 +661,7 @@
         }
       },
       "Primary-Inverse": {
-        "Medium-400": {
+        "Weak-400": {
           "$type": "color",
           "$value": "{Primitives.Teal.Teal-400}",
           "$extensions": {
@@ -647,7 +677,7 @@
             }
           }
         },
-        "Medium-Hover(Pressed)": {
+        "Weak-Hover(Pressed)": {
           "$type": "color",
           "$value": "{Primitives.Teal.Teal-600}",
           "$extensions": {
@@ -663,7 +693,7 @@
             }
           }
         },
-        "Strong-500": {
+        "Medium-500": {
           "$type": "color",
           "$value": "{Primitives.Teal.Teal-500}",
           "$extensions": {
@@ -679,7 +709,7 @@
             }
           }
         },
-        "Strong-Hover(Pressed)": {
+        "Medium-Hover(Pressed)": {
           "$type": "color",
           "$value": "{Primitives.Teal.Teal-700}",
           "$extensions": {
@@ -695,7 +725,7 @@
             }
           }
         },
-        "Stronger-600": {
+        "Strong-600": {
           "$type": "color",
           "$value": "{Primitives.Teal.Teal-600}",
           "$extensions": {
@@ -711,7 +741,7 @@
             }
           }
         },
-        "Stronger-Hover(Pressed)": {
+        "Strong-Hover(Pressed)": {
           "$type": "color",
           "$value": "{Primitives.Teal.Teal-800}",
           "$extensions": {
@@ -827,7 +857,7 @@
         }
       },
       "Warning": {
-        "Weak": {
+        "Weak-50": {
           "$type": "color",
           "$value": "{Primitives.Yellow.Yellow-50}",
           "$extensions": {
@@ -859,7 +889,7 @@
             }
           }
         },
-        "Medium": {
+        "Medium-100": {
           "$type": "color",
           "$value": "{Primitives.Yellow.Yellow-100}",
           "$extensions": {
@@ -891,7 +921,7 @@
             }
           }
         },
-        "Strong": {
+        "Strong-500": {
           "$type": "color",
           "$value": "{Primitives.Yellow.Yellow-500}",
           "$extensions": {
@@ -925,7 +955,7 @@
         }
       },
       "Success": {
-        "Weak": {
+        "Weak-50": {
           "$type": "color",
           "$value": "{Primitives.Green.Green-50}",
           "$extensions": {
@@ -957,7 +987,7 @@
             }
           }
         },
-        "Medium": {
+        "Medium-100": {
           "$type": "color",
           "$value": "{Primitives.Green.Green-100}",
           "$extensions": {
@@ -989,7 +1019,7 @@
             }
           }
         },
-        "Strong": {
+        "Strong-500": {
           "$type": "color",
           "$value": "{Primitives.Green.Green-500}",
           "$extensions": {
@@ -1119,22 +1149,6 @@
             "WEB": "var(--color-surface-default)",
             "ANDROID": "colorSurfaceDefault",
             "iOS": "Color.surfaceDefault"
-          }
-        }
-      },
-      "Disabled": {
-        "$type": "color",
-        "$value": "{Primitives.Grey.TealGrey-200}",
-        "$extensions": {
-          "com.figma.variableId": "VariableID:2167:572",
-          "com.figma.scopes": [
-            "FRAME_FILL",
-            "SHAPE_FILL"
-          ],
-          "com.figma.codeSyntax": {
-            "WEB": "var(--color-surface-disabled)",
-            "ANDROID": "colorSurfaceDisabled",
-            "iOS": "Color.surfaceDisabled"
           }
         }
       },
@@ -1326,7 +1340,7 @@
           }
         }
       },
-      "Neutral-Default": {
+      "Neutral-Default-900": {
         "$type": "color",
         "$value": "{Primitives.Grey.TealGrey-900}",
         "$extensions": {
@@ -1341,7 +1355,7 @@
           }
         }
       },
-      "Brand-Disabled": {
+      "Brand-Disabled-300": {
         "$type": "color",
         "$value": "{Primitives.Teal.Teal-300}",
         "$extensions": {
@@ -1356,7 +1370,7 @@
           }
         }
       },
-      "Brand-Default": {
+      "Brand-Default-600": {
         "$type": "color",
         "$value": "{Primitives.Teal.Teal-600}",
         "$extensions": {
@@ -1371,7 +1385,7 @@
           }
         }
       },
-      "Brand-Strong": {
+      "Brand-Strong-800": {
         "$type": "color",
         "$value": "{Primitives.Teal.Teal-800}",
         "$extensions": {
@@ -1433,8 +1447,8 @@
       }
     },
     "Border": {
-      "Disabled": {
-        "Disalbed": {
+      "Neutral": {
+        "Disabled": {
           "$type": "color",
           "$value": "{Primitives.Grey.TealGrey-200}",
           "$extensions": {
@@ -1443,9 +1457,7 @@
               "ALL_SCOPES"
             ]
           }
-        }
-      },
-      "Neutral": {
+        },
         "Weaker-100": {
           "$type": "color",
           "$value": "{Primitives.Grey.TealGrey-100}",
@@ -1725,7 +1737,7 @@
         }
       },
       "Success": {
-        "Weaker": {
+        "Weaker-100": {
           "$type": "color",
           "$value": "{Primitives.Green.Green-100}",
           "$extensions": {
@@ -1740,7 +1752,7 @@
             }
           }
         },
-        "Weak": {
+        "Weak-200": {
           "$type": "color",
           "$value": "{Primitives.Green.Green-200}",
           "$extensions": {
@@ -1755,7 +1767,7 @@
             }
           }
         },
-        "Medium": {
+        "Medium-300": {
           "$type": "color",
           "$value": "{Primitives.Green.Green-300}",
           "$extensions": {
@@ -1770,7 +1782,7 @@
             }
           }
         },
-        "Strong": {
+        "Strong-500": {
           "$type": "color",
           "$value": "{Primitives.Green.Green-500}",
           "$extensions": {
@@ -1790,7 +1802,7 @@
     "Tag": {
       "Part": {
         "PM": {
-          "Weaker": {
+          "Weaker-50": {
             "$type": "color",
             "$value": "{Primitives.Violet.Violet-50}",
             "$extensions": {
@@ -1806,7 +1818,7 @@
               }
             }
           },
-          "Weak": {
+          "Weak-200": {
             "$type": "color",
             "$value": "{Primitives.Violet.Violet-100}",
             "$extensions": {
@@ -1822,7 +1834,7 @@
               }
             }
           },
-          "Medium": {
+          "Medium-300": {
             "$type": "color",
             "$value": "{Primitives.Violet.Violet-500}",
             "$extensions": {
@@ -1838,7 +1850,7 @@
               }
             }
           },
-          "Strong": {
+          "Strong-400": {
             "$type": "color",
             "$value": "{Primitives.Violet.Violet-600}",
             "$extensions": {
@@ -1856,7 +1868,7 @@
           }
         },
         "Design": {
-          "Weaker": {
+          "Weaker-50": {
             "$type": "color",
             "$value": "{Primitives.Pink.Pink-50}",
             "$extensions": {
@@ -1872,7 +1884,7 @@
               }
             }
           },
-          "Weak": {
+          "Weak-200": {
             "$type": "color",
             "$value": "{Primitives.Pink.Pink-100}",
             "$extensions": {
@@ -1888,7 +1900,7 @@
               }
             }
           },
-          "Medium": {
+          "Medium-300": {
             "$type": "color",
             "$value": "{Primitives.Pink.Pink-500}",
             "$extensions": {
@@ -1904,7 +1916,7 @@
               }
             }
           },
-          "Strong": {
+          "Strong-400": {
             "$type": "color",
             "$value": "{Primitives.Pink.Pink-600}",
             "$extensions": {
@@ -1922,7 +1934,7 @@
           }
         },
         "Mobile-PE": {
-          "Weaker": {
+          "Weaker-50": {
             "$type": "color",
             "$value": "{Primitives.Cobalt.Cobalt-50}",
             "$extensions": {
@@ -1938,7 +1950,7 @@
               }
             }
           },
-          "Weak": {
+          "Weak-200": {
             "$type": "color",
             "$value": "{Primitives.Cobalt.Cobalt-100}",
             "$extensions": {
@@ -1954,7 +1966,7 @@
               }
             }
           },
-          "Medium": {
+          "Medium-300": {
             "$type": "color",
             "$value": "{Primitives.Cobalt.Cobalt-500}",
             "$extensions": {
@@ -1970,7 +1982,7 @@
               }
             }
           },
-          "Strong": {
+          "Strong-400": {
             "$type": "color",
             "$value": "{Primitives.Cobalt.Cobalt-600}",
             "$extensions": {
@@ -1988,7 +2000,7 @@
           }
         },
         "Web-PE": {
-          "Weaker": {
+          "Weaker-50": {
             "$type": "color",
             "$value": "{Primitives.Yellow.Yellow-50}",
             "$extensions": {
@@ -2004,7 +2016,7 @@
               }
             }
           },
-          "Weak": {
+          "Weak-100": {
             "$type": "color",
             "$value": "{Primitives.Yellow.Yellow-100}",
             "$extensions": {
@@ -2020,7 +2032,7 @@
               }
             }
           },
-          "Medium": {
+          "Medium-500": {
             "$type": "color",
             "$value": "{Primitives.Yellow.Yellow-500}",
             "$extensions": {
@@ -2036,7 +2048,7 @@
               }
             }
           },
-          "Strong": {
+          "Strong-600": {
             "$type": "color",
             "$value": "{Primitives.Yellow.Yellow-600}",
             "$extensions": {

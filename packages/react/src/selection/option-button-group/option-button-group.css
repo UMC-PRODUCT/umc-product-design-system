@@ -27,7 +27,7 @@
       inset calc(-1 * var(--umc-option-button-border-end)) 0 0 0
         var(--umc-option-button-border-color);
     --umc-option-button-checked-bg: var(--umc-color-fill-primary-weak-75);
-    --umc-option-button-checked-fg: var(--umc-color-text-brand-default);
+    --umc-option-button-checked-fg: var(--umc-color-text-brand-default-600);
     --umc-option-button-checked-border-color: var(
       --umc-color-border-primary-weak-200
     );
@@ -200,7 +200,7 @@
 
   .umc-option-button-group[data-variant="strong"] .umc-option-button {
     --umc-option-button-checked-bg: var(
-      --umc-color-fill-primary-inverse-stronger-600
+      --umc-color-fill-primary-inverse-strong-600
     );
     --umc-option-button-checked-fg: var(--umc-color-text-inverse);
     --umc-option-button-checked-border: none;
@@ -225,7 +225,7 @@
   }
 
   .umc-option-button[data-checked][data-disabled] {
-    color: var(--umc-color-text-brand-disabled);
+    color: var(--umc-color-text-brand-disabled-300);
   }
 
   .umc-option-button-group[data-variant="strong"]

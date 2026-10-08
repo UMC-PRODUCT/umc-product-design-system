@@ -4,11 +4,11 @@
     --umc-input-box-clear-color: #e2e4e3;
     --umc-input-box-border-color: var(--umc-color-border-neutral-medium-300);
     --umc-input-box-bg: var(--umc-color-fill-neutral-default);
-    --umc-input-box-fg: var(--umc-color-text-neutral-default);
+    --umc-input-box-fg: var(--umc-color-text-neutral-default-900);
     --umc-input-box-placeholder-color: var(--umc-color-text-placeholder);
     --umc-input-box-accessory-color: var(--umc-color-icon-neutral-medium-500);
-    --umc-input-box-unit-color: var(--umc-color-text-neutral-default);
-    --umc-input-box-timer-color: var(--umc-color-text-brand-default);
+    --umc-input-box-unit-color: var(--umc-color-text-neutral-default-900);
+    --umc-input-box-timer-color: var(--umc-color-text-brand-default-600);
 
     position: relative;
     display: flex;
@@ -103,7 +103,7 @@
   .umc-input-box[data-invalid]:not([data-disabled]):focus-within {
     --umc-input-box-border-color: var(--umc-color-red-400);
     --umc-input-box-bg: var(--umc-color-fill-error-weak-50);
-    --umc-input-box-fg: var(--umc-color-text-neutral-default);
+    --umc-input-box-fg: var(--umc-color-text-neutral-default-900);
   }
 
   .umc-input-box[data-disabled] {

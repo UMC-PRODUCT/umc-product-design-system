@@ -90,7 +90,7 @@
     padding-block: var(--umc-spacing-padding-4);
     padding-inline: var(--umc-spacing-padding-12);
     border-radius: var(--umc-radius-8);
-    color: var(--umc-color-text-neutral-default);
+    color: var(--umc-color-text-neutral-default-900);
     font-family: var(--umc-typography-body-3-regular-font-family);
     font-size: var(--umc-typography-body-3-regular-font-size);
     font-weight: var(--umc-typography-body-3-regular-font-weight);
@@ -111,7 +111,7 @@
     background-color: var(--umc-color-fill-primary-weaker-50);
     box-shadow: inset 1px 1px 2px 0
       var(--umc-context-switcher-checked-shadow-color);
-    color: var(--umc-color-text-brand-default);
+    color: var(--umc-color-text-brand-default-600);
     font-weight: var(--umc-typography-body-3-medium-font-weight);
   }
 

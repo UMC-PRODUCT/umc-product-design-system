@@ -20,7 +20,7 @@ import { Aside } from "@astrojs/starlight/components"
 | `Semantic/Background` | `bg-background-<이름>`                      | `Background/Default` → `bg-background-default`            |
 | `Semantic/Surface`    | `bg-surface-<이름>`                         | `Surface/Default` → `bg-surface-default`                  |
 | `Semantic/Dimmed`     | `bg-dimmed-<이름>`                          | `Dimmed/Weak` → `bg-dimmed-weak`                          |
-| `Semantic/Tag`        | `bg-`, `text-`, `border-` 뒤에 `tag-<이름>` | `Tag/Part/PM/Weaker` → `bg-tag-part-pm-weaker`            |
+| `Semantic/Tag`        | `bg-`, `text-`, `border-` 뒤에 `tag-<이름>` | `Tag/Part/PM/Weaker-50` → `bg-tag-part-pm-weaker-50`      |
 | `Primitives`          | 색 클래스 뒤에 `<팔레트>-<단계>`            | `Teal/Teal-700` → `text-teal-700`                         |
 | 텍스트 스타일         | `text-<스타일>`                             | `Body/1-Regular` → `text-body-1-regular`                  |
 | 그림자 스타일         | `shadow-<스타일>`                           | `Shadow/Drop/Neutral_1` → `shadow-drop-neutral-1`         |
@@ -52,23 +52,23 @@ Tag는 단계마다 쓰는 자리가 다릅니다. 피그마 Dev Mode 이름을 
 ## 예시
 
 <div class="not-content umc-canvas rounded-xl border border-neutral-weak-200 p-6">
-  <p class="text-label-5-semibold text-brand-default">UMC 11기</p>
-  <p class="text-heading-2-bold text-neutral-default mt-1">챌린저 모집</p>
+  <p class="text-label-5-semibold text-brand-default-600">UMC 11기</p>
+  <p class="text-heading-2-bold text-neutral-default-900 mt-1">챌린저 모집</p>
   <p class="text-body-2-regular text-neutral-medium-600 mt-2">
     세상의 틀을 깰 챌린저들이 하나로 모이는 곳
   </p>
-  <span class="text-label-6-semibold mt-4 inline-block rounded-full bg-tag-part-pm-weaker px-3 py-1 text-tag-part-pm-strong">
+  <span class="text-label-6-semibold mt-4 inline-block rounded-full bg-tag-part-pm-weaker-50 px-3 py-1 text-tag-part-pm-strong-400">
     PM
   </span>
 </div>
 
 ```html
 <div class="rounded-xl border border-neutral-weak-200 p-6">
-  <p class="text-label-5-semibold text-brand-default">UMC 11기</p>
-  <p class="text-heading-2-bold text-neutral-default mt-1">챌린저 모집</p>
+  <p class="text-label-5-semibold text-brand-default-600">UMC 11기</p>
+  <p class="text-heading-2-bold text-neutral-default-900 mt-1">챌린저 모집</p>
   <p class="text-body-2-regular text-neutral-medium-600 mt-2">…</p>
   <span
-    class="text-label-6-semibold rounded-full bg-tag-part-pm-weaker px-3 py-1 text-tag-part-pm-strong"
+    class="text-label-6-semibold rounded-full bg-tag-part-pm-weaker-50 px-3 py-1 text-tag-part-pm-strong-400"
   >
     PM
   </span>
@@ -77,7 +77,7 @@ Tag는 단계마다 쓰는 자리가 다릅니다. 피그마 Dev Mode 이름을 
 
 ## Text·Border 색을 다른 속성에 쓰기
 
-Text와 Border 색은 `text-`와 `border-` 클래스(`border-t-`, `border-x-` 같은 변 방향 포함)로만 만들었습니다. 불투명도(`/50`)를 붙이거나 outline, ring, divide, decoration에 쓰려면 CSS 변수를 괄호에 넣습니다. 불투명도는 `text-(--umc-color-text-neutral-default)/50`처럼 괄호 뒤에 붙입니다.
+Text와 Border 색은 `text-`와 `border-` 클래스(`border-t-`, `border-x-` 같은 변 방향 포함)로만 만들었습니다. 불투명도(`/50`)를 붙이거나 outline, ring, divide, decoration에 쓰려면 CSS 변수를 괄호에 넣습니다. 불투명도는 `text-(--umc-color-text-neutral-default-900)/50`처럼 괄호 뒤에 붙입니다.
 
 ```html
 <button class="outline-2 outline-(--umc-color-border-primary-strong-500)">

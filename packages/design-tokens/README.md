@@ -3,7 +3,7 @@
 UMC 3기 피그마 파운데이션을 코드로 옮긴 디자인 토큰 패키지입니다. 피그마 값은 `tokens/`의 JSON 하나에만 있고, CSS 변수와 Tailwind, vanilla-extract 산출물은 모두 그 JSON에서 생성합니다.
 
 - 기준일: 2026-10-08
-- 상태: 컬러(primitive 78, semantic 151), 타이포그래피(기본 변수 20, 텍스트 스타일 48), spacing 44, radius 17, 그림자 5, 그리드와 레이아웃을 옮겼습니다. 브레이크포인트만 디자인 팀 합의를 기다립니다
+- 상태: 컬러(primitive 78, semantic 152), 타이포그래피(기본 변수 20, 텍스트 스타일 48), spacing 44, radius 17, 그림자 5, 그리드와 레이아웃을 옮겼습니다. 브레이크포인트만 디자인 팀 합의를 기다립니다
 - 배포: 아직 배포하지 않았습니다(`private: true`). GitHub Packages 배포는 별도 작업입니다
 
 ## 사용법
@@ -24,7 +24,7 @@ vanilla-extract만 쓰는 앱은 `tailwind.css`를 빼고 `fonts.css`, `base.css
 ### Tailwind
 
 ```html
-<h1 class="text-display-1-bold text-neutral-default">UMC</h1>
+<h1 class="text-display-1-bold text-neutral-default-900">UMC</h1>
 <main class="grid grid-cols-12 gap-x-grid-gutter px-grid-margin-desktop">
   <article class="border border-neutral-weak-200 bg-surface-default">…</article>
 </main>
@@ -63,7 +63,7 @@ import { typography, vars } from "@umc-product/design-tokens/vanilla-extract"
 
 export const title = style({
   ...typography.display1Bold,
-  color: vars.color.text.neutralDefault,
+  color: vars.color.text.neutralDefault900,
 })
 
 export const content = style({

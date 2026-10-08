@@ -6,7 +6,7 @@
   .umc-select__trigger {
     --umc-select-border-color: var(--umc-color-border-neutral-medium-300);
     --umc-select-bg: var(--umc-color-fill-neutral-default);
-    --umc-select-fg: var(--umc-color-text-neutral-default);
+    --umc-select-fg: var(--umc-color-text-neutral-default-900);
     --umc-select-placeholder-color: var(--umc-color-text-placeholder);
     --umc-select-icon-color: var(--umc-color-icon-neutral-medium-500);
 
@@ -78,7 +78,7 @@
   .umc-select__trigger[data-variant="filter"][data-filled] {
     --umc-select-border-color: var(--umc-color-border-primary-medium-300);
     --umc-select-bg: var(--umc-color-fill-primary-weaker-50);
-    --umc-select-fg: var(--umc-color-text-brand-default);
+    --umc-select-fg: var(--umc-color-text-brand-default-600);
     --umc-select-icon-color: var(--umc-color-icon-brand-medium-500);
   }
 

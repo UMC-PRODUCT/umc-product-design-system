@@ -60,7 +60,7 @@
 
   .umc-tab[data-active] {
     --umc-tab-selected-underline: #0b6b64;
-    --umc-tab-fg: var(--umc-color-text-brand-default);
+    --umc-tab-fg: var(--umc-color-text-brand-default-600);
     --umc-tab-underline: var(--umc-tab-selected-underline);
     font-weight: var(--umc-typography-label-3-semibold-font-weight);
     letter-spacing: var(--umc-typography-label-3-semibold-letter-spacing);

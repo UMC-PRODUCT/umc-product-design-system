@@ -55,7 +55,7 @@
     padding: 0;
     border: 0;
     background: transparent;
-    color: var(--umc-color-text-brand-default);
+    color: var(--umc-color-text-brand-default-600);
     font-family: var(--umc-typography-label-3-semibold-font-family);
     font-size: var(--umc-typography-label-3-semibold-font-size);
     font-weight: var(--umc-typography-label-3-semibold-font-weight);

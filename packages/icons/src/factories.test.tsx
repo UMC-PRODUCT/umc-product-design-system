@@ -75,13 +75,13 @@ describe("createIcon", () => {
         <SampleIcon
           weight="thin"
           size={16}
-          className="text-brand-default"
+          className="text-brand-default-600"
           ref={ref}
         />,
       ).container,
     )
     expect(svg.getAttribute("width")).toBe("16")
-    expect(svg.getAttribute("class")).toBe("text-brand-default")
+    expect(svg.getAttribute("class")).toBe("text-brand-default-600")
     expect(
       svg.querySelector("[data-weight]")?.getAttribute("data-weight"),
     ).toBe("thin")

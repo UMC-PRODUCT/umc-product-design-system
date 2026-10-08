@@ -11,7 +11,7 @@ description: 피그마를 코드로 옮기며 판단이 필요했던 항목을 �
 
 ## 공통
 
-1. 3기 변수가 아닌 2기 변수와 연결 안 된 값이 남아 있습니다. 이름이 같은 단계의 3기 토큰이 있으면 그 토큰으로 바꿨고(`teal-gray-200`→`--umc-color-border-neutral-weak-200`, `teal-gray-400`→`--umc-color-text-placeholder`, `teal-gray-900`→`--umc-color-text-neutral-default`, `warmgray-150`→`--umc-color-border-neutral-weaker-100`, `warmgray-600`→`--umc-color-text-neutral-medium-600`), 없으면 피그마 값을 컴포넌트 변수에 그대로 담았습니다(`#0b6b64`, `#fed7d7`, `#e2e4e3`, `#f4fbfa99`, `#fef2f199`). 이 대응이 맞는지, 남은 값을 어떤 3기 변수로 연결할지 알려 주세요.
+1. 3기 변수가 아닌 2기 변수와 연결 안 된 값이 남아 있습니다. 이름이 같은 단계의 3기 토큰이 있으면 그 토큰으로 바꿨고(`teal-gray-200`→`--umc-color-border-neutral-weak-200`, `teal-gray-400`→`--umc-color-text-placeholder`, `teal-gray-900`→`--umc-color-text-neutral-default-900`, `warmgray-150`→`--umc-color-border-neutral-weaker-100`, `warmgray-600`→`--umc-color-text-neutral-medium-600`), 없으면 피그마 값을 컴포넌트 변수에 그대로 담았습니다(`#0b6b64`, `#fed7d7`, `#e2e4e3`, `#f4fbfa99`, `#fef2f199`). 이 대응이 맞는지, 남은 값을 어떤 3기 변수로 연결할지 알려 주세요.
 2. 이름은 같은데 정의가 다른 스타일이 있습니다. 코드는 이름이 같으면 파운데이션 정의(토큰)를 따릅니다.
    - `Shadow/Inner/Neutral_1`: 파운데이션은 청록 2겹인데, Side Navigation hover와 Segmented Control hover는 같은 이름으로 `#D3D8D833` 1겹(1, 1, 2)을 씁니다. 코드는 토큰 정의를 씁니다.
    - 같은 `#D3D8D833` 1겹이 이름 없이 붙은 곳도 있습니다(Context Switcher 눌림, Dropdown/Item Active). 이름이 없어 피그마 값을 컴포넌트 변수로 썼습니다. 어느 스타일에 연결할지 알려 주세요.
@@ -32,7 +32,7 @@ description: 피그마를 코드로 옮기며 판단이 필요했던 항목을 �
 
 가장 먼저 부탁드리는 것은 codeSyntax(WEB) 정리입니다. Dev Mode 코드 패널과 피그마 MCP가 보여 주는 `var(--color-…)`는 코드의 CSS 변수(`--umc-color-…`)와 다른 이름이고, 변수 여러 개가 같은 이름을 나눠 씁니다. 리포트의 "이름 대응표와 codeSyntax 제안"에 변수마다 넣을 값(`var(--umc-color-fill-neutral-weak-75)` 등)을 적어 두었습니다.
 
-2026-10-08에 `Label/3-Medium` 자간이 -3%로 바뀐 것을 반영했습니다. 새 컴포넌트에는 `Semantic/Border/Neutral/Disabled`, `Semantic/Fill/Neutral/Disalbed` 같은 새 변수 이름이 보입니다. 저장된 변수 스냅샷(2026-10-06)에는 `Border/Disabled/Disalbed` 같은 옛 이름만 있습니다. 변수 구조를 바꾸셨다면 알려 주세요. Export modes로 다시 받아 토큰 이름을 맞추겠습니다.
+2026-10-08에 `Label/3-Medium` 자간이 -3%로 바뀐 것을 반영했습니다. 같은 날 `Color` 컬렉션을 Export modes로 다시 받아 바뀐 이름 38개를 코드 이름에 맞췄습니다. `Fill/Neutral/Stronger-300`과 `Stronger-Hover(Pressed)`는 새로 넣었고, 빠진 `Surface/Disabled`는 토큰에서도 뺐습니다(코드에서 쓰는 곳 없음). 값이 바뀐 변수는 없습니다. `Token` 컬렉션은 이전 스냅샷과 같습니다.
 
 ## 아이콘
 
@@ -56,7 +56,7 @@ description: 피그마를 코드로 옮기며 판단이 필요했던 항목을 �
 노드 3573:95925. 자세한 값은 [TextButton](/components/actions/text-button/) 페이지에 있습니다.
 
 1. Hover·Pressed에서 글자와 아이콘 색이 다릅니다. Brand는 글자 `#01423d`(teal-800), 아이콘 `#015a54`(teal-700)이고, Neutral은 글자 `#282a2a`, 아이콘 `#3f4141`입니다. 의도인지 알려 주세요. 코드는 피그마대로 따로 칠합니다.
-2. Brand 비활성과 아이콘 Hover 색이 semantic이 아닌 primitive(`Teal-300`, `Teal-700`)에 연결되어 있습니다. 글자 비활성은 같은 값의 `text-brand-disabled`로 옮겼고, 아이콘은 primitive를 그대로 씁니다.
+2. Brand 비활성과 아이콘 Hover 색이 semantic이 아닌 primitive(`Teal-300`, `Teal-700`)에 연결되어 있습니다. 글자 비활성은 같은 값의 `text-brand-disabled-300`로 옮겼고, 아이콘은 primitive를 그대로 씁니다.
 3. Underline 변형은 Brand 기본을 빼고 글자색이 변수에 연결되어 있지 않습니다. Plain과 값이 같아 같은 토큰을 씁니다.
 4. `Type` 하나에 아이콘 자리(Leading Acc, Tailling Acc)와 글자 모양(Plain, Underline)이 섞여 있습니다. 코드는 아이콘 props와 `variant`로 나눴습니다. `Tailling`은 `Trailing`의 오타로 보입니다.
 
@@ -76,7 +76,7 @@ description: 피그마를 코드로 옮기며 판단이 필요했던 항목을 �
 12. Check Box 비활성 체크 선이 2기 변수 `WarmGray-50`(`#fcfbfa`)입니다. 3기 `teal-grey-50`(`#fbfcfc`)으로 옮겼습니다.
 13. 체크 그림이 세 가지입니다. Check Box는 Md 20px(선 1.8)과 Lg 24px(선 2)을 따로 그렸고, Check Button은 옛 16px 체크를 24px로 키운 그림(선 2.4)입니다. 셋 다 라이브러리 `Icon/Check`와 다릅니다. 한 아이콘으로 맞출지 알려 주세요.
 14. Check Button에 비활성과 Hover 모양이 없습니다. 지금은 비활성이어도 색이 그대로라 활성과 구분되지 않습니다(커서만 바뀜). 비활성 색을 알려 주세요.
-15. Switch 트랙 색 두 개가 변수에 연결되어 있지 않습니다. 꺼짐은 내보낸 값이 `#e2e4e3`이고 켜짐은 `#39a9a1`입니다. 코드는 꺼짐에 가장 가까운 `fill-neutral-strong-200`(`#e2e3e3`), 켜짐에 값이 같은 `fill-primary-inverse-medium-400`(`#39a9a1`)을 씁니다.
+15. Switch 트랙 색 두 개가 변수에 연결되어 있지 않습니다. 꺼짐은 내보낸 값이 `#e2e4e3`이고 켜짐은 `#39a9a1`입니다. 코드는 꺼짐에 가장 가까운 `fill-neutral-strong-200`(`#e2e3e3`), 켜짐에 값이 같은 `fill-primary-inverse-weak-400`(`#39a9a1`)을 씁니다.
 16. Switch Sm 켜짐에만 안쪽 그림자(`#D3D8D833`, 0.8 0.8 1.6)가 있습니다. Md에도 필요한지, `Shadow/Inner/Neutral_1`을 줄인 것이라면 이름 있는 그림자로 연결할지 알려 주세요.
 17. 라벨 스타일이 컨트롤마다 다릅니다. Check Box는 `Label`(굵기 500, `#282a2a`), Switch는 `Body`(굵기 400, `#0f1010`)입니다. 같은 폼에 함께 놓일 때도 다르게 보이는 것이 의도인지 알려 주세요.
 18. Radio의 `Color=Primary, Selected=False`(틸 테두리)를 언제 쓰는지 알려 주세요. Hover인지 강조인지에 따라 코드가 달라집니다. Neutral 선택 변형이 없어, 선택하면 색과 관계없이 Primary 선택 모양을 씁니다.

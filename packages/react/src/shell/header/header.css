@@ -11,7 +11,7 @@
     --umc-header-item-hover-fg: var(--umc-color-text-neutral-medium-600);
     --umc-header-item-hover-shadow: var(--umc-shadow-inner-neutral-2);
     --umc-header-item-selected-bg: var(--umc-color-fill-primary-weak-75);
-    --umc-header-item-selected-fg: var(--umc-color-text-brand-default);
+    --umc-header-item-selected-fg: var(--umc-color-text-brand-default-600);
     --umc-header-item-selected-shadow: none;
 
     display: grid;
@@ -40,7 +40,7 @@
     --umc-header-item-bg: transparent;
     --umc-header-item-fg: var(--umc-color-teal-grey-200);
     --umc-header-item-hover-bg: transparent;
-    --umc-header-item-hover-fg: var(--umc-color-text-brand-default);
+    --umc-header-item-hover-fg: var(--umc-color-text-brand-default-600);
     --umc-header-item-hover-shadow: none;
     --umc-header-item-selected-bg: var(--umc-header-dark-item-selected-bg);
     --umc-header-item-selected-fg: var(--umc-color-text-inverse);

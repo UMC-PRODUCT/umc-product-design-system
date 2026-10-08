@@ -34,7 +34,7 @@
     width: 100%;
     margin: 0;
     border-radius: var(--umc-radius-8);
-    color: var(--umc-color-text-neutral-default);
+    color: var(--umc-color-text-neutral-default-900);
     font-family: var(--umc-font-family-brand);
     font-size: var(--umc-dropdown-item-font-size);
     font-weight: var(--umc-font-weight-regular);
@@ -80,7 +80,7 @@
     padding-inline-end: var(--umc-dropdown-item-active-padding-end);
     background-color: var(--umc-color-fill-primary-weaker-50);
     box-shadow: inset 1px 1px 2px 0 var(--umc-dropdown-item-active-shadow-color);
-    color: var(--umc-color-text-brand-default);
+    color: var(--umc-color-text-brand-default-600);
     font-weight: var(--umc-font-weight-medium);
   }
 

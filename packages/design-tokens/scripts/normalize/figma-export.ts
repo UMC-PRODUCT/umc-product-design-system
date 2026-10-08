@@ -8,8 +8,8 @@ import { paths } from "../shared/paths.ts"
 const FIGMA_ALIAS_PATTERN = /^\{([^{}]+)\}$/
 
 export const PREVIOUS_SNAPSHOT_COUNT: Readonly<Record<string, number>> = {
-  "color.mode-1.tokens.json": 196,
-  "token.mode-1.tokens.json": 75,
+  "color.mode-1.tokens.json": 229,
+  "token.mode-1.tokens.json": 83,
 }
 
 const colorValueSchema = z.strictObject({

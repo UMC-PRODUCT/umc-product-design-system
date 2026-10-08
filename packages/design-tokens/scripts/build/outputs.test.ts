@@ -65,14 +65,14 @@ describe("base.css", () => {
   it("컬러는 primitive를 hex로, semantic을 primitive 참조로 선언한다", () => {
     expect(css).toContain("--umc-color-teal-500: #008a80;")
     expect(css).toContain(
-      "--umc-color-text-neutral-default: var(--umc-color-teal-grey-900);",
+      "--umc-color-text-neutral-default-900: var(--umc-color-teal-grey-900);",
     )
     expect(css).toContain("--umc-color-dimmed-weak: #0f101033;")
     expect(css).toContain(
       "--umc-grid-margin-mobile: var(--umc-spacing-margin-16);",
     )
     expect(css.indexOf("--umc-color-teal-500:")).toBeLessThan(
-      css.indexOf("--umc-color-text-neutral-default:"),
+      css.indexOf("--umc-color-text-neutral-default-900:"),
     )
   })
 
@@ -143,12 +143,12 @@ describe("manifest.ts", () => {
 
   it("모든 토큰을 최종 값, 참조, 피그마 이름, Tailwind 이름과 함께 내보낸다", () => {
     expect(tokenManifest).toHaveLength(entries.length)
-    expect(tokenNamed("color.text.neutral-default")).toMatchObject({
+    expect(tokenNamed("color.text.neutral-default-900")).toMatchObject({
       value: "#0f1010",
       alias: "color.teal-grey.900",
-      figmaName: "Semantic/Text/Neutral-Default",
+      figmaName: "Semantic/Text/Neutral-Default-900",
       codeSyntax: "var(--color-text-default)",
-      utility: "text-neutral-default",
+      utility: "text-neutral-default-900",
       tailwindName: null,
     })
     expect(tokenNamed("color.teal.300")?.codeSyntax).toBeNull()
@@ -171,7 +171,7 @@ describe("manifest.ts", () => {
 
   it.each([
     ["color.fill.neutral.weak-75", "vars.color.fill.neutral.weak75"],
-    ["color.text.neutral-default", "vars.color.text.neutralDefault"],
+    ["color.text.neutral-default-900", "vars.color.text.neutralDefault900"],
     ["shadow.drop.neutral-1", "vars.shadow.drop.neutral1"],
     ["grid.gutter", "vars.grid.gutter"],
     ["typography.body-1-regular", "typography.body1Regular"],
@@ -197,7 +197,7 @@ describe("manifest.ts", () => {
     ["color.background.default", "bg-background-default", "background-default"],
     ["color.surface.default", "bg-surface-default", "surface-default"],
     ["color.dimmed.weak", "bg-dimmed-weak", "dimmed-weak"],
-    ["color.tag.part.pm.weaker", null, "tag-part-pm-weaker"],
+    ["color.tag.part.pm.weaker-50", null, "tag-part-pm-weaker-50"],
     ["color.teal.300", null, "teal-300"],
     ["color.teal-grey.900", null, "teal-grey-900"],
     ["color.white", null, "white"],
@@ -398,19 +398,19 @@ describe("Tailwind 어댑터", () => {
 
   it("Text와 Border는 그룹 이름 없이 속성 유틸리티로 만든다", async () => {
     const css = await buildCss([
-      "text-neutral-default",
+      "text-neutral-default-900",
       "text-neutral-medium-600",
       "border-neutral-medium-300",
       "border-x-error-strong-500",
       "border-t-primary-strong-500",
-      "border-e-disabled",
+      "border-e-neutral-disabled",
     ])
 
     expect(ruleOf(css, ".text-neutral-medium-600")).toContain(
       "color: var(--umc-color-text-neutral-medium-600);",
     )
-    expect(ruleOf(css, ".text-neutral-default")).toContain(
-      "color: var(--umc-color-text-neutral-default);",
+    expect(ruleOf(css, ".text-neutral-default-900")).toContain(
+      "color: var(--umc-color-text-neutral-default-900);",
     )
     expect(ruleOf(css, ".border-neutral-medium-300")).toContain(
       "border-color: var(--umc-color-border-neutral-medium-300);",
@@ -421,17 +421,17 @@ describe("Tailwind 어댑터", () => {
     expect(ruleOf(css, ".border-t-primary-strong-500")).toContain(
       "border-top-color: var(--umc-color-border-primary-strong-500);",
     )
-    expect(ruleOf(css, ".border-e-disabled")).toContain(
-      "border-inline-end-color: var(--umc-color-border-disabled);",
+    expect(ruleOf(css, ".border-e-neutral-disabled")).toContain(
+      "border-inline-end-color: var(--umc-color-border-neutral-disabled);",
     )
   })
 
   it("그룹 이름이 겹친 옛 이름은 만들지 않는다", async () => {
     const css = await buildCss([
-      "text-text-neutral-default",
+      "text-text-neutral-default-900",
       "text-fg-neutral-default",
       "border-border-neutral-medium-300",
-      "bg-text-neutral-default",
+      "bg-text-neutral-default-900",
     ])
 
     expect(css).not.toMatch(/\.(text|border|bg)-(text|fg|border)-/)
@@ -445,8 +445,8 @@ describe("Tailwind 어댑터", () => {
       "bg-background-default",
       "text-icon-brand-medium-500",
       "fill-icon-brand-medium-500",
-      "bg-tag-part-pm-weaker",
-      "text-tag-part-pm-strong",
+      "bg-tag-part-pm-weaker-50",
+      "text-tag-part-pm-strong-400",
       "bg-fill-neutral-weak-75/50",
     ])
 
@@ -463,8 +463,8 @@ describe("Tailwind 어댑터", () => {
       ".bg-fill-primary-strong-200",
       ".bg-dimmed-weak",
       ".bg-background-default",
-      ".bg-tag-part-pm-weaker",
-      ".text-tag-part-pm-strong",
+      ".bg-tag-part-pm-weaker-50",
+      ".text-tag-part-pm-strong-400",
     ]) {
       expect(css).toContain(`${selector} {`)
     }
@@ -508,14 +508,14 @@ describe("Tailwind 어댑터", () => {
 
   it("상태와 반응형 변형을 붙일 수 있고, 변 방향 테두리가 전체 테두리보다 뒤에 온다", async () => {
     const css = await buildCss([
-      "hover:text-brand-strong",
+      "hover:text-brand-strong-800",
       "placeholder:text-placeholder",
       "md:border-neutral-strong-400",
       "border-t-error-strong-500",
       "border-neutral-strong-400",
     ])
 
-    expect(css).toContain(".hover\\:text-brand-strong:hover {")
+    expect(css).toContain(".hover\\:text-brand-strong-800:hover {")
     expect(css).toContain(".placeholder\\:text-placeholder::placeholder {")
     expect(css).toContain(".md\\:border-neutral-strong-400 {")
     expect(css.indexOf(".border-neutral-strong-400 {")).toBeLessThan(

@@ -21,7 +21,7 @@
 
   .umc-checkbox[data-color="brand"] {
     --umc-checkbox-border: var(--umc-color-border-primary-medium-300);
-    --umc-checkbox-checked-bg: var(--umc-color-fill-primary-inverse-strong-500);
+    --umc-checkbox-checked-bg: var(--umc-color-fill-primary-inverse-medium-500);
   }
 
   .umc-checkbox:has(
@@ -33,7 +33,7 @@
 
   .umc-checkbox:has(> .umc-checkbox__control[data-disabled]) {
     --umc-checkbox-bg: var(--umc-color-fill-neutral-weak-75);
-    --umc-checkbox-border: var(--umc-color-border-disabled);
+    --umc-checkbox-border: var(--umc-color-border-neutral-disabled);
     --umc-checkbox-checked-bg: var(--umc-color-fill-neutral-strong-200);
     --umc-checkbox-check: var(--umc-color-teal-grey-50);
 

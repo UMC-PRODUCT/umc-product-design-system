@@ -30,7 +30,7 @@
         "color": "#0f1010"
       },
       "figmaDiffers": {
-        "color": "입력 글자는 2기 변수 teal-gray-900(#161919)이다. 같은 단계의 3기 토큰 text-neutral-default(#0f1010)로 바꿨다"
+        "color": "입력 글자는 2기 변수 teal-gray-900(#161919)이다. 같은 단계의 3기 토큰 text-neutral-default-900(#0f1010)로 바꿨다"
       }
     },
     {

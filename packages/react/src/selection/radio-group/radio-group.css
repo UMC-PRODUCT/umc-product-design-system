@@ -33,7 +33,7 @@
 
   .umc-radio[data-disabled] {
     --umc-radio-bg: var(--umc-color-fill-neutral-weak-75);
-    --umc-radio-border: var(--umc-color-border-disabled);
+    --umc-radio-border: var(--umc-color-border-neutral-disabled);
     --umc-radio-dot: var(--umc-color-fill-neutral-strong-200);
 
     cursor: default;

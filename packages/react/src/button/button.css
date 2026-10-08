@@ -48,9 +48,9 @@
   }
 
   .umc-button[data-variant="fill"][data-color="primary"] {
-    --umc-button-bg: var(--umc-color-fill-primary-inverse-strong-500);
+    --umc-button-bg: var(--umc-color-fill-primary-inverse-medium-500);
     --umc-button-bg-pressed: var(
-      --umc-color-fill-primary-inverse-strong-hover-pressed
+      --umc-color-fill-primary-inverse-medium-hover-pressed
     );
     --umc-button-bg-disabled: var(--umc-color-teal-300);
     --umc-button-fg: var(--umc-color-text-inverse);

@@ -42,8 +42,8 @@ describe("isValidSegment", () => {
 
 describe("경로 변환", () => {
   it("경로를 CSS 변수 이름으로 바꾼다", () => {
-    expect(toCssVariable(["color", "text", "neutral-default"])).toBe(
-      "--umc-color-text-neutral-default",
+    expect(toCssVariable(["color", "text", "neutral-default-900"])).toBe(
+      "--umc-color-text-neutral-default-900",
     )
   })
 

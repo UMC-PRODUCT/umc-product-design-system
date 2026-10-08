@@ -119,7 +119,7 @@
   .umc-side-navigation__item-inner[data-selected] {
     background-color: var(--umc-color-fill-primary-weak-75);
     box-shadow: var(--umc-shadow-inner-neutral-1);
-    color: var(--umc-color-text-brand-default);
+    color: var(--umc-color-text-brand-default-600);
   }
 
   .umc-side-navigation__item-icon {
@@ -174,7 +174,7 @@
   }
 
   .umc-side-navigation__subitem-link[aria-current="page"] {
-    color: var(--umc-color-text-brand-default);
+    color: var(--umc-color-text-brand-default-600);
     font-weight: var(--umc-typography-body-3-semibold-font-weight);
   }
 

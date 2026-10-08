@@ -43,7 +43,7 @@
 
 .umc-canvas {
   background: var(--umc-color-background-default);
-  color: var(--umc-color-text-neutral-default);
+  color: var(--umc-color-text-neutral-default-900);
 }
 
 .umc-scroll {
@@ -477,7 +477,7 @@
 .umc-variant-grid__table {
   min-width: 100%;
   border-collapse: collapse;
-  color: var(--umc-color-text-neutral-default);
+  color: var(--umc-color-text-neutral-default-900);
 }
 
 .umc-variant-grid__table th {

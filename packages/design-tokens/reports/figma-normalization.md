@@ -13,20 +13,20 @@
 | `mcp/get-variable-defs.3155-19976.json` | get_variable_defs | 3155:19976 | 2026-10-07 |
 | `mcp/get-variable-defs.3155-19501.json` | get_variable_defs | 3155:19501 | 2026-10-07 |
 | `mcp/get-variable-defs.2621-32882.json` | get_variable_defs | 2621:32882 | 2026-10-07 |
-| `export/color.mode-1.tokens.json` | Figma Variables Export modes (Color 컬렉션) | Mode 1.tokens.json | 2026-10-06 |
-| `export/token.mode-1.tokens.json` | Figma Variables Export modes (Token 컬렉션) | Mode 1.tokens 2.json | 2026-10-06 |
+| `export/color.mode-1.tokens.json` | Figma Variables Export modes (Color 컬렉션) | Mode 1.tokens.json | 2026-10-08 |
+| `export/token.mode-1.tokens.json` | Figma Variables Export modes (Token 컬렉션) | Mode 1.tokens 2.json | 2026-10-08 |
 
 ## 변수 개수
 
 | export 파일 | 변수 | 이전 스냅샷 |
 | --- | --- | --- |
-| `color.mode-1.tokens.json` | 229 | 196 |
-| `token.mode-1.tokens.json` | 83 | 75 |
+| `color.mode-1.tokens.json` | 230 | 229 |
+| `token.mode-1.tokens.json` | 83 | 83 |
 
 ## 디자인 팀 확인 요청
 
 1. codeSyntax(WEB)가 여러 변수에 중복으로 붙어 있습니다. 예를 들어 `var(--color-border-default)`는 `Border/Neutral/Medium-300`(회색)과 `Border/Primary/Weak-200`(틸)에 함께 붙어 있습니다. Dev Mode 코드 패널과 피그마 MCP는 이 이름을 보여 주는데, 코드의 CSS 변수(`--umc-color-…`)와 다른 이름이라 개발자와 AI 도구가 길을 잃습니다. 아래 '이름 대응표와 codeSyntax 제안'의 제안 값(`var(--umc-color-…)`)으로 바꿔 줄 수 있나요? primitive와 Token 컬렉션 변수에도 같은 규칙으로 넣어 주시면 Dev Mode에 보이는 이름이 코드와 같아집니다.
-2. `Fill/Disabled/Disalbed`, `Border/Disabled/Disalbed`의 오타를 빼고 `fill.disabled`, `border.disabled`로 읽었습니다. 피그마 이름도 고칠 수 있나요?
+2. `Fill/Neutral/Disalbed`의 오타를 고쳐 `fill.neutral.disabled`로 읽었습니다. 같은 오타였던 Border는 `Border/Neutral/Disabled`로 고쳐졌습니다. Fill 이름도 고칠 수 있나요?
 3. 같은 틸 역할을 Fill과 Border는 `Primary`, Background, Surface, Text, Icon은 `Brand`로 부릅니다. 한 이름으로 맞출 수 있나요?
 4. `Display/3-Bold`가 Token 컬렉션에 없는 `Typography/Base/Fontfamily/Brand`, `Fontweight/Bold`를 참조합니다(다른 라이브러리 변수로 보입니다). `FontFamily`, `FontWeight`로 다시 연결해 주세요.
 5. Primitive 컬러 문서 프레임에 쓰인 `primitives/orange/*`, `Base/Grey/Grey 900`, `Grey 800`, `Medium/H1`(PingFang SC)은 Color 컬렉션 export에 없습니다. 다른 라이브러리 것인지, 정리 대상인지 알려 주세요.
@@ -35,19 +35,20 @@
 8. `Heading/Heading3-Semibold`(22px), `Mobile Web/Body/4-Regular`(행간 20px)는 폐기 대상인가요? 노드 2268:1706에 쓰인 텍스트 스타일이 전체 목록인지도 알려 주세요.
 9. Display 3 문서 표에는 자간이 -2%로 적혀 있지만 실제 스타일 `Display/3-Bold`는 -1.5%입니다. 어느 쪽이 맞나요?
 10. `Tag/Role/Challenger&Super-Admin`과 `Tag/Role/Product`는 Weak와 Medium이 같은 색입니다(Teal-100, TealGrey-100). 의도인가요?
-11. `Label`(문자열 변수)과 `Radius/Primitive/48`(문자열 타입에 FONT_FAMILY scope)은 용도가 무엇인가요? 코드에서는 제외했습니다.
-12. scope 정리가 필요해 보입니다. `Border/Neutral/Default`에는 채우기 scope가, `Border/Disabled/Disalbed`에는 ALL_SCOPES가 붙어 있고, primitive 대부분이 ALL_SCOPES입니다. 모드 이름 `Mode 1`도 `Default`로 바꿀 수 있나요?
-13. 그리드: 브레이크포인트 경계값, 모바일 컬럼 수와 거터, 1440px 초과 시 최대 폭, Layout No.2의 컬럼 폭 문구를 확인해 주세요. 콘텐츠 폭은 1224px(1440 - 사이드바 216)이어야 문서의 컬럼 폭 82px과 맞습니다. 1220px이면 81.67px이 됩니다.
-14. 같은 이름에 정의가 여러 개인 스타일이 있습니다(아래 '같은 이름의 다른 정의' 표). 글꼴을 값으로 직접 적은 정의는 2기 라이브러리, 3기 변수에 연결됐지만 값이 다른 정의는 예전에 게시한 라이브러리 버전으로 보입니다. 컴포넌트를 3기 스타일로 다시 연결하고 라이브러리를 재게시해 주세요.
-15. `Shadow/Inner/Neutral_1`은 Toast와 Desktop Layout에서 청록 2겹(inset 1 1 3 `#0B6B6421` + inset -1 -1 1 `#FFFFFF40`), Side Navigation과 Option Button에서 회색 1겹(inset 1 1 2 `#D3D8D833`)입니다. 코드는 청록 2겹을 토큰으로 삼았습니다. 어느 쪽이 맞나요?
-16. `Title/2-Bold`, `Title/3-Semibold`는 라이브러리에 있지만 어떤 노드도 쓰지 않아 값을 읽지 못했습니다. 계속 쓸 스타일이면 문서 프레임에 적용해 주세요.
+11. `Tag/Part`에 단계 숫자가 붙었는데, PM·Design·Mobile-PE는 숫자와 참조하는 primitive 단계가 다릅니다(`PM/Weak-200`이 Violet-100, `Medium-300`이 Violet-500, `Strong-400`이 Violet-600). Web-PE는 같습니다(`Weak-100`이 Yellow-100). `Tag/Role`에는 아직 숫자가 없습니다. 어느 규칙이 맞나요? 코드는 피그마 이름을 그대로 씁니다.
+12. 새로 생긴 `Fill/Neutral/Stronger-300`은 TealGrey-200이라 `Strong-200`과 값이 같고, 이름의 300과 단계도 다릅니다. `Stronger-Hover(Pressed)`도 `Strong-Hover(Pressed)`와 같은 TealGrey-300입니다. 의도인가요?
+13. `Label`(문자열 변수)과 `Radius/Primitive/48`(문자열 타입에 FONT_FAMILY scope)은 용도가 무엇인가요? 코드에서는 제외했습니다.
+14. scope 정리가 필요해 보입니다. `Border/Neutral/Default`에는 채우기 scope가, `Border/Neutral/Disabled`에는 ALL_SCOPES가 붙어 있고, primitive 대부분이 ALL_SCOPES입니다. 모드 이름 `Mode 1`도 `Default`로 바꿀 수 있나요?
+15. 그리드: 브레이크포인트 경계값, 모바일 컬럼 수와 거터, 1440px 초과 시 최대 폭, Layout No.2의 컬럼 폭 문구를 확인해 주세요. 콘텐츠 폭은 1224px(1440 - 사이드바 216)이어야 문서의 컬럼 폭 82px과 맞습니다. 1220px이면 81.67px이 됩니다.
+16. 같은 이름에 정의가 여러 개인 스타일이 있습니다(아래 '같은 이름의 다른 정의' 표). 글꼴을 값으로 직접 적은 정의는 2기 라이브러리, 3기 변수에 연결됐지만 값이 다른 정의는 예전에 게시한 라이브러리 버전으로 보입니다. 컴포넌트를 3기 스타일로 다시 연결하고 라이브러리를 재게시해 주세요.
+17. `Shadow/Inner/Neutral_1`은 Toast와 Desktop Layout에서 청록 2겹(inset 1 1 3 `#0B6B6421` + inset -1 -1 1 `#FFFFFF40`), Side Navigation과 Option Button에서 회색 1겹(inset 1 1 2 `#D3D8D833`)입니다. 코드는 청록 2겹을 토큰으로 삼았습니다. 어느 쪽이 맞나요?
+18. `Title/2-Bold`, `Title/3-Semibold`는 라이브러리에 있지만 어떤 노드도 쓰지 않아 값을 읽지 못했습니다. 계속 쓸 스타일이면 문서 프레임에 적용해 주세요.
 
 ## 변수 이름 규칙
 
 | 피그마 이름 | 방식 | 토큰 경로 | 이유 | 상태 |
 | --- | --- | --- | --- | --- |
-| `Semantic/Fill/Disabled/Disalbed` | 정확 일치 | `color.fill.disabled` | 오타 Disalbed를 뺀 Disabled 한 단계로 읽음 | 확인 대기 |
-| `Semantic/Border/Disabled/Disalbed` | 정확 일치 | `color.border.disabled` | 오타 Disalbed를 뺀 Disabled 한 단계로 읽음 | 확인 대기 |
+| `Semantic/Fill/Neutral/Disalbed` | 정확 일치 | `color.fill.neutral.disabled` | 오타 Disalbed를 Disabled로 읽음 | 확인 대기 |
 | `Primitives/Base/` | 접두사 | `color` | 흰색과 검은색은 color 바로 아래에 둠 | 확정 |
 | `Primitives/Grey/TealGrey-` | 접두사 | `color.teal-grey` | Grey 그룹의 TealGrey 팔레트를 teal-grey로 둠 | 확정 |
 | `Primitives/` | 접두사 | `color` | 팔레트 이름 반복 제거(Teal/Teal-500 → teal.500) | 확정 |
@@ -74,25 +75,25 @@
 
 | codeSyntax | 변수 수 | 피그마 변수 |
 | --- | --- | --- |
-| `var(--color-action-primary-default)` | 31 | `Semantic/Fill/Neutral/Weaker-50`, `Semantic/Fill/Neutral/Weak-75`, `Semantic/Fill/Neutral/Medium-100`, `Semantic/Fill/Neutral/Strong-200`, `Semantic/Fill/Neutral/Default`, `Semantic/Fill/Neutral-Inverse/Weak-400`, `Semantic/Fill/Neutral-Inverse/Medium-500`, `Semantic/Fill/Neutral-Inverse/Strong-600`, `Semantic/Fill/Neutral-Inverse/Stronger-700`, `Semantic/Fill/Primary/Weaker-50`, `Semantic/Fill/Primary/Weaker-Hover(Pressed)`, `Semantic/Fill/Primary/Weak-75`, `Semantic/Fill/Primary/Weak-Hover(Pressed)`, `Semantic/Fill/Primary/Medium-100`, `Semantic/Fill/Primary/Strong-200`, `Semantic/Fill/Primary/Stronger-300`, `Semantic/Fill/Primary-Inverse/Medium-400`, `Semantic/Fill/Primary-Inverse/Medium-Hover(Pressed)`, `Semantic/Fill/Primary-Inverse/Strong-500`, `Semantic/Fill/Primary-Inverse/Stronger-600`, `Semantic/Fill/Primary-Inverse/Stronger-Hover(Pressed)`, `Semantic/Fill/Error/Weak-50`, `Semantic/Fill/Error/Medium-100`, `Semantic/Fill/Error/Strong-500`, `Semantic/Fill/Warning/Weak`, `Semantic/Fill/Warning/Medium`, `Semantic/Fill/Warning/Strong`, `Semantic/Fill/Success/Weak`, `Semantic/Fill/Success/Medium`, `Semantic/Fill/Success/Strong`, `Semantic/Border/Neutral/Default` |
-| `var(--color-action-primary-pressed)` | 18 | `Semantic/Fill/Neutral/Weak-Hover(Pressed)`, `Semantic/Fill/Neutral/Medium-Hover(Pressed)`, `Semantic/Fill/Neutral-Inverse/Weak-Hover(Pressed)`, `Semantic/Fill/Neutral-Inverse/Medium-Hover(Pressed)`, `Semantic/Fill/Neutral-Inverse/Strong-Hover(Pressed)`, `Semantic/Fill/Neutral-Inverse/Stronger-Hover(Pressed)`, `Semantic/Fill/Primary/Medium-Hover(Pressed)`, `Semantic/Fill/Primary/Strong-Hover(Pressed)`, `Semantic/Fill/Primary/Stronger-Hover(Pressed)-400`, `Semantic/Fill/Primary-Inverse/Strong-Hover(Pressed)`, `Semantic/Fill/Error/Medium-Hover(Pressed)`, `Semantic/Fill/Error/Strong-Hover(Pressed)`, `Semantic/Fill/Warning/Weak-Hover(Pressed)`, `Semantic/Fill/Warning/Medium-Hover(Pressed)`, `Semantic/Fill/Warning/Strong-Hover(Pressed)`, `Semantic/Fill/Success/Weak-Hover(Pressed)`, `Semantic/Fill/Success/Medium-Hover(Pressed)`, `Semantic/Fill/Success/Strong-Hover(Pressed)` |
-| `var(--color-border-strong)` | 10 | `Semantic/Border/Neutral/Strong-400`, `Semantic/Border/Neutral/Stronger-600`, `Semantic/Border/Primary/Medium-300`, `Semantic/Border/Primary/Strong-500`, `Semantic/Border/Error/Medium-300`, `Semantic/Border/Error/Strong-500`, `Semantic/Border/Warning/Medium-300`, `Semantic/Border/Warning/Strong-500`, `Semantic/Border/Success/Medium`, `Semantic/Border/Success/Strong` |
-| `var(--color-border-subtle)` | 6 | `Semantic/Border/Neutral/Weaker-100`, `Semantic/Border/Neutral/Weak-200`, `Semantic/Border/Primary/Weaker-100`, `Semantic/Border/Error/Weaker-100`, `Semantic/Border/Warning/Weaker-100`, `Semantic/Border/Success/Weaker` |
-| `var(--color-border-default)` | 5 | `Semantic/Border/Neutral/Medium-300`, `Semantic/Border/Primary/Weak-200`, `Semantic/Border/Error/Weak-200`, `Semantic/Border/Warning/Weak-200`, `Semantic/Border/Success/Weak` |
+| `var(--color-action-primary-default)` | 32 | `Semantic/Fill/Neutral/Default`, `Semantic/Fill/Neutral/Weaker-50`, `Semantic/Fill/Neutral/Weak-75`, `Semantic/Fill/Neutral/Medium-100`, `Semantic/Fill/Neutral/Strong-200`, `Semantic/Fill/Neutral/Stronger-300`, `Semantic/Fill/Neutral-Inverse/Weak-400`, `Semantic/Fill/Neutral-Inverse/Medium-500`, `Semantic/Fill/Neutral-Inverse/Strong-600`, `Semantic/Fill/Neutral-Inverse/Stronger-700`, `Semantic/Fill/Primary/Weaker-50`, `Semantic/Fill/Primary/Weaker-Hover(Pressed)`, `Semantic/Fill/Primary/Weak-75`, `Semantic/Fill/Primary/Weak-Hover(Pressed)`, `Semantic/Fill/Primary/Medium-100`, `Semantic/Fill/Primary/Strong-200`, `Semantic/Fill/Primary/Stronger-300`, `Semantic/Fill/Primary-Inverse/Weak-400`, `Semantic/Fill/Primary-Inverse/Weak-Hover(Pressed)`, `Semantic/Fill/Primary-Inverse/Medium-500`, `Semantic/Fill/Primary-Inverse/Strong-600`, `Semantic/Fill/Primary-Inverse/Strong-Hover(Pressed)`, `Semantic/Fill/Error/Weak-50`, `Semantic/Fill/Error/Medium-100`, `Semantic/Fill/Error/Strong-500`, `Semantic/Fill/Warning/Weak-50`, `Semantic/Fill/Warning/Medium-100`, `Semantic/Fill/Warning/Strong-500`, `Semantic/Fill/Success/Weak-50`, `Semantic/Fill/Success/Medium-100`, `Semantic/Fill/Success/Strong-500`, `Semantic/Border/Neutral/Default` |
+| `var(--color-action-primary-pressed)` | 18 | `Semantic/Fill/Neutral/Weak-Hover(Pressed)`, `Semantic/Fill/Neutral/Medium-Hover(Pressed)`, `Semantic/Fill/Neutral-Inverse/Weak-Hover(Pressed)`, `Semantic/Fill/Neutral-Inverse/Medium-Hover(Pressed)`, `Semantic/Fill/Neutral-Inverse/Strong-Hover(Pressed)`, `Semantic/Fill/Neutral-Inverse/Stronger-Hover(Pressed)`, `Semantic/Fill/Primary/Medium-Hover(Pressed)`, `Semantic/Fill/Primary/Strong-Hover(Pressed)`, `Semantic/Fill/Primary/Stronger-Hover(Pressed)-400`, `Semantic/Fill/Primary-Inverse/Medium-Hover(Pressed)`, `Semantic/Fill/Error/Medium-Hover(Pressed)`, `Semantic/Fill/Error/Strong-Hover(Pressed)`, `Semantic/Fill/Warning/Weak-Hover(Pressed)`, `Semantic/Fill/Warning/Medium-Hover(Pressed)`, `Semantic/Fill/Warning/Strong-Hover(Pressed)`, `Semantic/Fill/Success/Weak-Hover(Pressed)`, `Semantic/Fill/Success/Medium-Hover(Pressed)`, `Semantic/Fill/Success/Strong-Hover(Pressed)` |
+| `var(--color-border-strong)` | 10 | `Semantic/Border/Neutral/Strong-400`, `Semantic/Border/Neutral/Stronger-600`, `Semantic/Border/Primary/Medium-300`, `Semantic/Border/Primary/Strong-500`, `Semantic/Border/Error/Medium-300`, `Semantic/Border/Error/Strong-500`, `Semantic/Border/Warning/Medium-300`, `Semantic/Border/Warning/Strong-500`, `Semantic/Border/Success/Medium-300`, `Semantic/Border/Success/Strong-500` |
+| `var(--color-border-subtle)` | 6 | `Semantic/Border/Neutral/Weaker-100`, `Semantic/Border/Neutral/Weak-200`, `Semantic/Border/Primary/Weaker-100`, `Semantic/Border/Error/Weaker-100`, `Semantic/Border/Warning/Weaker-100`, `Semantic/Border/Success/Weaker-100` |
+| `var(--color-border-default)` | 5 | `Semantic/Border/Neutral/Medium-300`, `Semantic/Border/Primary/Weak-200`, `Semantic/Border/Error/Weak-200`, `Semantic/Border/Warning/Weak-200`, `Semantic/Border/Success/Weak-200` |
 | `var(--color-icon-brand)` | 5 | `Semantic/Icon/Brand-Medium-500`, `Semantic/Icon/Brand-Strong-600`, `Semantic/Icon/Success`, `Semantic/Icon/Error`, `Semantic/Icon/Warning` |
-| `var(--color-action-primary-hover)` | 3 | `Semantic/Fill/Neutral/Weaker-Hover(Pressed)`, `Semantic/Fill/Neutral/Strong-Hover(Pressed)`, `Semantic/Fill/Error/Weak-Hover(Pressed)` |
+| `var(--color-action-primary-hover)` | 4 | `Semantic/Fill/Neutral/Weaker-Hover(Pressed)`, `Semantic/Fill/Neutral/Strong-Hover(Pressed)`, `Semantic/Fill/Neutral/Stronger-Hover(Pressed)`, `Semantic/Fill/Error/Weak-Hover(Pressed)` |
 | `var(--color-surface-inverse)` | 3 | `Semantic/Surface/Brand-Weak`, `Semantic/Surface/Brand-Medium`, `Semantic/Surface/Brand-Inverse` |
 | `var(--color-surface-subtle)` | 3 | `Semantic/Surface/Neutral-Weak`, `Semantic/Surface/Neutral-Medium`, `Semantic/Surface/Neutral-Inverse` |
-| `var(--color-text-brand)` | 3 | `Semantic/Text/Brand-Disabled`, `Semantic/Text/Brand-Default`, `Semantic/Text/Brand-Strong` |
+| `var(--color-text-brand)` | 3 | `Semantic/Text/Brand-Disabled-300`, `Semantic/Text/Brand-Default-600`, `Semantic/Text/Brand-Strong-800` |
 | `var(--color-text-link)` | 3 | `Semantic/Text/Success`, `Semantic/Text/Error`, `Semantic/Text/Warning` |
 | `var(--color-text-subtle)` | 3 | `Semantic/Text/Neutral-Weak-500`, `Semantic/Text/Neutral-Medium-600`, `Semantic/Text/Neutral-Strong-800` |
 | `var(--color-bg-brand-subtle)` | 2 | `Semantic/Background/Brand-Weak`, `Semantic/Background/Brand-Medium` |
 | `var(--color-bg-subtle)` | 2 | `Semantic/Background/Neutral-Weak`, `Semantic/Background/Neutral-Medium` |
 | `var(--color-icon-subtle)` | 2 | `Semantic/Icon/Neutral-Weak-400`, `Semantic/Icon/Neutral-Medium-500` |
-| `var(--color-tag-part-design-bg)` | 2 | `Semantic/Tag/Part/Design/Weaker`, `Semantic/Tag/Part/Design/Weak` |
-| `var(--color-tag-part-mobile-pe-bg)` | 2 | `Semantic/Tag/Part/Mobile-PE/Weaker`, `Semantic/Tag/Part/Mobile-PE/Weak` |
-| `var(--color-tag-part-pm-bg)` | 2 | `Semantic/Tag/Part/PM/Weaker`, `Semantic/Tag/Part/PM/Weak` |
-| `var(--color-tag-part-web-pe-bg)` | 2 | `Semantic/Tag/Part/Web-PE/Weaker`, `Semantic/Tag/Part/Web-PE/Weak` |
+| `var(--color-tag-part-design-bg)` | 2 | `Semantic/Tag/Part/Design/Weaker-50`, `Semantic/Tag/Part/Design/Weak-200` |
+| `var(--color-tag-part-mobile-pe-bg)` | 2 | `Semantic/Tag/Part/Mobile-PE/Weaker-50`, `Semantic/Tag/Part/Mobile-PE/Weak-200` |
+| `var(--color-tag-part-pm-bg)` | 2 | `Semantic/Tag/Part/PM/Weaker-50`, `Semantic/Tag/Part/PM/Weak-200` |
+| `var(--color-tag-part-web-pe-bg)` | 2 | `Semantic/Tag/Part/Web-PE/Weaker-50`, `Semantic/Tag/Part/Web-PE/Weak-100` |
 | `var(--color-tag-role-campus-bg)` | 2 | `Semantic/Tag/Role/Campus/Weaker`, `Semantic/Tag/Role/Campus/Weak` |
 | `var(--color-tag-role-central-border)` | 2 | `Semantic/Tag/Role/Central/Weak`, `Semantic/Tag/Role/Central/Medium` |
 | `var(--color-tag-role-chapter-border)` | 2 | `Semantic/Tag/Role/Chapter/Weak`, `Semantic/Tag/Role/Chapter/Medium` |
@@ -105,7 +106,7 @@
 | 피그마 이름 | 내용 |
 | --- | --- |
 | `Primitives/*` | primitive 78개 중 76개가 ALL_SCOPES라 디자이너 선택 목록에 그대로 노출됩니다 |
-| `Semantic/Border/Disabled/Disalbed` | Border인데 STROKE scope가 없습니다 (ALL_SCOPES) |
+| `Semantic/Border/Neutral/Disabled` | Border인데 STROKE scope가 없습니다 (ALL_SCOPES) |
 | `Semantic/Border/Neutral/Default` | Border인데 STROKE scope가 없습니다 (FRAME_FILL, SHAPE_FILL) |
 
 ## 참조가 아닌 semantic
@@ -202,7 +203,8 @@ codeSyntax(WEB)를 둘째 칸 값으로 바꾸면 Dev Mode 코드 패널과 피�
 | `Semantic/Icon/Success` | `var(--umc-color-icon-success)` | `var(--color-icon-brand)` |
 | `Semantic/Icon/Error` | `var(--umc-color-icon-error)` | `var(--color-icon-brand)` |
 | `Semantic/Icon/Warning` | `var(--umc-color-icon-warning)` | `var(--color-icon-brand)` |
-| `Semantic/Fill/Disabled/Disalbed` | `var(--umc-color-fill-disabled)` | 없음 |
+| `Semantic/Fill/Neutral/Default` | `var(--umc-color-fill-neutral-default)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Neutral/Disalbed` | `var(--umc-color-fill-neutral-disabled)` | 없음 |
 | `Semantic/Fill/Neutral/Weaker-50` | `var(--umc-color-fill-neutral-weaker-50)` | `var(--color-action-primary-default)` |
 | `Semantic/Fill/Neutral/Weaker-Hover(Pressed)` | `var(--umc-color-fill-neutral-weaker-hover-pressed)` | `var(--color-action-primary-hover)` |
 | `Semantic/Fill/Neutral/Weak-75` | `var(--umc-color-fill-neutral-weak-75)` | `var(--color-action-primary-default)` |
@@ -211,7 +213,8 @@ codeSyntax(WEB)를 둘째 칸 값으로 바꾸면 Dev Mode 코드 패널과 피�
 | `Semantic/Fill/Neutral/Medium-Hover(Pressed)` | `var(--umc-color-fill-neutral-medium-hover-pressed)` | `var(--color-action-primary-pressed)` |
 | `Semantic/Fill/Neutral/Strong-200` | `var(--umc-color-fill-neutral-strong-200)` | `var(--color-action-primary-default)` |
 | `Semantic/Fill/Neutral/Strong-Hover(Pressed)` | `var(--umc-color-fill-neutral-strong-hover-pressed)` | `var(--color-action-primary-hover)` |
-| `Semantic/Fill/Neutral/Default` | `var(--umc-color-fill-neutral-default)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Neutral/Stronger-300` | `var(--umc-color-fill-neutral-stronger-300)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Neutral/Stronger-Hover(Pressed)` | `var(--umc-color-fill-neutral-stronger-hover-pressed)` | `var(--color-action-primary-hover)` |
 | `Semantic/Fill/Neutral-Inverse/Weak-400` | `var(--umc-color-fill-neutral-inverse-weak-400)` | `var(--color-action-primary-default)` |
 | `Semantic/Fill/Neutral-Inverse/Weak-Hover(Pressed)` | `var(--umc-color-fill-neutral-inverse-weak-hover-pressed)` | `var(--color-action-primary-pressed)` |
 | `Semantic/Fill/Neutral-Inverse/Medium-500` | `var(--umc-color-fill-neutral-inverse-medium-500)` | `var(--color-action-primary-default)` |
@@ -230,29 +233,29 @@ codeSyntax(WEB)를 둘째 칸 값으로 바꾸면 Dev Mode 코드 패널과 피�
 | `Semantic/Fill/Primary/Strong-Hover(Pressed)` | `var(--umc-color-fill-primary-strong-hover-pressed)` | `var(--color-action-primary-pressed)` |
 | `Semantic/Fill/Primary/Stronger-300` | `var(--umc-color-fill-primary-stronger-300)` | `var(--color-action-primary-default)` |
 | `Semantic/Fill/Primary/Stronger-Hover(Pressed)-400` | `var(--umc-color-fill-primary-stronger-hover-pressed-400)` | `var(--color-action-primary-pressed)` |
-| `Semantic/Fill/Primary-Inverse/Medium-400` | `var(--umc-color-fill-primary-inverse-medium-400)` | `var(--color-action-primary-default)` |
-| `Semantic/Fill/Primary-Inverse/Medium-Hover(Pressed)` | `var(--umc-color-fill-primary-inverse-medium-hover-pressed)` | `var(--color-action-primary-default)` |
-| `Semantic/Fill/Primary-Inverse/Strong-500` | `var(--umc-color-fill-primary-inverse-strong-500)` | `var(--color-action-primary-default)` |
-| `Semantic/Fill/Primary-Inverse/Strong-Hover(Pressed)` | `var(--umc-color-fill-primary-inverse-strong-hover-pressed)` | `var(--color-action-primary-pressed)` |
-| `Semantic/Fill/Primary-Inverse/Stronger-600` | `var(--umc-color-fill-primary-inverse-stronger-600)` | `var(--color-action-primary-default)` |
-| `Semantic/Fill/Primary-Inverse/Stronger-Hover(Pressed)` | `var(--umc-color-fill-primary-inverse-stronger-hover-pressed)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Primary-Inverse/Weak-400` | `var(--umc-color-fill-primary-inverse-weak-400)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Primary-Inverse/Weak-Hover(Pressed)` | `var(--umc-color-fill-primary-inverse-weak-hover-pressed)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Primary-Inverse/Medium-500` | `var(--umc-color-fill-primary-inverse-medium-500)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Primary-Inverse/Medium-Hover(Pressed)` | `var(--umc-color-fill-primary-inverse-medium-hover-pressed)` | `var(--color-action-primary-pressed)` |
+| `Semantic/Fill/Primary-Inverse/Strong-600` | `var(--umc-color-fill-primary-inverse-strong-600)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Primary-Inverse/Strong-Hover(Pressed)` | `var(--umc-color-fill-primary-inverse-strong-hover-pressed)` | `var(--color-action-primary-default)` |
 | `Semantic/Fill/Error/Weak-50` | `var(--umc-color-fill-error-weak-50)` | `var(--color-action-primary-default)` |
 | `Semantic/Fill/Error/Weak-Hover(Pressed)` | `var(--umc-color-fill-error-weak-hover-pressed)` | `var(--color-action-primary-hover)` |
 | `Semantic/Fill/Error/Medium-100` | `var(--umc-color-fill-error-medium-100)` | `var(--color-action-primary-default)` |
 | `Semantic/Fill/Error/Medium-Hover(Pressed)` | `var(--umc-color-fill-error-medium-hover-pressed)` | `var(--color-action-primary-pressed)` |
 | `Semantic/Fill/Error/Strong-500` | `var(--umc-color-fill-error-strong-500)` | `var(--color-action-primary-default)` |
 | `Semantic/Fill/Error/Strong-Hover(Pressed)` | `var(--umc-color-fill-error-strong-hover-pressed)` | `var(--color-action-primary-pressed)` |
-| `Semantic/Fill/Warning/Weak` | `var(--umc-color-fill-warning-weak)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Warning/Weak-50` | `var(--umc-color-fill-warning-weak-50)` | `var(--color-action-primary-default)` |
 | `Semantic/Fill/Warning/Weak-Hover(Pressed)` | `var(--umc-color-fill-warning-weak-hover-pressed)` | `var(--color-action-primary-pressed)` |
-| `Semantic/Fill/Warning/Medium` | `var(--umc-color-fill-warning-medium)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Warning/Medium-100` | `var(--umc-color-fill-warning-medium-100)` | `var(--color-action-primary-default)` |
 | `Semantic/Fill/Warning/Medium-Hover(Pressed)` | `var(--umc-color-fill-warning-medium-hover-pressed)` | `var(--color-action-primary-pressed)` |
-| `Semantic/Fill/Warning/Strong` | `var(--umc-color-fill-warning-strong)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Warning/Strong-500` | `var(--umc-color-fill-warning-strong-500)` | `var(--color-action-primary-default)` |
 | `Semantic/Fill/Warning/Strong-Hover(Pressed)` | `var(--umc-color-fill-warning-strong-hover-pressed)` | `var(--color-action-primary-pressed)` |
-| `Semantic/Fill/Success/Weak` | `var(--umc-color-fill-success-weak)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Success/Weak-50` | `var(--umc-color-fill-success-weak-50)` | `var(--color-action-primary-default)` |
 | `Semantic/Fill/Success/Weak-Hover(Pressed)` | `var(--umc-color-fill-success-weak-hover-pressed)` | `var(--color-action-primary-pressed)` |
-| `Semantic/Fill/Success/Medium` | `var(--umc-color-fill-success-medium)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Success/Medium-100` | `var(--umc-color-fill-success-medium-100)` | `var(--color-action-primary-default)` |
 | `Semantic/Fill/Success/Medium-Hover(Pressed)` | `var(--umc-color-fill-success-medium-hover-pressed)` | `var(--color-action-primary-pressed)` |
-| `Semantic/Fill/Success/Strong` | `var(--umc-color-fill-success-strong)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Success/Strong-500` | `var(--umc-color-fill-success-strong-500)` | `var(--color-action-primary-default)` |
 | `Semantic/Fill/Success/Strong-Hover(Pressed)` | `var(--umc-color-fill-success-strong-hover-pressed)` | `var(--color-action-primary-pressed)` |
 | `Semantic/Background/Default` | `var(--umc-color-background-default)` | `var(--color-bg-default)` |
 | `Semantic/Background/Neutral-Weak` | `var(--umc-color-background-neutral-weak)` | `var(--color-bg-subtle)` |
@@ -260,7 +263,6 @@ codeSyntax(WEB)를 둘째 칸 값으로 바꾸면 Dev Mode 코드 패널과 피�
 | `Semantic/Background/Brand-Weak` | `var(--umc-color-background-brand-weak)` | `var(--color-bg-brand-subtle)` |
 | `Semantic/Background/Brand-Medium` | `var(--umc-color-background-brand-medium)` | `var(--color-bg-brand-subtle)` |
 | `Semantic/Surface/Default` | `var(--umc-color-surface-default)` | `var(--color-surface-default)` |
-| `Semantic/Surface/Disabled` | `var(--umc-color-surface-disabled)` | `var(--color-surface-disabled)` |
 | `Semantic/Surface/Neutral-Weak` | `var(--umc-color-surface-neutral-weak)` | `var(--color-surface-subtle)` |
 | `Semantic/Surface/Neutral-Medium` | `var(--umc-color-surface-neutral-medium)` | `var(--color-surface-subtle)` |
 | `Semantic/Surface/Neutral-Inverse` | `var(--umc-color-surface-neutral-inverse)` | `var(--color-surface-subtle)` |
@@ -273,14 +275,14 @@ codeSyntax(WEB)를 둘째 칸 값으로 바꾸면 Dev Mode 코드 패널과 피�
 | `Semantic/Text/Neutral-Weak-500` | `var(--umc-color-text-neutral-weak-500)` | `var(--color-text-subtle)` |
 | `Semantic/Text/Neutral-Medium-600` | `var(--umc-color-text-neutral-medium-600)` | `var(--color-text-subtle)` |
 | `Semantic/Text/Neutral-Strong-800` | `var(--umc-color-text-neutral-strong-800)` | `var(--color-text-subtle)` |
-| `Semantic/Text/Neutral-Default` | `var(--umc-color-text-neutral-default)` | `var(--color-text-default)` |
-| `Semantic/Text/Brand-Disabled` | `var(--umc-color-text-brand-disabled)` | `var(--color-text-brand)` |
-| `Semantic/Text/Brand-Default` | `var(--umc-color-text-brand-default)` | `var(--color-text-brand)` |
-| `Semantic/Text/Brand-Strong` | `var(--umc-color-text-brand-strong)` | `var(--color-text-brand)` |
+| `Semantic/Text/Neutral-Default-900` | `var(--umc-color-text-neutral-default-900)` | `var(--color-text-default)` |
+| `Semantic/Text/Brand-Disabled-300` | `var(--umc-color-text-brand-disabled-300)` | `var(--color-text-brand)` |
+| `Semantic/Text/Brand-Default-600` | `var(--umc-color-text-brand-default-600)` | `var(--color-text-brand)` |
+| `Semantic/Text/Brand-Strong-800` | `var(--umc-color-text-brand-strong-800)` | `var(--color-text-brand)` |
 | `Semantic/Text/Success` | `var(--umc-color-text-success)` | `var(--color-text-link)` |
 | `Semantic/Text/Error` | `var(--umc-color-text-error)` | `var(--color-text-link)` |
 | `Semantic/Text/Warning` | `var(--umc-color-text-warning)` | `var(--color-text-link)` |
-| `Semantic/Border/Disabled/Disalbed` | `var(--umc-color-border-disabled)` | 없음 |
+| `Semantic/Border/Neutral/Disabled` | `var(--umc-color-border-neutral-disabled)` | 없음 |
 | `Semantic/Border/Neutral/Weaker-100` | `var(--umc-color-border-neutral-weaker-100)` | `var(--color-border-subtle)` |
 | `Semantic/Border/Neutral/Weak-200` | `var(--umc-color-border-neutral-weak-200)` | `var(--color-border-subtle)` |
 | `Semantic/Border/Neutral/Medium-300` | `var(--umc-color-border-neutral-medium-300)` | `var(--color-border-default)` |
@@ -299,26 +301,26 @@ codeSyntax(WEB)를 둘째 칸 값으로 바꾸면 Dev Mode 코드 패널과 피�
 | `Semantic/Border/Warning/Weak-200` | `var(--umc-color-border-warning-weak-200)` | `var(--color-border-default)` |
 | `Semantic/Border/Warning/Medium-300` | `var(--umc-color-border-warning-medium-300)` | `var(--color-border-strong)` |
 | `Semantic/Border/Warning/Strong-500` | `var(--umc-color-border-warning-strong-500)` | `var(--color-border-strong)` |
-| `Semantic/Border/Success/Weaker` | `var(--umc-color-border-success-weaker)` | `var(--color-border-subtle)` |
-| `Semantic/Border/Success/Weak` | `var(--umc-color-border-success-weak)` | `var(--color-border-default)` |
-| `Semantic/Border/Success/Medium` | `var(--umc-color-border-success-medium)` | `var(--color-border-strong)` |
-| `Semantic/Border/Success/Strong` | `var(--umc-color-border-success-strong)` | `var(--color-border-strong)` |
-| `Semantic/Tag/Part/PM/Weaker` | `var(--umc-color-tag-part-pm-weaker)` | `var(--color-tag-part-pm-bg)` |
-| `Semantic/Tag/Part/PM/Weak` | `var(--umc-color-tag-part-pm-weak)` | `var(--color-tag-part-pm-bg)` |
-| `Semantic/Tag/Part/PM/Medium` | `var(--umc-color-tag-part-pm-medium)` | `var(--color-tag-part-pm-border)` |
-| `Semantic/Tag/Part/PM/Strong` | `var(--umc-color-tag-part-pm-strong)` | `var(--color-tag-part-pm-text)` |
-| `Semantic/Tag/Part/Design/Weaker` | `var(--umc-color-tag-part-design-weaker)` | `var(--color-tag-part-design-bg)` |
-| `Semantic/Tag/Part/Design/Weak` | `var(--umc-color-tag-part-design-weak)` | `var(--color-tag-part-design-bg)` |
-| `Semantic/Tag/Part/Design/Medium` | `var(--umc-color-tag-part-design-medium)` | `var(--color-tag-part-design-border)` |
-| `Semantic/Tag/Part/Design/Strong` | `var(--umc-color-tag-part-design-strong)` | `var(--color-tag-part-design-text)` |
-| `Semantic/Tag/Part/Mobile-PE/Weaker` | `var(--umc-color-tag-part-mobile-pe-weaker)` | `var(--color-tag-part-mobile-pe-bg)` |
-| `Semantic/Tag/Part/Mobile-PE/Weak` | `var(--umc-color-tag-part-mobile-pe-weak)` | `var(--color-tag-part-mobile-pe-bg)` |
-| `Semantic/Tag/Part/Mobile-PE/Medium` | `var(--umc-color-tag-part-mobile-pe-medium)` | `var(--color-tag-part-mobile-pe-border)` |
-| `Semantic/Tag/Part/Mobile-PE/Strong` | `var(--umc-color-tag-part-mobile-pe-strong)` | `var(--color-tag-part-mobile-pe-text)` |
-| `Semantic/Tag/Part/Web-PE/Weaker` | `var(--umc-color-tag-part-web-pe-weaker)` | `var(--color-tag-part-web-pe-bg)` |
-| `Semantic/Tag/Part/Web-PE/Weak` | `var(--umc-color-tag-part-web-pe-weak)` | `var(--color-tag-part-web-pe-bg)` |
-| `Semantic/Tag/Part/Web-PE/Medium` | `var(--umc-color-tag-part-web-pe-medium)` | `var(--color-tag-part-web-pe-border)` |
-| `Semantic/Tag/Part/Web-PE/Strong` | `var(--umc-color-tag-part-web-pe-strong)` | `var(--color-tag-part-web-pe-text)` |
+| `Semantic/Border/Success/Weaker-100` | `var(--umc-color-border-success-weaker-100)` | `var(--color-border-subtle)` |
+| `Semantic/Border/Success/Weak-200` | `var(--umc-color-border-success-weak-200)` | `var(--color-border-default)` |
+| `Semantic/Border/Success/Medium-300` | `var(--umc-color-border-success-medium-300)` | `var(--color-border-strong)` |
+| `Semantic/Border/Success/Strong-500` | `var(--umc-color-border-success-strong-500)` | `var(--color-border-strong)` |
+| `Semantic/Tag/Part/PM/Weaker-50` | `var(--umc-color-tag-part-pm-weaker-50)` | `var(--color-tag-part-pm-bg)` |
+| `Semantic/Tag/Part/PM/Weak-200` | `var(--umc-color-tag-part-pm-weak-200)` | `var(--color-tag-part-pm-bg)` |
+| `Semantic/Tag/Part/PM/Medium-300` | `var(--umc-color-tag-part-pm-medium-300)` | `var(--color-tag-part-pm-border)` |
+| `Semantic/Tag/Part/PM/Strong-400` | `var(--umc-color-tag-part-pm-strong-400)` | `var(--color-tag-part-pm-text)` |
+| `Semantic/Tag/Part/Design/Weaker-50` | `var(--umc-color-tag-part-design-weaker-50)` | `var(--color-tag-part-design-bg)` |
+| `Semantic/Tag/Part/Design/Weak-200` | `var(--umc-color-tag-part-design-weak-200)` | `var(--color-tag-part-design-bg)` |
+| `Semantic/Tag/Part/Design/Medium-300` | `var(--umc-color-tag-part-design-medium-300)` | `var(--color-tag-part-design-border)` |
+| `Semantic/Tag/Part/Design/Strong-400` | `var(--umc-color-tag-part-design-strong-400)` | `var(--color-tag-part-design-text)` |
+| `Semantic/Tag/Part/Mobile-PE/Weaker-50` | `var(--umc-color-tag-part-mobile-pe-weaker-50)` | `var(--color-tag-part-mobile-pe-bg)` |
+| `Semantic/Tag/Part/Mobile-PE/Weak-200` | `var(--umc-color-tag-part-mobile-pe-weak-200)` | `var(--color-tag-part-mobile-pe-bg)` |
+| `Semantic/Tag/Part/Mobile-PE/Medium-300` | `var(--umc-color-tag-part-mobile-pe-medium-300)` | `var(--color-tag-part-mobile-pe-border)` |
+| `Semantic/Tag/Part/Mobile-PE/Strong-400` | `var(--umc-color-tag-part-mobile-pe-strong-400)` | `var(--color-tag-part-mobile-pe-text)` |
+| `Semantic/Tag/Part/Web-PE/Weaker-50` | `var(--umc-color-tag-part-web-pe-weaker-50)` | `var(--color-tag-part-web-pe-bg)` |
+| `Semantic/Tag/Part/Web-PE/Weak-100` | `var(--umc-color-tag-part-web-pe-weak-100)` | `var(--color-tag-part-web-pe-bg)` |
+| `Semantic/Tag/Part/Web-PE/Medium-500` | `var(--umc-color-tag-part-web-pe-medium-500)` | `var(--color-tag-part-web-pe-border)` |
+| `Semantic/Tag/Part/Web-PE/Strong-600` | `var(--umc-color-tag-part-web-pe-strong-600)` | `var(--color-tag-part-web-pe-text)` |
 | `Semantic/Tag/Role/Central/Weaker` | `var(--umc-color-tag-role-central-weaker)` | `var(--color-tag-role-central-bg)` |
 | `Semantic/Tag/Role/Central/Weak` | `var(--umc-color-tag-role-central-weak)` | `var(--color-tag-role-central-border)` |
 | `Semantic/Tag/Role/Central/Medium` | `var(--umc-color-tag-role-central-medium)` | `var(--color-tag-role-central-border)` |
