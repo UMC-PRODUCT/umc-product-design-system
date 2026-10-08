@@ -6,7 +6,7 @@
 
 | 파일 | 출처 | 노드 또는 원래 이름 | 받은 날 |
 | --- | --- | --- | --- |
-| `mcp/get-variable-defs.2268-1706.json` | get_variable_defs | 2268:1706 | 2026-10-06 |
+| `mcp/get-variable-defs.2268-1706.json` | get_variable_defs | 2268:1706 | 2026-10-08 |
 | `mcp/get-variable-defs.2858-65987.json` | get_variable_defs | 2858:65987 | 2026-10-07 |
 | `mcp/get-variable-defs.2621-33487.json` | get_variable_defs | 2621:33487 | 2026-10-07 |
 | `mcp/get-variable-defs.2621-36220.json` | get_variable_defs | 2621:36220 | 2026-10-07 |
@@ -168,7 +168,6 @@ primitive를 참조하지 않고 값을 직접 가진 semantic이다. 투명도�
 
 | 피그마 이름 | 원문 | 정의 | 처리 |
 | --- | --- | --- | --- |
-| `Label/3-Medium` | `get-variable-defs.2858-65987.json`, `get-variable-defs.3155-19976.json`, `get-variable-defs.2621-32882.json` | `Font(family: "Typography/Base/FontFamily/Brand", style: Typography/Base/FontWeight/Medium, size: Typography/Base/FontSize/16px, weight: 500, lineHeight: 1.399999976158142, letterSpacing: -3)` | 같은 이름의 다른 정의. 기준 원문 또는 먼저 나온 원문의 정의를 썼다 |
 | `Label/1-Medium` | `get-variable-defs.2621-33487.json`, `get-variable-defs.2621-32882.json` | `Font(family: "Pretendard Variable", style: Medium, size: 16, weight: 500, lineHeight: 1.399999976158142, letterSpacing: -2)` | 같은 이름의 다른 정의. 기준 원문 또는 먼저 나온 원문의 정의를 썼다 |
 | `Body/1-Regular` | `get-variable-defs.2621-32882.json` | `Font(family: "Pretendard Variable", style: Regular, size: 16, weight: 400, lineHeight: 1.4500000476837158, letterSpacing: -1)` | 같은 이름의 다른 정의. 기준 원문 또는 먼저 나온 원문의 정의를 썼다 |
 | `Body/2-Medium` | `get-variable-defs.2621-32882.json` | `Font(family: "Pretendard Variable", style: Medium, size: 14, weight: 500, lineHeight: 1.5, letterSpacing: -1)` | 같은 이름의 다른 정의. 기준 원문 또는 먼저 나온 원문의 정의를 썼다 |

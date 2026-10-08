@@ -593,7 +593,7 @@
         "fontWeight": "{font-weight.medium}",
         "lineHeight": 1.4,
         "letterSpacing": {
-          "value": -0.02,
+          "value": -0.03,
           "unit": "em"
         }
       },

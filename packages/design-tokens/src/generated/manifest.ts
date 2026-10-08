@@ -3976,7 +3976,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "cssVariable": "--umc-typography-label-3-medium",
     "tier": "typography",
     "type": "typography",
-    "value": "16px / 500 / 1.4 / -0.02em",
+    "value": "16px / 500 / 1.4 / -0.03em",
     "alias": null,
     "figmaName": "Label/3-Medium",
     "utility": "text-label-3-medium",
@@ -3985,7 +3985,7 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
       "fontSize": "16px",
       "fontWeight": "500",
       "lineHeight": "1.4",
-      "letterSpacing": "-0.02em"
+      "letterSpacing": "-0.03em"
     }
   },
   {

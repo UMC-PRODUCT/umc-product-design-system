@@ -479,7 +479,7 @@
     --umc-typography-label-3-medium-font-size: var(--umc-font-size-16);
     --umc-typography-label-3-medium-font-weight: var(--umc-font-weight-medium);
     --umc-typography-label-3-medium-line-height: 1.4;
-    --umc-typography-label-3-medium-letter-spacing: -0.02em;
+    --umc-typography-label-3-medium-letter-spacing: -0.03em;
     --umc-typography-label-4-semibold-font-family: var(--umc-font-family-brand);
     --umc-typography-label-4-semibold-font-size: var(--umc-font-size-15);
     --umc-typography-label-4-semibold-font-weight: var(--umc-font-weight-semibold);
