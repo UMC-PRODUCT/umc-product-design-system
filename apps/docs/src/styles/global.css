@@ -247,7 +247,8 @@
   gap: 0.75rem 1rem;
 }
 
-.umc-icon-search {
+.umc-icon-search,
+.umc-color-search {
   flex: 1 1 16rem;
   min-width: 0;
   padding: 0.5rem 0.75rem;
@@ -259,7 +260,8 @@
   font-size: var(--sl-text-sm);
 }
 
-.umc-icon-search:focus-visible {
+.umc-icon-search:focus-visible,
+.umc-color-search:focus-visible {
   outline: 2px solid var(--sl-color-accent);
   outline-offset: 2px;
 }
@@ -304,10 +306,53 @@
 }
 
 .umc-icon-count,
-.umc-icon-empty {
+.umc-icon-empty,
+.umc-color-count {
   margin: 0;
   color: var(--sl-color-gray-3);
   font-size: var(--sl-text-sm);
+}
+
+.umc-color-lookup {
+  display: grid;
+  gap: 0.75rem;
+  margin-block: 1rem 2rem;
+}
+
+.umc-color-lookup .umc-scroll {
+  margin-block: 0;
+}
+
+.umc-color-count:empty {
+  display: none;
+}
+
+.umc-color-notice {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background: var(--sl-color-orange-low);
+  color: var(--sl-color-orange-high);
+  font-size: var(--sl-text-sm);
+}
+
+.umc-color-class {
+  margin-top: 0.25rem;
+}
+
+.umc-color-class code {
+  color: var(--sl-color-text-accent);
+  font-weight: 600;
+}
+
+.umc-color-shared {
+  display: inline-block;
+  margin-inline-start: 0.375rem;
+  padding: 0 0.375rem;
+  border-radius: 999px;
+  background: var(--sl-color-orange-low);
+  color: var(--sl-color-orange-high);
+  white-space: nowrap;
 }
 
 .umc-icon-usage {

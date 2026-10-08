@@ -7,7 +7,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Icon/Disabled",
-            "variableId": "VariableID:2185:572"
+            "variableId": "VariableID:2185:572",
+            "codeSyntax": "var(--color-icon-disabled)"
           }
         }
       },
@@ -17,7 +18,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Icon/Inverse",
-            "variableId": "VariableID:2185:573"
+            "variableId": "VariableID:2185:573",
+            "codeSyntax": "var(--color-icon-inverse)"
           }
         }
       },
@@ -27,7 +29,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Icon/Neutral-Weak-400",
-            "variableId": "VariableID:2515:23522"
+            "variableId": "VariableID:2515:23522",
+            "codeSyntax": "var(--color-icon-subtle)"
           }
         }
       },
@@ -37,7 +40,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Icon/Neutral-Medium-500",
-            "variableId": "VariableID:2185:571"
+            "variableId": "VariableID:2185:571",
+            "codeSyntax": "var(--color-icon-subtle)"
           }
         }
       },
@@ -47,7 +51,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Icon/Neutral-Strong-600",
-            "variableId": "VariableID:2185:570"
+            "variableId": "VariableID:2185:570",
+            "codeSyntax": "var(--color-icon-default)"
           }
         }
       },
@@ -57,7 +62,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Icon/Neutral-Stronger-700",
-            "variableId": "VariableID:2185:569"
+            "variableId": "VariableID:2185:569",
+            "codeSyntax": "var(--color-icon-strong)"
           }
         }
       },
@@ -67,7 +73,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Icon/Brand-Medium-500",
-            "variableId": "VariableID:2185:574"
+            "variableId": "VariableID:2185:574",
+            "codeSyntax": "var(--color-icon-brand)"
           }
         }
       },
@@ -77,7 +84,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Icon/Brand-Strong-600",
-            "variableId": "VariableID:2903:72125"
+            "variableId": "VariableID:2903:72125",
+            "codeSyntax": "var(--color-icon-brand)"
           }
         }
       },
@@ -87,7 +95,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Icon/Success",
-            "variableId": "VariableID:2183:8200"
+            "variableId": "VariableID:2183:8200",
+            "codeSyntax": "var(--color-icon-brand)"
           }
         }
       },
@@ -97,7 +106,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Icon/Error",
-            "variableId": "VariableID:2183:8204"
+            "variableId": "VariableID:2183:8204",
+            "codeSyntax": "var(--color-icon-brand)"
           }
         }
       },
@@ -107,7 +117,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Icon/Warning",
-            "variableId": "VariableID:2183:8208"
+            "variableId": "VariableID:2183:8208",
+            "codeSyntax": "var(--color-icon-brand)"
           }
         }
       }
@@ -130,7 +141,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Neutral/Weaker-50",
-              "variableId": "VariableID:2196:8422"
+              "variableId": "VariableID:2196:8422",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -140,7 +152,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Neutral/Weaker-Hover(Pressed)",
-              "variableId": "VariableID:2196:8424"
+              "variableId": "VariableID:2196:8424",
+              "codeSyntax": "var(--color-action-primary-hover)"
             }
           }
         },
@@ -150,7 +163,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Neutral/Weak-75",
-              "variableId": "VariableID:2196:8423"
+              "variableId": "VariableID:2196:8423",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -160,7 +174,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Neutral/Weak-Hover(Pressed)",
-              "variableId": "VariableID:2196:8425"
+              "variableId": "VariableID:2196:8425",
+              "codeSyntax": "var(--color-action-primary-pressed)"
             }
           }
         },
@@ -170,7 +185,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Neutral/Medium-100",
-              "variableId": "VariableID:2479:20731"
+              "variableId": "VariableID:2479:20731",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -180,7 +196,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Neutral/Medium-Hover(Pressed)",
-              "variableId": "VariableID:2479:20730"
+              "variableId": "VariableID:2479:20730",
+              "codeSyntax": "var(--color-action-primary-pressed)"
             }
           }
         },
@@ -190,7 +207,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Neutral/Strong-200",
-              "variableId": "VariableID:2512:7872"
+              "variableId": "VariableID:2512:7872",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -200,7 +218,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Neutral/Strong-Hover(Pressed)",
-              "variableId": "VariableID:2196:8420"
+              "variableId": "VariableID:2196:8420",
+              "codeSyntax": "var(--color-action-primary-hover)"
             }
           }
         },
@@ -210,7 +229,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Neutral/Default",
-              "variableId": "VariableID:2505:17677"
+              "variableId": "VariableID:2505:17677",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         }
@@ -222,7 +242,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Neutral-Inverse/Weak-400",
-              "variableId": "VariableID:2535:8894"
+              "variableId": "VariableID:2535:8894",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -232,7 +253,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Neutral-Inverse/Weak-Hover(Pressed)",
-              "variableId": "VariableID:2535:8893"
+              "variableId": "VariableID:2535:8893",
+              "codeSyntax": "var(--color-action-primary-pressed)"
             }
           }
         },
@@ -242,7 +264,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Neutral-Inverse/Medium-500",
-              "variableId": "VariableID:2946:40572"
+              "variableId": "VariableID:2946:40572",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -252,7 +275,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Neutral-Inverse/Medium-Hover(Pressed)",
-              "variableId": "VariableID:2946:40571"
+              "variableId": "VariableID:2946:40571",
+              "codeSyntax": "var(--color-action-primary-pressed)"
             }
           }
         },
@@ -262,7 +286,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Neutral-Inverse/Strong-600",
-              "variableId": "VariableID:2196:8419"
+              "variableId": "VariableID:2196:8419",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -272,7 +297,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Neutral-Inverse/Strong-Hover(Pressed)",
-              "variableId": "VariableID:2512:7898"
+              "variableId": "VariableID:2512:7898",
+              "codeSyntax": "var(--color-action-primary-pressed)"
             }
           }
         },
@@ -282,7 +308,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Neutral-Inverse/Stronger-700",
-              "variableId": "VariableID:2541:25176"
+              "variableId": "VariableID:2541:25176",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -292,7 +319,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Neutral-Inverse/Stronger-Hover(Pressed)",
-              "variableId": "VariableID:2541:25175"
+              "variableId": "VariableID:2541:25175",
+              "codeSyntax": "var(--color-action-primary-pressed)"
             }
           }
         }
@@ -304,7 +332,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Primary/Weaker-50",
-              "variableId": "VariableID:2195:8319"
+              "variableId": "VariableID:2195:8319",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -314,7 +343,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Primary/Weaker-Hover(Pressed)",
-              "variableId": "VariableID:2251:14800"
+              "variableId": "VariableID:2251:14800",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -324,7 +354,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Primary/Weak-75",
-              "variableId": "VariableID:2946:30516"
+              "variableId": "VariableID:2946:30516",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -334,7 +365,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Primary/Weak-Hover(Pressed)",
-              "variableId": "VariableID:2946:30515"
+              "variableId": "VariableID:2946:30515",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -344,7 +376,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Primary/Medium-100",
-              "variableId": "VariableID:2196:8364"
+              "variableId": "VariableID:2196:8364",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -354,7 +387,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Primary/Medium-Hover(Pressed)",
-              "variableId": "VariableID:2195:8329"
+              "variableId": "VariableID:2195:8329",
+              "codeSyntax": "var(--color-action-primary-pressed)"
             }
           }
         },
@@ -364,7 +398,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Primary/Strong-200",
-              "variableId": "VariableID:2946:40792"
+              "variableId": "VariableID:2946:40792",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -374,7 +409,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Primary/Strong-Hover(Pressed)",
-              "variableId": "VariableID:2946:40791"
+              "variableId": "VariableID:2946:40791",
+              "codeSyntax": "var(--color-action-primary-pressed)"
             }
           }
         },
@@ -384,7 +420,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Primary/Stronger-300",
-              "variableId": "VariableID:3405:71588"
+              "variableId": "VariableID:3405:71588",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -394,7 +431,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Primary/Stronger-Hover(Pressed)-400",
-              "variableId": "VariableID:3405:71587"
+              "variableId": "VariableID:3405:71587",
+              "codeSyntax": "var(--color-action-primary-pressed)"
             }
           }
         }
@@ -406,7 +444,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Primary-Inverse/Medium-400",
-              "variableId": "VariableID:2929:79580"
+              "variableId": "VariableID:2929:79580",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -416,7 +455,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Primary-Inverse/Medium-Hover(Pressed)",
-              "variableId": "VariableID:2929:79584"
+              "variableId": "VariableID:2929:79584",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -426,7 +466,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Primary-Inverse/Strong-500",
-              "variableId": "VariableID:2186:569"
+              "variableId": "VariableID:2186:569",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -436,7 +477,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Primary-Inverse/Strong-Hover(Pressed)",
-              "variableId": "VariableID:2186:571"
+              "variableId": "VariableID:2186:571",
+              "codeSyntax": "var(--color-action-primary-pressed)"
             }
           }
         },
@@ -446,7 +488,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Primary-Inverse/Stronger-600",
-              "variableId": "VariableID:2581:16042"
+              "variableId": "VariableID:2581:16042",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -456,7 +499,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Primary-Inverse/Stronger-Hover(Pressed)",
-              "variableId": "VariableID:2581:16046"
+              "variableId": "VariableID:2581:16046",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         }
@@ -468,7 +512,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Error/Weak-50",
-              "variableId": "VariableID:2196:8415"
+              "variableId": "VariableID:2196:8415",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -478,7 +523,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Error/Weak-Hover(Pressed)",
-              "variableId": "VariableID:2196:8417"
+              "variableId": "VariableID:2196:8417",
+              "codeSyntax": "var(--color-action-primary-hover)"
             }
           }
         },
@@ -488,7 +534,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Error/Medium-100",
-              "variableId": "VariableID:2196:8416"
+              "variableId": "VariableID:2196:8416",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -498,7 +545,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Error/Medium-Hover(Pressed)",
-              "variableId": "VariableID:2196:8418"
+              "variableId": "VariableID:2196:8418",
+              "codeSyntax": "var(--color-action-primary-pressed)"
             }
           }
         },
@@ -508,7 +556,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Error/Strong-500",
-              "variableId": "VariableID:2196:8412"
+              "variableId": "VariableID:2196:8412",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -518,7 +567,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Error/Strong-Hover(Pressed)",
-              "variableId": "VariableID:2196:8414"
+              "variableId": "VariableID:2196:8414",
+              "codeSyntax": "var(--color-action-primary-pressed)"
             }
           }
         }
@@ -530,7 +580,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Warning/Weak",
-              "variableId": "VariableID:2196:8435"
+              "variableId": "VariableID:2196:8435",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -540,7 +591,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Warning/Weak-Hover(Pressed)",
-              "variableId": "VariableID:2267:15458"
+              "variableId": "VariableID:2267:15458",
+              "codeSyntax": "var(--color-action-primary-pressed)"
             }
           }
         },
@@ -550,7 +602,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Warning/Medium",
-              "variableId": "VariableID:2196:8436"
+              "variableId": "VariableID:2196:8436",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -560,7 +613,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Warning/Medium-Hover(Pressed)",
-              "variableId": "VariableID:2196:8438"
+              "variableId": "VariableID:2196:8438",
+              "codeSyntax": "var(--color-action-primary-pressed)"
             }
           }
         },
@@ -570,7 +624,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Warning/Strong",
-              "variableId": "VariableID:2196:8432"
+              "variableId": "VariableID:2196:8432",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -580,7 +635,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Warning/Strong-Hover(Pressed)",
-              "variableId": "VariableID:2196:8434"
+              "variableId": "VariableID:2196:8434",
+              "codeSyntax": "var(--color-action-primary-pressed)"
             }
           }
         }
@@ -592,7 +648,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Success/Weak",
-              "variableId": "VariableID:2196:8442"
+              "variableId": "VariableID:2196:8442",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -602,7 +659,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Success/Weak-Hover(Pressed)",
-              "variableId": "VariableID:2267:15462"
+              "variableId": "VariableID:2267:15462",
+              "codeSyntax": "var(--color-action-primary-pressed)"
             }
           }
         },
@@ -612,7 +670,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Success/Medium",
-              "variableId": "VariableID:2196:8443"
+              "variableId": "VariableID:2196:8443",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -622,7 +681,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Success/Medium-Hover(Pressed)",
-              "variableId": "VariableID:2196:8445"
+              "variableId": "VariableID:2196:8445",
+              "codeSyntax": "var(--color-action-primary-pressed)"
             }
           }
         },
@@ -632,7 +692,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Success/Strong",
-              "variableId": "VariableID:2196:8439"
+              "variableId": "VariableID:2196:8439",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         },
@@ -642,7 +703,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Fill/Success/Strong-Hover(Pressed)",
-              "variableId": "VariableID:2196:8441"
+              "variableId": "VariableID:2196:8441",
+              "codeSyntax": "var(--color-action-primary-pressed)"
             }
           }
         }
@@ -655,7 +717,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Background/Default",
-            "variableId": "VariableID:2118:10663"
+            "variableId": "VariableID:2118:10663",
+            "codeSyntax": "var(--color-bg-default)"
           }
         }
       },
@@ -665,7 +728,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Background/Neutral-Weak",
-            "variableId": "VariableID:2118:10664"
+            "variableId": "VariableID:2118:10664",
+            "codeSyntax": "var(--color-bg-subtle)"
           }
         }
       },
@@ -675,7 +739,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Background/Neutral-Medium",
-            "variableId": "VariableID:3155:20215"
+            "variableId": "VariableID:3155:20215",
+            "codeSyntax": "var(--color-bg-subtle)"
           }
         }
       },
@@ -685,7 +750,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Background/Brand-Weak",
-            "variableId": "VariableID:2132:8023"
+            "variableId": "VariableID:2132:8023",
+            "codeSyntax": "var(--color-bg-brand-subtle)"
           }
         }
       },
@@ -695,7 +761,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Background/Brand-Medium",
-            "variableId": "VariableID:3155:24490"
+            "variableId": "VariableID:3155:24490",
+            "codeSyntax": "var(--color-bg-brand-subtle)"
           }
         }
       }
@@ -707,7 +774,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Surface/Default",
-            "variableId": "VariableID:2167:569"
+            "variableId": "VariableID:2167:569",
+            "codeSyntax": "var(--color-surface-default)"
           }
         }
       },
@@ -717,7 +785,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Surface/Disabled",
-            "variableId": "VariableID:2167:572"
+            "variableId": "VariableID:2167:572",
+            "codeSyntax": "var(--color-surface-disabled)"
           }
         }
       },
@@ -727,7 +796,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Surface/Neutral-Weak",
-            "variableId": "VariableID:2167:570"
+            "variableId": "VariableID:2167:570",
+            "codeSyntax": "var(--color-surface-subtle)"
           }
         }
       },
@@ -737,7 +807,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Surface/Neutral-Medium",
-            "variableId": "VariableID:2251:13508"
+            "variableId": "VariableID:2251:13508",
+            "codeSyntax": "var(--color-surface-subtle)"
           }
         }
       },
@@ -747,7 +818,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Surface/Neutral-Inverse",
-            "variableId": "VariableID:2176:2900"
+            "variableId": "VariableID:2176:2900",
+            "codeSyntax": "var(--color-surface-subtle)"
           }
         }
       },
@@ -757,7 +829,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Surface/Brand-Weak",
-            "variableId": "VariableID:2167:573"
+            "variableId": "VariableID:2167:573",
+            "codeSyntax": "var(--color-surface-inverse)"
           }
         }
       },
@@ -767,7 +840,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Surface/Brand-Medium",
-            "variableId": "VariableID:3155:24478"
+            "variableId": "VariableID:3155:24478",
+            "codeSyntax": "var(--color-surface-inverse)"
           }
         }
       },
@@ -777,7 +851,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Surface/Brand-Inverse",
-            "variableId": "VariableID:2176:2896"
+            "variableId": "VariableID:2176:2896",
+            "codeSyntax": "var(--color-surface-inverse)"
           }
         }
       }
@@ -789,7 +864,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Text/Inverse",
-            "variableId": "VariableID:2178:573"
+            "variableId": "VariableID:2178:573",
+            "codeSyntax": "var(--color-text-inverse)"
           }
         }
       },
@@ -799,7 +875,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Text/Disabled",
-            "variableId": "VariableID:2178:572"
+            "variableId": "VariableID:2178:572",
+            "codeSyntax": "var(--color-text-disabled)"
           }
         }
       },
@@ -809,7 +886,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Text/Placeholder",
-            "variableId": "VariableID:2176:7908"
+            "variableId": "VariableID:2176:7908",
+            "codeSyntax": "var(--color-text-disabled)"
           }
         }
       },
@@ -819,7 +897,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Text/Neutral-Weak-500",
-            "variableId": "VariableID:2505:14365"
+            "variableId": "VariableID:2505:14365",
+            "codeSyntax": "var(--color-text-subtle)"
           }
         }
       },
@@ -829,7 +908,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Text/Neutral-Medium-600",
-            "variableId": "VariableID:2178:571"
+            "variableId": "VariableID:2178:571",
+            "codeSyntax": "var(--color-text-subtle)"
           }
         }
       },
@@ -839,7 +919,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Text/Neutral-Strong-800",
-            "variableId": "VariableID:2505:17835"
+            "variableId": "VariableID:2505:17835",
+            "codeSyntax": "var(--color-text-subtle)"
           }
         }
       },
@@ -849,7 +930,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Text/Neutral-Default",
-            "variableId": "VariableID:2178:570"
+            "variableId": "VariableID:2178:570",
+            "codeSyntax": "var(--color-text-default)"
           }
         }
       },
@@ -859,7 +941,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Text/Brand-Disabled",
-            "variableId": "VariableID:2581:16038"
+            "variableId": "VariableID:2581:16038",
+            "codeSyntax": "var(--color-text-brand)"
           }
         }
       },
@@ -869,7 +952,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Text/Brand-Default",
-            "variableId": "VariableID:2267:15466"
+            "variableId": "VariableID:2267:15466",
+            "codeSyntax": "var(--color-text-brand)"
           }
         }
       },
@@ -879,7 +963,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Text/Brand-Strong",
-            "variableId": "VariableID:2929:85192"
+            "variableId": "VariableID:2929:85192",
+            "codeSyntax": "var(--color-text-brand)"
           }
         }
       },
@@ -889,7 +974,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Text/Success",
-            "variableId": "VariableID:2176:7912"
+            "variableId": "VariableID:2176:7912",
+            "codeSyntax": "var(--color-text-link)"
           }
         }
       },
@@ -899,7 +985,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Text/Error",
-            "variableId": "VariableID:2183:7916"
+            "variableId": "VariableID:2183:7916",
+            "codeSyntax": "var(--color-text-link)"
           }
         }
       },
@@ -909,7 +996,8 @@
         "$extensions": {
           "umc.figma": {
             "name": "Semantic/Text/Warning",
-            "variableId": "VariableID:2183:7948"
+            "variableId": "VariableID:2183:7948",
+            "codeSyntax": "var(--color-text-link)"
           }
         }
       }
@@ -932,7 +1020,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Border/Neutral/Weaker-100",
-              "variableId": "VariableID:2181:569"
+              "variableId": "VariableID:2181:569",
+              "codeSyntax": "var(--color-border-subtle)"
             }
           }
         },
@@ -942,7 +1031,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Border/Neutral/Weak-200",
-              "variableId": "VariableID:2196:8391"
+              "variableId": "VariableID:2196:8391",
+              "codeSyntax": "var(--color-border-subtle)"
             }
           }
         },
@@ -952,7 +1042,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Border/Neutral/Medium-300",
-              "variableId": "VariableID:2181:570"
+              "variableId": "VariableID:2181:570",
+              "codeSyntax": "var(--color-border-default)"
             }
           }
         },
@@ -962,7 +1053,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Border/Neutral/Strong-400",
-              "variableId": "VariableID:2181:571"
+              "variableId": "VariableID:2181:571",
+              "codeSyntax": "var(--color-border-strong)"
             }
           }
         },
@@ -972,7 +1064,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Border/Neutral/Stronger-600",
-              "variableId": "VariableID:3108:35146"
+              "variableId": "VariableID:3108:35146",
+              "codeSyntax": "var(--color-border-strong)"
             }
           }
         },
@@ -982,7 +1075,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Border/Neutral/Default",
-              "variableId": "VariableID:2533:5351"
+              "variableId": "VariableID:2533:5351",
+              "codeSyntax": "var(--color-action-primary-default)"
             }
           }
         }
@@ -994,7 +1088,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Border/Primary/Weaker-100",
-              "variableId": "VariableID:2196:8404"
+              "variableId": "VariableID:2196:8404",
+              "codeSyntax": "var(--color-border-subtle)"
             }
           }
         },
@@ -1004,7 +1099,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Border/Primary/Weak-200",
-              "variableId": "VariableID:2196:8405"
+              "variableId": "VariableID:2196:8405",
+              "codeSyntax": "var(--color-border-default)"
             }
           }
         },
@@ -1014,7 +1110,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Border/Primary/Medium-300",
-              "variableId": "VariableID:2196:8406"
+              "variableId": "VariableID:2196:8406",
+              "codeSyntax": "var(--color-border-strong)"
             }
           }
         },
@@ -1024,7 +1121,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Border/Primary/Strong-500",
-              "variableId": "VariableID:2363:19510"
+              "variableId": "VariableID:2363:19510",
+              "codeSyntax": "var(--color-border-strong)"
             }
           }
         }
@@ -1036,7 +1134,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Border/Error/Weaker-100",
-              "variableId": "VariableID:2196:8408"
+              "variableId": "VariableID:2196:8408",
+              "codeSyntax": "var(--color-border-subtle)"
             }
           }
         },
@@ -1046,7 +1145,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Border/Error/Weak-200",
-              "variableId": "VariableID:2196:8409"
+              "variableId": "VariableID:2196:8409",
+              "codeSyntax": "var(--color-border-default)"
             }
           }
         },
@@ -1056,7 +1156,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Border/Error/Medium-300",
-              "variableId": "VariableID:2196:8410"
+              "variableId": "VariableID:2196:8410",
+              "codeSyntax": "var(--color-border-strong)"
             }
           }
         },
@@ -1066,7 +1167,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Border/Error/Strong-500",
-              "variableId": "VariableID:2363:19552"
+              "variableId": "VariableID:2363:19552",
+              "codeSyntax": "var(--color-border-strong)"
             }
           }
         }
@@ -1078,7 +1180,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Border/Warning/Weaker-100",
-              "variableId": "VariableID:2314:1669"
+              "variableId": "VariableID:2314:1669",
+              "codeSyntax": "var(--color-border-subtle)"
             }
           }
         },
@@ -1088,7 +1191,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Border/Warning/Weak-200",
-              "variableId": "VariableID:2314:1670"
+              "variableId": "VariableID:2314:1670",
+              "codeSyntax": "var(--color-border-default)"
             }
           }
         },
@@ -1098,7 +1202,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Border/Warning/Medium-300",
-              "variableId": "VariableID:2314:1671"
+              "variableId": "VariableID:2314:1671",
+              "codeSyntax": "var(--color-border-strong)"
             }
           }
         },
@@ -1108,7 +1213,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Border/Warning/Strong-500",
-              "variableId": "VariableID:2363:19556"
+              "variableId": "VariableID:2363:19556",
+              "codeSyntax": "var(--color-border-strong)"
             }
           }
         }
@@ -1120,7 +1226,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Border/Success/Weaker",
-              "variableId": "VariableID:2314:1673"
+              "variableId": "VariableID:2314:1673",
+              "codeSyntax": "var(--color-border-subtle)"
             }
           }
         },
@@ -1130,7 +1237,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Border/Success/Weak",
-              "variableId": "VariableID:2314:1674"
+              "variableId": "VariableID:2314:1674",
+              "codeSyntax": "var(--color-border-default)"
             }
           }
         },
@@ -1140,7 +1248,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Border/Success/Medium",
-              "variableId": "VariableID:2314:1675"
+              "variableId": "VariableID:2314:1675",
+              "codeSyntax": "var(--color-border-strong)"
             }
           }
         },
@@ -1150,7 +1259,8 @@
           "$extensions": {
             "umc.figma": {
               "name": "Semantic/Border/Success/Strong",
-              "variableId": "VariableID:2363:19560"
+              "variableId": "VariableID:2363:19560",
+              "codeSyntax": "var(--color-border-strong)"
             }
           }
         }
@@ -1165,7 +1275,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Part/PM/Weaker",
-                "variableId": "VariableID:2190:569"
+                "variableId": "VariableID:2190:569",
+                "codeSyntax": "var(--color-tag-part-pm-bg)"
               }
             }
           },
@@ -1175,7 +1286,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Part/PM/Weak",
-                "variableId": "VariableID:2183:8249"
+                "variableId": "VariableID:2183:8249",
+                "codeSyntax": "var(--color-tag-part-pm-bg)"
               }
             }
           },
@@ -1185,7 +1297,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Part/PM/Medium",
-                "variableId": "VariableID:2190:570"
+                "variableId": "VariableID:2190:570",
+                "codeSyntax": "var(--color-tag-part-pm-border)"
               }
             }
           },
@@ -1195,7 +1308,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Part/PM/Strong",
-                "variableId": "VariableID:2190:571"
+                "variableId": "VariableID:2190:571",
+                "codeSyntax": "var(--color-tag-part-pm-text)"
               }
             }
           }
@@ -1207,7 +1321,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Part/Design/Weaker",
-                "variableId": "VariableID:2190:572"
+                "variableId": "VariableID:2190:572",
+                "codeSyntax": "var(--color-tag-part-design-bg)"
               }
             }
           },
@@ -1217,7 +1332,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Part/Design/Weak",
-                "variableId": "VariableID:2183:8253"
+                "variableId": "VariableID:2183:8253",
+                "codeSyntax": "var(--color-tag-part-design-bg)"
               }
             }
           },
@@ -1227,7 +1343,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Part/Design/Medium",
-                "variableId": "VariableID:2190:573"
+                "variableId": "VariableID:2190:573",
+                "codeSyntax": "var(--color-tag-part-design-border)"
               }
             }
           },
@@ -1237,7 +1354,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Part/Design/Strong",
-                "variableId": "VariableID:2190:574"
+                "variableId": "VariableID:2190:574",
+                "codeSyntax": "var(--color-tag-part-design-text)"
               }
             }
           }
@@ -1249,7 +1367,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Part/Mobile-PE/Weaker",
-                "variableId": "VariableID:2191:569"
+                "variableId": "VariableID:2191:569",
+                "codeSyntax": "var(--color-tag-part-mobile-pe-bg)"
               }
             }
           },
@@ -1259,7 +1378,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Part/Mobile-PE/Weak",
-                "variableId": "VariableID:2183:8257"
+                "variableId": "VariableID:2183:8257",
+                "codeSyntax": "var(--color-tag-part-mobile-pe-bg)"
               }
             }
           },
@@ -1269,7 +1389,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Part/Mobile-PE/Medium",
-                "variableId": "VariableID:2191:570"
+                "variableId": "VariableID:2191:570",
+                "codeSyntax": "var(--color-tag-part-mobile-pe-border)"
               }
             }
           },
@@ -1279,7 +1400,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Part/Mobile-PE/Strong",
-                "variableId": "VariableID:2191:571"
+                "variableId": "VariableID:2191:571",
+                "codeSyntax": "var(--color-tag-part-mobile-pe-text)"
               }
             }
           }
@@ -1291,7 +1413,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Part/Web-PE/Weaker",
-                "variableId": "VariableID:2191:572"
+                "variableId": "VariableID:2191:572",
+                "codeSyntax": "var(--color-tag-part-web-pe-bg)"
               }
             }
           },
@@ -1301,7 +1424,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Part/Web-PE/Weak",
-                "variableId": "VariableID:2183:8261"
+                "variableId": "VariableID:2183:8261",
+                "codeSyntax": "var(--color-tag-part-web-pe-bg)"
               }
             }
           },
@@ -1311,7 +1435,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Part/Web-PE/Medium",
-                "variableId": "VariableID:2191:573"
+                "variableId": "VariableID:2191:573",
+                "codeSyntax": "var(--color-tag-part-web-pe-border)"
               }
             }
           },
@@ -1321,7 +1446,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Part/Web-PE/Strong",
-                "variableId": "VariableID:2191:574"
+                "variableId": "VariableID:2191:574",
+                "codeSyntax": "var(--color-tag-part-web-pe-text)"
               }
             }
           }
@@ -1335,7 +1461,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Role/Central/Weaker",
-                "variableId": "VariableID:2193:569"
+                "variableId": "VariableID:2193:569",
+                "codeSyntax": "var(--color-tag-role-central-bg)"
               }
             }
           },
@@ -1345,7 +1472,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Role/Central/Weak",
-                "variableId": "VariableID:2183:8282"
+                "variableId": "VariableID:2183:8282",
+                "codeSyntax": "var(--color-tag-role-central-border)"
               }
             }
           },
@@ -1355,7 +1483,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Role/Central/Medium",
-                "variableId": "VariableID:2193:570"
+                "variableId": "VariableID:2193:570",
+                "codeSyntax": "var(--color-tag-role-central-border)"
               }
             }
           },
@@ -1365,7 +1494,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Role/Central/Strong",
-                "variableId": "VariableID:2193:571"
+                "variableId": "VariableID:2193:571",
+                "codeSyntax": "var(--color-tag-role-central-text)"
               }
             }
           }
@@ -1377,7 +1507,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Role/Chapter/Weaker",
-                "variableId": "VariableID:2193:572"
+                "variableId": "VariableID:2193:572",
+                "codeSyntax": "var(--color-tag-role-chapter-bg)"
               }
             }
           },
@@ -1387,7 +1518,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Role/Chapter/Weak",
-                "variableId": "VariableID:2183:8286"
+                "variableId": "VariableID:2183:8286",
+                "codeSyntax": "var(--color-tag-role-chapter-border)"
               }
             }
           },
@@ -1397,7 +1529,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Role/Chapter/Medium",
-                "variableId": "VariableID:2193:573"
+                "variableId": "VariableID:2193:573",
+                "codeSyntax": "var(--color-tag-role-chapter-border)"
               }
             }
           },
@@ -1407,7 +1540,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Role/Chapter/Strong",
-                "variableId": "VariableID:2193:574"
+                "variableId": "VariableID:2193:574",
+                "codeSyntax": "var(--color-tag-role-chapter-text)"
               }
             }
           }
@@ -1419,7 +1553,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Role/Campus/Weaker",
-                "variableId": "VariableID:2193:575"
+                "variableId": "VariableID:2193:575",
+                "codeSyntax": "var(--color-tag-role-campus-bg)"
               }
             }
           },
@@ -1429,7 +1564,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Role/Campus/Weak",
-                "variableId": "VariableID:2195:8306"
+                "variableId": "VariableID:2195:8306",
+                "codeSyntax": "var(--color-tag-role-campus-bg)"
               }
             }
           },
@@ -1439,7 +1575,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Role/Campus/Medium",
-                "variableId": "VariableID:2193:576"
+                "variableId": "VariableID:2193:576",
+                "codeSyntax": "var(--color-tag-role-campus-border)"
               }
             }
           },
@@ -1449,7 +1586,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Role/Campus/Strong",
-                "variableId": "VariableID:2193:577"
+                "variableId": "VariableID:2193:577",
+                "codeSyntax": "var(--color-tag-role-campus-text)"
               }
             }
           }
@@ -1461,7 +1599,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Role/Challenger&Super-Admin/Weaker",
-                "variableId": "VariableID:2194:572"
+                "variableId": "VariableID:2194:572",
+                "codeSyntax": "var(--color-tag-role-super-admin-bg)"
               }
             }
           },
@@ -1471,7 +1610,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Role/Challenger&Super-Admin/Weak",
-                "variableId": "VariableID:2195:8310"
+                "variableId": "VariableID:2195:8310",
+                "codeSyntax": "var(--color-tag-role-super-admin-bg)"
               }
             }
           },
@@ -1481,7 +1621,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Role/Challenger&Super-Admin/Medium",
-                "variableId": "VariableID:2194:573"
+                "variableId": "VariableID:2194:573",
+                "codeSyntax": "var(--color-tag-role-super-admin-border)"
               }
             }
           },
@@ -1491,7 +1632,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Role/Challenger&Super-Admin/Strong",
-                "variableId": "VariableID:2194:574"
+                "variableId": "VariableID:2194:574",
+                "codeSyntax": "var(--color-tag-role-super-admin-text)"
               }
             }
           }
@@ -1503,7 +1645,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Role/Product/Weaker",
-                "variableId": "VariableID:2194:575"
+                "variableId": "VariableID:2194:575",
+                "codeSyntax": "var(--color-tag-role-product-bg)"
               }
             }
           },
@@ -1513,7 +1656,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Role/Product/Weak",
-                "variableId": "VariableID:2183:8302"
+                "variableId": "VariableID:2183:8302",
+                "codeSyntax": "var(--color-tag-role-product-border)"
               }
             }
           },
@@ -1523,7 +1667,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Role/Product/Medium",
-                "variableId": "VariableID:2194:576"
+                "variableId": "VariableID:2194:576",
+                "codeSyntax": "var(--color-tag-role-product-border)"
               }
             }
           },
@@ -1533,7 +1678,8 @@
             "$extensions": {
               "umc.figma": {
                 "name": "Semantic/Tag/Role/Product/Strong",
-                "variableId": "VariableID:2194:577"
+                "variableId": "VariableID:2194:577",
+                "codeSyntax": "var(--color-tag-role-product-text)"
               }
             }
           }

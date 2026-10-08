@@ -144,6 +144,29 @@ describe("normalizeVariables: 피그마 export 전체", () => {
     expect(names).not.toContain("Radius/Primitive/48")
   })
 
+  it("codeSyntax(WEB)를 피그마 확장에 남기고 대응표에 CSS 변수를 단다", () => {
+    const fill = entries.find(
+      (entry) => entry.path.join(".") === "color.fill.neutral.weak-75",
+    )
+    expect(fill?.token.$extensions?.["umc.figma"]).toMatchObject({
+      name: "Semantic/Fill/Neutral/Weak-75",
+      codeSyntax: "var(--color-action-primary-default)",
+    })
+    expect(
+      result.mappings.find(
+        (mapping) => mapping.figmaName === "Semantic/Fill/Neutral/Weak-75",
+      ),
+    ).toMatchObject({
+      cssVariable: "--umc-color-fill-neutral-weak-75",
+      codeSyntax: "var(--color-action-primary-default)",
+    })
+    expect(
+      result.mappings.find(
+        (mapping) => mapping.figmaName === "Primitives/Teal/Teal-300",
+      )?.codeSyntax,
+    ).toBeNull()
+  })
+
   it("codeSyntax 중복을 모은다", () => {
     const borderDefault = result.codeSyntaxDuplicates.find(
       (duplicate) => duplicate.codeSyntax === "var(--color-border-default)",

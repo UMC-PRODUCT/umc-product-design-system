@@ -30,6 +30,8 @@ description: 피그마를 코드로 옮기며 판단이 필요했던 항목을 �
 
 변수 이름, codeSyntax 중복, 그림자와 텍스트 스타일의 중복 정의 등 16개 항목은 [피그마 정규화 리포트](/contributing/figma-normalization/)의 "디자인 팀 확인 요청"에 있습니다.
 
+가장 먼저 부탁드리는 것은 codeSyntax(WEB) 정리입니다. Dev Mode 코드 패널과 피그마 MCP가 보여 주는 `var(--color-…)`는 코드에 없는 이름이고, 변수 여러 개가 같은 이름을 나눠 씁니다. 리포트의 "이름 대응표와 codeSyntax 제안"에 변수마다 넣을 값(`var(--umc-color-fill-neutral-weak-75)` 등)을 적어 두었습니다.
+
 2026-10-08에 `Label/3-Medium` 자간이 -3%로 바뀐 것을 반영했습니다. 새 컴포넌트에는 `Semantic/Border/Neutral/Disabled`, `Semantic/Fill/Neutral/Disalbed` 같은 새 변수 이름이 보입니다. 저장된 변수 스냅샷(2026-10-06)에는 `Border/Disabled/Disalbed` 같은 옛 이름만 있습니다. 변수 구조를 바꾸셨다면 알려 주세요. Export modes로 다시 받아 토큰 이름을 맞추겠습니다.
 
 ## 아이콘

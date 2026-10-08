@@ -25,7 +25,7 @@
 
 ## 디자인 팀 확인 요청
 
-1. codeSyntax(WEB)가 여러 변수에 중복으로 붙어 있습니다. 예를 들어 `var(--color-border-default)`는 `Border/Neutral/Medium-300`(회색)과 `Border/Primary/Weak-200`(틸)에 함께 붙어 있습니다. 코드는 변수 이름을 기준으로 삼았습니다. codeSyntax를 정리할지, 이 리포트의 이름 대응표를 기준으로 확정할지 정해 주세요.
+1. codeSyntax(WEB)가 여러 변수에 중복으로 붙어 있습니다. 예를 들어 `var(--color-border-default)`는 `Border/Neutral/Medium-300`(회색)과 `Border/Primary/Weak-200`(틸)에 함께 붙어 있습니다. Dev Mode 코드 패널과 피그마 MCP는 이 이름을 보여 주는데, 코드에는 없는 이름이라 개발자와 AI 도구가 길을 잃습니다. 아래 '이름 대응표와 codeSyntax 제안'의 제안 값(`var(--umc-color-…)`)으로 바꿔 줄 수 있나요? primitive와 Token 컬렉션 변수에도 같은 규칙으로 넣어 주시면 Dev Mode에 보이는 이름이 코드와 같아집니다.
 2. `Fill/Disabled/Disalbed`, `Border/Disabled/Disalbed`의 오타를 빼고 `fill.disabled`, `border.disabled`로 읽었습니다. 피그마 이름도 고칠 수 있나요?
 3. 같은 틸 역할을 Fill과 Border는 `Primary`, Background, Surface, Text, Icon은 `Brand`로 부릅니다. 한 이름으로 맞출 수 있나요?
 4. `Display/3-Bold`가 Token 컬렉션에 없는 `Typography/Base/Fontfamily/Brand`, `Fontweight/Bold`를 참조합니다(다른 라이브러리 변수로 보입니다). `FontFamily`, `FontWeight`로 다시 연결해 주세요.
@@ -185,317 +185,319 @@ primitive를 참조하지 않고 값을 직접 가진 semantic이다. 투명도�
 | `Heading/7-Semibold` | `get-variable-defs.2621-32882.json` | `Font(family: "Pretendard Variable", style: SemiBold, size: 18, weight: 600, lineHeight: 1.399999976158142, letterSpacing: -1)` | 글꼴을 값으로 직접 적은 정의(2기 스타일로 보임) |
 | `Subtitle/2-Medium` | `get-variable-defs.2621-32882.json` | `Font(family: "Pretendard Variable", style: Medium, size: 18, weight: 500, lineHeight: 1.5, letterSpacing: -1)` | 이름 규칙 밖의 스타일 |
 
-## 이름 대응표
+## 이름 대응표와 codeSyntax 제안
 
-| 피그마 변수 | 코드 토큰 | 토큰 파일 |
-| --- | --- | --- |
-| `Semantic/Icon/Disabled` | `color.icon.disabled` | color.semantic.json |
-| `Semantic/Icon/Inverse` | `color.icon.inverse` | color.semantic.json |
-| `Semantic/Icon/Neutral-Weak-400` | `color.icon.neutral-weak-400` | color.semantic.json |
-| `Semantic/Icon/Neutral-Medium-500` | `color.icon.neutral-medium-500` | color.semantic.json |
-| `Semantic/Icon/Neutral-Strong-600` | `color.icon.neutral-strong-600` | color.semantic.json |
-| `Semantic/Icon/Neutral-Stronger-700` | `color.icon.neutral-stronger-700` | color.semantic.json |
-| `Semantic/Icon/Brand-Medium-500` | `color.icon.brand-medium-500` | color.semantic.json |
-| `Semantic/Icon/Brand-Strong-600` | `color.icon.brand-strong-600` | color.semantic.json |
-| `Semantic/Icon/Success` | `color.icon.success` | color.semantic.json |
-| `Semantic/Icon/Error` | `color.icon.error` | color.semantic.json |
-| `Semantic/Icon/Warning` | `color.icon.warning` | color.semantic.json |
-| `Semantic/Fill/Disabled/Disalbed` | `color.fill.disabled` | color.semantic.json |
-| `Semantic/Fill/Neutral/Weaker-50` | `color.fill.neutral.weaker-50` | color.semantic.json |
-| `Semantic/Fill/Neutral/Weaker-Hover(Pressed)` | `color.fill.neutral.weaker-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Neutral/Weak-75` | `color.fill.neutral.weak-75` | color.semantic.json |
-| `Semantic/Fill/Neutral/Weak-Hover(Pressed)` | `color.fill.neutral.weak-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Neutral/Medium-100` | `color.fill.neutral.medium-100` | color.semantic.json |
-| `Semantic/Fill/Neutral/Medium-Hover(Pressed)` | `color.fill.neutral.medium-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Neutral/Strong-200` | `color.fill.neutral.strong-200` | color.semantic.json |
-| `Semantic/Fill/Neutral/Strong-Hover(Pressed)` | `color.fill.neutral.strong-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Neutral/Default` | `color.fill.neutral.default` | color.semantic.json |
-| `Semantic/Fill/Neutral-Inverse/Weak-400` | `color.fill.neutral-inverse.weak-400` | color.semantic.json |
-| `Semantic/Fill/Neutral-Inverse/Weak-Hover(Pressed)` | `color.fill.neutral-inverse.weak-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Neutral-Inverse/Medium-500` | `color.fill.neutral-inverse.medium-500` | color.semantic.json |
-| `Semantic/Fill/Neutral-Inverse/Medium-Hover(Pressed)` | `color.fill.neutral-inverse.medium-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Neutral-Inverse/Strong-600` | `color.fill.neutral-inverse.strong-600` | color.semantic.json |
-| `Semantic/Fill/Neutral-Inverse/Strong-Hover(Pressed)` | `color.fill.neutral-inverse.strong-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Neutral-Inverse/Stronger-700` | `color.fill.neutral-inverse.stronger-700` | color.semantic.json |
-| `Semantic/Fill/Neutral-Inverse/Stronger-Hover(Pressed)` | `color.fill.neutral-inverse.stronger-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Primary/Weaker-50` | `color.fill.primary.weaker-50` | color.semantic.json |
-| `Semantic/Fill/Primary/Weaker-Hover(Pressed)` | `color.fill.primary.weaker-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Primary/Weak-75` | `color.fill.primary.weak-75` | color.semantic.json |
-| `Semantic/Fill/Primary/Weak-Hover(Pressed)` | `color.fill.primary.weak-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Primary/Medium-100` | `color.fill.primary.medium-100` | color.semantic.json |
-| `Semantic/Fill/Primary/Medium-Hover(Pressed)` | `color.fill.primary.medium-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Primary/Strong-200` | `color.fill.primary.strong-200` | color.semantic.json |
-| `Semantic/Fill/Primary/Strong-Hover(Pressed)` | `color.fill.primary.strong-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Primary/Stronger-300` | `color.fill.primary.stronger-300` | color.semantic.json |
-| `Semantic/Fill/Primary/Stronger-Hover(Pressed)-400` | `color.fill.primary.stronger-hover-pressed-400` | color.semantic.json |
-| `Semantic/Fill/Primary-Inverse/Medium-400` | `color.fill.primary-inverse.medium-400` | color.semantic.json |
-| `Semantic/Fill/Primary-Inverse/Medium-Hover(Pressed)` | `color.fill.primary-inverse.medium-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Primary-Inverse/Strong-500` | `color.fill.primary-inverse.strong-500` | color.semantic.json |
-| `Semantic/Fill/Primary-Inverse/Strong-Hover(Pressed)` | `color.fill.primary-inverse.strong-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Primary-Inverse/Stronger-600` | `color.fill.primary-inverse.stronger-600` | color.semantic.json |
-| `Semantic/Fill/Primary-Inverse/Stronger-Hover(Pressed)` | `color.fill.primary-inverse.stronger-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Error/Weak-50` | `color.fill.error.weak-50` | color.semantic.json |
-| `Semantic/Fill/Error/Weak-Hover(Pressed)` | `color.fill.error.weak-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Error/Medium-100` | `color.fill.error.medium-100` | color.semantic.json |
-| `Semantic/Fill/Error/Medium-Hover(Pressed)` | `color.fill.error.medium-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Error/Strong-500` | `color.fill.error.strong-500` | color.semantic.json |
-| `Semantic/Fill/Error/Strong-Hover(Pressed)` | `color.fill.error.strong-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Warning/Weak` | `color.fill.warning.weak` | color.semantic.json |
-| `Semantic/Fill/Warning/Weak-Hover(Pressed)` | `color.fill.warning.weak-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Warning/Medium` | `color.fill.warning.medium` | color.semantic.json |
-| `Semantic/Fill/Warning/Medium-Hover(Pressed)` | `color.fill.warning.medium-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Warning/Strong` | `color.fill.warning.strong` | color.semantic.json |
-| `Semantic/Fill/Warning/Strong-Hover(Pressed)` | `color.fill.warning.strong-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Success/Weak` | `color.fill.success.weak` | color.semantic.json |
-| `Semantic/Fill/Success/Weak-Hover(Pressed)` | `color.fill.success.weak-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Success/Medium` | `color.fill.success.medium` | color.semantic.json |
-| `Semantic/Fill/Success/Medium-Hover(Pressed)` | `color.fill.success.medium-hover-pressed` | color.semantic.json |
-| `Semantic/Fill/Success/Strong` | `color.fill.success.strong` | color.semantic.json |
-| `Semantic/Fill/Success/Strong-Hover(Pressed)` | `color.fill.success.strong-hover-pressed` | color.semantic.json |
-| `Semantic/Background/Default` | `color.background.default` | color.semantic.json |
-| `Semantic/Background/Neutral-Weak` | `color.background.neutral-weak` | color.semantic.json |
-| `Semantic/Background/Neutral-Medium` | `color.background.neutral-medium` | color.semantic.json |
-| `Semantic/Background/Brand-Weak` | `color.background.brand-weak` | color.semantic.json |
-| `Semantic/Background/Brand-Medium` | `color.background.brand-medium` | color.semantic.json |
-| `Semantic/Surface/Default` | `color.surface.default` | color.semantic.json |
-| `Semantic/Surface/Disabled` | `color.surface.disabled` | color.semantic.json |
-| `Semantic/Surface/Neutral-Weak` | `color.surface.neutral-weak` | color.semantic.json |
-| `Semantic/Surface/Neutral-Medium` | `color.surface.neutral-medium` | color.semantic.json |
-| `Semantic/Surface/Neutral-Inverse` | `color.surface.neutral-inverse` | color.semantic.json |
-| `Semantic/Surface/Brand-Weak` | `color.surface.brand-weak` | color.semantic.json |
-| `Semantic/Surface/Brand-Medium` | `color.surface.brand-medium` | color.semantic.json |
-| `Semantic/Surface/Brand-Inverse` | `color.surface.brand-inverse` | color.semantic.json |
-| `Semantic/Text/Inverse` | `color.text.inverse` | color.semantic.json |
-| `Semantic/Text/Disabled` | `color.text.disabled` | color.semantic.json |
-| `Semantic/Text/Placeholder` | `color.text.placeholder` | color.semantic.json |
-| `Semantic/Text/Neutral-Weak-500` | `color.text.neutral-weak-500` | color.semantic.json |
-| `Semantic/Text/Neutral-Medium-600` | `color.text.neutral-medium-600` | color.semantic.json |
-| `Semantic/Text/Neutral-Strong-800` | `color.text.neutral-strong-800` | color.semantic.json |
-| `Semantic/Text/Neutral-Default` | `color.text.neutral-default` | color.semantic.json |
-| `Semantic/Text/Brand-Disabled` | `color.text.brand-disabled` | color.semantic.json |
-| `Semantic/Text/Brand-Default` | `color.text.brand-default` | color.semantic.json |
-| `Semantic/Text/Brand-Strong` | `color.text.brand-strong` | color.semantic.json |
-| `Semantic/Text/Success` | `color.text.success` | color.semantic.json |
-| `Semantic/Text/Error` | `color.text.error` | color.semantic.json |
-| `Semantic/Text/Warning` | `color.text.warning` | color.semantic.json |
-| `Semantic/Border/Disabled/Disalbed` | `color.border.disabled` | color.semantic.json |
-| `Semantic/Border/Neutral/Weaker-100` | `color.border.neutral.weaker-100` | color.semantic.json |
-| `Semantic/Border/Neutral/Weak-200` | `color.border.neutral.weak-200` | color.semantic.json |
-| `Semantic/Border/Neutral/Medium-300` | `color.border.neutral.medium-300` | color.semantic.json |
-| `Semantic/Border/Neutral/Strong-400` | `color.border.neutral.strong-400` | color.semantic.json |
-| `Semantic/Border/Neutral/Stronger-600` | `color.border.neutral.stronger-600` | color.semantic.json |
-| `Semantic/Border/Neutral/Default` | `color.border.neutral.default` | color.semantic.json |
-| `Semantic/Border/Primary/Weaker-100` | `color.border.primary.weaker-100` | color.semantic.json |
-| `Semantic/Border/Primary/Weak-200` | `color.border.primary.weak-200` | color.semantic.json |
-| `Semantic/Border/Primary/Medium-300` | `color.border.primary.medium-300` | color.semantic.json |
-| `Semantic/Border/Primary/Strong-500` | `color.border.primary.strong-500` | color.semantic.json |
-| `Semantic/Border/Error/Weaker-100` | `color.border.error.weaker-100` | color.semantic.json |
-| `Semantic/Border/Error/Weak-200` | `color.border.error.weak-200` | color.semantic.json |
-| `Semantic/Border/Error/Medium-300` | `color.border.error.medium-300` | color.semantic.json |
-| `Semantic/Border/Error/Strong-500` | `color.border.error.strong-500` | color.semantic.json |
-| `Semantic/Border/Warning/Weaker-100` | `color.border.warning.weaker-100` | color.semantic.json |
-| `Semantic/Border/Warning/Weak-200` | `color.border.warning.weak-200` | color.semantic.json |
-| `Semantic/Border/Warning/Medium-300` | `color.border.warning.medium-300` | color.semantic.json |
-| `Semantic/Border/Warning/Strong-500` | `color.border.warning.strong-500` | color.semantic.json |
-| `Semantic/Border/Success/Weaker` | `color.border.success.weaker` | color.semantic.json |
-| `Semantic/Border/Success/Weak` | `color.border.success.weak` | color.semantic.json |
-| `Semantic/Border/Success/Medium` | `color.border.success.medium` | color.semantic.json |
-| `Semantic/Border/Success/Strong` | `color.border.success.strong` | color.semantic.json |
-| `Semantic/Tag/Part/PM/Weaker` | `color.tag.part.pm.weaker` | color.semantic.json |
-| `Semantic/Tag/Part/PM/Weak` | `color.tag.part.pm.weak` | color.semantic.json |
-| `Semantic/Tag/Part/PM/Medium` | `color.tag.part.pm.medium` | color.semantic.json |
-| `Semantic/Tag/Part/PM/Strong` | `color.tag.part.pm.strong` | color.semantic.json |
-| `Semantic/Tag/Part/Design/Weaker` | `color.tag.part.design.weaker` | color.semantic.json |
-| `Semantic/Tag/Part/Design/Weak` | `color.tag.part.design.weak` | color.semantic.json |
-| `Semantic/Tag/Part/Design/Medium` | `color.tag.part.design.medium` | color.semantic.json |
-| `Semantic/Tag/Part/Design/Strong` | `color.tag.part.design.strong` | color.semantic.json |
-| `Semantic/Tag/Part/Mobile-PE/Weaker` | `color.tag.part.mobile-pe.weaker` | color.semantic.json |
-| `Semantic/Tag/Part/Mobile-PE/Weak` | `color.tag.part.mobile-pe.weak` | color.semantic.json |
-| `Semantic/Tag/Part/Mobile-PE/Medium` | `color.tag.part.mobile-pe.medium` | color.semantic.json |
-| `Semantic/Tag/Part/Mobile-PE/Strong` | `color.tag.part.mobile-pe.strong` | color.semantic.json |
-| `Semantic/Tag/Part/Web-PE/Weaker` | `color.tag.part.web-pe.weaker` | color.semantic.json |
-| `Semantic/Tag/Part/Web-PE/Weak` | `color.tag.part.web-pe.weak` | color.semantic.json |
-| `Semantic/Tag/Part/Web-PE/Medium` | `color.tag.part.web-pe.medium` | color.semantic.json |
-| `Semantic/Tag/Part/Web-PE/Strong` | `color.tag.part.web-pe.strong` | color.semantic.json |
-| `Semantic/Tag/Role/Central/Weaker` | `color.tag.role.central.weaker` | color.semantic.json |
-| `Semantic/Tag/Role/Central/Weak` | `color.tag.role.central.weak` | color.semantic.json |
-| `Semantic/Tag/Role/Central/Medium` | `color.tag.role.central.medium` | color.semantic.json |
-| `Semantic/Tag/Role/Central/Strong` | `color.tag.role.central.strong` | color.semantic.json |
-| `Semantic/Tag/Role/Chapter/Weaker` | `color.tag.role.chapter.weaker` | color.semantic.json |
-| `Semantic/Tag/Role/Chapter/Weak` | `color.tag.role.chapter.weak` | color.semantic.json |
-| `Semantic/Tag/Role/Chapter/Medium` | `color.tag.role.chapter.medium` | color.semantic.json |
-| `Semantic/Tag/Role/Chapter/Strong` | `color.tag.role.chapter.strong` | color.semantic.json |
-| `Semantic/Tag/Role/Campus/Weaker` | `color.tag.role.campus.weaker` | color.semantic.json |
-| `Semantic/Tag/Role/Campus/Weak` | `color.tag.role.campus.weak` | color.semantic.json |
-| `Semantic/Tag/Role/Campus/Medium` | `color.tag.role.campus.medium` | color.semantic.json |
-| `Semantic/Tag/Role/Campus/Strong` | `color.tag.role.campus.strong` | color.semantic.json |
-| `Semantic/Tag/Role/Challenger&Super-Admin/Weaker` | `color.tag.role.challenger-super-admin.weaker` | color.semantic.json |
-| `Semantic/Tag/Role/Challenger&Super-Admin/Weak` | `color.tag.role.challenger-super-admin.weak` | color.semantic.json |
-| `Semantic/Tag/Role/Challenger&Super-Admin/Medium` | `color.tag.role.challenger-super-admin.medium` | color.semantic.json |
-| `Semantic/Tag/Role/Challenger&Super-Admin/Strong` | `color.tag.role.challenger-super-admin.strong` | color.semantic.json |
-| `Semantic/Tag/Role/Product/Weaker` | `color.tag.role.product.weaker` | color.semantic.json |
-| `Semantic/Tag/Role/Product/Weak` | `color.tag.role.product.weak` | color.semantic.json |
-| `Semantic/Tag/Role/Product/Medium` | `color.tag.role.product.medium` | color.semantic.json |
-| `Semantic/Tag/Role/Product/Strong` | `color.tag.role.product.strong` | color.semantic.json |
-| `Semantic/Dimmed/Weak` | `color.dimmed.weak` | color.semantic.json |
-| `Semantic/Dimmed/Medium` | `color.dimmed.medium` | color.semantic.json |
-| `Semantic/Dimmed/Strong` | `color.dimmed.strong` | color.semantic.json |
-| `Primitives/Base/White` | `color.white` | color.primitive.json |
-| `Primitives/Base/Black` | `color.black` | color.primitive.json |
-| `Primitives/Grey/TealGrey-50` | `color.teal-grey.50` | color.primitive.json |
-| `Primitives/Grey/TealGrey-75` | `color.teal-grey.75` | color.primitive.json |
-| `Primitives/Grey/TealGrey-100` | `color.teal-grey.100` | color.primitive.json |
-| `Primitives/Grey/TealGrey-200` | `color.teal-grey.200` | color.primitive.json |
-| `Primitives/Grey/TealGrey-300` | `color.teal-grey.300` | color.primitive.json |
-| `Primitives/Grey/TealGrey-400` | `color.teal-grey.400` | color.primitive.json |
-| `Primitives/Grey/TealGrey-500` | `color.teal-grey.500` | color.primitive.json |
-| `Primitives/Grey/TealGrey-600` | `color.teal-grey.600` | color.primitive.json |
-| `Primitives/Grey/TealGrey-700` | `color.teal-grey.700` | color.primitive.json |
-| `Primitives/Grey/TealGrey-800` | `color.teal-grey.800` | color.primitive.json |
-| `Primitives/Grey/TealGrey-900` | `color.teal-grey.900` | color.primitive.json |
-| `Primitives/Teal/Teal-50` | `color.teal.50` | color.primitive.json |
-| `Primitives/Teal/Teal-75` | `color.teal.75` | color.primitive.json |
-| `Primitives/Teal/Teal-100` | `color.teal.100` | color.primitive.json |
-| `Primitives/Teal/Teal-200` | `color.teal.200` | color.primitive.json |
-| `Primitives/Teal/Teal-300` | `color.teal.300` | color.primitive.json |
-| `Primitives/Teal/Teal-400` | `color.teal.400` | color.primitive.json |
-| `Primitives/Teal/Teal-500` | `color.teal.500` | color.primitive.json |
-| `Primitives/Teal/Teal-600` | `color.teal.600` | color.primitive.json |
-| `Primitives/Teal/Teal-700` | `color.teal.700` | color.primitive.json |
-| `Primitives/Teal/Teal-800` | `color.teal.800` | color.primitive.json |
-| `Primitives/Teal/Teal-900` | `color.teal.900` | color.primitive.json |
-| `Primitives/Red/Red-50` | `color.red.50` | color.primitive.json |
-| `Primitives/Red/Red-100` | `color.red.100` | color.primitive.json |
-| `Primitives/Red/Red-200` | `color.red.200` | color.primitive.json |
-| `Primitives/Red/Red-300` | `color.red.300` | color.primitive.json |
-| `Primitives/Red/Red-400` | `color.red.400` | color.primitive.json |
-| `Primitives/Red/Red-500` | `color.red.500` | color.primitive.json |
-| `Primitives/Red/Red-600` | `color.red.600` | color.primitive.json |
-| `Primitives/Red/Red-700` | `color.red.700` | color.primitive.json |
-| `Primitives/Red/Red-800` | `color.red.800` | color.primitive.json |
-| `Primitives/Red/Red-900` | `color.red.900` | color.primitive.json |
-| `Primitives/Yellow/Yellow-50` | `color.yellow.50` | color.primitive.json |
-| `Primitives/Yellow/Yellow-100` | `color.yellow.100` | color.primitive.json |
-| `Primitives/Yellow/Yellow-200` | `color.yellow.200` | color.primitive.json |
-| `Primitives/Yellow/Yellow-300` | `color.yellow.300` | color.primitive.json |
-| `Primitives/Yellow/Yellow-400` | `color.yellow.400` | color.primitive.json |
-| `Primitives/Yellow/Yellow-500` | `color.yellow.500` | color.primitive.json |
-| `Primitives/Yellow/Yellow-600` | `color.yellow.600` | color.primitive.json |
-| `Primitives/Yellow/Yellow-700` | `color.yellow.700` | color.primitive.json |
-| `Primitives/Yellow/Yellow-800` | `color.yellow.800` | color.primitive.json |
-| `Primitives/Yellow/Yellow-900` | `color.yellow.900` | color.primitive.json |
-| `Primitives/Green/Green-50` | `color.green.50` | color.primitive.json |
-| `Primitives/Green/Green-100` | `color.green.100` | color.primitive.json |
-| `Primitives/Green/Green-200` | `color.green.200` | color.primitive.json |
-| `Primitives/Green/Green-300` | `color.green.300` | color.primitive.json |
-| `Primitives/Green/Green-400` | `color.green.400` | color.primitive.json |
-| `Primitives/Green/Green-500` | `color.green.500` | color.primitive.json |
-| `Primitives/Green/Green-600` | `color.green.600` | color.primitive.json |
-| `Primitives/Green/Green-700` | `color.green.700` | color.primitive.json |
-| `Primitives/Green/Green-800` | `color.green.800` | color.primitive.json |
-| `Primitives/Green/Green-900` | `color.green.900` | color.primitive.json |
-| `Primitives/Violet/Violet-50` | `color.violet.50` | color.primitive.json |
-| `Primitives/Violet/Violet-100` | `color.violet.100` | color.primitive.json |
-| `Primitives/Violet/Violet-500` | `color.violet.500` | color.primitive.json |
-| `Primitives/Violet/Violet-600` | `color.violet.600` | color.primitive.json |
-| `Primitives/Purple/Purple-50` | `color.purple.50` | color.primitive.json |
-| `Primitives/Purple/Purple-100` | `color.purple.100` | color.primitive.json |
-| `Primitives/Purple/Purple-500` | `color.purple.500` | color.primitive.json |
-| `Primitives/Purple/Purple-600` | `color.purple.600` | color.primitive.json |
-| `Primitives/Pink/Pink-50` | `color.pink.50` | color.primitive.json |
-| `Primitives/Pink/Pink-100` | `color.pink.100` | color.primitive.json |
-| `Primitives/Pink/Pink-500` | `color.pink.500` | color.primitive.json |
-| `Primitives/Pink/Pink-600` | `color.pink.600` | color.primitive.json |
-| `Primitives/Cobalt/Cobalt-50` | `color.cobalt.50` | color.primitive.json |
-| `Primitives/Cobalt/Cobalt-100` | `color.cobalt.100` | color.primitive.json |
-| `Primitives/Cobalt/Cobalt-500` | `color.cobalt.500` | color.primitive.json |
-| `Primitives/Cobalt/Cobalt-600` | `color.cobalt.600` | color.primitive.json |
-| `Primitives/Blue/Blue-50` | `color.blue.50` | color.primitive.json |
-| `Primitives/Blue/Blue-100` | `color.blue.100` | color.primitive.json |
-| `Primitives/Blue/Blue-500` | `color.blue.500` | color.primitive.json |
-| `Primitives/Blue/Blue-600` | `color.blue.600` | color.primitive.json |
-| `Primitives/Brown/Brown-50` | `color.brown.50` | color.primitive.json |
-| `Primitives/Brown/Brown-100` | `color.brown.100` | color.primitive.json |
-| `Primitives/Brown/Brown-500` | `color.brown.500` | color.primitive.json |
-| `Primitives/Brown/Brown-600` | `color.brown.600` | color.primitive.json |
-| `Typography/Base/FontSize/48px` | `font-size.48` | font.json |
-| `Typography/Base/FontSize/40px` | `font-size.40` | font.json |
-| `Typography/Base/FontSize/36px` | `font-size.36` | font.json |
-| `Typography/Base/FontSize/32px` | `font-size.32` | font.json |
-| `Typography/Base/FontSize/28px` | `font-size.28` | font.json |
-| `Typography/Base/FontSize/24px` | `font-size.24` | font.json |
-| `Typography/Base/FontSize/22px` | `font-size.22` | font.json |
-| `Typography/Base/FontSize/20px` | `font-size.20` | font.json |
-| `Typography/Base/FontSize/18px` | `font-size.18` | font.json |
-| `Typography/Base/FontSize/16px` | `font-size.16` | font.json |
-| `Typography/Base/FontSize/15px` | `font-size.15` | font.json |
-| `Typography/Base/FontSize/14px` | `font-size.14` | font.json |
-| `Typography/Base/FontSize/13px` | `font-size.13` | font.json |
-| `Typography/Base/FontSize/12px` | `font-size.12` | font.json |
-| `Typography/Base/FontSize/11px` | `font-size.11` | font.json |
-| `Typography/Base/FontFamily/Brand` | `font-family.brand` | font.json |
-| `Typography/Base/FontWeight/Regular` | `font-weight.regular` | font.json |
-| `Typography/Base/FontWeight/Medium` | `font-weight.medium` | font.json |
-| `Typography/Base/FontWeight/Semibold` | `font-weight.semibold` | font.json |
-| `Typography/Base/FontWeight/Bold` | `font-weight.bold` | font.json |
-| `Spacing/Primitive/0` | `spacing.0` | spacing.json |
-| `Spacing/Primitive/2` | `spacing.2` | spacing.json |
-| `Spacing/Primitive/4` | `spacing.4` | spacing.json |
-| `Spacing/Primitive/6` | `spacing.6` | spacing.json |
-| `Spacing/Primitive/8` | `spacing.8` | spacing.json |
-| `Spacing/Primitive/10` | `spacing.10` | spacing.json |
-| `Spacing/Primitive/12` | `spacing.12` | spacing.json |
-| `Spacing/Primitive/16` | `spacing.16` | spacing.json |
-| `Spacing/Primitive/20` | `spacing.20` | spacing.json |
-| `Spacing/Primitive/24` | `spacing.24` | spacing.json |
-| `Spacing/Primitive/28` | `spacing.28` | spacing.json |
-| `Spacing/Primitive/32` | `spacing.32` | spacing.json |
-| `Spacing/Primitive/48` | `spacing.48` | spacing.json |
-| `Spacing/Primitive/64` | `spacing.64` | spacing.json |
-| `Spacing/Primitive/80` | `spacing.80` | spacing.json |
-| `Spacing/Semantic/Padding/Padding 0` | `spacing.padding.0` | spacing.json |
-| `Spacing/Semantic/Padding/Padding 4` | `spacing.padding.4` | spacing.json |
-| `Spacing/Semantic/Padding/Padding 6` | `spacing.padding.6` | spacing.json |
-| `Spacing/Semantic/Padding/Padding 8` | `spacing.padding.8` | spacing.json |
-| `Spacing/Semantic/Padding/Padding 10` | `spacing.padding.10` | spacing.json |
-| `Spacing/Semantic/Padding/Padding 12` | `spacing.padding.12` | spacing.json |
-| `Spacing/Semantic/Padding/Padding 16` | `spacing.padding.16` | spacing.json |
-| `Spacing/Semantic/Padding/Padding 20` | `spacing.padding.20` | spacing.json |
-| `Spacing/Semantic/Padding/Padding 24` | `spacing.padding.24` | spacing.json |
-| `Spacing/Semantic/Padding/Padding 28` | `spacing.padding.28` | spacing.json |
-| `Spacing/Semantic/Padding/Padding 32` | `spacing.padding.32` | spacing.json |
-| `Spacing/Semantic/Gap/Gap 0` | `spacing.gap.0` | spacing.json |
-| `Spacing/Semantic/Gap/Gap 4` | `spacing.gap.4` | spacing.json |
-| `Spacing/Semantic/Gap/Gap 6` | `spacing.gap.6` | spacing.json |
-| `Spacing/Semantic/Gap/Gap 8` | `spacing.gap.8` | spacing.json |
-| `Spacing/Semantic/Gap/Gap 10` | `spacing.gap.10` | spacing.json |
-| `Spacing/Semantic/Gap/Gap 12` | `spacing.gap.12` | spacing.json |
-| `Spacing/Semantic/Gap/Gap 16` | `spacing.gap.16` | spacing.json |
-| `Spacing/Semantic/Gap/Gap 20` | `spacing.gap.20` | spacing.json |
-| `Spacing/Semantic/Gap/Gap 24` | `spacing.gap.24` | spacing.json |
-| `Spacing/Semantic/Gap/Gap 28` | `spacing.gap.28` | spacing.json |
-| `Spacing/Semantic/Gap/Gap 32` | `spacing.gap.32` | spacing.json |
-| `Spacing/Semantic/Margin/Margin 0` | `spacing.margin.0` | spacing.json |
-| `Spacing/Semantic/Margin/Margin 16` | `spacing.margin.16` | spacing.json |
-| `Spacing/Semantic/Margin/Margin 24` | `spacing.margin.24` | spacing.json |
-| `Spacing/Semantic/Margin/Margin 32` | `spacing.margin.32` | spacing.json |
-| `Spacing/Semantic/Margin/Margin 48` | `spacing.margin.48` | spacing.json |
-| `Spacing/Semantic/Margin/Margin 64` | `spacing.margin.64` | spacing.json |
-| `Spacing/Semantic/Margin/Margin 80` | `spacing.margin.80` | spacing.json |
-| `Radius/Primitive/6` | `radius.6` | radius.json |
-| `Radius/Primitive/8` | `radius.8` | radius.json |
-| `Radius/Primitive/10` | `radius.10` | radius.json |
-| `Radius/Primitive/12` | `radius.12` | radius.json |
-| `Radius/Primitive/14` | `radius.14` | radius.json |
-| `Radius/Primitive/16` | `radius.16` | radius.json |
-| `Radius/Primitive/18` | `radius.18` | radius.json |
-| `Radius/Primitive/20` | `radius.20` | radius.json |
-| `Radius/Primitive/24` | `radius.24` | radius.json |
-| `Radius/Primitive/Full` | `radius.full` | radius.json |
-| `Radius/Semantic/Text Field/Box` | `radius.text-field.box` | radius.json |
-| `Radius/Semantic/Button/R Button 10` | `radius.button.10` | radius.json |
-| `Radius/Semantic/Button/R Button 12` | `radius.button.12` | radius.json |
-| `Radius/Semantic/Button/R Button 14` | `radius.button.14` | radius.json |
-| `Radius/Semantic/Button/R Button 16` | `radius.button.16` | radius.json |
-| `Radius/Semantic/Toast/Toast` | `radius.toast` | radius.json |
-| `Radius/Semantic/Segmented Control/XS` | `radius.segmented-control.xs` | radius.json |
+codeSyntax(WEB)를 셋째 칸 값으로 바꾸면 Dev Mode 코드 패널과 피그마 MCP가 코드에 있는 CSS 변수를 그대로 보여 준다.
+
+| 피그마 변수 | 코드 토큰 | 제안 codeSyntax(WEB) | 지금 codeSyntax(WEB) |
+| --- | --- | --- | --- |
+| `Semantic/Icon/Disabled` | `color.icon.disabled` | `var(--umc-color-icon-disabled)` | `var(--color-icon-disabled)` |
+| `Semantic/Icon/Inverse` | `color.icon.inverse` | `var(--umc-color-icon-inverse)` | `var(--color-icon-inverse)` |
+| `Semantic/Icon/Neutral-Weak-400` | `color.icon.neutral-weak-400` | `var(--umc-color-icon-neutral-weak-400)` | `var(--color-icon-subtle)` |
+| `Semantic/Icon/Neutral-Medium-500` | `color.icon.neutral-medium-500` | `var(--umc-color-icon-neutral-medium-500)` | `var(--color-icon-subtle)` |
+| `Semantic/Icon/Neutral-Strong-600` | `color.icon.neutral-strong-600` | `var(--umc-color-icon-neutral-strong-600)` | `var(--color-icon-default)` |
+| `Semantic/Icon/Neutral-Stronger-700` | `color.icon.neutral-stronger-700` | `var(--umc-color-icon-neutral-stronger-700)` | `var(--color-icon-strong)` |
+| `Semantic/Icon/Brand-Medium-500` | `color.icon.brand-medium-500` | `var(--umc-color-icon-brand-medium-500)` | `var(--color-icon-brand)` |
+| `Semantic/Icon/Brand-Strong-600` | `color.icon.brand-strong-600` | `var(--umc-color-icon-brand-strong-600)` | `var(--color-icon-brand)` |
+| `Semantic/Icon/Success` | `color.icon.success` | `var(--umc-color-icon-success)` | `var(--color-icon-brand)` |
+| `Semantic/Icon/Error` | `color.icon.error` | `var(--umc-color-icon-error)` | `var(--color-icon-brand)` |
+| `Semantic/Icon/Warning` | `color.icon.warning` | `var(--umc-color-icon-warning)` | `var(--color-icon-brand)` |
+| `Semantic/Fill/Disabled/Disalbed` | `color.fill.disabled` | `var(--umc-color-fill-disabled)` | 없음 |
+| `Semantic/Fill/Neutral/Weaker-50` | `color.fill.neutral.weaker-50` | `var(--umc-color-fill-neutral-weaker-50)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Neutral/Weaker-Hover(Pressed)` | `color.fill.neutral.weaker-hover-pressed` | `var(--umc-color-fill-neutral-weaker-hover-pressed)` | `var(--color-action-primary-hover)` |
+| `Semantic/Fill/Neutral/Weak-75` | `color.fill.neutral.weak-75` | `var(--umc-color-fill-neutral-weak-75)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Neutral/Weak-Hover(Pressed)` | `color.fill.neutral.weak-hover-pressed` | `var(--umc-color-fill-neutral-weak-hover-pressed)` | `var(--color-action-primary-pressed)` |
+| `Semantic/Fill/Neutral/Medium-100` | `color.fill.neutral.medium-100` | `var(--umc-color-fill-neutral-medium-100)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Neutral/Medium-Hover(Pressed)` | `color.fill.neutral.medium-hover-pressed` | `var(--umc-color-fill-neutral-medium-hover-pressed)` | `var(--color-action-primary-pressed)` |
+| `Semantic/Fill/Neutral/Strong-200` | `color.fill.neutral.strong-200` | `var(--umc-color-fill-neutral-strong-200)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Neutral/Strong-Hover(Pressed)` | `color.fill.neutral.strong-hover-pressed` | `var(--umc-color-fill-neutral-strong-hover-pressed)` | `var(--color-action-primary-hover)` |
+| `Semantic/Fill/Neutral/Default` | `color.fill.neutral.default` | `var(--umc-color-fill-neutral-default)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Neutral-Inverse/Weak-400` | `color.fill.neutral-inverse.weak-400` | `var(--umc-color-fill-neutral-inverse-weak-400)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Neutral-Inverse/Weak-Hover(Pressed)` | `color.fill.neutral-inverse.weak-hover-pressed` | `var(--umc-color-fill-neutral-inverse-weak-hover-pressed)` | `var(--color-action-primary-pressed)` |
+| `Semantic/Fill/Neutral-Inverse/Medium-500` | `color.fill.neutral-inverse.medium-500` | `var(--umc-color-fill-neutral-inverse-medium-500)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Neutral-Inverse/Medium-Hover(Pressed)` | `color.fill.neutral-inverse.medium-hover-pressed` | `var(--umc-color-fill-neutral-inverse-medium-hover-pressed)` | `var(--color-action-primary-pressed)` |
+| `Semantic/Fill/Neutral-Inverse/Strong-600` | `color.fill.neutral-inverse.strong-600` | `var(--umc-color-fill-neutral-inverse-strong-600)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Neutral-Inverse/Strong-Hover(Pressed)` | `color.fill.neutral-inverse.strong-hover-pressed` | `var(--umc-color-fill-neutral-inverse-strong-hover-pressed)` | `var(--color-action-primary-pressed)` |
+| `Semantic/Fill/Neutral-Inverse/Stronger-700` | `color.fill.neutral-inverse.stronger-700` | `var(--umc-color-fill-neutral-inverse-stronger-700)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Neutral-Inverse/Stronger-Hover(Pressed)` | `color.fill.neutral-inverse.stronger-hover-pressed` | `var(--umc-color-fill-neutral-inverse-stronger-hover-pressed)` | `var(--color-action-primary-pressed)` |
+| `Semantic/Fill/Primary/Weaker-50` | `color.fill.primary.weaker-50` | `var(--umc-color-fill-primary-weaker-50)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Primary/Weaker-Hover(Pressed)` | `color.fill.primary.weaker-hover-pressed` | `var(--umc-color-fill-primary-weaker-hover-pressed)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Primary/Weak-75` | `color.fill.primary.weak-75` | `var(--umc-color-fill-primary-weak-75)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Primary/Weak-Hover(Pressed)` | `color.fill.primary.weak-hover-pressed` | `var(--umc-color-fill-primary-weak-hover-pressed)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Primary/Medium-100` | `color.fill.primary.medium-100` | `var(--umc-color-fill-primary-medium-100)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Primary/Medium-Hover(Pressed)` | `color.fill.primary.medium-hover-pressed` | `var(--umc-color-fill-primary-medium-hover-pressed)` | `var(--color-action-primary-pressed)` |
+| `Semantic/Fill/Primary/Strong-200` | `color.fill.primary.strong-200` | `var(--umc-color-fill-primary-strong-200)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Primary/Strong-Hover(Pressed)` | `color.fill.primary.strong-hover-pressed` | `var(--umc-color-fill-primary-strong-hover-pressed)` | `var(--color-action-primary-pressed)` |
+| `Semantic/Fill/Primary/Stronger-300` | `color.fill.primary.stronger-300` | `var(--umc-color-fill-primary-stronger-300)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Primary/Stronger-Hover(Pressed)-400` | `color.fill.primary.stronger-hover-pressed-400` | `var(--umc-color-fill-primary-stronger-hover-pressed-400)` | `var(--color-action-primary-pressed)` |
+| `Semantic/Fill/Primary-Inverse/Medium-400` | `color.fill.primary-inverse.medium-400` | `var(--umc-color-fill-primary-inverse-medium-400)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Primary-Inverse/Medium-Hover(Pressed)` | `color.fill.primary-inverse.medium-hover-pressed` | `var(--umc-color-fill-primary-inverse-medium-hover-pressed)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Primary-Inverse/Strong-500` | `color.fill.primary-inverse.strong-500` | `var(--umc-color-fill-primary-inverse-strong-500)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Primary-Inverse/Strong-Hover(Pressed)` | `color.fill.primary-inverse.strong-hover-pressed` | `var(--umc-color-fill-primary-inverse-strong-hover-pressed)` | `var(--color-action-primary-pressed)` |
+| `Semantic/Fill/Primary-Inverse/Stronger-600` | `color.fill.primary-inverse.stronger-600` | `var(--umc-color-fill-primary-inverse-stronger-600)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Primary-Inverse/Stronger-Hover(Pressed)` | `color.fill.primary-inverse.stronger-hover-pressed` | `var(--umc-color-fill-primary-inverse-stronger-hover-pressed)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Error/Weak-50` | `color.fill.error.weak-50` | `var(--umc-color-fill-error-weak-50)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Error/Weak-Hover(Pressed)` | `color.fill.error.weak-hover-pressed` | `var(--umc-color-fill-error-weak-hover-pressed)` | `var(--color-action-primary-hover)` |
+| `Semantic/Fill/Error/Medium-100` | `color.fill.error.medium-100` | `var(--umc-color-fill-error-medium-100)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Error/Medium-Hover(Pressed)` | `color.fill.error.medium-hover-pressed` | `var(--umc-color-fill-error-medium-hover-pressed)` | `var(--color-action-primary-pressed)` |
+| `Semantic/Fill/Error/Strong-500` | `color.fill.error.strong-500` | `var(--umc-color-fill-error-strong-500)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Error/Strong-Hover(Pressed)` | `color.fill.error.strong-hover-pressed` | `var(--umc-color-fill-error-strong-hover-pressed)` | `var(--color-action-primary-pressed)` |
+| `Semantic/Fill/Warning/Weak` | `color.fill.warning.weak` | `var(--umc-color-fill-warning-weak)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Warning/Weak-Hover(Pressed)` | `color.fill.warning.weak-hover-pressed` | `var(--umc-color-fill-warning-weak-hover-pressed)` | `var(--color-action-primary-pressed)` |
+| `Semantic/Fill/Warning/Medium` | `color.fill.warning.medium` | `var(--umc-color-fill-warning-medium)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Warning/Medium-Hover(Pressed)` | `color.fill.warning.medium-hover-pressed` | `var(--umc-color-fill-warning-medium-hover-pressed)` | `var(--color-action-primary-pressed)` |
+| `Semantic/Fill/Warning/Strong` | `color.fill.warning.strong` | `var(--umc-color-fill-warning-strong)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Warning/Strong-Hover(Pressed)` | `color.fill.warning.strong-hover-pressed` | `var(--umc-color-fill-warning-strong-hover-pressed)` | `var(--color-action-primary-pressed)` |
+| `Semantic/Fill/Success/Weak` | `color.fill.success.weak` | `var(--umc-color-fill-success-weak)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Success/Weak-Hover(Pressed)` | `color.fill.success.weak-hover-pressed` | `var(--umc-color-fill-success-weak-hover-pressed)` | `var(--color-action-primary-pressed)` |
+| `Semantic/Fill/Success/Medium` | `color.fill.success.medium` | `var(--umc-color-fill-success-medium)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Success/Medium-Hover(Pressed)` | `color.fill.success.medium-hover-pressed` | `var(--umc-color-fill-success-medium-hover-pressed)` | `var(--color-action-primary-pressed)` |
+| `Semantic/Fill/Success/Strong` | `color.fill.success.strong` | `var(--umc-color-fill-success-strong)` | `var(--color-action-primary-default)` |
+| `Semantic/Fill/Success/Strong-Hover(Pressed)` | `color.fill.success.strong-hover-pressed` | `var(--umc-color-fill-success-strong-hover-pressed)` | `var(--color-action-primary-pressed)` |
+| `Semantic/Background/Default` | `color.background.default` | `var(--umc-color-background-default)` | `var(--color-bg-default)` |
+| `Semantic/Background/Neutral-Weak` | `color.background.neutral-weak` | `var(--umc-color-background-neutral-weak)` | `var(--color-bg-subtle)` |
+| `Semantic/Background/Neutral-Medium` | `color.background.neutral-medium` | `var(--umc-color-background-neutral-medium)` | `var(--color-bg-subtle)` |
+| `Semantic/Background/Brand-Weak` | `color.background.brand-weak` | `var(--umc-color-background-brand-weak)` | `var(--color-bg-brand-subtle)` |
+| `Semantic/Background/Brand-Medium` | `color.background.brand-medium` | `var(--umc-color-background-brand-medium)` | `var(--color-bg-brand-subtle)` |
+| `Semantic/Surface/Default` | `color.surface.default` | `var(--umc-color-surface-default)` | `var(--color-surface-default)` |
+| `Semantic/Surface/Disabled` | `color.surface.disabled` | `var(--umc-color-surface-disabled)` | `var(--color-surface-disabled)` |
+| `Semantic/Surface/Neutral-Weak` | `color.surface.neutral-weak` | `var(--umc-color-surface-neutral-weak)` | `var(--color-surface-subtle)` |
+| `Semantic/Surface/Neutral-Medium` | `color.surface.neutral-medium` | `var(--umc-color-surface-neutral-medium)` | `var(--color-surface-subtle)` |
+| `Semantic/Surface/Neutral-Inverse` | `color.surface.neutral-inverse` | `var(--umc-color-surface-neutral-inverse)` | `var(--color-surface-subtle)` |
+| `Semantic/Surface/Brand-Weak` | `color.surface.brand-weak` | `var(--umc-color-surface-brand-weak)` | `var(--color-surface-inverse)` |
+| `Semantic/Surface/Brand-Medium` | `color.surface.brand-medium` | `var(--umc-color-surface-brand-medium)` | `var(--color-surface-inverse)` |
+| `Semantic/Surface/Brand-Inverse` | `color.surface.brand-inverse` | `var(--umc-color-surface-brand-inverse)` | `var(--color-surface-inverse)` |
+| `Semantic/Text/Inverse` | `color.text.inverse` | `var(--umc-color-text-inverse)` | `var(--color-text-inverse)` |
+| `Semantic/Text/Disabled` | `color.text.disabled` | `var(--umc-color-text-disabled)` | `var(--color-text-disabled)` |
+| `Semantic/Text/Placeholder` | `color.text.placeholder` | `var(--umc-color-text-placeholder)` | `var(--color-text-disabled)` |
+| `Semantic/Text/Neutral-Weak-500` | `color.text.neutral-weak-500` | `var(--umc-color-text-neutral-weak-500)` | `var(--color-text-subtle)` |
+| `Semantic/Text/Neutral-Medium-600` | `color.text.neutral-medium-600` | `var(--umc-color-text-neutral-medium-600)` | `var(--color-text-subtle)` |
+| `Semantic/Text/Neutral-Strong-800` | `color.text.neutral-strong-800` | `var(--umc-color-text-neutral-strong-800)` | `var(--color-text-subtle)` |
+| `Semantic/Text/Neutral-Default` | `color.text.neutral-default` | `var(--umc-color-text-neutral-default)` | `var(--color-text-default)` |
+| `Semantic/Text/Brand-Disabled` | `color.text.brand-disabled` | `var(--umc-color-text-brand-disabled)` | `var(--color-text-brand)` |
+| `Semantic/Text/Brand-Default` | `color.text.brand-default` | `var(--umc-color-text-brand-default)` | `var(--color-text-brand)` |
+| `Semantic/Text/Brand-Strong` | `color.text.brand-strong` | `var(--umc-color-text-brand-strong)` | `var(--color-text-brand)` |
+| `Semantic/Text/Success` | `color.text.success` | `var(--umc-color-text-success)` | `var(--color-text-link)` |
+| `Semantic/Text/Error` | `color.text.error` | `var(--umc-color-text-error)` | `var(--color-text-link)` |
+| `Semantic/Text/Warning` | `color.text.warning` | `var(--umc-color-text-warning)` | `var(--color-text-link)` |
+| `Semantic/Border/Disabled/Disalbed` | `color.border.disabled` | `var(--umc-color-border-disabled)` | 없음 |
+| `Semantic/Border/Neutral/Weaker-100` | `color.border.neutral.weaker-100` | `var(--umc-color-border-neutral-weaker-100)` | `var(--color-border-subtle)` |
+| `Semantic/Border/Neutral/Weak-200` | `color.border.neutral.weak-200` | `var(--umc-color-border-neutral-weak-200)` | `var(--color-border-subtle)` |
+| `Semantic/Border/Neutral/Medium-300` | `color.border.neutral.medium-300` | `var(--umc-color-border-neutral-medium-300)` | `var(--color-border-default)` |
+| `Semantic/Border/Neutral/Strong-400` | `color.border.neutral.strong-400` | `var(--umc-color-border-neutral-strong-400)` | `var(--color-border-strong)` |
+| `Semantic/Border/Neutral/Stronger-600` | `color.border.neutral.stronger-600` | `var(--umc-color-border-neutral-stronger-600)` | `var(--color-border-strong)` |
+| `Semantic/Border/Neutral/Default` | `color.border.neutral.default` | `var(--umc-color-border-neutral-default)` | `var(--color-action-primary-default)` |
+| `Semantic/Border/Primary/Weaker-100` | `color.border.primary.weaker-100` | `var(--umc-color-border-primary-weaker-100)` | `var(--color-border-subtle)` |
+| `Semantic/Border/Primary/Weak-200` | `color.border.primary.weak-200` | `var(--umc-color-border-primary-weak-200)` | `var(--color-border-default)` |
+| `Semantic/Border/Primary/Medium-300` | `color.border.primary.medium-300` | `var(--umc-color-border-primary-medium-300)` | `var(--color-border-strong)` |
+| `Semantic/Border/Primary/Strong-500` | `color.border.primary.strong-500` | `var(--umc-color-border-primary-strong-500)` | `var(--color-border-strong)` |
+| `Semantic/Border/Error/Weaker-100` | `color.border.error.weaker-100` | `var(--umc-color-border-error-weaker-100)` | `var(--color-border-subtle)` |
+| `Semantic/Border/Error/Weak-200` | `color.border.error.weak-200` | `var(--umc-color-border-error-weak-200)` | `var(--color-border-default)` |
+| `Semantic/Border/Error/Medium-300` | `color.border.error.medium-300` | `var(--umc-color-border-error-medium-300)` | `var(--color-border-strong)` |
+| `Semantic/Border/Error/Strong-500` | `color.border.error.strong-500` | `var(--umc-color-border-error-strong-500)` | `var(--color-border-strong)` |
+| `Semantic/Border/Warning/Weaker-100` | `color.border.warning.weaker-100` | `var(--umc-color-border-warning-weaker-100)` | `var(--color-border-subtle)` |
+| `Semantic/Border/Warning/Weak-200` | `color.border.warning.weak-200` | `var(--umc-color-border-warning-weak-200)` | `var(--color-border-default)` |
+| `Semantic/Border/Warning/Medium-300` | `color.border.warning.medium-300` | `var(--umc-color-border-warning-medium-300)` | `var(--color-border-strong)` |
+| `Semantic/Border/Warning/Strong-500` | `color.border.warning.strong-500` | `var(--umc-color-border-warning-strong-500)` | `var(--color-border-strong)` |
+| `Semantic/Border/Success/Weaker` | `color.border.success.weaker` | `var(--umc-color-border-success-weaker)` | `var(--color-border-subtle)` |
+| `Semantic/Border/Success/Weak` | `color.border.success.weak` | `var(--umc-color-border-success-weak)` | `var(--color-border-default)` |
+| `Semantic/Border/Success/Medium` | `color.border.success.medium` | `var(--umc-color-border-success-medium)` | `var(--color-border-strong)` |
+| `Semantic/Border/Success/Strong` | `color.border.success.strong` | `var(--umc-color-border-success-strong)` | `var(--color-border-strong)` |
+| `Semantic/Tag/Part/PM/Weaker` | `color.tag.part.pm.weaker` | `var(--umc-color-tag-part-pm-weaker)` | `var(--color-tag-part-pm-bg)` |
+| `Semantic/Tag/Part/PM/Weak` | `color.tag.part.pm.weak` | `var(--umc-color-tag-part-pm-weak)` | `var(--color-tag-part-pm-bg)` |
+| `Semantic/Tag/Part/PM/Medium` | `color.tag.part.pm.medium` | `var(--umc-color-tag-part-pm-medium)` | `var(--color-tag-part-pm-border)` |
+| `Semantic/Tag/Part/PM/Strong` | `color.tag.part.pm.strong` | `var(--umc-color-tag-part-pm-strong)` | `var(--color-tag-part-pm-text)` |
+| `Semantic/Tag/Part/Design/Weaker` | `color.tag.part.design.weaker` | `var(--umc-color-tag-part-design-weaker)` | `var(--color-tag-part-design-bg)` |
+| `Semantic/Tag/Part/Design/Weak` | `color.tag.part.design.weak` | `var(--umc-color-tag-part-design-weak)` | `var(--color-tag-part-design-bg)` |
+| `Semantic/Tag/Part/Design/Medium` | `color.tag.part.design.medium` | `var(--umc-color-tag-part-design-medium)` | `var(--color-tag-part-design-border)` |
+| `Semantic/Tag/Part/Design/Strong` | `color.tag.part.design.strong` | `var(--umc-color-tag-part-design-strong)` | `var(--color-tag-part-design-text)` |
+| `Semantic/Tag/Part/Mobile-PE/Weaker` | `color.tag.part.mobile-pe.weaker` | `var(--umc-color-tag-part-mobile-pe-weaker)` | `var(--color-tag-part-mobile-pe-bg)` |
+| `Semantic/Tag/Part/Mobile-PE/Weak` | `color.tag.part.mobile-pe.weak` | `var(--umc-color-tag-part-mobile-pe-weak)` | `var(--color-tag-part-mobile-pe-bg)` |
+| `Semantic/Tag/Part/Mobile-PE/Medium` | `color.tag.part.mobile-pe.medium` | `var(--umc-color-tag-part-mobile-pe-medium)` | `var(--color-tag-part-mobile-pe-border)` |
+| `Semantic/Tag/Part/Mobile-PE/Strong` | `color.tag.part.mobile-pe.strong` | `var(--umc-color-tag-part-mobile-pe-strong)` | `var(--color-tag-part-mobile-pe-text)` |
+| `Semantic/Tag/Part/Web-PE/Weaker` | `color.tag.part.web-pe.weaker` | `var(--umc-color-tag-part-web-pe-weaker)` | `var(--color-tag-part-web-pe-bg)` |
+| `Semantic/Tag/Part/Web-PE/Weak` | `color.tag.part.web-pe.weak` | `var(--umc-color-tag-part-web-pe-weak)` | `var(--color-tag-part-web-pe-bg)` |
+| `Semantic/Tag/Part/Web-PE/Medium` | `color.tag.part.web-pe.medium` | `var(--umc-color-tag-part-web-pe-medium)` | `var(--color-tag-part-web-pe-border)` |
+| `Semantic/Tag/Part/Web-PE/Strong` | `color.tag.part.web-pe.strong` | `var(--umc-color-tag-part-web-pe-strong)` | `var(--color-tag-part-web-pe-text)` |
+| `Semantic/Tag/Role/Central/Weaker` | `color.tag.role.central.weaker` | `var(--umc-color-tag-role-central-weaker)` | `var(--color-tag-role-central-bg)` |
+| `Semantic/Tag/Role/Central/Weak` | `color.tag.role.central.weak` | `var(--umc-color-tag-role-central-weak)` | `var(--color-tag-role-central-border)` |
+| `Semantic/Tag/Role/Central/Medium` | `color.tag.role.central.medium` | `var(--umc-color-tag-role-central-medium)` | `var(--color-tag-role-central-border)` |
+| `Semantic/Tag/Role/Central/Strong` | `color.tag.role.central.strong` | `var(--umc-color-tag-role-central-strong)` | `var(--color-tag-role-central-text)` |
+| `Semantic/Tag/Role/Chapter/Weaker` | `color.tag.role.chapter.weaker` | `var(--umc-color-tag-role-chapter-weaker)` | `var(--color-tag-role-chapter-bg)` |
+| `Semantic/Tag/Role/Chapter/Weak` | `color.tag.role.chapter.weak` | `var(--umc-color-tag-role-chapter-weak)` | `var(--color-tag-role-chapter-border)` |
+| `Semantic/Tag/Role/Chapter/Medium` | `color.tag.role.chapter.medium` | `var(--umc-color-tag-role-chapter-medium)` | `var(--color-tag-role-chapter-border)` |
+| `Semantic/Tag/Role/Chapter/Strong` | `color.tag.role.chapter.strong` | `var(--umc-color-tag-role-chapter-strong)` | `var(--color-tag-role-chapter-text)` |
+| `Semantic/Tag/Role/Campus/Weaker` | `color.tag.role.campus.weaker` | `var(--umc-color-tag-role-campus-weaker)` | `var(--color-tag-role-campus-bg)` |
+| `Semantic/Tag/Role/Campus/Weak` | `color.tag.role.campus.weak` | `var(--umc-color-tag-role-campus-weak)` | `var(--color-tag-role-campus-bg)` |
+| `Semantic/Tag/Role/Campus/Medium` | `color.tag.role.campus.medium` | `var(--umc-color-tag-role-campus-medium)` | `var(--color-tag-role-campus-border)` |
+| `Semantic/Tag/Role/Campus/Strong` | `color.tag.role.campus.strong` | `var(--umc-color-tag-role-campus-strong)` | `var(--color-tag-role-campus-text)` |
+| `Semantic/Tag/Role/Challenger&Super-Admin/Weaker` | `color.tag.role.challenger-super-admin.weaker` | `var(--umc-color-tag-role-challenger-super-admin-weaker)` | `var(--color-tag-role-super-admin-bg)` |
+| `Semantic/Tag/Role/Challenger&Super-Admin/Weak` | `color.tag.role.challenger-super-admin.weak` | `var(--umc-color-tag-role-challenger-super-admin-weak)` | `var(--color-tag-role-super-admin-bg)` |
+| `Semantic/Tag/Role/Challenger&Super-Admin/Medium` | `color.tag.role.challenger-super-admin.medium` | `var(--umc-color-tag-role-challenger-super-admin-medium)` | `var(--color-tag-role-super-admin-border)` |
+| `Semantic/Tag/Role/Challenger&Super-Admin/Strong` | `color.tag.role.challenger-super-admin.strong` | `var(--umc-color-tag-role-challenger-super-admin-strong)` | `var(--color-tag-role-super-admin-text)` |
+| `Semantic/Tag/Role/Product/Weaker` | `color.tag.role.product.weaker` | `var(--umc-color-tag-role-product-weaker)` | `var(--color-tag-role-product-bg)` |
+| `Semantic/Tag/Role/Product/Weak` | `color.tag.role.product.weak` | `var(--umc-color-tag-role-product-weak)` | `var(--color-tag-role-product-border)` |
+| `Semantic/Tag/Role/Product/Medium` | `color.tag.role.product.medium` | `var(--umc-color-tag-role-product-medium)` | `var(--color-tag-role-product-border)` |
+| `Semantic/Tag/Role/Product/Strong` | `color.tag.role.product.strong` | `var(--umc-color-tag-role-product-strong)` | `var(--color-tag-role-product-text)` |
+| `Semantic/Dimmed/Weak` | `color.dimmed.weak` | `var(--umc-color-dimmed-weak)` | 없음 |
+| `Semantic/Dimmed/Medium` | `color.dimmed.medium` | `var(--umc-color-dimmed-medium)` | 없음 |
+| `Semantic/Dimmed/Strong` | `color.dimmed.strong` | `var(--umc-color-dimmed-strong)` | 없음 |
+| `Primitives/Base/White` | `color.white` | `var(--umc-color-white)` | 없음 |
+| `Primitives/Base/Black` | `color.black` | `var(--umc-color-black)` | 없음 |
+| `Primitives/Grey/TealGrey-50` | `color.teal-grey.50` | `var(--umc-color-teal-grey-50)` | 없음 |
+| `Primitives/Grey/TealGrey-75` | `color.teal-grey.75` | `var(--umc-color-teal-grey-75)` | 없음 |
+| `Primitives/Grey/TealGrey-100` | `color.teal-grey.100` | `var(--umc-color-teal-grey-100)` | 없음 |
+| `Primitives/Grey/TealGrey-200` | `color.teal-grey.200` | `var(--umc-color-teal-grey-200)` | 없음 |
+| `Primitives/Grey/TealGrey-300` | `color.teal-grey.300` | `var(--umc-color-teal-grey-300)` | 없음 |
+| `Primitives/Grey/TealGrey-400` | `color.teal-grey.400` | `var(--umc-color-teal-grey-400)` | 없음 |
+| `Primitives/Grey/TealGrey-500` | `color.teal-grey.500` | `var(--umc-color-teal-grey-500)` | 없음 |
+| `Primitives/Grey/TealGrey-600` | `color.teal-grey.600` | `var(--umc-color-teal-grey-600)` | 없음 |
+| `Primitives/Grey/TealGrey-700` | `color.teal-grey.700` | `var(--umc-color-teal-grey-700)` | 없음 |
+| `Primitives/Grey/TealGrey-800` | `color.teal-grey.800` | `var(--umc-color-teal-grey-800)` | 없음 |
+| `Primitives/Grey/TealGrey-900` | `color.teal-grey.900` | `var(--umc-color-teal-grey-900)` | 없음 |
+| `Primitives/Teal/Teal-50` | `color.teal.50` | `var(--umc-color-teal-50)` | 없음 |
+| `Primitives/Teal/Teal-75` | `color.teal.75` | `var(--umc-color-teal-75)` | 없음 |
+| `Primitives/Teal/Teal-100` | `color.teal.100` | `var(--umc-color-teal-100)` | 없음 |
+| `Primitives/Teal/Teal-200` | `color.teal.200` | `var(--umc-color-teal-200)` | 없음 |
+| `Primitives/Teal/Teal-300` | `color.teal.300` | `var(--umc-color-teal-300)` | 없음 |
+| `Primitives/Teal/Teal-400` | `color.teal.400` | `var(--umc-color-teal-400)` | 없음 |
+| `Primitives/Teal/Teal-500` | `color.teal.500` | `var(--umc-color-teal-500)` | 없음 |
+| `Primitives/Teal/Teal-600` | `color.teal.600` | `var(--umc-color-teal-600)` | 없음 |
+| `Primitives/Teal/Teal-700` | `color.teal.700` | `var(--umc-color-teal-700)` | 없음 |
+| `Primitives/Teal/Teal-800` | `color.teal.800` | `var(--umc-color-teal-800)` | 없음 |
+| `Primitives/Teal/Teal-900` | `color.teal.900` | `var(--umc-color-teal-900)` | 없음 |
+| `Primitives/Red/Red-50` | `color.red.50` | `var(--umc-color-red-50)` | 없음 |
+| `Primitives/Red/Red-100` | `color.red.100` | `var(--umc-color-red-100)` | 없음 |
+| `Primitives/Red/Red-200` | `color.red.200` | `var(--umc-color-red-200)` | 없음 |
+| `Primitives/Red/Red-300` | `color.red.300` | `var(--umc-color-red-300)` | 없음 |
+| `Primitives/Red/Red-400` | `color.red.400` | `var(--umc-color-red-400)` | 없음 |
+| `Primitives/Red/Red-500` | `color.red.500` | `var(--umc-color-red-500)` | 없음 |
+| `Primitives/Red/Red-600` | `color.red.600` | `var(--umc-color-red-600)` | 없음 |
+| `Primitives/Red/Red-700` | `color.red.700` | `var(--umc-color-red-700)` | 없음 |
+| `Primitives/Red/Red-800` | `color.red.800` | `var(--umc-color-red-800)` | 없음 |
+| `Primitives/Red/Red-900` | `color.red.900` | `var(--umc-color-red-900)` | 없음 |
+| `Primitives/Yellow/Yellow-50` | `color.yellow.50` | `var(--umc-color-yellow-50)` | 없음 |
+| `Primitives/Yellow/Yellow-100` | `color.yellow.100` | `var(--umc-color-yellow-100)` | 없음 |
+| `Primitives/Yellow/Yellow-200` | `color.yellow.200` | `var(--umc-color-yellow-200)` | 없음 |
+| `Primitives/Yellow/Yellow-300` | `color.yellow.300` | `var(--umc-color-yellow-300)` | 없음 |
+| `Primitives/Yellow/Yellow-400` | `color.yellow.400` | `var(--umc-color-yellow-400)` | 없음 |
+| `Primitives/Yellow/Yellow-500` | `color.yellow.500` | `var(--umc-color-yellow-500)` | 없음 |
+| `Primitives/Yellow/Yellow-600` | `color.yellow.600` | `var(--umc-color-yellow-600)` | 없음 |
+| `Primitives/Yellow/Yellow-700` | `color.yellow.700` | `var(--umc-color-yellow-700)` | 없음 |
+| `Primitives/Yellow/Yellow-800` | `color.yellow.800` | `var(--umc-color-yellow-800)` | 없음 |
+| `Primitives/Yellow/Yellow-900` | `color.yellow.900` | `var(--umc-color-yellow-900)` | 없음 |
+| `Primitives/Green/Green-50` | `color.green.50` | `var(--umc-color-green-50)` | 없음 |
+| `Primitives/Green/Green-100` | `color.green.100` | `var(--umc-color-green-100)` | 없음 |
+| `Primitives/Green/Green-200` | `color.green.200` | `var(--umc-color-green-200)` | 없음 |
+| `Primitives/Green/Green-300` | `color.green.300` | `var(--umc-color-green-300)` | 없음 |
+| `Primitives/Green/Green-400` | `color.green.400` | `var(--umc-color-green-400)` | 없음 |
+| `Primitives/Green/Green-500` | `color.green.500` | `var(--umc-color-green-500)` | 없음 |
+| `Primitives/Green/Green-600` | `color.green.600` | `var(--umc-color-green-600)` | 없음 |
+| `Primitives/Green/Green-700` | `color.green.700` | `var(--umc-color-green-700)` | 없음 |
+| `Primitives/Green/Green-800` | `color.green.800` | `var(--umc-color-green-800)` | 없음 |
+| `Primitives/Green/Green-900` | `color.green.900` | `var(--umc-color-green-900)` | 없음 |
+| `Primitives/Violet/Violet-50` | `color.violet.50` | `var(--umc-color-violet-50)` | 없음 |
+| `Primitives/Violet/Violet-100` | `color.violet.100` | `var(--umc-color-violet-100)` | 없음 |
+| `Primitives/Violet/Violet-500` | `color.violet.500` | `var(--umc-color-violet-500)` | 없음 |
+| `Primitives/Violet/Violet-600` | `color.violet.600` | `var(--umc-color-violet-600)` | 없음 |
+| `Primitives/Purple/Purple-50` | `color.purple.50` | `var(--umc-color-purple-50)` | 없음 |
+| `Primitives/Purple/Purple-100` | `color.purple.100` | `var(--umc-color-purple-100)` | 없음 |
+| `Primitives/Purple/Purple-500` | `color.purple.500` | `var(--umc-color-purple-500)` | 없음 |
+| `Primitives/Purple/Purple-600` | `color.purple.600` | `var(--umc-color-purple-600)` | 없음 |
+| `Primitives/Pink/Pink-50` | `color.pink.50` | `var(--umc-color-pink-50)` | 없음 |
+| `Primitives/Pink/Pink-100` | `color.pink.100` | `var(--umc-color-pink-100)` | 없음 |
+| `Primitives/Pink/Pink-500` | `color.pink.500` | `var(--umc-color-pink-500)` | 없음 |
+| `Primitives/Pink/Pink-600` | `color.pink.600` | `var(--umc-color-pink-600)` | 없음 |
+| `Primitives/Cobalt/Cobalt-50` | `color.cobalt.50` | `var(--umc-color-cobalt-50)` | 없음 |
+| `Primitives/Cobalt/Cobalt-100` | `color.cobalt.100` | `var(--umc-color-cobalt-100)` | 없음 |
+| `Primitives/Cobalt/Cobalt-500` | `color.cobalt.500` | `var(--umc-color-cobalt-500)` | 없음 |
+| `Primitives/Cobalt/Cobalt-600` | `color.cobalt.600` | `var(--umc-color-cobalt-600)` | 없음 |
+| `Primitives/Blue/Blue-50` | `color.blue.50` | `var(--umc-color-blue-50)` | 없음 |
+| `Primitives/Blue/Blue-100` | `color.blue.100` | `var(--umc-color-blue-100)` | 없음 |
+| `Primitives/Blue/Blue-500` | `color.blue.500` | `var(--umc-color-blue-500)` | 없음 |
+| `Primitives/Blue/Blue-600` | `color.blue.600` | `var(--umc-color-blue-600)` | 없음 |
+| `Primitives/Brown/Brown-50` | `color.brown.50` | `var(--umc-color-brown-50)` | 없음 |
+| `Primitives/Brown/Brown-100` | `color.brown.100` | `var(--umc-color-brown-100)` | 없음 |
+| `Primitives/Brown/Brown-500` | `color.brown.500` | `var(--umc-color-brown-500)` | 없음 |
+| `Primitives/Brown/Brown-600` | `color.brown.600` | `var(--umc-color-brown-600)` | 없음 |
+| `Typography/Base/FontSize/48px` | `font-size.48` | `var(--umc-font-size-48)` | 없음 |
+| `Typography/Base/FontSize/40px` | `font-size.40` | `var(--umc-font-size-40)` | 없음 |
+| `Typography/Base/FontSize/36px` | `font-size.36` | `var(--umc-font-size-36)` | 없음 |
+| `Typography/Base/FontSize/32px` | `font-size.32` | `var(--umc-font-size-32)` | 없음 |
+| `Typography/Base/FontSize/28px` | `font-size.28` | `var(--umc-font-size-28)` | 없음 |
+| `Typography/Base/FontSize/24px` | `font-size.24` | `var(--umc-font-size-24)` | 없음 |
+| `Typography/Base/FontSize/22px` | `font-size.22` | `var(--umc-font-size-22)` | 없음 |
+| `Typography/Base/FontSize/20px` | `font-size.20` | `var(--umc-font-size-20)` | 없음 |
+| `Typography/Base/FontSize/18px` | `font-size.18` | `var(--umc-font-size-18)` | 없음 |
+| `Typography/Base/FontSize/16px` | `font-size.16` | `var(--umc-font-size-16)` | 없음 |
+| `Typography/Base/FontSize/15px` | `font-size.15` | `var(--umc-font-size-15)` | 없음 |
+| `Typography/Base/FontSize/14px` | `font-size.14` | `var(--umc-font-size-14)` | 없음 |
+| `Typography/Base/FontSize/13px` | `font-size.13` | `var(--umc-font-size-13)` | 없음 |
+| `Typography/Base/FontSize/12px` | `font-size.12` | `var(--umc-font-size-12)` | 없음 |
+| `Typography/Base/FontSize/11px` | `font-size.11` | `var(--umc-font-size-11)` | 없음 |
+| `Typography/Base/FontFamily/Brand` | `font-family.brand` | `var(--umc-font-family-brand)` | 없음 |
+| `Typography/Base/FontWeight/Regular` | `font-weight.regular` | `var(--umc-font-weight-regular)` | 없음 |
+| `Typography/Base/FontWeight/Medium` | `font-weight.medium` | `var(--umc-font-weight-medium)` | 없음 |
+| `Typography/Base/FontWeight/Semibold` | `font-weight.semibold` | `var(--umc-font-weight-semibold)` | 없음 |
+| `Typography/Base/FontWeight/Bold` | `font-weight.bold` | `var(--umc-font-weight-bold)` | 없음 |
+| `Spacing/Primitive/0` | `spacing.0` | `var(--umc-spacing-0)` | 없음 |
+| `Spacing/Primitive/2` | `spacing.2` | `var(--umc-spacing-2)` | 없음 |
+| `Spacing/Primitive/4` | `spacing.4` | `var(--umc-spacing-4)` | 없음 |
+| `Spacing/Primitive/6` | `spacing.6` | `var(--umc-spacing-6)` | 없음 |
+| `Spacing/Primitive/8` | `spacing.8` | `var(--umc-spacing-8)` | 없음 |
+| `Spacing/Primitive/10` | `spacing.10` | `var(--umc-spacing-10)` | 없음 |
+| `Spacing/Primitive/12` | `spacing.12` | `var(--umc-spacing-12)` | 없음 |
+| `Spacing/Primitive/16` | `spacing.16` | `var(--umc-spacing-16)` | 없음 |
+| `Spacing/Primitive/20` | `spacing.20` | `var(--umc-spacing-20)` | 없음 |
+| `Spacing/Primitive/24` | `spacing.24` | `var(--umc-spacing-24)` | 없음 |
+| `Spacing/Primitive/28` | `spacing.28` | `var(--umc-spacing-28)` | 없음 |
+| `Spacing/Primitive/32` | `spacing.32` | `var(--umc-spacing-32)` | 없음 |
+| `Spacing/Primitive/48` | `spacing.48` | `var(--umc-spacing-48)` | 없음 |
+| `Spacing/Primitive/64` | `spacing.64` | `var(--umc-spacing-64)` | 없음 |
+| `Spacing/Primitive/80` | `spacing.80` | `var(--umc-spacing-80)` | 없음 |
+| `Spacing/Semantic/Padding/Padding 0` | `spacing.padding.0` | `var(--umc-spacing-padding-0)` | 없음 |
+| `Spacing/Semantic/Padding/Padding 4` | `spacing.padding.4` | `var(--umc-spacing-padding-4)` | 없음 |
+| `Spacing/Semantic/Padding/Padding 6` | `spacing.padding.6` | `var(--umc-spacing-padding-6)` | 없음 |
+| `Spacing/Semantic/Padding/Padding 8` | `spacing.padding.8` | `var(--umc-spacing-padding-8)` | 없음 |
+| `Spacing/Semantic/Padding/Padding 10` | `spacing.padding.10` | `var(--umc-spacing-padding-10)` | 없음 |
+| `Spacing/Semantic/Padding/Padding 12` | `spacing.padding.12` | `var(--umc-spacing-padding-12)` | 없음 |
+| `Spacing/Semantic/Padding/Padding 16` | `spacing.padding.16` | `var(--umc-spacing-padding-16)` | 없음 |
+| `Spacing/Semantic/Padding/Padding 20` | `spacing.padding.20` | `var(--umc-spacing-padding-20)` | 없음 |
+| `Spacing/Semantic/Padding/Padding 24` | `spacing.padding.24` | `var(--umc-spacing-padding-24)` | 없음 |
+| `Spacing/Semantic/Padding/Padding 28` | `spacing.padding.28` | `var(--umc-spacing-padding-28)` | 없음 |
+| `Spacing/Semantic/Padding/Padding 32` | `spacing.padding.32` | `var(--umc-spacing-padding-32)` | 없음 |
+| `Spacing/Semantic/Gap/Gap 0` | `spacing.gap.0` | `var(--umc-spacing-gap-0)` | 없음 |
+| `Spacing/Semantic/Gap/Gap 4` | `spacing.gap.4` | `var(--umc-spacing-gap-4)` | 없음 |
+| `Spacing/Semantic/Gap/Gap 6` | `spacing.gap.6` | `var(--umc-spacing-gap-6)` | 없음 |
+| `Spacing/Semantic/Gap/Gap 8` | `spacing.gap.8` | `var(--umc-spacing-gap-8)` | 없음 |
+| `Spacing/Semantic/Gap/Gap 10` | `spacing.gap.10` | `var(--umc-spacing-gap-10)` | 없음 |
+| `Spacing/Semantic/Gap/Gap 12` | `spacing.gap.12` | `var(--umc-spacing-gap-12)` | 없음 |
+| `Spacing/Semantic/Gap/Gap 16` | `spacing.gap.16` | `var(--umc-spacing-gap-16)` | 없음 |
+| `Spacing/Semantic/Gap/Gap 20` | `spacing.gap.20` | `var(--umc-spacing-gap-20)` | 없음 |
+| `Spacing/Semantic/Gap/Gap 24` | `spacing.gap.24` | `var(--umc-spacing-gap-24)` | 없음 |
+| `Spacing/Semantic/Gap/Gap 28` | `spacing.gap.28` | `var(--umc-spacing-gap-28)` | 없음 |
+| `Spacing/Semantic/Gap/Gap 32` | `spacing.gap.32` | `var(--umc-spacing-gap-32)` | 없음 |
+| `Spacing/Semantic/Margin/Margin 0` | `spacing.margin.0` | `var(--umc-spacing-margin-0)` | 없음 |
+| `Spacing/Semantic/Margin/Margin 16` | `spacing.margin.16` | `var(--umc-spacing-margin-16)` | 없음 |
+| `Spacing/Semantic/Margin/Margin 24` | `spacing.margin.24` | `var(--umc-spacing-margin-24)` | 없음 |
+| `Spacing/Semantic/Margin/Margin 32` | `spacing.margin.32` | `var(--umc-spacing-margin-32)` | 없음 |
+| `Spacing/Semantic/Margin/Margin 48` | `spacing.margin.48` | `var(--umc-spacing-margin-48)` | 없음 |
+| `Spacing/Semantic/Margin/Margin 64` | `spacing.margin.64` | `var(--umc-spacing-margin-64)` | 없음 |
+| `Spacing/Semantic/Margin/Margin 80` | `spacing.margin.80` | `var(--umc-spacing-margin-80)` | 없음 |
+| `Radius/Primitive/6` | `radius.6` | `var(--umc-radius-6)` | 없음 |
+| `Radius/Primitive/8` | `radius.8` | `var(--umc-radius-8)` | 없음 |
+| `Radius/Primitive/10` | `radius.10` | `var(--umc-radius-10)` | 없음 |
+| `Radius/Primitive/12` | `radius.12` | `var(--umc-radius-12)` | 없음 |
+| `Radius/Primitive/14` | `radius.14` | `var(--umc-radius-14)` | 없음 |
+| `Radius/Primitive/16` | `radius.16` | `var(--umc-radius-16)` | 없음 |
+| `Radius/Primitive/18` | `radius.18` | `var(--umc-radius-18)` | 없음 |
+| `Radius/Primitive/20` | `radius.20` | `var(--umc-radius-20)` | 없음 |
+| `Radius/Primitive/24` | `radius.24` | `var(--umc-radius-24)` | 없음 |
+| `Radius/Primitive/Full` | `radius.full` | `var(--umc-radius-full)` | 없음 |
+| `Radius/Semantic/Text Field/Box` | `radius.text-field.box` | `var(--umc-radius-text-field-box)` | 없음 |
+| `Radius/Semantic/Button/R Button 10` | `radius.button.10` | `var(--umc-radius-button-10)` | 없음 |
+| `Radius/Semantic/Button/R Button 12` | `radius.button.12` | `var(--umc-radius-button-12)` | 없음 |
+| `Radius/Semantic/Button/R Button 14` | `radius.button.14` | `var(--umc-radius-button-14)` | 없음 |
+| `Radius/Semantic/Button/R Button 16` | `radius.button.16` | `var(--umc-radius-button-16)` | 없음 |
+| `Radius/Semantic/Toast/Toast` | `radius.toast` | `var(--umc-radius-toast)` | 없음 |
+| `Radius/Semantic/Segmented Control/XS` | `radius.segmented-control.xs` | `var(--umc-radius-segmented-control-xs)` | 없음 |

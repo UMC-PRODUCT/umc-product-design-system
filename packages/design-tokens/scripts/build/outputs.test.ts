@@ -141,9 +141,11 @@ describe("manifest.ts", () => {
       value: "#0f1010",
       alias: "color.teal-grey.900",
       figmaName: "Semantic/Text/Neutral-Default",
+      codeSyntax: "var(--color-text-default)",
       utility: "text-neutral-default",
       tailwindName: null,
     })
+    expect(tokenNamed("color.teal.300")?.codeSyntax).toBeNull()
     expect(
       tokenManifest.find((token) => token.name === "shadow.drop.neutral-1"),
     ).toMatchObject({

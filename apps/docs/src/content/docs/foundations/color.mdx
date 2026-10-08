@@ -1,56 +1,100 @@
 ---
 title: 컬러
-description: semantic 151개와 primitive 78개 컬러 토큰입니다.
+description: 피그마 컬러 변수(semantic 151개, primitive 78개)를 코드 이름으로 찾는 표입니다.
 ---
 
 import { Aside } from "@astrojs/starlight/components"
 import PrimitivePalettes from "../../../components/PrimitivePalettes.astro"
 import SemanticColors from "../../../components/SemanticColors.astro"
+import { ColorLookup } from "../../../components/react/color/ColorLookup.tsx"
+import { colorTokenRows } from "../../../components/react/color/color-token-rows.ts"
 
-화면은 역할을 담은 semantic 컬러로 만듭니다. primitive는 semantic이 참조하는 원재료라서, 피그마가 primitive를 바로 칠한 곳에만 씁니다. 표의 Tailwind 칸이 그대로 쓸 클래스입니다. Tag와 primitive는 `bg-`, `text-`, `border-` 뒤에 이름을 붙입니다. 규칙은 [Tailwind CSS에서 쓰기](/getting-started/tailwind/)에 있습니다.
+화면은 역할을 담은 semantic 컬러로 만듭니다. primitive는 semantic이 참조하는 원재료라서, 피그마가 primitive를 바로 칠한 곳에만 씁니다. 표의 Tailwind 칸이 그대로 쓸 클래스입니다. 규칙은 [Tailwind CSS에서 쓰기](/getting-started/tailwind/)에 있습니다.
 
-<Aside title="이름 읽는 법">
-  `fill-primary-strong-200`은 피그마 `Semantic/Fill/Primary/Strong-200`을 옮긴
-  이름입니다. 이름 끝의 단계 숫자도 피그마와 같이 남깁니다. 전체 대응은
-  [피그마 정규화 리포트](/contributing/figma-normalization/)에 있습니다.
+## 피그마에서 본 이름으로 찾기
+
+피그마에서 본 것을 그대로 넣으면 쓸 클래스와 CSS 변수가 나옵니다. 변수 이름(`Fill/Neutral/Weak-75`), Dev Mode 코드 패널의 이름(`var(--color-text-subtle)`), hex 값(`#F7F8F8`), 클래스 무엇이든 됩니다.
+
+<ColorLookup client:load rows={colorTokenRows} />
+
+<Aside type="caution" title="Dev Mode 이름은 실마리로만 쓰세요">
+  Dev Mode 코드 패널의 `var(--color-…)`는 코드에 없는 이름입니다. 여러 변수가
+  같은 이름을 나눠 쓰기도 합니다. 결과가 여러 개면 Dev Mode에 보이는 변수
+  이름으로 다시 찾으세요. 디자인 팀에는 codeSyntax를 코드의 CSS 변수로 바꿔
+  달라고 요청해 두었습니다([피그마 정규화
+  리포트](/contributing/figma-normalization/)의 "이름 대응표와 codeSyntax
+  제안").
 </Aside>
+
+## 이름 읽는 법
+
+피그마 경로에서 `Semantic/`, `Primitives/`를 떼고 kebab-case로 바꾸면 토큰 이름입니다. 끝의 단계 숫자도 남깁니다. CSS 변수는 앞에 `--umc-color-`를 붙인 이름입니다.
+
+| 피그마 변수                        | 토큰 이름                 | CSS 변수                              | Tailwind                       |
+| ---------------------------------- | ------------------------- | ------------------------------------- | ------------------------------ |
+| `Semantic/Text/Neutral-Medium-600` | `text-neutral-medium-600` | `--umc-color-text-neutral-medium-600` | `text-neutral-medium-600`      |
+| `Semantic/Fill/Neutral/Weak-75`    | `fill-neutral-weak-75`    | `--umc-color-fill-neutral-weak-75`    | `bg-fill-neutral-weak-75`      |
+| `Semantic/Border/Error/Strong-500` | `border-error-strong-500` | `--umc-color-border-error-strong-500` | `border-error-strong-500`      |
+| `Primitives/Teal/Teal-300`         | `teal-300`                | `--umc-color-teal-300`                | `bg-teal-300`, `text-teal-300` |
+
+몇몇 이름은 규칙대로 다듬었습니다.
+
+- 팔레트 이름 반복은 한 번만 씁니다: `Teal/Teal-300` → `teal-300`, `Grey/TealGrey-75` → `teal-grey-75`
+- 괄호와 기호는 하이픈이 됩니다: `Weak-Hover(Pressed)` → `weak-hover-pressed`, `Challenger&Super-Admin` → `challenger-super-admin`
+- 오타가 있는 `Fill/Disabled/Disalbed`, `Border/Disabled/Disalbed`는 `fill-disabled`, `border-disabled`입니다
 
 ## Semantic
 
 ### Text
 
+클래스는 `text-<이름>`입니다.
+
 <SemanticColors group="text" />
 
 ### Background
+
+클래스는 `bg-background-<이름>`입니다.
 
 <SemanticColors group="background" />
 
 ### Surface
 
+클래스는 `bg-surface-<이름>`입니다.
+
 <SemanticColors group="surface" />
 
 ### Fill
+
+클래스는 `bg-fill-<이름>`입니다.
 
 <SemanticColors group="fill" />
 
 ### Border
 
+클래스는 `border-<이름>`입니다. 한 변만 칠할 때는 `border-t-<이름>`처럼 변 방향을 붙입니다.
+
 <SemanticColors group="border" />
 
 ### Icon
+
+아이콘은 `currentColor`로 칠해지므로 `text-icon-<이름>`으로 색을 줍니다.
 
 <SemanticColors group="icon" />
 
 ### Tag
 
+Dev Mode 이름을 보면 Weaker는 배경, Medium은 테두리, Strong은 글자에 씁니다. Weak는 태그마다 배경이거나 테두리입니다. `bg-`, `border-`, `text-` 뒤에 이름을 붙입니다.
+
 <SemanticColors group="tag" />
 
 ### Dimmed
 
-Dimmed는 primitive를 참조하지 않습니다. TealGrey-900에 불투명도 20%, 65%, 85%를 섞은 값입니다.
+Dimmed는 primitive를 참조하지 않습니다. TealGrey-900에 불투명도 20%, 65%, 85%를 섞은 값입니다. 클래스는 `bg-dimmed-<이름>`입니다.
 
 <SemanticColors group="dimmed" />
 
 ## Primitive
+
+피그마가 primitive를 바로 칠한 곳에만 씁니다. 칸 아래 이름을 `bg-`, `text-`, `border-` 뒤에 붙입니다(예: `text-teal-700`).
 
 <PrimitivePalettes />

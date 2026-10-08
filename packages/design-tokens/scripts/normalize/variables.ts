@@ -1,4 +1,4 @@
-import { toAlias, type TokenPath } from "../shared/naming.ts"
+import { toAlias, toCssVariable, type TokenPath } from "../shared/naming.ts"
 import type { CanonicalToken } from "../shared/schema.ts"
 import type { TokenFileName } from "../shared/token-files.ts"
 import { px } from "../shared/units.ts"
@@ -23,6 +23,8 @@ export type TokenTree = { [key: string]: TokenTree | CanonicalToken }
 export type VariableMapping = {
   figmaName: string
   tokenPath: string
+  cssVariable: string
+  codeSyntax: string | null
   file: TokenFileName
 }
 
@@ -259,7 +261,13 @@ export const normalizeVariables = (
       const token: CanonicalToken = {
         ...toToken(variable, target.rule, aliasPathOf),
         $extensions: {
-          "umc.figma": { name: variable.name, variableId: variable.variableId },
+          "umc.figma": {
+            name: variable.name,
+            variableId: variable.variableId,
+            ...(variable.webCodeSyntax === undefined
+              ? {}
+              : { codeSyntax: variable.webCodeSyntax }),
+          },
         },
       }
       const tree = trees.get(target.rule.file) ?? {}
@@ -269,6 +277,8 @@ export const normalizeVariables = (
       mappings.push({
         figmaName: variable.name,
         tokenPath: pathKey,
+        cssVariable: toCssVariable(target.path),
+        codeSyntax: variable.webCodeSyntax ?? null,
         file: target.rule.file,
       })
     } catch (error) {

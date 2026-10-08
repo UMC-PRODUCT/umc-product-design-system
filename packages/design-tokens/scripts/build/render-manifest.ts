@@ -1,3 +1,5 @@
+import { z } from "zod"
+
 import { parseAlias, toCssVariable, type TokenPath } from "../shared/naming.ts"
 import type { CanonicalToken } from "../shared/schema.ts"
 import type { TokenFileName } from "../shared/token-files.ts"
@@ -33,10 +35,17 @@ type ManifestEntry = {
   value: string
   alias: string | null
   figmaName: string | null
+  codeSyntax: string | null
   utility: string | null
   tailwindName: string | null
   typography: ResolvedTypography | null
 }
+
+const figmaExtensionSchema = z.looseObject({
+  name: z.string().optional(),
+  style: z.string().optional(),
+  codeSyntax: z.string().optional(),
+})
 
 const formatDesignDimension = ({ value, unit }: Dimension): string =>
   `${value}${unit}`
@@ -68,19 +77,8 @@ const createResolver = (entries: readonly ModelEntry[]) => {
 const aliasName = (value: unknown): string | null =>
   typeof value === "string" ? (parseAlias(value)?.join(".") ?? null) : null
 
-const figmaNameOf = (token: CanonicalToken): string | null => {
-  const figma = token.$extensions?.["umc.figma"]
-  if (typeof figma !== "object" || figma === null) {
-    return null
-  }
-  if ("name" in figma && typeof figma.name === "string") {
-    return figma.name
-  }
-  if ("style" in figma && typeof figma.style === "string") {
-    return figma.style
-  }
-  return null
-}
+const figmaExtensionOf = (token: CanonicalToken) =>
+  figmaExtensionSchema.safeParse(token.$extensions?.["umc.figma"]).data
 
 const pathName = (path: TokenPath): string => path.join(".")
 
@@ -89,6 +87,7 @@ export const renderManifest = (entries: readonly ModelEntry[]): string => {
 
   const manifest: ManifestEntry[] = entries.map((entry) => {
     const { token } = entry
+    const figma = figmaExtensionOf(token)
     const typography =
       token.$type === "typography"
         ? {
@@ -118,7 +117,8 @@ export const renderManifest = (entries: readonly ModelEntry[]): string => {
         token.$type === "typography" || token.$type === "shadow"
           ? null
           : aliasName(token.$value),
-      figmaName: figmaNameOf(token),
+      figmaName: figma?.name ?? figma?.style ?? null,
+      codeSyntax: figma?.codeSyntax ?? null,
       utility: tailwindUtilityOf(entry),
       tailwindName: tailwindNameOf(entry),
       typography,
@@ -134,6 +134,7 @@ export const renderManifest = (entries: readonly ModelEntry[]): string => {
     "  value: string",
     "  alias: string | null",
     "  figmaName: string | null",
+    "  codeSyntax: string | null",
     "  utility: string | null",
     "  tailwindName: string | null",
     "  typography: {",

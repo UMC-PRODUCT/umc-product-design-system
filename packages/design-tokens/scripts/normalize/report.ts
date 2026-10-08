@@ -234,17 +234,24 @@ export const renderNormalizationReport = (input: ReportInput): string => {
         ]),
       ),
     ),
-    ...section(
-      "이름 대응표",
-      table(
-        ["피그마 변수", "코드 토큰", "토큰 파일"],
+    ...section("이름 대응표와 codeSyntax 제안", [
+      "codeSyntax(WEB)를 셋째 칸 값으로 바꾸면 Dev Mode 코드 패널과 피그마 MCP가 코드에 있는 CSS 변수를 그대로 보여 준다.",
+      "",
+      ...table(
+        [
+          "피그마 변수",
+          "코드 토큰",
+          "제안 codeSyntax(WEB)",
+          "지금 codeSyntax(WEB)",
+        ],
         input.mappings.map((mapping) => [
           code(mapping.figmaName),
           code(mapping.tokenPath),
-          mapping.file,
+          code(`var(${mapping.cssVariable})`),
+          mapping.codeSyntax === null ? "없음" : code(mapping.codeSyntax),
         ]),
       ),
-    ),
+    ]),
   ]
   return `${lines.join("\n").trimEnd()}\n`
 }
