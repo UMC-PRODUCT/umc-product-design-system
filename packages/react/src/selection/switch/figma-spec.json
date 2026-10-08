@@ -1,0 +1,167 @@
+{
+  "component": "Switch",
+  "figmaSection": "3710:101902",
+  "page": "/components/selection/switch/",
+  "nodes": [
+    {
+      "specId": "switch-sm",
+      "node": "3696:100310",
+      "variant": "State=Off, Disabled=False, Size=Sm",
+      "target": ".umc-switch",
+      "expected": {
+        "column-gap": "8px",
+        "min-height": "24px"
+      }
+    },
+    {
+      "specId": "switch-sm-label",
+      "node": "3696:100311",
+      "variant": "State=Off, Disabled=False, Size=Sm",
+      "target": ".umc-switch__label",
+      "expected": {
+        "color": "#0f1010",
+        "font-size": "15px",
+        "font-weight": "400",
+        "line-height": "22.5px",
+        "letter-spacing": "-0.15px"
+      }
+    },
+    {
+      "specId": "switch-sm-track",
+      "node": "3696:101013",
+      "variant": "State=Off, Disabled=False, Size=Sm",
+      "target": ".umc-switch__track",
+      "expected": {
+        "width": "36px",
+        "height": "20px",
+        "border-top-left-radius": "999px",
+        "background-color": "#e2e3e3",
+        "box-shadow": "none"
+      },
+      "figmaDiffers": {
+        "background-color": "피그마 트랙 채움은 변수에 연결되지 않았고 내보낸 값은 #e2e4e3이다. 가장 가까운 토큰 fill-neutral-strong(#e2e3e3)을 썼다"
+      }
+    },
+    {
+      "specId": "switch-sm-thumb",
+      "node": "3696:101014",
+      "variant": "State=Off, Disabled=False, Size=Sm",
+      "target": ".umc-switch__thumb",
+      "expected": {
+        "width": "14px",
+        "height": "14px",
+        "background-color": "#ffffff"
+      }
+    },
+    {
+      "specId": "switch-sm-on-track",
+      "node": "3696:101027",
+      "variant": "State=On, Disabled=False, Size=Sm",
+      "target": ".umc-switch__track",
+      "expected": {
+        "background-color": "#39a9a1",
+        "box-shadow~": "#d3d8d833 0.8px 0.8px 1.6px 0px inset"
+      }
+    },
+    {
+      "specId": "switch-sm-on-thumb",
+      "node": "3696:101027",
+      "variant": "State=On, Disabled=False, Size=Sm",
+      "target": ".umc-switch__thumb",
+      "expected": {
+        "width": "16px",
+        "height": "16px"
+      }
+    },
+    {
+      "specId": "switch-disabled-track",
+      "node": "3696:101036",
+      "variant": "State=Off, Disabled=True, Size=Sm",
+      "target": ".umc-switch__track",
+      "expected": {
+        "background-color": "#eff0f0"
+      }
+    },
+    {
+      "specId": "switch-disabled-thumb",
+      "node": "3696:101036",
+      "variant": "State=Off, Disabled=True, Size=Sm",
+      "target": ".umc-switch__thumb",
+      "expected": {
+        "background-color": "#fbfcfc"
+      }
+    },
+    {
+      "specId": "switch-disabled-on-track",
+      "node": "3696:101045",
+      "variant": "State=On, Disabled=True, Size=Sm",
+      "target": ".umc-switch__track",
+      "expected": {
+        "background-color": "#b3e5e1"
+      }
+    },
+    {
+      "specId": "switch-md",
+      "node": "3696:100315",
+      "variant": "State=Off, Disabled=False, Size=Md",
+      "target": ".umc-switch",
+      "expected": {
+        "column-gap": "8px",
+        "min-height": "26px"
+      }
+    },
+    {
+      "specId": "switch-md-label",
+      "node": "3696:100316",
+      "variant": "State=Off, Disabled=False, Size=Md",
+      "target": ".umc-switch__label",
+      "expected": {
+        "color": "#0f1010",
+        "font-size": "16px",
+        "font-weight": "400",
+        "line-height": "23.2px",
+        "letter-spacing": "-0.16px"
+      }
+    },
+    {
+      "specId": "switch-md-track",
+      "node": "3696:101016",
+      "variant": "State=Off, Disabled=False, Size=Md",
+      "target": ".umc-switch__track",
+      "expected": {
+        "width": "44px",
+        "height": "24px"
+      }
+    },
+    {
+      "specId": "switch-md-thumb",
+      "node": "3696:101016",
+      "variant": "State=Off, Disabled=False, Size=Md",
+      "target": ".umc-switch__thumb",
+      "expected": {
+        "width": "16px",
+        "height": "16px"
+      }
+    },
+    {
+      "specId": "switch-md-on-track",
+      "node": "3696:101030",
+      "variant": "State=On, Disabled=False, Size=Md",
+      "target": ".umc-switch__track",
+      "expected": {
+        "background-color": "#39a9a1",
+        "box-shadow": "none"
+      }
+    },
+    {
+      "specId": "switch-md-on-thumb",
+      "node": "3696:101030",
+      "variant": "State=On, Disabled=False, Size=Md",
+      "target": ".umc-switch__thumb",
+      "expected": {
+        "width": "20px",
+        "height": "20px"
+      }
+    }
+  ]
+}

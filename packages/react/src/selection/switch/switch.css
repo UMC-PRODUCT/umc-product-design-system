@@ -1,0 +1,130 @@
+@layer components {
+  .umc-switch {
+    --umc-switch-track: var(--umc-color-fill-neutral-strong);
+    --umc-switch-track-checked: var(--umc-color-fill-primary-inverse-medium);
+    --umc-switch-thumb: var(--umc-color-fill-neutral-default);
+    --umc-switch-checked-shadow: none;
+
+    display: inline-flex;
+    align-items: flex-start;
+    gap: var(--umc-spacing-gap-8);
+    min-height: var(--umc-switch-min-height);
+    color: var(--umc-color-text-neutral-default);
+    font-family: var(--umc-switch-font-family);
+    font-size: var(--umc-switch-font-size);
+    font-weight: var(--umc-switch-font-weight);
+    line-height: var(--umc-switch-line-height);
+    letter-spacing: var(--umc-switch-letter-spacing);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .umc-switch:has(> .umc-switch__track[data-disabled]) {
+    --umc-switch-track: var(--umc-color-fill-disabled);
+    --umc-switch-track-checked: var(--umc-color-fill-primary-strong);
+    --umc-switch-thumb: var(--umc-color-fill-neutral-weaker);
+
+    cursor: default;
+  }
+
+  .umc-switch[data-size="sm"] {
+    --umc-switch-min-height: 24px;
+    --umc-switch-track-width: 36px;
+    --umc-switch-track-height: 20px;
+    --umc-switch-thumb-size: 14px;
+    --umc-switch-thumb-inset: 3px;
+    --umc-switch-thumb-size-checked: 16px;
+    --umc-switch-thumb-inset-checked: 2px;
+    --umc-switch-checked-shadow: inset 0.8px 0.8px 1.6px 0 #d3d8d833;
+    --umc-switch-font-family: var(--umc-typography-body-2-regular-font-family);
+    --umc-switch-font-size: var(--umc-typography-body-2-regular-font-size);
+    --umc-switch-font-weight: var(--umc-typography-body-2-regular-font-weight);
+    --umc-switch-line-height: var(--umc-typography-body-2-regular-line-height);
+    --umc-switch-letter-spacing: var(
+      --umc-typography-body-2-regular-letter-spacing
+    );
+  }
+
+  .umc-switch[data-size="md"] {
+    --umc-switch-min-height: 26px;
+    --umc-switch-track-width: 44px;
+    --umc-switch-track-height: 24px;
+    --umc-switch-thumb-size: 16px;
+    --umc-switch-thumb-inset: 4px;
+    --umc-switch-thumb-size-checked: 20px;
+    --umc-switch-thumb-inset-checked: 2px;
+    --umc-switch-font-family: var(--umc-typography-body-1-regular-font-family);
+    --umc-switch-font-size: var(--umc-typography-body-1-regular-font-size);
+    --umc-switch-font-weight: var(--umc-typography-body-1-regular-font-weight);
+    --umc-switch-line-height: var(--umc-typography-body-1-regular-line-height);
+    --umc-switch-letter-spacing: var(
+      --umc-typography-body-1-regular-letter-spacing
+    );
+  }
+
+  .umc-switch__label {
+    padding-block: calc(
+      (
+          var(--umc-switch-min-height) - var(--umc-switch-font-size) *
+            var(--umc-switch-line-height)
+        ) /
+        2
+    );
+  }
+
+  .umc-switch__track {
+    position: relative;
+    display: inline-flex;
+    flex: none;
+    box-sizing: border-box;
+    width: var(--umc-switch-track-width);
+    height: var(--umc-switch-track-height);
+    margin-block: calc(
+      (var(--umc-switch-min-height) - var(--umc-switch-track-height)) / 2
+    );
+    border-radius: var(--umc-radius-full);
+    background-color: var(--umc-switch-track);
+    transition: background-color var(--umc-motion-duration) ease;
+  }
+
+  .umc-switch__track[data-checked] {
+    background-color: var(--umc-switch-track-checked);
+    box-shadow: var(--umc-switch-checked-shadow);
+  }
+
+  .umc-switch__track:focus-visible {
+    outline: 2px solid var(--umc-color-border-primary-strong);
+    outline-offset: 2px;
+  }
+
+  .umc-switch__thumb {
+    position: absolute;
+    top: 50%;
+    left: var(--umc-switch-thumb-inset);
+    width: var(--umc-switch-thumb-size);
+    height: var(--umc-switch-thumb-size);
+    border-radius: var(--umc-radius-full);
+    background-color: var(--umc-switch-thumb);
+    transform: translateY(-50%);
+    transition:
+      left var(--umc-motion-duration) ease,
+      width var(--umc-motion-duration) ease,
+      height var(--umc-motion-duration) ease;
+  }
+
+  .umc-switch__thumb[data-checked] {
+    left: calc(
+      var(--umc-switch-track-width) - var(--umc-switch-thumb-size-checked) -
+        var(--umc-switch-thumb-inset-checked)
+    );
+    width: var(--umc-switch-thumb-size-checked);
+    height: var(--umc-switch-thumb-size-checked);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .umc-switch__track,
+    .umc-switch__thumb {
+      transition: none;
+    }
+  }
+}

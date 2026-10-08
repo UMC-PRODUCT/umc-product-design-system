@@ -21,6 +21,12 @@ export {
   type StepNavigationProps,
 } from "./step-navigation/index.ts"
 export {
+  Switch,
+  type SwitchLabelPlacement,
+  type SwitchProps,
+  type SwitchSize,
+} from "./switch/index.ts"
+export {
   Tabs,
   TabList,
   Tab,

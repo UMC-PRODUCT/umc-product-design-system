@@ -759,6 +759,25 @@
       },
       "variants": ["Selected=False", "Selected=True"]
     },
+    "switch": {
+      "node": "3696:100309",
+      "name": "Switch",
+      "axes": {
+        "State": ["Off", "On"],
+        "Disabled": ["False", "True"],
+        "Size": ["Sm", "Md"]
+      },
+      "variants": [
+        "State=Off, Disabled=False, Size=Sm",
+        "State=Off, Disabled=False, Size=Md",
+        "State=Off, Disabled=True, Size=Sm",
+        "State=Off, Disabled=True, Size=Md",
+        "State=On, Disabled=False, Size=Sm",
+        "State=On, Disabled=False, Size=Md",
+        "State=On, Disabled=True, Size=Sm",
+        "State=On, Disabled=True, Size=Md"
+      ]
+    },
     "tooltip": {
       "node": "2621:36221",
       "name": "Tooltip",
