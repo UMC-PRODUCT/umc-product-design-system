@@ -9,21 +9,21 @@ import SemanticColors from "../../../components/SemanticColors.astro"
 import { ColorLookup } from "../../../components/react/color/ColorLookup.tsx"
 import { colorTokenRows } from "../../../components/react/color/color-token-rows.ts"
 
-화면은 역할을 담은 semantic 컬러로 만듭니다. primitive는 semantic이 참조하는 원재료라서, 피그마가 primitive를 바로 칠한 곳에만 씁니다. 표의 Tailwind 칸이 그대로 쓸 클래스입니다. 규칙은 [Tailwind CSS에서 쓰기](/getting-started/tailwind/)에 있습니다.
+화면은 역할을 담은 semantic 컬러로 만듭니다. primitive는 semantic이 참조하는 원재료라서, 피그마가 primitive를 바로 칠한 곳에만 씁니다. 표에서 행마다 `Tailwind` 줄이 그대로 쓸 클래스입니다. 규칙은 [Tailwind CSS에서 쓰기](/getting-started/tailwind/)에 있습니다.
 
 ## 피그마에서 본 이름으로 찾기
 
-피그마에서 본 것을 그대로 넣으면 쓸 클래스와 CSS 변수가 나옵니다. 변수 이름(`Fill/Neutral/Weak-75`), Dev Mode 코드 패널의 이름(`var(--color-text-subtle)`), hex 값(`#F7F8F8`), 클래스 무엇이든 됩니다.
+피그마에서 본 것을 그대로 넣으면 쓸 클래스와 CSS 변수가 나옵니다. 변수 이름(`Fill/Neutral/Weak-75`), Dev Mode 코드 패널의 이름(`var(--color-text-subtle)`), 색 값(`#F7F8F8`, `rgba(15, 16, 16, 0.2)`), 클래스 하나(`bg-surface-default`) 중 무엇을 넣어도 됩니다. Dev Mode의 `background: var(--color-…, #F7F8F8);`처럼 값이 붙은 줄을 통째로 넣으면 그 값으로 좁혀 찾습니다.
 
 <ColorLookup client:load rows={colorTokenRows} />
 
 <Aside type="caution" title="Dev Mode 이름은 실마리로만 쓰세요">
-  Dev Mode 코드 패널의 `var(--color-…)`는 코드에 없는 이름입니다. 여러 변수가
-  같은 이름을 나눠 쓰기도 합니다. 결과가 여러 개면 Dev Mode에 보이는 변수
-  이름으로 다시 찾으세요. 디자인 팀에는 codeSyntax를 코드의 CSS 변수로 바꿔
-  달라고 요청해 두었습니다([피그마 정규화
-  리포트](/contributing/figma-normalization/)의 "이름 대응표와 codeSyntax
-  제안").
+  Dev Mode 코드 패널의 `var(--color-…)`는 코드의 CSS 변수(`--umc-color-…`)와
+  다른 이름입니다. 여러 변수가 같은 이름을 나눠 쓰기도 합니다. 결과가 여러 개면
+  값이 붙은 줄을 통째로 넣거나, Dev Mode에 보이는 변수 이름으로 다시 찾으세요.
+  디자인 팀에는 codeSyntax를 코드의 CSS 변수로 바꿔 달라고 요청해
+  두었습니다([피그마 정규화 리포트](/contributing/figma-normalization/)의 "이름
+  대응표와 codeSyntax 제안").
 </Aside>
 
 ## 이름 읽는 법
