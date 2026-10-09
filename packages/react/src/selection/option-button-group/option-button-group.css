@@ -257,4 +257,36 @@
   .umc-option-button__label {
     pointer-events: none;
   }
+
+  @media (forced-colors: active) {
+    .umc-option-button {
+      outline: 1px solid CanvasText;
+      outline-offset: -1px;
+    }
+
+    .umc-option-button[data-checked] {
+      forced-color-adjust: none;
+      background-color: Highlight;
+      color: HighlightText;
+      outline-color: Highlight;
+    }
+
+    .umc-option-button[data-disabled] {
+      outline-color: GrayText;
+    }
+
+    .umc-option-button-group .umc-option-button[data-checked][data-disabled] {
+      background-color: GrayText;
+      color: Canvas;
+      outline-color: GrayText;
+    }
+
+    .umc-option-button[data-checked] .umc-option-button__indicator {
+      color: inherit;
+    }
+
+    .umc-option-button:focus-visible {
+      outline-color: CanvasText;
+    }
+  }
 }

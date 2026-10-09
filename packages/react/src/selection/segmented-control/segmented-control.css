@@ -73,4 +73,21 @@
     text-overflow: ellipsis;
     pointer-events: none;
   }
+
+  @media (forced-colors: active) {
+    .umc-segmented-control {
+      outline: 1px solid CanvasText;
+      outline-offset: -1px;
+    }
+
+    .umc-segmented-control__item[data-checked] {
+      forced-color-adjust: none;
+      background-color: Highlight;
+      color: HighlightText;
+    }
+
+    .umc-segmented-control__item:focus-visible {
+      outline-color: CanvasText;
+    }
+  }
 }

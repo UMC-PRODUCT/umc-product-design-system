@@ -207,4 +207,30 @@
       transition: none;
     }
   }
+
+  @media (forced-colors: active) {
+    .umc-side-navigation__item-inner[data-selected] {
+      forced-color-adjust: none;
+      background-color: Highlight;
+      color: HighlightText;
+    }
+
+    .umc-side-navigation__item-inner[data-selected]
+      .umc-side-navigation__item-icon {
+      color: inherit;
+    }
+
+    .umc-side-navigation__subitem-link[aria-current="page"] {
+      forced-color-adjust: none;
+      color: Highlight;
+    }
+
+    .umc-side-navigation__item-link:focus-visible
+      .umc-side-navigation__item-inner,
+    .umc-side-navigation__group-trigger:focus-visible
+      .umc-side-navigation__item-inner,
+    .umc-side-navigation__subitem-link:focus-visible {
+      outline-color: CanvasText;
+    }
+  }
 }

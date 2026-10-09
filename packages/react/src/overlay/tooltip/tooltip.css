@@ -152,4 +152,10 @@
     );
     rotate: -90deg;
   }
+
+  @media (forced-colors: active) {
+    .umc-tooltip__content {
+      outline: 1px solid CanvasText;
+    }
+  }
 }

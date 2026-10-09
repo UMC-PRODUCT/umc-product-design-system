@@ -151,4 +151,20 @@
       transition: none;
     }
   }
+
+  @media (forced-colors: active) {
+    .umc-header {
+      border-bottom: 1px solid CanvasText;
+    }
+
+    .umc-header__nav-link[aria-current="page"] {
+      forced-color-adjust: none;
+      background-color: Highlight;
+      color: HighlightText;
+    }
+
+    .umc-header__nav-link:focus-visible {
+      outline-color: CanvasText;
+    }
+  }
 }

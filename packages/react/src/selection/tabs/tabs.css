@@ -104,4 +104,24 @@
   .umc-tab-panel[hidden] {
     display: none;
   }
+
+  @media (forced-colors: active) {
+    .umc-tab {
+      forced-color-adjust: none;
+      border-bottom-color: transparent;
+      color: CanvasText;
+    }
+
+    .umc-tab[data-active] {
+      border-bottom-color: Highlight;
+    }
+
+    .umc-tab:focus-visible {
+      outline-color: CanvasText;
+    }
+
+    .umc-tab__icon {
+      color: inherit;
+    }
+  }
 }

@@ -16,6 +16,10 @@ const RELATIVE_IMPORT_PATTERN = /@import "(\.[^"]+)"/g
 const IMPORT_LINES = /^(?:@import [^\n]+\n)*/
 const COLOR_LITERAL_PATTERN = /#[0-9a-fA-F]{3,8}\b|\b(?:rgb|rgba|hsl|hsla)\(/
 const ROLE_DECLARATION_LINE = /^\s*--umc-[a-z0-9-]+\s*:/
+const SHADOW_BORDER_PATTERN = /inset 0 0 0 /
+const STATE_SELECTOR_PATTERN =
+  /\[(?:data-checked|data-selected|data-highlighted|data-active|aria-current)/
+const FORCED_COLORS_RULE = "@media (forced-colors: active)"
 
 const namesOf = (css: string, pattern: RegExp): string[] =>
   [...css.matchAll(pattern)].map(([, name = ""]) => name)
@@ -82,6 +86,14 @@ describe.each(componentFiles)("%s", (file) => {
     expect(
       namesOf(css, DECLARATION_PATTERN).filter((name) => tokenNames.has(name)),
     ).toEqual([])
+  })
+
+  it("그림자 테두리나 선택 상태가 있으면 강제 색 모드에서 대신 그린다", () => {
+    const disappearsInForcedColors =
+      SHADOW_BORDER_PATTERN.test(css) || STATE_SELECTOR_PATTERN.test(css)
+    expect(!disappearsInForcedColors || css.includes(FORCED_COLORS_RULE)).toBe(
+      true,
+    )
   })
 
   it("색 리터럴은 역할 이름을 붙인 --umc 변수 선언에만 있다", () => {

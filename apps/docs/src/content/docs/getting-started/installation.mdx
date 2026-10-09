@@ -167,6 +167,7 @@ export default defineConfig({
 - React 19(`react`, `react-dom`은 peer 의존성)
 - ESM 전용입니다. CommonJS에서는 `import()`로 불러옵니다. Jest를 쓰면 ESM 설정이 필요하니 Vitest를 권합니다
 - 브라우저는 Tailwind v4와 같은 기준입니다(Chrome·Edge 111, Safari 16.4, Firefox 128 이상). 컴포넌트 CSS가 `:has()`, `@layer`, CSS `translate` 속성을 씁니다
+- Windows 고대비 테마처럼 강제 색 모드(`forced-colors: active`)에서는 그림자와 배경색이 지워집니다. 컴포넌트는 이때 경계와 선택 상태를 시스템 색(CanvasText, Highlight)으로 다시 그립니다
 
 ## 주의할 점
 

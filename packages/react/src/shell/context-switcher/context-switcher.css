@@ -133,4 +133,23 @@
       transition: none;
     }
   }
+
+  @media (forced-colors: active) {
+    .umc-context-switcher,
+    .umc-context-switcher__popup {
+      outline: 1px solid CanvasText;
+      outline-offset: -1px;
+    }
+
+    .umc-context-switcher__option[data-highlighted] {
+      forced-color-adjust: none;
+      background-color: Highlight;
+      color: HighlightText;
+    }
+
+    .umc-context-switcher__option[data-highlighted]
+      .umc-context-switcher__option-indicator {
+      color: inherit;
+    }
+  }
 }

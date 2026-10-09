@@ -81,4 +81,29 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
+  @media (forced-colors: active) {
+    .umc-step-navigation__list {
+      outline: 1px solid CanvasText;
+      outline-offset: -1px;
+    }
+
+    .umc-step-navigation__badge {
+      outline: 1px solid currentColor;
+      outline-offset: -1px;
+    }
+
+    .umc-step-navigation__step[aria-current="step"] {
+      forced-color-adjust: none;
+      background-color: Highlight;
+      color: HighlightText;
+    }
+
+    .umc-step-navigation__step[aria-current="step"]
+      .umc-step-navigation__badge {
+      outline: none;
+      background-color: HighlightText;
+      color: Highlight;
+    }
+  }
 }

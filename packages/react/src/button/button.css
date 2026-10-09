@@ -316,4 +316,20 @@
       opacity: 0.2;
     }
   }
+
+  @media (forced-colors: active) {
+    .umc-button {
+      border: 1px solid ButtonText;
+    }
+
+    .umc-button:disabled,
+    .umc-button[aria-disabled="true"] {
+      border-color: GrayText;
+    }
+
+    .umc-button__dot {
+      forced-color-adjust: none;
+      background-color: ButtonText;
+    }
+  }
 }

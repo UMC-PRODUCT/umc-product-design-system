@@ -112,4 +112,17 @@
     flex: 0 0 auto;
     color: var(--umc-color-icon-brand-strong-600);
   }
+
+  @media (forced-colors: active) {
+    .umc-dropdown-item[data-highlighted] {
+      forced-color-adjust: none;
+      background-color: Highlight;
+      color: HighlightText;
+    }
+
+    .umc-dropdown-item[data-highlighted] .umc-dropdown-item__caption,
+    .umc-dropdown-item[data-highlighted] .umc-dropdown-item__indicator {
+      color: inherit;
+    }
+  }
 }

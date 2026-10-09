@@ -29,4 +29,23 @@
       transition: none;
     }
   }
+
+  @media (forced-colors: active) {
+    .umc-check-button {
+      forced-color-adjust: none;
+      color: CanvasText;
+    }
+
+    .umc-check-button[data-checked] {
+      color: Highlight;
+    }
+
+    .umc-check-button[data-disabled] {
+      color: GrayText;
+    }
+
+    .umc-check-button:focus-visible {
+      outline-color: CanvasText;
+    }
+  }
 }

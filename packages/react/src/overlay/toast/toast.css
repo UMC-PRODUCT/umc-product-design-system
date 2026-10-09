@@ -180,4 +180,10 @@
     outline: 2px solid var(--umc-color-border-primary-strong-500);
     outline-offset: 2px;
   }
+
+  @media (forced-colors: active) {
+    .umc-toast {
+      outline: 1px solid CanvasText;
+    }
+  }
 }

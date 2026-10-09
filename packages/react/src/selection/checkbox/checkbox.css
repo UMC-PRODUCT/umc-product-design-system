@@ -134,4 +134,31 @@
       transition: none;
     }
   }
+
+  @media (forced-colors: active) {
+    .umc-checkbox__control {
+      forced-color-adjust: none;
+      background-color: Canvas;
+      box-shadow: inset 0 0 0 var(--umc-checkbox-border-width) CanvasText;
+      color: HighlightText;
+    }
+
+    .umc-checkbox__control[data-checked] {
+      background-color: Highlight;
+      box-shadow: inset 0 0 0 var(--umc-checkbox-border-width) Highlight;
+    }
+
+    .umc-checkbox__control[data-disabled] {
+      box-shadow: inset 0 0 0 var(--umc-checkbox-border-width) GrayText;
+    }
+
+    .umc-checkbox__control[data-checked][data-disabled] {
+      background-color: GrayText;
+      color: Canvas;
+    }
+
+    .umc-checkbox__control:focus-visible {
+      outline-color: CanvasText;
+    }
+  }
 }
