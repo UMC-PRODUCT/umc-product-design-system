@@ -3,6 +3,7 @@ name: Release
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 concurrency:
   group: release
@@ -15,8 +16,11 @@ permissions:
 jobs:
   publish:
     name: GitHub Packages 배포
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout
@@ -44,8 +48,7 @@ jobs:
 
       - name: 레지스트리에 없는 버전 배포
         run: pnpm release
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 배포 태그 push
+        if: ${{ !cancelled() }}
         run: git push origin --tags
