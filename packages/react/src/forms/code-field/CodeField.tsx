@@ -12,6 +12,8 @@ export type CodeFieldProps = FieldOwnProps & {
   defaultValue?: string
   onValueChange?: (value: string) => void
   onValueComplete?: (value: string) => void
+  validationType?: "numeric" | "alpha" | "alphanumeric"
+  normalizeValue?: (value: string) => string
   mask?: boolean
   info?: ReactNode
   name?: string
@@ -33,6 +35,8 @@ export function CodeField({
   defaultValue = "",
   onValueChange,
   onValueComplete,
+  validationType,
+  normalizeValue,
   mask,
   info,
   name,
@@ -73,6 +77,8 @@ export function CodeField({
         onValueChange={(next) => changeValue(next)}
         onValueComplete={(next) => onValueComplete?.(next)}
         onFocus={restartAfterError}
+        validationType={validationType}
+        normalizeValue={normalizeValue}
         mask={mask}
         name={name}
         disabled={disabled}

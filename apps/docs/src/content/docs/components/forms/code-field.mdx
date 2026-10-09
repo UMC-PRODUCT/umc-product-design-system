@@ -31,6 +31,19 @@ import { CodeField } from "@umc-product/react"
 
 <CodeFieldVerify client:visible />
 
+## 영문이 섞인 코드
+
+기본은 숫자만 받습니다. 영문 코드는 `validationType`으로 받을 문자를 넓히고, 대문자로 맞추려면 `normalizeValue`를 넘깁니다. 붙여넣은 값도 같은 규칙으로 걸러집니다.
+
+```tsx
+<CodeField
+  label="인증 코드"
+  validationType="alphanumeric"
+  normalizeValue={(value) => value.toUpperCase()}
+  onValueComplete={(code) => verify(code)}
+/>
+```
+
 ## 상태
 
 <CodeFieldStates client:visible />
@@ -45,15 +58,17 @@ import { CodeField } from "@umc-product/react"
 
 `Field`의 props를 받습니다.
 
-| prop              | 타입                      | 기본값 | 설명                  |
-| ----------------- | ------------------------- | ------ | --------------------- |
-| `length`          | `number`                  | `6`    | 칸 수                 |
-| `value`           | `string`                  | 없음   | 제어 값               |
-| `defaultValue`    | `string`                  | `""`   | 비제어 초기값         |
-| `onValueChange`   | `(value: string) => void` | 없음   | 값이 바뀔 때          |
-| `onValueComplete` | `(value: string) => void` | 없음   | 모든 칸이 찼을 때     |
-| `mask`            | `boolean`                 | 없음   | 입력을 가림           |
-| `info`            | `ReactNode`               | 없음   | 아래쪽 정보 버튼 자리 |
+| prop              | 타입                                     | 기본값      | 설명                                  |
+| ----------------- | ---------------------------------------- | ----------- | ------------------------------------- |
+| `length`          | `number`                                 | `6`         | 칸 수                                 |
+| `value`           | `string`                                 | 없음        | 제어 값                               |
+| `defaultValue`    | `string`                                 | `""`        | 비제어 초기값                         |
+| `onValueChange`   | `(value: string) => void`                | 없음        | 값이 바뀔 때                          |
+| `onValueComplete` | `(value: string) => void`                | 없음        | 모든 칸이 찼을 때                     |
+| `validationType`  | `"numeric" \| "alpha" \| "alphanumeric"` | `"numeric"` | 받을 문자                             |
+| `normalizeValue`  | `(value: string) => string`              | 없음        | 걸러진 값을 바꾸는 함수(예: 대문자로) |
+| `mask`            | `boolean`                                | 없음        | 입력을 가림                           |
+| `info`            | `ReactNode`                              | 없음        | 아래쪽 정보 버튼 자리                 |
 
 ## 피그마와 다른 점
 

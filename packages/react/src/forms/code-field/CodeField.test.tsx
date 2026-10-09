@@ -64,6 +64,46 @@ describe("CodeField", () => {
     }
   })
 
+  it("기본은 숫자만 받는다", async () => {
+    const onValueChange = vi.fn()
+    const user = userEvent.setup()
+    render(<CodeField length={4} onValueChange={onValueChange} />)
+    const inputs = screen.getAllByRole("textbox")
+    await user.type(inputs[0]!, "a1")
+    expect(onValueChange).toHaveBeenLastCalledWith("1")
+  })
+
+  it("validationType이 alphanumeric이면 영문과 숫자를 받는다", async () => {
+    const onValueComplete = vi.fn()
+    const user = userEvent.setup()
+    render(
+      <CodeField
+        length={4}
+        validationType="alphanumeric"
+        onValueComplete={onValueComplete}
+      />,
+    )
+    const inputs = screen.getAllByRole("textbox")
+    await user.type(inputs[0]!, "AB12")
+    expect(onValueComplete).toHaveBeenCalledWith("AB12")
+  })
+
+  it("normalizeValue가 돌려준 값으로 입력을 바꾼다", async () => {
+    const onValueComplete = vi.fn()
+    const user = userEvent.setup()
+    render(
+      <CodeField
+        length={4}
+        validationType="alphanumeric"
+        normalizeValue={(value) => value.toUpperCase()}
+        onValueComplete={onValueComplete}
+      />,
+    )
+    const inputs = screen.getAllByRole("textbox")
+    await user.type(inputs[0]!, "ab12")
+    expect(onValueComplete).toHaveBeenCalledWith("AB12")
+  })
+
   it("오류가 아니면 셀을 눌러도 입력을 유지한다", async () => {
     const user = userEvent.setup()
     render(<CodeField length={4} defaultValue="1234" />)

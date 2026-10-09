@@ -19,6 +19,18 @@ describe("CodeFieldProps 타입", () => {
     >().parameters.toEqualTypeOf<[string]>()
   })
 
+  it("validationType은 숫자, 영문, 영문과 숫자 중 하나이다", () => {
+    expectTypeOf<CodeFieldProps["validationType"]>().toEqualTypeOf<
+      "numeric" | "alpha" | "alphanumeric" | undefined
+    >()
+  })
+
+  it("normalizeValue는 string을 받아 string을 돌려준다", () => {
+    expectTypeOf<NonNullable<CodeFieldProps["normalizeValue"]>>().toEqualTypeOf<
+      (value: string) => string
+    >()
+  })
+
   it("mask는 선택적 boolean이다", () => {
     expectTypeOf<CodeFieldProps["mask"]>().toEqualTypeOf<boolean | undefined>()
   })
