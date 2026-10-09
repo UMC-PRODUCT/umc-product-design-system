@@ -72,8 +72,18 @@ export default defineConfig({
           })),
         },
         {
+          label: "릴리스",
+          items: [
+            "releases/changelog",
+            "releases/versioning",
+            "releases/migration-web-v2",
+          ],
+        },
+        {
           label: "기여하기",
           items: [
+            "contributing/local-development",
+            "contributing/release-process",
             "contributing/token-workflow",
             "contributing/component-guide",
             "contributing/decisions",

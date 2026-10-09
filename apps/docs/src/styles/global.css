@@ -613,3 +613,7 @@
 .docs-page-header {
   padding-block: 0.5rem 0;
 }
+
+.docs-changelog > h1:first-child {
+  display: none;
+}
