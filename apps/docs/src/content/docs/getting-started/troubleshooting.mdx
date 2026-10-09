@@ -1,0 +1,132 @@
+---
+title: 문제 해결
+description: 설치하고 처음 쓸 때 자주 막히는 증상과 원인, 해결 방법입니다.
+---
+
+증상을 먼저 찾고, 원인과 해결 순서로 읽습니다.
+
+## 설치
+
+### 404 Not Found
+
+```
+ERR_PNPM_FETCH_404  GET https://registry.npmjs.org/@umc-product%2Freact: Not Found - 404
+```
+
+주소가 `registry.npmjs.org`이면 pnpm이 GitHub Packages가 아니라 공개 npm에서 패키지를 찾고 있습니다.
+
+- `pnpm install`을 실행하는 폴더의 `.npmrc`에 `@umc-product:registry=https://npm.pkg.github.com`이 있는지 봅니다. 모노레포라면 워크스페이스 루트의 `.npmrc`입니다.
+- 줄이 있는데도 404라면 같은 파일에 `${NODE_AUTH_TOKEN}` 같은 변수가 있는지 봅니다. 변수가 비어 있으면 pnpm은 경고(`Failed to replace env in config`)만 남기고 파일 전체를 무시합니다. 토큰은 저장소 `.npmrc`가 아니라 `~/.npmrc`에 둡니다.
+
+### 401 Unauthorized
+
+```
+ERR_PNPM_FETCH_401  GET https://npm.pkg.github.com/@umc-product%2Freact: Unauthorized - 401
+```
+
+GitHub Packages가 토큰을 받지 못했습니다.
+
+- `~/.npmrc`에 `//npm.pkg.github.com/:_authToken=` 줄이 있고 토큰이 만료되지 않았는지 확인합니다.
+- CI라면 `NODE_AUTH_TOKEN`이 설치 단계에 전달되는지 봅니다. job 수준 `env`에 두는 방법은 [설치와 불러오기](../installation/#github-actions)에 있습니다.
+- Amplify라면 환경 변수 이름이 preBuild 명령의 이름과 같은지 봅니다.
+
+### 403 Forbidden
+
+토큰은 받았지만 권한이 모자랍니다.
+
+- 토큰에 `read:packages` 권한이 있는지 확인합니다.
+- fine-grained 토큰은 쓸 수 없습니다. GitHub Packages의 npm 레지스트리는 classic 토큰만 받습니다.
+- 토큰 주인이 UMC-PRODUCT 조직 멤버인지 확인합니다.
+- GitHub Actions라면 디자인 시스템 패키지의 **Manage Actions access**에 앱 저장소가 있는지, 워크플로 `permissions`에 `packages: read`가 있는지 확인합니다.
+
+### 토큰 패키지가 두 벌 설치된다
+
+`@umc-product/react`는 같은 minor 안의 토큰과 아이콘 패키지를 받습니다. 세 패키지의 minor가 다르면 react가 자기 버전의 토큰을 따로 설치해 `base.css`가 두 벌 들어갑니다. `pnpm why @umc-product/design-tokens`로 한 벌인지 확인하고, 세 패키지를 같은 버전으로 맞춥니다.
+
+```bash
+pnpm up "@umc-product/*"
+```
+
+## 스타일
+
+### 컴포넌트에 스타일이 없다
+
+`@umc-product/react/styles.css`를 불러오지 않았습니다. 앱 전역 CSS에 더합니다. 이 파일 하나가 토큰 CSS와 글꼴까지 불러옵니다.
+
+```css
+@import "@umc-product/react/styles.css";
+```
+
+### 토큰 클래스가 듣지 않는다
+
+`text-neutral-default-900` 같은 클래스에 효과가 없으면 개발자 도구의 Styles 패널에서 클래스 규칙을 찾아봅니다.
+
+- 규칙이 아예 없다: `@umc-product/design-tokens/tailwind.css`를 불러오지 않았습니다.
+- 규칙은 있는데 `var(--umc-…)`가 비어 있다: 변수를 선언하는 CSS가 없습니다. 컴포넌트를 쓰는 앱은 `styles.css`를, 토큰만 쓰는 앱은 `base.css`를 불러옵니다.
+
+### Tailwind 기본 색이 사라졌다
+
+`bg-indigo-500`, `text-gray-700`처럼 피그마에 없는 색 클래스가 생기지 않는 것은 의도한 동작입니다. `tailwind.css`가 기본 팔레트를 지우고 피그마 색만 등록합니다. 피그마 색으로 바꾸고, 꼭 필요한 색만 `@theme`으로 더합니다. 방법은 [Tailwind CSS에서 쓰기](../tailwind/#기본-팔레트와-앱-색)에 있습니다.
+
+`teal-500`, `red-500`처럼 Tailwind와 피그마에 모두 있는 이름은 클래스가 그대로 남지만 값은 피그마 색입니다. 화면 색이 조용히 바뀌므로 도입할 때 확인합니다.
+
+### 앱에서 더한 색이 사라졌다
+
+앱의 `@theme`이 `tailwind.css`보다 앞에 있으면 팔레트 초기화에 함께 지워집니다. `@theme`을 `tailwind.css`를 불러온 뒤로 옮깁니다.
+
+### 기본 팔레트가 되살아났다
+
+`tailwind.css`를 `@import "tailwindcss"`보다 먼저 불러오면 초기화가 듣지 않습니다. `@import "tailwindcss"`를 맨 위에 둡니다.
+
+### `cn()`이 클래스를 지운다
+
+```ts
+cn("text-body-2-regular", "text-neutral-default-900")
+// "text-neutral-default-900"
+```
+
+tailwind-merge가 `text-body-2-regular`를 글자색으로 보고, 뒤에 온 글자색과 겹친다며 지웠습니다. 그림자 클래스(`shadow-drop-neutral-1`)도 같은 이유로 그림자 색과 겹칩니다. 텍스트 스타일과 그림자 클래스를 tailwind-merge에 등록하면 둘 다 남습니다. 등록 코드는 [Tailwind CSS에서 쓰기](../tailwind/#tailwind-merge-등록)에 있습니다.
+
+tailwind-merge v2는 Tailwind v3용이라 등록해도 다른 클래스를 잘못 분류할 수 있습니다. v3 이상으로 올립니다.
+
+## 글꼴
+
+### Pretendard를 두 번 받는다
+
+디자인 시스템은 가변 글꼴 `Pretendard Variable`을 필요한 글자만 나눠 받습니다. 앱이 정적 `Pretendard`를 따로 불러오면 같은 글자를 두 글꼴로 받습니다. 앱의 Pretendard import나 `<link>`를 지우고 본문 글꼴을 토큰으로 맞춥니다.
+
+```css
+body {
+  font-family: var(--umc-font-family-brand);
+}
+```
+
+## 빌드와 테스트
+
+### TypeScript가 하위 경로를 찾지 못한다
+
+```
+Cannot find module '@umc-product/design-tokens/vanilla-extract' or its corresponding type declarations.
+```
+
+`tsconfig.json`의 `moduleResolution`이 `node`이면 TypeScript가 `package.json`의 `exports`를 읽지 않습니다. Vite와 Next.js 앱은 `bundler`로, Node 앱은 `nodenext`로 바꿉니다.
+
+### Vite가 "use client" 경고를 낸다
+
+동작에는 영향이 없습니다. 경고를 끄는 설정은 [설치와 불러오기](../installation/#vite-빌드-경고-끄기)에 있습니다.
+
+### Jest가 `Cannot use import statement outside a module`을 낸다
+
+패키지가 ESM으로만 배포되는데 Jest는 `node_modules`를 변환하지 않습니다. Vitest로 테스트하기를 권합니다. Jest를 계속 쓴다면 `transformIgnorePatterns`에서 디자인 시스템 패키지를 빼서 변환기가 처리하게 합니다. pnpm은 실제 파일이 `node_modules/.pnpm/` 아래에 있으므로 `.pnpm`도 함께 뺍니다.
+
+```js title="jest.config.cjs"
+module.exports = {
+  transformIgnorePatterns: ["/node_modules/(?!(\\.pnpm|@umc-product))"],
+}
+```
+
+컴포넌트 JS는 CSS를 import하지 않으므로 테스트에서 CSS를 모킹할 필요는 없습니다.
+
+### React 18 앱에서 설치 경고가 난다
+
+`react`와 `react-dom` 19를 peer 의존성으로 요구합니다. React 18에서는 지원하지 않습니다.

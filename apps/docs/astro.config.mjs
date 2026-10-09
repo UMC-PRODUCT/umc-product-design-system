@@ -50,6 +50,7 @@ export default defineConfig({
             "getting-started/installation",
             "getting-started/tailwind",
             "getting-started/vanilla-extract",
+            "getting-started/troubleshooting",
           ],
         },
         {
