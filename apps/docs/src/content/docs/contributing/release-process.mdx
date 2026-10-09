@@ -95,6 +95,7 @@ develop → main PR을 열고 병합합니다. 병합하면 두 워크플로가 
 
 - **새 앱이 패키지를 설치할 때**: 세 패키지마다 Package settings → Manage Actions access에 앱 저장소를 Read 권한으로 더합니다. 앱의 GitHub Actions가 `GITHUB_TOKEN`으로 설치할 수 있게 됩니다.
 - **Amplify용 공용 토큰**: 조직 공용 계정에서 `read:packages` classic 토큰을 만들고 만료일과 갱신 담당자를 정합니다.
+- **npm 스코프 선점**: 앱의 `.npmrc`가 무시되면 pnpm은 `@umc-product` 패키지를 공개 npm에서 찾습니다. npm에 `umc-product` 조직을 만들어 두면 같은 이름의 다른 패키지가 설치되는 사고를 막을 수 있습니다.
 - **저장소 설정**(처음 한 번)
   - Settings → General → Default branch: develop
   - Settings → Pages → Source: GitHub Actions
