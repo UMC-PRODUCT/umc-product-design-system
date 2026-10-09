@@ -15,10 +15,10 @@ hero:
 
 import { Aside, Card, CardGrid } from "@astrojs/starlight/components"
 
-<Aside type="note" title="현재 상태 (2026-10-08)">
-  토큰, 아이콘, 컴포넌트 31종을 옮겼고 컴포넌트마다 피그마 값과 실제 렌더링 값을
-  대조했습니다. 패키지는 아직 배포 전이라 이 저장소 안에서만 쓸 수 있습니다.
-  브레이크포인트와 몇몇 값은 디자인 팀 답을 기다리고 있습니다.
+<Aside type="note" title="현재 상태 (0.1.0)">
+  토큰, 아이콘, 컴포넌트 31종을 GitHub Packages에 비공개로 배포합니다. 컴포넌트마다
+  피그마 값과 실제 렌더링 값을 대조했습니다. 브레이크포인트와 몇몇 값은 디자인 팀
+  답을 기다리고 있고, 0.x 동안은 minor 버전에서 이름이 바뀔 수 있습니다.
 </Aside>
 
 <CardGrid>
@@ -34,8 +34,12 @@ import { Aside, Card, CardGrid } from "@astrojs/starlight/components"
     버튼 2종, 폼 입력 11종, 선택 8종, 오버레이와 피드백 4종, 앱 셸 6종입니다.
     Base UI로 접근성을 맞추고 CSS는 미리 빌드해 배포합니다.
   </Card>
-  <Card title="기여하기" icon="setting">
-    토큰 갱신 순서, 컴포넌트 구현 규칙, 결정 기록, 디자인 팀 확인 목록을
+  <Card title="릴리스" icon="rocket">
+    버전마다 바뀐 내용, 버전을 올리는 기준, web-v2에 도입하는 순서를
     정리했습니다.
+  </Card>
+  <Card title="기여하기" icon="setting">
+    로컬 개발과 배포 절차, 토큰 갱신 순서, 컴포넌트 구현 규칙, 결정 기록, 디자인
+    팀 확인 목록입니다.
   </Card>
 </CardGrid>
