@@ -238,4 +238,11 @@
       animation: none;
     }
   }
+
+  @media (forced-colors: active) {
+    .umc-input-box:not([data-disabled]):focus-within {
+      outline: 2px solid Highlight;
+      outline-offset: 2px;
+    }
+  }
 }

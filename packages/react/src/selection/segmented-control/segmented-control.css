@@ -89,5 +89,9 @@
     .umc-segmented-control__item:focus-visible {
       outline-color: CanvasText;
     }
+
+    .umc-segmented-control__item[data-checked]:focus-visible {
+      outline-color: HighlightText;
+    }
   }
 }

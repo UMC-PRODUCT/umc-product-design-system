@@ -275,7 +275,8 @@
       outline-color: GrayText;
     }
 
-    .umc-option-button-group .umc-option-button[data-checked][data-disabled] {
+    .umc-option-button-group[data-variant]
+      .umc-option-button[data-checked][data-disabled] {
       background-color: GrayText;
       color: Canvas;
       outline-color: GrayText;
@@ -287,6 +288,10 @@
 
     .umc-option-button:focus-visible {
       outline-color: CanvasText;
+    }
+
+    .umc-option-button[data-checked]:focus-visible {
+      outline-color: HighlightText;
     }
   }
 }

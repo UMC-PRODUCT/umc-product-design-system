@@ -232,5 +232,12 @@
     .umc-side-navigation__subitem-link:focus-visible {
       outline-color: CanvasText;
     }
+
+    .umc-side-navigation__item-link:focus-visible
+      .umc-side-navigation__item-inner[data-selected],
+    .umc-side-navigation__group-trigger:focus-visible
+      .umc-side-navigation__item-inner[data-selected] {
+      outline-color: HighlightText;
+    }
   }
 }
