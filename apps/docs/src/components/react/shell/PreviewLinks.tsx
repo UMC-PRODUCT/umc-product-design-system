@@ -12,6 +12,7 @@ function PreviewLink({ href, children, ...rest }: LinkComponentProps) {
   return (
     <a
       href={href}
+      data-preview-link=""
       {...rest}
       onClick={(event) => {
         event.preventDefault()

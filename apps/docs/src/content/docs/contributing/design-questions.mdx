@@ -25,10 +25,11 @@ description: 피그마를 코드로 옮기며 판단이 필요했던 항목을 �
 6. Hover와 Focus 상태가 없는 컴포넌트가 많습니다. 포커스 표시는 2px `border-primary-strong-500` 외곽선으로 통일했습니다.
 7. 나타나고 사라지는 움직임 정의가 없습니다. 150ms 투명도 전환을 기본으로 넣었고, 움직임 줄이기 설정에서는 끕니다.
 8. 노션 명명 규칙과 다른 이름이 있습니다: `Regular=Weight`, `Property 1`, `Pressed(Hover)`, `Focused & Hover`, Tooltip의 `Appearance`, Option Button의 `Direction`, 오타 `Disalbed`, `Defalut`, `Numberic`, `Varient`, `Meue`, `Sub Meue`, `Eye_visable`, `Solt`.
+9. 파비콘 에셋이 없습니다. 문서 사이트는 `Logo/UMC`의 U 글자 모양과 색(`#3F4141`)을 그대로 떼어 임시로 씁니다. 정사각형 파비콘이나 앱 아이콘을 주시면 바꾸겠습니다.
 
 ## 토큰
 
-변수 이름, codeSyntax 중복, 그림자와 텍스트 스타일의 중복 정의 등 16개 항목은 [피그마 정규화 리포트](/contributing/figma-normalization/)의 "디자인 팀 확인 요청"에 있습니다.
+변수 이름, codeSyntax 중복, 그림자와 텍스트 스타일의 중복 정의 등 16개 항목은 [피그마 정규화 리포트](../figma-normalization/)의 "디자인 팀 확인 요청"에 있습니다.
 
 가장 먼저 부탁드리는 것은 codeSyntax(WEB) 정리입니다. Dev Mode 코드 패널과 피그마 MCP가 보여 주는 `var(--color-…)`는 코드의 CSS 변수(`--umc-color-…`)와 다른 이름이고, 변수 여러 개가 같은 이름을 나눠 씁니다. 리포트의 "이름 대응표와 codeSyntax 제안"에 변수마다 넣을 값(`var(--umc-color-fill-neutral-weak-75)` 등)을 적어 두었습니다.
 
@@ -36,11 +37,11 @@ description: 피그마를 코드로 옮기며 판단이 필요했던 항목을 �
 
 ## 아이콘
 
-뒤집힌 Search 변형 이름(`Regular=Weight`), 정사각형이 아닌 프레임, 고정된 흰 부분, 토큰에 없는 픽토그램 색 등 10개 항목은 [아이콘 정규화 리포트](/contributing/icon-normalization/)에 있습니다.
+뒤집힌 Search 변형 이름(`Regular=Weight`), 정사각형이 아닌 프레임, 고정된 흰 부분, 토큰에 없는 픽토그램 색 등 10개 항목은 [아이콘 정규화 리포트](../icon-normalization/)에 있습니다.
 
 ## Button
 
-노드 2621:33584. 자세한 값은 [Button](/components/actions/button/) 페이지에 있습니다.
+노드 2621:33584. 자세한 값은 [Button](../../components/actions/button/) 페이지에 있습니다.
 
 1. Hover가 없어 마우스가 있는 기기에서 Pressed 모양을 함께 씁니다. 같은 모양이어도 되는지 알려 주세요.
 2. 아이콘 변형의 색(Primary Fill `#02746c`, Md Neutral Fill `#7e7f7f`)이 아이콘 없는 변형과 다릅니다. 코드는 아이콘 없는 변형으로 통일했습니다.
@@ -53,7 +54,7 @@ description: 피그마를 코드로 옮기며 판단이 필요했던 항목을 �
 
 ## Text Button
 
-노드 3573:95925. 자세한 값은 [TextButton](/components/actions/text-button/) 페이지에 있습니다.
+노드 3573:95925. 자세한 값은 [TextButton](../../components/actions/text-button/) 페이지에 있습니다.
 
 1. Hover·Pressed에서 글자와 아이콘 색이 다릅니다. Brand는 글자 `#01423d`(teal-800), 아이콘 `#015a54`(teal-700)이고, Neutral은 글자 `#282a2a`, 아이콘 `#3f4141`입니다. 의도인지 알려 주세요. 코드는 피그마대로 따로 칠합니다.
 2. Brand 비활성과 아이콘 Hover 색이 semantic이 아닌 primitive(`Teal-300`, `Teal-700`)에 연결되어 있습니다. 글자 비활성은 같은 값의 `text-brand-disabled-300`로 옮겼고, 아이콘은 primitive를 그대로 씁니다.

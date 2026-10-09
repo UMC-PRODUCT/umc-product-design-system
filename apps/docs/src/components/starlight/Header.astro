@@ -1,15 +1,21 @@
 ---
 import Search from "@astrojs/starlight/components/Search.astro"
+import SocialIcons from "@astrojs/starlight/components/SocialIcons.astro"
 
 import { DocsHeader } from "../react/frame/DocsHeader.tsx"
 import { currentSectionHref, sectionNavItems } from "../../lib/docs-navigation.ts"
 
 const { sidebar } = Astro.locals.starlightRoute
+const homeHref = import.meta.env.BASE_URL.replace(/\/?$/, "/")
 ---
 
 <DocsHeader
+  homeHref={homeHref}
   navItems={sectionNavItems(sidebar)}
   currentPath={currentSectionHref(sidebar) ?? Astro.url.pathname}
 >
-  <div slot="actions" class="docs-header-search"><Search /></div>
+  <div slot="actions" class="docs-header-search">
+    <Search />
+    <SocialIcons />
+  </div>
 </DocsHeader>

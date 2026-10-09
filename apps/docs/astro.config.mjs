@@ -4,7 +4,10 @@ import tailwindcss from "@tailwindcss/vite"
 import { defineConfig } from "astro/config"
 import starlightLlmsTxt from "starlight-llms-txt"
 
-const LOCAL_SITE_URL = "http://localhost:5174"
+const SITE_URL = "https://umc-product.github.io"
+const BASE_PATH = "/umc-product-design-system"
+const REPOSITORY_URL =
+  "https://github.com/UMC-PRODUCT/umc-product-design-system"
 
 const COMPONENT_GROUPS = [
   { label: "액션", directory: "components/actions" },
@@ -15,13 +18,18 @@ const COMPONENT_GROUPS = [
 ]
 
 export default defineConfig({
-  site: LOCAL_SITE_URL,
+  site: SITE_URL,
+  base: BASE_PATH,
   server: { port: 5174 },
   integrations: [
     react(),
     starlight({
       title: "UMC Design System",
       description: "UMC 프로덕트 팀의 디자인 토큰과 사용 가이드",
+      favicon: "/favicon.svg",
+      social: [{ icon: "github", label: "GitHub", href: REPOSITORY_URL }],
+      editLink: { baseUrl: `${REPOSITORY_URL}/edit/develop/apps/docs/` },
+      lastUpdated: true,
       defaultLocale: "root",
       locales: {
         root: { label: "한국어", lang: "ko" },

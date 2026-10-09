@@ -566,6 +566,12 @@
   box-shadow: none;
 }
 
+.docs-header-search {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .docs-side-navigation {
   display: none;
 }
