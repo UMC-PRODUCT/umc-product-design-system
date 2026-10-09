@@ -1,0 +1,44 @@
+name: Version
+
+on:
+  push:
+    branches: [develop]
+
+concurrency:
+  group: version
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  version:
+    name: 버전 PR 만들기
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: 쌓인 changeset으로 버전 PR 열기
+        uses: changesets/action@v1
+        with:
+          version: pnpm version-packages
+          title: "chore: 패키지 버전 올리기"
+          commit: "chore: 패키지 버전 올리기"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
