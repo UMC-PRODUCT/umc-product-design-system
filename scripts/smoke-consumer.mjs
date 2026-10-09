@@ -34,7 +34,22 @@ const EXPECTED_CSS = [
   ".bg-surface-default",
   ".border-neutral-weak-200",
   "@font-face",
+  ".bg-teal-500",
 ]
+
+const FORBIDDEN_CSS = [".bg-indigo-500"]
+
+const EXPECTED_FONT_ASSETS = [/pretendard.*\.woff2$/i, /orbitron.*\.woff2$/i]
+
+const SERVER_RENDER_SCRIPT = `import { createElement } from "react"
+import { renderToString } from "react-dom/server"
+import { Button } from "@umc-product/react"
+
+const html = renderToString(createElement(Button, null, "확인"))
+if (!html.includes("umc-button")) {
+  throw new Error("서버 렌더링 결과에 umc-button이 없습니다: " + html)
+}
+`
 
 const MAIN_TSX = `import { textStyleUtilities } from "@umc-product/design-tokens"
 import { SearchIcon } from "@umc-product/icons"
@@ -54,6 +69,7 @@ function App() {
       <TextField label="이름" placeholder="이름을 입력하세요" />
       <Checkbox defaultChecked>개인정보 수집 동의</Checkbox>
       <Button leadingIcon={<SearchIcon />}>검색</Button>
+      <p className="bg-teal-500 bg-indigo-500">기본 팔레트 초기화</p>
     </main>
   )
 }
@@ -143,9 +159,10 @@ const writeApp = (appDir, tarballs) => {
   writeFileSync(join(appDir, "src", "app.css"), APP_CSS)
 }
 
-const assertBuiltCss = (appDir) => {
+const assertBuiltAssets = (appDir) => {
   const assetsDir = join(appDir, "dist", "assets")
-  const css = readdirSync(assetsDir)
+  const assetFiles = readdirSync(assetsDir)
+  const css = assetFiles
     .filter((file) => file.endsWith(".css"))
     .map((file) => readFileSync(join(assetsDir, file), "utf8"))
     .join("\n")
@@ -153,7 +170,20 @@ const assertBuiltCss = (appDir) => {
   if (missing.length > 0) {
     throw new Error(`빌드한 CSS에 없는 것: ${missing.join(", ")}`)
   }
+  const leaked = FORBIDDEN_CSS.filter((needle) => css.includes(needle))
+  if (leaked.length > 0) {
+    throw new Error(`기본 팔레트가 지워지지 않았습니다: ${leaked.join(", ")}`)
+  }
+  const missingFonts = EXPECTED_FONT_ASSETS.filter(
+    (pattern) => !assetFiles.some((file) => pattern.test(file)),
+  )
+  if (missingFonts.length > 0) {
+    throw new Error(`빌드에 없는 글꼴: ${missingFonts.join(", ")}`)
+  }
 }
+
+const assertServerRender = (appDir) =>
+  run("node", ["--input-type=module", "-e", SERVER_RENDER_SCRIPT], appDir)
 
 const assertPublishedDependencies = (tarballs, workDir) => {
   const extractDir = join(workDir, "extracted")
@@ -182,7 +212,8 @@ try {
   writeApp(appDir, tarballs)
   run("pnpm", ["install", "--prefer-offline", "--ignore-workspace"], appDir)
   run("pnpm", ["run", "build"], appDir)
-  assertBuiltCss(appDir)
+  assertBuiltAssets(appDir)
+  assertServerRender(appDir)
   console.log("소비자 스모크 테스트 통과")
 } finally {
   if (keep) {
