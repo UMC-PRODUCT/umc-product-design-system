@@ -1,35 +1,50 @@
 {
   "name": "@umc-product/react",
   "version": "0.0.0",
-  "private": true,
+  "description": "UMC 디자인 시스템 React 컴포넌트(Base UI 기반)",
+  "license": "UNLICENSED",
+  "homepage": "https://umc-product.github.io/umc-product-design-system/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UMC-PRODUCT/umc-product-design-system.git",
+    "directory": "packages/react"
+  },
   "type": "module",
   "sideEffects": [
     "*.css"
   ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     },
-    "./styles.css": "./dist/styles.css"
+    "./styles.css": "./dist/styles.css",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json && tsx scripts/copy-css.ts",
     "test": "vitest run",
-    "typecheck": "tsc -b"
-  },
-  "peerDependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "typecheck": "tsc -b",
+    "prepack": "pnpm run build"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",
     "@fontsource/orbitron": "^5.3.0",
     "@umc-product/design-tokens": "workspace:*",
     "@umc-product/icons": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@tailwindcss/node": "^4.3.3",

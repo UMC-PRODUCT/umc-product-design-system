@@ -1,24 +1,39 @@
 {
   "name": "@umc-product/icons",
   "version": "0.0.0",
-  "private": true,
+  "description": "UMC 디자인 시스템 아이콘, 픽토그램, 로고 React 컴포넌트",
+  "license": "UNLICENSED",
+  "homepage": "https://umc-product.github.io/umc-product-design-system/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UMC-PRODUCT/umc-product-design-system.git",
+    "directory": "packages/icons"
+  },
   "type": "module",
   "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    }
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "icons:build": "tsx scripts/build.ts",
     "icons:check": "tsx scripts/check.ts",
     "build": "tsc -p tsconfig.build.json",
     "test": "vitest run",
-    "typecheck": "tsc -b"
+    "typecheck": "tsc -b",
+    "prepack": "pnpm run build"
   },
   "peerDependencies": {
     "react": "^19.0.0"
