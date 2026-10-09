@@ -20,13 +20,13 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: pnpm
@@ -35,10 +35,8 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: 쌓인 changeset으로 버전 PR 열기
-        uses: changesets/action@v1
+        uses: changesets/action@v2
         with:
-          version: pnpm version-packages
-          title: "chore: 패키지 버전 올리기"
-          commit: "chore: 패키지 버전 올리기"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          version-script: pnpm version-packages
+          pr-title: "chore: 패키지 버전 올리기"
+          commit-message: "chore: 패키지 버전 올리기"
