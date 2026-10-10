@@ -62,7 +62,7 @@ apps/docs/src/components/react/<group>/<Component>Examples.tsx
 
 1. 피그마가 3기 변수를 연결했으면 토큰을 씁니다. 코드 출력에는 semantic 변수가 codeSyntax로만 보이므로 codeSyntax와 값으로 토큰을 찾습니다.
 2. 이름 있는 스타일(텍스트 스타일, 그림자)은 토큰 패키지에 있는 것을 씁니다.
-3. 이름 없는 값, 스타일을 덮어쓴 값, 내보낸 3기 변수에 없는 값은 피그마 값 그대로 역할 변수에 담고 문서의 "디자인 팀 확인 사항"에 적습니다.
+3. 이름 없는 값, 스타일을 덮어쓴 값, 내보낸 3기 변수에 없는 값은 피그마 값 그대로 역할 변수에 담고 저장소의 `design-questions.md`에 적습니다. 일부러 다르게 옮긴 값은 `figma-spec.json`의 `figmaDiffers`에 이유를 남깁니다.
 
 ## 접근성과 동작
 
@@ -105,7 +105,7 @@ apps/docs/src/components/react/<group>/<Component>Examples.tsx
 
 ## 문서
 
-컴포넌트마다 MDX 한 페이지를 씁니다. 순서는 소개와 import 예시, 변형, 상태, 동작, props 표, 디자인 팀 확인 사항입니다. 예시는 React 파일에 만들어 MDX에서 렌더하고, 상호작용이 필요한 예시만 `client:visible`을 붙입니다.
+컴포넌트마다 MDX 한 페이지를 씁니다. 순서는 소개와 import 예시, 변형, 상태, 동작, props 표, 알아 둘 점입니다. 문서에는 피그마 노드 ID, 디자인 팀 확인 사항, 피그마와 다른 점을 쓰지 않습니다. 예시는 React 파일에 만들어 MDX에서 렌더하고, 상호작용이 필요한 예시만 `client:visible`을 붙입니다.
 
 ## 모든 변형 그리드
 
@@ -114,7 +114,7 @@ apps/docs/src/components/react/<group>/<Component>Examples.tsx
 - **스냅샷**: `apps/docs/src/data/figma-variants.json`에 세트마다 노드 id와 변형 이름을 적습니다. 피그마 `01. Component` 페이지(3434:72558)의 메타데이터에서 만듭니다.
 - **그리드**: `VariantGrid`에 세트 키와 행·열·구역으로 쓸 축을 넘기고, `render`에서 변형 하나를 실제 컴포넌트로 그립니다. 칸 하나에 변형이 둘 이상 걸리면 빌드가 멈춥니다. 피그마 값을 코드 값으로 바꿀 때는 `lookup`을 써서, 대응표에 없는 값이 오면 빌드가 멈추게 합니다.
 - **상태 강제**: Hover, Pressed, Focus처럼 마우스나 키보드가 있어야 보이는 상태는 `ForceState`로 감쌉니다. 문서의 Head가 `.umc-` 규칙 중 `:hover`, `:active`, `:focus` 계열, `[data-popup-open]`, `[data-highlighted]`가 들어간 규칙을 `[data-force-state~="hover"]` 같은 조상 선택자로 복제합니다. 같은 레이어, 같은 순서에 넣으므로 실제 상호작용과 같은 값이 나옵니다. 컴포넌트 CSS는 건드리지 않습니다.
-- **미구현**: 코드에 없는 변형은 `NotImplemented`에 이유를 적어 칸을 채웁니다. 디자인 팀 확인 목록에도 같은 항목을 올립니다.
+- **미구현**: 코드에 없는 변형은 `NotImplemented`에 이유를 적어 칸을 채웁니다. 저장소 `design-questions.md`에도 같은 항목을 올립니다.
 - **검사**: `pnpm docs:build` 뒤 `pnpm docs:variants`를 실행합니다. 스냅샷의 모든 변형이 문서에 정확히 한 번 그려졌는지 확인하고, 빠지거나 겹치면 실패합니다.
 
 피그마가 바뀌면 스냅샷을 다시 받고, 새 값에 맞춰 `render`의 대응표를 고친 뒤 검사를 돌립니다.

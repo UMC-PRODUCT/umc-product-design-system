@@ -9,7 +9,7 @@ import {
   SwitchStates,
 } from "../../../../components/react/selection/SwitchExamples.tsx"
 
-피그마 `Switch`(노드 3696:100309)를 옮겼습니다. 누르는 즉시 적용되는 설정에 씁니다. 저장 버튼을 눌러야 반영되는 폼 항목이라면 [Checkbox](../checkbox/)가 맞습니다. 켜짐 상태와 키보드 조작, 폼 제출은 Base UI `Switch`가 맡습니다.
+피그마 `Switch`를 옮겼습니다. 누르는 즉시 적용되는 설정에 씁니다. 저장 버튼을 눌러야 반영되는 폼 항목이라면 [Checkbox](../checkbox/)가 맞습니다. 켜짐 상태와 키보드 조작, 폼 제출은 Base UI `Switch`가 맡습니다.
 
 ```tsx
 import { Switch } from "@umc-product/react"
@@ -56,10 +56,6 @@ import { Switch } from "@umc-product/react"
 | `name`, `value`, `required`, `id`, `inputRef`       |                              | 없음      | 폼 제출용. 숨은 `<input>`에 붙음 |
 | `aria-label`, `aria-labelledby`, `aria-describedby` | `string`                     | 없음      | 접근성 이름과 설명               |
 
-## 피그마와 다른 점
+## 알아 둘 점
 
-- 피그마의 `State=On/Off`는 `checked`로 옮겼습니다.
-- 트랙 색 두 개(꺼짐, 켜짐)가 변수에 연결되어 있지 않습니다. 켜짐 `#39a9a1`은 같은 값의 `fill-primary-inverse-weak-400`을 씁니다. 꺼짐은 내보낸 값이 `#e2e4e3`이고, 가장 가까운 `fill-neutral-strong-200`(`#e2e3e3`)을 씁니다.
-- Sm 켜짐에만 안쪽 그림자(`#d3d8d833`, 0.8 0.8 1.6)가 있어 그대로 옮겼습니다. Md 켜짐에는 그림자가 없습니다.
-- 포커스 상태가 없어 다른 컨트롤과 같은 2px `border-primary-strong-500` 외곽선을 넣었습니다.
-- 켜고 끌 때 손잡이가 150ms 동안 움직입니다. 움직임 줄이기 설정에서는 바로 바뀝니다.
+- 켜고 끌 때 손잡이가 150ms 동안 움직이고, 움직임 줄이기 설정에서는 바로 바뀝니다.

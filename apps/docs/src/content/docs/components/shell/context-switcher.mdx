@@ -8,7 +8,7 @@ import {
   ContextSwitcherDefault,
 } from "../../../../components/react/shell/ContextSwitcherExamples.tsx"
 
-피그마 `Context Switcher`(node 2281:6450)를 구현했습니다. 피그마 설명대로 워크스페이스, 계정 뷰, 관리 권한처럼 작업 맥락을 바꾸고 그에 따라 아래 메뉴가 달라지는 곳에 씁니다. 필요 없으면 쓰지 않습니다. 보통 `SideNavigation`의 `slot`에 넣습니다.
+피그마 `Context Switcher`를 구현했습니다. 피그마 설명대로 워크스페이스, 계정 뷰, 관리 권한처럼 작업 맥락을 바꾸고 그에 따라 아래 메뉴가 달라지는 곳에 씁니다. 필요 없으면 쓰지 않습니다. 보통 `SideNavigation`의 `slot`에 넣습니다.
 
 ```tsx
 import { ContextSwitcher, type ContextSwitcherOption } from "@umc-product/react"
@@ -38,7 +38,7 @@ export function ViewSwitcher() {
 
 ## 모든 변형
 
-피그마 `Context Switcher` 변형 3개를 그렸습니다. Selected는 목록이 열린 모습이라 목록을 버튼 아래에 고정해 그렸습니다. 칸에 마우스를 올리면 피그마 변형 이름이 보입니다. Hover처럼 마우스가 있어야 보이는 상태는 문서에서 켜 둔 모습입니다.
+피그마 `Context Switcher` 변형 3개를 그렸습니다. Selected는 목록이 열린 모습이라 목록을 버튼 아래에 고정해 그렸습니다. 칸에 마우스를 올리면 변형 이름이 보이고, hover 같은 상태는 켜 둔 모습입니다.
 
 <ContextSwitcherAllVariants client:visible />
 
@@ -53,7 +53,6 @@ export function ViewSwitcher() {
 
 `ContextSwitcherOption<V>`는 `{ value: V; label: ReactNode }`입니다.
 
-## 피그마와 다른 점
+## 알아 둘 점
 
-- 너비: 피그마는 172px이지만 사이드 내비게이션 슬롯의 안쪽 폭은 168px입니다. `max-width: 100%`를 함께 걸어 슬롯 안에서는 168px로 줄어듭니다.
-- 눌림 그림자와 선택 항목 그림자: 피그마 값(#D3D8D833, 1, 1, 2)이 이름 있는 스타일과 달라 컴포넌트 변수로 썼습니다.
+- 기본 너비는 172px이고, 사이드 내비게이션 슬롯 안에서는 슬롯 폭에 맞춰 줄어듭니다.

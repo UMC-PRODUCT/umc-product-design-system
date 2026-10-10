@@ -10,7 +10,7 @@ import {
   FieldWithInfo,
 } from "../../../../components/react/forms/FieldExamples.tsx"
 
-피그마 `Text Field/ Box`(node 2621:33350)의 레이블(`Text Field/ Label`)과 도움말(`Help Text`) 부분입니다. `TextField`, `TextArea`, `Select`, `VerificationCodeField`, `CodeField`, `NumericStepper`가 모두 이 틀을 씁니다. 직접 만든 컨트롤을 넣을 때는 `FieldControl`을 함께 씁니다.
+피그마 `Text Field/ Box`의 레이블(`Text Field/ Label`)과 도움말(`Help Text`) 부분입니다. `TextField`, `TextArea`, `Select`, `VerificationCodeField`, `CodeField`, `NumericStepper`가 모두 이 틀을 씁니다. 직접 만든 컨트롤을 넣을 때는 `FieldControl`을 함께 씁니다.
 
 ```tsx
 import { Field, FieldControl, InputBox } from "@umc-product/react"
@@ -42,7 +42,7 @@ import { Field, FieldControl, InputBox } from "@umc-product/react"
 
 ## 모든 변형
 
-피그마 `Text Field/ Label` 6개와 `Help Text` 4개를 그렸습니다. 칸에 마우스를 올리면 피그마 변형 이름이 보입니다. Hover, Focus, Typing처럼 마우스나 키보드가 있어야 보이는 상태는 문서에서 켜 둔 모습입니다.
+피그마 `Text Field/ Label` 6개와 `Help Text` 4개를 그렸습니다. 칸에 마우스를 올리면 변형 이름이 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
 
 <FieldAllVariants />
 
@@ -59,8 +59,3 @@ import { Field, FieldControl, InputBox } from "@umc-product/react"
 | `info`         | `ReactNode`              | 없음        | 아래쪽 정보 버튼 자리             |
 | `disabled`     | `boolean`                | 없음        | 비활성 상태                       |
 | `nativeLabel`  | `boolean`                | `true`      | 버튼형 컨트롤이면 `false`         |
-
-## 피그마와 다른 점
-
-- 레이블 색: `Text Field/ Label` 원본은 2기 변수 `warmgray-600`(#544f4b)이고, `Text Field/ Box` 안에서는 `TealGrey-600`(#606262)으로 덮어씁니다. 3기 토큰인 #606262(`--umc-color-text-neutral-medium-600`)를 씁니다.
-- 레이블(15px/23px, -3%)과 도움말(13px/17px)은 3기 파운데이션에 없는 `Mobile Web/*` 텍스트 스타일입니다. 토큰에 없는 값이라 피그마 값을 그대로 썼습니다.

@@ -84,13 +84,9 @@ export function VariantGrid({
       : `변형 ${set.variants.length}개 중 ${variants.length}개`
 
   return (
-    <div
-      className="umc-variant-grid not-content"
-      data-figma-set={key}
-      data-figma-node={set.node}
-    >
+    <div className="umc-variant-grid not-content" data-figma-set={key}>
       <p className="umc-variant-grid__source">
-        피그마 <code>{set.name}</code>({set.node}) · {scope}
+        피그마 <code>{set.name}</code> · {scope}
       </p>
       {combosOf(variants, sections, rank).map((sectionCombo) => {
         const sectionVariants = variants.filter((variant) =>

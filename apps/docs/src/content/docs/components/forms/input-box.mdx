@@ -9,7 +9,7 @@ import {
   InputBoxStates,
 } from "../../../../components/react/forms/InputBoxExamples.tsx"
 
-피그마 `Text Field/ Input Box`(node 2621:33115)의 상자입니다. `TextField`, `TextArea`, `VerificationCodeField`가 이 상자를 씁니다. 직접 쓰는 경우는 피그마 `Type=Custom`처럼 안쪽을 자유롭게 채울 때입니다.
+피그마 `Text Field/ Input Box`의 상자입니다. `TextField`, `TextArea`, `VerificationCodeField`가 이 상자를 씁니다. 직접 쓰는 경우는 피그마 `Type=Custom`처럼 안쪽을 자유롭게 채울 때입니다.
 
 ```tsx
 import { InputBox } from "@umc-product/react"
@@ -41,7 +41,7 @@ import { InputBox } from "@umc-product/react"
 
 ## 모든 변형
 
-피그마 `Text Field/ Input Box`의 Custom 변형 10개와 `.primitive/ Text Field/ Accessory` 6개를 그렸습니다. 부속 요소는 그 요소가 나타나는 필드 안에 그렸습니다. 칸에 마우스를 올리면 피그마 변형 이름이 보입니다. Hover, Focus, Typing처럼 마우스나 키보드가 있어야 보이는 상태는 문서에서 켜 둔 모습입니다.
+피그마 `Text Field/ Input Box`의 Custom 변형 10개와 `.primitive/ Text Field/ Accessory` 6개를 그렸습니다. 부속 요소는 그 요소가 나타나는 필드 안에 그렸습니다. 칸에 마우스를 올리면 변형 이름이 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
 
 <InputBoxAllVariants client:visible />
 
@@ -54,8 +54,3 @@ import { InputBox } from "@umc-product/react"
 | `disabled` | `boolean`      | 없음   | 비활성 상태         |
 
 나머지 `div` 속성은 그대로 전달합니다. 값이 있는지는 안쪽 컨트롤의 `data-filled`로 판단하므로 `FieldControl`을 쓰면 입력 중 배경이 자동으로 적용됩니다.
-
-## 피그마와 다른 점
-
-- 비활성 테두리: `Input Box`는 2기 변수 `warmgray-150`(#efedeb), `Text Field/ Box`는 `TealGrey-100`(#eff0f0)을 씁니다. 3기 토큰 `--umc-color-border-neutral-weaker-100`로 통일했습니다.
-- Lg 기본 상태의 placeholder만 16px이고 나머지 상태는 18px입니다. 상태가 바뀔 때 글자 크기가 튀지 않도록 Lg는 모두 18px(`Label/1-Medium`)로 맞췄습니다.

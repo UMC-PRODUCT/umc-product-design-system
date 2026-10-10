@@ -36,7 +36,7 @@ function Page() {
 
 ## 외형 미리보기
 
-피그마 `Toast Bottom`(노드 2621:33488)과 `Toast Top`(노드 2621:33538)의 변형을 항상 보이게 그린 미리보기입니다. 위에서부터 Primary(아이콘과 닫기), Primary(동작 버튼), Neutral, Error, Error(동작 버튼), 상단 Primary(아이콘), 상단 Primary(동작 버튼)입니다. 앞 아이콘은 `icon`에 `<CheckCircleIcon weight="fill" />`을 넘기면 타입에 맞는 색(Primary와 Neutral은 틸, Error는 빨강)으로 칠해집니다.
+피그마 `Toast Bottom`과 `Toast Top`의 변형을 항상 보이게 그린 미리보기입니다. 위에서부터 Primary(아이콘과 닫기), Primary(동작 버튼), Neutral, Error, Error(동작 버튼), 상단 Primary(아이콘), 상단 Primary(동작 버튼)입니다. 앞 아이콘은 `icon`에 `<CheckCircleIcon weight="fill" />`을 넘기면 타입에 맞는 색(Primary와 Neutral은 틸, Error는 빨강)으로 칠해집니다.
 
 <ToastStaticPreview />
 
@@ -60,7 +60,7 @@ function Page() {
 
 ## 모든 변형
 
-피그마 `Toast Bottom` 14개와 `Toast Top` 14개를 그렸습니다. 토스트는 잠깐 떴다 사라지므로 화면에 고정해 그렸습니다. 칸에 마우스를 올리면 피그마 변형 이름이 보입니다.
+피그마 `Toast Bottom` 14개와 `Toast Top` 14개를 그렸습니다. 토스트는 잠깐 떴다 사라지므로 화면에 고정해 그렸습니다. 칸에 마우스를 올리면 변형 이름이 보입니다.
 
 <ToastAllVariants />
 
@@ -96,13 +96,6 @@ function Page() {
 - Error 토스트는 나타날 때 좌우로 흔들리고, 화면 낭독기에 바로 알립니다. 움직임 줄이기 설정에서는 흔들리지 않습니다.
 - 웹에서는 최소 폭 400px이고 화면 양옆 16px 안쪽으로 줄어듭니다. 하단 배치는 화면 아래에서 86px 위에 놓입니다.
 
-## 디자인 팀 확인 사항
+## 알아 둘 점
 
-- 글자 스타일이 2기 `Label/1-Medium`(16px, 자간 -2%)을 참조합니다. 3기 `Label/1-Medium`은 18px입니다. 크기와 굵기, 행간은 같은 3기 `Label/3-Medium`을 쓰고, 자간은 -3%로 바뀐 이 토큰 대신 피그마 값 -2%를 씁니다.
-- Error 배경이 2기 변수 `var(--color-error-200)`(`#fed7d7`)에 연결되어 있어 피그마 값을 그대로 썼습니다.
-- Neutral 배경 `rgba(63, 65, 65, 0.8)`은 이름 없는 값이라 역할 변수에 담았습니다.
-- 앞 아이콘의 체크 색이 `#fbfcfc`입니다. 아이콘 패키지는 흰색(`#ffffff`)으로 고정해 둡니다.
-- 닫기 아이콘은 원본 컴포넌트가 지워진 `24 icon` 인스턴스입니다. 라이브러리 `Icon/Close`보다 작은 13px X라서 피그마 그림을 그대로 그렸습니다.
-- Service Notice 타입의 양옆 그래픽 에셋은 컴포넌트에 넣지 않았습니다. 필요하면 에셋과 사용처를 알려 주세요.
-- `Toast Top`의 설명이 하단 설명과 같습니다(하단 96px, X로 닫기). 변형에는 닫기 버튼이 없어 코드는 변형을 따랐습니다.
-- Error 토스트의 흔들림은 주석만 있어서 400ms 동안 6px씩 두 번 흔들리게 가정했습니다.
+- Service Notice 타입은 아직 지원하지 않습니다.

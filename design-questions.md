@@ -125,3 +125,106 @@
 7. Dropdown에 위험한 동작(삭제) 항목 스타일과 아이콘 자리가 없습니다. Menu의 `tone`, `icon`은 확인 전까지 뺐습니다.
 8. Code Input의 Hover 설명 "Focus 중, Error 중 Success 중, 디폴트 미포함"의 뜻을 알려 주세요. 지금은 비활성이 아니면 모든 칸에 hover를 적용합니다. Success 상태도 피그마에 없습니다.
 9. Numeric Stepper 숫자 칸의 좌우 패딩 20px은 106px 너비 안에 들어가지 않아(34px 칸) 패딩 없이 가운데 정렬했습니다. 기본 범위는 설명대로 0부터 999입니다.
+
+## 부록: 문서에서 옮겨 온 '피그마와 다른 점'
+
+문서 사이트에서 지운 기록입니다. 값을 바꿀 때 근거로 씁니다.
+
+### text-button
+
+- `Type` 하나를 `variant`와 아이콘 props 두 가지로 나눴습니다. 그래서 피그마에 없는 조합(밑줄과 아이콘을 함께)도 만들 수 있습니다.
+- 포커스 상태가 없어 다른 버튼과 같은 2px `border-primary-strong-500` 외곽선을 넣었습니다.
+- Brand 비활성 색은 피그마가 primitive `Teal-300`을 바로 씁니다. 같은 값의 semantic 토큰 `text-brand-disabled-300`로 옮겼습니다.
+
+### code-field
+
+칸 글자는 피그마 스타일 이름이 `Heading/4-Semibold`지만 크기가 26px로 파운데이션 정의(18px)와 다릅니다. 피그마 값(26px, 행간 1.3)을 컴포넌트 변수로 썼습니다.
+
+### field
+
+- 레이블 색: `Text Field/ Label` 원본은 2기 변수 `warmgray-600`(#544f4b)이고, `Text Field/ Box` 안에서는 `TealGrey-600`(#606262)으로 덮어씁니다. 3기 토큰인 #606262(`--umc-color-text-neutral-medium-600`)를 씁니다.
+- 레이블(15px/23px, -3%)과 도움말(13px/17px)은 3기 파운데이션에 없는 `Mobile Web/*` 텍스트 스타일입니다. 토큰에 없는 값이라 피그마 값을 그대로 썼습니다.
+
+### input-box
+
+- 비활성 테두리: `Input Box`는 2기 변수 `warmgray-150`(#efedeb), `Text Field/ Box`는 `TealGrey-100`(#eff0f0)을 씁니다. 3기 토큰 `--umc-color-border-neutral-weaker-100`로 통일했습니다.
+- Lg 기본 상태의 placeholder만 16px이고 나머지 상태는 18px입니다. 상태가 바뀔 때 글자 크기가 튀지 않도록 Lg는 모두 18px(`Label/1-Medium`)로 맞췄습니다.
+
+### menu
+
+피그마 `Dropdown`에는 삭제처럼 위험한 동작을 구분하는 항목 스타일과 아이콘 자리가 없습니다. 이전 구현에 있던 `tone="danger"`와 `icon`은 디자인 확인 전까지 뺐습니다.
+
+### numeric-stepper
+
+- 숫자 글자는 피그마 스타일 이름이 `Label/1-Semibold`지만 값(16px, -2%)은 `Label/3-Semibold`와 같습니다. 보이는 크기를 지키려고 `Label/3-Semibold` 토큰을 썼습니다.
+- 피그마 숫자 칸의 좌우 패딩 20px은 106px 너비 안에 들어가지 않아(34px 칸) 패딩 없이 가운데 정렬했습니다.
+
+### search-field
+
+placeholder(#9ca3a3)와 입력 글자(#161919)는 2기 변수 `teal-gray-400`, `teal-gray-900`입니다. 같은 단계의 3기 토큰 `--umc-color-text-placeholder`(#adadad), `--umc-color-text-neutral-default-900`(#0f1010)로 바꿨습니다.
+
+### select
+
+- 목록이 열리면 아래 화살표를 180도 돌립니다. 피그마는 `Up Chevron` 아이콘을 따로 둡니다.
+- 버튼 hover 배경 #fbfcfc는 피그마 `State=Hover`와 같습니다. 피그마에 열린 상태가 따로 없어 열려 있는 동안 hover 배경을 유지합니다.
+
+### text-field
+
+- Md 비밀번호 필드의 오른쪽 패딩: 피그마는 4px, 일반 Md 필드는 8px입니다. 같은 크기 안에서 오른쪽 여백이 달라지지 않도록 8px로 맞췄습니다.
+- 지우기 아이콘 색 #e2e4e3은 토큰에 없어 컴포넌트 변수로 썼습니다. 오류 상태에서는 피그마대로 #cccccc입니다.
+- Lg 단위 텍스트는 `Mobile Web/Label/1-Medium`(18px/24px, -3%)이라 토큰 대신 피그마 값을 썼습니다.
+
+### checkbox
+
+- 피그마의 `Selected`는 `checked`로 옮겼습니다. 체크박스는 네이티브 `<input>`과 Base UI가 모두 `checked`를 쓰기 때문입니다.
+- 피그마의 `Left Label`, `Right Label` 두 토글은 `labelPlacement` 하나로 옮겼습니다. 라벨을 양쪽에 동시에 두는 경우는 없다고 보았습니다.
+- 비활성 체크 선은 2기 변수 `WarmGray-50`(`#fcfbfa`)입니다. 3기에 같은 색이 없어 `teal-grey-50`(`#fbfcfc`)을 씁니다.
+- 테두리는 `border` 대신 inset 그림자로 그립니다. 브라우저는 1.5px, 1.8px 같은 테두리 두께를 장치 픽셀 단위로 내려서 피그마보다 얇게 그리기 때문입니다(1배율 화면에서 1px).
+- 포커스 상태가 없어 다른 컨트롤과 같은 2px `border-primary-strong-500` 외곽선을 넣었습니다.
+- `CheckButton`은 비활성 모양이 없습니다. 비활성이어도 색은 체크 여부를 그대로 따르고 커서만 바뀝니다.
+
+### radio
+
+- 피그마에는 Neutral 선택 변형이 없습니다. 선택하면 `color`와 관계없이 Primary 선택 모양을 씁니다.
+- 원 모서리는 피그마 9999px 리터럴 대신 모양이 같은 `radius-full` 토큰을 씁니다.
+- 테두리는 `border` 대신 inset 그림자로 그립니다. 브라우저는 1.5px, 1.8px 같은 테두리 두께를 장치 픽셀 단위로 내려서 피그마보다 얇게 그리기 때문입니다(1배율 화면에서 1px).
+- 포커스 상태가 없어 다른 컨트롤과 같은 2px `border-primary-strong-500` 외곽선을 넣었습니다.
+
+### switch
+
+- 피그마의 `State=On/Off`는 `checked`로 옮겼습니다.
+- 트랙 색 두 개(꺼짐, 켜짐)가 변수에 연결되어 있지 않습니다. 켜짐 `#39a9a1`은 같은 값의 `fill-primary-inverse-weak-400`을 씁니다. 꺼짐은 내보낸 값이 `#e2e4e3`이고, 가장 가까운 `fill-neutral-strong-200`(`#e2e3e3`)을 씁니다.
+- Sm 켜짐에만 안쪽 그림자(`#d3d8d833`, 0.8 0.8 1.6)가 있어 그대로 옮겼습니다. Md 켜짐에는 그림자가 없습니다.
+- 포커스 상태가 없어 다른 컨트롤과 같은 2px `border-primary-strong-500` 외곽선을 넣었습니다.
+- 켜고 끌 때 손잡이가 150ms 동안 움직입니다. 움직임 줄이기 설정에서는 바로 바뀝니다.
+
+### context-switcher
+
+- 너비: 피그마는 172px이지만 사이드 내비게이션 슬롯의 안쪽 폭은 168px입니다. `max-width: 100%`를 함께 걸어 슬롯 안에서는 168px로 줄어듭니다.
+- 눌림 그림자와 선택 항목 그림자: 피그마 값(#D3D8D833, 1, 1, 2)이 이름 있는 스타일과 달라 컴포넌트 변수로 썼습니다.
+
+### header
+
+- 다크 모드 선택 항목: 피그마는 1px 테두리와 좌우 패딩 16px을 씁니다. 선택이 바뀔 때 폭이 흔들리지 않도록 패딩 18px을 유지하고 inset 그림자로 테두리를 그립니다.
+- 내비게이션 알약 radius: 피그마 컨테이너는 9999px 리터럴, 항목은 999px 토큰입니다. 모양이 같으므로 `--umc-radius-full`로 통일했습니다.
+- 홈 링크 모드: 피그마 primitive에는 `Mode` 속성이 있지만 `HeaderHomeLink`에는 `mode` prop을 두지 않았습니다. 홈 링크는 언제나 헤더 안에 있으므로 감싼 `Header`의 `mode`를 따릅니다. 두 곳에 모드를 따로 넘기다 어긋나는 일을 막기 위해서입니다.
+- 홈 링크 포커스: 피그마에 포커스 상태가 없어 다른 헤더 항목과 같은 2px `border-primary-strong-500` 외곽선을 씁니다.
+
+### page-header
+
+- 구분자 색 #cccccc는 피그마에서 변수에 연결되지 않은 값입니다. 같은 값의 primitive `--umc-color-teal-grey-300`을 썼습니다.
+- 마지막 항목도 다른 항목과 같은 색입니다. 피그마가 현재 페이지를 따로 구분하지 않기 때문입니다.
+
+### side-navigation
+
+- 그룹 동작: 피그마 설명은 "선택 시 최상단 서브 메뉴도 함께 Active되며 그 페이지가 열림"입니다. 이 컴포넌트의 그룹 버튼은 펼침과 접힘만 맡고 이동하지 않습니다. 한 버튼이 이동과 접기를 함께 하면 접으려고 누를 때도 페이지가 바뀌기 때문입니다. 그룹을 열 때 첫 하위 페이지로 보내려면 앱 라우팅에서 처리합니다.
+- 오른쪽 경계선: `Type=Default`는 2기 변수 `teal-gray-200`(#e9ecec), `Type=With Slot`은 `Border/Neutral/Weak-200`(#e2e3e3)을 씁니다. 3기 토큰 `--umc-color-border-neutral-weak-200`로 통일했습니다.
+- hover 그림자: 피그마 스타일 이름은 `Shadow/Inner/Neutral_1`이지만 값이 파운데이션 정의와 다릅니다(#D3D8D833, 1, 1, 2). 이름 있는 스타일은 토큰을 따르는 규칙대로 `--umc-shadow-inner-neutral-1`을 씁니다.
+- 긴 메뉴 이름은 한 줄을 넘으면 말줄임표로 자릅니다. 피그마에는 넘치는 경우가 없습니다.
+
+### icons
+
+- Chevron, Person, Setting, Under-construction은 피그마가 프레임 대신 안쪽 도형만 내보내서 원래 위치로 옮겼습니다.
+- 23.85×25처럼 정사각형이 아닌 프레임은 viewBox를 피그마 값 그대로 두고, 정사각형 안에 비율을 지켜 넣었습니다.
+- `Pictogram/Person`은 SVG가 아니라 PNG 마스크라서 패키지에서 뺐습니다.
+- 피그마에서 선이 살아 있는 아이콘(예: `Icon/Check`)은 인스턴스를 줄여도 선 두께가 그대로입니다. 패키지 아이콘은 크기에 비례해 선도 같이 얇아집니다.

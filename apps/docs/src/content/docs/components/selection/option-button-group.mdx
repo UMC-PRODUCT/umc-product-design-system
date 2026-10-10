@@ -67,7 +67,7 @@ import { OptionButtonGroup } from "@umc-product/react"
 
 ## 모든 변형
 
-피그마 `.primitive/Segmented Control/Option Button` 45개와 체크 `Check-icon` 2개, 일곱 칸짜리 `Segmented Control/Option` 7개를 그렸습니다. 버튼 하나의 변형은 세 칸짜리 그룹에서 해당 위치(Left, Middle, Right)의 버튼으로 보여 줍니다. 칸에 마우스를 올리면 피그마 변형 이름이 보입니다. Hover처럼 마우스가 있어야 보이는 상태는 문서에서 켜 둔 모습입니다.
+피그마 `.primitive/Segmented Control/Option Button` 45개와 체크 `Check-icon` 2개, 일곱 칸짜리 `Segmented Control/Option` 7개를 그렸습니다. 버튼 하나의 변형은 세 칸짜리 그룹에서 해당 위치(Left, Middle, Right)의 버튼으로 보여 줍니다. 칸에 마우스를 올리면 변형 이름이 보이고, hover 같은 상태는 켜 둔 모습입니다.
 
 <OptionButtonGroupAllVariants client:visible />
 
@@ -84,11 +84,3 @@ import { OptionButtonGroup } from "@umc-product/react"
 | `onValueChange` | `(value) => void`        | 없음       | 선택 변경 핸들러    |
 | `name`          | `string`                 | 없음       | form `name` 속성    |
 | `aria-label`    | `string`                 | 없음       | 그룹 접근 가능 이름 |
-
-## 디자인 팀 확인 사항
-
-- Xl의 선택하지 않은 글자는 `Title/2-Medium`을 Regular로 바꾼 값(20px, 400)이라 텍스트 스타일이 없습니다. 지금은 역할 변수로 굵기만 바꿉니다.
-- Strong이면서 Disabled인 변형이 없습니다. Button Fill Primary 비활성과 같은 색(배경 Teal-300, 글자 Teal-100)으로 가정했습니다.
-- 체크는 피그마 `.primitive/Segmented Control/Check-icon`의 두 크기를 그대로 그립니다. Sm과 Xs의 16px은 따로 그린 그림이고, Xl의 20px은 `Icon/Check` Fill을 줄인 모양입니다. 두 크기를 같은 아이콘으로 맞출지 묻고 있습니다.
-- 체크 아이콘 색(Weak `#008a80`, Strong `#f4fbfa`)이 글자색과 다릅니다. 의도한 차이인지 알려 주세요.
-- 문서에 적힌 배경 "Teal Gray 150"은 3기 팔레트에 없고, 컴포넌트에는 `#eff0f0`(`fill-neutral-medium-100`)이 칠해져 있습니다.

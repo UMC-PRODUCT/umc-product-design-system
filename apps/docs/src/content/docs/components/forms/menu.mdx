@@ -9,7 +9,7 @@ import {
   MenuSizes,
 } from "../../../../components/react/forms/MenuExamples.tsx"
 
-피그마 `Dropdown_List`와 `Dropdown/Item`(node 2281:4240)을 동작 목록으로 씁니다. `Select`가 값을 고르는 목록이라면 `Menu`는 수정, 삭제 같은 동작을 고릅니다. 고른 상태를 남기지 않으므로 체크 표시가 없습니다.
+피그마 `Dropdown_List`와 `Dropdown/Item`을 동작 목록으로 씁니다. `Select`가 값을 고르는 목록이라면 `Menu`는 수정, 삭제 같은 동작을 고릅니다. 고른 상태를 남기지 않으므로 체크 표시가 없습니다.
 
 ```tsx
 import { Button, Menu } from "@umc-product/react"
@@ -37,7 +37,7 @@ import { Button, Menu } from "@umc-product/react"
 
 ## 모든 변형
 
-피그마 `Dropdown/Item` 변형 12개를 그렸습니다. 목록은 열려 있을 때만 보이므로 항목을 목록 밖에 고정해 그렸고, Select 목록도 같은 항목을 씁니다. 칸에 마우스를 올리면 피그마 변형 이름이 보입니다. Hover, Focus, Typing처럼 마우스나 키보드가 있어야 보이는 상태는 문서에서 켜 둔 모습입니다.
+피그마 `Dropdown/Item` 변형 12개를 그렸습니다. 목록은 열려 있을 때만 보이므로 항목을 목록 밖에 고정해 그렸고, Select 목록도 같은 항목을 씁니다. 칸에 마우스를 올리면 변형 이름이 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
 
 <DropdownItemAllVariants />
 
@@ -49,6 +49,6 @@ import { Button, Menu } from "@umc-product/react"
 | `items`   | `MenuItemDef[]`        | 없음   | `label`, `onClick`, `disabled`     |
 | `size`    | `"xs" \| "sm" \| "md"` | `"sm"` | 항목 크기                          |
 
-## 피그마와 다른 점
+## 알아 둘 점
 
-피그마 `Dropdown`에는 삭제처럼 위험한 동작을 구분하는 항목 스타일과 아이콘 자리가 없습니다. 이전 구현에 있던 `tone="danger"`와 `icon`은 디자인 확인 전까지 뺐습니다.
+- 삭제처럼 위험한 동작을 구분하는 항목 스타일과 항목 아이콘은 아직 없습니다.

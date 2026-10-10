@@ -5,7 +5,7 @@ description: Pretendard Variable 기반 텍스트 스타일 48개입니다.
 
 import TypographyTokens from "../../../components/TypographyTokens.astro"
 
-텍스트 스타일 하나는 서체, 크기, 굵기, 행간, 자간을 한 벌로 묶은 토큰입니다. 피그마 타이포그래피 문서 프레임(노드 2268:1706)과 컴포넌트가 쓰는 스타일을 모아 48개를 옮겼습니다. Tailwind에서는 `text-<스타일>` 유틸리티 하나로, vanilla-extract에서는 `typography.<스타일>` 객체 하나로 씁니다.
+텍스트 스타일 하나는 서체, 크기, 굵기, 행간, 자간을 한 벌로 묶은 토큰입니다. 피그마 타이포그래피 문서 프레임과 컴포넌트가 쓰는 스타일을 모아 48개를 옮겼습니다. Tailwind에서는 `text-<스타일>` 유틸리티 하나로, vanilla-extract에서는 `typography.<스타일>` 객체 하나로 씁니다.
 
 ## 이름 읽는 법
 
@@ -26,8 +26,6 @@ CSS 변수는 스타일마다 다섯 개입니다. `--umc-typography-body-1-regu
 | 행간 %    | 단위 없는 비율  | 120% → 1.2    |
 | 자간 %    | em              | -3% → -0.03em |
 | 굵기 이름 | 숫자            | Bold → 700    |
-
-자간 단위가 퍼센트라는 것은 피그마의 코드 출력으로 확인했습니다. 36px에 -1.5%를 적용한 Display 3이 -0.54px로 나옵니다.
 
 ## 스타일 목록
 

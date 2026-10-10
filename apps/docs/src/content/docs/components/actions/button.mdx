@@ -13,7 +13,7 @@ import {
   ButtonSizes,
 } from "../../../../components/react/ButtonExamples.tsx"
 
-피그마 `Button`(노드 2621:33584)의 색 4종, 스타일 2종, 크기 4종, 상태 4종을 하나의 컴포넌트로 옮겼습니다. 렌더되는 요소는 항상 `<button>`이고, 네이티브 `button` 속성을 모두 타입 검사와 함께 받습니다.
+피그마 `Button`의 색 4종, 스타일 2종, 크기 4종, 상태 4종을 하나의 컴포넌트로 옮겼습니다. 렌더되는 요소는 항상 `<button>`이고, 네이티브 `button` 속성을 모두 타입 검사와 함께 받습니다.
 
 ```tsx
 import { Button } from "@umc-product/react"
@@ -71,7 +71,7 @@ import { Button } from "@umc-product/react"
 
 ## 모든 변형
 
-피그마 `Button`의 변형 206개를 실제 컴포넌트로 그렸습니다. 칸에 마우스를 올리면 피그마 변형 이름이 보입니다. Pressed 칸은 문서에서 눌림 상태를 켜 둔 모습이고, 아이콘 변형에는 피그마처럼 `AddIcon` Fill을 넣었습니다. 피그마에 없는 조합은 —로 비워 둡니다.
+피그마 `Button`의 변형 206개를 실제 컴포넌트로 그렸습니다. 칸에 마우스를 올리면 변형 이름이 보이고, Pressed 칸은 눌림 상태를 켜 둔 모습입니다. 아이콘 변형에는 `AddIcon` Fill을 넣었습니다. 피그마에 없는 조합은 —로 비워 둡니다.
 
 <ButtonAllVariants />
 
@@ -86,14 +86,6 @@ import { Button } from "@umc-product/react"
 | `leadingIcon`, `trailingIcon` | `ReactNode`                                  | 없음            | 피그마 Icon Position                     |
 | 나머지                        | `ComponentPropsWithRef<"button">`            | `type="button"` | `ref`, `aria-*`, `data-*`, 이벤트 핸들러 |
 
-## 디자인 팀 확인 사항
+## 알아 둘 점
 
-- Hover 상태가 없어서 마우스가 있는 기기에서는 Pressed 모양을 함께 씁니다.
-- Focus 상태가 없어서 2px `border-primary-strong-500` 외곽선을 넣었습니다.
-- 아이콘 변형의 색(Primary Fill `#02746c`, Md Neutral Fill `#7e7f7f`)이 아이콘 없는 변형과 달라 아이콘 없는 변형으로 통일했습니다.
-- Neutral Fill Default 배경이 Disabled 배경과 같습니다(`#adadad`).
-- Lg 크기에는 아이콘 변형이 없어 Md와 같은 16px, 아이콘 쪽 여백 14px로 가정했습니다.
-- Xs 크기에서 Neutral Weak Disabled만 글자가 16px이고, White Weak Disabled만 좌우 여백이 16px입니다. 파일 실수로 보고 Xs 공통값(글자 15px, 여백 14px)을 썼습니다.
-- 로딩 점 3개의 움직임 정의가 없습니다. 1초 주기로 점마다 투명도를 바꾸고, 움직임 줄이기 설정에서는 멈추게 했습니다.
-- Weak 비활성의 흰색 70% 덧칠은 내보낸 컬렉션 밖의 변수(`Static/White/Opacity-70`)를 참조합니다. 눌림 덧칠 색은 변수에 연결되지 않아 피그마 값을 그대로 썼습니다.
-- Red Weak의 글자색(`red-600`)에 맞는 semantic 토큰이 없어 primitive를 바로 씁니다.
+- 로딩 점은 1초 주기로 깜빡이고, 움직임 줄이기 설정에서는 멈춥니다.
