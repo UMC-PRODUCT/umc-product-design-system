@@ -39,18 +39,6 @@ import GridDemo from "../../../components/GridDemo.astro"
 </div>
 ```
 
-```ts title="vanilla-extract"
-import { style } from "@vanilla-extract/css"
-import { vars } from "@umc-product/design-tokens/vanilla-extract"
-
-export const content = style({
-  display: "grid",
-  gridTemplateColumns: `repeat(${vars.grid.columns}, minmax(0, 1fr))`,
-  columnGap: vars.grid.gutter,
-  paddingInline: vars.grid.margin.desktop,
-})
-```
-
 ## 모바일
 
 모바일 프레임은 좌우 마진 16px(`grid.margin.mobile`)을 씁니다. 피그마 모바일 프레임이 쓰는 변수 `Spacing/Semantic/Margin/Margin 16`을 참조합니다.

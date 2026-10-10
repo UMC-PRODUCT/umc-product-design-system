@@ -34,7 +34,7 @@ pnpm up "@umc-product/*" --latest
 버전 규칙은 아래에만 적용합니다.
 
 - 패키지가 내보내는 컴포넌트, 훅, 타입, 아이콘, 토큰 배열
-- 토큰 CSS 변수(`--umc-color-…`, `--umc-typography-…` 등), Tailwind 유틸리티 클래스, vanilla-extract 객체의 키
+- 토큰 CSS 변수(`--umc-color-…`, `--umc-typography-…` 등), Tailwind 유틸리티 클래스
 - 컴포넌트 props와 기본값, 렌더링하는 역할(role)과 접근 가능한 이름
 
 컴포넌트 클래스(`umc-button`, `umc-button__label`), 컴포넌트 전용 변수(`--umc-button-bg`), DOM 구조, `data-*` 속성은 계약이 아닙니다. patch에서도 바뀔 수 있으니 앱 CSS의 선택자로 쓰지 않습니다. 모양은 `className`으로 덮어씁니다.

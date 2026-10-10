@@ -68,12 +68,6 @@ export function ColorTokenTable({
                 <TailwindName row={row} />
                 <div className="umc-sub">
                   CSS <code>{row.cssVariable}</code>
-                  {row.vanillaExtract === null ? null : (
-                    <>
-                      {" "}
-                      · vanilla-extract <code>{row.vanillaExtract}</code>
-                    </>
-                  )}
                 </div>
                 {row.codeSyntax === null ? null : (
                   <DevModeName
