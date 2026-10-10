@@ -12,6 +12,10 @@
     gap: var(--umc-spacing-gap-10);
   }
 
+  .umc-code-field__cells[data-invalid] {
+    animation: umc-error-shake 400ms ease-in-out;
+  }
+
   .umc-code-field__cell {
     --umc-code-field-error-tint: #fef2f199;
     --umc-code-field-font-size: 26px;
@@ -80,6 +84,10 @@
   @media (prefers-reduced-motion: reduce) {
     .umc-code-field__cell {
       transition: none;
+    }
+
+    .umc-code-field__cells[data-invalid] {
+      animation: none;
     }
   }
 

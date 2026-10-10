@@ -27,6 +27,14 @@ describe("CodeField", () => {
     expect(screen.getByText("코드가 올바르지 않습니다")).toBeInTheDocument()
   })
 
+  it("invalid이면 흔들림을 거는 칸 묶음에 data-invalid를 단다", () => {
+    const { container, rerender } = render(<CodeField length={4} />)
+    const cells = container.querySelector(".umc-code-field__cells")
+    expect(cells).not.toHaveAttribute("data-invalid")
+    rerender(<CodeField length={4} invalid />)
+    expect(cells).toHaveAttribute("data-invalid")
+  })
+
   it("onValueComplete가 완성 시 호출된다", async () => {
     const onValueComplete = vi.fn()
     const user = userEvent.setup()
