@@ -43,8 +43,8 @@
 노드 2621:33584. 자세한 값은 [Button](../../components/actions/button/) 페이지에 있습니다.
 
 1. Hover가 없어 마우스가 있는 기기에서 Pressed 모양을 함께 씁니다. 같은 모양이어도 되는지 알려 주세요.
-2. 아이콘 변형의 색(Primary Fill `#02746c`, Md Neutral Fill `#7e7f7f`)이 아이콘 없는 변형과 다릅니다. 코드는 아이콘 없는 변형으로 통일했습니다.
-3. Neutral Fill Default 배경이 Disabled 배경과 같습니다(`#adadad`).
+2. Primary Fill 아이콘 변형의 색(`#02746c`)이 아이콘 없는 변형과 다릅니다. 코드는 아이콘 없는 변형으로 통일했습니다.
+3. (해결 2026-10-10) Neutral Fill Default 배경을 아이콘 유무와 관계없이 `#606262`(`fill-neutral-inverse-strong-600`)로 맞췄습니다. Disabled(`#adadad`)와 구분됩니다.
 4. Lg에는 아이콘 변형이 없어 Md와 같은 16px 아이콘, 14px 아이콘 쪽 여백으로 가정했습니다.
 5. Xs에서 Neutral Weak Disabled만 글자 16px, White Weak Disabled만 좌우 여백 16px입니다. 파일 실수로 보고 Xs 공통값(15px, 14px)을 썼습니다.
 6. 로딩 점 3개의 움직임 정의가 없습니다. 1초 주기 투명도 변화를 넣었습니다.
