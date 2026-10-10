@@ -1,6 +1,6 @@
 ---
-title: 토큰 갱신 흐름
-description: 피그마가 바뀌었을 때 토큰을 다시 만드는 순서입니다.
+title: 토큰과 아이콘 갱신
+description: 피그마가 바뀌었을 때 토큰과 아이콘을 다시 만드는 순서입니다.
 ---
 
 피그마 파일은 읽기만 합니다. 사람이 하는 일은 피그마 원문을 교체하는 데까지이고, 정규화와 산출물 생성은 스크립트가 맡습니다. CSS를 손으로 고치면 피그마와 어긋나도 알아챌 방법이 없기 때문입니다.
@@ -12,7 +12,7 @@ description: 피그마가 바뀌었을 때 토큰을 다시 만드는 순서입�
    - 변수: Variables 패널에서 `Color`, `Token` 컬렉션을 Export modes로 받아 `figma/export/`에 같은 이름으로 덮어씁니다.
    - 텍스트 스타일: 피그마 MCP `get_variable_defs`(노드 2268:1706) 결과를 `figma/mcp/`에 그대로 저장합니다.
 3. 아래 명령을 차례로 실행합니다.
-4. [피그마 정규화 리포트](../figma-normalization/)의 이름 변경과 경고를 디자인 팀과 확인합니다.
+4. [피그마 정규화 리포트](https://github.com/UMC-PRODUCT/umc-product-design-system/blob/develop/packages/design-tokens/reports/figma-normalization.md)의 이름 변경과 경고를 디자인 팀과 확인합니다.
 
 ```bash
 pnpm figma:inspect      # export 형식, 개수, 참조 확인
@@ -35,3 +35,12 @@ pnpm test
 ## 규칙을 바꾸는 곳
 
 이름 변경, 제외, 디자인 팀 확인 질문은 `packages/design-tokens/scripts/normalize/rules.ts`에서 바꿉니다. 그리드와 레이아웃 값은 피그마 변수가 아니라 문서 프레임에 있어서 `tokens/layout.json`을 손으로 고칩니다.
+
+## 아이콘을 추가하거나 바꿀 때
+
+1. 피그마 노드의 SVG를 `packages/icons/figma/svg/<노드 id>.svg`로 저장하고, `figma/manifest.json`에 노드 id와 sha256을 적습니다.
+2. `pnpm icons:build`를 실행합니다. 이름, 굵기, 캔버스, 색 규칙에 맞지 않으면 노드 이름과 함께 실패합니다.
+3. 실패 메시지를 보고 `packages/icons/scripts/rules.ts`에 규칙을 더합니다. 규칙에는 피그마와 다르게 옮긴 이유를 적습니다.
+4. `pnpm icons:check`와 `pnpm test`로 생성물과 원문이 맞는지 확인합니다.
+
+규칙에 맞지 않아 따로 처리한 아이콘은 [아이콘 정규화 리포트](https://github.com/UMC-PRODUCT/umc-product-design-system/blob/develop/packages/icons/reports/icon-normalization.md)에 모입니다.

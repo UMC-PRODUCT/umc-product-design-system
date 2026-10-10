@@ -74,11 +74,7 @@ export default defineConfig({
         },
         {
           label: "릴리스",
-          items: [
-            "releases/changelog",
-            "releases/versioning",
-            "releases/migration-web-v2",
-          ],
+          items: ["releases/changelog", "releases/versioning"],
         },
         {
           label: "기여하기",
@@ -88,9 +84,6 @@ export default defineConfig({
             "contributing/token-workflow",
             "contributing/component-guide",
             "contributing/decisions",
-            "contributing/figma-normalization",
-            "contributing/icon-normalization",
-            "contributing/design-questions",
           ],
         },
       ],

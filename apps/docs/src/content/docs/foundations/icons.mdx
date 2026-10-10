@@ -50,7 +50,7 @@ import { AddIcon, CloseIcon } from "@umc-product/icons"
 | Text Info Button                | `InfoIcon`                   | 16px                | regular |
 | Search Field 드롭다운 검색창    | `SearchIcon`                 | 16px                | regular |
 
-Dropdown과 Context Switcher의 체크, Context Switcher 화살표, Toast 닫기, Option Button 체크는 라이브러리 아이콘이 아닙니다. 컴포넌트 안에만 있는 그림이라 컴포넌트가 피그마 그림을 그대로 그리고, 패키지로 내보내지 않습니다. 라이브러리 아이콘으로 바꿀지는 [디자인 팀 확인 목록](../../contributing/design-questions/)에 올렸습니다.
+Dropdown과 Context Switcher의 체크, Context Switcher 화살표, Toast 닫기, Option Button 체크는 라이브러리 아이콘이 아닙니다. 컴포넌트 안에만 있는 그림이라 컴포넌트가 피그마 그림을 그대로 그리고, 패키지로 내보내지 않습니다.
 
 ## 색
 
@@ -94,16 +94,3 @@ import { UmcLogo } from "@umc-product/icons"
 - 23.85×25처럼 정사각형이 아닌 프레임은 viewBox를 피그마 값 그대로 두고, 정사각형 안에 비율을 지켜 넣었습니다.
 - `Pictogram/Person`은 SVG가 아니라 PNG 마스크라서 패키지에서 뺐습니다.
 - 피그마에서 선이 살아 있는 아이콘(예: `Icon/Check`)은 인스턴스를 줄여도 선 두께가 그대로입니다. 패키지 아이콘은 크기에 비례해 선도 같이 얇아집니다.
-
-<Aside title="디자인 팀 확인 사항">
-  뒤집힌 Search 변형 이름(Regular=Weight), 정사각형이 아닌 프레임, 고정된 흰
-  부분, 토큰에 없는 픽토그램 색 등 10개 항목을 정리했습니다. 전체 목록은 [아이콘
-  정규화 리포트](../../contributing/icon-normalization/)에 있습니다.
-</Aside>
-
-## 아이콘을 추가하거나 바꿀 때
-
-1. 피그마 노드의 SVG를 `packages/icons/figma/svg/<노드 id>.svg`로 저장하고, `figma/manifest.json`에 노드 id와 sha256을 적습니다.
-2. `pnpm icons:build`를 실행합니다. 이름, 굵기, 캔버스, 색 규칙에 맞지 않으면 노드 이름과 함께 실패합니다.
-3. 실패 메시지를 보고 `scripts/rules.ts`에 규칙을 더합니다. 규칙에는 피그마와 다르게 옮긴 이유를 적습니다.
-4. `pnpm icons:check`와 `pnpm test`로 생성물과 원문이 맞는지 확인합니다.
