@@ -1,0 +1,29 @@
+Copyright (c) 2026 UMC PRODUCT 팀. All rights reserved.
+
+이 저장소의 소스 코드, 디자인 토큰, 아이콘, 컴포넌트, 문서(이하 "디자인 시스템")의 권리는
+UMC PRODUCT 팀에 있습니다.
+
+1. 사용 허락
+   UMC PRODUCT 팀이 사용 권한을 준 사람과 팀만 디자인 시스템을 설치하고 사용할 수 있습니다.
+   권한은 UMC PRODUCT 팀이 정한 서비스를 만드는 데에만 씁니다.
+
+2. 금지
+   권한 없이 디자인 시스템을 복제, 수정, 배포하거나 다른 서비스에 쓰는 것을 허락하지 않습니다.
+   저장소를 공개한 것은 열람을 위해서이며, 사용을 허락하는 뜻이 아닙니다.
+
+3. 다른 권리자의 자료
+   디자인 시스템이 함께 쓰는 서체 Pretendard와 Orbitron은 SIL Open Font License 1.1을 따르며,
+   각 서체 패키지에 들어 있는 라이선스가 적용됩니다.
+
+4. 보증 없음
+   디자인 시스템은 있는 그대로 제공합니다. 사용하다 생긴 문제에 UMC PRODUCT 팀은 책임지지 않습니다.
+
+사용 권한이 필요하면 UMC PRODUCT 팀에 문의하세요.
+
+---
+
+All rights reserved. The design system may be installed and used only by people and teams
+authorized by the UMC PRODUCT team, and only for services approved by the team. Any other copying,
+modification, distribution, or use is not permitted. Making this repository public is for reading
+only and does not grant any license. Bundled fonts (Pretendard, Orbitron) remain under the
+SIL Open Font License 1.1. The design system is provided "as is", without warranty of any kind.

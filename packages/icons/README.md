@@ -25,3 +25,7 @@ import { AddIcon, SearchIcon } from "@umc-product/icons"
 - `size`: 가로세로 크기(기본 24)
 - 색은 `currentColor`라 감싼 요소의 글자색을 따릅니다. `className`이나 `style={{ color }}`로 바꿉니다
 - `aria-label`이나 `aria-labelledby`가 없으면 장식으로 보고 `aria-hidden`을 붙입니다. 이름을 주면 `role="img"`로 읽힙니다
+
+## 라이선스
+
+UMC PRODUCT 팀이 사용 권한을 준 사람과 팀만 쓸 수 있습니다. 조건은 패키지에 들어 있는 `LICENSE`에 있습니다.

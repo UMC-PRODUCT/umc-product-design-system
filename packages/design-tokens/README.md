@@ -126,3 +126,7 @@ pnpm test
 | `scripts/normalize/rules.ts` | 이름 변경, 제외, 확인 질문 | 예                   |
 | `src/generated/`             | 생성물                     | 아니요               |
 | `reports/`                   | 디자인 팀 확인용 리포트    | 아니요               |
+
+## 라이선스
+
+UMC PRODUCT 팀이 사용 권한을 준 사람과 팀만 쓸 수 있습니다. 조건은 패키지에 들어 있는 `LICENSE`에 있습니다.

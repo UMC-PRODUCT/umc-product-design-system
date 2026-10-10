@@ -64,4 +64,4 @@ pnpm docs:dev
 
 ## 라이선스
 
-UNLICENSED입니다. 서체 Pretendard와 Orbitron은 SIL Open Font License 1.1이고, 의존 패키지가 라이선스 파일을 함께 설치합니다.
+UMC PRODUCT 팀이 사용 권한을 준 사람과 팀만 쓸 수 있습니다. 저장소를 공개한 것은 열람을 위해서이며 사용 허락이 아닙니다. 자세한 조건은 [LICENSE](LICENSE)에 있습니다. 서체 Pretendard와 Orbitron은 SIL Open Font License 1.1을 따릅니다.
