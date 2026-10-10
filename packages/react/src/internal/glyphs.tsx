@@ -61,17 +61,6 @@ export function LegacyExpandMoreGlyph({ className }: GlyphProps) {
   )
 }
 
-export function LegacyCloseGlyph({ className }: GlyphProps) {
-  return (
-    <GlyphFrame size={24} className={className}>
-      <path
-        d="M17.2187 5.7195C17.5116 5.42695 17.9865 5.42672 18.2792 5.7195C18.572 6.01228 18.5718 6.48713 18.2792 6.78005L13.0595 11.9988L18.2792 17.2185C18.5719 17.5114 18.5719 17.9862 18.2792 18.2791C17.9864 18.5719 17.5116 18.5718 17.2187 18.2791L11.999 13.0593L6.78022 18.2791C6.48732 18.572 6.01256 18.572 5.71967 18.2791C5.42678 17.9862 5.42678 17.5114 5.71967 17.2185L10.9384 11.9988L5.71967 6.78005C5.42694 6.48714 5.42683 6.01234 5.71967 5.7195C6.01252 5.42683 6.48737 5.42683 6.78022 5.7195L11.999 10.9383L17.2187 5.7195Z"
-        fill="currentColor"
-      />
-    </GlyphFrame>
-  )
-}
-
 export function SegmentedCheck16Glyph({ className }: GlyphProps) {
   return (
     <GlyphFrame size={16} className={className}>

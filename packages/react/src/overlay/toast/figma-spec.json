@@ -21,7 +21,8 @@
         "font-weight": "500",
         "line-height": "22.4px",
         "letter-spacing": "-0.32px",
-        "box-shadow~": "rgba(64, 68, 67, 0.16) 0px 4px 16px 0px"
+        "box-shadow~": "rgba(64, 68, 67, 0.16) 0px 4px 16px 0px",
+        "column-gap": "10px"
       }
     },
     {
@@ -37,13 +38,14 @@
     },
     {
       "specId": "toast-close",
-      "node": "2621:33494",
-      "variant": "24 icon (닫기)",
+      "node": "3913:59126",
+      "variant": "Close 터치 영역(Icon/Close 20px)",
       "target": ".umc-toast__close",
       "expected": {
         "color": "#adadad",
-        "width": "24px",
-        "height": "24px"
+        "width": "28px",
+        "height": "20px",
+        "padding-left": "8px"
       }
     },
     {
@@ -53,18 +55,19 @@
       "target": ".umc-toast",
       "expected": {
         "padding-left": "16px",
-        "column-gap": "16px"
+        "column-gap": "8px"
       }
     },
     {
       "specId": "toast-primary-action-button",
-      "node": "2621:33510",
+      "node": "3913:59165",
       "variant": "Type=Primary 텍스트 버튼",
       "target": ".umc-toast__action",
       "expected": {
         "color": "#008a80",
         "font-size": "16px",
-        "text-decoration-line": "underline"
+        "text-decoration-line": "underline",
+        "padding-left": "12px"
       }
     },
     {
@@ -75,6 +78,38 @@
       "expected": {
         "background-color": "#3f4141cc",
         "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "toast-warning",
+      "node": "3928:59434",
+      "variant": "Type=Warning, Leading Acc=True, Text Button=False",
+      "target": ".umc-toast",
+      "expected": {
+        "background-color": "#3f4141cc",
+        "color": "#ffffff",
+        "column-gap": "10px"
+      }
+    },
+    {
+      "specId": "toast-warning-icon",
+      "node": "3928:59437",
+      "variant": "Type=Warning, Leading Acc=True, Text Button=False",
+      "target": ".umc-toast__icon",
+      "expected": {
+        "color": "#f59b00",
+        "width": "24px",
+        "height": "24px"
+      }
+    },
+    {
+      "specId": "toast-warning-action",
+      "node": "3928:59446",
+      "variant": "Type=Warning, Leading Acc=True, Text Button=True",
+      "target": ".umc-toast__action",
+      "expected": {
+        "color": "#ffffff",
+        "padding-left": "12px"
       }
     },
     {

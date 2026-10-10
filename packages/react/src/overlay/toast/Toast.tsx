@@ -1,13 +1,12 @@
 "use client"
 
 import { Toast } from "@base-ui/react"
+import { CloseIcon } from "@umc-product/icons"
 import type { ReactNode } from "react"
-
-import { LegacyCloseGlyph } from "../../internal/glyphs.tsx"
 
 export type ToastOptions = {
   message: ReactNode
-  color?: "primary" | "neutral" | "error"
+  color?: "primary" | "neutral" | "warning" | "error"
   icon?: ReactNode
   action?: { label: ReactNode; onClick: () => void }
   duration?: number
@@ -70,7 +69,7 @@ function ToastViewportPortal({ placement }: { placement: "top" | "bottom" }) {
               )}
               {action === undefined && placement === "bottom" && (
                 <Toast.Close className="umc-toast__close" aria-label="닫기">
-                  <LegacyCloseGlyph />
+                  <CloseIcon size={20} />
                 </Toast.Close>
               )}
             </Toast.Root>

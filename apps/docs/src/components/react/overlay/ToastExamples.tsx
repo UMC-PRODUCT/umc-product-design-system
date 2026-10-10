@@ -1,15 +1,16 @@
 "use client"
 
-import { CheckCircleIcon } from "@umc-product/icons"
+import { CheckCircleIcon, CloseIcon, WarningIcon } from "@umc-product/icons"
 import { Button, ToastProvider, useToast } from "@umc-product/react"
 
-import { LegacyCloseGlyph } from "../../../../../../packages/react/src/internal/glyphs.tsx"
 import { NotImplemented } from "../variants/VariantCells.tsx"
 import { lookup, type FigmaVariant } from "../variants/figma-variants.ts"
 import { VariantGrid } from "../variants/VariantGrid.tsx"
 
+type ToastColor = "primary" | "neutral" | "warning" | "error"
+
 type ToastPreviewItemProps = {
-  color: "primary" | "neutral" | "error"
+  color: ToastColor
   message: string
   specId?: string
   placement?: "top" | "bottom"
@@ -37,7 +38,11 @@ function ToastPreviewItem({
         <div className="umc-toast__main">
           {withIcon && (
             <span className="umc-toast__icon" aria-hidden="true">
-              <CheckCircleIcon weight="fill" />
+              {color === "warning" ? (
+                <WarningIcon weight="fill" />
+              ) : (
+                <CheckCircleIcon weight="fill" />
+              )}
             </span>
           )}
           <p className="umc-toast__message">{message}</p>
@@ -49,7 +54,7 @@ function ToastPreviewItem({
         )}
         {actionLabel === undefined && placement === "bottom" && (
           <button className="umc-toast__close" aria-label="닫기" type="button">
-            <LegacyCloseGlyph />
+            <CloseIcon size={20} />
           </button>
         )}
       </div>
@@ -77,6 +82,19 @@ export function ToastStaticPreview() {
         color="neutral"
         message="토스트 알림이에요"
         withIcon
+      />
+      <ToastPreviewItem
+        specId="toast-warning toast-warning-icon"
+        color="warning"
+        message="토스트 알림이에요"
+        withIcon
+      />
+      <ToastPreviewItem
+        specId="toast-warning-action"
+        color="warning"
+        message="토스트 알림이에요"
+        withIcon
+        actionLabel="버튼"
       />
       <ToastPreviewItem
         specId="toast-error toast-error-icon"
@@ -116,7 +134,7 @@ function ToastTrigger({
   withAction,
 }: {
   label: string
-  color?: "primary" | "neutral" | "error"
+  color?: ToastColor
   message: string
   withAction?: boolean
 }) {
@@ -154,6 +172,11 @@ export function ToastColors() {
           label="neutral"
           color="neutral"
           message="변경사항이 적용되었습니다."
+        />
+        <ToastTrigger
+          label="warning"
+          color="warning"
+          message="입력 내용을 다시 확인해 주세요."
         />
         <ToastTrigger
           label="error"
@@ -197,12 +220,14 @@ export function ToastPlacementTop() {
 const TOAST_COLORS = {
   Primary: "primary",
   Neutral: "neutral",
+  Warning: "warning",
   Error: "error",
 } as const
 
 const TOAST_TYPE_ORDER = [
   "Primary",
   "Neutral",
+  "Warning",
   "Error",
   "Service Notice",
   "Service Notice · Neutral",

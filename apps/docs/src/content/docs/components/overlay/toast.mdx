@@ -36,7 +36,7 @@ function Page() {
 
 ## 외형 미리보기
 
-피그마 `Toast Bottom`과 `Toast Top`의 변형을 항상 보이게 그린 미리보기입니다. 위에서부터 Primary(아이콘과 닫기), Primary(동작 버튼), Neutral, Error, Error(동작 버튼), 상단 Primary(아이콘), 상단 Primary(동작 버튼)입니다. 앞 아이콘은 `icon`에 `<CheckCircleIcon weight="fill" />`을 넘기면 타입에 맞는 색(Primary와 Neutral은 틸, Error는 빨강)으로 칠해집니다.
+피그마 `Toast Bottom`과 `Toast Top`의 변형을 항상 보이게 그린 미리보기입니다. 위에서부터 Primary(아이콘과 닫기), Primary(동작 버튼), Neutral, Warning, Warning(동작 버튼), Error, Error(동작 버튼), 상단 Primary(아이콘), 상단 Primary(동작 버튼)입니다. 앞 아이콘은 `icon`에 넘긴 아이콘을 타입에 맞는 색으로 칠합니다. Primary와 Neutral은 틸, Error는 빨강으로 `<CheckCircleIcon weight="fill" />`을, Warning은 주황으로 `<WarningIcon weight="fill" />`을 넘깁니다.
 
 <ToastStaticPreview />
 
@@ -60,7 +60,7 @@ function Page() {
 
 ## 모든 변형
 
-피그마 `Toast Bottom` 14개와 `Toast Top` 14개를 그렸습니다. 토스트는 잠깐 떴다 사라지므로 화면에 고정해 그렸습니다. 칸에 마우스를 올리면 변형 이름이 보입니다.
+피그마 `Toast Bottom` 16개와 `Toast Top` 16개를 그렸습니다. 토스트는 잠깐 떴다 사라지므로 화면에 고정해 그렸습니다. 칸에 마우스를 올리면 변형 이름이 보입니다.
 
 <ToastAllVariants />
 
@@ -82,19 +82,21 @@ function Page() {
 
 ### ToastOptions
 
-| prop       | 타입                                        | 기본값      | 설명                                         |
-| ---------- | ------------------------------------------- | ----------- | -------------------------------------------- |
-| `message`  | `ReactNode`                                 | 필수        | 본문                                         |
-| `color`    | `"primary" \| "neutral" \| "error"`         | `"primary"` | 색상                                         |
-| `icon`     | `ReactNode`                                 | 없음        | 왼쪽 아이콘                                  |
-| `action`   | `{ label: ReactNode; onClick: () => void }` | 없음        | 액션 버튼                                    |
-| `duration` | `number`                                    | 없음        | 자동 닫힘 시간(ms). 기본: 3000, action: 6000 |
+| prop       | 타입                                             | 기본값      | 설명                                         |
+| ---------- | ------------------------------------------------ | ----------- | -------------------------------------------- |
+| `message`  | `ReactNode`                                      | 필수        | 본문                                         |
+| `color`    | `"primary" \| "neutral" \| "warning" \| "error"` | `"primary"` | 색상                                         |
+| `icon`     | `ReactNode`                                      | 없음        | 왼쪽 아이콘                                  |
+| `action`   | `{ label: ReactNode; onClick: () => void }`      | 없음        | 액션 버튼                                    |
+| `duration` | `number`                                         | 없음        | 자동 닫힘 시간(ms). 기본: 3000, action: 6000 |
 
 ## 동작
 
 - 3초 뒤에 저절로 닫히고, 동작 버튼이 있으면 6초 뒤에 닫힙니다(피그마 안내 5~8초).
 - Error 토스트는 나타날 때 좌우로 흔들리고, 화면 낭독기에 바로 알립니다. 움직임 줄이기 설정에서는 흔들리지 않습니다.
-- 웹에서는 최소 폭 400px이고 화면 양옆 16px 안쪽으로 줄어듭니다. 하단 배치는 화면 아래에서 86px 위에 놓입니다.
+- 웹에서는 최소 폭 400px이고 화면 양옆 16px 안쪽으로 줄어듭니다.
+- 하단 배치는 화면 아래에서 40px 띄워 가운데에 놓습니다(높이 48px 토스트라면 윗변이 아래에서 88px). 상단 배치는 화면 위에서 112px에 놓습니다.
+- 하단 토스트의 닫기 버튼과 동작 버튼은 아이콘과 글자 왼쪽(닫기 8px, 동작 12px)까지 누를 수 있습니다.
 
 ## 알아 둘 점
 

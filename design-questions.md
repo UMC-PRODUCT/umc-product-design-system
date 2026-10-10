@@ -17,10 +17,9 @@
    - `Shadow/Inner/Neutral_2`: Segmented Control 컨테이너만 `#E4E4E433`(-1, 2.5, 4)입니다.
 3. 스타일 이름과 실제 값이 다른 곳이 있습니다. Toast `Label/1-Medium`이 16px, Code Input 칸 `Heading/4-Semibold`가 26px, Numeric Stepper `Label/1-Semibold`가 16px입니다. Numeric Stepper는 값이 같은 다른 토큰을 씁니다. Toast는 `Label/3-Medium` 토큰에 자간만 피그마 값(-2%)을, Code Input은 피그마 값을 씁니다.
 4. 3기 파운데이션에 없는 `Mobile Web/*` 텍스트 스타일이 Text Field 레이블(15px/23px, -3%), 도움말(13px/17px), 단위(18px/24px, -3%)에 남아 있습니다. 3기 스타일로 바꿀지 알려 주세요. 지금은 피그마 값을 그대로 씁니다.
-5. 16px 아이콘 세트는 따로 없고, 최근 컴포넌트는 24px 아이콘을 줄여 씁니다(`Icon/Expand_more`·`Icon/Add`·`Icon/Subtraction`은 Fill, `Icon/Info`는 Regular). 코드도 같은 아이콘과 굵기를 따릅니다. 원본 컴포넌트가 파일에서 지워진 인스턴스 네 개는 피그마 그림을 그대로 그렸습니다. 라이브러리 아이콘으로 바꿀지, 바꾼다면 어떤 굵기로 바꿀지 알려 주세요.
+5. 16px 아이콘 세트는 따로 없고, 최근 컴포넌트는 24px 아이콘을 줄여 씁니다(`Icon/Expand_more`·`Icon/Add`·`Icon/Subtraction`은 Fill, `Icon/Info`는 Regular). 코드도 같은 아이콘과 굵기를 따릅니다. 원본 컴포넌트가 파일에서 지워진 인스턴스 세 개는 피그마 그림을 그대로 그렸습니다. 라이브러리 아이콘으로 바꿀지, 바꾼다면 어떤 굵기로 바꿀지 알려 주세요.
    - Dropdown/Item 선택 체크: `16 icon`
    - Context Switcher 체크와 화살표: `icon/Check/16 icon/Regular`, `icon/Expand_more/16 icon/Regular`
-   - Toast 닫기: `24 icon`(라이브러리 `Icon/Close`보다 작은 13px X)
 6. Hover와 Focus 상태가 없는 컴포넌트가 많습니다. 포커스 표시는 2px `border-primary-strong-500` 외곽선으로 통일했습니다.
 7. 나타나고 사라지는 움직임 정의가 없습니다. 150ms 투명도 전환을 기본으로 넣었고, 움직임 줄이기 설정에서는 끕니다.
 8. 노션 명명 규칙과 다른 이름이 있습니다: `Regular=Weight`, `Property 1`, `Pressed(Hover)`, `Focused & Hover`, Tooltip의 `Appearance`, Option Button의 `Direction`, 오타 `Disalbed`, `Defalut`, `Numberic`, `Varient`, `Meue`, `Sub Meue`, `Eye_visable`, `Solt`.
@@ -92,8 +91,8 @@
 4. Toast Error 배경이 2기 `error-200`(`#fed7d7`)이고, Neutral 배경 `rgba(63, 65, 65, 0.8)`은 이름 없는 값입니다.
 5. Toast 앞 아이콘의 체크 색이 `#fbfcfc`인데 아이콘 패키지는 흰색으로 고정합니다.
 6. Toast Service Notice 타입의 양옆 그래픽 에셋은 컴포넌트에 넣지 않았습니다. 에셋과 사용처를 알려 주세요.
-7. `Toast Top` 변형은 닫기 버튼 없이 내용 폭이라 코드도 상단 토스트를 그렇게 그립니다. 그런데 `Toast Top`의 설명은 하단 설명과 같습니다(하단 96px, X로 닫기). 상단 토스트에도 닫기 버튼이 필요한지, 상단 위치(코드 112px)와 하단 위치(코드 86px, 설명 96px)를 확인해 주세요.
-8. Error 토스트와 입력 필드 오류의 흔들림은 주석만 있어 400ms 동안 6px씩 두 번 흔들리게 가정했습니다.
+7. `Toast Top` 변형은 닫기 버튼 없이 내용 폭이라 코드도 상단 토스트를 그렇게 그립니다. 그런데 `Toast Top`의 설명은 하단 설명과 같습니다(하단 96px, X로 닫기). 상단 토스트에도 닫기 버튼이 필요한지 알려 주세요. 하단 위치는 캔버스 메모(아래 여백 40px, 48px 토스트의 윗변 -88px)대로 바꿨습니다(2026-10-10). `Toast Bottom` 설명에는 아직 -86px로 적혀 있어 고쳐 주세요.
+8. Error 토스트와 입력 필드(CodeField 포함) 오류의 흔들림은 주석만 있어 400ms 동안 6px씩 두 번 흔들리게 가정했습니다.
 9. Scroll Fog는 아래쪽(74px)만 있어 다른 세 방향은 같은 값을 돌려 썼고, 끝 색을 흰 배경으로 가정했습니다. 회색 배경용 안개가 필요한지 알려 주세요.
 
 ## 앱 셸

@@ -841,6 +841,7 @@
         "Type": [
           "Primary",
           "Neutral",
+          "Warning",
           "Service Notice",
           "Service Notice · Neutral",
           "Error"
@@ -851,10 +852,12 @@
       "variants": [
         "Type=Primary, Leading Acc=True, Text Button=False",
         "Type=Neutral, Leading Acc=True, Text Button=False",
+        "Type=Warning, Leading Acc=True, Text Button=False",
         "Type=Primary, Leading Acc=False, Text Button=False",
         "Type=Neutral, Leading Acc=False, Text Button=False",
         "Type=Primary, Leading Acc=True, Text Button=True",
         "Type=Neutral, Leading Acc=True, Text Button=True",
+        "Type=Warning, Leading Acc=True, Text Button=True",
         "Type=Primary, Leading Acc=False, Text Button=True",
         "Type=Neutral, Leading Acc=False, Text Button=True",
         "Type=Service Notice, Leading Acc=True, Text Button=False",
@@ -872,6 +875,7 @@
         "Type": [
           "Primary",
           "Neutral",
+          "Warning",
           "Service Notice",
           "Service Notice · Neutral",
           "Error"
@@ -882,10 +886,12 @@
       "variants": [
         "Type=Primary, Leading Acc=True, Text Button=False",
         "Type=Neutral, Leading Acc=True, Text Button=False",
+        "Type=Warning, Leading Acc=True, Text Button=False",
         "Type=Primary, Leading Acc=False, Text Button=False",
         "Type=Neutral, Leading Acc=False, Text Button=False",
         "Type=Primary, Leading Acc=True, Text Button=True",
         "Type=Neutral, Leading Acc=True, Text Button=True",
+        "Type=Warning, Leading Acc=True, Text Button=True",
         "Type=Primary, Leading Acc=False, Text Button=True",
         "Type=Neutral, Leading Acc=False, Text Button=True",
         "Type=Service Notice, Leading Acc=True, Text Button=False",

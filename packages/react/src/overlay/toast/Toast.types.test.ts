@@ -5,7 +5,7 @@ import type { ToastOptions, ToastApi, ToastProviderProps } from "./Toast.tsx"
 describe("ToastOptions", () => {
   it("color는 피그마 값만 받는다", () => {
     expectTypeOf<ToastOptions["color"]>().toEqualTypeOf<
-      "primary" | "neutral" | "error" | undefined
+      "primary" | "neutral" | "warning" | "error" | undefined
     >()
   })
 

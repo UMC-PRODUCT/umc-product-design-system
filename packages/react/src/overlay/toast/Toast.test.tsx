@@ -10,7 +10,8 @@ import {
   vi,
 } from "vitest"
 
-import { LegacyCloseGlyph } from "../../internal/glyphs.tsx"
+import { CloseIcon } from "@umc-product/icons"
+
 import { ToastProvider } from "./Toast.tsx"
 import { useToast } from "./useToast.ts"
 
@@ -34,7 +35,7 @@ function ShowApp({
 }: {
   message: string
   action?: { label: string; onClick: () => void }
-  color?: "primary" | "neutral" | "error"
+  color?: "primary" | "neutral" | "warning" | "error"
 }) {
   const toast = useToast()
   return (
@@ -194,7 +195,7 @@ describe("ToastProvider & useToast", () => {
     expect(message).not.toBeNull()
   })
 
-  it("닫기 버튼은 피그마 토스트의 24px 닫기 그림이다", () => {
+  it("닫기 버튼은 20px CloseIcon을 그린다", () => {
     render(
       <ToastProvider>
         <ShowApp message="닫기 그림" />
@@ -204,7 +205,8 @@ describe("ToastProvider & useToast", () => {
       fireEvent.click(screen.getByRole("button", { name: "보여줘" }))
     })
     const glyph = document.querySelector(".umc-toast__close svg")
-    expect(drawingOf(glyph)).toEqual(drawingOf(svgOf(<LegacyCloseGlyph />)))
+    expect(glyph).toHaveAttribute("width", "20")
+    expect(drawingOf(glyph)).toEqual(drawingOf(svgOf(<CloseIcon size={20} />)))
   })
 
   it("하단 토스트는 동작 버튼이 없으면 닫기 버튼을 단다", () => {
@@ -265,6 +267,19 @@ describe("ToastProvider & useToast", () => {
       await vi.runAllTimersAsync()
     })
     expect(screen.queryByText("수동 닫힘")).not.toBeInTheDocument()
+  })
+
+  it("warning 색상은 data-color=warning을 단다", () => {
+    render(
+      <ToastProvider>
+        <ShowApp message="주의가 필요합니다" color="warning" />
+      </ToastProvider>,
+    )
+    act(() => {
+      fireEvent.click(screen.getByRole("button", { name: "보여줘" }))
+    })
+    const toast = document.querySelector(".umc-toast")
+    expect(toast).toHaveAttribute("data-color", "warning")
   })
 
   it("error 색상은 data-color=error를 단다", () => {

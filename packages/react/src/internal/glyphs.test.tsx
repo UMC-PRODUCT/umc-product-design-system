@@ -7,7 +7,6 @@ import {
   CheckboxCheckLgGlyph,
   CheckboxCheckMdGlyph,
   LegacyCheckGlyph,
-  LegacyCloseGlyph,
   LegacyExpandMoreGlyph,
   SegmentedCheck16Glyph,
   SegmentedCheck20Glyph,
@@ -16,7 +15,6 @@ import {
 const GLYPHS: [name: string, element: ReactElement, size: number][] = [
   ["LegacyCheckGlyph", <LegacyCheckGlyph />, 16],
   ["LegacyExpandMoreGlyph", <LegacyExpandMoreGlyph />, 16],
-  ["LegacyCloseGlyph", <LegacyCloseGlyph />, 24],
   ["SegmentedCheck16Glyph", <SegmentedCheck16Glyph />, 16],
   ["SegmentedCheck20Glyph", <SegmentedCheck20Glyph />, 20],
   ["CheckboxCheckMdGlyph", <CheckboxCheckMdGlyph />, 20],
