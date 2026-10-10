@@ -87,7 +87,7 @@
     --umc-input-box-placeholder-color: var(--umc-color-red-200);
     --umc-input-box-clear-color: var(--umc-color-teal-grey-300);
 
-    animation: umc-input-box-shake 400ms ease-in-out;
+    animation: umc-error-shake 400ms ease-in-out;
   }
 
   .umc-input-box[data-invalid]:has(:where([data-filled])) {
@@ -210,23 +210,6 @@
     line-height: var(--umc-input-box-line-height);
     letter-spacing: var(--umc-input-box-letter-spacing);
     font-variant-numeric: tabular-nums;
-  }
-
-  @keyframes umc-input-box-shake {
-    0%,
-    100% {
-      translate: 0;
-    }
-
-    20%,
-    60% {
-      translate: -6px 0;
-    }
-
-    40%,
-    80% {
-      translate: 6px 0;
-    }
   }
 
   @media (prefers-reduced-motion: reduce) {

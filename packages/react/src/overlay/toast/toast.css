@@ -90,24 +90,7 @@
     --umc-toast-icon: var(--umc-color-icon-error);
     --umc-toast-action: var(--umc-color-red-500);
 
-    animation: umc-toast-shake 400ms ease-in-out;
-  }
-
-  @keyframes umc-toast-shake {
-    0%,
-    100% {
-      translate: 0;
-    }
-
-    20%,
-    60% {
-      translate: -6px 0;
-    }
-
-    40%,
-    80% {
-      translate: 6px 0;
-    }
+    animation: umc-error-shake 400ms ease-in-out;
   }
 
   @media (prefers-reduced-motion: reduce) {
