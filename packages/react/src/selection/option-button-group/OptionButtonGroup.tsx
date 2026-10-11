@@ -4,10 +4,7 @@ import { CheckboxGroup, Checkbox, RadioGroup, Radio } from "@base-ui/react"
 import type { ReactElement, ReactNode } from "react"
 
 import { cx } from "../../internal/cx.ts"
-import {
-  SegmentedCheck16Glyph,
-  SegmentedCheck20Glyph,
-} from "../../internal/glyphs.tsx"
+import { Check16Glyph, Check20Glyph } from "../../internal/glyphs.tsx"
 
 export type OptionItem<V extends string = string> = {
   value: V
@@ -55,9 +52,9 @@ const resolvePosition = (
 }
 
 const CHECK_GLYPHS: Record<OptionButtonSize, ReactElement> = {
-  xl: <SegmentedCheck20Glyph />,
-  sm: <SegmentedCheck16Glyph />,
-  xs: <SegmentedCheck16Glyph />,
+  xl: <Check20Glyph />,
+  sm: <Check16Glyph />,
+  xs: <Check16Glyph />,
 }
 
 function OptionButtonGroupSingle<V extends string>({

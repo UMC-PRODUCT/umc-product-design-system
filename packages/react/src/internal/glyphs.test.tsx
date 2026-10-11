@@ -3,20 +3,20 @@ import type { ReactElement } from "react"
 import { describe, expect, it } from "vitest"
 
 import {
+  Check16Glyph,
+  Check20Glyph,
   CheckButtonGlyph,
   CheckboxCheckLgGlyph,
   CheckboxCheckMdGlyph,
   LegacyCheckGlyph,
   LegacyExpandMoreGlyph,
-  SegmentedCheck16Glyph,
-  SegmentedCheck20Glyph,
 } from "./glyphs.tsx"
 
 const GLYPHS: [name: string, element: ReactElement, size: number][] = [
   ["LegacyCheckGlyph", <LegacyCheckGlyph />, 16],
   ["LegacyExpandMoreGlyph", <LegacyExpandMoreGlyph />, 16],
-  ["SegmentedCheck16Glyph", <SegmentedCheck16Glyph />, 16],
-  ["SegmentedCheck20Glyph", <SegmentedCheck20Glyph />, 20],
+  ["Check16Glyph", <Check16Glyph />, 16],
+  ["Check20Glyph", <Check20Glyph />, 20],
   ["CheckboxCheckMdGlyph", <CheckboxCheckMdGlyph />, 20],
   ["CheckboxCheckLgGlyph", <CheckboxCheckLgGlyph />, 24],
   ["CheckButtonGlyph", <CheckButtonGlyph />, 24],

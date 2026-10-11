@@ -3,10 +3,7 @@ import userEvent from "@testing-library/user-event"
 import type { ReactElement } from "react"
 import { describe, expect, it, vi } from "vitest"
 
-import {
-  SegmentedCheck16Glyph,
-  SegmentedCheck20Glyph,
-} from "../../internal/glyphs.tsx"
+import { Check16Glyph, Check20Glyph } from "../../internal/glyphs.tsx"
 import { OptionButtonGroup } from "./OptionButtonGroup.tsx"
 
 const SINGLE_OPTIONS = [
@@ -30,9 +27,9 @@ const drawingOf = (svg: Element | null | undefined) => ({
 })
 
 const CHECK_BY_SIZE: [size: "xl" | "sm" | "xs", glyph: ReactElement][] = [
-  ["xl", <SegmentedCheck20Glyph />],
-  ["sm", <SegmentedCheck16Glyph />],
-  ["xs", <SegmentedCheck16Glyph />],
+  ["xl", <Check20Glyph />],
+  ["sm", <Check16Glyph />],
+  ["xs", <Check16Glyph />],
 ]
 
 describe("OptionButtonGroup single", () => {

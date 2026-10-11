@@ -61,7 +61,7 @@ export function LegacyExpandMoreGlyph({ className }: GlyphProps) {
   )
 }
 
-export function SegmentedCheck16Glyph({ className }: GlyphProps) {
+export function Check16Glyph({ className }: GlyphProps) {
   return (
     <GlyphFrame size={16} className={className}>
       <StrokePath d="M4 7.76923L6.8 11L12 5" width={1.5} />
@@ -69,7 +69,7 @@ export function SegmentedCheck16Glyph({ className }: GlyphProps) {
   )
 }
 
-export function SegmentedCheck20Glyph({ className }: GlyphProps) {
+export function Check20Glyph({ className }: GlyphProps) {
   return (
     <GlyphFrame size={20} className={className}>
       <path

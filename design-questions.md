@@ -65,7 +65,7 @@
 
 1. Option Button Xl의 선택하지 않은 글자는 `Title/2-Medium`을 Regular로 바꾼 값(20px, 400)이라 텍스트 스타일이 없습니다.
 2. Option Button에 Strong이면서 Disabled인 변형이 없습니다. Button Fill Primary 비활성 색(배경 Teal-300, 글자 Teal-100)으로 가정했습니다.
-3. Option Button 체크는 `.primitive/Segmented Control/Check-icon`의 두 크기를 그대로 그립니다. 16px(Sm, Xs)은 선 두께 1.5로 따로 그린 그림이고, 20px(Xl)은 `Icon/Check` Fill인데 선이 살아 있어 20px로 줄여도 두께가 2로 남습니다. 두 크기를 같은 아이콘으로 맞출지, 체크 색(Weak `#008a80`, Strong `#f4fbfa`)이 글자색과 다른 것이 의도인지 알려 주세요.
+3. Option Button 체크는 `.primitive/Check-icon`(2026-10-10에 `.primitive/Segmented Control/Check-icon`에서 이름이 바뀜)의 두 크기를 그대로 그립니다. 16px(Sm, Xs)은 선 두께 1.5로 따로 그린 그림이고, 20px(Xl)은 `Icon/Check` Fill인데 선이 살아 있어 20px로 줄여도 두께가 2로 남습니다. 메모에는 "20 없애고 17 넣기"가 있지만 피그마에는 아직 16px과 20px만 있어, 17px 변형이 생기면 Xl 체크를 바꾸겠습니다. 두 크기를 같은 아이콘으로 맞출지, 체크 색(Weak `#008a80`, Strong `#f4fbfa`)이 글자색과 다른 것이 의도인지 알려 주세요.
 4. Option Button 문서의 배경 "Teal Gray 150"은 3기 팔레트에 없고, 컴포넌트에는 `#eff0f0`이 칠해져 있습니다.
 5. Segmented Control 선택 항목과 Step Navigation 현재 단계의 그림자(`0 1px 2px #63c4b833`, `0 0 10px #9ca3a34d`)가 이름 없는 값입니다. 그림자 스타일로 등록할지 알려 주세요.
 6. Step Navigation에서 완료한 단계와 남은 단계의 모양 차이가 없습니다. 완료 표시가 필요한지 알려 주세요. 피그마 번호형 버튼에는 Hover가 있지만, 코드는 누를 수 없는 진행 표시로 만들어 hover를 넣지 않았습니다. 단계를 눌러 이동해야 하는지도 알려 주세요.
