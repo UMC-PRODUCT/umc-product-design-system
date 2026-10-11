@@ -9,7 +9,8 @@
 @source "../../node_modules/@umc-product/design-tokens/dist/index.js";
 
 @layer starlight {
-  .sl-markdown-content :is([class*="umc-"], [class*="umc-"] *) {
+  .sl-markdown-content
+    :is([class*="umc-"], [class*="umc-"] *):not(.docs-changelog *) {
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -888,6 +889,18 @@
   padding-block: 0.5rem 0;
 }
 
+.docs-changelog-tabs {
+  margin-top: var(--sl-content-gap-y);
+}
+
+.docs-changelog-tabs .umc-tab-panel {
+  padding-top: 1.5rem;
+}
+
 .docs-changelog > h1:first-child {
   display: none;
+}
+
+.docs-changelog > h1:first-child + * {
+  margin-top: 0;
 }

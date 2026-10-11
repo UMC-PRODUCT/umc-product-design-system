@@ -4,7 +4,7 @@ description: 버전마다 세 패키지에서 바뀐 내용입니다.
 tableOfContents: false
 ---
 
-import { TabItem, Tabs } from "@astrojs/starlight/components"
+import { ChangelogTabs } from "../../../components/react/frame/ChangelogTabs.tsx"
 import { Content as TokensChangelog } from "../../../../../../packages/design-tokens/CHANGELOG.md"
 import { Content as IconsChangelog } from "../../../../../../packages/icons/CHANGELOG.md"
 import { Content as ReactChangelog } from "../../../../../../packages/react/CHANGELOG.md"
@@ -13,20 +13,14 @@ changesets가 패키지마다 만든 `CHANGELOG.md`를 그대로 보여 줍니�
 
 깨지는 변경과 화면 변화를 표시하는 기준은 [버전 정책](../versioning/)에 있습니다.
 
-<Tabs>
-  <TabItem label="react">
-    <div class="docs-changelog">
-      <ReactChangelog />
-    </div>
-  </TabItem>
-  <TabItem label="design-tokens">
-    <div class="docs-changelog">
-      <TokensChangelog />
-    </div>
-  </TabItem>
-  <TabItem label="icons">
-    <div class="docs-changelog">
-      <IconsChangelog />
-    </div>
-  </TabItem>
-</Tabs>
+<ChangelogTabs client:visible>
+  <div slot="react" class="docs-changelog">
+    <ReactChangelog />
+  </div>
+  <div slot="designTokens" class="docs-changelog">
+    <TokensChangelog />
+  </div>
+  <div slot="icons" class="docs-changelog">
+    <IconsChangelog />
+  </div>
+</ChangelogTabs>
