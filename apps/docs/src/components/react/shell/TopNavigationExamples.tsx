@@ -1,7 +1,12 @@
 "use client"
 
 import { TopNavigation, TopNavigationButton } from "@umc-product/react"
-import { ExpandMoreIcon } from "@umc-product/icons"
+import {
+  MenuIcon,
+  NotificationIcon,
+  SearchIcon,
+  SettingIcon,
+} from "@umc-product/icons"
 import { useState } from "react"
 
 import type { FigmaVariant } from "../variants/figma-variants.ts"
@@ -10,16 +15,19 @@ import { PreviewLinks } from "./PreviewLinks.tsx"
 
 const PHONE_FRAME = "w-[375px] bg-white shadow-sm overflow-hidden"
 
-function makeActions(count: number) {
+function makeActions(withSearch: boolean) {
   return (
     <>
-      {count >= 2 && (
+      {withSearch && (
         <TopNavigationButton variant="icon" aria-label="검색">
-          <ExpandMoreIcon weight="fill" />
+          <SearchIcon />
         </TopNavigationButton>
       )}
-      <TopNavigationButton variant="icon" aria-label="더보기">
-        <ExpandMoreIcon weight="fill" />
+      <TopNavigationButton variant="icon" aria-label="알림">
+        <NotificationIcon />
+      </TopNavigationButton>
+      <TopNavigationButton variant="icon" aria-label="메뉴">
+        <MenuIcon weight="fill" />
       </TopNavigationButton>
     </>
   )
@@ -30,7 +38,7 @@ export function TopNavigationDefault() {
     <div className="umc-example umc-example-flush">
       <PreviewLinks>
         <div className={PHONE_FRAME} data-spec-id="top-navigation-main-left">
-          <TopNavigation title="홈" actions={makeActions(1)} />
+          <TopNavigation title="홈" actions={makeActions(true)} />
         </div>
       </PreviewLinks>
     </div>
@@ -46,7 +54,7 @@ export function TopNavigationWithBack() {
             title="프로필 수정"
             titleAlign="center"
             back={{ href: "/profile" }}
-            actions={makeActions(1)}
+            actions={makeActions(false)}
           />
         </div>
       </PreviewLinks>
@@ -64,7 +72,7 @@ export function TopNavigationDropdown() {
             title="서울 캠퍼스"
             onTitleClick={() => setOpen((prev) => !prev)}
             titleExpanded={open}
-            actions={makeActions(1)}
+            actions={makeActions(false)}
           />
         </div>
       </PreviewLinks>
@@ -85,7 +93,7 @@ function TopNavigationCell({ variant }: { variant: FigmaVariant }) {
         titleAlign={isCenter ? "center" : "start"}
         back={hasBack ? { href: "/prev" } : undefined}
         onTitleClick={hasDropdown ? () => {} : undefined}
-        actions={makeActions(1)}
+        actions={makeActions(isMain && !hasDropdown)}
       />
     </div>
   )
@@ -97,7 +105,7 @@ function TopNavigationButtonCell({ variant }: { variant: FigmaVariant }) {
   if (type === "Icon") {
     return (
       <TopNavigationButton variant="icon" aria-label="검색">
-        <ExpandMoreIcon weight="fill" />
+        <SearchIcon />
       </TopNavigationButton>
     )
   }
@@ -120,7 +128,7 @@ function TopNavigationButtonCell({ variant }: { variant: FigmaVariant }) {
 
   return (
     <TopNavigationButton variant="icon" aria-label="슬롯">
-      <ExpandMoreIcon weight="fill" />
+      <SettingIcon />
     </TopNavigationButton>
   )
 }

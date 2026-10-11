@@ -80,11 +80,11 @@
   }
 
   .umc-top-navigation__title-text {
-    font-family: var(--umc-typography-body-1-semibold-font-family);
-    font-size: var(--umc-typography-body-1-semibold-font-size);
-    font-weight: var(--umc-typography-body-1-semibold-font-weight);
-    line-height: var(--umc-typography-body-1-semibold-line-height);
-    letter-spacing: var(--umc-typography-body-1-semibold-letter-spacing);
+    font-family: var(--umc-typography-title-1-semibold-font-family);
+    font-size: var(--umc-typography-title-1-semibold-font-size);
+    font-weight: var(--umc-typography-title-1-semibold-font-weight);
+    line-height: var(--umc-typography-title-1-semibold-line-height);
+    letter-spacing: var(--umc-typography-title-1-semibold-letter-spacing);
     color: var(--umc-top-navigation-title-color);
     overflow: hidden;
     text-overflow: ellipsis;
@@ -94,11 +94,11 @@
   .umc-top-navigation[data-title-align="center"]
     .umc-top-navigation__title-text {
     color: var(--umc-top-navigation-sub-title-color);
-    font-family: var(--umc-typography-body-3-medium-font-family);
-    font-size: var(--umc-typography-body-3-medium-font-size);
-    font-weight: var(--umc-typography-body-3-medium-font-weight);
-    line-height: var(--umc-typography-body-3-medium-line-height);
-    letter-spacing: var(--umc-typography-body-3-medium-letter-spacing);
+    font-family: var(--umc-typography-title-4-medium-font-family);
+    font-size: var(--umc-typography-title-4-medium-font-size);
+    font-weight: var(--umc-typography-title-4-medium-font-weight);
+    line-height: var(--umc-typography-title-4-medium-line-height);
+    letter-spacing: var(--umc-typography-title-4-medium-letter-spacing);
   }
 
   .umc-top-navigation__title-btn {
