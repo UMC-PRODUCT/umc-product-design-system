@@ -60,4 +60,4 @@ build: {
 
 ## 라이선스
 
-UMC PRODUCT 팀이 사용 권한을 준 사람과 팀만 쓸 수 있습니다. 조건은 패키지에 들어 있는 `LICENSE`에 있습니다.
+UMC PRODUCT Design Chapter가 소유하고 관리합니다. UMC-PRODUCT 조직이나 Design Chapter가 승인한 팀의 구성원이 UMC PRODUCT 프로젝트에서만 쓸 수 있습니다. 조건은 패키지에 들어 있는 `LICENSE`에 있습니다.

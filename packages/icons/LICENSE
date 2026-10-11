@@ -1,29 +1,73 @@
-Copyright (c) 2026 UMC PRODUCT 팀. All rights reserved.
+UMC PRODUCT Design System License (Internal Use)
 
-이 저장소의 소스 코드, 디자인 토큰, 아이콘, 컴포넌트, 문서(이하 "디자인 시스템")의 권리는
-UMC PRODUCT 팀에 있습니다.
+Copyright (c) 2026 UMC PRODUCT Design Chapter and contributors.
+All rights reserved.
 
-1. 사용 허락
-   UMC PRODUCT 팀이 사용 권한을 준 사람과 팀만 디자인 시스템을 설치하고 사용할 수 있습니다.
-   권한은 UMC PRODUCT 팀이 정한 서비스를 만드는 데에만 씁니다.
+이 저장소의 소스 코드, 디자인 토큰, 아이콘, 컴포넌트, 문서와 배포 패키지(이하
+"디자인 시스템")는 UMC PRODUCT Design Chapter가 소유하고 관리합니다.
 
-2. 금지
-   권한 없이 디자인 시스템을 복제, 수정, 배포하거나 다른 서비스에 쓰는 것을 허락하지 않습니다.
-   저장소를 공개한 것은 열람을 위해서이며, 사용을 허락하는 뜻이 아닙니다.
+1. 적용 범위
+   이 라이선스는 UMC PRODUCT가 저장소와 통합 산출물을 이용하는 범위를 정합니다.
+   각 기여자가 독립적으로 권리를 보유하는 자신의 기여물에 대한 권리까지 양도하거나
+   제한하는 것으로 해석하지 않습니다.
 
-3. 다른 권리자의 자료
-   디자인 시스템이 함께 쓰는 서체 Pretendard와 Orbitron은 SIL Open Font License 1.1을 따르며,
-   각 서체 패키지에 들어 있는 라이선스가 적용됩니다.
+2. 공개의 의미
+   저장소와 문서 사이트를 공개한 것은 열람과 참고를 위해서입니다. 공개만으로
+   디자인 시스템의 사용, 복제, 수정, 배포를 허락하지 않습니다.
 
-4. 보증 없음
-   디자인 시스템은 있는 그대로 제공합니다. 사용하다 생긴 문제에 UMC PRODUCT 팀은 책임지지 않습니다.
+3. 사용 허락
+   다음 조건을 모두 갖춘 경우에만 디자인 시스템을 사용, 복제, 수정할 수 있습니다.
+   가. UMC-PRODUCT GitHub 조직의 구성원이거나 UMC PRODUCT Design Chapter가 승인한
+       팀의 구성원일 것
+   나. UMC PRODUCT가 공식으로 운영하거나 승인한 프로젝트에서 사용할 것
+   다. 저작권 표시와 이 라이선스 고지를 지우지 않을 것
 
-사용 권한이 필요하면 UMC PRODUCT 팀에 문의하세요.
+4. 금지
+   UMC PRODUCT Design Chapter의 사전 서면 허가 없이 다음 행위를 할 수 없습니다.
+   가. 디자인 시스템을 UMC PRODUCT 밖의 개인, 단체, 회사에 제공하거나 재배포하는
+       행위(패키지를 다른 레지스트리에 다시 올리는 것을 포함)
+   나. 상업적 제품이나 유료 서비스에 사용하는 행위
+   다. 이 라이선스를 다시 허락하거나 판매하는 행위
+   라. 디자인 시스템의 전부 또는 상당 부분을 별도 제품으로 배포하는 행위
+
+5. 권한의 종료
+   UMC-PRODUCT GitHub 조직이나 승인된 팀의 구성원 자격이 끝난 사람은 새 버전을
+   내려받거나 새 프로젝트에 디자인 시스템을 사용할 수 없습니다.
+
+6. 기여자의 권리
+   각 기여자는 자신이 작성한 기여물의 저작권을 보유합니다. 기여물을 제출하면
+   UMC PRODUCT가 이 라이선스의 범위에서 그 기여물을 이용하도록 허락한 것으로 봅니다.
+   개인 전시와 자기 기여분의 이용은 UMC PRODUCT 운영정책과 실제 권리관계에 따릅니다.
+   기여자는 공개된 자신의 기여를 포트폴리오나 개인 웹사이트 등 경력 활용에 쓸 수
+   있습니다. 다만 이를 이유로 디자인 시스템의 전부 또는 상당 부분을 배포할 수는
+   없습니다(4항 라목).
+
+7. 다른 권리자의 자료
+   디자인 시스템이 함께 쓰는 서체 Pretendard와 Orbitron은 SIL Open Font License 1.1을,
+   Base UI 등 외부 라이브러리는 각자의 라이선스를 따릅니다.
+
+8. 보증 없음
+   디자인 시스템은 어떠한 보증도 없이 있는 그대로 제공됩니다. 저작권자와 기여자는
+   사용으로 생긴 손해에 책임을 지지 않습니다.
+
+사용 권한이 필요하면 UMC PRODUCT Design Chapter에 문의하세요.
 
 ---
 
-All rights reserved. The design system may be installed and used only by people and teams
-authorized by the UMC PRODUCT team, and only for services approved by the team. Any other copying,
-modification, distribution, or use is not permitted. Making this repository public is for reading
-only and does not grant any license. Bundled fonts (Pretendard, Orbitron) remain under the
-SIL Open Font License 1.1. The design system is provided "as is", without warranty of any kind.
+Summary (English)
+
+The UMC PRODUCT Design System is owned and maintained by the UMC PRODUCT Design
+Chapter. This license defines how UMC PRODUCT may use the repository and its combined
+outputs; it does not transfer or restrict the rights each contributor independently
+holds in their own contributions. The repository and documentation site are public for
+reading and reference only. Members of the UMC-PRODUCT GitHub organization or of teams
+approved by the Design Chapter may use, copy, and modify the design system only in
+projects operated or approved by UMC PRODUCT, keeping copyright and license notices
+intact. Redistribution outside UMC PRODUCT, commercial use, sublicensing or sale, and
+distributing all or a substantial part as a separate product require prior written
+permission from the Design Chapter. Access ends with membership. Contributors keep the
+copyright in their contributions, grant UMC PRODUCT use under this license, and may
+show their own public contributions in portfolios and personal websites according to
+the UMC PRODUCT operating policy. Bundled fonts (Pretendard, Orbitron) remain under the
+SIL Open Font License 1.1, and third-party libraries under their own licenses. The
+design system is provided "as is", without warranty of any kind.
