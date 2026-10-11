@@ -2,7 +2,7 @@
 
 - 독자: 3기 디자인 팀, 웹 파트
 - 소유자: 웹 파트
-- 기준일: 2026-10-10
+- 기준일: 2026-10-11
 
 문서 사이트에는 싣지 않는 작업 목록입니다.
 
@@ -35,13 +35,13 @@
 
 ## 아이콘
 
-정사각형이 아닌 프레임, 고정된 흰 부분, 토큰에 없는 픽토그램 색 등 10개 항목은 [아이콘 정규화 리포트](packages/icons/reports/icon-normalization.md)에 있습니다.
+정사각형이 아닌 프레임, 고정된 흰 부분, 토큰에 없는 픽토그램 색 등 11개 항목은 [아이콘 정규화 리포트](packages/icons/reports/icon-normalization.md)에 있습니다.
 
 2026-10-10에 고쳐 주신 내용을 반영했습니다. `Icon/warning` Fill 프레임이 24×24가 되어 비율 보정을 뺐고, 새 `Icon/warning-Triangle`(Thin, Regular, Fill)은 `WarningTriangleIcon`으로 더했습니다. Search 변형 이름이 `Weight=Regular`로 바로잡혀 코드의 변형 이름 보정 규칙을 지웠습니다. `_`로 나눴던 이름 5개(`Icon/warning`, `Icon/Location` 등)도 `/`로 바뀌어 원문 이름을 맞췄고, 코드의 컴포넌트 이름은 그대로입니다. 새 `Pictogram/Check`는 `CheckPictogram`으로 더했습니다. 같은 날 아이콘 전체를 다시 받아 대조했는데, `Icon/Checkbox`의 Thin과 Regular 그림이 서로 바뀌어 있어 코드는 섹션 설명(Thin 1.2px, Regular 1.6px)대로 두었습니다.
 
 ## Button
 
-노드 2621:33584. 자세한 값은 [Button](../../components/actions/button/) 페이지에 있습니다.
+노드 2621:33584. 코드가 쓰는 값은 [Button figma-spec](packages/react/src/button/figma-spec.json)에 있습니다.
 
 1. Hover가 없어 마우스가 있는 기기에서 Pressed 모양을 함께 씁니다. 같은 모양이어도 되는지 알려 주세요.
 2. Primary Fill 아이콘 변형의 색(`#02746c`)이 아이콘 없는 변형과 다릅니다. 코드는 아이콘 없는 변형으로 통일했습니다.
@@ -51,10 +51,11 @@
 6. 로딩 점 3개의 움직임 정의가 없습니다. 1초 주기 투명도 변화를 넣었습니다.
 7. Weak 비활성의 흰색 70% 덧칠이 내보낸 컬렉션 밖의 변수(`Static/White/Opacity-70`)를 참조합니다. 눌림 덧칠 색은 변수에 연결되지 않았습니다.
 8. Red Weak 글자색(`red-600`)에 맞는 semantic 토큰이 없어 primitive를 바로 씁니다.
+9. Neutral Weak Default 배경이 아이콘 없는 변형은 `#eff0f0`(`action-primary-default`), 아이콘 있는 변형은 `#f7f8f8`(`TealGrey-75`)입니다. 코드는 아이콘 없는 변형 값(`fill-neutral-medium-100`)으로 통일했습니다. Neutral Fill처럼 하나로 맞춰 주세요.
 
 ## Text Button
 
-노드 3573:95925. 자세한 값은 [TextButton](../../components/actions/text-button/) 페이지에 있습니다.
+노드 3573:95925. 코드가 쓰는 값은 [TextButton figma-spec](packages/react/src/text-button/figma-spec.json)에 있습니다.
 
 1. Hover·Pressed에서 글자와 아이콘 색이 다릅니다. Brand는 글자 `#01423d`(teal-800), 아이콘 `#015a54`(teal-700)이고, Neutral은 글자 `#282a2a`, 아이콘 `#3f4141`입니다. 의도인지 알려 주세요. 코드는 피그마대로 따로 칠합니다.
 2. Brand 비활성과 아이콘 Hover 색이 semantic이 아닌 primitive(`Teal-300`, `Teal-700`)에 연결되어 있습니다. 글자 비활성은 같은 값의 `text-brand-disabled-300`로 옮겼고, 아이콘은 primitive를 그대로 씁니다.
@@ -84,6 +85,25 @@
 19. Radio 테두리는 `Teal-400`, Check Box Brand 테두리는 `Teal-300`(`border-primary-medium-300`)입니다. 단계가 다른 것이 의도인지 알려 주세요.
 20. 라벨이 붙은 Radio 본체와 목록 간격은 "Form 형태와 함께 제작 예정"이라 컨트롤만 만들었습니다. 그룹은 임시로 세로 목록, 간격 8px입니다.
 21. 같은 틸 강조를 컴포넌트마다 `Color=Brand`(Check Box, Text Button)와 `Color=Primary`(Radio, Button)로 다르게 부릅니다. 코드는 피그마 이름대로 `brand`와 `primary`를 씁니다. 하나로 맞출지 알려 주세요.
+22. Chip에 비활성과 포커스 모양이 없습니다. 코드는 다른 컴포넌트처럼 비활성 토큰과 2px `border-primary-strong-500` 외곽선을 씁니다.
+23. Chip 아이콘 없는 변형만 폭이 52px로 고정되어 있습니다. 코드는 글자 길이를 따릅니다.
+24. Chip 아이콘 색에 2기 `WarmGray-700`이 남아 있습니다. 코드는 3기 `icon-neutral-strong-600`을 씁니다.
+25. Chip/Draggable은 토큰에 없는 `Subtitle/2-Medium`(18px, 줄 높이 1.5, 자간 -1%)과 이름 없는 여백 9px, 간격 3px을 씁니다. 코드는 피그마 값을 컴포넌트 변수로 옮겼습니다.
+
+## 표시
+
+2026-10-10에 새로 올라온 Tag 계열과 Bubble을 옮기면서 찾은 내용입니다.
+
+1. Tag/Basic Md 글자가 2기 `Label/2-Medium`(14px, 줄 높이 1.45)입니다. 3기의 같은 이름은 17px이라 코드는 피그마 값을 컴포넌트 변수로 씁니다.
+2. Tag/Basic 반지름이 변수에 연결되지 않았고, Neutral 글자가 primitive에 바로 연결되어 있습니다.
+3. Tag/Number Neutral Tertiary 글자가 2기 `teal-gray-600`(`#656b6b`)이고, 반지름 4px에 맞는 토큰이 없습니다. 둘 다 피그마 값을 컴포넌트 변수로 씁니다.
+4. Tag/Status 색 이름(Default, Neutral, Yellow, Red)이 Tag/Basic(Brand, Neutral, Warning, Error)과 다릅니다. 코드는 `brand`, `neutral`, `warning`, `error`로 맞췄습니다.
+5. Tag/Part의 PM, Sm, Outlined 변형 이름이 `Part=Tag, Size=Part, Style=PM`으로 깨져 있습니다(3385:25514). 문서는 이 변형을 PM, Sm, Outlined 칸에 그립니다.
+6. Tag/Part Design Lg Outlined 테두리가 태그 변수 대신 `Pink-100`에 연결되어 있습니다. 값은 같아서 코드는 태그 변수를 씁니다.
+7. Tag/Part와 Tag/Role의 `Shadow/Drop/Neutral_2`가 `#EFF0F080`으로 정의되어 파운데이션 토큰(`#eceeee85`)과 다릅니다. 이름 있는 스타일은 토큰을 따르는 규칙대로 토큰을 씁니다.
+8. Tag/Role Product 글자색이 피그마 변수 `tag-role-product-text`에서 `#3f4141`인데, 2026-10-08에 받은 토큰은 `#282a2a`입니다. 변수가 바뀌었다면 Export modes를 다시 받아 토큰부터 고치겠습니다. 지금은 피그마 값을 컴포넌트 변수로 씁니다.
+9. Tag/Role 라벨에 `⚙ Product`처럼 기호가 붙은 역할이 있습니다. 코드는 라벨을 앱이 넘기게 했습니다. 기호도 라벨의 일부로 쓰는지 알려 주세요.
+10. Bubble Incoming은 흰 말풍선에 경계가 없어 흰 화면 위에서는 보이지 않습니다. 말풍선을 놓을 배경색을 알려 주세요.
 
 ## 오버레이와 피드백
 
