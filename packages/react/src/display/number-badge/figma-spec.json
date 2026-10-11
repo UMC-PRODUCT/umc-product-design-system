@@ -1,0 +1,75 @@
+{
+  "component": "NumberBadge",
+  "figmaSection": "2479:20644",
+  "page": "/components/display/badge/",
+  "nodes": [
+    {
+      "specId": "number-badge-sm-brand-fill",
+      "node": "2479:20665",
+      "variant": "Size=Sm, Color=Brand, Style=Fill",
+      "expected": {
+        "background-color": "#008a80",
+        "color": "#ffffff",
+        "min-width": "16px",
+        "min-height": "16px",
+        "border-top-left-radius": "100px"
+      }
+    },
+    {
+      "specId": "number-badge-sm-brand-weak",
+      "node": "2479:20705",
+      "variant": "Size=Sm, Color=Brand, Style=Weak",
+      "expected": {
+        "background-color": "#ddf4f1",
+        "color": "#02746c"
+      }
+    },
+    {
+      "specId": "number-badge-md-brand-fill",
+      "node": "2479:20675",
+      "variant": "Size=Md, Color=Brand, Style=Fill",
+      "expected": {
+        "background-color": "#008a80",
+        "color": "#ffffff",
+        "min-width": "20px",
+        "min-height": "20px"
+      }
+    },
+    {
+      "specId": "number-badge-sm-error-fill",
+      "node": "2479:20669",
+      "variant": "Size=Sm, Color=Red, Style=Fill",
+      "expected": {
+        "background-color": "#dc3d3d",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "number-badge-sm-warning-fill",
+      "node": "2479:20671",
+      "variant": "Size=Sm, Color=Yellow, Style=Fill",
+      "expected": {
+        "background-color": "#f59b00",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "number-badge-sm-success-fill",
+      "node": "2479:20673",
+      "variant": "Size=Sm, Color=Green, Style=Fill",
+      "expected": {
+        "background-color": "#06a768",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "number-badge-sm-neutral-fill",
+      "node": "2479:20667",
+      "variant": "Size=Sm, Color=Neutral, Style=Fill",
+      "expected": {
+        "background-color": "#606262",
+        "color": "#ffffff"
+      }
+    }
+  ]
+}
