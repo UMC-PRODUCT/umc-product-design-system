@@ -144,7 +144,6 @@ export function VariantGrid({
                         return variant ? (
                           <td
                             key={comboLabel(columnCombo)}
-                            title={variant.name}
                             data-figma-variant={variant.name}
                             data-tone={tone?.(variant)}
                           >

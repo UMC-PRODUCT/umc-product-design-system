@@ -17,8 +17,6 @@ const NAV_ITEMS = [
   { label: "프로필", href: "/profile" },
 ]
 
-const PlaceholderIcon = () => <ExpandMoreIcon weight="fill" />
-
 export function BottomNavigationDefault() {
   const [path, setPath] = useState("/")
   return (
@@ -31,7 +29,7 @@ export function BottomNavigationDefault() {
                 key={item.href}
                 href={item.href}
                 label={item.label}
-                icon={<PlaceholderIcon />}
+                icon={<ExpandMoreIcon weight="fill" />}
                 currentPath={path}
               />
             ))}
@@ -54,7 +52,7 @@ function BottomNavigationCell({ variant }: { variant: FigmaVariant }) {
             key={item.href}
             href={item.href}
             label={item.label}
-            icon={<PlaceholderIcon />}
+            icon={<ExpandMoreIcon weight="fill" />}
             currentPath={index === 0 ? item.href : "/other"}
           />
         ))}
@@ -79,7 +77,7 @@ function BottomNavigationTabItemCell({ variant }: { variant: FigmaVariant }) {
         <BottomNavigationItem
           href="/"
           label="홈"
-          icon={<PlaceholderIcon />}
+          icon={<ExpandMoreIcon weight="fill" />}
           currentPath={selected ? "/" : "/other"}
         />
       </BottomNavigation>

@@ -16,7 +16,7 @@ import { VariantGrid } from "../variants/VariantGrid.tsx"
 
 const PHONE_PARTS = ["010", "1234", "5678"]
 
-function PhoneSlot() {
+function renderPhoneSlot() {
   return (
     <span className="flex min-w-0 flex-1 items-center gap-1">
       {PHONE_PARTS.map((part, index) => (
@@ -41,14 +41,10 @@ export function InputBoxCustom() {
         className="w-full max-w-[350px]"
         data-spec-id="input-box-lg input-box-hover"
       >
-        <InputBox>
-          <PhoneSlot />
-        </InputBox>
+        <InputBox>{renderPhoneSlot()}</InputBox>
       </div>
       <div className="w-full max-w-[350px]" data-spec-id="input-box-md">
-        <InputBox size="md">
-          <PhoneSlot />
-        </InputBox>
+        <InputBox size="md">{renderPhoneSlot()}</InputBox>
       </div>
     </div>
   )
@@ -58,20 +54,16 @@ export function InputBoxStates() {
   return (
     <div className="umc-example umc-example-stack">
       <div className="w-full max-w-[350px]" data-spec-id="input-box-invalid">
-        <InputBox invalid>
-          <PhoneSlot />
-        </InputBox>
+        <InputBox invalid>{renderPhoneSlot()}</InputBox>
       </div>
       <div className="w-full max-w-[350px]" data-spec-id="input-box-disabled">
-        <InputBox disabled>
-          <PhoneSlot />
-        </InputBox>
+        <InputBox disabled>{renderPhoneSlot()}</InputBox>
       </div>
     </div>
   )
 }
 
-function EmptyPhoneSlot() {
+function renderEmptyPhoneSlot() {
   return (
     <span className="flex min-w-0 flex-1 items-center gap-1">
       {PHONE_PARTS.map((part, index) => (
@@ -97,7 +89,7 @@ function InputBoxVariantCell({ variant }: { variant: FigmaVariant }) {
           size={lookup(INPUT_SIZES, variant, "Size")}
           disabled={isDisabledState(variant)}
         >
-          {hasInputValue(variant) ? <PhoneSlot /> : <EmptyPhoneSlot />}
+          {hasInputValue(variant) ? renderPhoneSlot() : renderEmptyPhoneSlot()}
         </InputBox>
       </ForceState>
     </div>

@@ -4,6 +4,8 @@ import tailwindcss from "@tailwindcss/vite"
 import { defineConfig } from "astro/config"
 import starlightLlmsTxt from "starlight-llms-txt"
 
+import { componentCodePlugins } from "./src/lib/component-code-plugins.mjs"
+
 const SITE_URL = "https://umc-product.github.io"
 const BASE_PATH = "/umc-product-design-system"
 const REPOSITORY_URL =
@@ -91,6 +93,6 @@ export default defineConfig({
     }),
   ],
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss(), componentCodePlugins()],
   },
 })
