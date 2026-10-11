@@ -30,7 +30,7 @@ const figmaGroupOf = (tokens: readonly (typeof primitives)[number][]) => {
           {tokens.map((token) => (
             <li>
               <span
-                class="umc-chip"
+                class="umc-palette-swatch"
                 style={`background: var(${token.cssVariable})`}
               />
               <span class="umc-step">{token.tailwindName}</span>
