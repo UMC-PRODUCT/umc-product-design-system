@@ -535,7 +535,7 @@
 .docs-code-tip {
   --docs-code-tip-background: #1e1e1e;
   --docs-code-tip-foreground: #d4d4d4;
-  --docs-code-tip-punctuation: #808080;
+  --docs-code-tip-punctuation: #888888;
   --docs-code-tip-component: #4ec9b0;
   --docs-code-tip-tag: #569cd6;
   --docs-code-tip-attribute: #9cdcfe;
@@ -568,6 +568,7 @@
 }
 
 .docs-code-tip__copy {
+  min-block-size: 1.5rem;
   padding: 0.25rem 0.5rem;
   border: 1px solid var(--docs-code-tip-control-border);
   border-radius: 0.25rem;
@@ -645,7 +646,14 @@
   border: 0;
   background: none;
   color: inherit;
-  font-family: var(--__sl-font-mono);
+  font-family: var(
+    --__sl-font-mono,
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Consolas,
+    monospace
+  );
   font-size: 0.8125rem;
   line-height: var(--docs-code-tip-line-height);
   white-space: pre;
