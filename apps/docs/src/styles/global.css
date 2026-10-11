@@ -614,7 +614,6 @@
   background: var(--umc-color-background-default);
   box-shadow: var(--umc-shadow-drop-neutral-2);
   color: var(--umc-color-text-neutral-default-900);
-  word-break: keep-all;
 }
 
 .docs-dimmed-guide:focus {
@@ -822,6 +821,10 @@
   --sl-color-blue-low: var(--umc-color-fill-primary-weaker-50);
   --sl-color-blue: var(--umc-color-teal-500);
   --sl-color-blue-high: var(--umc-color-teal-700);
+}
+
+body {
+  word-break: keep-all;
 }
 
 .content-panel + .content-panel {
