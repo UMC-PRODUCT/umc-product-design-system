@@ -86,6 +86,22 @@ export function ChipStates() {
   )
 }
 
+export function DraggableChipStates() {
+  return (
+    <div className="umc-example">
+      <span data-spec-id="draggable-chip-weak-brand draggable-chip-weak-brand-handle">
+        <DraggableChip>지원서 문항</DraggableChip>
+      </span>
+      <span data-spec-id="draggable-chip-weak-neutral">
+        <DraggableChip color="neutral">지원서 문항</DraggableChip>
+      </span>
+      <span data-spec-id="draggable-chip-fill-brand">
+        <DraggableChip variant="fill">지원서 문항</DraggableChip>
+      </span>
+    </div>
+  )
+}
+
 const FIGMA_VARIANTS: Readonly<Record<string, ChipVariant>> = {
   Weak: "weak",
   Fill: "fill",

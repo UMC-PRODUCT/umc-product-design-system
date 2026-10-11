@@ -21,9 +21,6 @@
         "font-weight": "500",
         "line-height": "22.4px",
         "letter-spacing": "-0.48px"
-      },
-      "figmaDiffers": {
-        "line-height": "피그마 Label/3-Medium lineHeight=1.399999…를 정확히 1.4로 정규화. 브라우저 계산값 22.4px(= 16 × 1.4)와 일치"
       }
     },
     {
