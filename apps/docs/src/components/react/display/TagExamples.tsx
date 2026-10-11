@@ -69,7 +69,7 @@ export function TagStaticPreview() {
           브랜드 Lg
         </Tag>
       </div>
-      <div data-spec-id="status-tag-brand">
+      <div data-spec-id="status-tag-brand status-tag-brand-dot">
         <StatusTag color="brand">진행 중</StatusTag>
       </div>
       <div data-spec-id="status-tag-neutral">

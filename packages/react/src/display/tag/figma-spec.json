@@ -7,6 +7,7 @@
       "specId": "tag-brand-weak-sm",
       "node": "2621:36047",
       "variant": "Style=Weak, Size=Sm, Color=Brand",
+      "target": ".umc-tag",
       "expected": {
         "height": "22px",
         "padding-left": "6px",
@@ -23,6 +24,7 @@
       "specId": "tag-brand-fill-sm",
       "node": "2621:36071",
       "variant": "Style=Fill, Size=Sm, Color=Brand",
+      "target": ".umc-tag",
       "expected": {
         "height": "22px",
         "background-color": "#008a80",
@@ -33,6 +35,7 @@
       "specId": "tag-brand-weak-md",
       "node": "2621:36055",
       "variant": "Style=Weak, Size=Md, Color=Brand",
+      "target": ".umc-tag",
       "expected": {
         "height": "26px",
         "padding-left": "6px",
@@ -46,6 +49,7 @@
       "specId": "tag-brand-weak-lg",
       "node": "2621:36057",
       "variant": "Style=Weak, Size=Lg, Color=Brand",
+      "target": ".umc-tag",
       "expected": {
         "height": "32px",
         "padding-left": "8px",
@@ -59,6 +63,7 @@
       "specId": "tag-neutral-weak-sm",
       "node": "2621:36049",
       "variant": "Style=Weak, Size=Sm, Color=Neutral",
+      "target": ".umc-tag",
       "expected": {
         "background-color": "#eff0f0",
         "color": "#606262"
@@ -68,6 +73,7 @@
       "specId": "tag-neutral-fill-sm",
       "node": "2621:36073",
       "variant": "Style=Fill, Size=Sm, Color=Neutral",
+      "target": ".umc-tag",
       "expected": {
         "background-color": "#606262",
         "color": "#ffffff"
@@ -77,6 +83,7 @@
       "specId": "tag-warning-weak-sm",
       "node": "2621:36051",
       "variant": "Style=Weak, Size=Sm, Color=Warning",
+      "target": ".umc-tag",
       "expected": {
         "background-color": "#fff0c2",
         "color": "#ed8002"
@@ -86,6 +93,7 @@
       "specId": "tag-warning-fill-sm",
       "node": "2621:36053",
       "variant": "Style=Fill, Size=Sm, Color=Warning",
+      "target": ".umc-tag",
       "expected": {
         "background-color": "#f59b00",
         "color": "#ffffff"
@@ -95,6 +103,7 @@
       "specId": "tag-success-weak-sm",
       "node": "3388:26757",
       "variant": "Style=Weak, Size=Sm, Color=Success",
+      "target": ".umc-tag",
       "expected": {
         "background-color": "#d9f7e3",
         "color": "#06844c"
@@ -104,6 +113,7 @@
       "specId": "tag-success-fill-sm",
       "node": "3388:26763",
       "variant": "Style=Fill, Size=Sm, Color=Success",
+      "target": ".umc-tag",
       "expected": {
         "background-color": "#06a768",
         "color": "#ffffff"
@@ -113,6 +123,7 @@
       "specId": "tag-error-weak-sm",
       "node": "3388:26769",
       "variant": "Style=Weak, Size=Sm, Color=Error",
+      "target": ".umc-tag",
       "expected": {
         "background-color": "#ffe7e5",
         "color": "#dc3d3d"
@@ -122,6 +133,7 @@
       "specId": "tag-error-fill-sm",
       "node": "3388:26771",
       "variant": "Style=Fill, Size=Sm, Color=Error",
+      "target": ".umc-tag",
       "expected": {
         "background-color": "#dc3d3d",
         "color": "#ffffff"

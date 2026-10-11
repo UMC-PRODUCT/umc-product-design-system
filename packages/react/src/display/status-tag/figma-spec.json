@@ -7,6 +7,7 @@
       "specId": "status-tag-brand",
       "node": "2621:35644",
       "variant": "Color=Default",
+      "target": ".umc-status-tag",
       "expected": {
         "height": "24px",
         "color": "#02746c",
@@ -23,13 +24,15 @@
       "target": ".umc-status-tag__dot",
       "expected": {
         "width": "12px",
-        "height": "12px"
+        "height": "12px",
+        "background-color": "#02746c"
       }
     },
     {
       "specId": "status-tag-neutral",
       "node": "2621:35647",
       "variant": "Color=Neutral",
+      "target": ".umc-status-tag",
       "expected": {
         "color": "#7e7f7f"
       }
@@ -38,6 +41,7 @@
       "specId": "status-tag-warning",
       "node": "2621:35650",
       "variant": "Color=Yellow",
+      "target": ".umc-status-tag",
       "expected": {
         "color": "#ed8002"
       }
@@ -46,6 +50,7 @@
       "specId": "status-tag-error",
       "node": "2621:35653",
       "variant": "Color=Red",
+      "target": ".umc-status-tag",
       "expected": {
         "color": "#dc3d3d"
       }

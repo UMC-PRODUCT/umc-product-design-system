@@ -7,6 +7,7 @@
       "specId": "number-tag-neutral-primary",
       "node": "3870:46495",
       "variant": "Color=Neutral, Type=Primary",
+      "target": ".umc-number-tag",
       "expected": {
         "width": "14px",
         "height": "14px",
@@ -28,6 +29,7 @@
       "specId": "number-tag-neutral-secondary",
       "node": "2621:36031",
       "variant": "Color=Neutral, Type=Secondary",
+      "target": ".umc-number-tag",
       "expected": {
         "background-color": "#e2e3e3",
         "color": "#606262"
@@ -37,6 +39,7 @@
       "specId": "number-tag-neutral-tertiary",
       "node": "2621:36023",
       "variant": "Color=Neutral, Type=Tertiary",
+      "target": ".umc-number-tag",
       "expected": {
         "background-color": "#eff0f0",
         "color": "#656b6b"
@@ -49,6 +52,7 @@
       "specId": "number-tag-brand-primary",
       "node": "2621:36025",
       "variant": "Color=Brand, Type=Primary",
+      "target": ".umc-number-tag",
       "expected": {
         "background-color": "#02746c",
         "color": "#ffffff"
@@ -58,6 +62,7 @@
       "specId": "number-tag-brand-secondary",
       "node": "2621:36027",
       "variant": "Color=Brand, Type=Secondary",
+      "target": ".umc-number-tag",
       "expected": {
         "background-color": "#39a9a1",
         "color": "#ffffff"
@@ -67,6 +72,7 @@
       "specId": "number-tag-brand-tertiary",
       "node": "2621:36029",
       "variant": "Color=Brand, Type=Tertiary",
+      "target": ".umc-number-tag",
       "expected": {
         "background-color": "#b3e5e1",
         "color": "#02746c"
