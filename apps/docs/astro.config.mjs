@@ -31,7 +31,6 @@ export default defineConfig({
       description: "UMC 프로덕트 팀의 디자인 토큰과 사용 가이드",
       favicon: "/favicon.svg",
       social: [{ icon: "github", label: "GitHub", href: REPOSITORY_URL }],
-      editLink: { baseUrl: `${REPOSITORY_URL}/edit/develop/apps/docs/` },
       lastUpdated: true,
       defaultLocale: "root",
       locales: {
