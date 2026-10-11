@@ -1,0 +1,62 @@
+{
+  "component": "RoleTag",
+  "figmaSection": "2621:36156",
+  "page": "/components/display/member-tag/",
+  "nodes": [
+    {
+      "specId": "role-tag-admin-sm",
+      "node": "3357:25449",
+      "variant": "State=Default, Role=Admin, Size=Sm",
+      "expected": {
+        "background-color": "#ddf4f1",
+        "height": "22px",
+        "border-top-left-radius": "6px",
+        "font-size": "12px",
+        "font-weight": "500"
+      }
+    },
+    {
+      "specId": "role-tag-product-lg",
+      "node": "2621:36163",
+      "variant": "State=Default, Role=Product, Size=Lg",
+      "expected": {
+        "background-color": "#eff0f0",
+        "height": "32px",
+        "border-top-left-radius": "8px",
+        "font-size": "18px"
+      },
+      "figmaDiffers": "Product 텍스트 색을 피그마(#3f4141)로 쓴다. 토큰 --umc-color-tag-role-product-strong이 #282a2a이지만 피그마 실측값과 다르므로 --umc-role-tag-product-fg 역할 변수에 #3f4141을 직접 선언한다."
+    },
+    {
+      "specId": "role-tag-central-md",
+      "node": "2621:36157",
+      "variant": "State=Default, Role=중앙 운영진, Size=Md",
+      "expected": {
+        "background-color": "#eae5fb",
+        "height": "26px",
+        "color": "#634ac9",
+        "font-size": "14px"
+      }
+    },
+    {
+      "specId": "role-tag-chapter-sm",
+      "node": "3357:25451",
+      "variant": "State=Default, Role=지부장, Size=Sm",
+      "expected": {
+        "background-color": "#eee6dd",
+        "color": "#886544",
+        "font-size": "12px"
+      }
+    },
+    {
+      "specId": "role-tag-campus-sm",
+      "node": "3357:25457",
+      "variant": "State=Default, Role=교내 회장, Size=Sm",
+      "expected": {
+        "background-color": "#dbecff",
+        "color": "#0068e0",
+        "font-size": "12px"
+      }
+    }
+  ]
+}
