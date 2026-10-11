@@ -34,3 +34,22 @@ export {
   type BubbleDirection,
   type BubbleProps,
 } from "./bubble/index.ts"
+export {
+  ProgressBar,
+  type ProgressBarColor,
+  type ProgressBarProps,
+  type ProgressBarSize,
+} from "./progress-bar/index.ts"
+export {
+  NumberBadge,
+  type NumberBadgeColor,
+  type NumberBadgeProps,
+  type NumberBadgeSize,
+  type NumberBadgeVariant,
+} from "./number-badge/index.ts"
+export {
+  DotBadge,
+  type DotBadgeColor,
+  type DotBadgeProps,
+  type DotBadgeSize,
+} from "./dot-badge/index.ts"

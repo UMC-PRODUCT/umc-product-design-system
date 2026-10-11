@@ -1,0 +1,59 @@
+{
+  "component": "ProgressBar",
+  "figmaSection": "2509:227",
+  "page": "/components/display/progress-bar/",
+  "figmaDiffers": {
+    "width": "Figma 예시가 327px 고정이지만 코드는 컨테이너를 채우는 fluid 너비로 구현한다."
+  },
+  "nodes": [
+    {
+      "specId": "progress-bar-md-brand-50",
+      "node": "2509:240",
+      "variant": "Progress=50, Size=Md, Color=Brand",
+      "target": ".umc-progress-bar__track",
+      "expected": {
+        "height": "5px",
+        "border-top-left-radius": "2.5px",
+        "background-color": "#eff0f0"
+      }
+    },
+    {
+      "specId": "progress-bar-lg-brand-50",
+      "node": "2509:360",
+      "variant": "Progress=50, Size=Lg, Color=Brand",
+      "target": ".umc-progress-bar__track",
+      "expected": {
+        "height": "8px",
+        "border-top-left-radius": "4px",
+        "background-color": "#eff0f0"
+      }
+    },
+    {
+      "specId": "progress-bar-md-error-50",
+      "node": "2509:270",
+      "variant": "Progress=50, Size=Md, Color=Danger",
+      "target": ".umc-progress-bar__indicator",
+      "expected": {
+        "background-color": "#dc3d3d"
+      }
+    },
+    {
+      "specId": "progress-bar-md-success-50",
+      "node": "2509:303",
+      "variant": "Progress=50, Size=Md, Color=Success",
+      "target": ".umc-progress-bar__indicator",
+      "expected": {
+        "background-color": "#06a768"
+      }
+    },
+    {
+      "specId": "progress-bar-md-neutral-50",
+      "node": "2509:330",
+      "variant": "Progress=50, Size=Md, Color=Neutral",
+      "target": ".umc-progress-bar__indicator",
+      "expected": {
+        "background-color": "#6b7684"
+      }
+    }
+  ]
+}
