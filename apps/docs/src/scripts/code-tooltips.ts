@@ -22,17 +22,22 @@ type CodeTarget = {
 type Tip = {
   root: HTMLElement
   code: HTMLElement
+  copy: HTMLButtonElement
 }
 
 const CONTENT_ROOT = ".sl-markdown-content"
 const VARIANT_CELL = ".umc-variant-grid td[data-figma-variant]"
 const CODE_SELECTOR = `[${COMPONENT_CODE_ATTRIBUTE}]`
 const FIBER_KEY_PREFIX = "__reactFiber$"
-const MAX_CODE_LINES = 24
 const SHOW_DELAY_MS = 150
+const HIDE_DELAY_MS = 250
+const COPY_FEEDBACK_MS = 1500
 const GAP_PX = 8
 const VIEWPORT_MARGIN_PX = 12
 const BRACKET_COLOR_COUNT = 3
+const COPY_LABEL = "복사"
+const COPIED_LABEL = "복사됨"
+const COPY_FAILED_LABEL = "복사 실패"
 
 const isFiber = (value: unknown): value is Fiber =>
   typeof value === "object" &&
@@ -113,12 +118,6 @@ const codeTargetOf = (target: Element): CodeTarget | undefined => {
   return cell ? cellCodeTarget(cell) : undefined
 }
 
-const clampLines = (code: string) => {
-  const lines = code.split("\n")
-  if (lines.length <= MAX_CODE_LINES) return code
-  return [...lines.slice(0, MAX_CODE_LINES - 1), "…"].join("\n")
-}
-
 const tokenNodeOf = (token: JsxToken) => {
   if (token.kind === "plain") return document.createTextNode(token.text)
   const span = document.createElement("span")
@@ -135,11 +134,19 @@ const createTip = (): Tip => {
   root.className = "docs-code-tip"
   root.setAttribute("aria-hidden", "true")
   root.hidden = true
+  const header = document.createElement("div")
+  header.className = "docs-code-tip__header"
+  const copy = document.createElement("button")
+  copy.type = "button"
+  copy.tabIndex = -1
+  copy.className = "docs-code-tip__copy"
+  copy.textContent = COPY_LABEL
+  header.append(copy)
   const code = document.createElement("pre")
   code.className = "docs-code-tip__code"
-  root.append(code)
+  root.append(header, code)
   document.body.append(root)
-  return { root, code }
+  return { root, code, copy }
 }
 
 const place = (tip: HTMLElement, anchor: Element) => {
@@ -159,54 +166,131 @@ const place = (tip: HTMLElement, anchor: Element) => {
 
 export const applyCodeTooltips = () => {
   const tip = createTip()
-  let anchor: Element | undefined
+  let shown: CodeTarget | undefined
+  let pending: CodeTarget | undefined
   let dismissed: Element | undefined
-  let timer: number | undefined
+  let pressedInTip = false
+  let showTimer: number | undefined
+  let hideTimer: number | undefined
+  let copyTimer: number | undefined
+
+  const isInTip = (target: EventTarget | null) =>
+    target instanceof Node && tip.root.contains(target)
+
+  const keepShown = () => {
+    window.clearTimeout(showTimer)
+    window.clearTimeout(hideTimer)
+    pending = undefined
+  }
 
   const hide = () => {
-    window.clearTimeout(timer)
-    anchor = undefined
+    keepShown()
+    shown = undefined
     tip.root.hidden = true
   }
 
   const dismiss = () => {
-    dismissed = anchor
+    dismissed = shown?.anchor ?? pending?.anchor
     hide()
+  }
+
+  const resetCopyLabel = () => {
+    window.clearTimeout(copyTimer)
+    tip.copy.textContent = COPY_LABEL
+  }
+
+  const showCopyResult = (label: string) => {
+    window.clearTimeout(copyTimer)
+    tip.copy.textContent = label
+    copyTimer = window.setTimeout(resetCopyLabel, COPY_FEEDBACK_MS)
+  }
+
+  const copyShownCode = async () => {
+    const code = shown?.code
+    if (!code) return
+    try {
+      await navigator.clipboard.writeText(code)
+      showCopyResult(COPIED_LABEL)
+    } catch {
+      showCopyResult(COPY_FAILED_LABEL)
+    }
   }
 
   const show = (target: CodeTarget) => {
-    if (!target.anchor.isConnected) return
-    tip.code.replaceChildren(
-      ...tokenizeJsx(clampLines(target.code)).map(tokenNodeOf),
-    )
+    pending = undefined
+    if (!target.anchor.isConnected) return hide()
+    shown = target
+    resetCopyLabel()
+    tip.code.replaceChildren(...tokenizeJsx(target.code).map(tokenNodeOf))
     tip.root.hidden = false
+    tip.code.scrollTo(0, 0)
     place(tip.root, target.anchor)
   }
 
+  const scheduleShow = (target: CodeTarget) => {
+    window.clearTimeout(showTimer)
+    window.clearTimeout(hideTimer)
+    pending = target
+    showTimer = window.setTimeout(() => show(target), SHOW_DELAY_MS)
+  }
+
+  const scheduleHide = () => {
+    window.clearTimeout(showTimer)
+    pending = undefined
+    if (!shown) return
+    window.clearTimeout(hideTimer)
+    hideTimer = window.setTimeout(hide, HIDE_DELAY_MS)
+  }
+
+  const release = () => {
+    pressedInTip = false
+  }
+
+  tip.copy.addEventListener("mousedown", (event) => event.preventDefault())
+  tip.copy.addEventListener("click", () => {
+    void copyShownCode()
+  })
+
   document.addEventListener("pointerover", (event) => {
-    if (event.pointerType === "touch" || !(event.target instanceof Element)) {
-      return
-    }
+    if (event.pointerType === "touch" || pressedInTip) return
+    if (isInTip(event.target)) return keepShown()
+    if (!(event.target instanceof Element)) return
     const next = codeTargetOf(event.target)
-    if (next?.anchor === anchor) return
-    hide()
     if (!next) {
       dismissed = undefined
-      return
+      return scheduleHide()
     }
-    if (next.anchor === dismissed) return
+    if (next.anchor === shown?.anchor) return keepShown()
+    if (next.anchor === pending?.anchor || next.anchor === dismissed) return
     dismissed = undefined
-    anchor = next.anchor
-    timer = window.setTimeout(() => show(next), SHOW_DELAY_MS)
+    scheduleShow(next)
   })
 
   document.addEventListener("pointerout", (event) => {
-    if (event.relatedTarget === null) hide()
+    if (event.relatedTarget === null && !pressedInTip) scheduleHide()
   })
-  document.addEventListener("pointerdown", dismiss, { capture: true })
+  document.addEventListener(
+    "pointerdown",
+    (event) => {
+      if (isInTip(event.target)) {
+        pressedInTip = true
+        return
+      }
+      dismiss()
+    },
+    { capture: true },
+  )
+  document.addEventListener("pointerup", release, { capture: true })
+  document.addEventListener("pointercancel", release, { capture: true })
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") dismiss()
   })
-  document.addEventListener("scroll", hide, { capture: true, passive: true })
+  document.addEventListener(
+    "scroll",
+    (event) => {
+      if (!isInTip(event.target)) hide()
+    },
+    { capture: true, passive: true },
+  )
   window.addEventListener("resize", hide)
 }
