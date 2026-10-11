@@ -118,5 +118,10 @@
     .umc-part-tag[data-variant="outlined"] {
       border-color: CanvasText;
     }
+
+    .umc-part-tag[data-variant="filled"] {
+      outline: 1px solid CanvasText;
+      outline-offset: -1px;
+    }
   }
 }

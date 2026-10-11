@@ -47,4 +47,11 @@
     --umc-number-tag-fg: var(--umc-number-tag-fg-neutral-tertiary);
     --umc-number-tag-fg-neutral-tertiary: #656b6b;
   }
+
+  @media (forced-colors: active) {
+    .umc-number-tag {
+      outline: 1px solid CanvasText;
+      outline-offset: -1px;
+    }
+  }
 }

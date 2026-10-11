@@ -110,4 +110,11 @@
     --umc-tag-bg: var(--umc-color-red-500);
     --umc-tag-fg: var(--umc-color-text-inverse);
   }
+
+  @media (forced-colors: active) {
+    .umc-tag {
+      outline: 1px solid CanvasText;
+      outline-offset: -1px;
+    }
+  }
 }

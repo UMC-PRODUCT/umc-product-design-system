@@ -90,4 +90,11 @@
     --umc-role-tag-bg: var(--umc-color-tag-role-campus-weak);
     --umc-role-tag-fg: var(--umc-color-tag-role-campus-strong);
   }
+
+  @media (forced-colors: active) {
+    .umc-role-tag {
+      outline: 1px solid CanvasText;
+      outline-offset: -1px;
+    }
+  }
 }
