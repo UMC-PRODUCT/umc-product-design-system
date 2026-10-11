@@ -1342,6 +1342,50 @@
       },
       "variants": ["State=Default", "State=Hover"]
     },
+    "top-navigation": {
+      "node": "2555:27386",
+      "name": "App/Top Navigation",
+      "axes": {
+        "Page Type": ["Main", "Sub"],
+        "Title Alignment": ["Left", "Center"],
+        "Icon": ["Default", "Dropdown", "Left"]
+      },
+      "variants": [
+        "Page Type=Main, Title Alignment=Left, Icon=Default",
+        "Page Type=Main, Title Alignment=Left, Icon=Dropdown",
+        "Page Type=Sub, Title Alignment=Center, Icon=Left",
+        "Page Type=Sub, Title Alignment=Left, Icon=Left"
+      ]
+    },
+    "top-navigation-button": {
+      "node": "2559:2990",
+      "name": ".primitive/App/Top Navigation/Button",
+      "axes": {
+        "Type": ["Icon", "Slot", "Text-Primary", "Text-Neutral"]
+      },
+      "variants": [
+        "Type=Icon",
+        "Type=Slot",
+        "Type=Text-Primary",
+        "Type=Text-Neutral"
+      ]
+    },
+    "bottom-navigation": {
+      "node": "2472:19950",
+      "name": "App/Bottom navigation",
+      "axes": {
+        "Platform": ["iOS", "Android"]
+      },
+      "variants": ["Platform=iOS", "Platform=Android"]
+    },
+    "bottom-navigation-tab-item": {
+      "node": "2472:19824",
+      "name": ".primitive/App/Bottom Navigation/Tab Item",
+      "axes": {
+        "Selected": ["True", "False"]
+      },
+      "variants": ["Selected=True", "Selected=False"]
+    },
     "tag-part": {
       "node": "2621:36083",
       "name": "Tag/Part",
