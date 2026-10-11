@@ -10,6 +10,11 @@ export {
   type HeaderHomeLinkProps,
 } from "./header-home-link/HeaderHomeLink.tsx"
 export {
+  UmcLogoLockup,
+  type UmcLogoLockupContextProps,
+  type UmcLogoLockupProps,
+} from "./umc-logo-lockup/UmcLogoLockup.tsx"
+export {
   HeaderActionButton,
   type HeaderActionButtonProps,
 } from "./header-action-button/HeaderActionButton.tsx"

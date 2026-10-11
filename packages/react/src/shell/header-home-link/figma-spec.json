@@ -22,7 +22,7 @@
       "specId": "home-link-main-logo",
       "node": "2732:60497",
       "variant": "Logo/UMC",
-      "target": ".umc-header-home-link__logo",
+      "target": ".umc-logo-lockup__logo",
       "expected": {
         "width": "74px",
         "height": "22px",
@@ -89,7 +89,7 @@
       "specId": "home-link-labeled-body",
       "node": "2732:60483",
       "variant": ".primitive/Web/Header/Home Link/Operation, State=Default, Mode=Light",
-      "target": ".umc-header-home-link__body",
+      "target": ".umc-logo-lockup",
       "expected": {
         "column-gap": "4.28px",
         "height": "28.0568px"
@@ -99,7 +99,7 @@
       "specId": "home-link-labeled-logo",
       "node": "2732:60486",
       "variant": ".primitive/Web/Header/Home Link/Operation, State=Default, Mode=Light",
-      "target": ".umc-header-home-link__logo",
+      "target": ".umc-logo-lockup__logo",
       "expected": {
         "width": "73.7602px",
         "height": "21.9287px",
@@ -110,7 +110,7 @@
       "specId": "home-link-labeled-title",
       "node": "2732:60484",
       "variant": ".primitive/Web/Header/Home Link/Operation, State=Default, Mode=Light",
-      "target": ".umc-header-home-link__title",
+      "target": ".umc-logo-lockup__title",
       "expected": {
         "font-family~": "Orbitron",
         "font-size": "13.487px",
@@ -124,7 +124,7 @@
       "specId": "home-link-labeled-subtitle",
       "node": "2732:60485",
       "variant": ".primitive/Web/Header/Home Link/Operation, State=Default, Mode=Light",
-      "target": ".umc-header-home-link__subtitle",
+      "target": ".umc-logo-lockup__subtitle",
       "expected": {
         "font-family~": "Orbitron",
         "font-size": "11.689px",

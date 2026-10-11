@@ -30,19 +30,15 @@ describe("HeaderHomeLink", () => {
     expect(logo).toHaveAttribute("width", "74")
     expect(logo).toHaveAttribute("height", "22")
     expect(
-      document.querySelector(".umc-header-home-link__label"),
+      document.querySelector(".umc-logo-lockup__label"),
     ).not.toBeInTheDocument()
   })
 
   it("operation은 맥락 이름과 기수 서수를 두 줄로 붙인다", () => {
     render(<HeaderHomeLink context="operation" generation={11} />)
     expect(screen.getByRole("link")).toHaveAccessibleName("UMC Operation 11th")
-    expect(screen.getByText("Operation")).toHaveClass(
-      "umc-header-home-link__title",
-    )
-    expect(screen.getByText("11th")).toHaveClass(
-      "umc-header-home-link__subtitle",
-    )
+    expect(screen.getByText("Operation")).toHaveClass("umc-logo-lockup__title")
+    expect(screen.getByText("11th")).toHaveClass("umc-logo-lockup__subtitle")
   })
 
   it("study도 기수 서수를 붙인다", () => {
@@ -86,7 +82,7 @@ describe("HeaderHomeLink", () => {
       render(<HeaderHomeLink context="study" generation={generation} />)
       expect(screen.getByRole("link")).toHaveAccessibleName("UMC Study")
       expect(
-        document.querySelector(".umc-header-home-link__subtitle"),
+        document.querySelector(".umc-logo-lockup__subtitle"),
       ).not.toBeInTheDocument()
     },
   )
