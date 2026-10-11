@@ -1,0 +1,81 @@
+{
+  "component": "PartTag",
+  "figmaSection": "2621:36083",
+  "page": "/components/display/member-tag/",
+  "nodes": [
+    {
+      "specId": "part-tag-pm-sm-filled",
+      "node": "3357:25463",
+      "variant": "Part=PM, Size=Sm, Style=Filled",
+      "expected": {
+        "background-color": "#eee3fc",
+        "height": "22px",
+        "border-top-left-radius": "6px",
+        "color": "#0f1010",
+        "font-size": "12px",
+        "font-weight": "500"
+      }
+    },
+    {
+      "specId": "part-tag-pm-sm-outlined-broken",
+      "node": "3385:25514",
+      "variant": "Part=Tag, Size=Part, Style=PM",
+      "expected": {
+        "background-color": "#f6f0ff",
+        "color": "#7f39c6",
+        "font-size": "12px"
+      },
+      "figmaDiffers": "피그마 변형 이름이 'Part=Tag, Size=Part, Style=PM'으로 깨져 있으나 실제로는 PM Sm Outlined에 해당한다. 스냅샷 이름은 원본 그대로 유지하고 렌더는 올바른 형태로 그린다."
+    },
+    {
+      "specId": "part-tag-pm-lg-filled",
+      "node": "3839:7903",
+      "variant": "Part=PM, Size=Lg, Style=Filled",
+      "expected": {
+        "background-color": "#eee3fc",
+        "height": "32px",
+        "border-top-left-radius": "8px",
+        "font-size": "18px"
+      }
+    },
+    {
+      "specId": "part-tag-design-lg-outlined",
+      "node": "3839:7929",
+      "variant": "Part=Design, Size=Lg, Style=Outlined",
+      "expected": {
+        "background-color": "#fff0f7",
+        "border-top-color": "#ffe0f1",
+        "color": "#d92680"
+      },
+      "figmaDiffers": "피그마에서 테두리 색을 Outlined 전용 tag 토큰이 아니라 pink 원시 토큰(Pink-100)으로 직접 연결했다. 코드에서는 일관성을 위해 --umc-color-tag-part-design-weak-200(값은 같음)을 쓴다."
+    },
+    {
+      "specId": "part-tag-web-pe-sm-filled",
+      "node": "3357:25467",
+      "variant": "Part=Web PE, Size=Sm, Style=Filled",
+      "expected": {
+        "background-color": "#fff0c2",
+        "color": "#0f1010"
+      }
+    },
+    {
+      "specId": "part-tag-mobile-pe-sm-filled",
+      "node": "3357:25469",
+      "variant": "Part=Mobile PE, Size=Sm, Style=Filled",
+      "expected": {
+        "background-color": "#e0e8ff",
+        "color": "#0f1010"
+      }
+    },
+    {
+      "specId": "part-tag-design-sm-outlined",
+      "node": "3385:25516",
+      "variant": "Part=Design, Size=Sm, Style=Outlined",
+      "expected": {
+        "background-color": "#fff0f7",
+        "border-top-color": "#ffe0f1",
+        "color": "#d92680"
+      }
+    }
+  ]
+}

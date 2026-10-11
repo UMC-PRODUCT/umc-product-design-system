@@ -1296,6 +1296,102 @@
         "State": ["Default", "Hover"]
       },
       "variants": ["State=Default", "State=Hover"]
+    },
+    "tag-part": {
+      "node": "2621:36083",
+      "name": "Tag/Part",
+      "axes": {
+        "Part": ["PM", "Design", "Web PE", "Mobile PE"],
+        "Size": ["Sm", "Md", "Lg"],
+        "Style": ["Filled", "Outlined"]
+      },
+      "variants": [
+        "Part=PM, Size=Sm, Style=Filled",
+        "Part=PM, Size=Md, Style=Filled",
+        "Part=PM, Size=Lg, Style=Filled",
+        "Part=Design, Size=Sm, Style=Filled",
+        "Part=Design, Size=Md, Style=Filled",
+        "Part=Design, Size=Lg, Style=Filled",
+        "Part=Web PE, Size=Sm, Style=Filled",
+        "Part=Web PE, Size=Md, Style=Filled",
+        "Part=Web PE, Size=Lg, Style=Filled",
+        "Part=Mobile PE, Size=Sm, Style=Filled",
+        "Part=Mobile PE, Size=Md, Style=Filled",
+        "Part=Mobile PE, Size=Lg, Style=Filled",
+        "Part=PM, Size=Sm, Style=Outlined",
+        "Part=PM, Size=Md, Style=Outlined",
+        "Part=PM, Size=Lg, Style=Outlined",
+        "Part=Design, Size=Sm, Style=Outlined",
+        "Part=Design, Size=Md, Style=Outlined",
+        "Part=Design, Size=Lg, Style=Outlined",
+        "Part=Web PE, Size=Sm, Style=Outlined",
+        "Part=Web PE, Size=Md, Style=Outlined",
+        "Part=Web PE, Size=Lg, Style=Outlined",
+        "Part=Mobile PE, Size=Sm, Style=Outlined",
+        "Part=Mobile PE, Size=Md, Style=Outlined",
+        "Part=Mobile PE, Size=Lg, Style=Outlined",
+        "Part=Tag, Size=Part, Style=PM"
+      ]
+    },
+    "tag-role": {
+      "node": "2621:36156",
+      "name": "Tag/Role",
+      "axes": {
+        "State": ["Default"],
+        "Role": [
+          "Admin",
+          "Product",
+          "총괄",
+          "부총괄",
+          "중앙 운영진",
+          "지부장",
+          "교내 회장",
+          "교내 부회장",
+          "교내 운영진",
+          "챌린저"
+        ],
+        "Size": ["Sm", "Md", "Lg"]
+      },
+      "variants": [
+        "State=Default, Role=Admin, Size=Sm",
+        "State=Default, Role=Admin, Size=Md",
+        "State=Default, Role=Admin, Size=Lg",
+        "State=Default, Role=Product, Size=Sm",
+        "State=Default, Role=Product, Size=Md",
+        "State=Default, Role=Product, Size=Lg",
+        "State=Default, Role=총괄, Size=Sm",
+        "State=Default, Role=총괄, Size=Md",
+        "State=Default, Role=총괄, Size=Lg",
+        "State=Default, Role=부총괄, Size=Sm",
+        "State=Default, Role=부총괄, Size=Md",
+        "State=Default, Role=부총괄, Size=Lg",
+        "State=Default, Role=중앙 운영진, Size=Sm",
+        "State=Default, Role=중앙 운영진, Size=Md",
+        "State=Default, Role=중앙 운영진, Size=Lg",
+        "State=Default, Role=지부장, Size=Sm",
+        "State=Default, Role=지부장, Size=Md",
+        "State=Default, Role=지부장, Size=Lg",
+        "State=Default, Role=교내 회장, Size=Sm",
+        "State=Default, Role=교내 회장, Size=Md",
+        "State=Default, Role=교내 회장, Size=Lg",
+        "State=Default, Role=교내 부회장, Size=Sm",
+        "State=Default, Role=교내 부회장, Size=Md",
+        "State=Default, Role=교내 부회장, Size=Lg",
+        "State=Default, Role=교내 운영진, Size=Sm",
+        "State=Default, Role=교내 운영진, Size=Md",
+        "State=Default, Role=교내 운영진, Size=Lg",
+        "State=Default, Role=챌린저, Size=Sm",
+        "State=Default, Role=챌린저, Size=Md",
+        "State=Default, Role=챌린저, Size=Lg"
+      ]
+    },
+    "bubble": {
+      "node": "2534:8759",
+      "name": "Bubble",
+      "axes": {
+        "Direction": ["Incoming", "Outgoing"]
+      },
+      "variants": ["Direction=Incoming", "Direction=Outgoing"]
     }
   }
 }
