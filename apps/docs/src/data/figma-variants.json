@@ -910,6 +910,76 @@
       },
       "variants": ["Intensity=Medium", "Intensity=Weak", "Intensity=Strong"]
     },
+    "tag-basic": {
+      "node": "2621:36046",
+      "name": "Tag/Basic",
+      "axes": {
+        "Style": ["Weak", "Fill"],
+        "Color": ["Brand", "Neutral", "Warning", "Success", "Error"],
+        "Size": ["Sm", "Md", "Lg"]
+      },
+      "variants": [
+        "Style=Weak, Size=Sm, Color=Brand",
+        "Style=Weak, Size=Sm, Color=Neutral",
+        "Style=Weak, Size=Sm, Color=Warning",
+        "Style=Weak, Size=Sm, Color=Success",
+        "Style=Weak, Size=Sm, Color=Error",
+        "Style=Fill, Size=Sm, Color=Brand",
+        "Style=Fill, Size=Sm, Color=Neutral",
+        "Style=Fill, Size=Sm, Color=Warning",
+        "Style=Fill, Size=Sm, Color=Success",
+        "Style=Fill, Size=Sm, Color=Error",
+        "Style=Weak, Size=Md, Color=Brand",
+        "Style=Weak, Size=Md, Color=Neutral",
+        "Style=Weak, Size=Md, Color=Warning",
+        "Style=Weak, Size=Md, Color=Success",
+        "Style=Weak, Size=Md, Color=Error",
+        "Style=Fill, Size=Md, Color=Brand",
+        "Style=Fill, Size=Md, Color=Neutral",
+        "Style=Fill, Size=Md, Color=Warning",
+        "Style=Fill, Size=Md, Color=Success",
+        "Style=Fill, Size=Md, Color=Error",
+        "Style=Weak, Size=Lg, Color=Brand",
+        "Style=Weak, Size=Lg, Color=Neutral",
+        "Style=Weak, Size=Lg, Color=Warning",
+        "Style=Weak, Size=Lg, Color=Success",
+        "Style=Weak, Size=Lg, Color=Error",
+        "Style=Fill, Size=Lg, Color=Brand",
+        "Style=Fill, Size=Lg, Color=Neutral",
+        "Style=Fill, Size=Lg, Color=Warning",
+        "Style=Fill, Size=Lg, Color=Success",
+        "Style=Fill, Size=Lg, Color=Error"
+      ]
+    },
+    "tag-status": {
+      "node": "2621:35643",
+      "name": "Tag/Status",
+      "axes": {
+        "Color": ["Default", "Neutral", "Yellow", "Red"]
+      },
+      "variants": [
+        "Color=Default",
+        "Color=Neutral",
+        "Color=Yellow",
+        "Color=Red"
+      ]
+    },
+    "tag-number": {
+      "node": "2621:36022",
+      "name": "Tag/Number",
+      "axes": {
+        "Color": ["Brand", "Neutral"],
+        "Type": ["Primary", "Secondary", "Tertiary"]
+      },
+      "variants": [
+        "Color=Brand, Type=Primary",
+        "Color=Brand, Type=Secondary",
+        "Color=Brand, Type=Tertiary",
+        "Color=Neutral, Type=Primary",
+        "Color=Neutral, Type=Secondary",
+        "Color=Neutral, Type=Tertiary"
+      ]
+    },
     "header": {
       "node": "2678:52045",
       "name": "Web/Header",

@@ -1,0 +1,50 @@
+@layer components {
+  .umc-number-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    border-radius: var(--umc-number-tag-radius);
+    --umc-number-tag-radius: 4px;
+    font-family: var(--umc-typography-label-7-medium-font-family);
+    font-size: var(--umc-typography-label-7-medium-font-size);
+    font-weight: var(--umc-typography-label-7-medium-font-weight);
+    line-height: var(--umc-typography-label-7-medium-line-height);
+    letter-spacing: var(--umc-typography-label-7-medium-letter-spacing);
+    color: var(--umc-number-tag-fg);
+    background-color: var(--umc-number-tag-bg);
+    white-space: nowrap;
+  }
+
+  .umc-number-tag[data-color="brand"][data-variant="primary"] {
+    --umc-number-tag-bg: var(--umc-color-teal-600);
+    --umc-number-tag-fg: var(--umc-color-text-inverse);
+  }
+
+  .umc-number-tag[data-color="brand"][data-variant="secondary"] {
+    --umc-number-tag-bg: var(--umc-color-teal-400);
+    --umc-number-tag-fg: var(--umc-color-text-inverse);
+  }
+
+  .umc-number-tag[data-color="brand"][data-variant="tertiary"] {
+    --umc-number-tag-bg: var(--umc-color-teal-200);
+    --umc-number-tag-fg: var(--umc-color-text-brand-default-600);
+  }
+
+  .umc-number-tag[data-color="neutral"][data-variant="primary"] {
+    --umc-number-tag-bg: var(--umc-color-teal-grey-600);
+    --umc-number-tag-fg: var(--umc-color-text-inverse);
+  }
+
+  .umc-number-tag[data-color="neutral"][data-variant="secondary"] {
+    --umc-number-tag-bg: var(--umc-color-teal-grey-200);
+    --umc-number-tag-fg: var(--umc-color-text-neutral-medium-600);
+  }
+
+  .umc-number-tag[data-color="neutral"][data-variant="tertiary"] {
+    --umc-number-tag-bg: var(--umc-color-teal-grey-100);
+    --umc-number-tag-fg: var(--umc-number-tag-fg-neutral-tertiary);
+    --umc-number-tag-fg-neutral-tertiary: #656b6b;
+  }
+}

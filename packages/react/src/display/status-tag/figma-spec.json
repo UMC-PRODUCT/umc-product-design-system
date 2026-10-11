@@ -1,0 +1,54 @@
+{
+  "component": "StatusTag",
+  "figmaSection": "2621:35643",
+  "page": "/components/display/tag/",
+  "nodes": [
+    {
+      "specId": "status-tag-brand",
+      "node": "2621:35644",
+      "variant": "Color=Default",
+      "expected": {
+        "height": "24px",
+        "color": "#02746c",
+        "font-size": "14px",
+        "font-weight": "500",
+        "line-height": "18.9px",
+        "column-gap": "6px"
+      }
+    },
+    {
+      "specId": "status-tag-brand-dot",
+      "node": "2621:35644",
+      "variant": "Color=Default",
+      "target": ".umc-status-tag__dot",
+      "expected": {
+        "width": "12px",
+        "height": "12px"
+      }
+    },
+    {
+      "specId": "status-tag-neutral",
+      "node": "2621:35647",
+      "variant": "Color=Neutral",
+      "expected": {
+        "color": "#7e7f7f"
+      }
+    },
+    {
+      "specId": "status-tag-warning",
+      "node": "2621:35650",
+      "variant": "Color=Yellow",
+      "expected": {
+        "color": "#ed8002"
+      }
+    },
+    {
+      "specId": "status-tag-error",
+      "node": "2621:35653",
+      "variant": "Color=Red",
+      "expected": {
+        "color": "#dc3d3d"
+      }
+    }
+  ]
+}

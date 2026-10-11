@@ -1,0 +1,47 @@
+@layer components {
+  .umc-status-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 24px;
+    font-family: var(--umc-typography-label-5-medium-font-family);
+    font-size: var(--umc-typography-label-5-medium-font-size);
+    font-weight: var(--umc-typography-label-5-medium-font-weight);
+    line-height: var(--umc-typography-label-5-medium-line-height);
+    letter-spacing: var(--umc-typography-label-5-medium-letter-spacing);
+    color: var(--umc-status-tag-fg);
+    white-space: nowrap;
+  }
+
+  .umc-status-tag[data-color="brand"] {
+    --umc-status-tag-fg: var(--umc-color-text-brand-default-600);
+  }
+
+  .umc-status-tag[data-color="neutral"] {
+    --umc-status-tag-fg: var(--umc-color-text-neutral-weak-500);
+  }
+
+  .umc-status-tag[data-color="warning"] {
+    --umc-status-tag-fg: var(--umc-color-text-warning);
+  }
+
+  .umc-status-tag[data-color="error"] {
+    --umc-status-tag-fg: var(--umc-color-text-error);
+  }
+
+  .umc-status-tag__dot {
+    display: inline-block;
+    flex: 0 0 auto;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--umc-status-tag-fg);
+  }
+
+  @media (forced-colors: active) {
+    .umc-status-tag__dot {
+      forced-color-adjust: none;
+      background-color: ButtonText;
+    }
+  }
+}

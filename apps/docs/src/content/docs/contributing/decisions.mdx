@@ -42,7 +42,7 @@ React Aria는 날짜, 숫자 국제화와 터치 동작이 중요한 컴포넌�
 
 ## 4. 토큰, 아이콘, 컴포넌트를 세 패키지로 나눈다
 
-- **결정**: `@umc-product/design-tokens`, `@umc-product/icons`, `@umc-product/react`로 나눕니다. 컴포넌트 패키지 안은 그룹 폴더(forms, selection, overlay, shell)로 나누고, 그룹마다 `index.ts`와 그룹 CSS를 따로 둡니다.
+- **결정**: `@umc-product/design-tokens`, `@umc-product/icons`, `@umc-product/react`로 나눕니다. 컴포넌트 패키지 안은 그룹 폴더(forms, selection, display, overlay, shell)로 나누고, 그룹마다 `index.ts`와 그룹 CSS를 따로 둡니다.
 - **문제**: 아이콘은 컴포넌트 없이도 쓰이고 생성 과정이 다릅니다. 컴포넌트를 그룹별로 나눠 동시에 만들 때 공유 파일을 함께 고치면 충돌이 납니다.
 - **대안**: 패키지 하나로 합치기, 컴포넌트마다 패키지
 - **포기한 것**: 패키지 사이 버전을 맞추는 비용
