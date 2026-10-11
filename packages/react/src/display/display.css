@@ -1,5 +1,6 @@
 @import "./part-tag/part-tag.css";
 @import "./role-tag/role-tag.css";
+@import "./bubble/bubble.css";
 
 @layer components {
 }

@@ -8,36 +8,12 @@
       "node": "2621:33594",
       "name": "Button",
       "axes": {
-        "Size": [
-          "Md",
-          "Lg",
-          "Sm",
-          "XS"
-        ],
-        "Color": [
-          "Primary",
-          "Neutral",
-          "White",
-          "Red"
-        ],
-        "State": [
-          "Default",
-          "Loading",
-          "Pressed",
-          "Disabled"
-        ],
-        "Style": [
-          "Fill",
-          "Weak"
-        ],
-        "Icon Position": [
-          "None",
-          "Left",
-          "Right"
-        ],
-        "Icon Only": [
-          "False"
-        ]
+        "Size": ["Md", "Lg", "Sm", "XS"],
+        "Color": ["Primary", "Neutral", "White", "Red"],
+        "State": ["Default", "Loading", "Pressed", "Disabled"],
+        "Style": ["Fill", "Weak"],
+        "Icon Position": ["None", "Left", "Right"],
+        "Icon Only": ["False"]
       },
       "variants": [
         "Size=Md, Color=Primary, State=Default, Style=Fill, Icon Position=None, Icon Only=False",
@@ -252,26 +228,10 @@
       "node": "3573:95925",
       "name": "Text Button",
       "axes": {
-        "Color": [
-          "Brand",
-          "Neutral"
-        ],
-        "State": [
-          "Default",
-          "Hover·Pressed",
-          "Disabled"
-        ],
-        "Size": [
-          "Xs",
-          "Sm",
-          "Md"
-        ],
-        "Type": [
-          "Tailling Acc",
-          "Leading Acc",
-          "Plain",
-          "Underline"
-        ]
+        "Color": ["Brand", "Neutral"],
+        "State": ["Default", "Hover·Pressed", "Disabled"],
+        "Size": ["Xs", "Sm", "Md"],
+        "Type": ["Tailling Acc", "Leading Acc", "Plain", "Underline"]
       },
       "variants": [
         "Color=Brand, State=Default, Size=Xs, Type=Tailling Acc",
@@ -361,17 +321,8 @@
           "Hover",
           "Filtered"
         ],
-        "Type": [
-          "Text",
-          "Password",
-          "Select",
-          "Text Area",
-          "Custom"
-        ],
-        "Size": [
-          "Lg",
-          "Md"
-        ]
+        "Type": ["Text", "Password", "Select", "Text Area", "Custom"],
+        "Size": ["Lg", "Md"]
       },
       "variants": [
         "State=Default, Type=Text, Size=Lg",
@@ -430,17 +381,8 @@
       "node": "2621:33350",
       "name": "Text Field/ Box",
       "axes": {
-        "State": [
-          "Default",
-          "Focused & Hover",
-          "Typing",
-          "Filled",
-          "Disabled"
-        ],
-        "Error": [
-          "False",
-          "True"
-        ]
+        "State": ["Default", "Focused & Hover", "Typing", "Filled", "Disabled"],
+        "Error": ["False", "True"]
       },
       "variants": [
         "State=Default, Error=False",
@@ -459,15 +401,8 @@
       "node": "2621:33393",
       "name": "Text Field/ Label",
       "axes": {
-        "State": [
-          "Default",
-          "Disabled",
-          "Error"
-        ],
-        "Caption": [
-          "False",
-          "True"
-        ]
+        "State": ["Default", "Disabled", "Error"],
+        "Caption": ["False", "True"]
       },
       "variants": [
         "State=Default, Caption=False",
@@ -482,12 +417,7 @@
       "node": "2621:33341",
       "name": "Help Text",
       "axes": {
-        "Type": [
-          "Default",
-          "Primary",
-          "Error",
-          "Disabled"
-        ]
+        "Type": ["Default", "Primary", "Error", "Disabled"]
       },
       "variants": [
         "Type=Default",
@@ -500,11 +430,7 @@
       "node": "2621:33328",
       "name": ".primitive/ Text Field/ Accessory",
       "axes": {
-        "Usage": [
-          "Default",
-          "Selector",
-          "Password"
-        ],
+        "Usage": ["Default", "Selector", "Password"],
         "Type": [
           "Clear",
           "Error",
@@ -527,15 +453,8 @@
       "node": "2621:35605",
       "name": "Search Field",
       "axes": {
-        "State": [
-          "Default",
-          "Typing",
-          "Hover"
-        ],
-        "Type": [
-          "Default",
-          "with Dropdown List"
-        ]
+        "State": ["Default", "Typing", "Hover"],
+        "Type": ["Default", "with Dropdown List"]
       },
       "variants": [
         "State=Default, Type=Default",
@@ -549,17 +468,8 @@
       "node": "2621:36574",
       "name": "Input Box/Code Input/ Cell",
       "axes": {
-        "State": [
-          "Default",
-          "Hover",
-          "Filled",
-          "Focus",
-          "Error",
-          "Disabled"
-        ],
-        "Size": [
-          "Lg"
-        ]
+        "State": ["Default", "Hover", "Filled", "Focus", "Error", "Disabled"],
+        "Size": ["Lg"]
       },
       "variants": [
         "State=Default, Size=Lg",
@@ -574,31 +484,16 @@
       "node": "2621:36596",
       "name": "Text Field/ Code Input",
       "axes": {
-        "Error": [
-          "False",
-          "True"
-        ]
+        "Error": ["False", "True"]
       },
-      "variants": [
-        "Error=False",
-        "Error=True"
-      ]
+      "variants": ["Error=False", "Error=True"]
     },
     "verification-code": {
       "node": "2621:36619",
       "name": "Text Field/ Verification Code",
       "axes": {
-        "State": [
-          "Default",
-          "Focused & Hover",
-          "Typing",
-          "Filled",
-          "Disabled"
-        ],
-        "Error": [
-          "False",
-          "True"
-        ]
+        "State": ["Default", "Focused & Hover", "Typing", "Filled", "Disabled"],
+        "Error": ["False", "True"]
       },
       "variants": [
         "State=Default, Error=False",
@@ -617,20 +512,9 @@
       "node": "2621:36672",
       "name": "Text Field/ Input Box/Verification Code",
       "axes": {
-        "Type": [
-          "Default"
-        ],
-        "State": [
-          "Default",
-          "Focused & Hover",
-          "Typing",
-          "Filled",
-          "Disabled"
-        ],
-        "Size": [
-          "Lg",
-          "Md"
-        ]
+        "Type": ["Default"],
+        "State": ["Default", "Focused & Hover", "Typing", "Filled", "Disabled"],
+        "Size": ["Lg", "Md"]
       },
       "variants": [
         "Type=Default, State=Default, Size=Lg",
@@ -649,42 +533,24 @@
       "node": "2621:36342",
       "name": "Text Info Button",
       "axes": {
-        "State": [
-          "Default",
-          "Hover"
-        ]
+        "State": ["Default", "Hover"]
       },
-      "variants": [
-        "State=Default",
-        "State=Hover"
-      ]
+      "variants": ["State=Default", "State=Hover"]
     },
     "numeric-stepper": {
       "node": "3032:89173",
       "name": "Numeric Stepper",
       "axes": {
-        "State": [
-          "Default",
-          "Disabled"
-        ]
+        "State": ["Default", "Disabled"]
       },
-      "variants": [
-        "State=Default",
-        "State=Disabled"
-      ]
+      "variants": ["State=Default", "State=Disabled"]
     },
     "numeric-stepper-button": {
       "node": "2281:6220",
       "name": ".primitive/Numeric Stepper/Button",
       "axes": {
-        "Action": [
-          "Decrease",
-          "Increase"
-        ],
-        "Disabled": [
-          "True",
-          "False"
-        ]
+        "Action": ["Decrease", "Increase"],
+        "Disabled": ["True", "False"]
       },
       "variants": [
         "Action=Decrease, Disabled=True",
@@ -697,17 +563,8 @@
       "node": "2281:4241",
       "name": "Dropdown/Item",
       "axes": {
-        "Size": [
-          "Md",
-          "Sm",
-          "Xs"
-        ],
-        "State": [
-          "Default",
-          "Disabled",
-          "Hover",
-          "Active"
-        ]
+        "Size": ["Md", "Sm", "Xs"],
+        "State": ["Default", "Disabled", "Hover", "Active"]
       },
       "variants": [
         "Size=Md, State=Default",
@@ -728,29 +585,11 @@
       "node": "2621:32883",
       "name": ".primitive/Segmented Control/Option Button",
       "axes": {
-        "Selected": [
-          "True",
-          "False"
-        ],
-        "Type": [
-          "Weak",
-          "Strong",
-          "Default"
-        ],
-        "Direction": [
-          "Left",
-          "Right",
-          "Middle"
-        ],
-        "Size": [
-          "Sm",
-          "Xl",
-          "Xs"
-        ],
-        "Disabled": [
-          "False",
-          "True"
-        ]
+        "Selected": ["True", "False"],
+        "Type": ["Weak", "Strong", "Default"],
+        "Direction": ["Left", "Right", "Middle"],
+        "Size": ["Sm", "Xl", "Xs"],
+        "Disabled": ["False", "True"]
       },
       "variants": [
         "Selected=True, Type=Weak, Direction=Left, Size=Sm, Disabled=False",
@@ -804,29 +643,15 @@
       "node": "3309:56599",
       "name": ".primitive/Segmented Control/Check-icon",
       "axes": {
-        "Size": [
-          "20px",
-          "16px"
-        ]
+        "Size": ["20px", "16px"]
       },
-      "variants": [
-        "Size=20px",
-        "Size=16px"
-      ]
+      "variants": ["Size=20px", "Size=16px"]
     },
     "option-group": {
       "node": "2621:33060",
       "name": "Segmented Control/Option",
       "axes": {
-        "Selected Option": [
-          "1",
-          "2",
-          "3",
-          "4",
-          "5",
-          "6",
-          "7"
-        ]
+        "Selected Option": ["1", "2", "3", "4", "5", "6", "7"]
       },
       "variants": [
         "Selected Option=1",
@@ -842,19 +667,9 @@
       "node": "2281:6404",
       "name": "Web/ Segmented Control / Button",
       "axes": {
-        "State": [
-          "Unselected",
-          "Hover",
-          "Selected"
-        ],
-        "Type": [
-          "Defalut",
-          "Numberic Step"
-        ],
-        "Align": [
-          "Center",
-          "Left"
-        ]
+        "State": ["Unselected", "Hover", "Selected"],
+        "Type": ["Defalut", "Numberic Step"],
+        "Align": ["Center", "Left"]
       },
       "variants": [
         "State=Unselected, Type=Defalut, Align=Center",
@@ -869,15 +684,8 @@
       "node": "2621:35309",
       "name": "Tab Button",
       "axes": {
-        "State": [
-          "Unselected",
-          "Hover & Pressed",
-          "Selected"
-        ],
-        "Type": [
-          "Default",
-          "Icon"
-        ]
+        "State": ["Unselected", "Hover & Pressed", "Selected"],
+        "Type": ["Default", "Icon"]
       },
       "variants": [
         "State=Unselected, Type=Default",
@@ -891,23 +699,10 @@
       "node": "3696:100405",
       "name": "Check Box",
       "axes": {
-        "Color": [
-          "Neutral",
-          "Brand",
-          "Error"
-        ],
-        "Size": [
-          "Lg",
-          "Md"
-        ],
-        "Selected": [
-          "False",
-          "True"
-        ],
-        "Disabled": [
-          "False",
-          "True"
-        ]
+        "Color": ["Neutral", "Brand", "Error"],
+        "Size": ["Lg", "Md"],
+        "Selected": ["False", "True"],
+        "Disabled": ["False", "True"]
       },
       "variants": [
         "Color=Neutral, Size=Lg, Selected=False, Disabled=False",
@@ -932,23 +727,10 @@
       "node": "3696:100372",
       "name": ".primitive/Check Box/Control",
       "axes": {
-        "Color": [
-          "Brand",
-          "Error",
-          "Neutral"
-        ],
-        "Size": [
-          "Md",
-          "Lg"
-        ],
-        "Selected": [
-          "False",
-          "True"
-        ],
-        "Disabled": [
-          "False",
-          "True"
-        ]
+        "Color": ["Brand", "Error", "Neutral"],
+        "Size": ["Md", "Lg"],
+        "Selected": ["False", "True"],
+        "Disabled": ["False", "True"]
       },
       "variants": [
         "Color=Brand, Size=Md, Selected=False, Disabled=False",
@@ -973,32 +755,17 @@
       "node": "3696:100254",
       "name": "Check Button",
       "axes": {
-        "Selected": [
-          "False",
-          "True"
-        ]
+        "Selected": ["False", "True"]
       },
-      "variants": [
-        "Selected=False",
-        "Selected=True"
-      ]
+      "variants": ["Selected=False", "Selected=True"]
     },
     "switch": {
       "node": "3696:100309",
       "name": "Switch",
       "axes": {
-        "State": [
-          "Off",
-          "On"
-        ],
-        "Disabled": [
-          "False",
-          "True"
-        ],
-        "Size": [
-          "Sm",
-          "Md"
-        ]
+        "State": ["Off", "On"],
+        "Disabled": ["False", "True"],
+        "Size": ["Sm", "Md"]
       },
       "variants": [
         "State=Off, Disabled=False, Size=Sm",
@@ -1015,18 +782,9 @@
       "node": "3600:96628",
       "name": "Radio Button",
       "axes": {
-        "Color": [
-          "Neutral",
-          "Primary"
-        ],
-        "Selected": [
-          "False",
-          "True"
-        ],
-        "Disabled": [
-          "True",
-          "False"
-        ]
+        "Color": ["Neutral", "Primary"],
+        "Selected": ["False", "True"],
+        "Disabled": ["True", "False"]
       },
       "variants": [
         "Color=Neutral, Selected=False, Disabled=True",
@@ -1040,25 +798,10 @@
       "node": "2621:36221",
       "name": "Tooltip",
       "axes": {
-        "Side": [
-          "Top",
-          "Bottom",
-          "Right",
-          "Left"
-        ],
-        "Appearance": [
-          "Dark",
-          "Light"
-        ],
-        "Size": [
-          "Md",
-          "Xs",
-          "Sm"
-        ],
-        "Show Label": [
-          "False",
-          "True"
-        ]
+        "Side": ["Top", "Bottom", "Right", "Left"],
+        "Appearance": ["Dark", "Light"],
+        "Size": ["Md", "Xs", "Sm"],
+        "Show Label": ["False", "True"]
       },
       "variants": [
         "Side=Top, Appearance=Dark, Size=Md, Show Label=False",
@@ -1103,14 +846,8 @@
           "Service Notice · Neutral",
           "Error"
         ],
-        "Leading Acc": [
-          "True",
-          "False"
-        ],
-        "Text Button": [
-          "False",
-          "True"
-        ]
+        "Leading Acc": ["True", "False"],
+        "Text Button": ["False", "True"]
       },
       "variants": [
         "Type=Primary, Leading Acc=True, Text Button=False",
@@ -1143,14 +880,8 @@
           "Service Notice · Neutral",
           "Error"
         ],
-        "Leading Acc": [
-          "True",
-          "False"
-        ],
-        "Text Button": [
-          "False",
-          "True"
-        ]
+        "Leading Acc": ["True", "False"],
+        "Text Button": ["False", "True"]
       },
       "variants": [
         "Type=Primary, Leading Acc=True, Text Button=False",
@@ -1175,34 +906,17 @@
       "node": "2621:33088",
       "name": "Dimmed",
       "axes": {
-        "Intensity": [
-          "Medium",
-          "Weak",
-          "Strong"
-        ]
+        "Intensity": ["Medium", "Weak", "Strong"]
       },
-      "variants": [
-        "Intensity=Medium",
-        "Intensity=Weak",
-        "Intensity=Strong"
-      ]
+      "variants": ["Intensity=Medium", "Intensity=Weak", "Intensity=Strong"]
     },
     "header": {
       "node": "2678:52045",
       "name": "Web/Header",
       "axes": {
-        "Login Status": [
-          "Logged In",
-          "Logged Out"
-        ],
-        "Mode": [
-          "Light",
-          "Dark"
-        ],
-        "Show CTA Button": [
-          "False",
-          "True"
-        ]
+        "Login Status": ["Logged In", "Logged Out"],
+        "Mode": ["Light", "Dark"],
+        "Show CTA Button": ["False", "True"]
       },
       "variants": [
         "Login Status=Logged In, Mode=Light, Show CTA Button=False",
@@ -1219,29 +933,16 @@
       "node": "2809:62274",
       "name": "Web/Header/Navigation",
       "axes": {
-        "Mode": [
-          "Light",
-          "Dark"
-        ]
+        "Mode": ["Light", "Dark"]
       },
-      "variants": [
-        "Mode=Light",
-        "Mode=Dark"
-      ]
+      "variants": ["Mode=Light", "Mode=Dark"]
     },
     "header-navigation-item": {
       "node": "2678:52268",
       "name": ".primitive/Web/Header/Navigation Item",
       "axes": {
-        "State": [
-          "Default",
-          "Hover",
-          "Selected"
-        ],
-        "Mode": [
-          "Light",
-          "Dark"
-        ]
+        "State": ["Default", "Hover", "Selected"],
+        "Mode": ["Light", "Dark"]
       },
       "variants": [
         "State=Default, Mode=Light",
@@ -1256,14 +957,8 @@
       "node": "2678:52230",
       "name": ".primitive/Web/Header/Action Button",
       "axes": {
-        "Property 1": [
-          "Default",
-          "Hover"
-        ],
-        "Suffix": [
-          "True",
-          "False"
-        ]
+        "Property 1": ["Default", "Hover"],
+        "Suffix": ["True", "False"]
       },
       "variants": [
         "Property 1=Default, Suffix=True",
@@ -1276,18 +971,9 @@
       "node": "2732:61068",
       "name": "Web/Header/Actions",
       "axes": {
-        "Login Status": [
-          "Logged In",
-          "Logged Out"
-        ],
-        "Mode": [
-          "Light",
-          "Dark"
-        ],
-        "Show CTA Button": [
-          "False",
-          "True"
-        ]
+        "Login Status": ["Logged In", "Logged Out"],
+        "Mode": ["Light", "Dark"],
+        "Show CTA Button": ["False", "True"]
       },
       "variants": [
         "Login Status=Logged In, Mode=Light, Show CTA Button=False",
@@ -1302,12 +988,7 @@
       "node": "2732:60555",
       "name": "Web/Header/Home Link",
       "axes": {
-        "Context": [
-          "Main",
-          "Operation",
-          "Study",
-          "Product Tech"
-        ]
+        "Context": ["Main", "Operation", "Study", "Product Tech"]
       },
       "variants": [
         "Context=Main",
@@ -1320,14 +1001,8 @@
       "node": "2732:58093",
       "name": ".primitive/Web/Header/Home Link/UMC",
       "axes": {
-        "State": [
-          "Default",
-          "Hover & Pressed"
-        ],
-        "Mode": [
-          "Light",
-          "Dark"
-        ]
+        "State": ["Default", "Hover & Pressed"],
+        "Mode": ["Light", "Dark"]
       },
       "variants": [
         "State=Default, Mode=Light",
@@ -1340,14 +1015,8 @@
       "node": "2858:66562",
       "name": ".primitive/Web/Header/Home Link/Operation",
       "axes": {
-        "State": [
-          "Default",
-          "Hover & Pressed"
-        ],
-        "Mode": [
-          "Light",
-          "Dark"
-        ]
+        "State": ["Default", "Hover & Pressed"],
+        "Mode": ["Light", "Dark"]
       },
       "variants": [
         "State=Default, Mode=Light",
@@ -1360,14 +1029,8 @@
       "node": "2858:66648",
       "name": ".primitive/Web/Header/Home Link/Study",
       "axes": {
-        "State": [
-          "Default",
-          "Hover & Pressed"
-        ],
-        "Mode": [
-          "Light",
-          "Dark"
-        ]
+        "State": ["Default", "Hover & Pressed"],
+        "Mode": ["Light", "Dark"]
       },
       "variants": [
         "State=Default, Mode=Light",
@@ -1380,14 +1043,8 @@
       "node": "2858:66604",
       "name": ".primitive/Web/Header/Home Link/ProductTech",
       "axes": {
-        "State": [
-          "Default",
-          "Hover & Pressed"
-        ],
-        "Mode": [
-          "Light",
-          "Dark"
-        ]
+        "State": ["Default", "Hover & Pressed"],
+        "Mode": ["Light", "Dark"]
       },
       "variants": [
         "State=Default, Mode=Light",
@@ -1400,32 +1057,17 @@
       "node": "2929:72290",
       "name": "Web/Side Navigation",
       "axes": {
-        "Type": [
-          "Default",
-          "With Slot"
-        ]
+        "Type": ["Default", "With Slot"]
       },
-      "variants": [
-        "Type=Default",
-        "Type=With Slot"
-      ]
+      "variants": ["Type=Default", "Type=With Slot"]
     },
     "side-navigation-menu-item": {
       "node": "2281:6465",
       "name": ".primitive/Web/Side Navigation/Menu Item",
       "axes": {
-        "Selected": [
-          "False",
-          "True"
-        ],
-        "State": [
-          "Default",
-          "Hover"
-        ],
-        "Slot": [
-          "False",
-          "True"
-        ]
+        "Selected": ["False", "True"],
+        "State": ["Default", "Hover"],
+        "Slot": ["False", "True"]
       },
       "variants": [
         "Selected=False, State=Default, Slot=False",
@@ -1440,65 +1082,33 @@
       "node": "2281:6489",
       "name": ".primitive/Web/Side Navigation/Submenu Item",
       "axes": {
-        "Selected": [
-          "False",
-          "True"
-        ]
+        "Selected": ["False", "True"]
       },
-      "variants": [
-        "Selected=False",
-        "Selected=True"
-      ]
+      "variants": ["Selected=False", "Selected=True"]
     },
     "context-switcher": {
       "node": "2281:6450",
       "name": "Context Switcher",
       "axes": {
-        "State": [
-          "Default",
-          "Hover & Pressed",
-          "Selected"
-        ]
+        "State": ["Default", "Hover & Pressed", "Selected"]
       },
-      "variants": [
-        "State=Default",
-        "State=Hover & Pressed",
-        "State=Selected"
-      ]
+      "variants": ["State=Default", "State=Hover & Pressed", "State=Selected"]
     },
     "breadcrumb-item": {
       "node": "2809:63769",
       "name": ".primitive/Web/Breadcrumbs/Item",
       "axes": {
-        "State": [
-          "Default",
-          "Hover"
-        ]
+        "State": ["Default", "Hover"]
       },
-      "variants": [
-        "State=Default",
-        "State=Hover"
-      ]
+      "variants": ["State=Default", "State=Hover"]
     },
     "tag-part": {
       "node": "2621:36083",
       "name": "Tag/Part",
       "axes": {
-        "Part": [
-          "PM",
-          "Design",
-          "Web PE",
-          "Mobile PE"
-        ],
-        "Size": [
-          "Sm",
-          "Md",
-          "Lg"
-        ],
-        "Style": [
-          "Filled",
-          "Outlined"
-        ]
+        "Part": ["PM", "Design", "Web PE", "Mobile PE"],
+        "Size": ["Sm", "Md", "Lg"],
+        "Style": ["Filled", "Outlined"]
       },
       "variants": [
         "Part=PM, Size=Sm, Style=Filled",
@@ -1532,9 +1142,7 @@
       "node": "2621:36156",
       "name": "Tag/Role",
       "axes": {
-        "State": [
-          "Default"
-        ],
+        "State": ["Default"],
         "Role": [
           "Admin",
           "Product",
@@ -1547,11 +1155,7 @@
           "교내 운영진",
           "챌린저"
         ],
-        "Size": [
-          "Sm",
-          "Md",
-          "Lg"
-        ]
+        "Size": ["Sm", "Md", "Lg"]
       },
       "variants": [
         "State=Default, Role=Admin, Size=Sm",
@@ -1585,6 +1189,14 @@
         "State=Default, Role=챌린저, Size=Md",
         "State=Default, Role=챌린저, Size=Lg"
       ]
+    },
+    "bubble": {
+      "node": "2534:8759",
+      "name": "Bubble",
+      "axes": {
+        "Direction": ["Incoming", "Outgoing"]
+      },
+      "variants": ["Direction=Incoming", "Direction=Outgoing"]
     }
   }
 }

@@ -11,3 +11,5 @@ export type {
   RoleTagProps,
   RoleTagSize,
 } from "./role-tag/RoleTag.tsx"
+export { Bubble } from "./bubble/Bubble.tsx"
+export type { BubbleDirection, BubbleProps } from "./bubble/Bubble.tsx"
