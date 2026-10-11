@@ -31,6 +31,12 @@ export {
   type SegmentedControlProps,
 } from "./segmented-control/index.ts"
 export {
+  DraggableChip,
+  type DraggableChipColor,
+  type DraggableChipProps,
+  type DraggableChipVariant,
+} from "./draggable-chip/index.ts"
+export {
   StepNavigation,
   type StepNavigationProps,
 } from "./step-navigation/index.ts"

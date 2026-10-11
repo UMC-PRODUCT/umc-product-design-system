@@ -8,6 +8,7 @@ import {
   type ChipColor,
   type ChipSize,
   type ChipVariant,
+  DraggableChip,
   Menu,
 } from "@umc-product/react"
 
@@ -143,6 +144,32 @@ export function ChipAllVariants() {
         "Icon Position": ["Right", "Left", "None"],
       }}
       render={(variant) => <ChipVariantCell variant={variant} />}
+    />
+  )
+}
+
+function DraggableChipVariantCell({ variant }: { variant: FigmaVariant }) {
+  return (
+    <DraggableChip
+      variant={variant.props["Type"] === "Fill" ? "fill" : "weak"}
+      color={variant.props["Color"] === "Neutral" ? "neutral" : "brand"}
+    >
+      항목
+    </DraggableChip>
+  )
+}
+
+export function DraggableChipAllVariants() {
+  return (
+    <VariantGrid
+      set="chip-draggable"
+      rows={["Type"]}
+      columns={["Color"]}
+      order={{
+        Type: ["Weak", "Fill"],
+        Color: ["Brand", "Neutral"],
+      }}
+      render={(variant) => <DraggableChipVariantCell variant={variant} />}
     />
   )
 }

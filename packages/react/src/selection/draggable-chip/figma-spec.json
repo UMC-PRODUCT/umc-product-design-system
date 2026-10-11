@@ -1,0 +1,60 @@
+{
+  "component": "DraggableChip",
+  "figmaSection": "2621:36033",
+  "page": "/components/selection/chip/",
+  "nodes": [
+    {
+      "specId": "draggable-chip-weak-brand",
+      "node": "2621:36034",
+      "variant": "Type=Weak, Size=Lg, Color=Brand",
+      "target": ".umc-draggable-chip",
+      "expected": {
+        "height": "32px",
+        "background-color": "#ddf4f1",
+        "border-top-left-radius": "8px",
+        "padding-inline-start": "9px",
+        "padding-inline-end": "9px",
+        "color": "#02746c",
+        "font-size": "18px",
+        "font-weight": "500",
+        "line-height": "27px",
+        "letter-spacing": "-0.18px",
+        "box-shadow~": "rgba(239, 240, 240, 0.3) 0px 4px 16px 0px"
+      },
+      "figmaDiffers": {
+        "font-size": "피그마 Subtitle/2-Medium(18px)은 label-1-medium과 사이즈는 같으나 line-height(1.5)와 letter-spacing(-0.01em)이 다르다. 토큰에 없어 역할 변수에 고정값을 담았다",
+        "border-top-left-radius": "피그마 8px는 토큰 --umc-radius-8을 매핑했다",
+        "box-shadow~": "피그마 Shadow/Drop/Neutral_3 = 0 4px 16px 0 #eff0f04d, --umc-shadow-drop-neutral-3으로 매핑"
+      }
+    },
+    {
+      "specId": "draggable-chip-weak-brand-handle",
+      "node": "2621:36034",
+      "variant": "Type=Weak, Size=Lg, Color=Brand",
+      "target": ".umc-draggable-chip__handle",
+      "expected": {
+        "color": "#008a80"
+      }
+    },
+    {
+      "specId": "draggable-chip-weak-neutral",
+      "node": "2621:36037",
+      "variant": "Type=Weak, Size=Lg, Color=Neutral",
+      "target": ".umc-draggable-chip",
+      "expected": {
+        "background-color": "#eff0f0",
+        "color": "#606262"
+      }
+    },
+    {
+      "specId": "draggable-chip-fill-brand",
+      "node": "2621:36040",
+      "variant": "Type=Fill, Size=Lg, Color=Brand",
+      "target": ".umc-draggable-chip",
+      "expected": {
+        "background-color": "#008a80",
+        "color": "#ffffff"
+      }
+    }
+  ]
+}
