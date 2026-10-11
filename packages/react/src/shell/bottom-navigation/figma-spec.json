@@ -1,0 +1,51 @@
+{
+  "component": "BottomNavigation",
+  "figmaNode": "2472:19950",
+  "fetchedAt": "2026-10-11",
+  "specimens": [
+    {
+      "id": "bottom-navigation-ios",
+      "description": "iOS platform — with safe-area padding",
+      "variant": "Platform=iOS",
+      "selector": "[data-spec-id='bottom-navigation-ios'] .umc-bottom-navigation__bar",
+      "expected": {
+        "display": "flex",
+        "alignItems": "stretch",
+        "paddingBlockStart": "8px",
+        "paddingInline": "8px"
+      }
+    },
+    {
+      "id": "bottom-navigation-tab-active",
+      "description": "Tab item — selected / active state",
+      "variant": "Selected=True",
+      "selector": "[data-spec-id='bottom-navigation-tab-active'] .umc-bottom-navigation__item[aria-current='page']",
+      "expected": {
+        "display": "flex",
+        "flexDirection": "column",
+        "alignItems": "center"
+      }
+    },
+    {
+      "id": "bottom-navigation-tab-inactive",
+      "description": "Tab item — unselected / inactive state",
+      "variant": "Selected=False",
+      "selector": "[data-spec-id='bottom-navigation-tab-inactive'] .umc-bottom-navigation__item:not([aria-current='page'])",
+      "expected": {
+        "display": "flex",
+        "flexDirection": "column",
+        "alignItems": "center"
+      }
+    }
+  ],
+  "figmaDiffers": [
+    {
+      "property": "inactive item text/icon color",
+      "figmaToken": "--color-text-disabled",
+      "figmaHex": "#adadad",
+      "umcToken": "--umc-color-text-disabled",
+      "umcHex": "#cccccc",
+      "resolution": "Use --umc-color-icon-neutral-weak-400 which resolves to #adadad"
+    }
+  ]
+}

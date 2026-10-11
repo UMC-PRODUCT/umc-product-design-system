@@ -1,0 +1,77 @@
+---
+title: Bottom Navigation
+description: 모바일 앱 하단에 놓는 탭 바입니다.
+---
+
+import {
+  BottomNavigationAllVariants,
+  BottomNavigationDefault,
+} from "../../../../components/react/shell/BottomNavigationExamples.tsx"
+
+피그마 `App/Bottom navigation`을 구현했습니다. iOS는 `env(safe-area-inset-bottom)`으로 홈 인디케이터 영역을 자동 확보하고, Android는 최소 4px 하단 패딩을 유지합니다. 현재 경로와 `href`가 일치하는 탭에 `aria-current="page"`가 붙습니다.
+
+```tsx
+import {
+  BottomNavigation,
+  BottomNavigationItem,
+  LinkProvider,
+} from "@umc-product/react"
+import { HomeIcon, SearchIcon } from "@umc-product/icons"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+
+const NAV_ITEMS = [
+  { label: "홈", href: "/", icon: <HomeIcon weight="fill" /> },
+  { label: "검색", href: "/search", icon: <SearchIcon weight="fill" /> },
+]
+
+export function AppBottomNav() {
+  const pathname = usePathname()
+  return (
+    <LinkProvider component={Link}>
+      <BottomNavigation>
+        {NAV_ITEMS.map((item) => (
+          <BottomNavigationItem
+            key={item.href}
+            href={item.href}
+            label={item.label}
+            icon={item.icon}
+            currentPath={pathname}
+          />
+        ))}
+      </BottomNavigation>
+    </LinkProvider>
+  )
+}
+```
+
+## 기본
+
+항목을 누르면 활성 탭이 바뀝니다.
+
+<BottomNavigationDefault client:visible />
+
+## 전체 변형
+
+<BottomNavigationAllVariants client:visible />
+
+## API
+
+### BottomNavigation
+
+| 속성        | 타입        | 기본값 | 설명                        |
+| ----------- | ----------- | ------ | --------------------------- |
+| `children`  | `ReactNode` | —      | `BottomNavigationItem` 목록 |
+| `className` | `string`    | —      | 루트 엘리먼트 추가 클래스   |
+
+### BottomNavigationItem
+
+| 속성          | 타입        | 기본값 | 설명                       |
+| ------------- | ----------- | ------ | -------------------------- |
+| `href`        | `string`    | —      | 탭 링크 경로               |
+| `label`       | `string`    | —      | 탭 레이블 텍스트           |
+| `icon`        | `ReactNode` | —      | 탭 아이콘 (24×24 SVG 권장) |
+| `currentPath` | `string`    | —      | 활성 탭 판별용 현재 경로   |
+| `className`   | `string`    | —      | 탭 엘리먼트 추가 클래스    |
+
+`BottomNavigationItem`은 `<a>` 엘리먼트의 나머지 속성도 모두 받습니다. `aria-current`는 컴포넌트가 직접 관리하므로 외부에서 전달하면 타입 오류가 납니다.
