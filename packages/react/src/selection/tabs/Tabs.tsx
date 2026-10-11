@@ -30,6 +30,7 @@ export type TabProps = {
 export type TabPanelProps = {
   value: string
   children: ReactNode
+  keepMounted?: boolean
   className?: string
 }
 
@@ -94,9 +95,18 @@ export function Tab({
   )
 }
 
-export function TabPanel({ value, children, className }: TabPanelProps) {
+export function TabPanel({
+  value,
+  children,
+  keepMounted,
+  className,
+}: TabPanelProps) {
   return (
-    <BaseTabs.Panel value={value} className={cx("umc-tab-panel", className)}>
+    <BaseTabs.Panel
+      value={value}
+      keepMounted={keepMounted}
+      className={cx("umc-tab-panel", className)}
+    >
       {children}
     </BaseTabs.Panel>
   )

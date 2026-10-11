@@ -49,6 +49,25 @@ describe("Tabs", () => {
     expect(activePanel).toHaveTextContent("패널 1")
   })
 
+  it("keepMounted인 패널만 선택되지 않아도 내용을 DOM에 남긴다", () => {
+    render(
+      <Tabs defaultValue="first">
+        <TabList aria-label="탭 목록">
+          <Tab value="first">첫 번째</Tab>
+          <Tab value="second">두 번째</Tab>
+          <Tab value="third">세 번째</Tab>
+        </TabList>
+        <TabPanel value="first">패널 1</TabPanel>
+        <TabPanel value="second" keepMounted>
+          패널 2
+        </TabPanel>
+        <TabPanel value="third">패널 3</TabPanel>
+      </Tabs>,
+    )
+    expect(screen.getByText("패널 2")).not.toBeVisible()
+    expect(screen.queryByText("패널 3")).not.toBeInTheDocument()
+  })
+
   it("탭을 클릭하면 활성 탭이 바뀐다", async () => {
     renderTabs()
     await userEvent.click(screen.getByRole("tab", { name: "두 번째" }))
