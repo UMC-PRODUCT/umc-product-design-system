@@ -62,7 +62,9 @@ import { TrashIcon } from "./icons/TrashIcon.tsx"
 import { UnderlineIcon } from "./icons/UnderlineIcon.tsx"
 import { UsersIcon } from "./icons/UsersIcon.tsx"
 import { WarningIcon } from "./icons/WarningIcon.tsx"
+import { WarningTriangleIcon } from "./icons/WarningTriangleIcon.tsx"
 import { UmcLogo } from "./logos/UmcLogo.tsx"
+import { CheckPictogram } from "./pictograms/CheckPictogram.tsx"
 import { DocumentPictogram } from "./pictograms/DocumentPictogram.tsx"
 import { FlagPictogram } from "./pictograms/FlagPictogram.tsx"
 import { GoalPictogram } from "./pictograms/GoalPictogram.tsx"
@@ -139,7 +141,9 @@ export {
   UnderlineIcon,
   UsersIcon,
   WarningIcon,
+  WarningTriangleIcon,
   UmcLogo,
+  CheckPictogram,
   DocumentPictogram,
   FlagPictogram,
   GoalPictogram,
@@ -161,7 +165,7 @@ export const iconCatalog = [
   { name: "ChatBubbleDotsIcon", figmaName: "Icon/ChatBubbleDots", defaultWeight: "regular", weights: ["regular", "fill"], component: ChatBubbleDotsIcon },
   { name: "ChatbubblesIcon", figmaName: "Icon/Chatbubbles", defaultWeight: "fill", weights: ["fill"], component: ChatbubblesIcon },
   { name: "CheckboxIcon", figmaName: "Icon/Checkbox", defaultWeight: "regular", weights: ["thin", "regular"], component: CheckboxIcon },
-  { name: "CheckCircleIcon", figmaName: "Icon_Check_circle", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: CheckCircleIcon },
+  { name: "CheckCircleIcon", figmaName: "Icon/Check_circle", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: CheckCircleIcon },
   { name: "CheckIcon", figmaName: "Icon/Check", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: CheckIcon },
   { name: "ChevronLeftIcon", figmaName: "Icon/Chevron_Left", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: ChevronLeftIcon },
   { name: "ChevronRightIcon", figmaName: "Icon/Chevron_Right", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: ChevronRightIcon },
@@ -188,7 +192,7 @@ export const iconCatalog = [
   { name: "ItalicIcon", figmaName: "Icon/Italic", defaultWeight: "fill", weights: ["fill"], component: ItalicIcon },
   { name: "LinkIcon", figmaName: "Icon/Link", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: LinkIcon },
   { name: "ListIcon", figmaName: "Icon/List", defaultWeight: "regular", weights: ["regular", "fill"], component: ListIcon },
-  { name: "LocationIcon", figmaName: "Icon_Location", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: LocationIcon },
+  { name: "LocationIcon", figmaName: "Icon/Location", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: LocationIcon },
   { name: "LockIcon", figmaName: "Icon/Lock", defaultWeight: "fill", weights: ["fill"], component: LockIcon },
   { name: "MegaphoneIcon", figmaName: "Icon/Megaphone", defaultWeight: "fill", weights: ["fill"], component: MegaphoneIcon },
   { name: "MenuIcon", figmaName: "Icon/Menu", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: MenuIcon },
@@ -201,14 +205,14 @@ export const iconCatalog = [
   { name: "PersonIcon", figmaName: "Icon/Person", defaultWeight: "regular", weights: ["regular", "fill"], component: PersonIcon },
   { name: "PictureIcon", figmaName: "Icon/Picture", defaultWeight: "fill", weights: ["fill"], component: PictureIcon },
   { name: "RadioIcon", figmaName: "Icon/Radio", defaultWeight: "regular", weights: ["thin", "regular"], component: RadioIcon },
-  { name: "RemoveCircleIcon", figmaName: "Icon_remove_circle", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: RemoveCircleIcon },
+  { name: "RemoveCircleIcon", figmaName: "Icon/remove_circle", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: RemoveCircleIcon },
   { name: "RepeatIcon", figmaName: "Icon/Repeat", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: RepeatIcon },
   { name: "ResetIcon", figmaName: "Icon/Reset", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: ResetIcon },
   { name: "SearchIcon", figmaName: "Icon/Search", defaultWeight: "regular", weights: ["regular"], component: SearchIcon },
   { name: "SettingIcon", figmaName: "Icon/Setting", defaultWeight: "regular", weights: ["regular", "fill"], component: SettingIcon },
   { name: "ShareIcon", figmaName: "Icon/Share", defaultWeight: "regular", weights: ["thin", "regular"], component: ShareIcon },
   { name: "StrikethroughIcon", figmaName: "Icon/Strikethrough", defaultWeight: "fill", weights: ["fill"], component: StrikethroughIcon },
-  { name: "SubtractCircleIcon", figmaName: "Icon_Subtract_Circle", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: SubtractCircleIcon },
+  { name: "SubtractCircleIcon", figmaName: "Icon/Subtract_Circle", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: SubtractCircleIcon },
   { name: "SubtractionIcon", figmaName: "Icon/Subtraction", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: SubtractionIcon },
   { name: "TextIcon", figmaName: "Icon/Text", defaultWeight: "fill", weights: ["fill"], component: TextIcon },
   { name: "ThumbsUpIcon", figmaName: "Icon/ThumbsUp", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: ThumbsUpIcon },
@@ -216,10 +220,12 @@ export const iconCatalog = [
   { name: "TrashIcon", figmaName: "Icon/Trash", defaultWeight: "regular", weights: ["thin", "regular"], component: TrashIcon },
   { name: "UnderlineIcon", figmaName: "Icon/Underline", defaultWeight: "fill", weights: ["fill"], component: UnderlineIcon },
   { name: "UsersIcon", figmaName: "Icon/Users", defaultWeight: "fill", weights: ["fill"], component: UsersIcon },
-  { name: "WarningIcon", figmaName: "Icon_warning", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: WarningIcon },
+  { name: "WarningIcon", figmaName: "Icon/warning", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: WarningIcon },
+  { name: "WarningTriangleIcon", figmaName: "Icon/warning-Triangle", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: WarningTriangleIcon },
 ] as const
 
 export const pictogramCatalog = [
+  { name: "CheckPictogram", figmaName: "Pictogram/Check", modes: ["light"], component: CheckPictogram },
   { name: "DocumentPictogram", figmaName: "Pictogram/Document", modes: ["light"], component: DocumentPictogram },
   { name: "FlagPictogram", figmaName: "Pictogram/Flag", modes: ["light"], component: FlagPictogram },
   { name: "GoalPictogram", figmaName: "Pictogram/Goal", modes: ["light"], component: GoalPictogram },

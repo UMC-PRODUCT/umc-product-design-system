@@ -57,13 +57,6 @@ describe("resolveWeight", () => {
     })
   })
 
-  it("속성과 값이 뒤집힌 변형 이름은 바로잡고 확인 대기로 남긴다", () => {
-    expect(resolveWeight("Regular=Weight")).toMatchObject({
-      weight: "regular",
-      rule: { status: "pending" },
-    })
-  })
-
   it("규칙에 없는 굵기와 피그마가 지운 임시 이름은 실패한다", () => {
     expect(() => resolveWeight("Weight=Heavy")).toThrow("굵기 규칙이 없는")
     expect(() => resolveWeight("Size=24")).toThrow("굵기 규칙이 없는")
@@ -71,6 +64,7 @@ describe("resolveWeight", () => {
     expect(() => resolveWeight("Property 1=Regular")).toThrow(
       "굵기 규칙이 없는",
     )
+    expect(() => resolveWeight("Regular=Weight")).toThrow("굵기 규칙이 없는")
   })
 })
 
@@ -218,17 +212,6 @@ describe("buildComponents", () => {
     )?.[1]
     expect(module).toContain("frame: { width: 148, height: 44 },")
     expect(module).not.toContain("viewBox")
-  })
-
-  it("피그마에서 바로잡힌 변형 이름 규칙이 남아 있으면 실패한다", () => {
-    const manifest = readIconManifest()
-    const fixed = {
-      ...manifest,
-      sources: manifest.sources.filter(
-        (source) => source.variantName !== "Regular=Weight",
-      ),
-    }
-    expect(() => buildComponents(fixed)).toThrow("원문에 없는 변형 이름 규칙")
   })
 
   it("배치 보정과 viewBox 예외를 변형마다 반영한다", () => {

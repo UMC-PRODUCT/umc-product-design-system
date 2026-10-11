@@ -22,7 +22,7 @@
    - Context Switcher 체크와 화살표: `icon/Check/16 icon/Regular`, `icon/Expand_more/16 icon/Regular`
 6. Hover와 Focus 상태가 없는 컴포넌트가 많습니다. 포커스 표시는 2px `border-primary-strong-500` 외곽선으로 통일했습니다.
 7. 나타나고 사라지는 움직임 정의가 없습니다. 150ms 투명도 전환을 기본으로 넣었고, 움직임 줄이기 설정에서는 끕니다.
-8. 노션 명명 규칙과 다른 이름이 있습니다: `Regular=Weight`, `Property 1`, `Pressed(Hover)`, `Focused & Hover`, Tooltip의 `Appearance`, Option Button의 `Direction`, 오타 `Disalbed`, `Defalut`, `Numberic`, `Varient`, `Meue`, `Sub Meue`, `Eye_visable`, `Solt`.
+8. 노션 명명 규칙과 다른 이름이 있습니다: `Pressed(Hover)`, `Focused & Hover`, Tooltip의 `Appearance`, Option Button의 `Direction`, 오타 `Disalbed`, `Defalut`, `Numberic`, `Varient`, `Meue`, `Sub Meue`, `Eye_visable`, `Solt`.
 9. 파비콘 에셋이 없습니다. 문서 사이트는 `Logo/UMC`의 U 글자 모양과 색(`#3F4141`)을 그대로 떼어 임시로 씁니다. 정사각형 파비콘이나 앱 아이콘을 주시면 바꾸겠습니다.
 
 ## 토큰
@@ -35,7 +35,9 @@
 
 ## 아이콘
 
-뒤집힌 Search 변형 이름(`Regular=Weight`), 정사각형이 아닌 프레임, 고정된 흰 부분, 토큰에 없는 픽토그램 색 등 10개 항목은 [아이콘 정규화 리포트](packages/icons/reports/icon-normalization.md)에 있습니다.
+정사각형이 아닌 프레임, 고정된 흰 부분, 토큰에 없는 픽토그램 색 등 10개 항목은 [아이콘 정규화 리포트](packages/icons/reports/icon-normalization.md)에 있습니다.
+
+2026-10-10에 고쳐 주신 내용을 반영했습니다. `Icon/warning` Fill 프레임이 24×24가 되어 비율 보정을 뺐고, 새 `Icon/warning-Triangle`(Thin, Regular, Fill)은 `WarningTriangleIcon`으로 더했습니다. Search 변형 이름이 `Weight=Regular`로 바로잡혀 코드의 변형 이름 보정 규칙을 지웠습니다. `_`로 나눴던 이름 5개(`Icon/warning`, `Icon/Location` 등)도 `/`로 바뀌어 원문 이름을 맞췄고, 코드의 컴포넌트 이름은 그대로입니다. 새 `Pictogram/Check`는 `CheckPictogram`으로 더했습니다. 같은 날 아이콘 전체를 다시 받아 대조했는데, `Icon/Checkbox`의 Thin과 Regular 그림이 서로 바뀌어 있어 코드는 섹션 설명(Thin 1.2px, Regular 1.6px)대로 두었습니다.
 
 ## Button
 
@@ -226,4 +228,4 @@ placeholder(#9ca3a3)와 입력 글자(#161919)는 2기 변수 `teal-gray-400`, `
 - Chevron, Person, Setting, Under-construction은 피그마가 프레임 대신 안쪽 도형만 내보내서 원래 위치로 옮겼습니다.
 - 23.85×25처럼 정사각형이 아닌 프레임은 viewBox를 피그마 값 그대로 두고, 정사각형 안에 비율을 지켜 넣었습니다.
 - `Pictogram/Person`은 SVG가 아니라 PNG 마스크라서 패키지에서 뺐습니다.
-- 피그마에서 선이 살아 있는 아이콘(예: `Icon/Check`)은 인스턴스를 줄여도 선 두께가 그대로입니다. 패키지 아이콘은 크기에 비례해 선도 같이 얇아집니다.
+- 피그마 아이콘 섹션은 24px이 아닌 크기를 Scale(K)로 쓰라고 안내합니다. 패키지 아이콘의 `size`도 같은 방식으로 선 두께까지 비례해 바꿉니다. Scale 없이 크기만 줄인 인스턴스(예: Option Button 20px의 `Icon/Check`)는 선 두께가 그대로라 코드와 다르게 보입니다.

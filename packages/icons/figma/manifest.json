@@ -1,6 +1,6 @@
 {
   "fileKey": "U3pRZp6BjQBW5aMljCBwo9",
-  "fetchedAt": "2026-10-07",
+  "fetchedAt": "2026-10-10",
   "tool": "get_design_context asset download",
   "sources": [
     {
@@ -1346,7 +1346,7 @@
       "nodeId": "3331:44045",
       "kind": "icon",
       "componentName": "Icon/Search",
-      "variantName": "Regular=Weight",
+      "variantName": "Weight=Regular",
       "files": [
         {
           "file": "svg/3331-44045.svg",
@@ -1618,7 +1618,7 @@
     {
       "nodeId": "3140:48668",
       "kind": "icon",
-      "componentName": "Icon_Check_circle",
+      "componentName": "Icon/Check_circle",
       "variantName": "Weight=Fill",
       "files": [
         {
@@ -1631,7 +1631,7 @@
     {
       "nodeId": "3140:48662",
       "kind": "icon",
-      "componentName": "Icon_Check_circle",
+      "componentName": "Icon/Check_circle",
       "variantName": "Weight=Regular",
       "files": [
         {
@@ -1644,7 +1644,7 @@
     {
       "nodeId": "3140:48656",
       "kind": "icon",
-      "componentName": "Icon_Check_circle",
+      "componentName": "Icon/Check_circle",
       "variantName": "Weight=Thin",
       "files": [
         {
@@ -1657,7 +1657,7 @@
     {
       "nodeId": "3060:96435",
       "kind": "icon",
-      "componentName": "Icon_Location",
+      "componentName": "Icon/Location",
       "variantName": "Weight=Fill",
       "files": [
         {
@@ -1670,7 +1670,7 @@
     {
       "nodeId": "3060:96430",
       "kind": "icon",
-      "componentName": "Icon_Location",
+      "componentName": "Icon/Location",
       "variantName": "Weight=Regular",
       "files": [
         {
@@ -1683,7 +1683,7 @@
     {
       "nodeId": "3060:96478",
       "kind": "icon",
-      "componentName": "Icon_Location",
+      "componentName": "Icon/Location",
       "variantName": "Weight=Thin",
       "files": [
         {
@@ -1696,7 +1696,7 @@
     {
       "nodeId": "3060:96418",
       "kind": "icon",
-      "componentName": "Icon_Subtract_Circle",
+      "componentName": "Icon/Subtract_Circle",
       "variantName": "Weight=Fill",
       "files": [
         {
@@ -1709,7 +1709,7 @@
     {
       "nodeId": "3060:96412",
       "kind": "icon",
-      "componentName": "Icon_Subtract_Circle",
+      "componentName": "Icon/Subtract_Circle",
       "variantName": "Weight=Regular",
       "files": [
         {
@@ -1722,7 +1722,7 @@
     {
       "nodeId": "3060:96406",
       "kind": "icon",
-      "componentName": "Icon_Subtract_Circle",
+      "componentName": "Icon/Subtract_Circle",
       "variantName": "Weight=Thin",
       "files": [
         {
@@ -1774,7 +1774,7 @@
     {
       "nodeId": "3060:96337",
       "kind": "icon",
-      "componentName": "Icon_remove_circle",
+      "componentName": "Icon/remove_circle",
       "variantName": "Weight=Fill",
       "files": [
         {
@@ -1787,7 +1787,7 @@
     {
       "nodeId": "3060:96330",
       "kind": "icon",
-      "componentName": "Icon_remove_circle",
+      "componentName": "Icon/remove_circle",
       "variantName": "Weight=Regular",
       "files": [
         {
@@ -1800,7 +1800,7 @@
     {
       "nodeId": "3060:96323",
       "kind": "icon",
-      "componentName": "Icon_remove_circle",
+      "componentName": "Icon/remove_circle",
       "variantName": "Weight=Thin",
       "files": [
         {
@@ -1813,12 +1813,12 @@
     {
       "nodeId": "3060:96170",
       "kind": "icon",
-      "componentName": "Icon_warning",
+      "componentName": "Icon/warning",
       "variantName": "Weight=Fill",
       "files": [
         {
           "file": "svg/3060-96170.svg",
-          "sha256": "ac20d628ffa1095fce96dc7af41abac56133702eebc21c93dd66377a8daf31fd"
+          "sha256": "51e30f5a7d2deac15c1982a2bad0b2b2efa73d47c08c31be71da07d9cd169c96"
         }
       ],
       "status": "ok"
@@ -1826,12 +1826,12 @@
     {
       "nodeId": "3060:96165",
       "kind": "icon",
-      "componentName": "Icon_warning",
+      "componentName": "Icon/warning",
       "variantName": "Weight=Regular",
       "files": [
         {
           "file": "svg/3060-96165.svg",
-          "sha256": "6fa538b9dc8ea05625a79ee82ffee96c96426ae923f13263e50dd43f09c9e1c1"
+          "sha256": "1b1367ebccda97d2d6bea77387bc390675a3079ab39d9e5219d8d38e49e0163c"
         }
       ],
       "status": "ok"
@@ -1839,12 +1839,64 @@
     {
       "nodeId": "3060:96160",
       "kind": "icon",
-      "componentName": "Icon_warning",
+      "componentName": "Icon/warning",
       "variantName": "Weight=Thin",
       "files": [
         {
           "file": "svg/3060-96160.svg",
-          "sha256": "cba462d4aa52ababc0589368a3a7beb0bf5721a53462d73aaf30497999d019e3"
+          "sha256": "854886f666ea336bd7641ee49790e9d746e010b956d4cc628cdb8118f981e192"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3928:61411",
+      "kind": "icon",
+      "componentName": "Icon/warning-Triangle",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/3928-61411.svg",
+          "sha256": "521b653cf79ffa04398dd5e9de0ae156d282987f30e1f4d60440bafea9dcedcd"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3928:61412",
+      "kind": "icon",
+      "componentName": "Icon/warning-Triangle",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/3928-61412.svg",
+          "sha256": "ea4018fb51c94d93eadd4b0ec18bf2d7eedd060b5f93fbbcf4b5f81c8c6ead2e"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3928:61423",
+      "kind": "icon",
+      "componentName": "Icon/warning-Triangle",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/3928-61423.svg",
+          "sha256": "c311db618d474c345270deef2533f61b2bd1f23f664e93769d52fd3e14129c54"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "3928:61741",
+      "kind": "pictogram",
+      "componentName": "Pictogram/Check",
+      "variantName": "",
+      "files": [
+        {
+          "file": "svg/3928-61741.svg",
+          "sha256": "fde6bc58203822c7b7ab037df98f13d152e1de5edb2807dbccaf6087c442190f"
         }
       ],
       "status": "ok"
