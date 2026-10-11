@@ -1,9 +1,6 @@
----
-title: 배포 절차
-description: changeset 작성부터 GitHub Packages와 GitHub Pages 배포, 문제가 생겼을 때 되돌리는 방법까지의 순서입니다.
----
+# 배포 절차
 
-import { Aside } from "@astrojs/starlight/components"
+changeset 작성부터 GitHub Packages와 GitHub Pages 배포, 문제가 생겼을 때 되돌리는 방법까지의 순서입니다.
 
 - 독자: 디자인 시스템을 배포하는 담당자
 - 소유자: UMC PRODUCT Design Chapter
@@ -32,7 +29,7 @@ pnpm changeset
 ```
 
 - 실제로 바뀐 패키지를 고릅니다. 세 패키지는 어차피 같은 버전으로 함께 올라갑니다.
-- bump는 [버전 정책](../../releases/versioning/)을 따릅니다. 0.x에서는 깨지는 변경이 minor, 나머지가 patch입니다.
+- bump는 [버전 정책](https://umc-product.github.io/umc-product-design-system/releases/versioning/)을 따릅니다. 0.x에서는 깨지는 변경이 minor, 나머지가 patch입니다.
 - 요약은 앱 개발자가 읽는 문장으로 씁니다. 무엇이 바뀌었고 앱이 무엇을 해야 하는지 적습니다.
 - 깨지는 변경에는 옛 이름과 새 이름의 대응표를, 값만 바뀌는 변경에는 **화면 변화**와 전후 값을 적습니다.
 
@@ -88,10 +85,11 @@ develop → main PR을 열고 병합합니다. 병합하면 두 워크플로가 
 
 ## 권한과 설정
 
-<Aside type="danger" title="패키지 공개 범위를 바꾸지 마세요">
-  GitHub Packages는 공개로 바꾼 패키지를 다시 비공개로 돌릴 수 없습니다. 패키지
-  설정의 Change visibility는 누르지 않습니다.
-</Aside>
+> [!CAUTION]
+> **패키지 공개 범위를 바꾸지 마세요**
+>
+> GitHub Packages는 공개로 바꾼 패키지를 다시 비공개로 돌릴 수 없습니다. 패키지
+> 설정의 Change visibility는 누르지 않습니다.
 
 - **새 앱이 패키지를 설치할 때**: 세 패키지마다 Package settings → Manage Actions access에 앱 저장소를 Read 권한으로 더합니다. 앱의 GitHub Actions가 `GITHUB_TOKEN`으로 설치할 수 있게 됩니다.
 - **Amplify용 공용 토큰**: 조직 공용 계정에서 `read:packages` classic 토큰을 만들고 만료일과 갱신 담당자를 정합니다.

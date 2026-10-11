@@ -1,7 +1,6 @@
----
-title: 결정 기록
-description: 디자인 시스템을 만들며 되돌리기 어려운 결정 8개를 ADR 형식으로 남깁니다.
----
+# 결정 기록
+
+디자인 시스템을 만들며 되돌리기 어려운 결정 8개를 ADR 형식으로 남깁니다.
 
 - 독자: 디자인 시스템을 고치거나 쓰는 개발자
 - 소유자: UMC PRODUCT Design Chapter
@@ -51,7 +50,7 @@ React Aria는 날짜, 숫자 국제화와 터치 동작이 중요한 컴포넌�
 
 ## 5. 피그마 속성 이름을 정해진 표로 코드 이름에 대응시킨다
 
-- **결정**: 디자인 팀 노션의 명명 규칙을 기준으로 대응표를 둡니다. `Size`는 `size`, `Style`은 `variant`, `State`는 prop 없이 CSS 상태, `Error`는 `invalid`와 `errorMessage`로 옮깁니다. 전체 표는 [컴포넌트 구현 규칙](../component-guide/)에 있습니다.
+- **결정**: 디자인 팀 노션의 명명 규칙을 기준으로 대응표를 둡니다. `Size`는 `size`, `Style`은 `variant`, `State`는 prop 없이 CSS 상태, `Error`는 `invalid`와 `errorMessage`로 옮깁니다. 전체 표는 [컴포넌트 구현 규칙](./component-guide.md)에 있습니다.
 - **문제**: 피그마 속성 이름이 컴포넌트마다 다르고 오타(`Varient`, `Disalbed`)가 섞여 있습니다. 이름을 그대로 옮기면 같은 뜻의 prop이 컴포넌트마다 달라집니다.
 - **대안**: 피그마 속성 이름을 그대로 쓰기
 - **포기한 것**: 피그마와 코드의 이름이 일대일로 같지 않습니다(`Style`과 `variant`). React의 `style` prop과 겹치지 않게 하려는 선택입니다.
@@ -73,7 +72,7 @@ React Aria는 날짜, 숫자 국제화와 터치 동작이 중요한 컴포넌�
 - **문제**: 피그마를 보고 구현하려면 이름을 두 번 바꿔야 했습니다. `Text/Neutral-Medium-600`이 토큰에서는 단계 숫자를 뺀 `neutral-medium`, Tailwind에서는 그룹 이름을 바꾼 `text-fg-neutral-medium`이었습니다. primitive는 클래스가 없는데 기본 팔레트가 남아 있어서, `text-teal-300`이 오류 없이 Tailwind의 teal을 칠했습니다. 피그마 컴포넌트는 primitive를 바로 칠한 곳이 많습니다(Text Button `Teal-700`, Checkbox `Red-400`).
 - **대안**: 모든 그룹을 Tailwind 색으로 등록하기(`text-text-…`, `border-border-…`), Text 그룹만 `fg`로 바꾸기(이전 방식), 피그마 Dev Mode의 codeSyntax 이름 쓰기, 단계 숫자 빼기
 - **포기한 것**: Text·Border 색에는 불투명도 수식어(`/50`)와 outline, ring 같은 다른 속성 클래스가 없습니다. 이런 곳은 `outline-(--umc-color-border-primary-strong-500)`처럼 CSS 변수로 씁니다. 기본 팔레트에 기대던 앱 코드는 `@theme`으로 색을 다시 등록해야 합니다. 피그마에서 변수 값만 바꾸면 이름의 단계 숫자와 실제 값이 어긋날 수 있습니다.
-- **성공 기준**: 피그마 변수 이름과 [Tailwind 대응 표](../../getting-started/tailwind/) 하나로 클래스를 맞힙니다. 그룹 이름이 겹친 클래스와 피그마에 없는 기본 팔레트 클래스는 생성되지 않습니다(`outputs.test.ts`).
+- **성공 기준**: 피그마 변수 이름과 [Tailwind 대응 표](https://umc-product.github.io/umc-product-design-system/getting-started/tailwind/) 하나로 클래스를 맞힙니다. 그룹 이름이 겹친 클래스와 피그마에 없는 기본 팔레트 클래스는 생성되지 않습니다(`outputs.test.ts`).
 - **재검토 조건**: 디자인 팀이 codeSyntax를 변수마다 다른 `var(--umc-color-…)`로 정리할 때, 다크 모드처럼 모드가 생길 때, Text·Border 색을 다른 속성에 쓰는 코드가 늘어날 때
 
 codeSyntax 이름은 변수마다 유일해지면 더 낫습니다. Dev Mode 코드 패널을 그대로 옮겨도 되기 때문입니다. 지금은 `var(--color-action-primary-default)` 하나를 변수 31개가 나눠 써서 색을 가리키지 못합니다.

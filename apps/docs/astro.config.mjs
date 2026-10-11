@@ -78,16 +78,6 @@ export default defineConfig({
           label: "릴리스",
           items: ["releases/changelog", "releases/versioning"],
         },
-        {
-          label: "기여하기",
-          items: [
-            "contributing/local-development",
-            "contributing/release-process",
-            "contributing/token-workflow",
-            "contributing/component-guide",
-            "contributing/decisions",
-          ],
-        },
       ],
       plugins: [starlightLlmsTxt({ rawContent: true })],
     }),

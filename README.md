@@ -60,7 +60,7 @@ pnpm docs:dev
 | `pnpm docs:build`                 | 문서 빌드(`docs:variants`, `docs:links`로 검사) |
 | `pnpm changeset`                  | 배포할 변경 기록 작성                           |
 
-로컬 개발, 컴포넌트 추가 규칙, 토큰 갱신, 배포 절차는 문서의 "기여하기"에 있습니다. PR은 develop으로 보내고, develop을 main에 병합하면 패키지와 문서가 자동으로 배포됩니다.
+로컬 개발, 컴포넌트 추가 규칙, 토큰 갱신, 배포 절차는 [CONTRIBUTING.md](CONTRIBUTING.md)에 있습니다. PR은 develop으로 보내고, develop을 main에 병합하면 패키지와 문서가 자동으로 배포됩니다.
 
 ## 라이선스
 

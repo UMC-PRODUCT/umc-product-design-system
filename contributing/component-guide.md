@@ -1,7 +1,6 @@
----
-title: 컴포넌트 구현 규칙
-description: 새 컴포넌트를 추가할 때 지키는 파일 구조, CSS, 값, 테스트, 문서 규칙입니다.
----
+# 컴포넌트 구현 규칙
+
+새 컴포넌트를 추가할 때 지키는 파일 구조, CSS, 값, 테스트, 문서 규칙입니다.
 
 - 독자: `@umc-product/react`에 컴포넌트를 추가하는 개발자
 - 소유자: UMC PRODUCT Design Chapter
