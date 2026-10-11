@@ -3,6 +3,7 @@ import {
   componentCodeOf,
   isDocumentedComponent,
 } from "../lib/component-code.ts"
+import { tokenizeJsx, type JsxToken } from "../lib/jsx-tokens.ts"
 
 type Fiber = {
   type: unknown
@@ -31,6 +32,7 @@ const MAX_CODE_LINES = 24
 const SHOW_DELAY_MS = 150
 const GAP_PX = 8
 const VIEWPORT_MARGIN_PX = 12
+const BRACKET_COLOR_COUNT = 3
 
 const isFiber = (value: unknown): value is Fiber =>
   typeof value === "object" &&
@@ -117,6 +119,17 @@ const clampLines = (code: string) => {
   return [...lines.slice(0, MAX_CODE_LINES - 1), "…"].join("\n")
 }
 
+const tokenNodeOf = (token: JsxToken) => {
+  if (token.kind === "plain") return document.createTextNode(token.text)
+  const span = document.createElement("span")
+  span.dataset.token = token.kind
+  if (token.depth !== undefined) {
+    span.dataset.depth = String(token.depth % BRACKET_COLOR_COUNT)
+  }
+  span.textContent = token.text
+  return span
+}
+
 const createTip = (): Tip => {
   const root = document.createElement("div")
   root.className = "docs-code-tip"
@@ -163,7 +176,9 @@ export const applyCodeTooltips = () => {
 
   const show = (target: CodeTarget) => {
     if (!target.anchor.isConnected) return
-    tip.code.textContent = clampLines(target.code)
+    tip.code.replaceChildren(
+      ...tokenizeJsx(clampLines(target.code)).map(tokenNodeOf),
+    )
     tip.root.hidden = false
     place(tip.root, target.anchor)
   }
