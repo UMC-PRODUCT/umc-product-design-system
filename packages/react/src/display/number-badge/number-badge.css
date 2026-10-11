@@ -3,6 +3,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    max-width: 34px;
     overflow: hidden;
     border-radius: 100px;
     padding-left: 4px;

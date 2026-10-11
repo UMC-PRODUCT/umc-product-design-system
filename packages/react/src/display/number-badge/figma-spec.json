@@ -7,38 +7,55 @@
       "specId": "number-badge-sm-brand-fill",
       "node": "2479:20665",
       "variant": "Size=Sm, Color=Brand, Style=Fill",
+      "target": ".umc-number-badge",
       "expected": {
         "background-color": "#008a80",
         "color": "#ffffff",
         "min-width": "16px",
         "min-height": "16px",
-        "border-top-left-radius": "100px"
+        "border-top-left-radius": "100px",
+        "height": "16px",
+        "max-width": "34px",
+        "padding-left": "4px",
+        "padding-right": "4px",
+        "font-size": "12px",
+        "font-weight": "500",
+        "line-height": "15.6px"
       }
     },
     {
       "specId": "number-badge-sm-brand-weak",
       "node": "2479:20705",
       "variant": "Size=Sm, Color=Brand, Style=Weak",
+      "target": ".umc-number-badge",
       "expected": {
         "background-color": "#ddf4f1",
-        "color": "#02746c"
+        "color": "#02746c",
+        "font-size": "12px"
       }
     },
     {
       "specId": "number-badge-md-brand-fill",
       "node": "2479:20675",
       "variant": "Size=Md, Color=Brand, Style=Fill",
+      "target": ".umc-number-badge",
       "expected": {
         "background-color": "#008a80",
         "color": "#ffffff",
         "min-width": "20px",
-        "min-height": "20px"
+        "min-height": "20px",
+        "height": "20px",
+        "max-width": "34px",
+        "font-size": "14px",
+        "font-weight": "600",
+        "line-height": "18.9px"
       }
     },
     {
       "specId": "number-badge-sm-error-fill",
       "node": "2479:20669",
       "variant": "Size=Sm, Color=Red, Style=Fill",
+      "target": ".umc-number-badge",
       "expected": {
         "background-color": "#dc3d3d",
         "color": "#ffffff"
@@ -48,6 +65,7 @@
       "specId": "number-badge-sm-warning-fill",
       "node": "2479:20671",
       "variant": "Size=Sm, Color=Yellow, Style=Fill",
+      "target": ".umc-number-badge",
       "expected": {
         "background-color": "#f59b00",
         "color": "#ffffff"
@@ -57,6 +75,7 @@
       "specId": "number-badge-sm-success-fill",
       "node": "2479:20673",
       "variant": "Size=Sm, Color=Green, Style=Fill",
+      "target": ".umc-number-badge",
       "expected": {
         "background-color": "#06a768",
         "color": "#ffffff"
@@ -66,6 +85,7 @@
       "specId": "number-badge-sm-neutral-fill",
       "node": "2479:20667",
       "variant": "Size=Sm, Color=Neutral, Style=Fill",
+      "target": ".umc-number-badge",
       "expected": {
         "background-color": "#606262",
         "color": "#ffffff"

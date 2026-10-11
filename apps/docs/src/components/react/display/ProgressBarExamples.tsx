@@ -39,7 +39,7 @@ export function ProgressBarStaticPreview() {
       className="umc-example"
       style={{ flexDirection: "column", gap: "16px", width: "100%" }}
     >
-      <span data-spec-id="progress-bar-md-brand-50">
+      <span data-spec-id="progress-bar-md-brand-50 progress-bar-md-brand-50-indicator">
         <div style={{ width: "240px" }}>
           <ProgressBar
             value={50}

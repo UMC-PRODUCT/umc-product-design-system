@@ -54,6 +54,17 @@
       "expected": {
         "background-color": "#6b7684"
       }
+    },
+    {
+      "specId": "progress-bar-md-brand-50-indicator",
+      "node": "2509:242",
+      "variant": "Progress=50, Size=Md, Color=Brand",
+      "target": ".umc-progress-bar__indicator",
+      "expected": {
+        "background-color": "#008a80",
+        "height": "5px",
+        "border-top-left-radius": "2.5px"
+      }
     }
   ]
 }

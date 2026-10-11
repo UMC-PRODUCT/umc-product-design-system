@@ -73,5 +73,6 @@ function Example() {
 ## 알아 둘 점
 
 - `DotBadge`에 `aria-label`이나 `aria-labelledby`가 없으면 `aria-hidden="true"`가 적용됩니다. 색점이 의미를 단독으로 전달한다면 반드시 레이블을 제공합니다.
+- `NumberBadge`는 폭이 34px을 넘지 않고, 넘치는 글자는 잘립니다. 100 이상은 `99+`처럼 줄여서 넘깁니다.
 - `NumberBadge`의 접근 가능한 이름은 주변 컨트롤이 제공합니다. 배지 자체에 `aria-label`을 추가하기보다 버튼이나 링크의 레이블에 숫자를 포함시킵니다.
 - `forced-colors` 모드에서 `NumberBadge`는 `ButtonFace` 배경과 `ButtonText` 텍스트로 그려지고, `DotBadge`는 `ButtonText` 색으로 그려집니다.
