@@ -6,5 +6,6 @@
 @import "./text-button/text-button.css";
 @import "./forms/forms.css";
 @import "./selection/selection.css";
+@import "./display/display.css";
 @import "./overlay/overlay.css";
 @import "./shell/shell.css";
