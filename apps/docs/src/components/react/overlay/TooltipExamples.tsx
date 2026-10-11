@@ -3,6 +3,11 @@
 import { Button, Tooltip } from "@umc-product/react"
 import type { CSSProperties } from "react"
 
+import {
+  CODE_PLACEHOLDER,
+  codeAttributeOf,
+  componentCodeOf,
+} from "../../../lib/component-code.ts"
 import { lookup, type FigmaVariant } from "../variants/figma-variants.ts"
 import { VariantGrid } from "../variants/VariantGrid.tsx"
 
@@ -42,12 +47,21 @@ function TooltipPreviewItem({
   title,
   text,
 }: TooltipPreviewItemProps) {
+  const code = componentCodeOf(Tooltip, {
+    content: text,
+    title,
+    side,
+    mode,
+    size,
+    children: CODE_PLACEHOLDER,
+  })
   return (
     <div data-spec-id={specId} className="p-3">
       <div
         className="umc-tooltip__positioner"
         data-size={size}
         data-mode={mode}
+        {...codeAttributeOf(code)}
       >
         <div className="umc-tooltip__popup" data-mode={mode}>
           <div

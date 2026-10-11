@@ -3,8 +3,17 @@
 import { Button, Dialog } from "@umc-product/react"
 import { useState } from "react"
 
+import {
+  codeAttributeOf,
+  componentCodeOf,
+} from "../../../lib/component-code.ts"
 import { lookup, type FigmaVariant } from "../variants/figma-variants.ts"
 import { VariantGrid } from "../variants/VariantGrid.tsx"
+
+const PREVIEW_TITLE = "제목을 입력하세요"
+const PREVIEW_DESCRIPTION = "다이얼로그 설명 문구가 들어갑니다."
+const CONFIRM_LABEL = "확인"
+const CANCEL_LABEL = "취소"
 
 function DialogPreviewItem({
   specId,
@@ -14,17 +23,23 @@ function DialogPreviewItem({
   type: "alert" | "confirm"
 }) {
   const hasTwoButtons = type === "alert"
+  const code = componentCodeOf(Dialog, {
+    open: true,
+    title: PREVIEW_TITLE,
+    description: PREVIEW_DESCRIPTION,
+    confirmLabel: CONFIRM_LABEL,
+    cancelLabel: hasTwoButtons ? CANCEL_LABEL : undefined,
+  })
   return (
     <div
       className="umc-dialog__popup"
       data-spec-id={specId}
       style={{ position: "static", translate: "none", zIndex: "auto" }}
+      {...codeAttributeOf(code)}
     >
       <div className="umc-dialog__text" data-layout={type}>
-        <div className="umc-dialog__title">제목을 입력하세요</div>
-        <div className="umc-dialog__description">
-          다이얼로그 설명 문구가 들어갑니다.
-        </div>
+        <div className="umc-dialog__title">{PREVIEW_TITLE}</div>
+        <div className="umc-dialog__description">{PREVIEW_DESCRIPTION}</div>
       </div>
       {hasTwoButtons ? (
         <div className="umc-dialog__button-area" data-variant="default">
@@ -35,7 +50,7 @@ function DialogPreviewItem({
             data-size="md"
             type="button"
           >
-            <span className="umc-button__label">취소</span>
+            <span className="umc-button__label">{CANCEL_LABEL}</span>
           </button>
           <button
             className="umc-button"
@@ -44,7 +59,7 @@ function DialogPreviewItem({
             data-size="md"
             type="button"
           >
-            <span className="umc-button__label">확인</span>
+            <span className="umc-button__label">{CONFIRM_LABEL}</span>
           </button>
         </div>
       ) : (
@@ -56,7 +71,7 @@ function DialogPreviewItem({
             data-variant="plain"
             type="button"
           >
-            <span className="umc-text-button__label">확인</span>
+            <span className="umc-text-button__label">{CONFIRM_LABEL}</span>
           </button>
         </div>
       )}

@@ -3,23 +3,26 @@
 import { BottomSheet, BottomSheetActions, Button } from "@umc-product/react"
 import { useState } from "react"
 
+import {
+  CODE_PLACEHOLDER,
+  codeAttributeOf,
+  componentCodeOf,
+} from "../../../lib/component-code.ts"
 import type { FigmaVariant } from "../variants/figma-variants.ts"
 import { VariantGrid } from "../variants/VariantGrid.tsx"
 
 type ActionLayout = "full" | "stacked" | "equal" | "emphasis" | "primary-top"
 
-function ActionsPreviewItem({ layout }: { layout: ActionLayout }) {
-  if (layout === "full") {
-    return <BottomSheetActions layout="full" primary={{ label: "확인" }} />
-  }
-  return (
+const actionsOf = (layout: ActionLayout) =>
+  layout === "full" ? (
+    <BottomSheetActions layout="full" primary={{ label: "확인" }} />
+  ) : (
     <BottomSheetActions
       layout={layout}
       primary={{ label: "확인" }}
       secondary={{ label: layout === "primary-top" ? "나중에" : "취소" }}
     />
   )
-}
 
 const STATIC_SHEET = {
   position: "static",
@@ -34,23 +37,40 @@ function BottomSheetPreviewItem({
   titleAlign: "start" | "center"
   keyboard?: boolean
 }) {
+  const isCentered = titleAlign === "center"
+  const title = isCentered ? "학습 일정" : "시트 제목"
+  const description = isCentered ? undefined : "설명 문구가 들어갑니다."
+  const headerAction = isCentered ? (
+    <Button variant="weak" color="primary" size="xs">
+      편집
+    </Button>
+  ) : undefined
+  const actions = actionsOf("full")
+  const code = componentCodeOf(BottomSheet, {
+    open: true,
+    title,
+    description,
+    titleAlign: isCentered ? "center" : undefined,
+    headerAction,
+    actions,
+    children: CODE_PLACEHOLDER,
+  })
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <div className="umc-bottom-sheet__popup" style={STATIC_SHEET}>
+      <div
+        className="umc-bottom-sheet__popup"
+        style={STATIC_SHEET}
+        {...codeAttributeOf(code)}
+      >
         <span aria-hidden="true" className="umc-bottom-sheet__handle" />
         <div className="umc-bottom-sheet__header" data-align={titleAlign}>
-          <div className="umc-bottom-sheet__title">
-            {titleAlign === "center" ? "학습 일정" : "시트 제목"}
-          </div>
-          {titleAlign === "start" ? (
-            <div className="umc-bottom-sheet__description">
-              설명 문구가 들어갑니다.
-            </div>
-          ) : (
+          <div className="umc-bottom-sheet__title">{title}</div>
+          {description !== undefined && (
+            <div className="umc-bottom-sheet__description">{description}</div>
+          )}
+          {headerAction !== undefined && (
             <div className="umc-bottom-sheet__header-action">
-              <Button variant="weak" color="primary" size="xs">
-                편집
-              </Button>
+              {headerAction}
             </div>
           )}
         </div>
@@ -63,7 +83,7 @@ function BottomSheetPreviewItem({
             }}
           />
         </div>
-        <ActionsPreviewItem layout="full" />
+        {actions}
       </div>
       {keyboard && (
         <div
@@ -96,7 +116,7 @@ export function BottomSheetActionsAll() {
             >
               {layout}
             </p>
-            <ActionsPreviewItem layout={layout} />
+            {actionsOf(layout)}
           </div>
         ),
       )}
@@ -211,7 +231,7 @@ export function BottomSheetButtonAreaVariants() {
       render={(variant: FigmaVariant) => {
         const typeValue = variant.props["Type"] ?? "Full"
         const layout = ACTION_LAYOUTS[typeValue] ?? "full"
-        return <ActionsPreviewItem layout={layout} />
+        return actionsOf(layout)
       }}
     />
   )

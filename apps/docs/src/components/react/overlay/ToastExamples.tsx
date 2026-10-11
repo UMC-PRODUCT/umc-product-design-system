@@ -2,20 +2,66 @@
 
 import { CheckCircleIcon, CloseIcon, WarningIcon } from "@umc-product/icons"
 import { Button, ToastProvider, useToast } from "@umc-product/react"
+import type { ReactElement } from "react"
 
+import {
+  CODE_PLACEHOLDER,
+  callCodeOf,
+  codeAttributeOf,
+  componentCodeOf,
+} from "../../../lib/component-code.ts"
 import { NotImplemented } from "../variants/VariantCells.tsx"
 import { lookup, type FigmaVariant } from "../variants/figma-variants.ts"
 import { VariantGrid } from "../variants/VariantGrid.tsx"
 
 type ToastColor = "primary" | "neutral" | "warning" | "error"
 
+type ToastPlacement = "top" | "bottom"
+
 type ToastPreviewItemProps = {
   color: ToastColor
   message: string
   specId?: string
-  placement?: "top" | "bottom"
+  placement?: ToastPlacement
   withIcon?: boolean
   actionLabel?: string
+}
+
+const toastIconOf = (color: ToastColor) =>
+  color === "warning" ? (
+    <WarningIcon weight="fill" />
+  ) : (
+    <CheckCircleIcon weight="fill" />
+  )
+
+const toastCodeOf = ({
+  color,
+  message,
+  placement,
+  icon,
+  actionLabel,
+}: {
+  color: ToastColor
+  message: string
+  placement: ToastPlacement
+  icon: ReactElement | undefined
+  actionLabel: string | undefined
+}) => {
+  const show = callCodeOf("toast.show", {
+    message,
+    color,
+    icon,
+    action:
+      actionLabel === undefined
+        ? undefined
+        : { label: actionLabel, onClick: CODE_PLACEHOLDER },
+  })
+  if (placement === "bottom") return show
+  const provider = componentCodeOf(ToastProvider, {
+    placement,
+    children: CODE_PLACEHOLDER,
+  })
+  return `${provider}\n\n${show}`
 }
 
 function ToastPreviewItem({
@@ -26,6 +72,8 @@ function ToastPreviewItem({
   withIcon = false,
   actionLabel,
 }: ToastPreviewItemProps) {
+  const icon = withIcon ? toastIconOf(color) : undefined
+  const code = toastCodeOf({ color, message, placement, icon, actionLabel })
   return (
     <div data-spec-id={specId}>
       <div
@@ -34,15 +82,12 @@ function ToastPreviewItem({
         data-placement={placement}
         data-icon={withIcon ? "" : undefined}
         style={{ animation: "none" }}
+        {...codeAttributeOf(code)}
       >
         <div className="umc-toast__main">
-          {withIcon && (
+          {icon !== undefined && (
             <span className="umc-toast__icon" aria-hidden="true">
-              {color === "warning" ? (
-                <WarningIcon weight="fill" />
-              ) : (
-                <CheckCircleIcon weight="fill" />
-              )}
+              {icon}
             </span>
           )}
           <p className="umc-toast__message">{message}</p>
