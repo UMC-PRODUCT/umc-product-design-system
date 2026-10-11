@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 
-import { CloseIcon, ExpandMoreIcon, FilterIcon } from "@umc-product/icons"
+import { ExpandMoreIcon } from "@umc-product/icons"
 import {
   Chip,
   type ChipColor,
@@ -40,7 +40,7 @@ export function ChipMenuTrigger() {
       <Menu
         trigger={
           <Chip
-            trailingIcon={<ExpandMoreIcon size={14} />}
+            trailingIcon={<ExpandMoreIcon weight="fill" />}
             aria-haspopup="menu"
           >
             파트 선택
@@ -78,6 +78,9 @@ export function ChipStates() {
         <Chip variant="fill" color="neutral">
           fill neutral
         </Chip>
+      </span>
+      <span data-spec-id="chip-weak-brand-sm-trailing-icon chip-weak-brand-sm-trailing-icon-glyph">
+        <Chip trailingIcon={<ExpandMoreIcon weight="fill" />}>아이콘</Chip>
       </span>
       <span data-spec-id="chip-weak-brand-md">
         <Chip size="md">md 크기</Chip>
@@ -128,10 +131,10 @@ function ChipVariantCell({ variant }: { variant: FigmaVariant }) {
       size={lookup(FIGMA_SIZES, variant, "Size")}
       selected={variant.props["Selected"] === "True"}
       leadingIcon={
-        iconPosition === "Left" ? <FilterIcon size={14} /> : undefined
+        iconPosition === "Left" ? <ExpandMoreIcon weight="fill" /> : undefined
       }
       trailingIcon={
-        iconPosition === "Right" ? <CloseIcon size={12} /> : undefined
+        iconPosition === "Right" ? <ExpandMoreIcon weight="fill" /> : undefined
       }
     >
       칩

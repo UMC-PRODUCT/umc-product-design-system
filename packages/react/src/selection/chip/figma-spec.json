@@ -90,6 +90,29 @@
         "background-color": "#ffffff",
         "border-top-width": "1px"
       }
+    },
+    {
+      "specId": "chip-weak-brand-sm-trailing-icon",
+      "node": "3155:23414",
+      "variant": "Size=Sm, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=Right",
+      "target": ".umc-chip",
+      "expected": {
+        "height": "34px",
+        "padding-inline-start": "14px",
+        "padding-inline-end": "10px",
+        "column-gap": "6px"
+      }
+    },
+    {
+      "specId": "chip-weak-brand-sm-trailing-icon-glyph",
+      "node": "3848:11751",
+      "variant": "Size=Sm, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=Right",
+      "target": ".umc-chip__icon",
+      "expected": {
+        "width": "18px",
+        "height": "18px",
+        "color": "#606262"
+      }
     }
   ]
 }

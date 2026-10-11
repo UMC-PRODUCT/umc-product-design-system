@@ -21,7 +21,7 @@ import { Chip, DraggableChip } from "@umc-product/react"
   정규 모집
 </Chip>
 
-<DraggableChip onPointerDown={listeners.onPointerDown}>항목</DraggableChip>
+<DraggableChip>지원서 문항</DraggableChip>
 ```
 
 <ChipStates client:visible />
@@ -50,7 +50,7 @@ function FilterChip() {
 
 ## 메뉴 트리거로 쓰기
 
-`aria-haspopup`을 주면 `aria-pressed`를 붙이지 않습니다. `Menu`의 `trigger`로 넘기면 `BaseUI`가 열림·닫힘 상태를 관리합니다.
+`aria-haspopup`을 주면 `aria-pressed`를 붙이지 않습니다. `Menu`의 `trigger`로 넘기면 Base UI가 열림·닫힘 상태를 관리합니다.
 
 ```tsx
 import { ExpandMoreIcon } from "@umc-product/icons"
@@ -58,7 +58,7 @@ import { Chip, Menu } from "@umc-product/react"
 
 <Menu
   trigger={
-    <Chip trailingIcon={<ExpandMoreIcon size={14} />} aria-haspopup="menu">
+    <Chip trailingIcon={<ExpandMoreIcon weight="fill" />} aria-haspopup="menu">
       파트 선택
     </Chip>
   }
@@ -72,6 +72,37 @@ import { Chip, Menu } from "@umc-product/react"
 ```
 
 <ChipMenuTrigger client:visible />
+
+## 아이콘 넣기
+
+`leadingIcon`, `trailingIcon`에 아이콘을 넘기면 크기(18px)와 아이콘 쪽 여백을 칩이 맞춥니다. 아이콘 색은 칩 상태를 따르고, 화면 낭독기에서는 숨깁니다. 피그마 칩은 `Icon/Expand_more`의 Fill 굵기를 줄여 넣었으니, 같은 모양을 내려면 아이콘에 `weight="fill"`을 넘깁니다.
+
+## 드래그 앤 드롭에 붙이기
+
+`DraggableChip`은 핸들 아이콘과 모양만 그리고, 끌기 동작은 앱의 드래그 라이브러리가 맡습니다. 라이브러리가 주는 `ref`, `style`, 속성, 이벤트 핸들러를 그대로 넘깁니다. 아래는 dnd-kit의 `useSortable`과 함께 쓰는 예입니다.
+
+```tsx
+import { useSortable } from "@dnd-kit/sortable"
+import { CSS } from "@dnd-kit/utilities"
+import { DraggableChip } from "@umc-product/react"
+
+function SortableQuestion({ id, label }: { id: string; label: string }) {
+  const { attributes, listeners, setNodeRef, transform, transition } =
+    useSortable({ id })
+  return (
+    <DraggableChip
+      ref={setNodeRef}
+      style={{ transform: CSS.Transform.toString(transform), transition }}
+      {...attributes}
+      {...listeners}
+    >
+      {label}
+    </DraggableChip>
+  )
+}
+```
+
+`useSortable`의 `attributes`에는 `tabIndex`, `role`, `aria-roledescription`이 들어 있어 키보드로도 순서를 바꿀 수 있습니다.
 
 ## 모든 변형
 
@@ -115,12 +146,12 @@ import { Chip, Menu } from "@umc-product/react"
 | `className` | `string`               | 없음      | 추가 클래스                                  |
 | `ref`       | `Ref<HTMLDivElement>`  | 없음      | div 엘리먼트 참조                            |
 
-그 밖에 네이티브 `<div>` 속성을 모두 받습니다. `onPointerDown`으로 드래그 라이브러리 리스너를 연결합니다.
+그 밖에 네이티브 `<div>` 속성을 모두 받습니다. 드래그 라이브러리의 속성과 이벤트 핸들러도 이 경로로 넘깁니다.
 
 ## 알아 둘 점
 
 - `selected`를 전달하지 않으면 `aria-pressed`가 붙지 않습니다. 드롭다운 트리거처럼 선택 상태가 없는 칩에는 `selected`를 주지 마세요.
 - `aria-haspopup`이 있으면 `aria-pressed`를 붙이지 않습니다. 드롭다운 트리거에 `selected`를 같이 줘도 접근성 속성이 충돌하지 않습니다.
 - 아이콘 슬롯은 `aria-hidden`으로 감쌉니다. 아이콘이 의미를 전달해야 한다면 `aria-label`로 칩 전체에 이름을 주세요.
-- `DraggableChip`은 `<div>`입니다. 키보드 드래그가 필요하면 `tabIndex={0}`과 `role="button"` 또는 `aria-roledescription`을 앱에서 추가하세요.
-- 피그마에 비활성 상태와 포커스 상태가 없어 기존 비활성 토큰과 2px `border-primary-strong-500` outline을 각각 적용했습니다.
+- `DraggableChip`은 `<div>`입니다. 드래그 라이브러리를 쓰지 않고 직접 끌기를 만들면 `tabIndex`, `role`, `aria-roledescription`과 키보드 조작도 앱에서 붙입니다.
+- 비활성(`disabled`)과 키보드 포커스 표시는 Button 등 다른 컴포넌트와 같은 모양입니다.
