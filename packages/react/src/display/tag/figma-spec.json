@@ -1,0 +1,131 @@
+{
+  "component": "Tag",
+  "figmaSection": "2621:36046",
+  "page": "/components/display/tag/",
+  "nodes": [
+    {
+      "specId": "tag-brand-weak-sm",
+      "node": "2621:36047",
+      "variant": "Style=Weak, Size=Sm, Color=Brand",
+      "expected": {
+        "height": "22px",
+        "padding-left": "6px",
+        "padding-right": "6px",
+        "background-color": "#ddf4f1",
+        "color": "#02746c",
+        "font-size": "12px",
+        "font-weight": "500",
+        "line-height": "15.6px",
+        "border-top-left-radius": "6px"
+      }
+    },
+    {
+      "specId": "tag-brand-fill-sm",
+      "node": "2621:36071",
+      "variant": "Style=Fill, Size=Sm, Color=Brand",
+      "expected": {
+        "height": "22px",
+        "background-color": "#008a80",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "tag-brand-weak-md",
+      "node": "2621:36055",
+      "variant": "Style=Weak, Size=Md, Color=Brand",
+      "expected": {
+        "height": "26px",
+        "padding-left": "6px",
+        "font-size": "14px",
+        "line-height": "20.3px",
+        "background-color": "#ddf4f1",
+        "color": "#02746c"
+      }
+    },
+    {
+      "specId": "tag-brand-weak-lg",
+      "node": "2621:36057",
+      "variant": "Style=Weak, Size=Lg, Color=Brand",
+      "expected": {
+        "height": "32px",
+        "padding-left": "8px",
+        "font-size": "18px",
+        "background-color": "#ddf4f1",
+        "color": "#02746c",
+        "border-top-left-radius": "8px"
+      }
+    },
+    {
+      "specId": "tag-neutral-weak-sm",
+      "node": "2621:36049",
+      "variant": "Style=Weak, Size=Sm, Color=Neutral",
+      "expected": {
+        "background-color": "#eff0f0",
+        "color": "#606262"
+      }
+    },
+    {
+      "specId": "tag-neutral-fill-sm",
+      "node": "2621:36073",
+      "variant": "Style=Fill, Size=Sm, Color=Neutral",
+      "expected": {
+        "background-color": "#606262",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "tag-warning-weak-sm",
+      "node": "2621:36051",
+      "variant": "Style=Weak, Size=Sm, Color=Warning",
+      "expected": {
+        "background-color": "#fff0c2",
+        "color": "#ed8002"
+      }
+    },
+    {
+      "specId": "tag-warning-fill-sm",
+      "node": "2621:36053",
+      "variant": "Style=Fill, Size=Sm, Color=Warning",
+      "expected": {
+        "background-color": "#f59b00",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "tag-success-weak-sm",
+      "node": "3388:26757",
+      "variant": "Style=Weak, Size=Sm, Color=Success",
+      "expected": {
+        "background-color": "#d9f7e3",
+        "color": "#06844c"
+      }
+    },
+    {
+      "specId": "tag-success-fill-sm",
+      "node": "3388:26763",
+      "variant": "Style=Fill, Size=Sm, Color=Success",
+      "expected": {
+        "background-color": "#06a768",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "tag-error-weak-sm",
+      "node": "3388:26769",
+      "variant": "Style=Weak, Size=Sm, Color=Error",
+      "expected": {
+        "background-color": "#ffe7e5",
+        "color": "#dc3d3d"
+      }
+    },
+    {
+      "specId": "tag-error-fill-sm",
+      "node": "3388:26771",
+      "variant": "Style=Fill, Size=Sm, Color=Error",
+      "expected": {
+        "background-color": "#dc3d3d",
+        "color": "#ffffff"
+      }
+    }
+  ]
+}

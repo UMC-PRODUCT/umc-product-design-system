@@ -13,6 +13,7 @@ const COMPONENT_GROUPS = [
   { label: "액션", directory: "components/actions" },
   { label: "폼 입력", directory: "components/forms" },
   { label: "선택", directory: "components/selection" },
+  { label: "표시", directory: "components/display" },
   { label: "오버레이와 피드백", directory: "components/overlay" },
   { label: "앱 셸", directory: "components/shell" },
 ]
