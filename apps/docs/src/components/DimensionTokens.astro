@@ -1,0 +1,78 @@
+---
+import { tokenManifest } from "@umc-product/design-tokens/manifest"
+
+interface Props {
+  prefix: string
+  source?: "value" | "alias" | "all"
+  visual?: "bar" | "radius" | "shadow" | "none"
+}
+
+const { prefix, source = "all", visual = "none" } = Astro.props
+
+const matchesSource = (alias: string | null) =>
+  source === "all" || (source === "alias") === (alias !== null)
+
+const tokens = tokenManifest.filter(
+  (token) => token.name.startsWith(prefix) && matchesSource(token.alias),
+)
+---
+
+<div class="not-content umc-scroll">
+  <table class="umc-table">
+    <thead>
+      <tr>
+        {visual !== "none" && <th>미리보기</th>}
+        <th>토큰</th>
+        <th>값</th>
+        <th>참조</th>
+        <th>피그마 변수</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        tokens.map((token) => (
+          <tr>
+            {visual === "bar" && (
+              <td>
+                <span
+                  class="umc-bar"
+                  style={`width: var(${token.cssVariable})`}
+                />
+              </td>
+            )}
+            {visual === "radius" && (
+              <td>
+                <span
+                  class="umc-radius-box"
+                  style={`border-radius: var(${token.cssVariable})`}
+                />
+              </td>
+            )}
+            {visual === "shadow" && (
+              <td>
+                <span
+                  class="umc-shadow-box"
+                  style={`box-shadow: var(${token.cssVariable})`}
+                />
+              </td>
+            )}
+            <td>
+              <code>{token.name}</code>
+              <div class="umc-sub">{token.cssVariable}</div>
+              {(token.utility ?? token.tailwindName) && (
+                <div class="umc-sub">
+                  Tailwind: {token.utility ?? token.tailwindName}
+                </div>
+              )}
+            </td>
+            <td>
+              <code>{token.value}</code>
+            </td>
+            <td>{token.alias ? <code>{token.alias}</code> : "-"}</td>
+            <td class="umc-sub">{token.figmaName ?? "-"}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>

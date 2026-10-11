@@ -1,0 +1,12 @@
+@import "./header/header.css";
+@import "./umc-logo-lockup/umc-logo-lockup.css";
+@import "./header-home-link/header-home-link.css";
+@import "./header-action-button/header-action-button.css";
+@import "./side-navigation/side-navigation.css";
+@import "./context-switcher/context-switcher.css";
+@import "./page-header/page-header.css";
+@import "./top-navigation/top-navigation.css";
+@import "./bottom-navigation/bottom-navigation.css";
+
+@layer components {
+}

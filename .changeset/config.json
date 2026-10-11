@@ -1,0 +1,14 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@4.0.1/schema.json",
+  "baseBranch": "develop",
+  "access": "restricted",
+  "changelog": "@changesets/cli/changelog",
+  "commit": false,
+  "fixed": [
+    ["@umc-product/design-tokens", "@umc-product/icons", "@umc-product/react"]
+  ],
+  "linked": [],
+  "ignore": [],
+  "format": "auto",
+  "updateInternalDependencies": "patch"
+}

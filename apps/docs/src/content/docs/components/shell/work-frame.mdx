@@ -1,0 +1,60 @@
+---
+title: WorkFrame
+description: 셸 컴포넌트를 조립한 관리자 화면 틀입니다.
+---
+
+import { WorkFrameDemo } from "../../../../components/react/shell/WorkFrameExamples.tsx"
+
+피그마 `Web Frame`을 셸 컴포넌트로 조립한 예시입니다. 별도 컴포넌트가 아니라 레이아웃 패턴이라 앱에서 직접 짭니다. 메뉴를 누르면 헤더, 사이드 내비게이션, 페이지 헤더가 함께 바뀝니다.
+
+<WorkFrameDemo client:visible />
+
+## 치수
+
+| 영역                   | 값                            | 근거                                    |
+| ---------------------- | ----------------------------- | --------------------------------------- |
+| Header 높이            | 80px                          | `--umc-layout-header-height`            |
+| SideNavigation 너비    | 216px                         | `--umc-layout-sidebar-width`            |
+| 콘텐츠 영역 패딩       | 위 48px, 좌우 32px, 아래 80px | `--umc-spacing-margin-48`, `-32`, `-80` |
+| PageHeader와 본문 사이 | 32px                          | `--umc-spacing-padding-32`              |
+
+```tsx
+import {
+  ContextSwitcher,
+  Header,
+  HeaderHomeLink,
+  LinkProvider,
+  PageHeader,
+  SideNavigation,
+} from "@umc-product/react"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+
+export function AdminLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname()
+  return (
+    <LinkProvider component={Link}>
+      <div className="flex min-h-screen flex-col">
+        <Header
+          className="sticky top-0 z-50"
+          logo={<HeaderHomeLink context="operation" generation={11} />}
+          navItems={navItems}
+          currentPath={pathname}
+        />
+        <div className="flex flex-1">
+          <SideNavigation
+            items={sideItems}
+            currentPath={pathname}
+            slot={<GenerationSwitcher />}
+          />
+          <main className="flex min-w-0 flex-1 flex-col gap-8 px-8 pt-12 pb-20">
+            {children}
+          </main>
+        </div>
+      </div>
+    </LinkProvider>
+  )
+}
+```
+
+`Header`는 위치를 정하지 않으므로 고정이 필요하면 `className`으로 `sticky`를 줍니다. `SideNavigation`은 `min-height: 100%`라서 부모 높이만큼 늘어납니다.

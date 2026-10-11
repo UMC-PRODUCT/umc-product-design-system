@@ -1,0 +1,31 @@
+{
+  "component": "TextInfoButton",
+  "figmaSection": "2621:36342",
+  "page": "/components/forms/text-info-button/",
+  "nodes": [
+    {
+      "specId": "text-info-button",
+      "node": "2621:36343",
+      "variant": "State=Default",
+      "target": ".umc-text-info-button",
+      "expected": {
+        "color": "#adadad",
+        "font-size": "12px",
+        "font-weight": "400",
+        "line-height": "18px",
+        "letter-spacing": "-0.24px",
+        "column-gap": "4px"
+      }
+    },
+    {
+      "specId": "text-info-button-hover",
+      "interaction": "hover",
+      "node": "2621:36346",
+      "variant": "State=Hover",
+      "target": ".umc-text-info-button",
+      "expected": {
+        "color": "#7e7f7f"
+      }
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+---
+title: 컬러
+description: 피그마 컬러 변수(semantic 152개, primitive 78개)를 코드 이름으로 찾는 표입니다.
+---
+
+import Aside from "../../../components/Aside.astro"
+import PrimitivePalettes from "../../../components/PrimitivePalettes.astro"
+import SemanticColors from "../../../components/SemanticColors.astro"
+import { ColorLookup } from "../../../components/react/color/ColorLookup.tsx"
+import { colorTokenRows } from "../../../components/react/color/color-token-rows.ts"
+
+화면은 역할을 담은 semantic 컬러로 만듭니다. primitive는 semantic이 참조하는 원재료라서, 피그마가 primitive를 바로 칠한 곳에만 씁니다. 표에서 행마다 `Tailwind` 줄이 그대로 쓸 클래스입니다. 규칙은 [Tailwind CSS에서 쓰기](../../getting-started/tailwind/)에 있습니다.
+
+## 피그마에서 본 이름으로 찾기
+
+피그마에서 본 것을 그대로 넣으면 쓸 클래스와 CSS 변수가 나옵니다. 변수 이름(`Fill/Neutral/Weak-75`), Dev Mode 코드 패널의 이름(`var(--color-text-subtle)`), 색 값(`#F7F8F8`, `rgba(15, 16, 16, 0.2)`), 클래스 하나(`bg-surface-default`) 중 무엇을 넣어도 됩니다. Dev Mode의 `background: var(--color-…, #F7F8F8);`처럼 값이 붙은 줄을 통째로 넣으면 그 값으로 좁혀 찾습니다.
+
+<ColorLookup client:load rows={colorTokenRows} />
+
+<Aside type="caution" title="Dev Mode 이름은 실마리로만 쓰세요">
+  Dev Mode 코드 패널의 `var(--color-…)`는 코드의 CSS 변수(`--umc-color-…`)와
+  다른 이름입니다. 여러 변수가 같은 이름을 나눠 쓰기도 합니다. 결과가 여러 개면
+  값이 붙은 줄을 통째로 넣거나, Dev Mode에 보이는 변수 이름으로 다시 찾으세요.
+</Aside>
+
+## 이름 읽는 법
+
+피그마 경로에서 `Semantic/`, `Primitives/`를 떼고 kebab-case로 바꾸면 토큰 이름입니다. 끝의 단계 숫자도 남깁니다. CSS 변수는 앞에 `--umc-color-`를 붙인 이름입니다.
+
+| 피그마 변수                        | 토큰 이름                 | CSS 변수                              | Tailwind                       |
+| ---------------------------------- | ------------------------- | ------------------------------------- | ------------------------------ |
+| `Semantic/Text/Neutral-Medium-600` | `text-neutral-medium-600` | `--umc-color-text-neutral-medium-600` | `text-neutral-medium-600`      |
+| `Semantic/Fill/Neutral/Weak-75`    | `fill-neutral-weak-75`    | `--umc-color-fill-neutral-weak-75`    | `bg-fill-neutral-weak-75`      |
+| `Semantic/Border/Error/Strong-500` | `border-error-strong-500` | `--umc-color-border-error-strong-500` | `border-error-strong-500`      |
+| `Primitives/Teal/Teal-300`         | `teal-300`                | `--umc-color-teal-300`                | `bg-teal-300`, `text-teal-300` |
+
+몇몇 이름은 규칙대로 다듬었습니다.
+
+- 팔레트 이름 반복은 한 번만 씁니다: `Teal/Teal-300` → `teal-300`, `Grey/TealGrey-75` → `teal-grey-75`
+- 괄호와 기호는 하이픈이 됩니다: `Weak-Hover(Pressed)` → `weak-hover-pressed`, `Challenger&Super-Admin` → `challenger-super-admin`
+- 오타가 있는 `Fill/Neutral/Disalbed`는 `fill-neutral-disabled`입니다
+
+## Semantic
+
+### Text
+
+클래스는 `text-<이름>`입니다.
+
+<SemanticColors group="text" />
+
+### Background
+
+클래스는 `bg-background-<이름>`입니다.
+
+<SemanticColors group="background" />
+
+### Surface
+
+클래스는 `bg-surface-<이름>`입니다.
+
+<SemanticColors group="surface" />
+
+### Fill
+
+클래스는 `bg-fill-<이름>`입니다.
+
+<SemanticColors group="fill" />
+
+### Border
+
+클래스는 `border-<이름>`입니다. 한 변만 칠할 때는 `border-t-<이름>`처럼 변 방향을 붙입니다.
+
+<SemanticColors group="border" />
+
+### Icon
+
+아이콘은 `currentColor`로 칠해지므로 `text-icon-<이름>`으로 색을 줍니다.
+
+<SemanticColors group="icon" />
+
+### Tag
+
+Dev Mode 이름을 보면 Weaker는 배경, Medium은 테두리, Strong은 글자에 씁니다. Weak는 태그마다 배경이거나 테두리입니다. `bg-`, `border-`, `text-` 뒤에 이름을 붙입니다.
+
+<SemanticColors group="tag" />
+
+### Dimmed
+
+Dimmed는 primitive를 참조하지 않습니다. TealGrey-900에 불투명도 20%, 65%, 85%를 섞은 값입니다. 클래스는 `bg-dimmed-<이름>`입니다.
+
+<SemanticColors group="dimmed" />
+
+## Primitive
+
+피그마가 primitive를 바로 칠한 곳에만 씁니다. 칸 아래 이름을 `bg-`, `text-`, `border-` 뒤에 붙입니다(예: `text-teal-700`).
+
+<PrimitivePalettes />

@@ -1,0 +1,134 @@
+# 컴포넌트 구현 규칙
+
+새 컴포넌트를 추가할 때 지키는 파일 구조, CSS, 값, 테스트, 문서 규칙입니다.
+
+- 독자: `@umc-product/react`에 컴포넌트를 추가하는 개발자
+- 소유자: UMC PRODUCT Design Chapter
+- 기준일: 2026-10-09
+
+기준 구현은 `packages/react/src/button/`입니다. 막히면 Button이 같은 문제를 어떻게 풀었는지 먼저 봅니다.
+
+## 파일 구조
+
+```
+packages/react/src/<group>/
+  index.ts                  그룹이 내보내는 컴포넌트와 타입
+  <group>.css               그룹 CSS. 컴포넌트 CSS를 @import로 모은다
+  <component>/
+    Component.tsx
+    component.css
+    Component.test.tsx      동작 테스트
+    Component.types.test.ts 타입 테스트
+    figma-spec.json         피그마 대조 기준
+apps/docs/src/content/docs/components/<group>/<component>.mdx
+apps/docs/src/components/react/<group>/<Component>Examples.tsx
+```
+
+그룹은 `forms`, `selection`, `display`, `overlay`, `shell`이고, Button, TextButton처럼 단독 컴포넌트는 자기 폴더를 가집니다. 단독 컴포넌트의 문서는 `components/actions/`에, 예시는 그룹 폴더 없이 `apps/docs/src/components/react/`에 둡니다. `styles.css`와 `src/index.ts`는 그룹 단위로만 불러오므로, 그룹에 컴포넌트를 더할 때는 이 두 파일을 고치지 않습니다. 단독 컴포넌트는 자기 폴더가 곧 그룹이라 두 파일에 한 줄씩 더합니다.
+
+## 피그마 속성을 코드로 옮기는 규칙
+
+| 피그마                                           | 코드                                                            |
+| ------------------------------------------------ | --------------------------------------------------------------- |
+| `Size`                                           | `size`(소문자)                                                  |
+| `Style`, 선택 표현의 `Type`                      | `variant`                                                       |
+| `Color`                                          | `color`                                                         |
+| 구조나 기능의 `Type`                             | 같은 요소면 prop, 요소나 동작이 다르면 컴포넌트 분리            |
+| `State`(Hover, Pressed, Focused, Typing, Filled) | prop 없이 CSS 상태                                              |
+| `State=Loading`, `Disabled`                      | `isLoading`, `disabled`                                         |
+| `Selected`                                       | 그룹은 `value`, 체크박스는 `checked`, 그 밖의 단독은 `selected` |
+| `State=On`, `Off`(스위치)                        | `checked`                                                       |
+| `Left Label`, `Right Label`                      | `labelPlacement`(`"start" \| "end"`)                            |
+| `Error`                                          | `invalid` + `errorMessage`                                      |
+| `Leading Icon`, `Trailing Icon`                  | `leadingIcon`, `trailingIcon`                                   |
+| `Show X` + `X`                                   | prop `x` 하나(값이 있으면 표시)                                 |
+| `Mode`, `Appearance`                             | `mode`                                                          |
+| `Platform`, 이름이 `.`으로 시작하는 속성         | 옮기지 않음                                                     |
+
+값은 제어형 `value` + `onValueChange`, 비제어형 `defaultValue`로 받습니다. 텍스트 입력은 네이티브 `value`, `onChange`도 그대로 받아 `register()`와 바로 연결되게 합니다.
+
+## CSS
+
+- 모든 규칙을 `@layer components { … }` 안에 둡니다. 앱의 Tailwind 유틸리티가 컴포넌트를 덮어쓸 수 있게 하려는 것입니다.
+- 루트 클래스는 `umc-<component>`, 부품은 `umc-<component>__<part>`입니다.
+- 변형은 data 속성(`data-variant`, `data-size`)으로 고르고, 변형 규칙은 팔레트 변수(`--umc-<component>-bg`)만 바꿉니다. 상태 규칙은 그 변수를 실제 속성에 넣습니다. 상태 규칙에서 팔레트 변수를 다시 정의하면 자기 참조가 생겨 값이 무효가 되니 피합니다.
+- 토큰에 없는 값은 `--umc-<component>-<role>` 변수에 담습니다. 색 리터럴이 규칙 본문에 바로 나오면 계약 테스트가 실패합니다.
+- 포커스는 `:focus-visible`에 `outline: 2px solid var(--umc-color-border-primary-strong-500)`를 줍니다. 혼자 있는 요소는 `outline-offset: 2px`, 붙어 있는 요소는 `-2px`입니다.
+- 떠 있는 요소의 쌓임 순서는 `--umc-z-dimmed`, `--umc-z-dropdown`, `--umc-z-tooltip`, `--umc-z-toast`를 씁니다.
+- 나타나고 사라지는 동작은 `var(--umc-motion-duration)` 동안 투명도를 바꾸고, `prefers-reduced-motion: reduce`이면 없앱니다.
+
+## 피그마 값
+
+1. 피그마가 3기 변수를 연결했으면 토큰을 씁니다. 코드 출력에는 semantic 변수가 codeSyntax로만 보이므로 codeSyntax와 값으로 토큰을 찾습니다.
+2. 이름 있는 스타일(텍스트 스타일, 그림자)은 토큰 패키지에 있는 것을 씁니다.
+3. 이름 없는 값, 스타일을 덮어쓴 값, 내보낸 3기 변수에 없는 값은 피그마 값 그대로 역할 변수에 담고 저장소의 `design-questions.md`에 적습니다. 일부러 다르게 옮긴 값은 `figma-spec.json`의 `figmaDiffers`에 이유를 남깁니다.
+
+## 접근성과 동작
+
+- 상호작용이 있는 컴포넌트는 Base UI(`@base-ui/react`)로 만들고, 상태는 Base UI가 다는 data 속성(`data-checked`, `data-disabled`, `data-highlighted`, `data-open` 등)으로 꾸밉니다.
+- 훅, Base UI, 이벤트 핸들러를 쓰는 파일은 첫 줄에 `"use client"`를 둡니다. 계약 테스트가 검사합니다.
+- 키보드만으로 모든 동작을 할 수 있어야 하고, 아이콘만 있는 버튼에는 접근 가능한 이름이 있어야 합니다.
+
+## 테스트
+
+- 동작 테스트: Testing Library와 user-event로 사용자가 하는 행동을 그대로 재현합니다. 역할과 이름으로 요소를 찾습니다.
+- 타입 테스트: `expectTypeOf`로 props 타입을 고정합니다. `@ts-expect-error` 같은 주석은 쓰지 않습니다.
+- 계약 테스트(`src/internal/contract`): 새 CSS와 tsx 파일을 자동으로 검사하므로 따로 쓰지 않습니다.
+
+## 피그마 대조 기준
+
+`figma-spec.json`에 대표 변형의 기대 계산 스타일을 적고, 문서 예시에 같은 `data-spec-id`를 붙입니다.
+
+```json
+{
+  "component": "Button",
+  "figmaSection": "<피그마 섹션 노드 id>",
+  "page": "/components/actions/button/",
+  "nodes": [
+    {
+      "specId": "button-fill-primary-lg-default",
+      "node": "<피그마 노드 id>",
+      "variant": "Size=Lg, Color=Primary, Style=Fill, State=Default",
+      "expected": { "background-color": "#008a80", "height": "56px" }
+    }
+  ]
+}
+```
+
+- 색은 `#rrggbb` 또는 `#rrggbbaa`, 길이는 px로 적습니다.
+- 축약 속성(`border`, `padding`, `gap`, `border-radius`) 대신 개별 속성(`border-top-color`, `padding-top`, `column-gap`, `border-top-left-radius`)을 씁니다. 브라우저가 계산하는 값과 바로 비교하기 위해서입니다.
+- 키가 `~`로 끝나면 부분 일치로 비교합니다(예: `"box-shadow~"`). 크롬은 그림자 색을 앞에 쓰므로 그림자는 부분 일치로 적습니다.
+- 재려는 요소가 컴포넌트 안쪽 부품이면 예시를 `data-spec-id` 래퍼로 감싸고 `"target"`에 래퍼 기준 CSS 선택자를 적습니다(예: `".umc-option-button[data-checked]"`). 문서 검증을 위해 공개 API에 prop을 추가하지 않습니다.
+- `"interaction": "hover"`이면 요소에 마우스를 올린 뒤 비교합니다.
+- 피그마와 일부러 다르게 만든 값은 `figmaDiffers`에 이유를 적습니다.
+
+## 문서
+
+컴포넌트마다 MDX 한 페이지를 씁니다. 순서는 소개와 import 예시, 변형, 상태, 동작, props 표, 알아 둘 점입니다. 문서에는 피그마 노드 ID, 디자인 팀 확인 사항, 피그마와 다른 점을 쓰지 않습니다. 예시는 React 파일에 만들어 MDX에서 렌더하고, 상호작용이 필요한 예시만 `client:visible`을 붙입니다.
+
+## 예시 코드 툴팁
+
+문서 예시에 마우스를 올리면 그 예시의 코드가 툴팁으로 보입니다. 빌드할 때 `apps/docs/src/lib/component-code-plugin.mjs`가 예시 파일의 JSX 런타임을 바꿉니다. 그러면 `@umc-product/react`와 `@umc-product/icons`에서 가져온 컴포넌트가 자기 props를 JSX로 적은 `data-docs-code` 속성을 받습니다. Checkbox처럼 받은 속성을 DOM에 넘기지 않는 컴포넌트는 hydrate된 뒤 React 트리에서 같은 속성 값을 읽습니다. 툴팁은 마우스 아래에서 가장 바깥에 있는 코드를 보여 줍니다.
+
+- 디자인 시스템 컴포넌트의 props와 children에는 디자인 시스템 컴포넌트나 HTML 요소를 넘깁니다. 문서 전용 도우미 컴포넌트를 넘기면 툴팁에 `…`로 나오니, 반복되는 마크업은 렌더 함수로 펼칩니다(예: `{renderPhoneSlot()}`).
+- 함수 props는 `onClick={…}`처럼 자리만 보입니다. `data-spec-id`처럼 `data-`로 시작하는 props는 툴팁에서 빠집니다.
+- `className`, `aria-label` 같은 값은 넘긴 그대로 보입니다. 소비자가 따라 써도 되는 값만 예시에 넣으세요.
+- `ToastProvider`, `LinkProvider`처럼 이름이 `Provider`로 끝나는 컴포넌트는 앱 설정이라 툴팁에 띄우지 않습니다. 그 안의 컴포넌트 코드가 보입니다.
+- 받은 속성을 DOM에 넘기지 않는 컴포넌트를 정적 예시로 그리면 툴팁이 뜨지 않습니다. 이런 예시에는 `client:visible`을 붙입니다.
+- 오버레이처럼 DS 클래스로 모양만 그린 미리보기는 실제 컴포넌트가 아니라서 코드가 없습니다. 미리보기 루트에 `codeAttributeOf(componentCodeOf(Dialog, props))`를 펼쳐 같은 모양을 만드는 코드를 붙이고, 사용자가 채울 자리(trigger, children)는 `CODE_PLACEHOLDER`로 둡니다. 명령형 API는 `callCodeOf("toast.show", options)`로 적습니다.
+- `componentCodeOf`의 props는 그 컴포넌트의 props 타입으로 검사됩니다. 미리보기 파일에서 직접 import하지 않은 컴포넌트를 넘기면 빌드가 멈춥니다.
+- 툴팁은 코드를 `apps/docs/src/lib/jsx-tokens.ts`로 나눠 VS Code Dark+ 색으로 칠합니다. 꺾쇠는 글자 대비 4.5:1을 넘기려고 Dark+보다 조금 밝은 `#888888`을 씁니다.
+- 직렬화기와 토크나이저는 `apps/docs/src/lib/*.test.ts`가 지킵니다. 코드 형식을 바꾸면 `pnpm --filter @umc-product/docs test`로 확인합니다.
+- 툴팁은 마우스로만 엽니다. 키보드와 화면 낭독기 사용자는 페이지의 코드 블록으로 같은 사용법을 봅니다.
+
+## 모든 변형 그리드
+
+페이지마다 "모든 변형" 절에 피그마 변형을 빠짐없이 그립니다. 그리드는 손으로 쓴 목록이 아니라 피그마 스냅샷을 돌면서 칸을 만듭니다. 그래서 피그마에 변형이 생기면 칸도 따라 생깁니다.
+
+- **스냅샷**: `apps/docs/src/data/figma-variants.json`에 세트마다 노드 id와 변형 이름을 적습니다. 피그마 `01. Component` 페이지의 메타데이터에서 만듭니다.
+- **그리드**: `VariantGrid`에 세트 키와 행·열·구역으로 쓸 축을 넘기고, `render`에서 변형 하나를 실제 컴포넌트로 그립니다. 칸 하나에 변형이 둘 이상 걸리면 빌드가 멈춥니다. 피그마 값을 코드 값으로 바꿀 때는 `lookup`을 써서, 대응표에 없는 값이 오면 빌드가 멈추게 합니다.
+- **상태 강제**: Hover, Pressed, Focus처럼 마우스나 키보드가 있어야 보이는 상태는 `ForceState`로 감쌉니다. 문서의 Head가 `.umc-` 규칙 중 `:hover`, `:active`, `:focus` 계열, `[data-popup-open]`, `[data-highlighted]`가 들어간 규칙을 `[data-force-state~="hover"]` 같은 조상 선택자로 복제합니다. 같은 레이어, 같은 순서에 넣으므로 실제 상호작용과 같은 값이 나옵니다. 컴포넌트 CSS는 건드리지 않습니다.
+- **미구현**: 코드에 없는 변형은 `NotImplemented`에 이유를 적어 칸을 채웁니다. 저장소 `design-questions.md`에도 같은 항목을 올립니다.
+- **검사**: `pnpm docs:build` 뒤 `pnpm docs:variants`를 실행합니다. 스냅샷의 모든 변형이 문서에 정확히 한 번 그려졌는지 확인하고, 빠지거나 겹치면 실패합니다.
+
+피그마가 바뀌면 스냅샷을 다시 받고, 새 값에 맞춰 `render`의 대응표를 고친 뒤 검사를 돌립니다.

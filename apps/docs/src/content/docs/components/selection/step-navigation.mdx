@@ -1,0 +1,49 @@
+---
+title: StepNavigation
+description: 다단계 흐름에서 현재 위치를 시각적으로 안내하는 단계 표시 컴포넌트입니다.
+---
+
+import {
+  StepNavigationAllVariants,
+  StepNavigationBasic,
+  StepNavigationStates,
+} from "../../../../components/react/selection/StepNavigationExamples.tsx"
+
+피그마 `Web/Step Navigation`을 옮긴 컴포넌트입니다. Segmented Control과 같은 틀에 숫자 배지와 단계 이름을 놓고, 현재 단계만 흰 배경으로 띄웁니다. 현재 단계에는 `aria-current="step"`이 붙습니다. 단계는 눌러서 이동하지 않으며, 이동은 상위 컴포넌트가 `currentStep`을 바꿔서 처리합니다.
+
+```tsx
+import { StepNavigation } from "@umc-product/react"
+
+<StepNavigation
+  steps={["기본 정보", "모집 문항", "미리보기"]}
+  currentStep={1}
+  aria-label="등록 단계"
+/>
+```
+
+## 기본
+
+<StepNavigationBasic client:visible />
+
+## 단계별 상태
+
+<StepNavigationStates client:visible />
+
+## 모든 변형
+
+피그마 Segmented Control 버튼의 번호형 3개를 단계 하나짜리 내비게이션으로 그렸습니다. 칸에 마우스를 올리면 코드가 보이고, hover 같은 상태는 켜 둔 모습입니다.
+
+<StepNavigationAllVariants client:visible />
+
+## props
+
+| prop          | 타입          | 기본값        | 설명                      |
+| ------------- | ------------- | ------------- | ------------------------- |
+| `steps`       | `ReactNode[]` | 필수          | 단계 이름 배열            |
+| `currentStep` | `number`      | 필수          | 현재 단계 번호(1부터)     |
+| `aria-label`  | `string`      | `"단계 탐색"` | 네비게이션 접근 가능 이름 |
+| `className`   | `string`      | 없음          | 루트 요소에 추가할 클래스 |
+
+## 알아 둘 점
+
+- 단계를 눌러 이동하지 않는 진행 표시입니다. 이동은 앱의 이전·다음 버튼으로 처리합니다.

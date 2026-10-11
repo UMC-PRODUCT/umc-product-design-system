@@ -1,0 +1,102 @@
+{
+  "component": "ContextSwitcher",
+  "figmaSection": "2281:6450",
+  "page": "/components/shell/context-switcher/",
+  "nodes": [
+    {
+      "specId": "context-switcher-trigger",
+      "node": "2281:6451",
+      "variant": "State=Default",
+      "target": ".umc-context-switcher",
+      "expected": {
+        "width": "172px",
+        "height": "29px",
+        "padding-top": "4px",
+        "padding-right": "8px",
+        "padding-bottom": "4px",
+        "padding-left": "12px",
+        "border-top-left-radius": "8px",
+        "background-color": "#eff0f0",
+        "color": "#606262",
+        "font-size": "14px",
+        "font-weight": "400",
+        "line-height": "21px",
+        "letter-spacing": "0px"
+      }
+    },
+    {
+      "specId": "context-switcher-trigger-icon",
+      "node": "2929:72380",
+      "variant": "icon/Expand_more/16 icon/Regular",
+      "target": ".umc-context-switcher__icon",
+      "expected": {
+        "width": "16px",
+        "height": "16px",
+        "color": "#7e7f7f"
+      }
+    },
+    {
+      "specId": "context-switcher-trigger-hover",
+      "interaction": "hover",
+      "node": "2281:6455",
+      "variant": "State=Hover & Pressed",
+      "target": ".umc-context-switcher",
+      "expected": {
+        "background-color": "#e2e3e3",
+        "box-shadow~": "#d3d8d833 1px 1px 2px 0px inset"
+      },
+      "figmaDiffers": {
+        "box-shadow~": "피그마 그림자(#D3D8D833, 1, 1, 2)는 이름 있는 스타일 값과 다르다. 피그마 값을 컴포넌트 변수로 썼다"
+      }
+    },
+    {
+      "specId": "context-switcher-popup",
+      "interaction": "open",
+      "node": "2281:6461",
+      "variant": "State=Selected, 목록",
+      "target": ".umc-context-switcher__popup",
+      "expected": {
+        "width": "172px",
+        "padding-top": "2px",
+        "padding-left": "2px",
+        "border-top-left-radius": "8px",
+        "background-color": "#ffffff",
+        "box-shadow~": "#d3d8d826 1px 1px 2px 0px inset, #ffffff40 -1px -1px 1px 0px inset"
+      }
+    },
+    {
+      "specId": "context-switcher-option",
+      "interaction": "open",
+      "node": "2281:4275",
+      "variant": "Dropdown/Item, Size=Xs, State=Default",
+      "target": ".umc-context-switcher__option[data-unchecked]",
+      "expected": {
+        "width": "168px",
+        "height": "29px",
+        "padding-left": "12px",
+        "padding-right": "12px",
+        "border-top-left-radius": "8px",
+        "color": "#0f1010",
+        "font-size": "14px",
+        "font-weight": "400",
+        "line-height": "21px"
+      }
+    },
+    {
+      "specId": "context-switcher-option-checked",
+      "interaction": "open",
+      "node": "2281:4284",
+      "variant": "Dropdown/Item, Size=Xs, State=Active",
+      "target": ".umc-context-switcher__option[data-checked]",
+      "expected": {
+        "height": "29px",
+        "padding-left": "12px",
+        "padding-right": "8px",
+        "background-color": "#f4fbfa",
+        "color": "#02746c",
+        "font-weight": "500",
+        "box-shadow~": "#d3d8d833 1px 1px 2px 0px inset"
+      }
+    }
+  ]
+}

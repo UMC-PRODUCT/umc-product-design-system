@@ -1,0 +1,51 @@
+@layer components {
+  .umc-check-button {
+    display: inline-flex;
+    flex: none;
+    width: 24px;
+    height: 24px;
+    color: var(--umc-color-teal-grey-200);
+    cursor: pointer;
+    transition: color var(--umc-motion-duration) ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .umc-check-button[data-checked] {
+    color: var(--umc-color-icon-brand-medium-500);
+  }
+
+  .umc-check-button[data-disabled] {
+    cursor: default;
+  }
+
+  .umc-check-button:focus-visible {
+    border-radius: var(--umc-radius-6);
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .umc-check-button {
+      transition: none;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .umc-check-button {
+      forced-color-adjust: none;
+      color: CanvasText;
+    }
+
+    .umc-check-button[data-checked] {
+      color: Highlight;
+    }
+
+    .umc-check-button[data-disabled] {
+      color: GrayText;
+    }
+
+    .umc-check-button:focus-visible {
+      outline-color: CanvasText;
+    }
+  }
+}

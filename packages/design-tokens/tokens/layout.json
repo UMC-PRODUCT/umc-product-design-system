@@ -1,0 +1,42 @@
+{
+  "grid": {
+    "columns": {
+      "$type": "number",
+      "$value": 12,
+      "$description": "데스크톱 콘텐츠 영역 컬럼 수. 컬럼은 Stretch로 늘어나며 82px은 1440 화면에서 나온 결과값이라 토큰이 아니다 (Figma Desktop Layout No.1 2349:10363, No.2 3466:90474)"
+    },
+    "gutter": {
+      "$type": "dimension",
+      "$value": { "value": 16, "unit": "px" },
+      "$description": "데스크톱 Global Gutter (Figma 2349:10363)"
+    },
+    "margin": {
+      "desktop": {
+        "$type": "dimension",
+        "$value": { "value": 32, "unit": "px" },
+        "$description": "데스크톱 Global Margin (Figma 2349:10363)"
+      },
+      "mobile": {
+        "$type": "dimension",
+        "$value": "{spacing.margin.16}",
+        "$description": "모바일 좌우 여백. 모바일 프레임이 Figma 변수 Spacing/Semantic/Margin/Margin 16을 쓴다 (Figma 2101:4004, 2097:3980)"
+      }
+    }
+  },
+  "layout": {
+    "header": {
+      "height": {
+        "$type": "dimension",
+        "$value": { "value": 80, "unit": "px" },
+        "$description": "Header Area 높이, 화면 전체 폭 (Figma 2349:10363)"
+      }
+    },
+    "sidebar": {
+      "width": {
+        "$type": "dimension",
+        "$value": { "value": 216, "unit": "px" },
+        "$description": "Side menu Area 고정 폭 (Figma 2349:10363)"
+      }
+    }
+  }
+}

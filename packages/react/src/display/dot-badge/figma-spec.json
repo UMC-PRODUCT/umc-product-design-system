@@ -1,0 +1,66 @@
+{
+  "component": "DotBadge",
+  "figmaSection": "2482:5557",
+  "page": "/components/display/badge/",
+  "nodes": [
+    {
+      "specId": "dot-badge-sm-brand",
+      "node": "2482:5558",
+      "variant": "Size=Sm, Color=Brand",
+      "target": ".umc-dot-badge",
+      "expected": {
+        "background-color": "#008a80",
+        "width": "6px",
+        "height": "6px",
+        "border-top-left-radius": "100px"
+      }
+    },
+    {
+      "specId": "dot-badge-md-brand",
+      "node": "2482:5568",
+      "variant": "Size=Md, Color=Brand",
+      "target": ".umc-dot-badge",
+      "expected": {
+        "background-color": "#008a80",
+        "width": "8px",
+        "height": "8px"
+      }
+    },
+    {
+      "specId": "dot-badge-sm-neutral",
+      "node": "2482:5560",
+      "variant": "Size=Sm, Color=Neutral",
+      "target": ".umc-dot-badge",
+      "expected": {
+        "background-color": "#606262"
+      }
+    },
+    {
+      "specId": "dot-badge-sm-error",
+      "node": "2482:5562",
+      "variant": "Size=Sm, Color=Red",
+      "target": ".umc-dot-badge",
+      "expected": {
+        "background-color": "#dc3d3d"
+      }
+    },
+    {
+      "specId": "dot-badge-sm-warning",
+      "node": "2482:5564",
+      "variant": "Size=Sm, Color=Yellow",
+      "target": ".umc-dot-badge",
+      "expected": {
+        "background-color": "#f59b00"
+      }
+    },
+    {
+      "specId": "dot-badge-sm-success",
+      "node": "2482:5566",
+      "variant": "Size=Sm, Color=Success",
+      "target": ".umc-dot-badge",
+      "expected": {
+        "background-color": "#06a768"
+      }
+    }
+  ]
+}

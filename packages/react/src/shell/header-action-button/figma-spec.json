@@ -1,0 +1,60 @@
+{
+  "component": "HeaderActionButton",
+  "figmaSection": "2678:52230",
+  "page": "/components/shell/header/",
+  "nodes": [
+    {
+      "specId": "header-action-button",
+      "node": "2678:52234",
+      "variant": "Property 1=Default, Suffix=False",
+      "target": ".umc-header-action-button",
+      "expected": {
+        "height": "40px",
+        "padding-left": "18px",
+        "padding-right": "18px",
+        "border-top-left-radius": "999px",
+        "background-color": "#fbfcfc",
+        "box-shadow~": "#eff0f0 0px 0px 0px 1px inset",
+        "color": "#606262",
+        "font-size": "16px",
+        "font-weight": "500",
+        "line-height": "23.2px",
+        "letter-spacing": "-0.16px"
+      },
+      "figmaDiffers": {
+        "box-shadow~": "피그마는 기본에 1px 테두리가 있고 hover에서 테두리가 사라진다. 상태가 바뀔 때 크기가 흔들리지 않도록 inset 그림자로 테두리를 그렸다"
+      }
+    },
+    {
+      "specId": "header-action-button-hover",
+      "interaction": "hover",
+      "node": "2678:52239",
+      "variant": "Property 1=Hover, Suffix=False",
+      "target": ".umc-header-action-button",
+      "expected": {
+        "background-color": "#eff0f0",
+        "box-shadow": "none"
+      }
+    },
+    {
+      "specId": "header-action-button-suffix",
+      "node": "2678:52231",
+      "variant": "Property 1=Default, Suffix=True",
+      "target": ".umc-header-action-button",
+      "expected": {
+        "padding-left": "18px",
+        "padding-right": "12px",
+        "column-gap": "6px"
+      }
+    },
+    {
+      "specId": "header-action-button-suffix-icon",
+      "node": "3384:66163",
+      "variant": "Icon/Expand_more 16",
+      "target": ".umc-header-action-button__suffix",
+      "expected": {
+        "color": "#7e7f7f"
+      }
+    }
+  ]
+}

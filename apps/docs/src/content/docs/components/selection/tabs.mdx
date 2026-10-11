@@ -1,0 +1,74 @@
+---
+title: Tabs
+description: 연관된 콘텐츠를 탭으로 구분하는 컴포넌트 집합입니다.
+---
+
+import {
+  TabsAllVariants,
+  TabsBasic,
+  TabsWithIcon,
+} from "../../../../components/react/selection/TabsExamples.tsx"
+
+`Tabs`, `TabList`, `Tab`, `TabPanel` 네 컴포넌트를 조합합니다. `Base UI Tabs`를 기반으로 키보드 탐색과 ARIA 패턴을 자동 처리합니다. 활성 탭 아래 2px 밑줄로 선택 상태를 표시합니다.
+
+```tsx
+import { Tab, TabList, TabPanel, Tabs } from "@umc-product/react"
+
+<Tabs defaultValue="notice">
+  <TabList aria-label="게시판">
+    <Tab value="notice">공지사항</Tab>
+    <Tab value="faq">자주 묻는 질문</Tab>
+  </TabList>
+  <TabPanel value="notice">공지사항 내용</TabPanel>
+  <TabPanel value="faq">자주 묻는 질문 내용</TabPanel>
+</Tabs>
+```
+
+## 기본
+
+화살표 키로 탭을 이동하고 `Enter` 또는 `Space`로 활성화합니다.
+
+<TabsBasic client:visible />
+
+## 아이콘 탭
+
+`icon` prop에 노드를 넘기면 아이콘 전용 탭이 됩니다. 텍스트 레이블이 없으므로 반드시 `aria-label`을 함께 전달합니다.
+
+<TabsWithIcon client:visible />
+
+## 모든 변형
+
+피그마 `Tab Button` 변형 5개를 탭 하나짜리 목록으로 그렸습니다. 칸에 마우스를 올리면 코드가 보이고, hover 같은 상태는 켜 둔 모습입니다.
+
+<TabsAllVariants client:visible />
+
+## props
+
+### Tabs
+
+| prop            | 타입                      | 기본값 | 설명                |
+| --------------- | ------------------------- | ------ | ------------------- |
+| `defaultValue`  | `string`                  | 없음   | 비제어 초기 활성 탭 |
+| `value`         | `string`                  | 없음   | 제어 활성 탭        |
+| `onValueChange` | `(value: string) => void` | 없음   | 탭 변경 핸들러      |
+
+### TabList
+
+| prop         | 타입     | 기본값 | 설명                   |
+| ------------ | -------- | ------ | ---------------------- |
+| `aria-label` | `string` | 없음   | 탭 목록 접근 가능 이름 |
+
+### Tab
+
+| prop         | 타입        | 기본값 | 설명                  |
+| ------------ | ----------- | ------ | --------------------- |
+| `value`      | `string`    | 필수   | 탭 식별자             |
+| `icon`       | `ReactNode` | 없음   | 아이콘 전용 탭용 노드 |
+| `aria-label` | `string`    | 없음   | 아이콘 탭에 필수      |
+
+### TabPanel
+
+| prop          | 타입      | 기본값  | 설명                                                                              |
+| ------------- | --------- | ------- | --------------------------------------------------------------------------------- |
+| `value`       | `string`  | 필수    | 연결된 Tab의 value                                                                |
+| `keepMounted` | `boolean` | `false` | 선택되지 않아도 내용을 숨긴 채 DOM에 남깁니다. 폼 입력값과 검색 색인이 유지됩니다 |

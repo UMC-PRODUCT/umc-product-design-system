@@ -1,0 +1,55 @@
+---
+title: NumericStepper
+description: 버튼으로 숫자를 하나씩 늘리고 줄이는 입력입니다.
+---
+
+import {
+  NumericStepperAllVariants,
+  NumericStepperDefault,
+  NumericStepperDisabled,
+} from "../../../../components/react/forms/NumericStepperExamples.tsx"
+
+피그마 `Numeric Stepper`를 구현했습니다. 피그마 설명대로 값을 바꿀 수 있는 방향의 버튼만 켭니다. 최솟값이면 [−], 최댓값이면 [+]가 꺼집니다. 숫자는 세 자리까지 쓰므로 기본 범위는 0부터 999입니다.
+
+```tsx
+import { NumericStepper } from "@umc-product/react"
+
+<NumericStepper
+  aria-label="Frontend 모집 인원"
+  value={quota}
+  onValueChange={setQuota}
+/>
+```
+
+피그마 예시처럼 파트 이름 옆에 놓을 때는 `aria-label`로 이름을 붙입니다. 아래에서 Design은 0, Backend는 999라 각각 한쪽 버튼이 꺼져 있습니다.
+
+<NumericStepperDefault client:visible />
+
+## 비활성
+
+두 버튼과 숫자를 모두 흐리게 표시합니다.
+
+<NumericStepperDisabled client:visible />
+
+## 모든 변형
+
+피그마 `Numeric Stepper` 2개와 버튼 `.primitive/Numeric Stepper/Button` 4개를 그렸습니다. 버튼 칸은 그 버튼이 그 상태가 되는 값(최솟값, 중간값, 최댓값)을 넣은 전체 스테퍼입니다. 칸에 마우스를 올리면 코드가 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
+
+<NumericStepperAllVariants client:visible />
+
+## props
+
+`Field`의 props를 받습니다.
+
+| prop            | 타입                              | 기본값 | 설명                                |
+| --------------- | --------------------------------- | ------ | ----------------------------------- |
+| `value`         | `number \| null`                  | 없음   | 제어 값                             |
+| `defaultValue`  | `number`                          | 없음   | 비제어 초기값                       |
+| `onValueChange` | `(value: number \| null) => void` | 없음   | 값이 바뀔 때                        |
+| `min`           | `number`                          | `0`    | 최솟값                              |
+| `max`           | `number`                          | `999`  | 최댓값                              |
+| `step`          | `number`                          | `1`    | 한 번에 바뀌는 양                   |
+| `name`          | `string`                          | 없음   | 폼 제출 이름                        |
+| `disabled`      | `boolean`                         | 없음   | 비활성                              |
+| `readOnly`      | `boolean`                         | 없음   | 읽기 전용(값은 보이고 바꿀 수 없음) |
+| `aria-label`    | `string`                          | 없음   | 숫자 입력의 이름                    |

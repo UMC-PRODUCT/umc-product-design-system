@@ -1,0 +1,31 @@
+---
+import { ChevronRightIcon } from "@umc-product/icons"
+import type { ComponentType } from "react"
+
+type Props = {
+  href: string
+  title: string
+  icon: ComponentType<{ size?: number; className?: string }>
+}
+
+const ICON_SIZE = 24
+const ARROW_SIZE = 20
+
+const { href, title, icon: Icon } = Astro.props
+const base = import.meta.env.BASE_URL.replace(/\/?$/, "/")
+---
+
+<a class="docs-section-card not-content" href={`${base}${href}`}>
+  <span class="docs-section-card__icon">
+    <Icon size={ICON_SIZE} />
+  </span>
+  <div class="docs-section-card__body">
+    <span class="docs-section-card__title text-title-4-semibold">{title}</span>
+    <div
+      class="docs-section-card__description text-body-2-regular text-neutral-medium-600"
+    >
+      <slot />
+    </div>
+  </div>
+  <ChevronRightIcon className="docs-section-card__arrow" size={ARROW_SIZE} />
+</a>

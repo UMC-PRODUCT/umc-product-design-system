@@ -1,0 +1,122 @@
+import { render, screen } from "@testing-library/react"
+import userEvent from "@testing-library/user-event"
+import { describe, expect, it, vi } from "vitest"
+
+import { CodeField } from "./CodeField.tsx"
+
+describe("CodeField", () => {
+  it("length개의 input을 렌더한다", () => {
+    render(<CodeField length={6} />)
+    const inputs = screen.getAllByRole("textbox")
+    expect(inputs).toHaveLength(6)
+  })
+
+  it("length=4이면 4개의 input을 렌더한다", () => {
+    render(<CodeField length={4} />)
+    const inputs = screen.getAllByRole("textbox")
+    expect(inputs).toHaveLength(4)
+  })
+
+  it("label이 표시된다", () => {
+    render(<CodeField label="인증코드" />)
+    expect(screen.getByText("인증코드")).toBeInTheDocument()
+  })
+
+  it("invalid이면 errorMessage를 표시한다", () => {
+    render(<CodeField invalid errorMessage="코드가 올바르지 않습니다" />)
+    expect(screen.getByText("코드가 올바르지 않습니다")).toBeInTheDocument()
+  })
+
+  it("invalid이면 흔들림을 거는 칸 묶음에 data-invalid를 단다", () => {
+    const { container, rerender } = render(<CodeField length={4} />)
+    const cells = container.querySelector(".umc-code-field__cells")
+    expect(cells).not.toHaveAttribute("data-invalid")
+    rerender(<CodeField length={4} invalid />)
+    expect(cells).toHaveAttribute("data-invalid")
+  })
+
+  it("onValueComplete가 완성 시 호출된다", async () => {
+    const onValueComplete = vi.fn()
+    const user = userEvent.setup()
+    render(<CodeField length={4} onValueComplete={onValueComplete} />)
+    const inputs = screen.getAllByRole("textbox")
+    await user.type(inputs[0]!, "1234")
+    expect(onValueComplete).toHaveBeenCalledWith("1234")
+  })
+
+  it("onValueChange가 입력마다 호출된다", async () => {
+    const onValueChange = vi.fn()
+    const user = userEvent.setup()
+    render(<CodeField length={4} onValueChange={onValueChange} />)
+    const inputs = screen.getAllByRole("textbox")
+    await user.type(inputs[0]!, "1")
+    expect(onValueChange).toHaveBeenCalled()
+  })
+
+  it("오류 상태에서 셀을 다시 누르면 입력한 숫자를 모두 지운다", async () => {
+    const onValueChange = vi.fn()
+    const user = userEvent.setup()
+    render(
+      <CodeField
+        length={4}
+        defaultValue="1234"
+        invalid
+        onValueChange={onValueChange}
+      />,
+    )
+    const inputs = screen.getAllByRole("textbox")
+    await user.click(inputs[2]!)
+    expect(onValueChange).toHaveBeenCalledWith("")
+    for (const input of inputs) {
+      expect(input).toHaveValue("")
+    }
+  })
+
+  it("기본은 숫자만 받는다", async () => {
+    const onValueChange = vi.fn()
+    const user = userEvent.setup()
+    render(<CodeField length={4} onValueChange={onValueChange} />)
+    const inputs = screen.getAllByRole("textbox")
+    await user.type(inputs[0]!, "a1")
+    expect(onValueChange).toHaveBeenLastCalledWith("1")
+  })
+
+  it("validationType이 alphanumeric이면 영문과 숫자를 받는다", async () => {
+    const onValueComplete = vi.fn()
+    const user = userEvent.setup()
+    render(
+      <CodeField
+        length={4}
+        validationType="alphanumeric"
+        onValueComplete={onValueComplete}
+      />,
+    )
+    const inputs = screen.getAllByRole("textbox")
+    await user.type(inputs[0]!, "AB12")
+    expect(onValueComplete).toHaveBeenCalledWith("AB12")
+  })
+
+  it("normalizeValue가 돌려준 값으로 입력을 바꾼다", async () => {
+    const onValueComplete = vi.fn()
+    const user = userEvent.setup()
+    render(
+      <CodeField
+        length={4}
+        validationType="alphanumeric"
+        normalizeValue={(value) => value.toUpperCase()}
+        onValueComplete={onValueComplete}
+      />,
+    )
+    const inputs = screen.getAllByRole("textbox")
+    await user.type(inputs[0]!, "ab12")
+    expect(onValueComplete).toHaveBeenCalledWith("AB12")
+  })
+
+  it("오류가 아니면 셀을 눌러도 입력을 유지한다", async () => {
+    const user = userEvent.setup()
+    render(<CodeField length={4} defaultValue="1234" />)
+    const inputs = screen.getAllByRole("textbox")
+    await user.click(inputs[1]!)
+    expect(inputs[0]).toHaveValue("1")
+  })
+})

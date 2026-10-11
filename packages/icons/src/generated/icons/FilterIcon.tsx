@@ -1,0 +1,20 @@
+import { createIcon } from "../../create-icon.tsx"
+
+export const FilterIcon = createIcon({
+  name: "FilterIcon",
+  defaultWeight: "regular",
+  weights: {
+    thin: {
+      viewBox: "0 0 24 24",
+      content: <><path d="M11.5 7.5L21.5 7.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" /><circle cx="9" cy="7.5" r="2.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" /><path d="M3 7.5H6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" /><path d="M13.25 16.5H3.25" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" /><circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 18.25 14)" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" /><path d="M21.75 16.5H18.75" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" /></>,
+    },
+    regular: {
+      viewBox: "0 0 24 24",
+      content: <><path d="M11.5 7.5L21.5 7.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /><circle cx="9" cy="7.5" r="2.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /><path d="M3 7.5H6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /><path d="M13.25 16.5H3.25" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /><circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 18.25 14)" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /><path d="M21.75 16.5H18.75" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></>,
+    },
+    fill: {
+      viewBox: "0 0 24 24",
+      content: <path d="M15.75 13C17.3355 13 18.6742 14.0543 19.1045 15.5H21.75C22.3023 15.5 22.75 15.9477 22.75 16.5C22.75 17.0523 22.3023 17.5 21.75 17.5H19.1045C18.6742 18.9457 17.3355 20 15.75 20C14.1645 20 12.8258 18.9457 12.3955 17.5H3.25C2.69771 17.5 2.25 17.0523 2.25 16.5C2.25 15.9477 2.69771 15.5 3.25 15.5H12.3955C12.8258 14.0543 14.1645 13 15.75 13ZM15.75 15C14.9216 15 14.25 15.6716 14.25 16.5C14.25 17.3284 14.9216 18 15.75 18C16.5784 18 17.25 17.3284 17.25 16.5C17.25 15.6716 16.5784 15 15.75 15ZM9 4C10.5855 4 11.9242 5.05434 12.3545 6.5H21.5C22.0523 6.5 22.5 6.94772 22.5 7.5C22.5 8.05228 22.0523 8.5 21.5 8.5H12.3545C11.9242 9.94566 10.5855 11 9 11C7.41455 11 6.07583 9.94566 5.64551 8.5H3C2.44772 8.5 2 8.05228 2 7.5C2 6.94772 2.44772 6.5 3 6.5H5.64551C6.07583 5.05434 7.41455 4 9 4ZM9 6C8.17157 6 7.5 6.67157 7.5 7.5C7.5 8.32843 8.17157 9 9 9C9.82843 9 10.5 8.32843 10.5 7.5C10.5 6.67157 9.82843 6 9 6Z" fill="currentColor" />,
+    },
+  },
+})

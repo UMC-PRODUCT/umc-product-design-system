@@ -1,0 +1,52 @@
+@layer components {
+  .umc-header-home-link {
+    --umc-header-home-link-fg: var(--umc-color-icon-neutral-stronger-700);
+    --umc-header-home-link-active-fg: var(--umc-color-icon-brand-strong-600);
+
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 54px;
+    padding: var(--umc-spacing-padding-16);
+    color: var(--umc-header-home-link-fg);
+    text-decoration: none;
+    transition: color var(--umc-motion-duration) ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .umc-header-home-link:has(.umc-logo-lockup[data-labeled]) {
+    min-width: 200px;
+  }
+
+  .umc-header__logo:has(.umc-logo-lockup[data-labeled]) {
+    padding-inline-start: 34px;
+  }
+
+  .umc-header[data-mode="dark"] .umc-header-home-link {
+    --umc-header-home-link-fg: var(--umc-color-teal-50);
+    --umc-header-home-link-active-fg: var(--umc-color-teal-200);
+  }
+
+  .umc-header-home-link:active {
+    color: var(--umc-header-home-link-active-fg);
+  }
+
+  @media (hover: hover) {
+    .umc-header-home-link:hover {
+      color: var(--umc-header-home-link-active-fg);
+    }
+  }
+
+  .umc-header-home-link:focus-visible {
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .umc-header-home-link {
+      transition: none;
+    }
+  }
+}

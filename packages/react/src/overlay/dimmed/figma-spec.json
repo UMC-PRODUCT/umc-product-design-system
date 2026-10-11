@@ -1,0 +1,34 @@
+{
+  "component": "Dimmed",
+  "figmaSection": "2621:33088",
+  "page": "/components/overlay/dimmed/",
+  "nodes": [
+    {
+      "specId": "dimmed-weak",
+      "node": "2621:33091",
+      "variant": "Intensity=Weak",
+      "expected": {
+        "background-color": "#0f101033",
+        "position": "absolute"
+      }
+    },
+    {
+      "specId": "dimmed-medium",
+      "node": "2621:33089",
+      "variant": "Intensity=Medium",
+      "expected": {
+        "background-color": "#0f1010a6",
+        "position": "absolute"
+      }
+    },
+    {
+      "specId": "dimmed-strong",
+      "node": "2621:33093",
+      "variant": "Intensity=Strong",
+      "expected": {
+        "background-color": "#0f1010d9",
+        "position": "absolute"
+      }
+    }
+  ]
+}

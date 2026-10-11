@@ -1,0 +1,45 @@
+@layer components {
+  .umc-dot-badge {
+    display: inline-block;
+    flex: none;
+    border-radius: 100px;
+    background-color: var(--umc-dot-badge-color);
+  }
+
+  .umc-dot-badge[data-size="sm"] {
+    width: 6px;
+    height: 6px;
+  }
+
+  .umc-dot-badge[data-size="md"] {
+    width: 8px;
+    height: 8px;
+  }
+
+  .umc-dot-badge[data-color="brand"] {
+    --umc-dot-badge-color: var(--umc-color-teal-500);
+  }
+
+  .umc-dot-badge[data-color="neutral"] {
+    --umc-dot-badge-color: var(--umc-color-teal-grey-600);
+  }
+
+  .umc-dot-badge[data-color="error"] {
+    --umc-dot-badge-color: var(--umc-color-red-500);
+  }
+
+  .umc-dot-badge[data-color="warning"] {
+    --umc-dot-badge-color: var(--umc-color-yellow-500);
+  }
+
+  .umc-dot-badge[data-color="success"] {
+    --umc-dot-badge-color: var(--umc-color-green-500);
+  }
+
+  @media (forced-colors: active) {
+    .umc-dot-badge {
+      forced-color-adjust: none;
+      background-color: ButtonText;
+    }
+  }
+}

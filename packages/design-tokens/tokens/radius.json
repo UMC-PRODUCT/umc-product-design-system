@@ -1,0 +1,210 @@
+{
+  "radius": {
+    "6": {
+      "$type": "dimension",
+      "$value": {
+        "value": 6,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Radius/Primitive/6",
+          "variableId": "VariableID:2547:25220"
+        }
+      }
+    },
+    "8": {
+      "$type": "dimension",
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Radius/Primitive/8",
+          "variableId": "VariableID:2559:23238"
+        }
+      }
+    },
+    "10": {
+      "$type": "dimension",
+      "$value": {
+        "value": 10,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Radius/Primitive/10",
+          "variableId": "VariableID:2066:7794"
+        }
+      }
+    },
+    "12": {
+      "$type": "dimension",
+      "$value": {
+        "value": 12,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Radius/Primitive/12",
+          "variableId": "VariableID:2066:7792"
+        }
+      }
+    },
+    "14": {
+      "$type": "dimension",
+      "$value": {
+        "value": 14,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Radius/Primitive/14",
+          "variableId": "VariableID:2066:7787"
+        }
+      }
+    },
+    "16": {
+      "$type": "dimension",
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Radius/Primitive/16",
+          "variableId": "VariableID:2066:7785"
+        }
+      }
+    },
+    "18": {
+      "$type": "dimension",
+      "$value": {
+        "value": 18,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Radius/Primitive/18",
+          "variableId": "VariableID:2066:7783"
+        }
+      }
+    },
+    "20": {
+      "$type": "dimension",
+      "$value": {
+        "value": 20,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Radius/Primitive/20",
+          "variableId": "VariableID:2066:7786"
+        }
+      }
+    },
+    "24": {
+      "$type": "dimension",
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Radius/Primitive/24",
+          "variableId": "VariableID:2066:7781"
+        }
+      }
+    },
+    "full": {
+      "$type": "dimension",
+      "$value": {
+        "value": 999,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Radius/Primitive/Full",
+          "variableId": "VariableID:2066:7782"
+        }
+      }
+    },
+    "text-field": {
+      "box": {
+        "$type": "dimension",
+        "$value": "{radius.14}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Radius/Semantic/Text Field/Box",
+            "variableId": "VariableID:2066:7780"
+          }
+        }
+      }
+    },
+    "button": {
+      "10": {
+        "$type": "dimension",
+        "$value": "{radius.10}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Radius/Semantic/Button/R Button 10",
+            "variableId": "VariableID:2066:7784"
+          }
+        }
+      },
+      "12": {
+        "$type": "dimension",
+        "$value": "{radius.12}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Radius/Semantic/Button/R Button 12",
+            "variableId": "VariableID:2066:7789"
+          }
+        }
+      },
+      "14": {
+        "$type": "dimension",
+        "$value": "{radius.14}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Radius/Semantic/Button/R Button 14",
+            "variableId": "VariableID:2066:7791"
+          }
+        }
+      },
+      "16": {
+        "$type": "dimension",
+        "$value": "{radius.16}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Radius/Semantic/Button/R Button 16",
+            "variableId": "VariableID:2066:7790"
+          }
+        }
+      }
+    },
+    "toast": {
+      "$type": "dimension",
+      "$value": "{radius.14}",
+      "$extensions": {
+        "umc.figma": {
+          "name": "Radius/Semantic/Toast/Toast",
+          "variableId": "VariableID:2066:7788"
+        }
+      }
+    },
+    "segmented-control": {
+      "xs": {
+        "$type": "dimension",
+        "$value": "{radius.12}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Radius/Semantic/Segmented Control/XS",
+            "variableId": "VariableID:2066:7793"
+          }
+        }
+      }
+    }
+  }
+}

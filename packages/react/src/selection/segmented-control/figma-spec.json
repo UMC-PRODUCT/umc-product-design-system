@@ -1,0 +1,72 @@
+{
+  "component": "SegmentedControl",
+  "figmaSection": "2505:14204",
+  "page": "/components/selection/segmented-control/",
+  "nodes": [
+    {
+      "specId": "segmented-control-container",
+      "node": "2581:16141",
+      "variant": "Web/Segmented Control",
+      "target": ".umc-segmented-control",
+      "expected": {
+        "background-color": "#f7f8f8",
+        "height": "46px",
+        "padding-top": "4px",
+        "padding-left": "4px",
+        "border-top-left-radius": "14px",
+        "column-gap": "8px",
+        "box-shadow~": "rgba(211, 216, 216, 0.15) 1px 1px 2px 0px inset"
+      },
+      "figmaDiffers": {
+        "box-shadow~": "피그마는 이름이 같은 Shadow/Inner/Neutral_2의 다른 정의(#E4E4E433, -1, 2.5, 4)를 쓴다. 이름 있는 스타일은 토큰을 쓰는 규칙에 따라 토큰 정의를 썼다"
+      }
+    },
+    {
+      "specId": "segmented-control-item-selected",
+      "node": "2281:6417",
+      "variant": "State=Selected, Type=Defalut, Align=Center",
+      "target": ".umc-segmented-control__item[data-checked]",
+      "expected": {
+        "background-color": "#ffffff",
+        "color": "#282a2a",
+        "height": "38px",
+        "min-width": "100px",
+        "padding-left": "12px",
+        "padding-right": "12px",
+        "border-top-left-radius": "12px",
+        "font-size": "16px",
+        "font-weight": "600",
+        "line-height": "22.4px",
+        "letter-spacing": "-0.32px",
+        "box-shadow~": "rgba(99, 196, 184, 0.2) 0px 1px 2px 0px, rgba(156, 163, 163, 0.3) 0px 0px 10px 0px"
+      }
+    },
+    {
+      "specId": "segmented-control-item-unselected",
+      "node": "2281:6419",
+      "variant": "State=Unselected, Type=Defalut, Align=Center",
+      "target": ".umc-segmented-control__item[data-unchecked]",
+      "expected": {
+        "background-color": "#00000000",
+        "color": "#02746c",
+        "height": "38px",
+        "font-weight": "600"
+      }
+    },
+    {
+      "specId": "segmented-control-item-hover",
+      "interaction": "hover",
+      "node": "2281:6421",
+      "variant": "State=Hover, Type=Defalut, Align=Center",
+      "target": ".umc-segmented-control__item[data-unchecked]",
+      "expected": {
+        "background-color": "#eff0f0",
+        "color": "#02746c",
+        "box-shadow~": "rgba(11, 107, 100, 0.13) 1px 1px 3px 0px inset"
+      },
+      "figmaDiffers": {
+        "box-shadow~": "피그마는 이름이 같은 Shadow/Inner/Neutral_1의 다른 정의(#D3D8D833, 1, 1, 2)를 쓴다. 이름 있는 스타일은 토큰을 쓰는 규칙에 따라 토큰 정의를 썼다"
+      }
+    }
+  ]
+}

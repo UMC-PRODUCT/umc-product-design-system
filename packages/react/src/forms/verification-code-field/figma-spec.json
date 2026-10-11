@@ -1,0 +1,82 @@
+{
+  "component": "VerificationCodeField",
+  "figmaSection": "2621:36619",
+  "page": "/components/forms/verification-code-field/",
+  "nodes": [
+    {
+      "specId": "verification-code-box",
+      "node": "2621:36673",
+      "variant": "Type=Default, State=Default, Size=Lg",
+      "target": ".umc-input-box",
+      "expected": {
+        "height": "48px",
+        "border-top-color": "#cccccc",
+        "padding-left": "16px",
+        "padding-right": "8px"
+      },
+      "figmaDiffers": {
+        "padding-right": "피그마 Lg는 상자 오른쪽 16px에 타이머를 바로 둔다. 상자 8px과 타이머 8px으로 나눠 Md와 구조를 맞췄고 합은 16px로 같다"
+      }
+    },
+    {
+      "specId": "verification-code-timer",
+      "node": "2621:36676",
+      "variant": "타이머 00:00 (Label/1-Medium)",
+      "target": ".umc-input-box__timer",
+      "expected": {
+        "font-size": "18px",
+        "font-weight": "500",
+        "line-height": "25.2px",
+        "letter-spacing": "-0.36px",
+        "color": "#02746c",
+        "padding-right": "8px"
+      }
+    },
+    {
+      "specId": "verification-code-info",
+      "node": "2621:36343",
+      "variant": "Text Info Button, State=Default",
+      "target": ".umc-text-info-button",
+      "expected": {
+        "color": "#adadad",
+        "font-size": "12px",
+        "font-weight": "400",
+        "line-height": "18px",
+        "letter-spacing": "-0.24px",
+        "column-gap": "4px"
+      }
+    },
+    {
+      "specId": "verification-code-filled",
+      "node": "2621:36710",
+      "variant": "Type=Default, State=Filled, Size=Lg",
+      "target": ".umc-input-box__input",
+      "expected": {
+        "font-size": "18px",
+        "font-weight": "500",
+        "line-height": "25.2px",
+        "letter-spacing": "-0.36px",
+        "color": "#0f1010"
+      }
+    },
+    {
+      "specId": "verification-code-invalid",
+      "node": "2621:33383",
+      "variant": "Text Field/ Box, State=Filled, Error=True",
+      "target": ".umc-input-box",
+      "expected": {
+        "border-top-color": "#dc3d3d",
+        "background-color": "#fef2f1"
+      }
+    },
+    {
+      "specId": "verification-code-disabled",
+      "node": "2621:36722",
+      "variant": "Type=Default, State=Disabled, Size=Lg 타이머",
+      "target": ".umc-input-box__timer",
+      "expected": {
+        "color": "#cccccc"
+      }
+    }
+  ]
+}

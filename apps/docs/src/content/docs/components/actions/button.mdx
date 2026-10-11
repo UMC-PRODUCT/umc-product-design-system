@@ -1,0 +1,91 @@
+---
+title: Button
+description: 피그마 Button 컴포넌트(변형 206개)를 옮긴 버튼입니다.
+---
+
+import Aside from "../../../../components/Aside.astro"
+import {
+  ButtonAllVariants,
+  ButtonIcons,
+  ButtonLoadingWidth,
+  ButtonMatrix,
+  ButtonOverride,
+  ButtonSizes,
+} from "../../../../components/react/ButtonExamples.tsx"
+
+피그마 `Button`의 색 4종, 스타일 2종, 크기 4종, 상태 4종을 하나의 컴포넌트로 옮겼습니다. 렌더되는 요소는 항상 `<button>`이고, 네이티브 `button` 속성을 모두 타입 검사와 함께 받습니다.
+
+```tsx
+import { Button } from "@umc-product/react"
+
+<Button
+  variant="fill"
+  color="primary"
+  size="md"
+  isLoading={isPending}
+  onClick={save}
+>
+  저장
+</Button>
+```
+
+## 색과 스타일
+
+마우스를 올리거나 누르면 피그마의 Pressed 모양이 됩니다. 로딩 모양은 비활성보다 우선합니다.
+
+<ButtonMatrix />
+
+## 크기
+
+| size | 높이 | 최소 폭 | 좌우 여백 | 모서리             | 글자             |
+| ---- | ---- | ------- | --------- | ------------------ | ---------------- |
+| `lg` | 56px | 96px    | 16px      | `radius-button-16` | `label-1-medium` |
+| `md` | 48px | 80px    | 16px      | `radius-button-14` | `label-2-medium` |
+| `sm` | 40px | 64px    | 16px      | `radius-button-12` | `label-3-medium` |
+| `xs` | 36px | 60px    | 14px      | `radius-button-10` | `label-4-medium` |
+
+<ButtonSizes />
+
+## 아이콘
+
+`leadingIcon`, `trailingIcon`에 아이콘을 넘기면 크기(md, lg 16px, sm, xs 14px)와 아이콘 쪽 여백을 버튼이 맞춥니다. 아이콘 색은 글자색을 따르고, 화면 낭독기에서는 숨깁니다. 피그마 버튼은 `Icon/Add`의 굵은 변형을 줄여 넣었으니, 같은 모양을 내려면 아이콘에 `weight="fill"`을 넘깁니다.
+
+<ButtonIcons />
+
+## 로딩
+
+라벨을 투명하게 남겨 두므로 로딩이 시작되어도 버튼 폭이 그대로입니다. 포커스를 잃지 않도록 `disabled` 대신 `aria-disabled`, `aria-busy`를 달고 클릭과 form 제출을 막습니다. 화면 낭독기는 "지원서 제출하기 로딩 중"으로 읽습니다.
+
+<ButtonLoadingWidth />
+
+## className으로 덮어쓰기
+
+버튼 CSS는 `@layer components`에 있어서 앱의 Tailwind 유틸리티가 항상 이깁니다. 병합 함수 없이 `className`을 그대로 붙이면 됩니다.
+
+<ButtonOverride />
+
+<Aside type="caution">
+  `bg-*`로 배경을 바꾸면 눌림과 비활성 상태까지 그 색으로 덮입니다. 색은
+  `color`, `variant`로 고르는 것을 기본으로 합니다.
+</Aside>
+
+## 모든 변형
+
+피그마 `Button`의 변형 206개를 실제 컴포넌트로 그렸습니다. 칸에 마우스를 올리면 코드가 보이고, Pressed 칸은 눌림 상태를 켜 둔 모습입니다. 아이콘 변형에는 `AddIcon` Fill을 넣었습니다. 피그마에 없는 조합은 —로 비워 둡니다.
+
+<ButtonAllVariants />
+
+## props
+
+| prop                          | 타입                                         | 기본값          | 설명                                     |
+| ----------------------------- | -------------------------------------------- | --------------- | ---------------------------------------- |
+| `variant`                     | `"fill" \| "weak"`                           | `"fill"`        | 피그마 Style                             |
+| `color`                       | `"primary" \| "neutral" \| "red" \| "white"` | `"primary"`     | 피그마 Color                             |
+| `size`                        | `"lg" \| "md" \| "sm" \| "xs"`               | `"md"`          | 피그마 Size                              |
+| `isLoading`                   | `boolean`                                    | `false`         | 피그마 State=Loading                     |
+| `leadingIcon`, `trailingIcon` | `ReactNode`                                  | 없음            | 피그마 Icon Position                     |
+| 나머지                        | `ComponentPropsWithRef<"button">`            | `type="button"` | `ref`, `aria-*`, `data-*`, 이벤트 핸들러 |
+
+## 알아 둘 점
+
+- 로딩 점은 1초 주기로 깜빡이고, 움직임 줄이기 설정에서는 멈춥니다.

@@ -1,0 +1,26 @@
+---
+title: 변경 기록
+description: 버전마다 세 패키지에서 바뀐 내용입니다.
+tableOfContents: false
+---
+
+import { ChangelogTabs } from "../../../components/react/frame/ChangelogTabs.tsx"
+import { Content as TokensChangelog } from "../../../../../../packages/design-tokens/CHANGELOG.md"
+import { Content as IconsChangelog } from "../../../../../../packages/icons/CHANGELOG.md"
+import { Content as ReactChangelog } from "../../../../../../packages/react/CHANGELOG.md"
+
+changesets가 패키지마다 만든 `CHANGELOG.md`를 그대로 보여 줍니다. 세 패키지는 같은 버전으로 함께 올라가지만, 내용은 실제로 바뀐 패키지의 탭에만 적힙니다. 토큰이나 아이콘만 바뀐 버전은 react 탭에 "Updated dependencies"로만 나오므로, 버전을 올리기 전에 세 탭을 모두 봅니다.
+
+깨지는 변경과 화면 변화를 표시하는 기준은 [버전 정책](../versioning/)에 있습니다.
+
+<ChangelogTabs client:visible>
+  <div slot="react" class="docs-changelog">
+    <ReactChangelog />
+  </div>
+  <div slot="designTokens" class="docs-changelog">
+    <TokensChangelog />
+  </div>
+  <div slot="icons" class="docs-changelog">
+    <IconsChangelog />
+  </div>
+</ChangelogTabs>

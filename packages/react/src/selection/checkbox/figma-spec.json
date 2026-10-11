@@ -1,0 +1,165 @@
+{
+  "component": "Checkbox",
+  "figmaSection": "3696:101757",
+  "page": "/components/selection/checkbox/",
+  "nodes": [
+    {
+      "specId": "checkbox-md",
+      "node": "3696:100442",
+      "variant": "Color=Neutral, Size=Md, Selected=False, Disabled=False",
+      "target": ".umc-checkbox",
+      "expected": {
+        "column-gap": "4px",
+        "min-height": "24px"
+      }
+    },
+    {
+      "specId": "checkbox-md-label",
+      "node": "3696:100443",
+      "variant": "Color=Neutral, Size=Md, Selected=False, Disabled=False",
+      "target": ".umc-checkbox__label",
+      "expected": {
+        "color": "#282a2a",
+        "font-size": "15px",
+        "font-weight": "500",
+        "line-height": "21px",
+        "letter-spacing": "-0.3px"
+      }
+    },
+    {
+      "specId": "checkbox-md-control",
+      "node": "3696:100397",
+      "variant": ".primitive/Check Box/Control, Color=Neutral, Size=Md, Selected=False, Disabled=False",
+      "target": ".umc-checkbox__control",
+      "expected": {
+        "width": "20px",
+        "height": "20px",
+        "margin-top": "2px",
+        "margin-left": "2px",
+        "border-top-left-radius": "5px",
+        "background-color": "#ffffff",
+        "box-shadow~": "#adadad 0px 0px 0px 1.5px inset"
+      }
+    },
+    {
+      "specId": "checkbox-md-checked",
+      "node": "3696:100389",
+      "variant": ".primitive/Check Box/Control, Color=Neutral, Size=Md, Selected=True, Disabled=False",
+      "target": ".umc-checkbox__control",
+      "expected": {
+        "background-color": "#606262",
+        "color": "#ffffff",
+        "box-shadow~": "#606262 0px 0px 0px 1.5px inset"
+      }
+    },
+    {
+      "specId": "checkbox-brand-control",
+      "node": "3696:100374",
+      "variant": ".primitive/Check Box/Control, Color=Brand, Size=Md, Selected=False, Disabled=False",
+      "target": ".umc-checkbox__control",
+      "expected": {
+        "background-color": "#ffffff",
+        "box-shadow~": "#7ac7c1 0px 0px 0px 1.5px inset"
+      }
+    },
+    {
+      "specId": "checkbox-brand-checked",
+      "node": "3696:100386",
+      "variant": ".primitive/Check Box/Control, Color=Brand, Size=Md, Selected=True, Disabled=False",
+      "target": ".umc-checkbox__control",
+      "expected": {
+        "background-color": "#008a80",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "checkbox-invalid-control",
+      "node": "3696:100379",
+      "variant": ".primitive/Check Box/Control, Color=Error, Size=Md, Selected=False, Disabled=False",
+      "target": ".umc-checkbox__control",
+      "expected": {
+        "background-color": "#ffffff",
+        "box-shadow~": "#dc3d3d 0px 0px 0px 1.5px inset"
+      }
+    },
+    {
+      "specId": "checkbox-invalid-checked",
+      "node": "3696:100380",
+      "variant": ".primitive/Check Box/Control, Color=Error, Size=Md, Selected=True, Disabled=False",
+      "target": ".umc-checkbox__control",
+      "expected": {
+        "background-color": "#ed6464",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "checkbox-disabled-control",
+      "node": "3696:100400",
+      "variant": ".primitive/Check Box/Control, Color=Neutral, Size=Md, Selected=False, Disabled=True",
+      "target": ".umc-checkbox__control",
+      "expected": {
+        "background-color": "#f7f8f8",
+        "box-shadow~": "#e2e3e3 0px 0px 0px 1.5px inset"
+      }
+    },
+    {
+      "specId": "checkbox-disabled-checked",
+      "node": "3696:100401",
+      "variant": ".primitive/Check Box/Control, Color=Neutral, Size=Md, Selected=True, Disabled=True",
+      "target": ".umc-checkbox__control",
+      "expected": {
+        "background-color": "#e2e3e3",
+        "color": "#fbfcfc"
+      },
+      "figmaDiffers": {
+        "color": "피그마 체크 선은 2기 변수 WarmGray-50(#fcfbfa)이다. 3기에 같은 단계가 없어 teal-grey-50(#fbfcfc)을 썼다"
+      }
+    },
+    {
+      "specId": "checkbox-lg",
+      "node": "3696:100406",
+      "variant": "Color=Neutral, Size=Lg, Selected=False, Disabled=False",
+      "target": ".umc-checkbox",
+      "expected": {
+        "column-gap": "8px",
+        "min-height": "24px"
+      }
+    },
+    {
+      "specId": "checkbox-lg-label",
+      "node": "3696:100407",
+      "variant": "Color=Neutral, Size=Lg, Selected=False, Disabled=False",
+      "target": ".umc-checkbox__label",
+      "expected": {
+        "color": "#282a2a",
+        "font-size": "16px",
+        "font-weight": "500",
+        "line-height": "22.4px",
+        "letter-spacing": "-0.48px"
+      }
+    },
+    {
+      "specId": "checkbox-lg-control",
+      "node": "3696:100398",
+      "variant": ".primitive/Check Box/Control, Color=Neutral, Size=Lg, Selected=False, Disabled=False",
+      "target": ".umc-checkbox__control",
+      "expected": {
+        "width": "24px",
+        "height": "24px",
+        "margin-top": "0px",
+        "border-top-left-radius": "6px",
+        "box-shadow~": "#adadad 0px 0px 0px 1.8px inset"
+      }
+    },
+    {
+      "specId": "checkbox-lg-checked",
+      "node": "3696:100392",
+      "variant": ".primitive/Check Box/Control, Color=Brand, Size=Lg, Selected=True, Disabled=False",
+      "target": ".umc-checkbox__control",
+      "expected": {
+        "background-color": "#008a80",
+        "border-top-left-radius": "6px"
+      }
+    }
+  ]
+}

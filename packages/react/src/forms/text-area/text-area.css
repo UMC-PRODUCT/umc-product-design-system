@@ -1,0 +1,14 @@
+@import "../input-box/input-box.css";
+@import "../field/field.css";
+
+@layer components {
+  .umc-input-box.umc-text-area {
+    align-items: flex-start;
+    padding-block: var(--umc-spacing-padding-12);
+  }
+
+  .umc-text-area__input {
+    align-self: stretch;
+    resize: vertical;
+  }
+}

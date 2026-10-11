@@ -1,0 +1,187 @@
+@layer components {
+  .umc-chip {
+    --umc-chip-bg: var(--umc-color-fill-neutral-default);
+    --umc-chip-bg-hover: var(--umc-color-fill-neutral-medium-100);
+    --umc-chip-border-color: var(--umc-color-border-neutral-weak-200);
+    --umc-chip-border-width: 1px;
+    --umc-chip-text: var(--umc-color-text-neutral-medium-600);
+    --umc-chip-icon: var(--umc-color-icon-neutral-strong-600);
+    --umc-chip-selected-bg: var(--umc-color-fill-primary-weak-75);
+    --umc-chip-selected-bg-hover: var(--umc-color-fill-primary-strong-200);
+    --umc-chip-selected-border-color: var(
+      --umc-color-border-primary-medium-300
+    );
+    --umc-chip-selected-text: var(--umc-color-text-brand-default-600);
+    --umc-chip-selected-icon: var(--umc-color-icon-brand-medium-500);
+    --umc-chip-height: 34px;
+    --umc-chip-padding-start: var(--umc-spacing-padding-12);
+    --umc-chip-padding-end: var(--umc-spacing-padding-12);
+
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    gap: var(--umc-spacing-gap-6);
+    height: var(--umc-chip-height);
+    padding-block: 0;
+    padding-inline-start: var(--umc-chip-padding-start);
+    padding-inline-end: var(--umc-chip-padding-end);
+    border: var(--umc-chip-border-width) solid var(--umc-chip-border-color);
+    border-radius: var(--umc-radius-full);
+    background-color: var(--umc-chip-bg);
+    color: var(--umc-chip-text);
+    font-family: var(--umc-typography-label-3-medium-font-family);
+    font-size: var(--umc-typography-label-3-medium-font-size);
+    font-weight: var(--umc-typography-label-3-medium-font-weight);
+    line-height: var(--umc-typography-label-3-medium-line-height);
+    letter-spacing: var(--umc-typography-label-3-medium-letter-spacing);
+    white-space: nowrap;
+    cursor: pointer;
+    appearance: none;
+    transition:
+      background-color var(--umc-motion-duration) ease,
+      border-color var(--umc-motion-duration) ease,
+      color var(--umc-motion-duration) ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .umc-chip[data-size="md"] {
+    --umc-chip-height: 38px;
+  }
+
+  .umc-chip[data-leading-icon]:not([data-trailing-icon]) {
+    --umc-chip-padding-start: var(--umc-spacing-padding-10);
+    --umc-chip-padding-end: 14px;
+  }
+
+  .umc-chip[data-trailing-icon]:not([data-leading-icon]) {
+    --umc-chip-padding-start: 14px;
+    --umc-chip-padding-end: var(--umc-spacing-padding-10);
+  }
+
+  .umc-chip:hover:not(:disabled) {
+    background-color: var(--umc-chip-bg-hover);
+  }
+
+  .umc-chip:active:not(:disabled) {
+    background-color: var(--umc-chip-bg-hover);
+  }
+
+  .umc-chip[data-selected] {
+    background-color: var(--umc-chip-selected-bg);
+    border-color: var(--umc-chip-selected-border-color);
+    color: var(--umc-chip-selected-text);
+  }
+
+  .umc-chip[data-selected] .umc-chip__icon {
+    color: var(--umc-chip-selected-icon);
+  }
+
+  .umc-chip[data-selected]:hover:not(:disabled) {
+    background-color: var(--umc-chip-selected-bg-hover);
+  }
+
+  .umc-chip[data-selected]:active:not(:disabled) {
+    background-color: var(--umc-chip-selected-bg-hover);
+  }
+
+  .umc-chip[data-color="neutral"] {
+    --umc-chip-selected-bg: var(--umc-color-fill-neutral-medium-100);
+    --umc-chip-selected-bg-hover: var(--umc-color-fill-neutral-strong-200);
+    --umc-chip-selected-border-color: var(
+      --umc-color-border-neutral-stronger-600
+    );
+    --umc-chip-selected-text: var(--umc-color-text-neutral-strong-800);
+    --umc-chip-selected-icon: var(--umc-color-icon-neutral-stronger-700);
+  }
+
+  .umc-chip[data-variant="fill"] {
+    --umc-chip-bg: var(--umc-color-fill-neutral-medium-100);
+    --umc-chip-bg-hover: var(--umc-color-fill-neutral-strong-200);
+    --umc-chip-border-width: 0px;
+    --umc-chip-selected-bg: var(--umc-color-fill-primary-inverse-medium-500);
+    --umc-chip-selected-bg-hover: var(
+      --umc-color-fill-primary-inverse-medium-hover-pressed
+    );
+    --umc-chip-selected-border-color: transparent;
+    --umc-chip-selected-text: var(--umc-color-text-inverse);
+    --umc-chip-selected-icon: var(--umc-color-icon-inverse);
+  }
+
+  .umc-chip[data-variant="fill"][data-color="neutral"] {
+    --umc-chip-selected-bg: var(--umc-color-fill-neutral-inverse-strong-600);
+    --umc-chip-selected-bg-hover: var(
+      --umc-color-fill-neutral-inverse-medium-hover-pressed
+    );
+  }
+
+  .umc-chip:disabled {
+    --umc-chip-bg: var(--umc-color-fill-neutral-disabled);
+    --umc-chip-border-color: var(--umc-color-border-neutral-disabled);
+    --umc-chip-text: var(--umc-color-text-disabled);
+    --umc-chip-icon: var(--umc-color-icon-disabled);
+
+    cursor: default;
+  }
+
+  .umc-chip:focus-visible {
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
+    outline-offset: 2px;
+  }
+
+  .umc-chip__icon {
+    --umc-chip-icon-size: 18px;
+
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    width: var(--umc-chip-icon-size);
+    height: var(--umc-chip-icon-size);
+    color: var(--umc-chip-icon);
+  }
+
+  .umc-chip__icon > svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .umc-chip {
+      transition: none;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .umc-chip {
+      forced-color-adjust: none;
+      background-color: Canvas;
+      border: 1px solid CanvasText;
+      color: CanvasText;
+    }
+
+    .umc-chip[data-selected] {
+      background-color: Highlight;
+      border-color: Highlight;
+      color: HighlightText;
+    }
+
+    .umc-chip:focus-visible {
+      outline-color: CanvasText;
+    }
+
+    .umc-chip:disabled {
+      border-color: GrayText;
+      color: GrayText;
+    }
+
+    .umc-chip[data-selected]:disabled {
+      background-color: GrayText;
+      border-color: GrayText;
+      color: Canvas;
+    }
+
+    .umc-chip__icon {
+      color: inherit;
+    }
+  }
+}

@@ -1,0 +1,87 @@
+---
+title: OptionButtonGroup
+description: 단일 선택(라디오)·다중 선택(체크박스)을 버튼 그룹 형태로 제공하는 컴포넌트입니다.
+---
+
+import {
+  OptionButtonGroupAllVariants,
+  OptionButtonGroupControlled,
+  OptionButtonGroupDisabled,
+  OptionButtonGroupMultiple,
+  OptionButtonGroupSingle,
+  OptionButtonGroupSizes,
+  OptionButtonGroupVariants,
+} from "../../../../components/react/selection/OptionButtonGroupExamples.tsx"
+
+`type="single"`(기본)이면 `RadioGroup`으로, `type="multiple"`이면 `CheckboxGroup`으로 렌더됩니다. 두 모드 모두 키보드 탐색과 ARIA 역할을 자동으로 처리합니다.
+
+```tsx
+import { OptionButtonGroup } from "@umc-product/react"
+
+<OptionButtonGroup
+  options={[
+    { value: "fe", label: "프론트엔드" },
+    { value: "be", label: "백엔드" },
+  ]}
+  aria-label="파트 선택"
+  defaultValue="fe"
+/>
+```
+
+## 단일 선택
+
+<OptionButtonGroupSingle client:visible />
+
+## 다중 선택
+
+<OptionButtonGroupMultiple client:visible />
+
+## 변형
+
+선택한 항목은 앞에 체크 아이콘이 붙습니다. `variant="weak"`(기본)는 옅은 틸 배경과 틸 테두리, `variant="strong"`은 진한 틸 배경과 흰 글자입니다. 선택하지 않은 항목끼리 붙어 있으면 1px 간격이 생겨 구분선처럼 보입니다. 피그마의 Direction(Left, Middle, Right)은 항목 순서로 정하므로 prop이 없습니다.
+
+<OptionButtonGroupVariants client:visible />
+
+## 크기
+
+| size | 높이 | 좌우 여백(선택 안 함)     | 좌우 여백(선택) | 체크 아이콘 | 글자(선택 안 함 / 선택)             |
+| ---- | ---- | ------------------------- | --------------- | ----------- | ----------------------------------- |
+| `xl` | 48px | 28px, 28px                | 18px, 28px      | 20px        | 20px Regular / `title-2-medium`     |
+| `sm` | 38px | 20px, 20px                | 12px, 20px      | 16px        | `body-1-regular` / `label-3-medium` |
+| `xs` | 28px | 12px(양 끝은 바깥쪽 14px) | 6px, 10px       | 16px        | `label-5-medium`                    |
+
+<OptionButtonGroupSizes client:visible />
+
+## 비활성 항목
+
+`disabled: true`로 개별 항목을 비활성화합니다.
+
+<OptionButtonGroupDisabled client:visible />
+
+## 제어 모드
+
+`value`와 `onValueChange`로 외부 상태와 연결합니다. React Hook Form을 쓸 때는 `Controller`의 `field.value`를 `value`에, `field.onChange`를 `onValueChange`에 연결합니다.
+
+<OptionButtonGroupControlled client:visible />
+
+## 모든 변형
+
+피그마 `.primitive/Segmented Control/Option Button` 45개와 체크 `Check-icon` 2개, 일곱 칸짜리 `Segmented Control/Option` 7개를 그렸습니다. 버튼 하나의 변형은 세 칸짜리 그룹에서 해당 위치(Left, Middle, Right)의 버튼으로 보여 줍니다. 칸에 마우스를 올리면 코드가 보이고, hover 같은 상태는 켜 둔 모습입니다.
+
+<OptionButtonGroupAllVariants client:visible />
+
+## props
+
+| prop              | 타입                     | 기본값     | 설명                       |
+| ----------------- | ------------------------ | ---------- | -------------------------- |
+| `type`            | `"single" \| "multiple"` | `"single"` | 선택 모드                  |
+| `options`         | `OptionItem[]`           | 필수       | 선택 항목 목록             |
+| `variant`         | `"weak" \| "strong"`     | `"weak"`   | 선택 색 강도               |
+| `size`            | `"xl" \| "sm" \| "xs"`   | `"sm"`     | 버튼 크기                  |
+| `value`           | `string` 또는 `string[]` | 없음       | 제어 선택값                |
+| `defaultValue`    | `string` 또는 `string[]` | 없음       | 비제어 초기값              |
+| `onValueChange`   | `(value) => void`        | 없음       | 선택 변경 핸들러           |
+| `name`            | `string`                 | 없음       | form `name` 속성           |
+| `aria-label`      | `string`                 | 없음       | 그룹 접근 가능 이름        |
+| `aria-labelledby` | `string`                 | 없음       | 그룹 이름을 담은 요소의 id |
+| `disabled`        | `boolean`                | 없음       | 모든 항목 비활성           |

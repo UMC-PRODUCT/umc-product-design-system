@@ -1,0 +1,78 @@
+---
+const GRID_COLUMN_COUNT = 12
+const DESIGN_FRAME_WIDTH_PX = 1440
+const MIN_FRAME_WIDTH_PX = 1024
+const MAX_FRAME_WIDTH_PX = 1920
+const FRAME_WIDTH_STEP_PX = 8
+
+const columns = Array.from(
+  { length: GRID_COLUMN_COUNT },
+  (_, index) => index + 1,
+)
+---
+
+<div class="not-content" data-grid-demo>
+  <div class="umc-grid-controls">
+    <input
+      type="range"
+      min={MIN_FRAME_WIDTH_PX}
+      max={MAX_FRAME_WIDTH_PX}
+      step={FRAME_WIDTH_STEP_PX}
+      value={DESIGN_FRAME_WIDTH_PX}
+      aria-label="데스크톱 프레임 폭"
+      data-grid-slider
+    />
+    <span data-grid-readout></span>
+  </div>
+  <div class="umc-scroll">
+    <div
+      class="umc-canvas umc-grid-frame"
+      style={`width: ${DESIGN_FRAME_WIDTH_PX}px`}
+      data-grid-frame
+    >
+      <div
+        class="text-label-4-semibold flex h-header items-center bg-black/5 px-grid-margin-desktop"
+      >
+        Header 80px
+      </div>
+      <div class="flex">
+        <div class="text-label-5-medium w-sidebar shrink-0 bg-black/[0.03] p-4">
+          Sidebar 216px
+        </div>
+        <div
+          class="grid flex-1 grid-cols-12 gap-x-grid-gutter px-grid-margin-desktop py-6"
+        >
+          {
+            columns.map((column) => (
+              <div class="umc-grid-column" data-grid-column>
+                {column}
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  for (const demo of document.querySelectorAll<HTMLElement>(
+    "[data-grid-demo]",
+  )) {
+    const slider = demo.querySelector<HTMLInputElement>("[data-grid-slider]")
+    const frame = demo.querySelector<HTMLElement>("[data-grid-frame]")
+    const readout = demo.querySelector<HTMLElement>("[data-grid-readout]")
+    const firstColumn = demo.querySelector<HTMLElement>("[data-grid-column]")
+    if (!slider || !frame || !readout || !firstColumn) {
+      continue
+    }
+    const updateReadout = () => {
+      const columnWidth = firstColumn.getBoundingClientRect().width
+      readout.textContent = `프레임 ${frame.style.width}, 컬럼 폭 ${columnWidth.toFixed(1)}px (마진 32px, 거터 16px 고정)`
+    }
+    slider.addEventListener("input", () => {
+      frame.style.width = `${slider.value}px`
+    })
+    new ResizeObserver(updateReadout).observe(frame)
+  }
+</script>

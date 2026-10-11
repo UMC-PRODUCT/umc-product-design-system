@@ -1,0 +1,97 @@
+@layer components {
+  .umc-segmented-control {
+    display: flex;
+    align-items: center;
+    column-gap: var(--umc-spacing-gap-8);
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 46px;
+    margin: 0;
+    padding: var(--umc-spacing-padding-4);
+    border: 0;
+    border-radius: var(--umc-radius-14);
+    background-color: var(--umc-color-fill-neutral-weak-75);
+    box-shadow: var(--umc-shadow-inner-neutral-2);
+    overflow-x: auto;
+  }
+
+  .umc-segmented-control__item {
+    --umc-segmented-control-shadow-teal: #63c4b833;
+    --umc-segmented-control-shadow-grey: #9ca3a34d;
+    --umc-segmented-control-selected-shadow:
+      0 1px 2px 0 var(--umc-segmented-control-shadow-teal),
+      0 0 10px 0 var(--umc-segmented-control-shadow-grey);
+
+    position: relative;
+    display: inline-flex;
+    flex: 1 0 0;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-width: 100px;
+    height: 38px;
+    margin: 0;
+    padding-block: var(--umc-spacing-padding-4);
+    padding-inline: var(--umc-spacing-padding-12);
+    border: 0;
+    border-radius: var(--umc-radius-12);
+    background-color: transparent;
+    box-shadow: none;
+    color: var(--umc-color-text-brand-default-600);
+    font-family: var(--umc-typography-label-3-semibold-font-family);
+    font-size: var(--umc-typography-label-3-semibold-font-size);
+    font-weight: var(--umc-typography-label-3-semibold-font-weight);
+    line-height: var(--umc-typography-label-3-semibold-line-height);
+    letter-spacing: var(--umc-typography-label-3-semibold-letter-spacing);
+    white-space: nowrap;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (hover: hover) {
+    .umc-segmented-control__item:hover:not([data-checked]) {
+      background-color: var(--umc-color-fill-neutral-medium-100);
+      box-shadow: var(--umc-shadow-inner-neutral-1);
+    }
+  }
+
+  .umc-segmented-control__item[data-checked] {
+    background-color: var(--umc-color-fill-neutral-default);
+    box-shadow: var(--umc-segmented-control-selected-shadow);
+    color: var(--umc-color-text-neutral-strong-800);
+  }
+
+  .umc-segmented-control__item:focus-visible {
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
+    outline-offset: -2px;
+  }
+
+  .umc-segmented-control__label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none;
+  }
+
+  @media (forced-colors: active) {
+    .umc-segmented-control {
+      outline: 1px solid CanvasText;
+      outline-offset: -1px;
+    }
+
+    .umc-segmented-control__item[data-checked] {
+      forced-color-adjust: none;
+      background-color: Highlight;
+      color: HighlightText;
+    }
+
+    .umc-segmented-control__item:focus-visible {
+      outline-color: CanvasText;
+    }
+
+    .umc-segmented-control__item[data-checked]:focus-visible {
+      outline-color: HighlightText;
+    }
+  }
+}

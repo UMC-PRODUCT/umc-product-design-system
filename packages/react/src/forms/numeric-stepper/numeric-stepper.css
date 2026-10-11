@@ -1,0 +1,74 @@
+@import "../field/field.css";
+
+@layer components {
+  .umc-numeric-stepper {
+    display: inline-flex;
+  }
+
+  .umc-numeric-stepper__group {
+    display: inline-flex;
+    align-items: stretch;
+    box-sizing: border-box;
+    width: 106px;
+    height: 38px;
+    margin: 0;
+    border: 1px solid var(--umc-color-border-neutral-weak-200);
+    border-radius: var(--umc-radius-8);
+    background-color: var(--umc-color-fill-neutral-weaker-50);
+    box-shadow: var(--umc-shadow-drop-neutral-2);
+  }
+
+  .umc-numeric-stepper__button {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 36px;
+    margin: 0;
+    padding: var(--umc-spacing-padding-4) var(--umc-spacing-padding-6);
+    border: 0;
+    border-radius: var(--umc-radius-8);
+    background: none;
+    color: var(--umc-color-icon-neutral-stronger-700);
+    cursor: pointer;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .umc-numeric-stepper__button:disabled {
+    color: var(--umc-color-icon-disabled);
+    cursor: default;
+  }
+
+  .umc-numeric-stepper__button:focus-visible {
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
+    outline-offset: -2px;
+  }
+
+  .umc-numeric-stepper__input {
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--umc-color-text-brand-default-600);
+    font-family: var(--umc-typography-label-3-semibold-font-family);
+    font-size: var(--umc-typography-label-3-semibold-font-size);
+    font-weight: var(--umc-typography-label-3-semibold-font-weight);
+    line-height: var(--umc-typography-label-3-semibold-line-height);
+    letter-spacing: var(--umc-typography-label-3-semibold-letter-spacing);
+    text-align: center;
+    outline: none;
+    appearance: none;
+  }
+
+  .umc-numeric-stepper__input:disabled {
+    color: var(--umc-color-text-disabled);
+    -webkit-text-fill-color: currentColor;
+    opacity: 1;
+  }
+}

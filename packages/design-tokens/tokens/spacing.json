@@ -1,0 +1,495 @@
+{
+  "spacing": {
+    "0": {
+      "$type": "dimension",
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Spacing/Primitive/0",
+          "variableId": "VariableID:2066:7693"
+        }
+      }
+    },
+    "2": {
+      "$type": "dimension",
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Spacing/Primitive/2",
+          "variableId": "VariableID:2066:7744"
+        }
+      }
+    },
+    "4": {
+      "$type": "dimension",
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Spacing/Primitive/4",
+          "variableId": "VariableID:2066:7689"
+        }
+      }
+    },
+    "6": {
+      "$type": "dimension",
+      "$value": {
+        "value": 6,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Spacing/Primitive/6",
+          "variableId": "VariableID:2066:7668"
+        }
+      }
+    },
+    "8": {
+      "$type": "dimension",
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Spacing/Primitive/8",
+          "variableId": "VariableID:2066:7687"
+        }
+      }
+    },
+    "10": {
+      "$type": "dimension",
+      "$value": {
+        "value": 10,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Spacing/Primitive/10",
+          "variableId": "VariableID:2066:7658"
+        }
+      }
+    },
+    "12": {
+      "$type": "dimension",
+      "$value": {
+        "value": 12,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Spacing/Primitive/12",
+          "variableId": "VariableID:2066:7657"
+        }
+      }
+    },
+    "16": {
+      "$type": "dimension",
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Spacing/Primitive/16",
+          "variableId": "VariableID:2066:7676"
+        }
+      }
+    },
+    "20": {
+      "$type": "dimension",
+      "$value": {
+        "value": 20,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Spacing/Primitive/20",
+          "variableId": "VariableID:2066:7667"
+        }
+      }
+    },
+    "24": {
+      "$type": "dimension",
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Spacing/Primitive/24",
+          "variableId": "VariableID:2066:7697"
+        }
+      }
+    },
+    "28": {
+      "$type": "dimension",
+      "$value": {
+        "value": 28,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Spacing/Primitive/28",
+          "variableId": "VariableID:2066:7688"
+        }
+      }
+    },
+    "32": {
+      "$type": "dimension",
+      "$value": {
+        "value": 32,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Spacing/Primitive/32",
+          "variableId": "VariableID:2066:7684"
+        }
+      }
+    },
+    "48": {
+      "$type": "dimension",
+      "$value": {
+        "value": 48,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Spacing/Primitive/48",
+          "variableId": "VariableID:2858:68590"
+        }
+      }
+    },
+    "64": {
+      "$type": "dimension",
+      "$value": {
+        "value": 64,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Spacing/Primitive/64",
+          "variableId": "VariableID:2066:7672"
+        }
+      }
+    },
+    "80": {
+      "$type": "dimension",
+      "$value": {
+        "value": 80,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Spacing/Primitive/80",
+          "variableId": "VariableID:2066:7679"
+        }
+      }
+    },
+    "padding": {
+      "0": {
+        "$type": "dimension",
+        "$value": "{spacing.0}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Padding/Padding 0",
+            "variableId": "VariableID:2535:8809"
+          }
+        }
+      },
+      "4": {
+        "$type": "dimension",
+        "$value": "{spacing.4}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Padding/Padding 4",
+            "variableId": "VariableID:2066:7748"
+          }
+        }
+      },
+      "6": {
+        "$type": "dimension",
+        "$value": "{spacing.6}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Padding/Padding 6",
+            "variableId": "VariableID:2066:7756"
+          }
+        }
+      },
+      "8": {
+        "$type": "dimension",
+        "$value": "{spacing.8}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Padding/Padding 8",
+            "variableId": "VariableID:2066:7665"
+          }
+        }
+      },
+      "10": {
+        "$type": "dimension",
+        "$value": "{spacing.10}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Padding/Padding 10",
+            "variableId": "VariableID:2066:7664"
+          }
+        }
+      },
+      "12": {
+        "$type": "dimension",
+        "$value": "{spacing.12}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Padding/Padding 12",
+            "variableId": "VariableID:2066:7681"
+          }
+        }
+      },
+      "16": {
+        "$type": "dimension",
+        "$value": "{spacing.16}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Padding/Padding 16",
+            "variableId": "VariableID:2066:7674"
+          }
+        }
+      },
+      "20": {
+        "$type": "dimension",
+        "$value": "{spacing.20}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Padding/Padding 20",
+            "variableId": "VariableID:2066:7677"
+          }
+        }
+      },
+      "24": {
+        "$type": "dimension",
+        "$value": "{spacing.24}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Padding/Padding 24",
+            "variableId": "VariableID:2066:7662"
+          }
+        }
+      },
+      "28": {
+        "$type": "dimension",
+        "$value": "{spacing.28}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Padding/Padding 28",
+            "variableId": "VariableID:2066:7673"
+          }
+        }
+      },
+      "32": {
+        "$type": "dimension",
+        "$value": "{spacing.32}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Padding/Padding 32",
+            "variableId": "VariableID:2066:7694"
+          }
+        }
+      }
+    },
+    "gap": {
+      "0": {
+        "$type": "dimension",
+        "$value": "{spacing.0}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Gap/Gap 0",
+            "variableId": "VariableID:2535:8805"
+          }
+        }
+      },
+      "4": {
+        "$type": "dimension",
+        "$value": "{spacing.4}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Gap/Gap 4",
+            "variableId": "VariableID:2066:7678"
+          }
+        }
+      },
+      "6": {
+        "$type": "dimension",
+        "$value": "{spacing.6}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Gap/Gap 6",
+            "variableId": "VariableID:2066:7669"
+          }
+        }
+      },
+      "8": {
+        "$type": "dimension",
+        "$value": "{spacing.8}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Gap/Gap 8",
+            "variableId": "VariableID:2066:7671"
+          }
+        }
+      },
+      "10": {
+        "$type": "dimension",
+        "$value": "{spacing.10}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Gap/Gap 10",
+            "variableId": "VariableID:2066:7670"
+          }
+        }
+      },
+      "12": {
+        "$type": "dimension",
+        "$value": "{spacing.12}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Gap/Gap 12",
+            "variableId": "VariableID:2066:7666"
+          }
+        }
+      },
+      "16": {
+        "$type": "dimension",
+        "$value": "{spacing.16}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Gap/Gap 16",
+            "variableId": "VariableID:2066:7685"
+          }
+        }
+      },
+      "20": {
+        "$type": "dimension",
+        "$value": "{spacing.20}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Gap/Gap 20",
+            "variableId": "VariableID:2066:7682"
+          }
+        }
+      },
+      "24": {
+        "$type": "dimension",
+        "$value": "{spacing.24}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Gap/Gap 24",
+            "variableId": "VariableID:2066:7680"
+          }
+        }
+      },
+      "28": {
+        "$type": "dimension",
+        "$value": "{spacing.28}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Gap/Gap 28",
+            "variableId": "VariableID:2066:7752"
+          }
+        }
+      },
+      "32": {
+        "$type": "dimension",
+        "$value": "{spacing.32}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Gap/Gap 32",
+            "variableId": "VariableID:2066:7691"
+          }
+        }
+      }
+    },
+    "margin": {
+      "0": {
+        "$type": "dimension",
+        "$value": "{spacing.0}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Margin/Margin 0",
+            "variableId": "VariableID:2535:8813"
+          }
+        }
+      },
+      "16": {
+        "$type": "dimension",
+        "$value": "{spacing.16}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Margin/Margin 16",
+            "variableId": "VariableID:2066:7686"
+          }
+        }
+      },
+      "24": {
+        "$type": "dimension",
+        "$value": "{spacing.24}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Margin/Margin 24",
+            "variableId": "VariableID:2066:7661"
+          }
+        }
+      },
+      "32": {
+        "$type": "dimension",
+        "$value": "{spacing.32}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Margin/Margin 32",
+            "variableId": "VariableID:2066:7690"
+          }
+        }
+      },
+      "48": {
+        "$type": "dimension",
+        "$value": "{spacing.48}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Margin/Margin 48",
+            "variableId": "VariableID:2858:68586"
+          }
+        }
+      },
+      "64": {
+        "$type": "dimension",
+        "$value": "{spacing.64}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Margin/Margin 64",
+            "variableId": "VariableID:2066:7731"
+          }
+        }
+      },
+      "80": {
+        "$type": "dimension",
+        "$value": "{spacing.80}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Margin/Margin 80",
+            "variableId": "VariableID:2066:7736"
+          }
+        }
+      }
+    }
+  }
+}

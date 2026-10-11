@@ -1,0 +1,44 @@
+---
+import { tokenManifest } from "@umc-product/design-tokens/manifest"
+
+const STEP_SUFFIX_PATTERN = /\.\d+$/
+const COLOR_PREFIX_PATTERN = /^color\./
+
+const primitives = tokenManifest.filter(
+  (token) => token.tier === "color-primitive",
+)
+const palettes = Map.groupBy(primitives, (token) =>
+  token.name.replace(STEP_SUFFIX_PATTERN, "").replace(COLOR_PREFIX_PATTERN, ""),
+)
+
+const figmaGroupOf = (tokens: readonly (typeof primitives)[number][]) => {
+  const figmaName = tokens[0]?.figmaName ?? ""
+  return tokens.length > 1
+    ? figmaName.slice(0, figmaName.lastIndexOf("/"))
+    : figmaName
+}
+---
+
+<div class="not-content umc-palettes">
+  {
+    [...palettes].map(([palette, tokens]) => (
+      <section>
+        <p class="umc-palette-name">
+          {palette} <span class="umc-sub">피그마 {figmaGroupOf(tokens)}</span>
+        </p>
+        <ul class="umc-palette-row">
+          {tokens.map((token) => (
+            <li>
+              <span
+                class="umc-palette-swatch"
+                style={`background: var(${token.cssVariable})`}
+              />
+              <span class="umc-step">{token.tailwindName}</span>
+              <code class="umc-sub">{token.value}</code>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+</div>

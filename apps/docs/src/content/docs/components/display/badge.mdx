@@ -1,0 +1,78 @@
+---
+title: Badge
+description: 숫자나 색점으로 상태를 표시하는 두 가지 배지 컴포넌트입니다.
+---
+
+import {
+  BadgeStaticPreview,
+  DotBadgeAllVariants,
+  NumberBadgeAllVariants,
+} from "../../../../components/react/display/BadgeExamples.tsx"
+
+`NumberBadge`는 숫자나 짧은 텍스트를 원형 배경 위에 표시합니다. `DotBadge`는 텍스트 없이 색점만으로 상태를 나타냅니다. 두 컴포넌트 모두 `<span>`으로 렌더링되어 인라인 흐름을 유지합니다. `NumberBadge`는 기존 `NumberTag`보다 크기가 크고(16px/20px 대 14px), 색상 의미 체계가 더 넓습니다.
+
+```tsx
+import { NumberBadge, DotBadge } from "@umc-product/react"
+
+function Example() {
+  return (
+    <>
+      <NumberBadge color="brand" variant="fill" size="sm">3</NumberBadge>
+      <DotBadge color="success" size="sm" aria-label="온라인 상태" />
+    </>
+  )
+}
+```
+
+## 외형 미리보기
+
+<BadgeStaticPreview />
+
+## NumberBadge
+
+숫자나 짧은 레이블을 색상 배경 원 위에 표시합니다. `variant`로 채움 방식을 선택하고, `color`로 의미를 전달합니다.
+
+### 모든 변형
+
+<NumberBadgeAllVariants />
+
+### props
+
+| prop        | 타입                                                        | 기본값    | 설명            |
+| ----------- | ----------------------------------------------------------- | --------- | --------------- |
+| `color`     | `"brand" \| "neutral" \| "error" \| "warning" \| "success"` | `"brand"` | 색상 의미       |
+| `variant`   | `"fill" \| "weak"`                                          | `"fill"`  | 채움 방식       |
+| `size`      | `"sm" \| "md"`                                              | `"sm"`    | 크기(16px/20px) |
+| `children`  | `ReactNode`                                                 |           | 표시할 내용     |
+| `ref`       | `Ref<HTMLSpanElement>`                                      |           | 루트 요소 ref   |
+| `className` | `string`                                                    |           | 추가 클래스     |
+
+나머지 `span` 속성은 루트 요소에 전달됩니다. 네이티브 `color` 속성은 제외됩니다.
+
+## DotBadge
+
+텍스트 없이 색점으로 상태를 표시합니다. 온라인 상태, 알림 유형, 우선순위 등 보조 시각 신호에 씁니다.
+
+### 모든 변형
+
+<DotBadgeAllVariants />
+
+### props
+
+| prop              | 타입                                                        | 기본값    | 설명                                  |
+| ----------------- | ----------------------------------------------------------- | --------- | ------------------------------------- |
+| `color`           | `"brand" \| "neutral" \| "error" \| "warning" \| "success"` | `"brand"` | 색상 의미                             |
+| `size`            | `"sm" \| "md"`                                              | `"sm"`    | 크기(6px/8px)                         |
+| `aria-label`      | `string`                                                    |           | 레이블 지정 시 `role="img"` 적용      |
+| `aria-labelledby` | `string`                                                    |           | 레이블 참조 지정 시 `role="img"` 적용 |
+| `ref`             | `Ref<HTMLSpanElement>`                                      |           | 루트 요소 ref                         |
+| `className`       | `string`                                                    |           | 추가 클래스                           |
+
+나머지 `span` 속성은 루트 요소에 전달됩니다. 네이티브 `color` 속성은 제외됩니다.
+
+## 알아 둘 점
+
+- `DotBadge`에 `aria-label`이나 `aria-labelledby`가 없으면 `aria-hidden="true"`가 적용됩니다. 색점이 의미를 단독으로 전달한다면 반드시 레이블을 제공합니다.
+- `NumberBadge`는 폭이 34px을 넘지 않고, 넘치는 글자는 잘립니다. 100 이상은 `99+`처럼 줄여서 넘깁니다.
+- `NumberBadge`의 접근 가능한 이름은 주변 컨트롤이 제공합니다. 배지 자체에 `aria-label`을 추가하기보다 버튼이나 링크의 레이블에 숫자를 포함시킵니다.
+- `forced-colors` 모드에서 `NumberBadge`는 `ButtonFace` 배경과 `ButtonText` 텍스트로 그려지고, `DotBadge`는 `ButtonText` 색으로 그려집니다.

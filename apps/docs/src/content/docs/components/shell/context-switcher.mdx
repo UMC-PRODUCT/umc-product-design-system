@@ -1,0 +1,59 @@
+---
+title: ContextSwitcher
+description: 현재 작업 맥락(기수, 계정 뷰, 권한)을 바꾸는 버튼입니다.
+---
+
+import {
+  ContextSwitcherAllVariants,
+  ContextSwitcherDefault,
+} from "../../../../components/react/shell/ContextSwitcherExamples.tsx"
+
+피그마 `Context Switcher`를 구현했습니다. 피그마 설명대로 워크스페이스, 계정 뷰, 관리 권한처럼 작업 맥락을 바꾸고 그에 따라 아래 메뉴가 달라지는 곳에 씁니다. 필요 없으면 쓰지 않습니다. 보통 `SideNavigation`의 `slot`에 넣습니다.
+
+```tsx
+import { useState } from "react"
+import { ContextSwitcher, type ContextSwitcherOption } from "@umc-product/react"
+
+type View = "challenger" | "chapter"
+
+const views: ContextSwitcherOption<View>[] = [
+  { value: "challenger", label: "챌린저 뷰" },
+  { value: "chapter", label: "지부 운영진 뷰" },
+]
+
+export function ViewSwitcher() {
+  const [view, setView] = useState<View>("chapter")
+  return (
+    <ContextSwitcher options={views} value={view} onValueChange={setView} />
+  )
+}
+```
+
+<ContextSwitcherDefault client:visible />
+
+## 동작
+
+- 버튼을 누르면 버튼 바로 아래에 목록이 열립니다. 목록 너비는 버튼과 같습니다.
+- 선택된 항목은 연한 브랜드 배경과 체크 표시로 구분합니다. 키보드 방향키로 옮기고 Enter로 고릅니다.
+- `value`와 `onValueChange`로만 제어합니다. 값 타입은 `options`의 `value`에서 추론합니다.
+
+## 모든 변형
+
+피그마 `Context Switcher` 변형 3개를 그렸습니다. Selected는 목록이 열린 모습이라 목록을 버튼 아래에 고정해 그렸습니다. 칸에 마우스를 올리면 코드가 보이고, hover 같은 상태는 켜 둔 모습입니다.
+
+<ContextSwitcherAllVariants client:visible />
+
+## props
+
+| prop            | 타입                         | 설명                   |
+| --------------- | ---------------------------- | ---------------------- |
+| `options`       | `ContextSwitcherOption<V>[]` | 고를 수 있는 맥락 목록 |
+| `value`         | `V`                          | 현재 맥락              |
+| `onValueChange` | `(value: V) => void`         | 맥락을 고를 때 호출    |
+| `className`     | `string`                     | 버튼에 붙일 클래스     |
+
+`ContextSwitcherOption<V>`는 `{ value: V; label: ReactNode }`입니다.
+
+## 알아 둘 점
+
+- 기본 너비는 172px이고, 사이드 내비게이션 슬롯 안에서는 슬롯 폭에 맞춰 줄어듭니다.

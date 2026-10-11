@@ -1,0 +1,60 @@
+{
+  "component": "Bubble",
+  "figmaSection": "3155:20312",
+  "page": "/components/display/bubble/",
+  "nodes": [
+    {
+      "specId": "bubble-incoming",
+      "node": "2534:8760",
+      "variant": "Direction=Incoming",
+      "target": ".umc-bubble__body",
+      "expected": {
+        "background-color": "#ffffff",
+        "border-top-left-radius": "12px",
+        "font-size": "15px",
+        "font-weight": "400",
+        "line-height": "22.5px",
+        "color": "#0f1010",
+        "padding-left": "12px",
+        "padding-top": "10px",
+        "letter-spacing": "-0.15px"
+      }
+    },
+    {
+      "specId": "bubble-incoming-tail",
+      "node": "2534:8764",
+      "variant": "Direction=Incoming",
+      "target": ".umc-bubble__tail",
+      "expected": {
+        "width": "16px",
+        "height": "18px",
+        "color": "#ffffff",
+        "transform": "matrix(-1, 0, 0, 1, 0, 0)"
+      }
+    },
+    {
+      "specId": "bubble-outgoing",
+      "node": "2534:8758",
+      "variant": "Direction=Outgoing",
+      "target": ".umc-bubble__body",
+      "expected": {
+        "background-color": "#008a80",
+        "border-top-left-radius": "12px",
+        "font-size": "15px",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "bubble-outgoing-tail",
+      "node": "2534:7242",
+      "variant": "Direction=Outgoing",
+      "target": ".umc-bubble__tail",
+      "expected": {
+        "width": "16px",
+        "height": "18px",
+        "color": "#008a80",
+        "transform": "matrix(-1, 0, 0, 1, 0, 0)"
+      }
+    }
+  ]
+}
