@@ -9,7 +9,7 @@ import {
   DimmedStaticPreview,
 } from "../../../../components/react/overlay/DimmedExamples.tsx"
 
-`Dimmed`는 `position: fixed; inset: 0`으로 전체 화면을 덮습니다. 버튼을 눌러 강도별 모양을 확인하고, 딤 영역을 다시 클릭하면 닫힙니다.
+`Dimmed`는 `position: fixed; inset: 0`으로 전체 화면을 덮고, 모달이나 드로어 아래에 깔립니다.
 
 ```tsx
 import { Dimmed } from "@umc-product/react"
@@ -19,11 +19,15 @@ import { Dimmed } from "@umc-product/react"
 
 ## 강도 미리보기
 
+작은 화면 위에 모달을 띄운 모습으로 강도별 어둡기를 비교합니다.
+
 <DimmedStaticPreview />
 
-## 강도 (인터랙티브)
+## 모달과 함께 보기
 
-<DimmedIntensities />
+버튼을 누르면 이 페이지 위에 딤과 예시 모달이 열립니다. 모달에서 강도를 바꿔 보고, 딤 영역을 누르거나 Esc를 누르면 닫힙니다.
+
+<DimmedIntensities client:visible />
 
 | intensity | 토큰                        |
 | --------- | --------------------------- |
@@ -46,4 +50,4 @@ import { Dimmed } from "@umc-product/react"
 
 ## 접근성
 
-`Dimmed` 자체에는 `role`이 없습니다. 모달 컨테이너에 `aria-modal="true"`와 `role="dialog"`를 달고, 포커스 트랩과 Esc 닫기는 모달 컴포넌트가 담당합니다.
+`Dimmed` 자체에는 `role`이 없습니다. 모달 컨테이너에 `aria-modal="true"`와 `role="dialog"`를 달고, 포커스 트랩과 Esc 닫기는 모달 컴포넌트가 담당합니다. 위 예시 모달도 이 방식을 따릅니다. 열리면 모달로 포커스가 옮겨 가고, 닫히면 연 버튼으로 돌아옵니다.
