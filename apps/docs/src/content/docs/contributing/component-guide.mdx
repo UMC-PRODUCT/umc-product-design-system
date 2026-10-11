@@ -83,12 +83,12 @@ apps/docs/src/components/react/<group>/<Component>Examples.tsx
 ```json
 {
   "component": "Button",
-  "figmaSection": "2621:33584",
+  "figmaSection": "<피그마 섹션 노드 id>",
   "page": "/components/actions/button/",
   "nodes": [
     {
       "specId": "button-fill-primary-lg-default",
-      "node": "2621:33607",
+      "node": "<피그마 노드 id>",
       "variant": "Size=Lg, Color=Primary, Style=Fill, State=Default",
       "expected": { "background-color": "#008a80", "height": "56px" }
     }
@@ -111,7 +111,7 @@ apps/docs/src/components/react/<group>/<Component>Examples.tsx
 
 페이지마다 "모든 변형" 절에 피그마 변형을 빠짐없이 그립니다. 그리드는 손으로 쓴 목록이 아니라 피그마 스냅샷을 돌면서 칸을 만듭니다. 그래서 피그마에 변형이 생기면 칸도 따라 생깁니다.
 
-- **스냅샷**: `apps/docs/src/data/figma-variants.json`에 세트마다 노드 id와 변형 이름을 적습니다. 피그마 `01. Component` 페이지(3434:72558)의 메타데이터에서 만듭니다.
+- **스냅샷**: `apps/docs/src/data/figma-variants.json`에 세트마다 노드 id와 변형 이름을 적습니다. 피그마 `01. Component` 페이지의 메타데이터에서 만듭니다.
 - **그리드**: `VariantGrid`에 세트 키와 행·열·구역으로 쓸 축을 넘기고, `render`에서 변형 하나를 실제 컴포넌트로 그립니다. 칸 하나에 변형이 둘 이상 걸리면 빌드가 멈춥니다. 피그마 값을 코드 값으로 바꿀 때는 `lookup`을 써서, 대응표에 없는 값이 오면 빌드가 멈추게 합니다.
 - **상태 강제**: Hover, Pressed, Focus처럼 마우스나 키보드가 있어야 보이는 상태는 `ForceState`로 감쌉니다. 문서의 Head가 `.umc-` 규칙 중 `:hover`, `:active`, `:focus` 계열, `[data-popup-open]`, `[data-highlighted]`가 들어간 규칙을 `[data-force-state~="hover"]` 같은 조상 선택자로 복제합니다. 같은 레이어, 같은 순서에 넣으므로 실제 상호작용과 같은 값이 나옵니다. 컴포넌트 CSS는 건드리지 않습니다.
 - **미구현**: 코드에 없는 변형은 `NotImplemented`에 이유를 적어 칸을 채웁니다. 저장소 `design-questions.md`에도 같은 항목을 올립니다.

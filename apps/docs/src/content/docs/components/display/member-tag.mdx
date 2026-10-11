@@ -30,12 +30,16 @@ import { PartTag } from "@umc-product/react"
 
 ### props
 
-| prop       | 타입                                          | 기본값     | 설명                                            |
-| ---------- | --------------------------------------------- | ---------- | ----------------------------------------------- |
-| `part`     | `"pm" \| "design" \| "web-pe" \| "mobile-pe"` | `"pm"`     | 파트 종류                                       |
-| `variant`  | `"filled" \| "outlined"`                      | `"filled"` | 외형 스타일                                     |
-| `size`     | `"sm" \| "md" \| "lg"`                        | `"sm"`     | 크기                                            |
-| `children` | `ReactNode`                                   | 없음       | 기본 레이블을 덮어쓸 텍스트. 없으면 파트 기본값 |
+| prop        | 타입                                          | 기본값     | 설명                                            |
+| ----------- | --------------------------------------------- | ---------- | ----------------------------------------------- |
+| `part`      | `"pm" \| "design" \| "web-pe" \| "mobile-pe"` | `"pm"`     | 파트 종류                                       |
+| `variant`   | `"filled" \| "outlined"`                      | `"filled"` | 외형 스타일                                     |
+| `size`      | `"sm" \| "md" \| "lg"`                        | `"sm"`     | 크기                                            |
+| `children`  | `ReactNode`                                   | 없음       | 기본 레이블을 덮어쓸 텍스트. 없으면 파트 기본값 |
+| `className` | `string`                                      | 없음       | 루트 `span`에 붙일 클래스                       |
+| `ref`       | `Ref<HTMLSpanElement>`                        | 없음       | 루트 `span` 참조                                |
+
+그 밖에 `span` 속성을 그대로 넘깁니다. 네이티브 `color` 속성은 받지 않습니다.
 
 기본 레이블: `pm` → PM, `design` → Design, `web-pe` → Web PE, `mobile-pe` → Mobile PE.
 
@@ -73,13 +77,17 @@ import { RoleTag } from "@umc-product/react"
 
 ### props
 
-| prop       | 타입                                                                          | 기본값 | 설명                     |
-| ---------- | ----------------------------------------------------------------------------- | ------ | ------------------------ |
-| `color`    | `"challenger-super-admin" \| "product" \| "central" \| "chapter" \| "campus"` | 필수   | 역할 계층 색상           |
-| `size`     | `"sm" \| "md" \| "lg"`                                                        | `"sm"` | 크기                     |
-| `children` | `ReactNode`                                                                   | 필수   | 역할 이름(기수마다 바뀜) |
+| prop        | 타입                                                                          | 기본값 | 설명                      |
+| ----------- | ----------------------------------------------------------------------------- | ------ | ------------------------- |
+| `color`     | `"challenger-super-admin" \| "product" \| "central" \| "chapter" \| "campus"` | 필수   | 역할 계층 색상            |
+| `size`      | `"sm" \| "md" \| "lg"`                                                        | `"sm"` | 크기                      |
+| `children`  | `ReactNode`                                                                   | 필수   | 역할 이름(기수마다 바뀜)  |
+| `className` | `string`                                                                      | 없음   | 루트 `span`에 붙일 클래스 |
+| `ref`       | `Ref<HTMLSpanElement>`                                                        | 없음   | 루트 `span` 참조          |
+
+그 밖에 `span` 속성을 그대로 넘깁니다.
 
 ### 알아 둘 점
 
 - `children`이 필수입니다. 역할 이름은 기수마다 달라지므로 컴포넌트가 기본값을 갖지 않습니다.
-- `color` prop이 네이티브 `<span>`의 `color` 속성을 덮어씁니다.
+- 네이티브 `<span>`의 `color` 속성은 받지 않습니다. 색은 `color` prop으로 고릅니다.

@@ -31,18 +31,18 @@ import { StepNavigation } from "@umc-product/react"
 
 ## 모든 변형
 
-피그마 `Web/ Segmented Control / Button`의 번호형(`Type=Numberic Step`) 3개를 단계 하나짜리 내비게이션으로 그렸습니다. 칸에 마우스를 올리면 변형 이름이 보이고, hover 같은 상태는 켜 둔 모습입니다.
+피그마 Segmented Control 버튼의 번호형 3개를 단계 하나짜리 내비게이션으로 그렸습니다. 칸에 마우스를 올리면 변형 이름이 보이고, hover 같은 상태는 켜 둔 모습입니다.
 
 <StepNavigationAllVariants />
 
 ## props
 
-| prop          | 타입          | 기본값 | 설명                      |
-| ------------- | ------------- | ------ | ------------------------- |
-| `steps`       | `ReactNode[]` | 필수   | 단계 이름 배열            |
-| `currentStep` | `number`      | 필수   | 현재 단계 번호(1부터)     |
-| `aria-label`  | `string`      | 없음   | 네비게이션 접근 가능 이름 |
-| `className`   | `string`      | 없음   | 루트 요소에 추가할 클래스 |
+| prop          | 타입          | 기본값        | 설명                      |
+| ------------- | ------------- | ------------- | ------------------------- |
+| `steps`       | `ReactNode[]` | 필수          | 단계 이름 배열            |
+| `currentStep` | `number`      | 필수          | 현재 단계 번호(1부터)     |
+| `aria-label`  | `string`      | `"단계 탐색"` | 네비게이션 접근 가능 이름 |
+| `className`   | `string`      | 없음          | 루트 요소에 추가할 클래스 |
 
 ## 알아 둘 점
 

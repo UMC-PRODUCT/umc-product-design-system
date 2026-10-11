@@ -16,18 +16,16 @@ import {
 import { LinkProvider, TopNavigation, TopNavigationButton } from "@umc-product/react"
 import { SearchIcon } from "@umc-product/icons"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 
-export function AppTopNav() {
-  const pathname = usePathname()
+export function NoticeTopNav() {
   return (
     <LinkProvider component={Link}>
       <TopNavigation
-        title="홈"
-        back={{ href: "/prev" }}
+        title="공지 상세"
+        back={{ href: "/notices" }}
         actions={
           <TopNavigationButton variant="icon" aria-label="검색">
-            <SearchIcon weight="fill" />
+            <SearchIcon />
           </TopNavigationButton>
         }
       />
@@ -58,23 +56,23 @@ export function AppTopNav() {
 
 <TopNavigationAllVariants client:visible />
 
-## API
+## props
 
 ### TopNavigation
 
-| 속성            | 타입                     | 기본값    | 설명                                 |
+| prop            | 타입                     | 기본값    | 설명                                 |
 | --------------- | ------------------------ | --------- | ------------------------------------ |
-| `title`         | `ReactNode`              | —         | 제목 영역 내용                       |
+| `title`         | `ReactNode`              | 필수      | 제목 영역 내용                       |
 | `titleAlign`    | `"start" \| "center"`    | `"start"` | 제목 정렬 방향                       |
-| `back`          | `TopNavigationBackProps` | —         | 뒤로 가기 버튼 설정                  |
-| `onTitleClick`  | `() => void`             | —         | 제목 클릭 핸들러(드롭다운 트리거)    |
-| `titleExpanded` | `boolean`                | —         | 드롭다운 열림 상태 (`aria-expanded`) |
-| `actions`       | `ReactNode`              | —         | 오른쪽 액션 슬롯                     |
-| `className`     | `string`                 | —         | 루트 엘리먼트 추가 클래스            |
+| `back`          | `TopNavigationBackProps` | 없음      | 뒤로 가기 버튼 설정                  |
+| `onTitleClick`  | `() => void`             | 없음      | 제목 클릭 핸들러(드롭다운 트리거)    |
+| `titleExpanded` | `boolean`                | 없음      | 드롭다운 열림 상태 (`aria-expanded`) |
+| `actions`       | `ReactNode`              | 없음      | 오른쪽 액션 슬롯                     |
+| `className`     | `string`                 | 없음      | 루트 엘리먼트 추가 클래스            |
 
 ### TopNavigationBackProps
 
-| 속성      | 타입         | 설명                                        |
+| prop      | 타입         | 설명                                        |
 | --------- | ------------ | ------------------------------------------- |
 | `label`   | `string`     | 버튼 접근성 레이블 (기본값 `"뒤로 가기"`)   |
 | `href`    | `string`     | 링크 경로 — 있으면 `<a>`, 없으면 `<button>` |
@@ -84,8 +82,8 @@ export function AppTopNav() {
 
 `variant="icon"` 에서는 `aria-label`이 필수입니다.
 
-| 속성         | 타입                     | 기본값      | 설명                                              |
+| prop         | 타입                     | 기본값      | 설명                                              |
 | ------------ | ------------------------ | ----------- | ------------------------------------------------- |
-| `variant`    | `"icon" \| "text"`       | —           | 버튼 유형                                         |
+| `variant`    | `"icon" \| "text"`       | 필수        | 버튼 유형                                         |
 | `color`      | `"primary" \| "neutral"` | `"primary"` | 텍스트 색상 (`variant="text"` 전용)               |
-| `aria-label` | `string`                 | —           | 아이콘 버튼 접근성 레이블 (`variant="icon"` 필수) |
+| `aria-label` | `string`                 | 없음        | 아이콘 버튼 접근성 레이블 (`variant="icon"` 필수) |

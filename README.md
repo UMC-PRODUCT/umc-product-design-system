@@ -1,23 +1,23 @@
 # UMC 디자인 시스템
 
-UMC 프로덕트 팀의 디자인 토큰, 아이콘, React 컴포넌트입니다. 3기 피그마 디자인 시스템을 코드로 옮겼고, 다른 저장소에서 패키지로 설치해 씁니다.
+UMC PRODUCT Design Chapter의 디자인 토큰, 아이콘, React 컴포넌트입니다. 피그마 디자인 시스템을 코드로 옮겼고, 다른 저장소에서 패키지로 설치해 씁니다.
 
 - 문서: https://umc-product.github.io/umc-product-design-system/
 - 변경 기록과 버전 정책: 문서의 "릴리스" 메뉴
 
 ## 패키지
 
-| 패키지                       | 내용                                                                             |
-| ---------------------------- | -------------------------------------------------------------------------------- |
-| `@umc-product/design-tokens` | 컬러, 텍스트 스타일, 그림자, 그리드 토큰. CSS 변수, Tailwind v4, vanilla-extract |
-| `@umc-product/icons`         | 아이콘 65종, 픽토그램 11종, UMC 로고 React 컴포넌트                              |
-| `@umc-product/react`         | Base UI 기반 컴포넌트 39종과 미리 빌드한 CSS                                     |
+| 패키지                       | 내용                                                            |
+| ---------------------------- | --------------------------------------------------------------- |
+| `@umc-product/design-tokens` | 컬러, 텍스트 스타일, 그림자, 그리드 토큰. CSS 변수, Tailwind v4 |
+| `@umc-product/icons`         | 아이콘 65종, 픽토그램 11종, UMC 로고 React 컴포넌트             |
+| `@umc-product/react`         | Base UI 기반 컴포넌트 47종과 미리 빌드한 CSS                    |
 
 세 패키지는 항상 같은 버전으로 함께 배포합니다.
 
 ## 설치
 
-GitHub Packages에 비공개로 배포합니다. 설치하려면 `read:packages` 권한이 있는 GitHub 토큰이 필요합니다. 로컬, GitHub Actions, AWS Amplify에서 토큰을 설정하는 방법은 문서의 [설치와 불러오기](https://umc-product.github.io/umc-product-design-system/getting-started/installation/)에 있습니다.
+첫 릴리스 뒤 GitHub Packages에 비공개로 배포합니다(지금은 배포 전). 설치하려면 `read:packages` 권한이 있는 GitHub 토큰이 필요합니다. 로컬, GitHub Actions, AWS Amplify에서 토큰을 설정하는 방법은 문서의 [설치와 불러오기](https://umc-product.github.io/umc-product-design-system/getting-started/installation/)에 있습니다.
 
 ```ini
 # 앱 저장소의 .npmrc

@@ -1,6 +1,6 @@
 # @umc-product/design-tokens
 
-UMC 3기 피그마 파운데이션을 코드로 옮긴 디자인 토큰 패키지입니다. 피그마 값은 `tokens/`의 JSON 하나에만 있고, CSS 변수와 Tailwind, vanilla-extract 산출물은 모두 그 JSON에서 생성합니다.
+UMC PRODUCT 피그마 파운데이션을 코드로 옮긴 디자인 토큰 패키지입니다. 피그마 값은 `tokens/`의 JSON 하나에만 있고, CSS 변수와 Tailwind 산출물은 모두 그 JSON에서 생성합니다.
 
 - 기준일: 2026-10-09
 - 상태: 컬러(primitive 78, semantic 152), 타이포그래피(기본 변수 20, 텍스트 스타일 48), spacing 44, radius 17, 그림자 5, 그리드와 레이아웃을 옮겼습니다. 브레이크포인트만 디자인 팀 합의를 기다립니다
@@ -18,8 +18,6 @@ UMC 3기 피그마 파운데이션을 코드로 옮긴 디자인 토큰 패키�
 @import "@umc-product/design-tokens/base.css";
 @import "@umc-product/design-tokens/tailwind.css";
 ```
-
-vanilla-extract만 쓰는 앱은 `tailwind.css`를 빼고 `fonts.css`, `base.css`만 전역에서 한 번 불러오면 됩니다.
 
 ### Tailwind
 
@@ -53,27 +51,6 @@ vanilla-extract만 쓰는 앱은 `tailwind.css`를 빼고 `fonts.css`, `base.css
 - spacing과 radius는 유틸리티 대신 CSS 변수로 씁니다(예: `p-(--umc-spacing-padding-16)`, `rounded-(--umc-radius-button-12)`)
 - 토큰마다 추천 클래스와 Tailwind 이름은 `@umc-product/design-tokens/manifest`의 `utility`, `tailwindName`에 있습니다
 
-### vanilla-extract
-
-`@vanilla-extract/css`에 의존하지 않는 일반 객체라서 그대로 `style()`에 넘길 수 있습니다.
-
-```ts
-import { style } from "@vanilla-extract/css"
-import { typography, vars } from "@umc-product/design-tokens/vanilla-extract"
-
-export const title = style({
-  ...typography.display1Bold,
-  color: vars.color.text.neutralDefault900,
-})
-
-export const content = style({
-  display: "grid",
-  gridTemplateColumns: `repeat(${vars.grid.columns}, minmax(0, 1fr))`,
-  columnGap: vars.grid.gutter,
-  paddingInline: vars.grid.margin.desktop,
-})
-```
-
 ### tailwind-merge 등록
 
 텍스트 스타일과 그림자 유틸리티는 Tailwind 기본 이름이 아니라서, 등록하지 않으면 `cn()`이 다른 그룹의 클래스로 오인해 지울 수 있습니다. tailwind-merge v3 이상(Tailwind v4용)에서 아래처럼 등록합니다.
@@ -103,7 +80,7 @@ export const twMerge = extendTailwindMerge({
 1. 디자이너가 피그마를 고치고 변경 내용(무엇을, 왜, 영향 화면)을 알립니다
 2. 원문을 교체하고 `figma/manifest.json`의 sha256을 갱신합니다. 피그마 파일은 읽기만 합니다
    - 변수: Variables 패널에서 `Color`, `Token` 컬렉션을 Export modes로 받아 `figma/export/`에 같은 이름으로 덮어씁니다
-   - 텍스트 스타일: 피그마 MCP `get_variable_defs`(노드 2268:1706) 결과를 `figma/mcp/`에 그대로 저장합니다
+   - 텍스트 스타일: 피그마 MCP `get_variable_defs` 결과를 `figma/mcp/`에 그대로 저장합니다
 3. 아래 명령을 실행합니다
 
 ```bash

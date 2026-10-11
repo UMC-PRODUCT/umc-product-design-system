@@ -22,7 +22,7 @@ import { usePathname } from "next/navigation"
 
 const NAV_ITEMS = [
   { label: "홈", href: "/", icon: <HomeIcon weight="fill" /> },
-  { label: "검색", href: "/search", icon: <SearchIcon weight="fill" /> },
+  { label: "검색", href: "/search", icon: <SearchIcon /> },
 ]
 
 export function AppBottomNav() {
@@ -55,23 +55,23 @@ export function AppBottomNav() {
 
 <BottomNavigationAllVariants client:visible />
 
-## API
+## props
 
 ### BottomNavigation
 
-| 속성        | 타입        | 기본값 | 설명                        |
+| prop        | 타입        | 기본값 | 설명                        |
 | ----------- | ----------- | ------ | --------------------------- |
-| `children`  | `ReactNode` | —      | `BottomNavigationItem` 목록 |
-| `className` | `string`    | —      | 루트 엘리먼트 추가 클래스   |
+| `children`  | `ReactNode` | 필수   | `BottomNavigationItem` 목록 |
+| `className` | `string`    | 없음   | 루트 엘리먼트 추가 클래스   |
 
 ### BottomNavigationItem
 
-| 속성          | 타입        | 기본값 | 설명                       |
+| prop          | 타입        | 기본값 | 설명                       |
 | ------------- | ----------- | ------ | -------------------------- |
-| `href`        | `string`    | —      | 탭 링크 경로               |
-| `label`       | `string`    | —      | 탭 레이블 텍스트           |
-| `icon`        | `ReactNode` | —      | 탭 아이콘 (24×24 SVG 권장) |
-| `currentPath` | `string`    | —      | 활성 탭 판별용 현재 경로   |
-| `className`   | `string`    | —      | 탭 엘리먼트 추가 클래스    |
+| `href`        | `string`    | 필수   | 탭 링크 경로               |
+| `label`       | `string`    | 필수   | 탭 레이블 텍스트           |
+| `icon`        | `ReactNode` | 필수   | 탭 아이콘 (24×24 SVG 권장) |
+| `currentPath` | `string`    | 없음   | 활성 탭 판별용 현재 경로   |
+| `className`   | `string`    | 없음   | 탭 엘리먼트 추가 클래스    |
 
 `BottomNavigationItem`은 `<a>` 엘리먼트의 나머지 속성도 모두 받습니다. `aria-current`는 컴포넌트가 직접 관리하므로 외부에서 전달하면 타입 오류가 납니다.

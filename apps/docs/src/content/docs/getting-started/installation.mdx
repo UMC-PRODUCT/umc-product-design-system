@@ -17,7 +17,11 @@ import { Aside, Steps } from "@astrojs/starlight/components"
 
 ## 처음 한 번: 토큰과 레지스트리
 
-패키지는 GitHub Packages에 비공개로 올라가 있습니다. UMC-PRODUCT 조직 멤버라면 설치할 수 있지만, 공개 npm과 달리 GitHub 토큰이 있어야 합니다.
+<Aside type="caution" title="첫 릴리스 전입니다">
+  패키지는 아직 배포하지 않았습니다. 아래 절차는 첫 릴리스 뒤에 쓸 수 있습니다.
+</Aside>
+
+패키지는 GitHub Packages에 비공개로 배포합니다. UMC-PRODUCT 조직 멤버라면 설치할 수 있지만, 공개 npm과 달리 GitHub 토큰이 있어야 합니다.
 
 <Steps>
 
@@ -175,6 +179,6 @@ export default defineConfig({
 
 - **Tailwind 기본 팔레트를 지웁니다.** `bg-teal-500`은 피그마 `Teal-500`이고, 피그마에 없는 기본 색 클래스는 생기지 않습니다. 앱 색을 더하는 방법과 import 순서는 [Tailwind CSS에서 쓰기](../tailwind/#기본-팔레트와-앱-색)에 있습니다.
 - **토큰 덮어쓰기는 레이어 밖에서 합니다.** 토큰은 `@layer umc.tokens`에 선언되어 있어서 `@layer base` 안에서 `--umc-*`를 바꾸면 적용되지 않습니다.
-- **브레이크포인트 토큰은 아직 없습니다.** 디자인 팀과 경계값을 정할 때까지 앱의 기존 브레이크포인트를 씁니다.
+- **브레이크포인트 토큰은 아직 없습니다.** 토큰이 생기기 전까지 앱의 기존 브레이크포인트를 씁니다.
 
 설치하다 막히면 [문제 해결](../troubleshooting/)을 보세요.

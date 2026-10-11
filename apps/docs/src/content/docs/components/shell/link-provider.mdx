@@ -22,10 +22,10 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
 ## props
 
-| prop        | 타입                                | 설명                           |
-| ----------- | ----------------------------------- | ------------------------------ |
-| `component` | `ComponentType<LinkComponentProps>` | 셸 컴포넌트가 쓸 링크 컴포넌트 |
-| `children`  | `ReactNode`                         | 하위 트리                      |
+| prop        | 타입                                | 기본값 | 설명                           |
+| ----------- | ----------------------------------- | ------ | ------------------------------ |
+| `component` | `ComponentType<LinkComponentProps>` | 필수   | 셸 컴포넌트가 쓸 링크 컴포넌트 |
+| `children`  | `ReactNode`                         | 필수   | 하위 트리                      |
 
 등록하는 컴포넌트는 아래 props를 받아 그대로 렌더해야 합니다. Next.js `Link`와 React Router `Link`는 이 모양을 이미 받습니다. React Router는 `href` 대신 `to`를 쓰므로 감싸서 넘깁니다.
 

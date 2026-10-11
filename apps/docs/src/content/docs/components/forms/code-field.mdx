@@ -27,7 +27,7 @@ import { CodeField } from "@umc-product/react"
 
 ## 오류 뒤 다시 입력
 
-피그마 주석대로 동작합니다. 오류가 나면 입력한 숫자를 남긴 채 모든 칸을 오류로 표시하고, 칸 묶음이 좌우로 흔들립니다(400ms). 흔들림은 `invalid`가 false에서 true로 바뀔 때마다 생기고, 움직임 줄이기 설정에서는 생기지 않습니다. 사용자가 칸을 다시 누르면 숫자를 모두 지우고(`onValueChange("")`) 첫 칸부터 다시 받습니다. 아래 예시에서 `123456`이 아닌 코드를 넣어 확인할 수 있습니다.
+오류가 나면 입력한 숫자를 남긴 채 모든 칸을 오류로 표시하고, 칸 묶음이 좌우로 흔들립니다(400ms). 흔들림은 `invalid`가 false에서 true로 바뀔 때마다 생기고, 움직임 줄이기 설정에서는 생기지 않습니다. 사용자가 칸을 다시 누르면 숫자를 모두 지우고(`onValueChange("")`) 첫 칸부터 다시 받습니다. 아래 예시에서 `123456`이 아닌 코드를 넣어 확인할 수 있습니다.
 
 <CodeFieldVerify client:visible />
 
@@ -71,3 +71,5 @@ import { CodeField } from "@umc-product/react"
 | `normalizeValue`  | `(value: string) => string`              | 없음        | 걸러진 값을 바꾸는 함수(예: 대문자로) |
 | `mask`            | `boolean`                                | 없음        | 입력을 가림                           |
 | `info`            | `ReactNode`                              | 없음        | 아래쪽 정보 버튼 자리                 |
+| `name`            | `string`                                 | 없음        | 폼으로 보낼 때의 이름                 |
+| `disabled`        | `boolean`                                | 없음        | 비활성                                |

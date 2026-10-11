@@ -23,7 +23,7 @@ import { ScrollFog } from "@umc-product/react"
 </div>
 ```
 
-띠 폭은 `className`으로 바꿀 수 있습니다(예: `className="h-10"`).
+띠 두께는 `className`으로 바꿀 수 있습니다. `side`가 `left`, `right`이면 `w-*`, `top`, `bottom`이면 `h-*` 클래스를 씁니다(예: `className="w-10"`).
 
 ## 가로 스크롤
 
@@ -40,7 +40,7 @@ import { ScrollFog } from "@umc-product/react"
 | `side` | `"top" \| "bottom" \| "left" \| "right"` | `"right"` | 붙을 가장자리                  |
 | 나머지 | `ComponentPropsWithRef<"div">`           |           | `style`, `className`, `ref` 등 |
 
-그라디언트 진행 방향은 `side`와 반대입니다. `side="right"`이면 왼쪽(투명)에서 오른쪽(`--umc-color-background-default`)으로 진행합니다.
+`side="right"`이면 왼쪽(투명)에서 오른쪽(`--umc-color-background-default`)으로 진행합니다.
 
 ## 접근성
 
