@@ -33,6 +33,14 @@
 
 2026-10-08에 `Label/3-Medium` 자간이 -3%로 바뀐 것을 반영했습니다. 같은 날 `Color` 컬렉션을 Export modes로 다시 받아 바뀐 이름 38개를 코드 이름에 맞췄습니다. `Fill/Neutral/Stronger-300`과 `Stronger-Hover(Pressed)`는 새로 넣었고, 빠진 `Surface/Disabled`는 토큰에서도 뺐습니다(코드에서 쓰는 곳 없음). 값이 바뀐 변수는 없습니다. `Token` 컬렉션은 이전 스냅샷과 같습니다.
 
+상태 글자색 세 개가 작은 글자의 대비 기준(WCAG AA 4.5:1)에 못 미칩니다.
+
+- `--umc-color-text-warning`(`#ed8002`): 흰 배경 2.73:1, `yellow-100` 배경 2.41:1
+- `--umc-color-text-error`(`#dc3d3d`): 흰 배경 4.40:1, `red-100` 배경 3.73:1
+- `--umc-color-text-success`(`#06844c`): `green-100` 배경 4.16:1
+
+Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합을 씁니다. 코드는 피그마 값을 그대로 따르고, 문서 사이트 안내 상자만 제목을 중립색으로 바꿔 피했습니다. 글자색을 한 단계 진한 값으로 바꿀지 알려 주세요.
+
 ## 아이콘
 
 정사각형이 아닌 프레임, 고정된 흰 부분, 토큰에 없는 픽토그램 색 등 11개 항목은 [아이콘 정규화 리포트](packages/icons/reports/icon-normalization.md)에 있습니다.
