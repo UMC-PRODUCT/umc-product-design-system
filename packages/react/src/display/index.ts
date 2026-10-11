@@ -10,3 +10,9 @@ export {
   type StatusTagColor,
   type StatusTagProps,
 } from "./status-tag/index.ts"
+export {
+  NumberTag,
+  type NumberTagColor,
+  type NumberTagProps,
+  type NumberTagVariant,
+} from "./number-tag/index.ts"

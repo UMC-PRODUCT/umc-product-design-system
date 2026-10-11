@@ -1,5 +1,6 @@
 @import "./tag/tag.css";
 @import "./status-tag/status-tag.css";
+@import "./number-tag/number-tag.css";
 
 @layer components {
 }
