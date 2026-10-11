@@ -150,6 +150,8 @@ frontend:
 Vite는 패키지 안의 `"use client"`를 무시한다는 경고(`MODULE_LEVEL_DIRECTIVE`)를 컴포넌트마다 냅니다. 동작에는 영향이 없습니다. 경고를 끄려면 `vite.config.ts`에 더합니다.
 
 ```ts
+import { defineConfig } from "vite"
+
 export default defineConfig({
   build: {
     rollupOptions: {

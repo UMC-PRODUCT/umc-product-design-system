@@ -36,6 +36,8 @@ import { CodeField } from "@umc-product/react"
 기본은 숫자만 받습니다. 영문 코드는 `validationType`으로 받을 문자를 넓히고, 대문자로 맞추려면 `normalizeValue`를 넘깁니다. 붙여넣은 값도 같은 규칙으로 걸러집니다.
 
 ```tsx
+import { CodeField } from "@umc-product/react"
+
 <CodeField
   label="인증 코드"
   validationType="alphanumeric"

@@ -11,6 +11,7 @@ import {
 피그마 `Context Switcher`를 구현했습니다. 피그마 설명대로 워크스페이스, 계정 뷰, 관리 권한처럼 작업 맥락을 바꾸고 그에 따라 아래 메뉴가 달라지는 곳에 씁니다. 필요 없으면 쓰지 않습니다. 보통 `SideNavigation`의 `slot`에 넣습니다.
 
 ```tsx
+import { useState } from "react"
 import { ContextSwitcher, type ContextSwitcherOption } from "@umc-product/react"
 
 type View = "challenger" | "chapter"

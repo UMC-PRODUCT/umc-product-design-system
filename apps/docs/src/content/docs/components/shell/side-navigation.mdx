@@ -78,6 +78,8 @@ export function AdminSidebar({ pathname }: { pathname: string }) {
 | `className`   | `string`               | 없음                  | 루트 `nav` 요소에 붙일 클래스          |
 
 ```ts
+import type { ReactNode } from "react"
+
 type SideNavigationLeaf = { label: ReactNode; href: string }
 type SideNavigationLink = SideNavigationLeaf & { icon?: ReactNode }
 type SideNavigationGroup = {

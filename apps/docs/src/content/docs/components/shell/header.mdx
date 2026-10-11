@@ -112,6 +112,8 @@ import { ExpandMoreIcon } from "@umc-product/icons"
 `currentPath`가 항목의 `href`와 같거나 그 하위 경로이면 `aria-current="page"`를 달고 선택 스타일을 적용합니다. 판정은 `isActivePath`가 맡습니다.
 
 ```ts
+import { isActivePath } from "@umc-product/react"
+
 isActivePath("/matching/detail/1", "/matching") // true, 하위 경로
 isActivePath("/matching", "/matching") // true, 완전 일치
 isActivePath("/matching", "/m") // false, 경로 단위로만 비교
@@ -146,6 +148,8 @@ isActivePath("/matching", "/m") // false, 경로 단위로만 비교
 `Header`는 위치를 정하지 않습니다. 스크롤해도 위에 남겨야 하면 레이아웃에서 지정합니다.
 
 ```tsx
+import { Header } from "@umc-product/react"
+
 <Header className="sticky top-0 z-50" />
 ```
 
