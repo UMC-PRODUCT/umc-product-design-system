@@ -91,7 +91,7 @@ export function BottomSheetActions(props: BottomSheetActionsProps) {
             {primary.label}
           </Button>
           <Button
-            variant="fill"
+            variant="weak"
             color="neutral"
             size="md"
             onClick={secondary.onClick}
@@ -102,7 +102,7 @@ export function BottomSheetActions(props: BottomSheetActionsProps) {
       ) : (
         <>
           <Button
-            variant="fill"
+            variant="weak"
             color="neutral"
             size="md"
             onClick={secondary.onClick}

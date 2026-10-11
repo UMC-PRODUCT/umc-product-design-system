@@ -10,116 +10,70 @@ type ActionLayout = "full" | "stacked" | "equal" | "emphasis" | "primary-top"
 
 function ActionsPreviewItem({ layout }: { layout: ActionLayout }) {
   if (layout === "full") {
-    return (
-      <div
-        className="umc-bottom-sheet-actions"
-        data-layout="full"
-        style={{ background: "#f4f5f5", borderRadius: "4px" }}
-      >
-        <button
-          className="umc-button"
-          data-variant="fill"
-          data-color="primary"
-          data-size="md"
-          type="button"
-          style={{ width: "100%" }}
-        >
-          <span className="umc-button__label">확인</span>
-        </button>
-      </div>
-    )
+    return <BottomSheetActions layout="full" primary={{ label: "확인" }} />
   }
-
-  if (layout === "primary-top") {
-    return (
-      <div
-        className="umc-bottom-sheet-actions"
-        data-layout="primary-top"
-        style={{ background: "#f4f5f5", borderRadius: "4px" }}
-      >
-        <button
-          className="umc-button"
-          data-variant="fill"
-          data-color="primary"
-          data-size="md"
-          type="button"
-          style={{ width: "100%" }}
-        >
-          <span className="umc-button__label">확인</span>
-        </button>
-        <button
-          className="umc-text-button"
-          data-color="neutral"
-          data-size="xs"
-          data-variant="plain"
-          type="button"
-          style={{ alignSelf: "center" }}
-        >
-          <span className="umc-text-button__label">나중에</span>
-        </button>
-      </div>
-    )
-  }
-
   return (
-    <div
-      className="umc-bottom-sheet-actions"
-      data-layout={layout}
-      style={{ background: "#f4f5f5", borderRadius: "4px" }}
-    >
-      <button
-        className="umc-button"
-        data-variant="fill"
-        data-color="neutral"
-        data-size="md"
-        type="button"
-        {...(layout === "emphasis" ? { style: { width: "110px" } } : {})}
-      >
-        <span className="umc-button__label">취소</span>
-      </button>
-      <button
-        className="umc-button"
-        data-variant="fill"
-        data-color="primary"
-        data-size="md"
-        type="button"
-      >
-        <span className="umc-button__label">확인</span>
-      </button>
-    </div>
+    <BottomSheetActions
+      layout={layout}
+      primary={{ label: "확인" }}
+      secondary={{ label: layout === "primary-top" ? "나중에" : "취소" }}
+    />
   )
 }
 
+const STATIC_SHEET = {
+  position: "static",
+  zIndex: "auto",
+  width: "320px",
+} as const
+
 function BottomSheetPreviewItem({
   titleAlign,
+  keyboard = false,
 }: {
   titleAlign: "start" | "center"
+  keyboard?: boolean
 }) {
   return (
-    <div
-      style={{
-        background: "#f4f5f5",
-        borderTopLeftRadius: "24px",
-        borderTopRightRadius: "24px",
-        width: "311px",
-        overflow: "hidden",
-      }}
-    >
-      <span
-        aria-hidden="true"
-        className="umc-bottom-sheet__handle"
-        style={{ display: "block" }}
-      />
-      <div className="umc-bottom-sheet__header" data-align={titleAlign}>
-        <div className="umc-bottom-sheet__title">시트 제목</div>
-        <div className="umc-bottom-sheet__description">
-          설명 문구가 들어갑니다.
+    <div style={{ display: "flex", flexDirection: "column" }}>
+      <div className="umc-bottom-sheet__popup" style={STATIC_SHEET}>
+        <span aria-hidden="true" className="umc-bottom-sheet__handle" />
+        <div className="umc-bottom-sheet__header" data-align={titleAlign}>
+          <div className="umc-bottom-sheet__title">
+            {titleAlign === "center" ? "학습 일정" : "시트 제목"}
+          </div>
+          {titleAlign === "start" ? (
+            <div className="umc-bottom-sheet__description">
+              설명 문구가 들어갑니다.
+            </div>
+          ) : (
+            <div className="umc-bottom-sheet__header-action">
+              <Button variant="weak" color="primary" size="xs">
+                편집
+              </Button>
+            </div>
+          )}
         </div>
+        <div className="umc-bottom-sheet__body">
+          <div
+            style={{
+              height: "106px",
+              borderRadius: "8px",
+              background: "var(--umc-color-fill-neutral-weak-75)",
+            }}
+          />
+        </div>
+        <ActionsPreviewItem layout="full" />
       </div>
-      <div className="umc-bottom-sheet__body" style={{ padding: "8px 20px 0" }}>
-        <p>본문 내용</p>
-      </div>
-      <ActionsPreviewItem layout="full" />
+      {keyboard && (
+        <div
+          aria-hidden="true"
+          style={{
+            height: "216px",
+            background: "var(--umc-color-teal-grey-200)",
+          }}
+        />
+      )}
     </div>
   )
 }
@@ -237,7 +191,12 @@ export function BottomSheetAllVariants() {
       render={(variant: FigmaVariant) => {
         const typeValue = variant.props["Type"] ?? "Title"
         const align = TITLE_ALIGNS[typeValue] ?? "start"
-        return <BottomSheetPreviewItem titleAlign={align} />
+        return (
+          <BottomSheetPreviewItem
+            titleAlign={align}
+            keyboard={variant.props["Keyboard"] === "On"}
+          />
+        )
       }}
     />
   )
