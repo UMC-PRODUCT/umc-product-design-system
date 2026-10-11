@@ -1,0 +1,77 @@
+---
+title: TextButton
+description: 배경 없이 글자만 있는 보조 버튼입니다. 피그마 Text Button(변형 72개)을 옮겼습니다.
+---
+
+import {
+  TextButtonAllVariants,
+  TextButtonBasics,
+  TextButtonColors,
+  TextButtonSizes,
+} from "../../../../components/react/TextButtonExamples.tsx"
+
+피그마 `Text Button`을 옮겼습니다. 배경과 테두리가 없는 버튼이라, 화면의 주된 동작보다 한 단계 낮은 동작에 씁니다. "전체 보기", "항목 추가", "약관 보기"처럼 목록 끝이나 문단 사이에 놓입니다. 렌더되는 요소는 `<button>`이고 네이티브 `button` 속성을 모두 받습니다.
+
+```tsx
+import { AddIcon, ChevronRightIcon } from "@umc-product/icons"
+import { TextButton } from "@umc-product/react"
+
+<TextButton trailingIcon={<ChevronRightIcon weight="fill" />}>전체 보기</TextButton>
+<TextButton leadingIcon={<AddIcon weight="fill" />}>항목 추가</TextButton>
+<TextButton variant="underline">약관 보기</TextButton>
+```
+
+<TextButtonBasics client:visible />
+
+## 색과 상태
+
+`color="brand"`(기본)는 틸, `color="neutral"`은 회색입니다. 마우스를 올리거나 누르면 글자가 한 단계 진해집니다. 아이콘은 글자와 따로 색을 받아서, 진해질 때 글자보다 한 단계 옅습니다. 피그마가 그렇게 칠해 두었습니다.
+
+| color     | 기본                      | hover와 눌림                                                       | 비활성                    |
+| --------- | ------------------------- | ------------------------------------------------------------------ | ------------------------- |
+| `brand`   | `text-brand-default-600`  | 글자 `text-brand-strong-800`, 아이콘 `teal-700`                    | `text-brand-disabled-300` |
+| `neutral` | `text-neutral-medium-600` | 글자 `text-neutral-strong-800`, 아이콘 `icon-neutral-stronger-700` | `text-disabled`           |
+
+<TextButtonColors client:visible />
+
+## 크기
+
+| size | 글자                   | 아이콘 | 높이   |
+| ---- | ---------------------- | ------ | ------ |
+| `xs` | `label-3-medium`(16px) | 16px   | 22.4px |
+| `sm` | `label-1-medium`(18px) | 16px   | 25.2px |
+| `md` | `title-2-medium`(20px) | 20px   | 28px   |
+
+글자와 아이콘 사이는 3px입니다. 버튼에 여백이 없으므로 누를 영역이 작습니다. 모바일에서 자주 누르는 자리라면 감싼 요소에 여백을 주세요.
+
+<TextButtonSizes client:visible />
+
+## 아이콘
+
+피그마의 `Type`은 두 가지를 섞어 둔 속성이라 둘로 나눴습니다.
+
+- 앞뒤 아이콘은 `leadingIcon`, `trailingIcon`으로 넘깁니다. 피그마는 앞에 `Icon/Add`, 뒤에 `Icon/Chevron_Right`를 Fill 굵기로 둡니다.
+- `Plain`, `Underline`은 글자 모양입니다. `variant`로 고릅니다.
+
+아이콘은 장식이라 `aria-hidden`으로 숨깁니다. 아이콘만으로 뜻이 전해지면 버튼에 `aria-label`을 주세요.
+
+## 모든 변형
+
+피그마 `Text Button` 변형 72개를 그렸습니다. Hover·Pressed 칸은 상태를 켜 둔 모습입니다.
+
+<TextButtonAllVariants client:visible />
+
+## props
+
+| prop           | 타입                              | 기본값    | 설명                                        |
+| -------------- | --------------------------------- | --------- | ------------------------------------------- |
+| `color`        | `"brand" \| "neutral"`            | `"brand"` | 글자색                                      |
+| `size`         | `"xs" \| "sm" \| "md"`            | `"xs"`    | 크기. 피그마 기본 변형이 Xs라 기본값도 같음 |
+| `variant`      | `"plain" \| "underline"`          | `"plain"` | 밑줄 여부                                   |
+| `leadingIcon`  | `ReactNode`                       | 없음      | 글자 앞 아이콘                              |
+| `trailingIcon` | `ReactNode`                       | 없음      | 글자 뒤 아이콘                              |
+| 나머지         | `ComponentPropsWithRef<"button">` | 없음      | `type`의 기본값은 `"button"`                |
+
+## 알아 둘 점
+
+- 밑줄(`variant="underline"`)과 앞뒤 아이콘을 함께 쓸 수 있습니다.

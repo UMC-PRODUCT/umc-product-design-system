@@ -1,0 +1,56 @@
+@layer components {
+  .umc-bubble {
+    --umc-bubble-surface: var(--umc-color-surface-default);
+    --umc-bubble-fg: var(--umc-color-text-neutral-default-900);
+
+    display: inline-flex;
+    align-items: flex-end;
+  }
+
+  .umc-bubble__tail {
+    color: var(--umc-bubble-surface);
+    width: 16px;
+    height: 18px;
+    flex-shrink: 0;
+    transform: scaleX(-1);
+  }
+
+  .umc-bubble__body {
+    background-color: var(--umc-bubble-surface);
+    color: var(--umc-bubble-fg);
+    padding-block: var(--umc-spacing-padding-10);
+    padding-inline: var(--umc-spacing-padding-12);
+    border-radius: var(--umc-radius-12);
+    max-width: 232px;
+    font-family: var(--umc-typography-body-2-regular-font-family);
+    font-size: var(--umc-typography-body-2-regular-font-size);
+    font-weight: var(--umc-typography-body-2-regular-font-weight);
+    line-height: var(--umc-typography-body-2-regular-line-height);
+    letter-spacing: var(--umc-typography-body-2-regular-letter-spacing);
+    word-break: break-word;
+  }
+
+  .umc-bubble[data-direction="incoming"] .umc-bubble__tail {
+    margin-right: -10px;
+  }
+
+  .umc-bubble[data-direction="outgoing"] {
+    --umc-bubble-surface: var(--umc-color-surface-brand-inverse);
+    --umc-bubble-fg: var(--umc-color-text-inverse);
+  }
+
+  .umc-bubble[data-direction="outgoing"] .umc-bubble__body {
+    margin-right: -10px;
+  }
+
+  @media (forced-colors: active) {
+    .umc-bubble__body {
+      outline: 1px solid CanvasText;
+      outline-offset: -1px;
+    }
+
+    .umc-bubble__tail {
+      display: none;
+    }
+  }
+}

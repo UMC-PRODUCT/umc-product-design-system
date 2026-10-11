@@ -1,0 +1,82 @@
+---
+title: Select
+description: 목록에서 하나를 고르는 선택 필드입니다.
+---
+
+import {
+  SelectAllVariants,
+  SelectDefault,
+  SelectFilter,
+  SelectSearchable,
+  SelectStates,
+} from "../../../../components/react/forms/SelectExamples.tsx"
+
+피그마 `Text Field/ Input Box`의 `Type=Select`와 `Dropdown`을 구현했습니다. 값 타입은 `options`의 `value`에서 추론합니다.
+
+```tsx
+import { useState } from "react"
+import { Select, type SelectOption } from "@umc-product/react"
+
+type Part = "web" | "ios"
+
+const parts: SelectOption<Part>[] = [
+  { value: "web", label: "Web" },
+  { value: "ios", label: "iOS" },
+]
+
+const [part, setPart] = useState<Part | null>(null)
+
+<Select label="파트" options={parts} value={part} onValueChange={setPart} />
+```
+
+## 기본
+
+목록은 버튼 아래 4px에 열리고 너비는 버튼보다 좁아지지 않습니다. 고른 항목은 연한 청록 배경과 체크로 표시합니다.
+
+<SelectDefault client:visible />
+
+## 필터
+
+`variant="filter"`는 피그마 `State=Filtered`입니다. 값이 있으면 테두리, 배경, 글자가 청록으로 바뀌어 필터가 걸려 있음을 알립니다. 보이는 레이블이 없으면 `aria-label`을 넘깁니다.
+
+<SelectFilter client:visible />
+
+## 검색
+
+`searchable`이면 목록 위에 `SearchField`(`variant="dropdown"`)를 둡니다. 레이블이 문자열인 항목은 레이블로, 아니면 `value`로 거릅니다. `itemSize="md"`는 항목에 `caption`을 함께 보여 줍니다.
+
+<SelectSearchable client:visible />
+
+## 상태
+
+<SelectStates client:visible />
+
+## 모든 변형
+
+피그마 `Text Field/ Input Box`의 Select 변형 10개를 그렸습니다. 목록 항목의 변형은 [Menu](../menu/#모든-변형)에 있습니다. 칸에 마우스를 올리면 코드가 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
+
+<SelectAllVariants client:visible />
+
+## props
+
+`Field`의 props를 받습니다.
+
+| prop                | 타입                         | 기본값      | 설명                                          |
+| ------------------- | ---------------------------- | ----------- | --------------------------------------------- |
+| `options`           | `SelectOption<V>[]`          | 없음        | 항목(`value`, `label`, `caption`, `disabled`) |
+| `value`             | `V \| null`                  | 없음        | 제어 값                                       |
+| `defaultValue`      | `V \| null`                  | `null`      | 비제어 초기값                                 |
+| `onValueChange`     | `(value: V \| null) => void` | 없음        | 값이 바뀔 때                                  |
+| `placeholder`       | `ReactNode`                  | `"선택"`    | 값이 없을 때 문구                             |
+| `size`              | `"lg" \| "md"`               | `"lg"`      | 버튼 높이 48px 또는 44px                      |
+| `itemSize`          | `"xs" \| "sm" \| "md"`       | `"sm"`      | 피그마 `Dropdown/Item` 크기                   |
+| `variant`           | `"default" \| "filter"`      | `"default"` | 필터용 표시                                   |
+| `searchable`        | `boolean`                    | 없음        | 목록 위 검색                                  |
+| `searchPlaceholder` | `string`                     | `"검색"`    | `searchable`일 때 검색 입력의 placeholder     |
+| `name`              | `string`                     | 없음        | 폼 제출 이름                                  |
+| `aria-label`        | `string`                     | 없음        | 보이는 레이블이 없을 때 이름                  |
+
+## 알아 둘 점
+
+- 목록이 열리면 화살표가 180도 돕니다.
+- 목록이 열려 있는 동안 버튼은 hover 배경을 유지합니다.

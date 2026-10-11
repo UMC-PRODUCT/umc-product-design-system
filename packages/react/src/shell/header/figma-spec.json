@@ -1,0 +1,173 @@
+{
+  "component": "Header",
+  "figmaSection": "2858:65987",
+  "page": "/components/shell/header/",
+  "nodes": [
+    {
+      "specId": "header-light",
+      "node": "2678:52059",
+      "variant": "Login Status=Logged In, Mode=Light, Show CTA Button=False",
+      "target": ".umc-header",
+      "expected": {
+        "height": "80px",
+        "background-color": "#fbfcfc",
+        "box-shadow~": "#eff0f04d 0px 4px 16px 0px"
+      }
+    },
+    {
+      "specId": "header-light-logo",
+      "node": "2732:60554",
+      "variant": "Web/Header/Home Link, Context=Main",
+      "target": ".umc-header__logo",
+      "expected": {
+        "padding-top": "10px",
+        "padding-right": "16px",
+        "padding-bottom": "10px",
+        "padding-left": "60px"
+      }
+    },
+    {
+      "specId": "header-light-navigation",
+      "node": "2780:61570",
+      "variant": "Web/Header/Navigation, Mode=Light",
+      "target": ".umc-header__nav-list",
+      "expected": {
+        "padding-top": "6px",
+        "padding-right": "6px",
+        "padding-bottom": "6px",
+        "padding-left": "6px",
+        "column-gap": "6px",
+        "border-top-width": "1px",
+        "border-top-color": "#f7f8f8",
+        "border-top-left-radius": "999px",
+        "background-color": "#fbfcfc",
+        "box-shadow~": "#0a56500a 0px 0px 16px 0px"
+      },
+      "figmaDiffers": {
+        "border-top-left-radius": "피그마 컨테이너는 9999px 리터럴, 항목은 radius/primitive/full(999px)을 쓴다. 둘 다 완전한 원형이라 토큰 999px로 통일했다"
+      }
+    },
+    {
+      "specId": "header-light-item",
+      "node": "2678:52269",
+      "variant": "State=Default, Mode=Light",
+      "target": ".umc-header__nav-link:not([aria-current])",
+      "expected": {
+        "height": "36px",
+        "min-width": "72px",
+        "padding-top": "6px",
+        "padding-right": "18px",
+        "padding-bottom": "6px",
+        "padding-left": "18px",
+        "border-top-left-radius": "999px",
+        "background-color": "#fbfcfc",
+        "color": "#606262",
+        "font-size": "16px",
+        "font-weight": "500",
+        "line-height": "23.2px",
+        "letter-spacing": "-0.16px"
+      }
+    },
+    {
+      "specId": "header-light-item-hover",
+      "interaction": "hover",
+      "node": "2678:52273",
+      "variant": "State=Hover, Mode=Light",
+      "target": ".umc-header__nav-link:not([aria-current])",
+      "expected": {
+        "background-color": "#f7f8f8",
+        "color": "#606262",
+        "box-shadow~": "#d3d8d826 1px 1px 2px 0px inset"
+      }
+    },
+    {
+      "specId": "header-light-item-selected",
+      "node": "2678:52277",
+      "variant": "State=Selected, Mode=Light",
+      "target": ".umc-header__nav-link[aria-current=\"page\"]",
+      "expected": {
+        "height": "36px",
+        "background-color": "#e9f7f5",
+        "color": "#02746c",
+        "font-size": "16px",
+        "font-weight": "600",
+        "line-height": "23.2px",
+        "letter-spacing": "-0.16px"
+      }
+    },
+    {
+      "specId": "header-light-actions",
+      "node": "2780:61499",
+      "variant": "Web/Header/Actions",
+      "target": ".umc-header__actions",
+      "expected": {
+        "column-gap": "16px",
+        "padding-right": "34px"
+      }
+    },
+    {
+      "specId": "header-dark",
+      "node": "2809:62842",
+      "variant": "Login Status=Logged In, Mode=Dark, Show CTA Button=False",
+      "target": ".umc-header",
+      "expected": {
+        "height": "80px",
+        "background-color": "#00000000",
+        "box-shadow~": "#eff0f04d 0px 4px 16px 0px"
+      },
+      "figmaDiffers": {
+        "background-color": "피그마 다크 헤더 배경은 랜딩 히어로 이미지다. 헤더는 투명하게 두고 배경은 놓이는 페이지가 그린다"
+      }
+    },
+    {
+      "specId": "header-dark-navigation",
+      "node": "2809:62275",
+      "variant": "Web/Header/Navigation, Mode=Dark",
+      "target": ".umc-header__nav-list",
+      "expected": {
+        "border-top-color": "#ffffff",
+        "background-color": "#fbfcfc33",
+        "backdrop-filter": "blur(21px)",
+        "box-shadow~": "#0a56500a 0px 0px 16px 0px"
+      }
+    },
+    {
+      "specId": "header-dark-item",
+      "node": "2678:52271",
+      "variant": "State=Default, Mode=Dark",
+      "target": ".umc-header__nav-link:not([aria-current])",
+      "expected": {
+        "background-color": "#00000000",
+        "color": "#e2e3e3",
+        "font-weight": "500"
+      }
+    },
+    {
+      "specId": "header-dark-item-hover",
+      "interaction": "hover",
+      "node": "2678:52275",
+      "variant": "State=Hover, Mode=Dark",
+      "target": ".umc-header__nav-link:not([aria-current])",
+      "expected": {
+        "background-color": "#00000000",
+        "color": "#02746c"
+      }
+    },
+    {
+      "specId": "header-dark-item-selected",
+      "node": "2678:52279",
+      "variant": "State=Selected, Mode=Dark",
+      "target": ".umc-header__nav-link[aria-current=\"page\"]",
+      "expected": {
+        "height": "36px",
+        "background-color": "#ddf4f14d",
+        "color": "#ffffff",
+        "font-weight": "600",
+        "box-shadow~": "#ffffff 0px 0px 0px 1px inset"
+      },
+      "figmaDiffers": {
+        "box-shadow~": "피그마는 1px 테두리와 좌우 패딩 16px을 쓴다. 선택 시 폭이 바뀌지 않도록 패딩 18px을 유지하고 inset 그림자로 테두리를 그렸다"
+      }
+    }
+  ]
+}

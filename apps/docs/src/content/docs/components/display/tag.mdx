@@ -1,0 +1,113 @@
+---
+title: Tag
+description: 상태, 숫자, 카테고리 등 짧은 레이블을 표시하는 세 가지 태그 컴포넌트입니다.
+---
+
+import {
+  TagStaticPreview,
+  TagAllVariants,
+  StatusTagAllVariants,
+  NumberTagAllVariants,
+} from "../../../../components/react/display/TagExamples.tsx"
+
+`Tag`, `StatusTag`, `NumberTag`는 정보를 한눈에 알아볼 수 있도록 작은 레이블 형태로 표시합니다. 세 컴포넌트는 모두 `<span>`으로 렌더링되어 인라인 흐름을 유지합니다.
+
+```tsx
+import { Tag, StatusTag, NumberTag } from "@umc-product/react"
+
+function Example() {
+  return (
+    <>
+      <Tag color="brand" size="sm">UMC</Tag>
+      <StatusTag color="brand">진행 중</StatusTag>
+      <NumberTag color="brand" variant="primary">3</NumberTag>
+    </>
+  )
+}
+```
+
+## 외형 미리보기
+
+<TagStaticPreview />
+
+## Tag
+
+카테고리나 상태를 색과 채움 방식으로 구분합니다. `variant`로 배경을 연하게(`weak`) 또는 채워서(`fill`) 표시하고, `color`로 의미를 전달합니다.
+
+### 모든 변형
+
+<TagAllVariants />
+
+### 언제 쓰는가
+
+- `weak`: 목록 항목에 가벼운 분류를 표시할 때 사용합니다. 배경이 연해 텍스트와 충돌하지 않습니다.
+- `fill`: 강조가 필요하거나 선택된 항목을 나타낼 때 씁니다. `neutral`과 함께 쓰면 비활성 상태를 표현합니다.
+- `sm`은 본문 인라인, `md`는 카드 내 레이블, `lg`는 독립된 표시에 적합합니다.
+
+### props
+
+| prop        | 타입                                                        | 기본값    | 설명             |
+| ----------- | ----------------------------------------------------------- | --------- | ---------------- |
+| `variant`   | `"weak" \| "fill"`                                          | `"weak"`  | 채움 방식        |
+| `color`     | `"brand" \| "neutral" \| "warning" \| "success" \| "error"` | `"brand"` | 색상 의미        |
+| `size`      | `"sm" \| "md" \| "lg"`                                      | `"sm"`    | 크기(22·26·32px) |
+| `children`  | `ReactNode`                                                 | 필수      | 표시할 텍스트    |
+| `ref`       | `Ref<HTMLSpanElement>`                                      |           | 루트 요소 ref    |
+| `className` | `string`                                                    |           | 추가 클래스      |
+
+나머지 `span` 속성은 루트 요소에 그대로 전달됩니다. 네이티브 `color` 속성은 제외됩니다.
+
+## StatusTag
+
+점(dot) 인디케이터와 텍스트로 현재 상태를 나타냅니다. 피그마의 `Tag/Status`에 대응하며 색상 이름이 의미 기반으로 재명명되었습니다.
+
+| 피그마 이름 | 코드 `color` |
+| ----------- | ------------ |
+| Default     | `"brand"`    |
+| Neutral     | `"neutral"`  |
+| Yellow      | `"warning"`  |
+| Red         | `"error"`    |
+
+### 모든 변형
+
+<StatusTagAllVariants />
+
+### 언제 쓰는가
+
+항목의 현재 상태(진행 중, 완료, 오류 등)를 명시적으로 표시할 때 씁니다. dot이 색을 대신 전달하므로 텍스트는 짧게 유지합니다.
+
+### props
+
+| prop       | 타입                                           | 기본값    | 설명          |
+| ---------- | ---------------------------------------------- | --------- | ------------- |
+| `color`    | `"brand" \| "neutral" \| "warning" \| "error"` | `"brand"` | 색상 의미     |
+| `children` | `ReactNode`                                    | 필수      | 상태 텍스트   |
+| `ref`      | `Ref<HTMLSpanElement>`                         |           | 루트 요소 ref |
+
+나머지 `span` 속성은 루트 요소에 전달됩니다. 네이티브 `color`는 제외됩니다.
+
+## NumberTag
+
+숫자나 "R" 기호를 14×14px 정사각형에 표시합니다. 탭, 메뉴 항목, 아이콘에 알림 수나 순위를 붙일 때 씁니다.
+
+### 모든 변형
+
+<NumberTagAllVariants />
+
+### 언제 쓰는가
+
+- `brand primary`: 주요 알림 수 표시에 씁니다.
+- `brand secondary / tertiary`: 차순위 또는 보조 항목에 씁니다.
+- `neutral primary`: 비활성·읽은 알림 등 강조가 덜 필요할 때 씁니다.
+- `"R"` children: 읽지 않은 항목(Unread)을 기호로 나타낼 때 씁니다.
+
+### props
+
+| prop       | 타입                                     | 기본값      | 설명            |
+| ---------- | ---------------------------------------- | ----------- | --------------- |
+| `color`    | `"brand" \| "neutral"`                   | `"neutral"` | 색 계열         |
+| `variant`  | `"primary" \| "secondary" \| "tertiary"` | `"primary"` | 강조 단계       |
+| `children` | `ReactNode`                              | 필수        | 숫자 또는 `"R"` |
+| `ref`      | `Ref<HTMLSpanElement>`                   |             | 루트 요소 ref   |
+
+나머지 `span` 속성은 루트 요소에 전달됩니다. 네이티브 `color`는 제외됩니다.

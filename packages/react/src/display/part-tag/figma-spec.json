@@ -1,0 +1,87 @@
+{
+  "component": "PartTag",
+  "figmaSection": "2621:36083",
+  "page": "/components/display/member-tag/",
+  "nodes": [
+    {
+      "specId": "part-tag-pm-sm-filled",
+      "node": "3357:25463",
+      "variant": "Part=PM, Size=Sm, Style=Filled",
+      "target": ".umc-part-tag",
+      "expected": {
+        "background-color": "#eee3fc",
+        "height": "22px",
+        "border-top-left-radius": "6px",
+        "color": "#0f1010",
+        "font-size": "12px",
+        "font-weight": "500"
+      }
+    },
+    {
+      "specId": "part-tag-pm-sm-outlined",
+      "node": "3385:25514",
+      "variant": "Part=Tag, Size=Part, Style=PM",
+      "target": ".umc-part-tag",
+      "expected": {
+        "background-color": "#f6f0ff",
+        "color": "#7f39c6",
+        "font-size": "12px",
+        "border-top-color": "#eee3fc"
+      }
+    },
+    {
+      "specId": "part-tag-pm-lg-filled",
+      "node": "3839:7903",
+      "variant": "Part=PM, Size=Lg, Style=Filled",
+      "target": ".umc-part-tag",
+      "expected": {
+        "background-color": "#eee3fc",
+        "height": "32px",
+        "border-top-left-radius": "8px",
+        "font-size": "18px"
+      }
+    },
+    {
+      "specId": "part-tag-design-lg-outlined",
+      "node": "3839:7929",
+      "variant": "Part=Design, Size=Lg, Style=Outlined",
+      "target": ".umc-part-tag",
+      "expected": {
+        "background-color": "#fff0f7",
+        "border-top-color": "#ffe0f1",
+        "color": "#d92680"
+      }
+    },
+    {
+      "specId": "part-tag-web-pe-sm-filled",
+      "node": "3357:25467",
+      "variant": "Part=Web PE, Size=Sm, Style=Filled",
+      "target": ".umc-part-tag",
+      "expected": {
+        "background-color": "#fff0c2",
+        "color": "#0f1010"
+      }
+    },
+    {
+      "specId": "part-tag-mobile-pe-sm-filled",
+      "node": "3357:25469",
+      "variant": "Part=Mobile PE, Size=Sm, Style=Filled",
+      "target": ".umc-part-tag",
+      "expected": {
+        "background-color": "#e0e8ff",
+        "color": "#0f1010"
+      }
+    },
+    {
+      "specId": "part-tag-design-sm-outlined",
+      "node": "3385:25516",
+      "variant": "Part=Design, Size=Sm, Style=Outlined",
+      "target": ".umc-part-tag",
+      "expected": {
+        "background-color": "#fff0f7",
+        "border-top-color": "#ffe0f1",
+        "color": "#d92680"
+      }
+    }
+  ]
+}

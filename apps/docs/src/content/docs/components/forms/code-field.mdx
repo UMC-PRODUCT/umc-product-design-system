@@ -1,0 +1,75 @@
+---
+title: CodeField
+description: 한 칸에 한 글자씩 받는 코드 입력 필드입니다.
+---
+
+import {
+  CodeFieldAllVariants,
+  CodeFieldDefault,
+  CodeFieldStates,
+  CodeFieldVerify,
+} from "../../../../components/react/forms/CodeFieldExamples.tsx"
+
+피그마 `Text Field/ Code Input`과 `Input Box/Code Input/ Cell`을 구현했습니다. 칸은 52px 정사각형이고 칸 사이는 10px입니다. 붙여넣기, 방향키 이동, 지우기는 Base UI `OTPField`가 맡습니다.
+
+```tsx
+import { CodeField } from "@umc-product/react"
+
+<CodeField
+  label="개별 지원 코드"
+  onValueComplete={(code) => verify(code)}
+  invalid={wrongCode}
+  errorMessage="코드가 일치하지 않습니다"
+/>
+```
+
+<CodeFieldDefault client:visible />
+
+## 오류 뒤 다시 입력
+
+오류가 나면 입력한 숫자를 남긴 채 모든 칸을 오류로 표시하고, 칸 묶음이 좌우로 흔들립니다(400ms). 흔들림은 `invalid`가 false에서 true로 바뀔 때마다 생기고, 움직임 줄이기 설정에서는 생기지 않습니다. 사용자가 칸을 다시 누르면 숫자를 모두 지우고(`onValueChange("")`) 첫 칸부터 다시 받습니다. 아래 예시에서 `123456`이 아닌 코드를 넣어 확인할 수 있습니다.
+
+<CodeFieldVerify client:visible />
+
+## 영문이 섞인 코드
+
+기본은 숫자만 받습니다. 영문 코드는 `validationType`으로 받을 문자를 넓히고, 대문자로 맞추려면 `normalizeValue`를 넘깁니다. 붙여넣은 값도 같은 규칙으로 걸러집니다.
+
+```tsx
+import { CodeField } from "@umc-product/react"
+
+<CodeField
+  label="인증 코드"
+  validationType="alphanumeric"
+  normalizeValue={(value) => value.toUpperCase()}
+  onValueComplete={(code) => verify(code)}
+/>
+```
+
+## 상태
+
+<CodeFieldStates client:visible />
+
+## 모든 변형
+
+피그마 `Input Box/Code Input/ Cell` 6개는 한 칸짜리(`length={1}`)로, `Text Field/ Code Input` 2개는 여섯 칸으로 그렸습니다. 칸에 마우스를 올리면 코드가 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
+
+<CodeFieldAllVariants client:visible />
+
+## props
+
+`Field`의 props를 받습니다.
+
+| prop              | 타입                                     | 기본값      | 설명                                  |
+| ----------------- | ---------------------------------------- | ----------- | ------------------------------------- |
+| `length`          | `number`                                 | `6`         | 칸 수                                 |
+| `value`           | `string`                                 | 없음        | 제어 값                               |
+| `defaultValue`    | `string`                                 | `""`        | 비제어 초기값                         |
+| `onValueChange`   | `(value: string) => void`                | 없음        | 값이 바뀔 때                          |
+| `onValueComplete` | `(value: string) => void`                | 없음        | 모든 칸이 찼을 때                     |
+| `validationType`  | `"numeric" \| "alpha" \| "alphanumeric"` | `"numeric"` | 받을 문자                             |
+| `normalizeValue`  | `(value: string) => string`              | 없음        | 걸러진 값을 바꾸는 함수(예: 대문자로) |
+| `mask`            | `boolean`                                | 없음        | 입력을 가림                           |
+| `info`            | `ReactNode`                              | 없음        | 아래쪽 정보 버튼 자리                 |
+| `name`            | `string`                                 | 없음        | 폼으로 보낼 때의 이름                 |
+| `disabled`        | `boolean`                                | 없음        | 비활성                                |

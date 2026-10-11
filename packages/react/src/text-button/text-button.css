@@ -1,0 +1,146 @@
+@layer components {
+  .umc-text-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--umc-text-button-fg);
+    font-family: var(--umc-text-button-font-family);
+    font-size: var(--umc-text-button-font-size);
+    font-weight: var(--umc-text-button-font-weight);
+    line-height: var(--umc-text-button-line-height);
+    letter-spacing: var(--umc-text-button-letter-spacing);
+    white-space: nowrap;
+    cursor: pointer;
+    appearance: none;
+    transition: color var(--umc-motion-duration) ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .umc-text-button[data-color="brand"] {
+    --umc-text-button-fg: var(--umc-color-text-brand-default-600);
+    --umc-text-button-fg-pressed: var(--umc-color-text-brand-strong-800);
+    --umc-text-button-fg-disabled: var(--umc-color-text-brand-disabled-300);
+    --umc-text-button-icon: var(--umc-color-icon-brand-strong-600);
+    --umc-text-button-icon-pressed: var(--umc-color-teal-700);
+    --umc-text-button-icon-disabled: var(--umc-color-teal-300);
+  }
+
+  .umc-text-button[data-color="neutral"] {
+    --umc-text-button-fg: var(--umc-color-text-neutral-medium-600);
+    --umc-text-button-fg-pressed: var(--umc-color-text-neutral-strong-800);
+    --umc-text-button-fg-disabled: var(--umc-color-text-disabled);
+    --umc-text-button-icon: var(--umc-color-icon-neutral-strong-600);
+    --umc-text-button-icon-pressed: var(--umc-color-icon-neutral-stronger-700);
+    --umc-text-button-icon-disabled: var(--umc-color-icon-disabled);
+  }
+
+  .umc-text-button[data-size="xs"] {
+    --umc-text-button-icon-size: 16px;
+    --umc-text-button-font-family: var(
+      --umc-typography-label-3-medium-font-family
+    );
+    --umc-text-button-font-size: var(--umc-typography-label-3-medium-font-size);
+    --umc-text-button-font-weight: var(
+      --umc-typography-label-3-medium-font-weight
+    );
+    --umc-text-button-line-height: var(
+      --umc-typography-label-3-medium-line-height
+    );
+    --umc-text-button-letter-spacing: var(
+      --umc-typography-label-3-medium-letter-spacing
+    );
+  }
+
+  .umc-text-button[data-size="sm"] {
+    --umc-text-button-icon-size: 16px;
+    --umc-text-button-font-family: var(
+      --umc-typography-label-1-medium-font-family
+    );
+    --umc-text-button-font-size: var(--umc-typography-label-1-medium-font-size);
+    --umc-text-button-font-weight: var(
+      --umc-typography-label-1-medium-font-weight
+    );
+    --umc-text-button-line-height: var(
+      --umc-typography-label-1-medium-line-height
+    );
+    --umc-text-button-letter-spacing: var(
+      --umc-typography-label-1-medium-letter-spacing
+    );
+  }
+
+  .umc-text-button[data-size="md"] {
+    --umc-text-button-icon-size: 20px;
+    --umc-text-button-font-family: var(
+      --umc-typography-title-2-medium-font-family
+    );
+    --umc-text-button-font-size: var(--umc-typography-title-2-medium-font-size);
+    --umc-text-button-font-weight: var(
+      --umc-typography-title-2-medium-font-weight
+    );
+    --umc-text-button-line-height: var(
+      --umc-typography-title-2-medium-line-height
+    );
+    --umc-text-button-letter-spacing: var(
+      --umc-typography-title-2-medium-letter-spacing
+    );
+  }
+
+  .umc-text-button[data-variant="underline"] .umc-text-button__label {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: from-font;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .umc-text-button:active:not(:disabled, [aria-disabled="true"]) {
+    --umc-text-button-fg: var(--umc-text-button-fg-pressed);
+    --umc-text-button-icon: var(--umc-text-button-icon-pressed);
+  }
+
+  @media (hover: hover) {
+    .umc-text-button:hover:not(:disabled, [aria-disabled="true"]) {
+      --umc-text-button-fg: var(--umc-text-button-fg-pressed);
+      --umc-text-button-icon: var(--umc-text-button-icon-pressed);
+    }
+  }
+
+  .umc-text-button:disabled,
+  .umc-text-button[aria-disabled="true"] {
+    --umc-text-button-fg: var(--umc-text-button-fg-disabled);
+    --umc-text-button-icon: var(--umc-text-button-icon-disabled);
+
+    cursor: default;
+  }
+
+  .umc-text-button:focus-visible {
+    border-radius: var(--umc-radius-6);
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
+    outline-offset: 2px;
+  }
+
+  .umc-text-button__icon {
+    display: inline-flex;
+    flex: 0 0 auto;
+    width: var(--umc-text-button-icon-size);
+    height: var(--umc-text-button-icon-size);
+    color: var(--umc-text-button-icon);
+    transition: color var(--umc-motion-duration) ease;
+  }
+
+  .umc-text-button__icon > svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .umc-text-button,
+    .umc-text-button__icon {
+      transition: none;
+    }
+  }
+}

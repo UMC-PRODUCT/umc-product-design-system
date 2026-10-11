@@ -1,0 +1,138 @@
+{
+  "component": "HeaderHomeLink",
+  "figmaSection": "2732:60555",
+  "page": "/components/shell/header/",
+  "nodes": [
+    {
+      "specId": "home-link-main",
+      "node": "2732:58092",
+      "variant": ".primitive/Web/Header/Home Link/UMC, State=Default, Mode=Light",
+      "target": ".umc-header-home-link",
+      "expected": {
+        "width": "106px",
+        "height": "54px",
+        "padding-top": "16px",
+        "padding-right": "16px",
+        "padding-bottom": "16px",
+        "padding-left": "16px",
+        "color": "#3f4141"
+      }
+    },
+    {
+      "specId": "home-link-main-logo",
+      "node": "2732:60497",
+      "variant": "Logo/UMC",
+      "target": ".umc-logo-lockup__logo",
+      "expected": {
+        "width": "74px",
+        "height": "22px",
+        "color": "#3f4141"
+      }
+    },
+    {
+      "specId": "home-link-main-hover",
+      "interaction": "hover",
+      "node": "2732:58094",
+      "variant": ".primitive/Web/Header/Home Link/UMC, State=Hover & Pressed, Mode=Light",
+      "target": ".umc-header-home-link",
+      "expected": {
+        "color": "#02746c"
+      }
+    },
+    {
+      "specId": "home-link-dark",
+      "node": "2732:58142",
+      "variant": ".primitive/Web/Header/Home Link/UMC, State=Default, Mode=Dark",
+      "target": ".umc-header-home-link",
+      "expected": {
+        "color": "#f4fbfa"
+      }
+    },
+    {
+      "specId": "home-link-dark-hover",
+      "interaction": "hover",
+      "node": "2732:58144",
+      "variant": ".primitive/Web/Header/Home Link/UMC, State=Hover & Pressed, Mode=Dark",
+      "target": ".umc-header-home-link",
+      "expected": {
+        "color": "#b3e5e1"
+      }
+    },
+    {
+      "specId": "home-link-labeled-slot",
+      "node": "2732:60556",
+      "variant": "Web/Header/Home Link, Context=Operation",
+      "target": ".umc-header__logo",
+      "expected": {
+        "padding-top": "10px",
+        "padding-right": "16px",
+        "padding-bottom": "10px",
+        "padding-left": "34px"
+      }
+    },
+    {
+      "specId": "home-link-labeled",
+      "node": "2732:60482",
+      "variant": ".primitive/Web/Header/Home Link/Operation, State=Default, Mode=Light",
+      "target": ".umc-header-home-link",
+      "expected": {
+        "width": "200px",
+        "height": "54px",
+        "padding-top": "16px",
+        "padding-right": "16px",
+        "padding-bottom": "16px",
+        "padding-left": "16px",
+        "color": "#3f4141"
+      }
+    },
+    {
+      "specId": "home-link-labeled-body",
+      "node": "2732:60483",
+      "variant": ".primitive/Web/Header/Home Link/Operation, State=Default, Mode=Light",
+      "target": ".umc-logo-lockup",
+      "expected": {
+        "column-gap": "4.28px",
+        "height": "28.0568px"
+      }
+    },
+    {
+      "specId": "home-link-labeled-logo",
+      "node": "2732:60486",
+      "variant": ".primitive/Web/Header/Home Link/Operation, State=Default, Mode=Light",
+      "target": ".umc-logo-lockup__logo",
+      "expected": {
+        "width": "73.7602px",
+        "height": "21.9287px",
+        "margin-top": "3.6px"
+      }
+    },
+    {
+      "specId": "home-link-labeled-title",
+      "node": "2732:60484",
+      "variant": ".primitive/Web/Header/Home Link/Operation, State=Default, Mode=Light",
+      "target": ".umc-logo-lockup__title",
+      "expected": {
+        "font-family~": "Orbitron",
+        "font-size": "13.487px",
+        "font-weight": "700",
+        "line-height": "16.1844px",
+        "letter-spacing": "-0.3372px",
+        "color": "#3f4141"
+      }
+    },
+    {
+      "specId": "home-link-labeled-subtitle",
+      "node": "2732:60485",
+      "variant": ".primitive/Web/Header/Home Link/Operation, State=Default, Mode=Light",
+      "target": ".umc-logo-lockup__subtitle",
+      "expected": {
+        "font-family~": "Orbitron",
+        "font-size": "11.689px",
+        "font-weight": "700",
+        "line-height": "14.0268px",
+        "letter-spacing": "-0.2922px",
+        "color": "#3f4141"
+      }
+    }
+  ]
+}

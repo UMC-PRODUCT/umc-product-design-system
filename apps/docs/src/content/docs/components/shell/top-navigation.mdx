@@ -1,0 +1,89 @@
+---
+title: Top Navigation
+description: 모바일 앱 화면 상단에 놓는 내비게이션 바입니다.
+---
+
+import {
+  TopNavigationAllVariants,
+  TopNavigationDefault,
+  TopNavigationDropdown,
+  TopNavigationWithBack,
+} from "../../../../components/react/shell/TopNavigationExamples.tsx"
+
+피그마 `App/Top Navigation`을 구현했습니다. 높이는 52px이며 메인 화면과 서브 화면 두 가지 페이지 유형을 지원합니다. 뒤로 가기 버튼이 있을 때는 양쪽 패딩 8px, 없을 때는 왼쪽 16px · 오른쪽 8px입니다. 제목 정렬은 `start`(기본값) 또는 `center`를 선택합니다.
+
+```tsx
+import { LinkProvider, TopNavigation, TopNavigationButton } from "@umc-product/react"
+import { SearchIcon } from "@umc-product/icons"
+import Link from "next/link"
+
+export function NoticeTopNav() {
+  return (
+    <LinkProvider component={Link}>
+      <TopNavigation
+        title="공지 상세"
+        back={{ href: "/notices" }}
+        actions={
+          <TopNavigationButton variant="icon" aria-label="검색">
+            <SearchIcon />
+          </TopNavigationButton>
+        }
+      />
+    </LinkProvider>
+  )
+}
+```
+
+## 기본
+
+메인 화면 유형입니다. 뒤로 가기 버튼 없이 왼쪽 제목과 오른쪽 액션 영역으로 구성됩니다.
+
+<TopNavigationDefault client:visible />
+
+## 뒤로 가기
+
+서브 화면 유형입니다. `back` 을 넘기면 왼쪽에 뒤로 가기 버튼이 생깁니다. `back.href`를 넘기면 링크 엘리먼트로, `back.onClick`만 넘기면 버튼으로 렌더됩니다.
+
+<TopNavigationWithBack client:visible />
+
+## 드롭다운 제목
+
+`onTitleClick`을 넘기면 제목이 탭 가능한 버튼으로 바뀝니다. `titleExpanded`로 `aria-expanded` 상태를 제어합니다.
+
+<TopNavigationDropdown client:visible />
+
+## 전체 변형
+
+<TopNavigationAllVariants client:visible />
+
+## props
+
+### TopNavigation
+
+| prop            | 타입                     | 기본값    | 설명                                 |
+| --------------- | ------------------------ | --------- | ------------------------------------ |
+| `title`         | `ReactNode`              | 필수      | 제목 영역 내용                       |
+| `titleAlign`    | `"start" \| "center"`    | `"start"` | 제목 정렬 방향                       |
+| `back`          | `TopNavigationBackProps` | 없음      | 뒤로 가기 버튼 설정                  |
+| `onTitleClick`  | `() => void`             | 없음      | 제목 클릭 핸들러(드롭다운 트리거)    |
+| `titleExpanded` | `boolean`                | 없음      | 드롭다운 열림 상태 (`aria-expanded`) |
+| `actions`       | `ReactNode`              | 없음      | 오른쪽 액션 슬롯                     |
+| `className`     | `string`                 | 없음      | 루트 엘리먼트 추가 클래스            |
+
+### TopNavigationBackProps
+
+| prop      | 타입         | 설명                                        |
+| --------- | ------------ | ------------------------------------------- |
+| `label`   | `string`     | 버튼 접근성 레이블 (기본값 `"뒤로 가기"`)   |
+| `href`    | `string`     | 링크 경로 — 있으면 `<a>`, 없으면 `<button>` |
+| `onClick` | `() => void` | 클릭 핸들러                                 |
+
+### TopNavigationButton
+
+`variant="icon"` 에서는 `aria-label`이 필수입니다.
+
+| prop         | 타입                     | 기본값      | 설명                                              |
+| ------------ | ------------------------ | ----------- | ------------------------------------------------- |
+| `variant`    | `"icon" \| "text"`       | 필수        | 버튼 유형                                         |
+| `color`      | `"primary" \| "neutral"` | `"primary"` | 텍스트 색상 (`variant="text"` 전용)               |
+| `aria-label` | `string`                 | 없음        | 아이콘 버튼 접근성 레이블 (`variant="icon"` 필수) |

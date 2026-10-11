@@ -1,0 +1,189 @@
+{
+  "component": "OptionButtonGroup",
+  "figmaSection": "2621:32882",
+  "page": "/components/selection/option-button-group/",
+  "nodes": [
+    {
+      "specId": "option-button-weak-xl-selected",
+      "node": "2621:32896",
+      "variant": "Selected=True, Type=Weak, Direction=Left, Size=Xl, Disabled=False",
+      "target": ".umc-option-button[data-checked]",
+      "expected": {
+        "background-color": "#e9f7f5",
+        "color": "#02746c",
+        "height": "48px",
+        "padding-left": "18px",
+        "padding-right": "28px",
+        "border-top-left-radius": "8px",
+        "border-top-right-radius": "0px",
+        "column-gap": "4px",
+        "font-size": "20px",
+        "font-weight": "500",
+        "line-height": "28px",
+        "letter-spacing": "-0.4px",
+        "box-shadow~": "rgb(179, 229, 225) 0px 0px 0px 1px inset"
+      }
+    },
+    {
+      "specId": "option-button-weak-indicator",
+      "node": "3277:56187",
+      "variant": ".primitive/Segmented Control/Check-icon Size=20px",
+      "target": ".umc-option-button[data-checked] .umc-option-button__indicator > svg",
+      "expected": {
+        "color": "#008a80",
+        "width": "20px",
+        "height": "20px"
+      }
+    },
+    {
+      "specId": "option-button-unselected-xl",
+      "node": "2621:32974",
+      "variant": "Selected=False, Type=Default, Direction=Middle, Size=Xl, Disabled=False",
+      "target": ".umc-option-button[data-position=\"middle\"]",
+      "expected": {
+        "background-color": "#ffffff",
+        "color": "#282a2a",
+        "height": "48px",
+        "padding-left": "28px",
+        "padding-right": "28px",
+        "border-top-left-radius": "0px",
+        "margin-left": "0px",
+        "font-size": "20px",
+        "font-weight": "400",
+        "line-height": "28px",
+        "letter-spacing": "-0.4px",
+        "box-shadow~": "rgb(239, 240, 240) 0px 1px 0px 0px inset, rgb(239, 240, 240) 0px -1px 0px 0px inset, rgb(239, 240, 240) 0px 0px 0px 0px inset, rgb(239, 240, 240) 0px 0px 0px 0px inset"
+      }
+    },
+    {
+      "specId": "option-button-unselected-xl-end",
+      "node": "2621:32966",
+      "variant": "Selected=False, Type=Default, Direction=Right, Size=Xl, Disabled=False",
+      "target": ".umc-option-button[data-position=\"end\"]",
+      "expected": {
+        "border-top-right-radius": "8px",
+        "border-bottom-right-radius": "8px",
+        "margin-left": "1px",
+        "box-shadow~": "rgb(239, 240, 240) -1px 0px 0px 0px inset"
+      }
+    },
+    {
+      "specId": "option-button-strong-xl-selected",
+      "node": "2621:32904",
+      "variant": "Selected=True, Type=Strong, Direction=Left, Size=Xl, Disabled=False",
+      "target": ".umc-option-button[data-checked]",
+      "expected": {
+        "background-color": "#02746c",
+        "color": "#ffffff",
+        "height": "48px",
+        "padding-left": "18px",
+        "padding-right": "28px",
+        "font-weight": "500",
+        "box-shadow": "none"
+      }
+    },
+    {
+      "specId": "option-button-strong-indicator",
+      "node": "2621:32894",
+      "variant": "Selected=True, Type=Strong 체크 아이콘",
+      "target": ".umc-option-button[data-checked] .umc-option-button__indicator > svg",
+      "expected": {
+        "color": "#f4fbfa",
+        "width": "20px"
+      }
+    },
+    {
+      "specId": "option-button-weak-sm-selected",
+      "node": "2621:32932",
+      "variant": "Selected=True, Type=Weak, Direction=Middle, Size=Sm, Disabled=False",
+      "target": ".umc-option-button[data-checked]",
+      "expected": {
+        "height": "38px",
+        "padding-left": "12px",
+        "padding-right": "20px",
+        "border-top-left-radius": "0px",
+        "font-size": "16px",
+        "font-weight": "500",
+        "line-height": "22.4px",
+        "letter-spacing": "-0.48px"
+      }
+    },
+    {
+      "specId": "option-button-unselected-sm",
+      "node": "2621:32972",
+      "variant": "Selected=False, Type=Default, Direction=Middle, Size=Sm, Disabled=False",
+      "target": ".umc-option-button[data-position=\"middle\"][data-unchecked]",
+      "expected": {
+        "height": "38px",
+        "padding-left": "20px",
+        "padding-right": "20px",
+        "margin-left": "0px",
+        "font-size": "16px",
+        "font-weight": "400",
+        "line-height": "23.2px",
+        "letter-spacing": "-0.16px"
+      }
+    },
+    {
+      "specId": "option-button-weak-xs-selected",
+      "node": "2621:32992",
+      "variant": "Selected=True, Type=Weak, Direction=Middle, Size=Xs, Disabled=False",
+      "target": ".umc-option-button[data-checked]",
+      "expected": {
+        "height": "28px",
+        "padding-left": "6px",
+        "padding-right": "10px",
+        "font-size": "14px",
+        "font-weight": "500",
+        "line-height": "18.9px",
+        "letter-spacing": "0px"
+      }
+    },
+    {
+      "specId": "option-button-unselected-xs-start",
+      "node": "2621:33024",
+      "variant": "Selected=False, Type=Default, Direction=Left, Size=Xs, Disabled=False",
+      "target": ".umc-option-button[data-position=\"start\"]",
+      "expected": {
+        "padding-left": "14px",
+        "padding-right": "12px",
+        "border-top-left-radius": "8px",
+        "font-weight": "500",
+        "box-shadow~": "rgb(239, 240, 240) 1px 0px 0px 0px inset"
+      }
+    },
+    {
+      "specId": "option-button-unselected-xs-end",
+      "node": "2621:33016",
+      "variant": "Selected=False, Type=Default, Direction=Right, Size=Xs, Disabled=False",
+      "target": ".umc-option-button[data-position=\"end\"]",
+      "expected": {
+        "padding-left": "12px",
+        "padding-right": "14px",
+        "margin-left": "1px",
+        "box-shadow~": "rgb(239, 240, 240) -1px 0px 0px 0px inset"
+      }
+    },
+    {
+      "specId": "option-button-unselected-xl-disabled",
+      "node": "2621:32978",
+      "variant": "Selected=False, Type=Default, Direction=Middle, Size=Xl, Disabled=True",
+      "target": ".umc-option-button[data-disabled]",
+      "expected": {
+        "background-color": "#ffffff",
+        "color": "#cccccc"
+      }
+    },
+    {
+      "specId": "option-button-weak-xl-selected-disabled",
+      "node": "2621:32900",
+      "variant": "Selected=True, Type=Weak, Direction=Left, Size=Xl, Disabled=True",
+      "target": ".umc-option-button[data-checked]",
+      "expected": {
+        "background-color": "#e9f7f5",
+        "color": "#7ac7c1",
+        "box-shadow~": "rgb(179, 229, 225) 0px 0px 0px 1px inset"
+      }
+    }
+  ]
+}

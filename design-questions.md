@@ -1,0 +1,268 @@
+# 디자인 팀 확인 목록
+
+- 독자: 3기 디자인 팀, 웹 파트
+- 소유자: UMC PRODUCT Design Chapter
+- 기준일: 2026-10-11
+
+문서 사이트에는 싣지 않는 작업 목록입니다.
+
+피그마를 코드로 옮기다가 값이나 규칙을 정할 수 없었던 곳을 모았습니다. 항목마다 지금 코드가 쓰는 값을 적었으니, 답을 주시면 해당 코드를 고치고 이 목록에서 지웁니다. 토큰과 아이콘은 생성 리포트에 전체 목록이 있어 요약만 둡니다.
+
+## 공통
+
+1. 3기 변수가 아닌 2기 변수와 연결 안 된 값이 남아 있습니다. 이름이 같은 단계의 3기 토큰이 있으면 그 토큰으로 바꿨고(`teal-gray-200`→`--umc-color-border-neutral-weak-200`, `teal-gray-400`→`--umc-color-text-placeholder`, `teal-gray-900`→`--umc-color-text-neutral-default-900`, `warmgray-150`→`--umc-color-border-neutral-weaker-100`, `warmgray-600`→`--umc-color-text-neutral-medium-600`), 없으면 피그마 값을 컴포넌트 변수에 그대로 담았습니다(`#0b6b64`, `#fed7d7`, `#e2e4e3`, `#f4fbfa99`, `#fef2f199`). 이 대응이 맞는지, 남은 값을 어떤 3기 변수로 연결할지 알려 주세요.
+2. 이름은 같은데 정의가 다른 스타일이 있습니다. 코드는 이름이 같으면 파운데이션 정의(토큰)를 따릅니다.
+   - `Shadow/Inner/Neutral_1`: 파운데이션은 청록 2겹인데, Side Navigation hover와 Segmented Control hover는 같은 이름으로 `#D3D8D833` 1겹(1, 1, 2)을 씁니다. 코드는 토큰 정의를 씁니다.
+   - 같은 `#D3D8D833` 1겹이 이름 없이 붙은 곳도 있습니다(Context Switcher 눌림, Dropdown/Item Active). 이름이 없어 피그마 값을 컴포넌트 변수로 썼습니다. 어느 스타일에 연결할지 알려 주세요.
+   - `Shadow/Inner/Neutral_2`: Segmented Control 컨테이너만 `#E4E4E433`(-1, 2.5, 4)입니다.
+3. 스타일 이름과 실제 값이 다른 곳이 있습니다. Toast `Label/1-Medium`이 16px, Code Input 칸 `Heading/4-Semibold`가 26px, Numeric Stepper `Label/1-Semibold`가 16px입니다. Numeric Stepper는 값이 같은 다른 토큰을 씁니다. Toast는 `Label/3-Medium` 토큰에 자간만 피그마 값(-2%)을, Code Input은 피그마 값을 씁니다.
+4. 3기 파운데이션에 없는 `Mobile Web/*` 텍스트 스타일이 Text Field 레이블(15px/23px, -3%), 도움말(13px/17px), 단위(18px/24px, -3%)에 남아 있습니다. 3기 스타일로 바꿀지 알려 주세요. 지금은 피그마 값을 그대로 씁니다.
+5. 16px 아이콘 세트는 따로 없고, 최근 컴포넌트는 24px 아이콘을 줄여 씁니다(`Icon/Expand_more`·`Icon/Add`·`Icon/Subtraction`은 Fill, `Icon/Info`는 Regular). 코드도 같은 아이콘과 굵기를 따릅니다. 원본 컴포넌트가 파일에서 지워진 인스턴스 세 개는 피그마 그림을 그대로 그렸습니다. 라이브러리 아이콘으로 바꿀지, 바꾼다면 어떤 굵기로 바꿀지 알려 주세요.
+   - Dropdown/Item 선택 체크: `16 icon`
+   - Context Switcher 체크와 화살표: `icon/Check/16 icon/Regular`, `icon/Expand_more/16 icon/Regular`
+6. Hover와 Focus 상태가 없는 컴포넌트가 많습니다. 포커스 표시는 2px `border-primary-strong-500` 외곽선으로 통일했습니다.
+7. 나타나고 사라지는 움직임 정의가 없습니다. 150ms 투명도 전환을 기본으로 넣었고, 움직임 줄이기 설정에서는 끕니다.
+8. 노션 명명 규칙과 다른 이름이 있습니다: `Pressed(Hover)`, `Focused & Hover`, Tooltip의 `Appearance`, Option Button의 `Direction`, 오타 `Disalbed`, `Defalut`, `Numberic`, `Varient`, `Meue`, `Sub Meue`, `Eye_visable`, `Solt`.
+9. 파비콘 에셋이 없습니다. 문서 사이트는 `Logo/UMC`의 U 글자 모양과 색(`#3F4141`)을 그대로 떼어 임시로 씁니다. 정사각형 파비콘이나 앱 아이콘을 주시면 바꾸겠습니다.
+
+## 토큰
+
+변수 이름, codeSyntax 중복, 그림자와 텍스트 스타일의 중복 정의 등 16개 항목은 [피그마 정규화 리포트](packages/design-tokens/reports/figma-normalization.md)의 "디자인 팀 확인 요청"에 있습니다.
+
+가장 먼저 부탁드리는 것은 codeSyntax(WEB) 정리입니다. Dev Mode 코드 패널과 피그마 MCP가 보여 주는 `var(--color-…)`는 코드의 CSS 변수(`--umc-color-…`)와 다른 이름이고, 변수 여러 개가 같은 이름을 나눠 씁니다. 리포트의 "이름 대응표와 codeSyntax 제안"에 변수마다 넣을 값(`var(--umc-color-fill-neutral-weak-75)` 등)을 적어 두었습니다.
+
+2026-10-08에 `Label/3-Medium` 자간이 -3%로 바뀐 것을 반영했습니다. 같은 날 `Color` 컬렉션을 Export modes로 다시 받아 바뀐 이름 38개를 코드 이름에 맞췄습니다. `Fill/Neutral/Stronger-300`과 `Stronger-Hover(Pressed)`는 새로 넣었고, 빠진 `Surface/Disabled`는 토큰에서도 뺐습니다(코드에서 쓰는 곳 없음). 값이 바뀐 변수는 없습니다. `Token` 컬렉션은 이전 스냅샷과 같습니다.
+
+상태 글자색 세 개가 작은 글자의 대비 기준(WCAG AA 4.5:1)에 못 미칩니다.
+
+- `--umc-color-text-warning`(`#ed8002`): 흰 배경 2.73:1, `yellow-100` 배경 2.41:1
+- `--umc-color-text-error`(`#dc3d3d`): 흰 배경 4.40:1, `red-100` 배경 3.73:1
+- `--umc-color-text-success`(`#06844c`): `green-100` 배경 4.16:1
+
+Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합을 씁니다. 코드는 피그마 값을 그대로 따르고, 문서 사이트 안내 상자만 제목을 중립색으로 바꿔 피했습니다. 글자색을 한 단계 진한 값으로 바꿀지 알려 주세요.
+
+## 아이콘
+
+정사각형이 아닌 프레임, 고정된 흰 부분, 토큰에 없는 픽토그램 색 등 11개 항목은 [아이콘 정규화 리포트](packages/icons/reports/icon-normalization.md)에 있습니다.
+
+2026-10-10에 고쳐 주신 내용을 반영했습니다. `Icon/warning` Fill 프레임이 24×24가 되어 비율 보정을 뺐고, 새 `Icon/warning-Triangle`(Thin, Regular, Fill)은 `WarningTriangleIcon`으로 더했습니다. Search 변형 이름이 `Weight=Regular`로 바로잡혀 코드의 변형 이름 보정 규칙을 지웠습니다. `_`로 나눴던 이름 5개(`Icon/warning`, `Icon/Location` 등)도 `/`로 바뀌어 원문 이름을 맞췄고, 코드의 컴포넌트 이름은 그대로입니다. 새 `Pictogram/Check`는 `CheckPictogram`으로 더했습니다. 같은 날 아이콘 전체를 다시 받아 대조했는데, `Icon/Checkbox`의 Thin과 Regular 그림이 서로 바뀌어 있어 코드는 섹션 설명(Thin 1.2px, Regular 1.6px)대로 두었습니다.
+
+## Button
+
+노드 2621:33584. 코드가 쓰는 값은 [Button figma-spec](packages/react/src/button/figma-spec.json)에 있습니다.
+
+1. Hover가 없어 마우스가 있는 기기에서 Pressed 모양을 함께 씁니다. 같은 모양이어도 되는지 알려 주세요.
+2. Primary Fill 아이콘 변형의 색(`#02746c`)이 아이콘 없는 변형과 다릅니다. 코드는 아이콘 없는 변형으로 통일했습니다.
+3. (해결 2026-10-10) Neutral Fill Default 배경을 아이콘 유무와 관계없이 `#606262`(`fill-neutral-inverse-strong-600`)로 맞췄습니다. Disabled(`#adadad`)와 구분됩니다.
+4. Lg에는 아이콘 변형이 없어 Md와 같은 16px 아이콘, 14px 아이콘 쪽 여백으로 가정했습니다.
+5. Xs에서 Neutral Weak Disabled만 글자 16px, White Weak Disabled만 좌우 여백 16px입니다. 파일 실수로 보고 Xs 공통값(15px, 14px)을 썼습니다.
+6. 로딩 점 3개의 움직임 정의가 없습니다. 1초 주기 투명도 변화를 넣었습니다.
+7. Weak 비활성의 흰색 70% 덧칠이 내보낸 컬렉션 밖의 변수(`Static/White/Opacity-70`)를 참조합니다. 눌림 덧칠 색은 변수에 연결되지 않았습니다.
+8. Red Weak 글자색(`red-600`)에 맞는 semantic 토큰이 없어 primitive를 바로 씁니다.
+9. Neutral Weak Default 배경이 아이콘 없는 변형은 `#eff0f0`(`action-primary-default`), 아이콘 있는 변형은 `#f7f8f8`(`TealGrey-75`)입니다. 코드는 아이콘 없는 변형 값(`fill-neutral-medium-100`)으로 통일했습니다. Neutral Fill처럼 하나로 맞춰 주세요.
+
+## Text Button
+
+노드 3573:95925. 코드가 쓰는 값은 [TextButton figma-spec](packages/react/src/text-button/figma-spec.json)에 있습니다.
+
+1. Hover·Pressed에서 글자와 아이콘 색이 다릅니다. Brand는 글자 `#01423d`(teal-800), 아이콘 `#015a54`(teal-700)이고, Neutral은 글자 `#282a2a`, 아이콘 `#3f4141`입니다. 의도인지 알려 주세요. 코드는 피그마대로 따로 칠합니다.
+2. Brand 비활성과 아이콘 Hover 색이 semantic이 아닌 primitive(`Teal-300`, `Teal-700`)에 연결되어 있습니다. 글자 비활성은 같은 값의 `text-brand-disabled-300`로 옮겼고, 아이콘은 primitive를 그대로 씁니다.
+3. Underline 변형은 Brand 기본을 빼고 글자색이 변수에 연결되어 있지 않습니다. Plain과 값이 같아 같은 토큰을 씁니다.
+4. `Type` 하나에 아이콘 자리(Leading Acc, Tailling Acc)와 글자 모양(Plain, Underline)이 섞여 있습니다. 코드는 아이콘 props와 `variant`로 나눴습니다. `Tailling`은 `Trailing`의 오타로 보입니다.
+
+## 선택
+
+1. Option Button Xl의 선택하지 않은 글자는 `Title/2-Medium`을 Regular로 바꾼 값(20px, 400)이라 텍스트 스타일이 없습니다.
+2. Option Button에 Strong이면서 Disabled인 변형이 없습니다. Button Fill Primary 비활성 색(배경 Teal-300, 글자 Teal-100)으로 가정했습니다.
+3. Option Button 체크는 `.primitive/Check-icon`(2026-10-10에 `.primitive/Segmented Control/Check-icon`에서 이름이 바뀜)의 두 크기를 그대로 그립니다. 16px(Sm, Xs)은 선 두께 1.5로 따로 그린 그림이고, 20px(Xl)은 `Icon/Check` Fill인데 선이 살아 있어 20px로 줄여도 두께가 2로 남습니다. 메모에는 "20 없애고 17 넣기"가 있지만 피그마에는 아직 16px과 20px만 있어, 17px 변형이 생기면 Xl 체크를 바꾸겠습니다. 두 크기를 같은 아이콘으로 맞출지, 체크 색(Weak `#008a80`, Strong `#f4fbfa`)이 글자색과 다른 것이 의도인지 알려 주세요.
+4. Option Button 문서의 배경 "Teal Gray 150"은 3기 팔레트에 없고, 컴포넌트에는 `#eff0f0`이 칠해져 있습니다.
+5. Segmented Control 선택 항목과 Step Navigation 현재 단계의 그림자(`0 1px 2px #63c4b833`, `0 0 10px #9ca3a34d`)가 이름 없는 값입니다. 그림자 스타일로 등록할지 알려 주세요.
+6. Step Navigation에서 완료한 단계와 남은 단계의 모양 차이가 없습니다. 완료 표시가 필요한지 알려 주세요. 피그마 번호형 버튼에는 Hover가 있지만, 코드는 누를 수 없는 진행 표시로 만들어 hover를 넣지 않았습니다. 단계를 눌러 이동해야 하는지도 알려 주세요.
+7. Tabs 활성 밑줄 색 `#0b6b64`가 2기 변수입니다. 3기 Teal-600(`#02746c`)으로 바꿔도 되는지 알려 주세요.
+8. Tabs에 아이콘 탭 + 선택 조합이 없어 `--umc-color-icon-neutral-stronger-700`를 임시로 씁니다.
+9. Check Box의 Error 변형 일부가 이름은 `Disabled=True`인데 그림은 활성 오류 상태입니다(`Check Box` 네 개, `Control`의 `Color=Error, Size=Lg, Selected=True`). 코드는 그림을 따랐습니다. 이름을 `Disabled=False`로 고칠 수 있나요?
+10. Check Box 비활성은 Lg가 `Color=Brand`, Md가 `Color=Neutral` 이름으로만 있고 모양은 같습니다. 비활성에는 색 구분이 없다고 보고 `disabled`가 색과 오류보다 앞서게 했습니다.
+11. Check Box 오류 선택 채움은 `Red-400`(`#ed6464`), 오류 테두리는 `Red-500`(`#dc3d3d`)입니다. 단계가 다른 것이 의도인지 알려 주세요. `Red-400`에 맞는 semantic 토큰이 없어 primitive를 씁니다.
+12. Check Box 비활성 체크 선이 2기 변수 `WarmGray-50`(`#fcfbfa`)입니다. 3기 `teal-grey-50`(`#fbfcfc`)으로 옮겼습니다.
+13. 체크 그림이 세 가지입니다. Check Box는 Md 20px(선 1.8)과 Lg 24px(선 2)을 따로 그렸고, Check Button은 옛 16px 체크를 24px로 키운 그림(선 2.4)입니다. 셋 다 라이브러리 `Icon/Check`와 다릅니다. 한 아이콘으로 맞출지 알려 주세요.
+14. Check Button에 비활성과 Hover 모양이 없습니다. 지금은 비활성이어도 색이 그대로라 활성과 구분되지 않습니다(커서만 바뀜). 비활성 색을 알려 주세요.
+15. Switch 트랙 색 두 개가 변수에 연결되어 있지 않습니다. 꺼짐은 내보낸 값이 `#e2e4e3`이고 켜짐은 `#39a9a1`입니다. 코드는 꺼짐에 가장 가까운 `fill-neutral-strong-200`(`#e2e3e3`), 켜짐에 값이 같은 `fill-primary-inverse-weak-400`(`#39a9a1`)을 씁니다.
+16. Switch Sm 켜짐에만 안쪽 그림자(`#D3D8D833`, 0.8 0.8 1.6)가 있습니다. Md에도 필요한지, `Shadow/Inner/Neutral_1`을 줄인 것이라면 이름 있는 그림자로 연결할지 알려 주세요.
+17. 라벨 스타일이 컨트롤마다 다릅니다. Check Box는 `Label`(굵기 500, `#282a2a`), Switch는 `Body`(굵기 400, `#0f1010`)입니다. 같은 폼에 함께 놓일 때도 다르게 보이는 것이 의도인지 알려 주세요.
+18. Radio의 `Color=Primary, Selected=False`(틸 테두리)를 언제 쓰는지 알려 주세요. Hover인지 강조인지에 따라 코드가 달라집니다. Neutral 선택 변형이 없어, 선택하면 색과 관계없이 Primary 선택 모양을 씁니다.
+19. Radio 테두리는 `Teal-400`, Check Box Brand 테두리는 `Teal-300`(`border-primary-medium-300`)입니다. 단계가 다른 것이 의도인지 알려 주세요.
+20. 라벨이 붙은 Radio 본체와 목록 간격은 "Form 형태와 함께 제작 예정"이라 컨트롤만 만들었습니다. 그룹은 임시로 세로 목록, 간격 8px입니다.
+21. 같은 틸 강조를 컴포넌트마다 `Color=Brand`(Check Box, Text Button)와 `Color=Primary`(Radio, Button)로 다르게 부릅니다. 코드는 피그마 이름대로 `brand`와 `primary`를 씁니다. 하나로 맞출지 알려 주세요.
+22. Chip에 비활성과 포커스 모양이 없습니다. 코드는 다른 컴포넌트처럼 비활성 토큰과 2px `border-primary-strong-500` 외곽선을 씁니다.
+23. Chip 아이콘 없는 변형만 폭이 52px로 고정되어 있습니다. 코드는 글자 길이를 따릅니다.
+24. Chip 아이콘 색에 2기 `WarmGray-700`이 남아 있습니다. 코드는 3기 `icon-neutral-strong-600`을 씁니다.
+25. Chip/Draggable은 토큰에 없는 `Subtitle/2-Medium`(18px, 줄 높이 1.5, 자간 -1%)과 이름 없는 여백 9px, 간격 3px을 씁니다. 코드는 피그마 값을 컴포넌트 변수로 옮겼습니다.
+
+## 표시
+
+2026-10-10에 새로 올라온 Tag 계열과 Bubble을 옮기면서 찾은 내용입니다.
+
+1. Tag/Basic Md 글자가 2기 `Label/2-Medium`(14px, 줄 높이 1.45)입니다. 3기의 같은 이름은 17px이라 코드는 피그마 값을 컴포넌트 변수로 씁니다.
+2. Tag/Basic 반지름이 변수에 연결되지 않았고, Neutral 글자가 primitive에 바로 연결되어 있습니다.
+3. Tag/Number Neutral Tertiary 글자가 2기 `teal-gray-600`(`#656b6b`)이고, 반지름 4px에 맞는 토큰이 없습니다. 둘 다 피그마 값을 컴포넌트 변수로 씁니다.
+4. Tag/Status 색 이름(Default, Neutral, Yellow, Red)이 Tag/Basic(Brand, Neutral, Warning, Error)과 다릅니다. 코드는 `brand`, `neutral`, `warning`, `error`로 맞췄습니다.
+5. Tag/Part의 PM, Sm, Outlined 변형 이름이 `Part=Tag, Size=Part, Style=PM`으로 깨져 있습니다(3385:25514). 문서는 이 변형을 PM, Sm, Outlined 칸에 그립니다.
+6. Tag/Part Design Lg Outlined 테두리가 태그 변수 대신 `Pink-100`에 연결되어 있습니다. 값은 같아서 코드는 태그 변수를 씁니다.
+7. Tag/Part와 Tag/Role의 `Shadow/Drop/Neutral_2`가 `#EFF0F080`으로 정의되어 파운데이션 토큰(`#eceeee85`)과 다릅니다. 이름 있는 스타일은 토큰을 따르는 규칙대로 토큰을 씁니다.
+8. Tag/Role Product 글자색이 피그마 변수 `tag-role-product-text`에서 `#3f4141`인데, 2026-10-08에 받은 토큰은 `#282a2a`입니다. 변수가 바뀌었다면 Export modes를 다시 받아 토큰부터 고치겠습니다. 지금은 피그마 값을 컴포넌트 변수로 씁니다.
+9. Tag/Role 라벨에 `⚙ Product`처럼 기호가 붙은 역할이 있습니다. 코드는 라벨을 앱이 넘기게 했습니다. 기호도 라벨의 일부로 쓰는지 알려 주세요.
+10. Bubble Incoming은 흰 말풍선에 경계가 없어 흰 화면 위에서는 보이지 않습니다. 말풍선을 놓을 배경색을 알려 주세요.
+11. Progress Bar Neutral 표시 막대가 `Component/Progress Bar/Indicator/Fill`(`#6b7684`) 변수를 씁니다. 이 Component 컬렉션은 받은 Export modes에 없어 코드는 피그마 값을 컴포넌트 변수로 씁니다.
+
+## 오버레이와 피드백
+
+1. Tooltip 라벨 색이 2기 `teal-600`(`#0b6b64`)입니다. 3기 Teal-600은 `#02746c`입니다.
+2. Tooltip 라벨은 Light Md에만 있습니다. Dark나 다른 크기에서도 쓸 수 있는지 알려 주세요.
+3. Tooltip Md의 최대 폭이 없어 240px로 가정했습니다. 트리거와의 간격은 8px로 두었습니다.
+4. Toast Error 배경이 2기 `error-200`(`#fed7d7`)이고, Neutral 배경 `rgba(63, 65, 65, 0.8)`은 이름 없는 값입니다.
+5. Toast 앞 아이콘의 체크 색이 `#fbfcfc`인데 아이콘 패키지는 흰색으로 고정합니다.
+6. Toast Service Notice 타입의 양옆 그래픽 에셋은 컴포넌트에 넣지 않았습니다. 에셋과 사용처를 알려 주세요.
+7. `Toast Top` 변형은 닫기 버튼 없이 내용 폭이라 코드도 상단 토스트를 그렇게 그립니다. 그런데 `Toast Top`의 설명은 하단 설명과 같습니다(하단 96px, X로 닫기). 상단 토스트에도 닫기 버튼이 필요한지 알려 주세요. 하단 위치는 캔버스 메모(아래 여백 40px, 48px 토스트의 윗변 -88px)대로 바꿨습니다(2026-10-10). `Toast Bottom` 설명에는 아직 -86px로 적혀 있어 고쳐 주세요.
+8. Error 토스트와 입력 필드(CodeField 포함) 오류의 흔들림은 주석만 있어 400ms 동안 6px씩 두 번 흔들리게 가정했습니다.
+9. Scroll Fog는 아래쪽(74px)만 있어 다른 세 방향은 같은 값을 돌려 썼고, 끝 색을 흰 배경으로 가정했습니다. 회색 배경용 안개가 필요한지 알려 주세요.
+
+## 모바일 앱 컴포넌트
+
+2026-10-11에 `App/` 컴포넌트를 웹 모바일 레이아웃용으로 옮기면서 찾은 내용입니다.
+
+1. App/Top Navigation Sub 페이지의 왼쪽 아이콘이 `Icon/Expand_more`(아래 화살표)입니다. 뒤로 가기라면 `Icon/Chevron_Left`가 맞는지, 아래로 내려 닫는 화면의 닫기인지 알려 주세요. 코드는 피그마대로 아래 화살표를 그리고 이름은 "뒤로 가기"로 둡니다.
+2. App/Dialog와 App/Bottom Sheet 제목 색이 `grey950`(`#0d121c`)입니다. 3기 토큰에 없는 색이라 컴포넌트 변수로 씁니다.
+3. App/Bottom navigation과 App/Bottom Sheet의 iOS, Android 차이는 홈 인디케이터 영역입니다. 웹에서는 운영체제가 주는 안전 영역(`safe-area-inset-bottom`)으로 처리하고 인디케이터는 그리지 않습니다.
+
+## 앱 셸
+
+1. Header 다크 모드 hover 글자색 `#02746c`는 어두운 배경 위에서 대비가 낮습니다. 랜딩 배경 이미지 위에서 읽히는지 확인해 주세요.
+2. Header 다크 모드 선택 항목은 1px 테두리와 좌우 16px입니다. 선택이 바뀔 때 폭이 흔들리지 않도록 코드는 18px 패딩과 inset 그림자를 씁니다.
+3. Header의 `Profile`(원형 아바타)은 기본 아바타 이미지가 정해지지 않아 아직 컴포넌트로 만들지 않았습니다. 기본 이미지를 패키지에 넣을지 알려 주세요. `Action Button`은 `HeaderActionButton`, `Home Link`는 `HeaderHomeLink`로 만들었습니다.
+4. Side Navigation 그룹은 피그마 설명대로라면 누르면 첫 하위 페이지로 이동합니다. 코드는 펼침과 접힘만 맡습니다. 접으려고 누를 때도 페이지가 바뀌는 문제 때문입니다. 이동이 꼭 필요한지 알려 주세요.
+5. Side Navigation 그룹에 펼침 여부를 알리는 표시(화살표 등)가 없습니다. 그대로 둘지 알려 주세요. 하위 메뉴의 hover 상태도 없습니다.
+6. Side Navigation 오른쪽 경계선이 `Type=Default`는 `#e9ecec`, `Type=With Slot`은 `#e2e3e3`입니다. `#e2e3e3`으로 통일했습니다.
+7. Context Switcher 목록에는 바깥 그림자가 없어 흰 페이지 위에서 경계가 거의 보이지 않습니다. 일반 `Dropdown_List`는 `Shadow/Drop/Neutral_1`을 씁니다. 같은 그림자를 써도 되는지 알려 주세요.
+8. Context Switcher는 172px인데 Side Navigation 슬롯 안쪽 폭은 168px입니다. 코드는 슬롯 안에서 168px로 줄입니다.
+9. Page Header 브레드크럼 구분자 색 `#cccccc`가 변수에 연결되어 있지 않고, 마지막(현재) 항목도 같은 색입니다. hover하면 굵기가 바뀌어 글자 폭이 조금 늘어납니다.
+10. 라벨 있는 Home Link(Operation, Study, ProductTech)에 "가제" 주석이 있습니다. 맥락 이름과 `11th` 같은 기수 표기가 확정되면 알려 주세요. 코드는 기수를 영어 서수(1st, 2nd, 3rd, 11th)로 만듭니다.
+11. 라벨 있는 Home Link의 로고는 `Logo/UMC` 인스턴스가 아닙니다. 떼어 낸 그림을 73.76×21.93으로 줄였고, 라이브러리 로고는 74×22입니다. 코드는 피그마 크기를 따랐습니다. 인스턴스로 바꿀지 알려 주세요.
+12. Home Link 라벨의 Orbitron Bold와 글자 크기 13.487px, 11.689px은 텍스트 스타일에도 변수에도 없습니다. 로고와 함께 비율로 줄인 값으로 보고 그대로 옮겼습니다. Orbitron을 브랜드 글꼴 토큰으로 등록할지 알려 주세요.
+13. Home Link 색 변수의 codeSyntax `--color-action-primary-default` 하나가 `#3f4141`(라이트), `#02746c`(라이트 hover), `#f4fbfa`(다크) 세 값을 가리킵니다. 어느 변수인지 알 수 없어 코드는 값이 같은 `icon-neutral-stronger-700`, `icon-brand-strong-600`, `teal-50`, `teal-200`을 씁니다.
+14. `Web/Header/Home Link`의 왼쪽 여백은 Main이 60px, 라벨 있는 맥락이 34px입니다. 라벨 칸 200px 안에서 내용을 가운데 두므로 로고 시작 위치가 맥락마다 다릅니다(헤더 왼쪽에서 Main 76px, Operation 51.5px, Study 68.5px, Product Tech 57.8px). 맥락이 바뀌어도 로고 위치가 같아야 하는지 알려 주세요.
+15. 좁은 화면용 Header가 없습니다. 라벨 있는 홈 링크는 로고 칸이 250px(여백 34px과 16px, 링크 200px)이라, 375px 화면에서 액션 버튼과 함께 두면 가로로 넘칩니다. 모바일 헤더 규칙과 브레이크포인트를 알려 주세요.
+
+## 폼
+
+1. Input Box 비활성 테두리가 `Input Box`는 `#efedeb`, `Text Field/ Box`는 `#eff0f0`입니다. `#eff0f0`으로 통일했습니다.
+2. Lg 기본 상태의 placeholder만 16px이고 다른 상태는 18px입니다. 상태가 바뀔 때 크기가 튀지 않도록 18px로 맞췄습니다.
+3. Md 비밀번호와 Md Select의 오른쪽 패딩이 4px로 다른 Md 필드(8px)와 다릅니다. Text Field는 8px로 맞췄고 Select는 피그마대로 4px입니다.
+4. Text Field Label의 `Caption=True`(레이블 옆 회색 보조 문구)는 아직 넣지 않았습니다. 쓰임새를 알려 주세요.
+5. 지우기 아이콘 색 `#e2e4e3`이 3기 토큰에 없습니다(`#e2e3e3`과 1단계 차이).
+6. Select 목록이 열린 상태가 따로 없어 hover 배경(`#fbfcfc`)을 유지하고 화살표를 180도 돌립니다.
+7. Dropdown에 위험한 동작(삭제) 항목 스타일과 아이콘 자리가 없습니다. Menu의 `tone`, `icon`은 확인 전까지 뺐습니다.
+8. Code Input의 Hover 설명 "Focus 중, Error 중 Success 중, 디폴트 미포함"의 뜻을 알려 주세요. 지금은 비활성이 아니면 모든 칸에 hover를 적용합니다. Success 상태도 피그마에 없습니다.
+9. Numeric Stepper 숫자 칸의 좌우 패딩 20px은 106px 너비 안에 들어가지 않아(34px 칸) 패딩 없이 가운데 정렬했습니다. 기본 범위는 설명대로 0부터 999입니다.
+
+## 부록: 문서에서 옮겨 온 '피그마와 다른 점'
+
+문서 사이트에서 지운 기록입니다. 값을 바꿀 때 근거로 씁니다.
+
+### text-button
+
+- `Type` 하나를 `variant`와 아이콘 props 두 가지로 나눴습니다. 그래서 피그마에 없는 조합(밑줄과 아이콘을 함께)도 만들 수 있습니다.
+- 포커스 상태가 없어 다른 버튼과 같은 2px `border-primary-strong-500` 외곽선을 넣었습니다.
+- Brand 비활성 색은 피그마가 primitive `Teal-300`을 바로 씁니다. 같은 값의 semantic 토큰 `text-brand-disabled-300`로 옮겼습니다.
+
+### code-field
+
+칸 글자는 피그마 스타일 이름이 `Heading/4-Semibold`지만 크기가 26px로 파운데이션 정의(18px)와 다릅니다. 피그마 값(26px, 행간 1.3)을 컴포넌트 변수로 썼습니다.
+
+### field
+
+- 레이블 색: `Text Field/ Label` 원본은 2기 변수 `warmgray-600`(#544f4b)이고, `Text Field/ Box` 안에서는 `TealGrey-600`(#606262)으로 덮어씁니다. 3기 토큰인 #606262(`--umc-color-text-neutral-medium-600`)를 씁니다.
+- 레이블(15px/23px, -3%)과 도움말(13px/17px)은 3기 파운데이션에 없는 `Mobile Web/*` 텍스트 스타일입니다. 토큰에 없는 값이라 피그마 값을 그대로 썼습니다.
+
+### input-box
+
+- 비활성 테두리: `Input Box`는 2기 변수 `warmgray-150`(#efedeb), `Text Field/ Box`는 `TealGrey-100`(#eff0f0)을 씁니다. 3기 토큰 `--umc-color-border-neutral-weaker-100`로 통일했습니다.
+- Lg 기본 상태의 placeholder만 16px이고 나머지 상태는 18px입니다. 상태가 바뀔 때 글자 크기가 튀지 않도록 Lg는 모두 18px(`Label/1-Medium`)로 맞췄습니다.
+
+### menu
+
+피그마 `Dropdown`에는 삭제처럼 위험한 동작을 구분하는 항목 스타일과 아이콘 자리가 없습니다. 이전 구현에 있던 `tone="danger"`와 `icon`은 디자인 확인 전까지 뺐습니다.
+
+### numeric-stepper
+
+- 숫자 글자는 피그마 스타일 이름이 `Label/1-Semibold`지만 값(16px, -2%)은 `Label/3-Semibold`와 같습니다. 보이는 크기를 지키려고 `Label/3-Semibold` 토큰을 썼습니다.
+- 피그마 숫자 칸의 좌우 패딩 20px은 106px 너비 안에 들어가지 않아(34px 칸) 패딩 없이 가운데 정렬했습니다.
+
+### search-field
+
+placeholder(#9ca3a3)와 입력 글자(#161919)는 2기 변수 `teal-gray-400`, `teal-gray-900`입니다. 같은 단계의 3기 토큰 `--umc-color-text-placeholder`(#adadad), `--umc-color-text-neutral-default-900`(#0f1010)로 바꿨습니다.
+
+### select
+
+- 목록이 열리면 아래 화살표를 180도 돌립니다. 피그마는 `Up Chevron` 아이콘을 따로 둡니다.
+- 버튼 hover 배경 #fbfcfc는 피그마 `State=Hover`와 같습니다. 피그마에 열린 상태가 따로 없어 열려 있는 동안 hover 배경을 유지합니다.
+
+### text-field
+
+- Md 비밀번호 필드의 오른쪽 패딩: 피그마는 4px, 일반 Md 필드는 8px입니다. 같은 크기 안에서 오른쪽 여백이 달라지지 않도록 8px로 맞췄습니다.
+- 지우기 아이콘 색 #e2e4e3은 토큰에 없어 컴포넌트 변수로 썼습니다. 오류 상태에서는 피그마대로 #cccccc입니다.
+- Lg 단위 텍스트는 `Mobile Web/Label/1-Medium`(18px/24px, -3%)이라 토큰 대신 피그마 값을 썼습니다.
+
+### checkbox
+
+- 피그마의 `Selected`는 `checked`로 옮겼습니다. 체크박스는 네이티브 `<input>`과 Base UI가 모두 `checked`를 쓰기 때문입니다.
+- 피그마의 `Left Label`, `Right Label` 두 토글은 `labelPlacement` 하나로 옮겼습니다. 라벨을 양쪽에 동시에 두는 경우는 없다고 보았습니다.
+- 비활성 체크 선은 2기 변수 `WarmGray-50`(`#fcfbfa`)입니다. 3기에 같은 색이 없어 `teal-grey-50`(`#fbfcfc`)을 씁니다.
+- 테두리는 `border` 대신 inset 그림자로 그립니다. 브라우저는 1.5px, 1.8px 같은 테두리 두께를 장치 픽셀 단위로 내려서 피그마보다 얇게 그리기 때문입니다(1배율 화면에서 1px).
+- 포커스 상태가 없어 다른 컨트롤과 같은 2px `border-primary-strong-500` 외곽선을 넣었습니다.
+- `CheckButton`은 비활성 모양이 없습니다. 비활성이어도 색은 체크 여부를 그대로 따르고 커서만 바뀝니다.
+
+### radio
+
+- 피그마에는 Neutral 선택 변형이 없습니다. 선택하면 `color`와 관계없이 Primary 선택 모양을 씁니다.
+- 원 모서리는 피그마 9999px 리터럴 대신 모양이 같은 `radius-full` 토큰을 씁니다.
+- 테두리는 `border` 대신 inset 그림자로 그립니다. 브라우저는 1.5px, 1.8px 같은 테두리 두께를 장치 픽셀 단위로 내려서 피그마보다 얇게 그리기 때문입니다(1배율 화면에서 1px).
+- 포커스 상태가 없어 다른 컨트롤과 같은 2px `border-primary-strong-500` 외곽선을 넣었습니다.
+
+### switch
+
+- 피그마의 `State=On/Off`는 `checked`로 옮겼습니다.
+- 트랙 색 두 개(꺼짐, 켜짐)가 변수에 연결되어 있지 않습니다. 켜짐 `#39a9a1`은 같은 값의 `fill-primary-inverse-weak-400`을 씁니다. 꺼짐은 내보낸 값이 `#e2e4e3`이고, 가장 가까운 `fill-neutral-strong-200`(`#e2e3e3`)을 씁니다.
+- Sm 켜짐에만 안쪽 그림자(`#d3d8d833`, 0.8 0.8 1.6)가 있어 그대로 옮겼습니다. Md 켜짐에는 그림자가 없습니다.
+- 포커스 상태가 없어 다른 컨트롤과 같은 2px `border-primary-strong-500` 외곽선을 넣었습니다.
+- 켜고 끌 때 손잡이가 150ms 동안 움직입니다. 움직임 줄이기 설정에서는 바로 바뀝니다.
+
+### context-switcher
+
+- 너비: 피그마는 172px이지만 사이드 내비게이션 슬롯의 안쪽 폭은 168px입니다. `max-width: 100%`를 함께 걸어 슬롯 안에서는 168px로 줄어듭니다.
+- 눌림 그림자와 선택 항목 그림자: 피그마 값(#D3D8D833, 1, 1, 2)이 이름 있는 스타일과 달라 컴포넌트 변수로 썼습니다.
+
+### header
+
+- 다크 모드 선택 항목: 피그마는 1px 테두리와 좌우 패딩 16px을 씁니다. 선택이 바뀔 때 폭이 흔들리지 않도록 패딩 18px을 유지하고 inset 그림자로 테두리를 그립니다.
+- 내비게이션 알약 radius: 피그마 컨테이너는 9999px 리터럴, 항목은 999px 토큰입니다. 모양이 같으므로 `--umc-radius-full`로 통일했습니다.
+- 홈 링크 모드: 피그마 primitive에는 `Mode` 속성이 있지만 `HeaderHomeLink`에는 `mode` prop을 두지 않았습니다. 홈 링크는 언제나 헤더 안에 있으므로 감싼 `Header`의 `mode`를 따릅니다. 두 곳에 모드를 따로 넘기다 어긋나는 일을 막기 위해서입니다.
+- 홈 링크 포커스: 피그마에 포커스 상태가 없어 다른 헤더 항목과 같은 2px `border-primary-strong-500` 외곽선을 씁니다.
+
+### page-header
+
+- 구분자 색 #cccccc는 피그마에서 변수에 연결되지 않은 값입니다. 같은 값의 primitive `--umc-color-teal-grey-300`을 썼습니다.
+- 마지막 항목도 다른 항목과 같은 색입니다. 피그마가 현재 페이지를 따로 구분하지 않기 때문입니다.
+
+### side-navigation
+
+- 그룹 동작: 피그마 설명은 "선택 시 최상단 서브 메뉴도 함께 Active되며 그 페이지가 열림"입니다. 이 컴포넌트의 그룹 버튼은 펼침과 접힘만 맡고 이동하지 않습니다. 한 버튼이 이동과 접기를 함께 하면 접으려고 누를 때도 페이지가 바뀌기 때문입니다. 그룹을 열 때 첫 하위 페이지로 보내려면 앱 라우팅에서 처리합니다.
+- 오른쪽 경계선: `Type=Default`는 2기 변수 `teal-gray-200`(#e9ecec), `Type=With Slot`은 `Border/Neutral/Weak-200`(#e2e3e3)을 씁니다. 3기 토큰 `--umc-color-border-neutral-weak-200`로 통일했습니다.
+- hover 그림자: 피그마 스타일 이름은 `Shadow/Inner/Neutral_1`이지만 값이 파운데이션 정의와 다릅니다(#D3D8D833, 1, 1, 2). 이름 있는 스타일은 토큰을 따르는 규칙대로 `--umc-shadow-inner-neutral-1`을 씁니다.
+- 긴 메뉴 이름은 한 줄을 넘으면 말줄임표로 자릅니다. 피그마에는 넘치는 경우가 없습니다.
+
+### icons
+
+- Chevron, Person, Setting, Under-construction은 피그마가 프레임 대신 안쪽 도형만 내보내서 원래 위치로 옮겼습니다.
+- 23.85×25처럼 정사각형이 아닌 프레임은 viewBox를 피그마 값 그대로 두고, 정사각형 안에 비율을 지켜 넣었습니다.
+- `Pictogram/Person`은 SVG가 아니라 PNG 마스크라서 패키지에서 뺐습니다.
+- 피그마 아이콘 섹션은 24px이 아닌 크기를 Scale(K)로 쓰라고 안내합니다. 패키지 아이콘의 `size`도 같은 방식으로 선 두께까지 비례해 바꿉니다. Scale 없이 크기만 줄인 인스턴스(예: Option Button 20px의 `Icon/Check`)는 선 두께가 그대로라 코드와 다르게 보입니다.

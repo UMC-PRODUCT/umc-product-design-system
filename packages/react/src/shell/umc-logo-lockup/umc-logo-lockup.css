@@ -1,0 +1,38 @@
+@import "@fontsource/orbitron/latin-700.css";
+
+@layer components {
+  .umc-logo-lockup {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 4.28px;
+  }
+
+  .umc-logo-lockup__logo {
+    flex: none;
+  }
+
+  .umc-logo-lockup[data-labeled] .umc-logo-lockup__logo {
+    margin-top: 3.6px;
+  }
+
+  .umc-logo-lockup__label {
+    display: flex;
+    flex-direction: column;
+    font-family: "Orbitron", var(--umc-font-family-brand);
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .umc-logo-lockup__title {
+    font-size: 13.487px;
+    letter-spacing: -0.025em;
+  }
+
+  .umc-logo-lockup__subtitle {
+    margin-top: calc(14.03px - 1.2 * 13.487px);
+    font-size: 11.689px;
+    letter-spacing: -0.025em;
+  }
+}

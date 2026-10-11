@@ -1,0 +1,38 @@
+---
+title: TextInfoButton
+description: 필드 아래에 놓는 작은 안내 버튼입니다.
+---
+
+import {
+  TextInfoButtonAllVariants,
+  TextInfoButtonDefault,
+} from "../../../../components/react/forms/TextInfoButtonExamples.tsx"
+
+피그마 `Text Info Button`을 구현했습니다. 인증번호 필드나 코드 입력 필드 아래에서 "개별 지원 코드란?", "인증번호 다시 받기" 같은 보조 동작을 엽니다. `Field`의 `info`에 넣어 씁니다.
+
+```tsx
+import { CodeField, TextInfoButton, Tooltip } from "@umc-product/react"
+
+<CodeField
+  label="개별 지원 코드"
+  info={
+    <Tooltip openOn="click" content="지부 운영진에게 받은 6자리 코드입니다">
+      <TextInfoButton>개별 지원 코드란?</TextInfoButton>
+    </Tooltip>
+  }
+/>
+```
+
+아래 버튼을 누르면 설명 툴팁이 열립니다.
+
+<TextInfoButtonDefault client:visible />
+
+## 모든 변형
+
+피그마 `Text Info Button` 변형 2개를 그렸습니다. 칸에 마우스를 올리면 코드가 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
+
+<TextInfoButtonAllVariants />
+
+## props
+
+네이티브 `button` 속성을 받습니다. `type`의 기본값은 `"button"`이라 폼 안에서 눌러도 제출하지 않습니다.

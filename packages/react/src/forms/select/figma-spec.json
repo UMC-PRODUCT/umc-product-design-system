@@ -1,0 +1,181 @@
+{
+  "component": "Select",
+  "figmaSection": "2621:33115",
+  "page": "/components/forms/select/",
+  "nodes": [
+    {
+      "specId": "select-trigger",
+      "node": "2621:33222",
+      "variant": "State=Default, Type=Select, Size=Lg",
+      "target": ".umc-select__trigger",
+      "expected": {
+        "height": "48px",
+        "border-top-width": "1px",
+        "border-top-color": "#cccccc",
+        "border-top-left-radius": "14px",
+        "background-color": "#ffffff",
+        "padding-left": "16px",
+        "padding-right": "8px",
+        "column-gap": "16px",
+        "box-shadow~": "#d3d8d826 1px 1px 2px 0px inset, #ffffff40 -1px -1px 1px 0px inset"
+      }
+    },
+    {
+      "specId": "select-trigger-hover",
+      "interaction": "hover",
+      "node": "2621:33230",
+      "variant": "State=Focused & Hover, Type=Select, Size=Lg",
+      "target": ".umc-select__trigger",
+      "expected": {
+        "background-color": "#fbfcfc",
+        "border-top-color": "#cccccc"
+      }
+    },
+    {
+      "specId": "select-placeholder",
+      "node": "2621:33232",
+      "variant": "Select placeholder, Size=Lg",
+      "target": ".umc-select__value",
+      "expected": {
+        "font-size": "18px",
+        "font-weight": "500",
+        "line-height": "25.2px",
+        "letter-spacing": "-0.36px",
+        "color": "#adadad"
+      },
+      "figmaDiffers": {
+        "font-size": "Lg 기본 상태 placeholder만 16px이다. 다른 상태와 같은 18px로 맞췄다"
+      }
+    },
+    {
+      "specId": "select-icon",
+      "node": "2621:33333",
+      "variant": ".primitive/ Text Field/ Accessory, Usage=Selector",
+      "target": ".umc-select__icon",
+      "expected": {
+        "color": "#7e7f7f",
+        "padding-left": "6px",
+        "padding-right": "10px"
+      }
+    },
+    {
+      "specId": "select-list",
+      "interaction": "open",
+      "node": "2281:4301",
+      "variant": "Dropdown_List",
+      "target": ".umc-select__popup",
+      "expected": {
+        "background-color": "#ffffff",
+        "border-top-width": "1px",
+        "border-top-color": "#fbfcfc",
+        "border-top-left-radius": "8px",
+        "padding-top": "2px",
+        "padding-left": "2px",
+        "row-gap": "2px",
+        "box-shadow~": "#40444329 0px 4px 16px 0px"
+      }
+    },
+    {
+      "specId": "select-item",
+      "interaction": "open",
+      "node": "2281:4252",
+      "variant": "Dropdown/Item, Size=Sm, State=Default",
+      "target": ".umc-dropdown-item:not([data-selected]):not([data-highlighted])",
+      "expected": {
+        "height": "38px",
+        "padding-left": "12px",
+        "padding-right": "12px",
+        "border-top-left-radius": "8px",
+        "color": "#0f1010",
+        "font-size": "15px",
+        "font-weight": "400",
+        "line-height": "22.5px",
+        "letter-spacing": "-0.15px"
+      }
+    },
+    {
+      "specId": "select-item-highlighted",
+      "interaction": "open",
+      "node": "2281:4259",
+      "variant": "Dropdown/Item, Size=Sm, State=Hover",
+      "target": ".umc-dropdown-item[data-highlighted]",
+      "expected": {
+        "background-color": "#fbfcfc",
+        "box-shadow~": "#d3d8d826 1px 1px 2px 0px inset, #ffffff40 -1px -1px 1px 0px inset"
+      }
+    },
+    {
+      "specId": "select-filled",
+      "node": "2621:33240",
+      "variant": "State=Filled, Type=Select, Size=Lg",
+      "target": ".umc-select__value",
+      "expected": {
+        "font-size": "18px",
+        "font-weight": "500",
+        "line-height": "25.2px",
+        "letter-spacing": "-0.36px",
+        "color": "#0f1010"
+      }
+    },
+    {
+      "specId": "select-item-selected",
+      "interaction": "open",
+      "node": "2281:4271",
+      "variant": "Dropdown/Item, Size=Sm, State=Active",
+      "target": ".umc-dropdown-item[data-selected]",
+      "expected": {
+        "background-color": "#f4fbfa",
+        "color": "#02746c",
+        "font-weight": "500",
+        "padding-right": "10px",
+        "box-shadow~": "#d3d8d833 1px 1px 2px 0px inset"
+      }
+    },
+    {
+      "specId": "select-md",
+      "node": "2621:33226",
+      "variant": "State=Default, Type=Select, Size=Md",
+      "target": ".umc-select__trigger",
+      "expected": {
+        "height": "44px",
+        "padding-right": "4px",
+        "column-gap": "4px"
+      }
+    },
+    {
+      "specId": "select-filter",
+      "node": "2621:33246",
+      "variant": "State=Filtered, Type=Select, Size=Md",
+      "target": ".umc-select__trigger",
+      "expected": {
+        "border-top-color": "#7ac7c1",
+        "background-color": "#f4fbfa",
+        "color": "#02746c"
+      }
+    },
+    {
+      "specId": "select-invalid",
+      "node": "2621:33357",
+      "variant": "Text Field/ Box 오류 규칙을 Select에 적용",
+      "target": ".umc-select__trigger",
+      "expected": {
+        "border-top-color": "#f88c8c",
+        "background-color": "#fef2f1"
+      }
+    },
+    {
+      "specId": "select-disabled",
+      "node": "2621:33254",
+      "variant": "State=Disabled, Type=Select, Size=Lg",
+      "target": ".umc-select__trigger",
+      "expected": {
+        "border-top-color": "#eff0f0",
+        "background-color": "#fbfcfc",
+        "color": "#cccccc"
+      },
+      "figmaDiffers": {
+        "border-top-color": "Input Box는 2기 변수 warmgray-150(#efedeb), Text Field/ Box는 TealGrey-100(#eff0f0)을 쓴다. 3기 토큰인 #eff0f0로 통일했다"
+      }
+    }
+  ]
+}

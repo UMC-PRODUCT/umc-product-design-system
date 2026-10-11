@@ -1,0 +1,82 @@
+{
+  "component": "BottomSheet",
+  "figmaSection": "2536:12127",
+  "page": "/components/overlay/bottom-sheet/",
+  "nodes": [
+    {
+      "specId": "bottom-sheet-popup",
+      "node": "2536:12127",
+      "variant": "Type=Title, Keyboard=Off",
+      "target": ".umc-bottom-sheet__popup",
+      "expected": {
+        "border-top-left-radius": "24px",
+        "border-top-right-radius": "24px",
+        "background-color": "#f4f5f5"
+      }
+    },
+    {
+      "specId": "bottom-sheet-title",
+      "node": "2536:12127",
+      "variant": "Type=Title, Keyboard=Off",
+      "target": ".umc-bottom-sheet__title",
+      "expected": {
+        "font-size": "22px",
+        "font-weight": "600",
+        "line-height": "30.8px"
+      }
+    },
+    {
+      "specId": "bottom-sheet-description",
+      "node": "2536:12127",
+      "variant": "Type=Title, Keyboard=Off",
+      "target": ".umc-bottom-sheet__description",
+      "expected": {
+        "font-size": "15px",
+        "font-weight": "400"
+      }
+    },
+    {
+      "specId": "bottom-sheet-actions-full",
+      "node": "2535:8789",
+      "variant": "Number of Buttons=1, Type=Full",
+      "target": ".umc-bottom-sheet-actions",
+      "expected": {
+        "padding-top": "32px",
+        "padding-left": "20px",
+        "padding-right": "20px",
+        "row-gap": "10px"
+      }
+    },
+    {
+      "specId": "bottom-sheet-actions-button-font",
+      "node": "2535:8789",
+      "variant": "Number of Buttons=1, Type=Full",
+      "target": ".umc-bottom-sheet-actions .umc-button",
+      "expected": {
+        "font-size": "18px"
+      }
+    },
+    {
+      "specId": "bottom-sheet-actions-emphasis",
+      "node": "2535:8789",
+      "variant": "Number of Buttons=2, Type=Emphasis",
+      "target": ".umc-bottom-sheet-actions",
+      "expected": {
+        "padding-top": "16px",
+        "padding-left": "20px",
+        "padding-right": "20px",
+        "column-gap": "8px"
+      }
+    },
+    {
+      "specId": "bottom-sheet-actions-primary-top",
+      "node": "2535:8789",
+      "variant": "Number of Buttons=2, Type=PrimaryTop",
+      "target": ".umc-bottom-sheet-actions",
+      "expected": {
+        "padding-top": "16px",
+        "padding-bottom": "4px"
+      }
+    }
+  ]
+}

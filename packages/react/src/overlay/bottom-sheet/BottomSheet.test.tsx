@@ -1,0 +1,185 @@
+import { render, screen } from "@testing-library/react"
+import { beforeAll, describe, expect, it } from "vitest"
+
+import { BottomSheet, BottomSheetActions } from "./BottomSheet.tsx"
+
+beforeAll(() => {
+  if (!window.ResizeObserver) {
+    window.ResizeObserver = class ResizeObserver {
+      observe() {}
+      unobserve() {}
+      disconnect() {}
+    }
+  }
+  if (!Element.prototype.getAnimations) {
+    Element.prototype.getAnimations = () => []
+  }
+})
+
+describe("BottomSheet", () => {
+  it("열린 상태에서 children을 그린다", () => {
+    render(
+      <BottomSheet open>
+        <p>내용입니다</p>
+      </BottomSheet>,
+    )
+    expect(screen.getByText("내용입니다")).toBeInTheDocument()
+  })
+
+  it("title을 넘기면 헤더를 그린다", () => {
+    render(
+      <BottomSheet open title="제목">
+        <p>내용</p>
+      </BottomSheet>,
+    )
+    expect(screen.getByText("제목")).toBeInTheDocument()
+  })
+
+  it("description을 넘기면 헤더에 그린다", () => {
+    render(
+      <BottomSheet open title="제목" description="설명입니다">
+        <p>내용</p>
+      </BottomSheet>,
+    )
+    expect(screen.getByText("설명입니다")).toBeInTheDocument()
+  })
+
+  it("title 없으면 헤더 영역이 없다", () => {
+    render(
+      <BottomSheet open>
+        <p>내용</p>
+      </BottomSheet>,
+    )
+    expect(document.querySelector(".umc-bottom-sheet__header")).toBeNull()
+  })
+
+  it("닫힌 상태에서는 팝업이 없다", () => {
+    render(
+      <BottomSheet>
+        <p>내용</p>
+      </BottomSheet>,
+    )
+    expect(document.querySelector(".umc-bottom-sheet__popup")).toBeNull()
+  })
+
+  it("titleAlign=center면 data-align=center를 단다", () => {
+    render(
+      <BottomSheet open title="제목" titleAlign="center">
+        <p>내용</p>
+      </BottomSheet>,
+    )
+    expect(document.querySelector(".umc-bottom-sheet__header")).toHaveAttribute(
+      "data-align",
+      "center",
+    )
+  })
+
+  it("actions를 넘기면 actions-area를 그린다", () => {
+    render(
+      <BottomSheet
+        open
+        actions={
+          <BottomSheetActions layout="full" primary={{ label: "확인" }} />
+        }
+      >
+        <p>내용</p>
+      </BottomSheet>,
+    )
+    expect(
+      document.querySelector(".umc-bottom-sheet__actions-area"),
+    ).not.toBeNull()
+  })
+
+  it("DOM 구조: .umc-bottom-sheet__popup > .umc-bottom-sheet__handle", () => {
+    render(
+      <BottomSheet open>
+        <p>내용</p>
+      </BottomSheet>,
+    )
+    const popup = document.querySelector(".umc-bottom-sheet__popup")
+    expect(popup).not.toBeNull()
+    expect(popup?.querySelector(".umc-bottom-sheet__handle")).not.toBeNull()
+  })
+})
+
+describe("BottomSheetActions", () => {
+  it("full 레이아웃은 버튼 하나를 그린다", () => {
+    render(<BottomSheetActions layout="full" primary={{ label: "확인" }} />)
+    expect(screen.getAllByRole("button")).toHaveLength(1)
+    expect(document.querySelector(".umc-bottom-sheet-actions")).toHaveAttribute(
+      "data-layout",
+      "full",
+    )
+  })
+
+  it("stacked 레이아웃은 버튼 둘을 그린다", () => {
+    render(
+      <BottomSheetActions
+        layout="stacked"
+        primary={{ label: "확인" }}
+        secondary={{ label: "취소" }}
+      />,
+    )
+    expect(screen.getAllByRole("button")).toHaveLength(2)
+  })
+
+  it("equal 레이아웃은 버튼 둘을 그린다", () => {
+    render(
+      <BottomSheetActions
+        layout="equal"
+        primary={{ label: "확인" }}
+        secondary={{ label: "취소" }}
+      />,
+    )
+    expect(screen.getAllByRole("button")).toHaveLength(2)
+  })
+
+  it("emphasis 레이아웃은 버튼 둘을 그린다", () => {
+    render(
+      <BottomSheetActions
+        layout="emphasis"
+        primary={{ label: "확인" }}
+        secondary={{ label: "취소" }}
+      />,
+    )
+    expect(screen.getAllByRole("button")).toHaveLength(2)
+  })
+
+  it("primary-top 레이아웃은 버튼과 텍스트 버튼을 그린다", () => {
+    render(
+      <BottomSheetActions
+        layout="primary-top"
+        primary={{ label: "확인" }}
+        secondary={{ label: "나중에" }}
+      />,
+    )
+    expect(screen.getByText("확인")).toBeInTheDocument()
+    expect(screen.getByText("나중에")).toBeInTheDocument()
+  })
+
+  it("data-layout 속성이 layout prop과 일치한다", () => {
+    const { rerender } = render(
+      <BottomSheetActions
+        layout="equal"
+        primary={{ label: "확인" }}
+        secondary={{ label: "취소" }}
+      />,
+    )
+    expect(document.querySelector(".umc-bottom-sheet-actions")).toHaveAttribute(
+      "data-layout",
+      "equal",
+    )
+
+    rerender(
+      <BottomSheetActions
+        layout="emphasis"
+        primary={{ label: "확인" }}
+        secondary={{ label: "취소" }}
+      />,
+    )
+    expect(document.querySelector(".umc-bottom-sheet-actions")).toHaveAttribute(
+      "data-layout",
+      "emphasis",
+    )
+  })
+})

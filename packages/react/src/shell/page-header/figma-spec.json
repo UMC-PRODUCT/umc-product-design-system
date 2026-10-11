@@ -1,0 +1,90 @@
+{
+  "component": "PageHeader",
+  "figmaSection": "2809:63751",
+  "page": "/components/shell/page-header/",
+  "nodes": [
+    {
+      "specId": "page-header-root",
+      "node": "2809:63752",
+      "variant": "Web/Page Header",
+      "target": ".umc-page-header",
+      "expected": {
+        "padding-left": "12px",
+        "row-gap": "26px"
+      }
+    },
+    {
+      "specId": "page-header-breadcrumbs",
+      "node": "2858:65251",
+      "variant": "Web/Breadcrumbs",
+      "target": ".umc-page-header__breadcrumb-list",
+      "expected": {
+        "column-gap": "2px"
+      }
+    },
+    {
+      "specId": "page-header-breadcrumb-item",
+      "node": "2809:63770",
+      "variant": ".primitive/Web/Breadcrumbs/Item, State=Default",
+      "target": "a.umc-page-header__breadcrumb-link",
+      "expected": {
+        "height": "22px",
+        "color": "#adadad",
+        "font-size": "14px",
+        "font-weight": "500",
+        "line-height": "21px",
+        "letter-spacing": "0px",
+        "text-decoration-line": "none"
+      }
+    },
+    {
+      "specId": "page-header-breadcrumb-item-hover",
+      "interaction": "hover",
+      "node": "2809:63772",
+      "variant": ".primitive/Web/Breadcrumbs/Item, State=Hover",
+      "target": "a.umc-page-header__breadcrumb-link",
+      "expected": {
+        "color": "#606262",
+        "font-weight": "600",
+        "text-decoration-line": "underline"
+      }
+    },
+    {
+      "specId": "page-header-breadcrumb-separator",
+      "node": "2809:65058",
+      "variant": ".primitive/Web/Breadcrumbs/Separator",
+      "target": ".umc-page-header__breadcrumb-separator",
+      "expected": {
+        "width": "16px",
+        "height": "16px",
+        "color": "#cccccc"
+      }
+    },
+    {
+      "specId": "page-header-title",
+      "node": "2809:63767",
+      "variant": "Title",
+      "target": ".umc-page-header__title",
+      "expected": {
+        "color": "#0f1010",
+        "font-size": "24px",
+        "font-weight": "600",
+        "line-height": "32.4px",
+        "letter-spacing": "-0.24px"
+      }
+    },
+    {
+      "specId": "page-header-description",
+      "node": "2809:63768",
+      "variant": "Description",
+      "target": ".umc-page-header__description",
+      "expected": {
+        "color": "#606262",
+        "font-size": "14px",
+        "font-weight": "400",
+        "line-height": "21px",
+        "letter-spacing": "0px"
+      }
+    }
+  ]
+}

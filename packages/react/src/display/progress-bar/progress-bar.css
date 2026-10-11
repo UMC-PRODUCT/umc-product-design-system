@@ -1,0 +1,76 @@
+@layer components {
+  .umc-progress-bar {
+    display: block;
+    width: 100%;
+  }
+
+  .umc-progress-bar__track {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--umc-color-teal-grey-100);
+  }
+
+  .umc-progress-bar__indicator {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-color: var(--umc-progress-bar-indicator-color);
+  }
+
+  .umc-progress-bar[data-size="md"] .umc-progress-bar__track {
+    height: 5px;
+    border-radius: 2.5px;
+  }
+
+  .umc-progress-bar[data-size="md"] .umc-progress-bar__indicator {
+    border-radius: 2.5px;
+  }
+
+  .umc-progress-bar[data-size="lg"] .umc-progress-bar__track {
+    height: 8px;
+    border-radius: 4px;
+  }
+
+  .umc-progress-bar[data-size="lg"] .umc-progress-bar__indicator {
+    border-radius: 4px;
+  }
+
+  .umc-progress-bar[data-color="brand"] {
+    --umc-progress-bar-indicator-color: var(--umc-color-teal-500);
+  }
+
+  .umc-progress-bar[data-color="error"] {
+    --umc-progress-bar-indicator-color: var(--umc-color-red-500);
+  }
+
+  .umc-progress-bar[data-color="success"] {
+    --umc-progress-bar-indicator-color: var(--umc-color-green-500);
+  }
+
+  .umc-progress-bar[data-color="neutral"] {
+    --umc-progress-bar-neutral-indicator: #6b7684;
+    --umc-progress-bar-indicator-color: var(
+      --umc-progress-bar-neutral-indicator
+    );
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .umc-progress-bar__indicator {
+      transition: width var(--umc-motion-duration) ease;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .umc-progress-bar__track {
+      forced-color-adjust: none;
+      background-color: ButtonFace;
+      outline: 1px solid ButtonText;
+    }
+
+    .umc-progress-bar__indicator {
+      forced-color-adjust: none;
+      background-color: Highlight;
+    }
+  }
+}

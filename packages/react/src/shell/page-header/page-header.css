@@ -1,0 +1,91 @@
+@layer components {
+  .umc-page-header {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    padding-inline-start: var(--umc-spacing-padding-12);
+    border: 0;
+  }
+
+  .umc-page-header__breadcrumbs {
+    display: flex;
+    align-items: center;
+  }
+
+  .umc-page-header__breadcrumb-list,
+  .umc-page-header__breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .umc-page-header__breadcrumb-list {
+    flex-wrap: wrap;
+    list-style: none;
+  }
+
+  .umc-page-header__breadcrumb-link {
+    display: inline-flex;
+    align-items: center;
+    height: 22px;
+    color: var(--umc-color-text-placeholder);
+    font-family: var(--umc-typography-body-3-medium-font-family);
+    font-size: var(--umc-typography-body-3-medium-font-size);
+    font-weight: var(--umc-typography-body-3-medium-font-weight);
+    line-height: var(--umc-typography-body-3-medium-line-height);
+    letter-spacing: var(--umc-typography-body-3-medium-letter-spacing);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  @media (hover: hover) {
+    a.umc-page-header__breadcrumb-link:hover {
+      color: var(--umc-color-text-neutral-medium-600);
+      font-weight: var(--umc-typography-body-3-semibold-font-weight);
+      text-decoration: underline;
+    }
+  }
+
+  a.umc-page-header__breadcrumb-link:focus-visible {
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
+    outline-offset: 2px;
+  }
+
+  .umc-page-header__breadcrumb-separator {
+    flex: 0 0 auto;
+    color: var(--umc-color-teal-grey-300);
+  }
+
+  .umc-page-header__title-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--umc-spacing-gap-12);
+  }
+
+  .umc-page-header__title {
+    margin: 0;
+    padding: 0;
+    color: var(--umc-color-text-neutral-default-900);
+    font-family: var(--umc-typography-heading-2-semibold-font-family);
+    font-size: var(--umc-typography-heading-2-semibold-font-size);
+    font-weight: var(--umc-typography-heading-2-semibold-font-weight);
+    line-height: var(--umc-typography-heading-2-semibold-line-height);
+    letter-spacing: var(--umc-typography-heading-2-semibold-letter-spacing);
+  }
+
+  .umc-page-header__description {
+    margin: 0;
+    padding: 0;
+    color: var(--umc-color-text-neutral-medium-600);
+    font-family: var(--umc-typography-body-3-regular-font-family);
+    font-size: var(--umc-typography-body-3-regular-font-size);
+    font-weight: var(--umc-typography-body-3-regular-font-weight);
+    line-height: var(--umc-typography-body-3-regular-line-height);
+    letter-spacing: var(--umc-typography-body-3-regular-letter-spacing);
+  }
+}

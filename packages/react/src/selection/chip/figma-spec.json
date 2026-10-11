@@ -1,0 +1,118 @@
+{
+  "component": "Chip",
+  "figmaSection": "3155:23013",
+  "page": "/components/selection/chip/",
+  "nodes": [
+    {
+      "specId": "chip-weak-brand-sm",
+      "node": "3155:23518",
+      "variant": "Size=Sm, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=None",
+      "target": ".umc-chip",
+      "expected": {
+        "height": "34px",
+        "background-color": "#ffffff",
+        "border-top-color": "#e2e3e3",
+        "border-top-width": "1px",
+        "border-top-left-radius": "999px",
+        "padding-inline-start": "12px",
+        "padding-inline-end": "12px",
+        "color": "#606262",
+        "font-size": "16px",
+        "font-weight": "500",
+        "line-height": "22.4px",
+        "letter-spacing": "-0.48px"
+      }
+    },
+    {
+      "specId": "chip-weak-brand-sm-hover",
+      "node": "3155:23522",
+      "variant": "Size=Sm, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=True, Icon Position=None",
+      "target": ".umc-chip",
+      "interaction": "hover",
+      "expected": {
+        "background-color": "#eff0f0",
+        "border-top-color": "#e2e3e3"
+      }
+    },
+    {
+      "specId": "chip-weak-brand-sm-selected",
+      "node": "3155:23530",
+      "variant": "Size=Sm, Color=Brand, Style=Weak, Selected=True, Pressed·Hover=False, Icon Position=None",
+      "target": ".umc-chip",
+      "expected": {
+        "height": "34px",
+        "background-color": "#e9f7f5",
+        "border-top-color": "#7ac7c1",
+        "border-top-width": "1px",
+        "color": "#02746c"
+      }
+    },
+    {
+      "specId": "chip-fill-brand-sm-selected",
+      "node": "3155:23774",
+      "variant": "Size=Sm, Color=Brand, Style=Fill, Selected=True, Pressed·Hover=False, Icon Position=None",
+      "target": ".umc-chip",
+      "expected": {
+        "height": "34px",
+        "background-color": "#008a80",
+        "border-top-width": "0px",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "chip-weak-neutral-sm-selected",
+      "node": "3155:24004",
+      "variant": "Size=Sm, Color=Neutral, Style=Weak, Selected=True, Pressed·Hover=False, Icon Position=None",
+      "target": ".umc-chip",
+      "expected": {
+        "background-color": "#eff0f0",
+        "border-top-color": "#606262",
+        "color": "#282a2a"
+      }
+    },
+    {
+      "specId": "chip-fill-neutral-sm",
+      "node": "3155:23910",
+      "variant": "Size=Sm, Color=Neutral, Style=Fill, Selected=False, Pressed·Hover=False, Icon Position=None",
+      "target": ".umc-chip",
+      "expected": {
+        "background-color": "#eff0f0",
+        "border-top-width": "0px"
+      }
+    },
+    {
+      "specId": "chip-weak-brand-md",
+      "node": "3155:24127",
+      "variant": "Size=Md, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=None",
+      "target": ".umc-chip",
+      "expected": {
+        "height": "38px",
+        "background-color": "#ffffff",
+        "border-top-width": "1px"
+      }
+    },
+    {
+      "specId": "chip-weak-brand-sm-trailing-icon",
+      "node": "3155:23414",
+      "variant": "Size=Sm, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=Right",
+      "target": ".umc-chip",
+      "expected": {
+        "height": "34px",
+        "padding-inline-start": "14px",
+        "padding-inline-end": "10px",
+        "column-gap": "6px"
+      }
+    },
+    {
+      "specId": "chip-weak-brand-sm-trailing-icon-glyph",
+      "node": "3848:11751",
+      "variant": "Size=Sm, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=Right",
+      "target": ".umc-chip__icon",
+      "expected": {
+        "width": "18px",
+        "height": "18px",
+        "color": "#606262"
+      }
+    }
+  ]
+}

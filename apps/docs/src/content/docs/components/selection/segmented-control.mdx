@@ -1,0 +1,60 @@
+---
+title: SegmentedControl
+description: 상호 배타적인 보기 모드나 필터를 전환하는 라디오 그룹 컴포넌트입니다.
+---
+
+import {
+  SegmentedControlAllVariants,
+  SegmentedControlBasic,
+  SegmentedControlControlled,
+  SegmentedControlWidth,
+} from "../../../../components/react/selection/SegmentedControlExamples.tsx"
+
+피그마 `Web/Segmented Control`을 옮긴 컴포넌트입니다. `RadioGroup` 기반이라 항목을 하나만 고르고, 화살표 키로 선택을 옮깁니다. 컨테이너는 부모 폭을 채우고 항목이 폭을 똑같이 나눕니다. 항목의 최소 폭은 100px이고, 공간이 모자라면 가로로 스크롤됩니다.
+
+```tsx
+import { SegmentedControl } from "@umc-product/react"
+
+<SegmentedControl
+  items={[
+    { value: "list", label: "목록" },
+    { value: "grid", label: "그리드" },
+  ]}
+  aria-label="보기 방식"
+  defaultValue="list"
+/>
+```
+
+## 기본
+
+선택한 항목은 흰 배경과 그림자로 떠 보입니다. 선택하지 않은 항목에 마우스를 올리면 회색 배경과 안쪽 그림자가 생깁니다.
+
+<SegmentedControlBasic client:visible />
+
+## 폭 정하기
+
+컨테이너가 부모 폭을 채우므로, 좁게 쓰려면 `className`으로 최대 폭을 줍니다.
+
+<SegmentedControlWidth client:visible />
+
+## 제어 모드
+
+`value`와 `onValueChange`로 외부에서 선택 상태를 관리합니다.
+
+<SegmentedControlControlled client:visible />
+
+## 모든 변형
+
+피그마 Segmented Control 버튼의 기본형 3개를 항목 하나짜리 컨트롤로 그렸습니다. 번호형은 [Step Navigation](../step-navigation/#모든-변형)에 있습니다. 칸에 마우스를 올리면 코드가 보이고, hover 같은 상태는 켜 둔 모습입니다.
+
+<SegmentedControlAllVariants client:visible />
+
+## props
+
+| prop            | 타입                      | 기본값 | 설명                |
+| --------------- | ------------------------- | ------ | ------------------- |
+| `items`         | `SegmentedControlItem[]`  | 필수   | 선택 항목 목록      |
+| `value`         | `string`                  | 없음   | 제어 선택값         |
+| `defaultValue`  | `string`                  | 없음   | 비제어 초기값       |
+| `onValueChange` | `(value: string) => void` | 없음   | 선택 변경 핸들러    |
+| `aria-label`    | `string`                  | 없음   | 그룹 접근 가능 이름 |

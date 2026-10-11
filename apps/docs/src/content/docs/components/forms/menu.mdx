@@ -1,0 +1,54 @@
+---
+title: Menu
+description: 버튼을 눌러 여는 동작 목록입니다.
+---
+
+import {
+  DropdownItemAllVariants,
+  MenuDefault,
+  MenuSizes,
+} from "../../../../components/react/forms/MenuExamples.tsx"
+
+피그마 `Dropdown_List`와 `Dropdown/Item`을 동작 목록으로 씁니다. `Select`가 값을 고르는 목록이라면 `Menu`는 수정, 삭제 같은 동작을 고릅니다. 고른 상태를 남기지 않으므로 체크 표시가 없습니다.
+
+```tsx
+import { Button, Menu } from "@umc-product/react"
+
+<Menu
+  trigger={
+    <Button variant="weak" color="neutral" size="sm">
+      관리
+    </Button>
+  }
+  items={[
+    { label: "수정", onClick: edit },
+    { label: "삭제", onClick: remove },
+  ]}
+/>
+```
+
+<MenuDefault client:visible />
+
+## 크기
+
+`size`는 피그마 `Dropdown/Item`의 Xs, Sm, Md입니다.
+
+<MenuSizes client:visible />
+
+## 모든 변형
+
+피그마 `Dropdown/Item` 변형 12개를 그렸습니다. 목록은 열려 있을 때만 보이므로 항목을 목록 밖에 고정해 그렸고, Select 목록도 같은 항목을 씁니다. 칸에 마우스를 올리면 코드가 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
+
+<DropdownItemAllVariants />
+
+## props
+
+| prop      | 타입                   | 기본값 | 설명                               |
+| --------- | ---------------------- | ------ | ---------------------------------- |
+| `trigger` | `ReactElement`         | 없음   | 목록을 여는 요소. 버튼 요소여야 함 |
+| `items`   | `MenuItemDef[]`        | 없음   | `label`, `onClick`, `disabled`     |
+| `size`    | `"xs" \| "sm" \| "md"` | `"sm"` | 항목 크기                          |
+
+## 알아 둘 점
+
+- 삭제처럼 위험한 동작을 구분하는 항목 스타일과 항목 아이콘은 아직 없습니다.

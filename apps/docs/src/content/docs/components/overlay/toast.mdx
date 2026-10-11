@@ -1,0 +1,103 @@
+---
+title: Toast
+description: 화면 하단(또는 상단)에 짧은 피드백 메시지를 띄우는 토스트입니다.
+---
+
+import {
+  ToastAllVariants,
+  ToastColors,
+  ToastPlacementTop,
+  ToastStaticPreview,
+  ToastWithAction,
+} from "../../../../components/react/overlay/ToastExamples.tsx"
+
+`ToastProvider`로 앱을 감싸고, `useToast()`로 토스트를 열고 닫습니다. Base UI Toast를 내부적으로 씁니다.
+
+```tsx
+import { ToastProvider, useToast } from "@umc-product/react"
+
+function App() {
+  return (
+    <ToastProvider>
+      <Page />
+    </ToastProvider>
+  )
+}
+
+function Page() {
+  const toast = useToast()
+  return (
+    <button onClick={() => toast.show({ message: "저장되었습니다." })}>
+      저장
+    </button>
+  )
+}
+```
+
+## 외형 미리보기
+
+피그마 `Toast Bottom`과 `Toast Top`의 변형을 항상 보이게 그린 미리보기입니다. 위에서부터 Primary(아이콘과 닫기), Primary(동작 버튼), Neutral, Warning, Warning(동작 버튼), Error, Error(동작 버튼), 상단 Primary(아이콘), 상단 Primary(동작 버튼)입니다. 앞 아이콘은 `icon`에 넘긴 아이콘을 타입에 맞는 색으로 칠합니다. Primary와 Neutral은 틸, Error는 빨강으로 `<CheckCircleIcon weight="fill" />`을, Warning은 주황으로 `<WarningIcon weight="fill" />`을 넘깁니다.
+
+<ToastStaticPreview />
+
+## 색상
+
+버튼을 눌러 각 색상의 토스트를 확인하세요.
+
+<ToastColors client:visible />
+
+## 액션 버튼
+
+`action`을 넘기면 닫기 버튼 자리에 밑줄 텍스트 버튼이 생기고, 자동으로 닫히는 시간이 6초로 늘어납니다. 버튼을 누르면 `onClick`을 실행한 뒤 토스트를 닫습니다.
+
+<ToastWithAction client:visible />
+
+## 상단 배치
+
+`placement="top"`으로 상단에 표시할 수 있습니다. 피그마 `Toast Top`처럼 상단 토스트는 닫기 버튼 없이 내용 폭으로 그리고, 정해진 시간이 지나면 저절로 닫힙니다.
+
+<ToastPlacementTop client:visible />
+
+## 모든 변형
+
+피그마 `Toast Bottom` 16개와 `Toast Top` 16개를 그렸습니다. 토스트는 잠깐 떴다 사라지므로 화면에 고정해 그렸습니다. 칸에 마우스를 올리면 코드가 보입니다.
+
+<ToastAllVariants />
+
+## props
+
+### ToastProvider
+
+| prop        | 타입                | 기본값     | 설명        |
+| ----------- | ------------------- | ---------- | ----------- |
+| `placement` | `"top" \| "bottom"` | `"bottom"` | 토스트 위치 |
+| `children`  | `ReactNode`         | 필수       |             |
+
+### useToast()가 반환하는 API
+
+| 메서드  | 시그니처                            | 설명                        |
+| ------- | ----------------------------------- | --------------------------- |
+| `show`  | `(options: ToastOptions) => string` | 토스트를 열고 id를 반환한다 |
+| `close` | `(id: string) => void`              | 해당 id의 토스트를 닫는다   |
+
+### ToastOptions
+
+| prop       | 타입                                             | 기본값      | 설명                                         |
+| ---------- | ------------------------------------------------ | ----------- | -------------------------------------------- |
+| `message`  | `ReactNode`                                      | 필수        | 본문                                         |
+| `color`    | `"primary" \| "neutral" \| "warning" \| "error"` | `"primary"` | 색상                                         |
+| `icon`     | `ReactNode`                                      | 없음        | 왼쪽 아이콘                                  |
+| `action`   | `{ label: ReactNode; onClick: () => void }`      | 없음        | 액션 버튼                                    |
+| `duration` | `number`                                         | 없음        | 자동 닫힘 시간(ms). 기본: 3000, action: 6000 |
+
+## 동작
+
+- 3초 뒤에 저절로 닫히고, 동작 버튼이 있으면 6초 뒤에 닫힙니다.
+- Error 토스트는 나타날 때 좌우로 흔들리고, 화면 낭독기에 바로 알립니다. 움직임 줄이기 설정에서는 흔들리지 않습니다.
+- 웹에서는 최소 폭 400px이고 화면 양옆 16px 안쪽으로 줄어듭니다.
+- 하단 배치는 화면 아래에서 40px 띄워 가운데에 놓습니다(높이 48px 토스트라면 윗변이 아래에서 88px). 상단 배치는 화면 위에서 112px에 놓습니다.
+- 하단 토스트의 닫기 버튼과 동작 버튼은 아이콘과 글자 왼쪽(닫기 8px, 동작 12px)까지 누를 수 있습니다.
+
+## 알아 둘 점
+
+- Service Notice 타입은 아직 지원하지 않습니다.

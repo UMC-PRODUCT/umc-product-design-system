@@ -1,0 +1,51 @@
+---
+title: ScrollFog
+description: 스크롤 가능한 영역 끝에 그라디언트로 내용이 더 있음을 암시하는 안개 효과입니다.
+---
+
+import {
+  ScrollFogHorizontal,
+  ScrollFogVertical,
+} from "../../../../components/react/overlay/ScrollFogExamples.tsx"
+
+피그마 `Scroll Fog`를 옮겼습니다. 스크롤 영역의 한쪽 가장자리에 74px 폭의 띠로 붙어서, 투명에서 배경색으로 바뀌며 내용이 더 있다는 것을 알려 줍니다. 부모에 `position: relative`가 필요하고, `pointer-events: none`이라 클릭과 스크롤을 막지 않습니다. 언제 보일지는 앱이 스크롤 위치를 보고 정합니다.
+
+```tsx
+import { ScrollFog } from "@umc-product/react"
+
+<div className="relative overflow-hidden">
+  <ul className="flex overflow-x-auto">
+    {items.map((item) => (
+      <li key={item.id}>{item.name}</li>
+    ))}
+  </ul>
+  {hasMoreOnRight && <ScrollFog side="right" />}
+</div>
+```
+
+띠 두께는 `className`으로 바꿀 수 있습니다. `side`가 `left`, `right`이면 `w-*`, `top`, `bottom`이면 `h-*` 클래스를 씁니다(예: `className="w-10"`).
+
+## 가로 스크롤
+
+<ScrollFogHorizontal />
+
+## 세로 스크롤
+
+<ScrollFogVertical />
+
+## props
+
+| prop   | 타입                                     | 기본값    | 설명                           |
+| ------ | ---------------------------------------- | --------- | ------------------------------ |
+| `side` | `"top" \| "bottom" \| "left" \| "right"` | `"right"` | 붙을 가장자리                  |
+| 나머지 | `ComponentPropsWithRef<"div">`           |           | `style`, `className`, `ref` 등 |
+
+`side="right"`이면 왼쪽(투명)에서 오른쪽(`--umc-color-background-default`)으로 진행합니다.
+
+## 접근성
+
+`aria-hidden="true"`가 고정으로 달려 있어 스크린 리더에서 무시합니다.
+
+## 알아 둘 점
+
+- 안개 끝 색은 흰 배경(`background-default`)에 맞춰져 있어서, 다른 색 배경 위에서는 경계가 보일 수 있습니다.

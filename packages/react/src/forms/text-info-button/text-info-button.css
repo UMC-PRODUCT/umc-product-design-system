@@ -1,0 +1,44 @@
+@layer components {
+  .umc-text-info-button {
+    --umc-text-info-button-color: var(--umc-color-text-placeholder);
+    --umc-text-info-button-icon-color: var(--umc-color-icon-neutral-weak-400);
+
+    display: inline-flex;
+    align-items: center;
+    gap: var(--umc-spacing-gap-4);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--umc-text-info-button-color);
+    font-family: var(--umc-typography-caption-2-regular-font-family);
+    font-size: var(--umc-typography-caption-2-regular-font-size);
+    font-weight: var(--umc-typography-caption-2-regular-font-weight);
+    line-height: var(--umc-typography-caption-2-regular-line-height);
+    letter-spacing: var(--umc-typography-caption-2-regular-letter-spacing);
+    white-space: nowrap;
+    cursor: pointer;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (hover: hover) {
+    .umc-text-info-button:hover {
+      --umc-text-info-button-color: var(--umc-color-text-neutral-weak-500);
+      --umc-text-info-button-icon-color: var(
+        --umc-color-icon-neutral-medium-500
+      );
+    }
+  }
+
+  .umc-text-info-button:focus-visible {
+    border-radius: var(--umc-radius-6);
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
+    outline-offset: 2px;
+  }
+
+  .umc-text-info-button__icon {
+    flex: 0 0 auto;
+    color: var(--umc-text-info-button-icon-color);
+  }
+}

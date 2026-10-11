@@ -1,0 +1,70 @@
+{
+  "component": "StepNavigation",
+  "figmaSection": "2505:14204",
+  "page": "/components/selection/step-navigation/",
+  "nodes": [
+    {
+      "specId": "step-navigation-container",
+      "node": "2581:16139",
+      "variant": "Web/Step Navigation",
+      "target": ".umc-step-navigation__list",
+      "expected": {
+        "background-color": "#f7f8f8",
+        "height": "46px",
+        "padding-top": "4px",
+        "padding-left": "4px",
+        "border-top-left-radius": "14px",
+        "column-gap": "8px"
+      }
+    },
+    {
+      "specId": "step-navigation-current",
+      "node": "2281:6405",
+      "variant": "State=Selected, Type=Numberic Step, Align=Left",
+      "target": ".umc-step-navigation__step[aria-current=\"step\"]",
+      "expected": {
+        "background-color": "#ffffff",
+        "color": "#282a2a",
+        "height": "38px",
+        "padding-left": "12px",
+        "padding-right": "20px",
+        "border-top-left-radius": "12px",
+        "column-gap": "8px",
+        "font-size": "16px",
+        "font-weight": "600",
+        "line-height": "22.4px",
+        "letter-spacing": "-0.32px",
+        "box-shadow~": "rgba(99, 196, 184, 0.2) 0px 1px 2px 0px, rgba(156, 163, 163, 0.3) 0px 0px 10px 0px"
+      }
+    },
+    {
+      "specId": "step-navigation-step",
+      "node": "2281:6409",
+      "variant": "State=Unselected, Type=Numberic Step, Align=Left",
+      "target": ".umc-step-navigation__step:not([aria-current])",
+      "expected": {
+        "background-color": "#00000000",
+        "color": "#02746c",
+        "height": "38px",
+        "font-weight": "600"
+      }
+    },
+    {
+      "specId": "step-navigation-badge",
+      "node": "2479:20717",
+      "variant": "Badge/Number Color=Neutral, Size=Md, Style=Weak",
+      "target": ".umc-step-navigation__badge",
+      "expected": {
+        "background-color": "#eff0f0",
+        "color": "#606262",
+        "height": "20px",
+        "min-width": "20px",
+        "padding-left": "4px",
+        "border-top-left-radius": "999px",
+        "font-size": "14px",
+        "font-weight": "600",
+        "line-height": "18.9px"
+      }
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+---
+title: UmcLogoLockup
+description: UMC 로고와 맥락 이름(Operation, Study, Product Tech)을 묶은 로고 락업입니다. 링크가 아니라서 헤더 밖에서도 씁니다.
+---
+
+import {
+  UmcLogoLockupColors,
+  UmcLogoLockupPreview,
+} from "../../../../components/react/shell/UmcLogoLockupExamples.tsx"
+
+`UmcLogoLockup`은 UMC 로고 옆에 서비스 맥락 이름을 붙인 묶음입니다. 헤더 홈 링크인 `HeaderHomeLink`는 이 락업을 링크로 감싼 것입니다. 로그인 화면, 푸터, 모바일 상단 바 제목처럼 링크가 아닌 자리에는 `UmcLogoLockup`을 바로 씁니다.
+
+```tsx
+import { UmcLogoLockup } from "@umc-product/react"
+
+<UmcLogoLockup />
+<UmcLogoLockup context="operation" generation={11} />
+<UmcLogoLockup context="study" generation={11} />
+<UmcLogoLockup context="product-tech" />
+```
+
+<UmcLogoLockupPreview />
+
+## 맥락
+
+| `context`      | 라벨                  | `generation` |
+| -------------- | --------------------- | ------------ |
+| `main`(기본값) | 없음, 로고만 그림     | 받지 않음    |
+| `operation`    | Operation과 기수 서수 | 필수         |
+| `study`        | Study와 기수 서수     | 필수         |
+| `product-tech` | Product와 Tech 두 줄  | 받지 않음    |
+
+`generation`은 영어 서수로 씁니다(11기는 11th, 21기는 21st). 1 이상의 정수가 아니면 서수 줄을 빼고 맥락 이름만 그립니다.
+
+## 색
+
+로고와 라벨은 글자색(`currentColor`)을 따릅니다. 헤더와 같은 색을 내려면 감싼 요소에 `text-icon-neutral-stronger-700`을 주고, 어두운 배경에서는 밝은 글자색을 줍니다.
+
+<UmcLogoLockupColors />
+
+## props
+
+| prop         | 타입                                                 | 기본값   | 설명                                 |
+| ------------ | ---------------------------------------------------- | -------- | ------------------------------------ |
+| `context`    | `"main" \| "operation" \| "study" \| "product-tech"` | `"main"` | 로고 옆에 붙일 맥락                  |
+| `generation` | `number`                                             | 없음     | `operation`, `study`에서 필수인 기수 |
+| `className`  | `string`                                             | 없음     | 루트 `span`에 붙일 클래스            |
+| `ref`        | `Ref<HTMLSpanElement>`                               | 없음     | 루트 `span` 참조                     |
+
+그 밖에 `span` 속성(`id`, `title`, `aria-*` 등)을 그대로 넘깁니다. 내용은 맥락으로 정해지므로 `children`은 받지 않습니다.
+
+## 알아 둘 점
+
+- 크기는 헤더 기준(로고 높이 22px) 하나입니다.
+- 로고만 필요하면 `@umc-product/icons`의 [UmcLogo](../../../foundations/icons/#로고)를 씁니다.
+- 누르면 홈으로 가야 하면 [Header](../header/)의 `HeaderHomeLink`를 씁니다. 높이, 여백, hover 색과 포커스 표시까지 맞춰 둔 링크입니다.
+- 화면 낭독기는 로고를 "UMC"로 읽고 이어서 라벨을 읽습니다(예: "UMC Operation 11th").

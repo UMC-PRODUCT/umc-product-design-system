@@ -1,0 +1,35 @@
+---
+import { ChevronLeftIcon, ChevronRightIcon } from "@umc-product/icons"
+
+const { prev, next } = Astro.locals.starlightRoute.pagination
+const ARROW_SIZE = 20
+---
+
+{
+  (prev || next) && (
+    <nav class="docs-pagination print:hidden" aria-label="이전 문서와 다음 문서">
+      {prev && (
+        <a class="docs-pagination__link" data-direction="prev" href={prev.href} rel="prev">
+          <ChevronLeftIcon className="docs-pagination__arrow" size={ARROW_SIZE} />
+          <span class="docs-pagination__text">
+            <span class="docs-pagination__hint text-body-3-regular">
+              {Astro.locals.t("page.previousLink")}
+            </span>
+            <span class="docs-pagination__title text-title-4-semibold">{prev.label}</span>
+          </span>
+        </a>
+      )}
+      {next && (
+        <a class="docs-pagination__link" data-direction="next" href={next.href} rel="next">
+          <span class="docs-pagination__text">
+            <span class="docs-pagination__hint text-body-3-regular">
+              {Astro.locals.t("page.nextLink")}
+            </span>
+            <span class="docs-pagination__title text-title-4-semibold">{next.label}</span>
+          </span>
+          <ChevronRightIcon className="docs-pagination__arrow" size={ARROW_SIZE} />
+        </a>
+      )}
+    </nav>
+  )
+}

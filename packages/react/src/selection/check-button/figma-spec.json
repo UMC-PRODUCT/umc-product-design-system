@@ -1,0 +1,27 @@
+{
+  "component": "CheckButton",
+  "figmaSection": "3696:100254",
+  "page": "/components/selection/checkbox/",
+  "nodes": [
+    {
+      "specId": "check-button-off",
+      "node": "3696:100255",
+      "variant": "Selected=False",
+      "target": ".umc-check-button",
+      "expected": {
+        "width": "24px",
+        "height": "24px",
+        "color": "#e2e3e3"
+      }
+    },
+    {
+      "specId": "check-button-on",
+      "node": "3696:100257",
+      "variant": "Selected=True",
+      "target": ".umc-check-button",
+      "expected": {
+        "color": "#008a80"
+      }
+    }
+  ]
+}

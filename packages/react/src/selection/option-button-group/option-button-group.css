@@ -1,0 +1,297 @@
+@layer components {
+  .umc-option-button-group {
+    display: inline-flex;
+    align-items: stretch;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: var(--umc-radius-8);
+    background-color: var(--umc-color-fill-neutral-medium-100);
+    overflow-x: auto;
+  }
+
+  .umc-option-button {
+    --umc-option-button-bg: var(--umc-color-fill-neutral-default);
+    --umc-option-button-fg: var(--umc-color-text-neutral-strong-800);
+    --umc-option-button-border-color: var(
+      --umc-color-border-neutral-weaker-100
+    );
+    --umc-option-button-border-start: 0px;
+    --umc-option-button-border-end: 0px;
+    --umc-option-button-border:
+      inset 0 1px 0 0 var(--umc-option-button-border-color),
+      inset 0 -1px 0 0 var(--umc-option-button-border-color),
+      inset var(--umc-option-button-border-start) 0 0 0
+        var(--umc-option-button-border-color),
+      inset calc(-1 * var(--umc-option-button-border-end)) 0 0 0
+        var(--umc-option-button-border-color);
+    --umc-option-button-checked-bg: var(--umc-color-fill-primary-weak-75);
+    --umc-option-button-checked-fg: var(--umc-color-text-brand-default-600);
+    --umc-option-button-checked-border-color: var(
+      --umc-color-border-primary-weak-200
+    );
+    --umc-option-button-checked-border: inset 0 0 0 1px
+      var(--umc-option-button-checked-border-color);
+    --umc-option-button-icon-color: var(--umc-color-icon-brand-medium-500);
+
+    position: relative;
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: var(--umc-spacing-gap-4);
+    box-sizing: border-box;
+    min-height: var(--umc-option-button-height);
+    margin: 0;
+    padding-block: var(--umc-spacing-padding-4);
+    padding-inline-start: var(--umc-option-button-padding-start);
+    padding-inline-end: var(--umc-option-button-padding-end);
+    border: 0;
+    box-shadow: var(--umc-option-button-border);
+    background-color: var(--umc-option-button-bg);
+    color: var(--umc-option-button-fg);
+    font-family: var(--umc-option-button-font-family);
+    font-size: var(--umc-option-button-font-size);
+    font-weight: var(--umc-option-button-font-weight);
+    line-height: var(--umc-option-button-line-height);
+    letter-spacing: var(--umc-option-button-letter-spacing);
+    white-space: nowrap;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .umc-option-button[data-position="start"] {
+    --umc-option-button-border-start: 1px;
+    border-start-start-radius: var(--umc-radius-8);
+    border-end-start-radius: var(--umc-radius-8);
+  }
+
+  .umc-option-button[data-position="end"] {
+    --umc-option-button-border-end: 1px;
+    border-start-end-radius: var(--umc-radius-8);
+    border-end-end-radius: var(--umc-radius-8);
+  }
+
+  .umc-option-button[data-unchecked] + .umc-option-button[data-unchecked],
+  .umc-option-button[data-unchecked]
+    + input
+    + .umc-option-button[data-unchecked] {
+    margin-inline-start: 1px;
+  }
+
+  .umc-option-button-group[data-size="xl"] .umc-option-button {
+    --umc-option-button-height: 48px;
+    --umc-option-button-icon-size: 20px;
+    --umc-option-button-padding-start: var(--umc-spacing-padding-28);
+    --umc-option-button-padding-end: var(--umc-spacing-padding-28);
+    --umc-option-button-checked-padding-start: 18px;
+    --umc-option-button-checked-padding-end: var(--umc-spacing-padding-28);
+    --umc-option-button-font-family: var(
+      --umc-typography-title-2-medium-font-family
+    );
+    --umc-option-button-font-size: var(
+      --umc-typography-title-2-medium-font-size
+    );
+    --umc-option-button-font-weight: var(--umc-font-weight-regular);
+    --umc-option-button-line-height: var(
+      --umc-typography-title-2-medium-line-height
+    );
+    --umc-option-button-letter-spacing: var(
+      --umc-typography-title-2-medium-letter-spacing
+    );
+    --umc-option-button-checked-font-size: var(
+      --umc-typography-title-2-medium-font-size
+    );
+    --umc-option-button-checked-font-weight: var(
+      --umc-typography-title-2-medium-font-weight
+    );
+    --umc-option-button-checked-line-height: var(
+      --umc-typography-title-2-medium-line-height
+    );
+    --umc-option-button-checked-letter-spacing: var(
+      --umc-typography-title-2-medium-letter-spacing
+    );
+  }
+
+  .umc-option-button-group[data-size="sm"] .umc-option-button {
+    --umc-option-button-height: 38px;
+    --umc-option-button-icon-size: 16px;
+    --umc-option-button-padding-start: var(--umc-spacing-padding-20);
+    --umc-option-button-padding-end: var(--umc-spacing-padding-20);
+    --umc-option-button-checked-padding-start: var(--umc-spacing-padding-12);
+    --umc-option-button-checked-padding-end: var(--umc-spacing-padding-20);
+    --umc-option-button-font-family: var(
+      --umc-typography-body-1-regular-font-family
+    );
+    --umc-option-button-font-size: var(
+      --umc-typography-body-1-regular-font-size
+    );
+    --umc-option-button-font-weight: var(
+      --umc-typography-body-1-regular-font-weight
+    );
+    --umc-option-button-line-height: var(
+      --umc-typography-body-1-regular-line-height
+    );
+    --umc-option-button-letter-spacing: var(
+      --umc-typography-body-1-regular-letter-spacing
+    );
+    --umc-option-button-checked-font-size: var(
+      --umc-typography-label-3-medium-font-size
+    );
+    --umc-option-button-checked-font-weight: var(
+      --umc-typography-label-3-medium-font-weight
+    );
+    --umc-option-button-checked-line-height: var(
+      --umc-typography-label-3-medium-line-height
+    );
+    --umc-option-button-checked-letter-spacing: var(
+      --umc-typography-label-3-medium-letter-spacing
+    );
+  }
+
+  .umc-option-button-group[data-size="xs"] .umc-option-button {
+    --umc-option-button-height: 28px;
+    --umc-option-button-icon-size: 16px;
+    --umc-option-button-padding-start: var(--umc-spacing-padding-12);
+    --umc-option-button-padding-end: var(--umc-spacing-padding-12);
+    --umc-option-button-checked-padding-start: var(--umc-spacing-padding-6);
+    --umc-option-button-checked-padding-end: var(--umc-spacing-padding-10);
+    --umc-option-button-font-family: var(
+      --umc-typography-label-5-medium-font-family
+    );
+    --umc-option-button-font-size: var(
+      --umc-typography-label-5-medium-font-size
+    );
+    --umc-option-button-font-weight: var(
+      --umc-typography-label-5-medium-font-weight
+    );
+    --umc-option-button-line-height: var(
+      --umc-typography-label-5-medium-line-height
+    );
+    --umc-option-button-letter-spacing: var(
+      --umc-typography-label-5-medium-letter-spacing
+    );
+    --umc-option-button-checked-font-size: var(
+      --umc-typography-label-5-medium-font-size
+    );
+    --umc-option-button-checked-font-weight: var(
+      --umc-typography-label-5-medium-font-weight
+    );
+    --umc-option-button-checked-line-height: var(
+      --umc-typography-label-5-medium-line-height
+    );
+    --umc-option-button-checked-letter-spacing: var(
+      --umc-typography-label-5-medium-letter-spacing
+    );
+  }
+
+  .umc-option-button-group[data-size="xs"]
+    .umc-option-button[data-position="start"] {
+    --umc-option-button-padding-start: 14px;
+  }
+
+  .umc-option-button-group[data-size="xs"]
+    .umc-option-button[data-position="end"] {
+    --umc-option-button-padding-end: 14px;
+  }
+
+  .umc-option-button-group[data-variant="strong"] .umc-option-button {
+    --umc-option-button-checked-bg: var(
+      --umc-color-fill-primary-inverse-strong-600
+    );
+    --umc-option-button-checked-fg: var(--umc-color-text-inverse);
+    --umc-option-button-checked-border: none;
+    --umc-option-button-icon-color: var(--umc-color-teal-50);
+  }
+
+  .umc-option-button[data-checked] {
+    padding-inline-start: var(--umc-option-button-checked-padding-start);
+    padding-inline-end: var(--umc-option-button-checked-padding-end);
+    box-shadow: var(--umc-option-button-checked-border);
+    background-color: var(--umc-option-button-checked-bg);
+    color: var(--umc-option-button-checked-fg);
+    font-size: var(--umc-option-button-checked-font-size);
+    font-weight: var(--umc-option-button-checked-font-weight);
+    line-height: var(--umc-option-button-checked-line-height);
+    letter-spacing: var(--umc-option-button-checked-letter-spacing);
+  }
+
+  .umc-option-button[data-disabled] {
+    color: var(--umc-color-text-disabled);
+    cursor: default;
+  }
+
+  .umc-option-button[data-checked][data-disabled] {
+    color: var(--umc-color-text-brand-disabled-300);
+  }
+
+  .umc-option-button-group[data-variant="strong"]
+    .umc-option-button[data-checked][data-disabled] {
+    background-color: var(--umc-color-teal-300);
+    color: var(--umc-color-teal-100);
+  }
+
+  .umc-option-button__indicator {
+    display: inline-flex;
+    flex: 0 0 auto;
+    color: var(--umc-option-button-icon-color);
+  }
+
+  .umc-option-button[data-disabled] .umc-option-button__indicator {
+    color: inherit;
+  }
+
+  .umc-option-button__indicator > svg {
+    width: var(--umc-option-button-icon-size);
+    height: var(--umc-option-button-icon-size);
+  }
+
+  .umc-option-button:focus-visible {
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
+    outline-offset: -2px;
+  }
+
+  .umc-option-button__label {
+    pointer-events: none;
+  }
+
+  @media (forced-colors: active) {
+    .umc-option-button {
+      outline: 1px solid CanvasText;
+      outline-offset: -1px;
+    }
+
+    .umc-option-button[data-checked] {
+      forced-color-adjust: none;
+      background-color: Highlight;
+      color: HighlightText;
+      outline-color: Highlight;
+    }
+
+    .umc-option-button[data-disabled] {
+      outline-color: GrayText;
+    }
+
+    .umc-option-button-group[data-variant]
+      .umc-option-button[data-checked][data-disabled] {
+      background-color: GrayText;
+      color: Canvas;
+      outline-color: GrayText;
+    }
+
+    .umc-option-button[data-checked] .umc-option-button__indicator {
+      color: inherit;
+    }
+
+    .umc-option-button:focus-visible {
+      outline-color: CanvasText;
+    }
+
+    .umc-option-button[data-checked]:focus-visible {
+      outline-color: HighlightText;
+    }
+  }
+}

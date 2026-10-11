@@ -1,0 +1,38 @@
+{
+  "name": "umc-product-design-system",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.28.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "figma:inspect": "pnpm --filter @umc-product/design-tokens figma:inspect",
+    "tokens:normalize": "pnpm --filter @umc-product/design-tokens tokens:normalize",
+    "tokens:build": "pnpm --filter @umc-product/design-tokens tokens:build",
+    "tokens:check": "pnpm --filter @umc-product/design-tokens tokens:check",
+    "icons:build": "pnpm --filter @umc-product/icons icons:build",
+    "icons:check": "pnpm --filter @umc-product/icons icons:check",
+    "build:packages": "pnpm --filter \"./packages/**\" build",
+    "lint:package": "node scripts/lint-packages.mjs",
+    "docs:dev": "pnpm --filter @umc-product/docs dev",
+    "docs:build": "pnpm --filter @umc-product/docs build",
+    "docs:preview": "pnpm --filter @umc-product/docs preview",
+    "docs:variants": "pnpm --filter @umc-product/docs variants:check",
+    "docs:links": "pnpm --filter @umc-product/docs links:check",
+    "test": "pnpm -r test",
+    "typecheck": "tsc -b && pnpm --filter @umc-product/docs typecheck",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "pnpm build:packages && pnpm lint:package && changeset publish"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.5",
+    "@changesets/cli": "^3.0.3",
+    "prettier": "^3.8.1",
+    "publint": "^0.3.25",
+    "typescript": "~5.9.3"
+  }
+}

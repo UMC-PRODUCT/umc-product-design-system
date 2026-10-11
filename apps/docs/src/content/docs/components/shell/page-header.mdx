@@ -1,0 +1,61 @@
+---
+title: PageHeader
+description: 페이지 맨 위의 브레드크럼, 제목, 설명입니다.
+---
+
+import {
+  PageHeaderAllVariants,
+  PageHeaderDefault,
+  PageHeaderSimple,
+} from "../../../../components/react/shell/PageHeaderExamples.tsx"
+
+피그마 `Web/Page Header`를 구현했습니다. 브레드크럼, 제목, 설명 순서로 쌓이고 브레드크럼과 설명은 생략할 수 있습니다. 제목은 `h1`입니다.
+
+```tsx
+import { PageHeader } from "@umc-product/react"
+
+export function ApplicantListPage() {
+  return (
+    <PageHeader
+      title="지원자 목록"
+      description="현재 차수에 지원한 모든 지원자를 확인합니다."
+      breadcrumbs={[
+        { label: "리크루팅", href: "/recruiting" },
+        { label: "지원자 목록" },
+      ]}
+    />
+  )
+}
+```
+
+## 브레드크럼 포함
+
+링크 항목에 마우스를 올리면 진하게 바뀌고 밑줄이 생깁니다.
+
+<PageHeaderDefault client:visible />
+
+## 제목만
+
+<PageHeaderSimple client:visible />
+
+## 브레드크럼
+
+- 마지막 항목은 현재 페이지로 보고 링크 없이 `aria-current="page"`를 답니다. `href`를 넘겨도 링크로 만들지 않습니다.
+- 구분자는 피그마 `.primitive/Web/Breadcrumbs/Separator`의 벡터를 그대로 그립니다. 아이콘 패키지의 `ChevronRightIcon`보다 작습니다.
+
+## 모든 변형
+
+피그마 `.primitive/Web/Breadcrumbs/Item` 변형 2개를 그렸습니다. 칸에 마우스를 올리면 코드가 보이고, hover 같은 상태는 켜 둔 모습입니다.
+
+<PageHeaderAllVariants client:visible />
+
+## props
+
+| prop          | 타입               | 기본값 | 설명                     |
+| ------------- | ------------------ | ------ | ------------------------ |
+| `title`       | `ReactNode`        | 필수   | 페이지 제목. `h1`로 렌더 |
+| `description` | `ReactNode`        | 없음   | 제목 아래 설명           |
+| `breadcrumbs` | `BreadcrumbItem[]` | 없음   | 브레드크럼 항목          |
+| `className`   | `string`           | 없음   | 루트 요소에 붙일 클래스  |
+
+`BreadcrumbItem`은 `{ label: ReactNode; href?: string }`입니다.

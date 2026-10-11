@@ -1,0 +1,93 @@
+---
+title: Member Tag
+description: 파트와 역할을 표시하는 태그 컴포넌트입니다. PartTag와 RoleTag 두 종류가 있습니다.
+---
+
+import {
+  PartTagAllVariants,
+  PartTagStaticPreview,
+  RoleTagAllVariants,
+  RoleTagStaticPreview,
+} from "../../../../components/react/display/MemberTagExamples.tsx"
+
+## PartTag
+
+파트를 나타내는 태그입니다. `part` prop으로 파트를 지정하고, `variant`와 `size`로 외형을 조정합니다.
+
+```tsx
+import { PartTag } from "@umc-product/react"
+
+<PartTag part="pm" />
+<PartTag part="design" variant="outlined" size="lg" />
+<PartTag part="web-pe" size="md">WebFE</PartTag>
+```
+
+<PartTagStaticPreview />
+
+### 모든 변형
+
+<PartTagAllVariants />
+
+### props
+
+| prop        | 타입                                          | 기본값     | 설명                                            |
+| ----------- | --------------------------------------------- | ---------- | ----------------------------------------------- |
+| `part`      | `"pm" \| "design" \| "web-pe" \| "mobile-pe"` | `"pm"`     | 파트 종류                                       |
+| `variant`   | `"filled" \| "outlined"`                      | `"filled"` | 외형 스타일                                     |
+| `size`      | `"sm" \| "md" \| "lg"`                        | `"sm"`     | 크기                                            |
+| `children`  | `ReactNode`                                   | 없음       | 기본 레이블을 덮어쓸 텍스트. 없으면 파트 기본값 |
+| `className` | `string`                                      | 없음       | 루트 `span`에 붙일 클래스                       |
+| `ref`       | `Ref<HTMLSpanElement>`                        | 없음       | 루트 `span` 참조                                |
+
+그 밖에 `span` 속성을 그대로 넘깁니다. 네이티브 `color` 속성은 받지 않습니다.
+
+기본 레이블: `pm` → PM, `design` → Design, `web-pe` → Web PE, `mobile-pe` → Mobile PE.
+
+### 알아 둘 점
+
+- 파트 이름을 다르게 보여야 하면 `children`으로 바꿉니다. 색은 `part`가 정합니다.
+
+## RoleTag
+
+역할을 나타내는 태그입니다. `color`는 역할 계층을 색으로 표현하며, `children`에 실제 역할 이름을 넘깁니다.
+
+```tsx
+import { RoleTag } from "@umc-product/react"
+
+<RoleTag color="challenger-super-admin">Admin</RoleTag>
+<RoleTag color="central" size="md">중앙 운영진</RoleTag>
+<RoleTag color="campus" size="lg">교내 회장</RoleTag>
+```
+
+<RoleTagStaticPreview />
+
+피그마 역할 10개는 색 계열 5개로 묶입니다. 역할 이름 대신 색 계열을 고르는 이유는 역할 이름이 기수마다 바뀌기 때문입니다.
+
+| 피그마 역할                         | `color`                  |
+| ----------------------------------- | ------------------------ |
+| Admin, 챌린저                       | `challenger-super-admin` |
+| Product                             | `product`                |
+| 총괄, 부총괄, 중앙 운영진           | `central`                |
+| 지부장                              | `chapter`                |
+| 교내 회장, 교내 부회장, 교내 운영진 | `campus`                 |
+
+### 모든 변형
+
+<RoleTagAllVariants />
+
+### props
+
+| prop        | 타입                                                                          | 기본값 | 설명                      |
+| ----------- | ----------------------------------------------------------------------------- | ------ | ------------------------- |
+| `color`     | `"challenger-super-admin" \| "product" \| "central" \| "chapter" \| "campus"` | 필수   | 역할 계층 색상            |
+| `size`      | `"sm" \| "md" \| "lg"`                                                        | `"sm"` | 크기                      |
+| `children`  | `ReactNode`                                                                   | 필수   | 역할 이름(기수마다 바뀜)  |
+| `className` | `string`                                                                      | 없음   | 루트 `span`에 붙일 클래스 |
+| `ref`       | `Ref<HTMLSpanElement>`                                                        | 없음   | 루트 `span` 참조          |
+
+그 밖에 `span` 속성을 그대로 넘깁니다.
+
+### 알아 둘 점
+
+- `children`이 필수입니다. 역할 이름은 기수마다 달라지므로 컴포넌트가 기본값을 갖지 않습니다.
+- 네이티브 `<span>`의 `color` 속성은 받지 않습니다. 색은 `color` prop으로 고릅니다.

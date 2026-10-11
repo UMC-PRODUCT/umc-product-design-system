@@ -1,0 +1,100 @@
+@import "../field/field.css";
+@import "../text-info-button/text-info-button.css";
+
+@layer components {
+  .umc-field.umc-code-field {
+    gap: var(--umc-spacing-gap-10);
+  }
+
+  .umc-code-field__cells {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--umc-spacing-gap-10);
+  }
+
+  .umc-code-field__cells[data-invalid] {
+    animation: umc-error-shake 400ms ease-in-out;
+  }
+
+  .umc-code-field__cell {
+    --umc-code-field-error-tint: #fef2f199;
+    --umc-code-field-font-size: 26px;
+    --umc-code-field-line-height: 1.3;
+    --umc-code-field-border-color: var(--umc-color-border-neutral-medium-300);
+
+    box-sizing: border-box;
+    width: 52px;
+    height: 52px;
+    margin: 0;
+    padding-block: 0;
+    padding-inline: var(--umc-spacing-padding-10);
+    border: 1px solid var(--umc-code-field-border-color);
+    border-radius: var(--umc-radius-16);
+    background-color: var(--umc-color-fill-neutral-default);
+    box-shadow: var(--umc-shadow-inner-neutral-2);
+    color: var(--umc-color-text-brand-default-600);
+    caret-color: var(--umc-color-teal-500);
+    font-family: var(--umc-font-family-brand);
+    font-size: var(--umc-code-field-font-size);
+    font-weight: var(--umc-font-weight-semibold);
+    line-height: var(--umc-code-field-line-height);
+    letter-spacing: 0;
+    text-align: center;
+    outline: none;
+    appearance: none;
+    transition:
+      border-color var(--umc-motion-duration) ease,
+      background-color var(--umc-motion-duration) ease;
+  }
+
+  @media (hover: hover) {
+    .umc-code-field__cell:not(:disabled):hover {
+      --umc-code-field-border-color: var(--umc-color-border-primary-medium-300);
+    }
+  }
+
+  .umc-code-field__cell[data-filled] {
+    --umc-code-field-border-color: var(--umc-color-border-primary-medium-300);
+  }
+
+  .umc-code-field__cell:focus {
+    --umc-code-field-border-color: var(--umc-color-border-primary-medium-300);
+
+    background-color: var(--umc-color-fill-primary-weaker-50);
+  }
+
+  .umc-code-field__cell[data-invalid] {
+    --umc-code-field-border-color: var(--umc-color-border-error-medium-300);
+
+    background-image: linear-gradient(
+      var(--umc-code-field-error-tint),
+      var(--umc-code-field-error-tint)
+    );
+    color: var(--umc-color-text-error);
+  }
+
+  .umc-code-field__cell:disabled {
+    --umc-code-field-border-color: var(--umc-color-border-neutral-medium-300);
+
+    background-color: var(--umc-color-fill-neutral-weaker-50);
+    background-image: none;
+    color: var(--umc-color-text-disabled);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .umc-code-field__cell {
+      transition: none;
+    }
+
+    .umc-code-field__cells[data-invalid] {
+      animation: none;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .umc-code-field__cell:focus {
+      outline: 2px solid Highlight;
+      outline-offset: 2px;
+    }
+  }
+}

@@ -1,0 +1,806 @@
+{
+  "color": {
+    "white": {
+      "$type": "color",
+      "$value": "#ffffff",
+      "$extensions": {
+        "umc.figma": {
+          "name": "Primitives/Base/White",
+          "variableId": "VariableID:2107:5581"
+        }
+      }
+    },
+    "black": {
+      "$type": "color",
+      "$value": "#000000",
+      "$extensions": {
+        "umc.figma": {
+          "name": "Primitives/Base/Black",
+          "variableId": "VariableID:2107:5582"
+        }
+      }
+    },
+    "teal-grey": {
+      "50": {
+        "$type": "color",
+        "$value": "#fbfcfc",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Grey/TealGrey-50",
+            "variableId": "VariableID:2107:5478"
+          }
+        }
+      },
+      "75": {
+        "$type": "color",
+        "$value": "#f7f8f8",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Grey/TealGrey-75",
+            "variableId": "VariableID:2107:5479"
+          }
+        }
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#eff0f0",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Grey/TealGrey-100",
+            "variableId": "VariableID:2107:5649"
+          }
+        }
+      },
+      "200": {
+        "$type": "color",
+        "$value": "#e2e3e3",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Grey/TealGrey-200",
+            "variableId": "VariableID:2107:5480"
+          }
+        }
+      },
+      "300": {
+        "$type": "color",
+        "$value": "#cccccc",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Grey/TealGrey-300",
+            "variableId": "VariableID:2107:5481"
+          }
+        }
+      },
+      "400": {
+        "$type": "color",
+        "$value": "#adadad",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Grey/TealGrey-400",
+            "variableId": "VariableID:2107:5482"
+          }
+        }
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#7e7f7f",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Grey/TealGrey-500",
+            "variableId": "VariableID:2107:5483"
+          }
+        }
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#606262",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Grey/TealGrey-600",
+            "variableId": "VariableID:2107:5484"
+          }
+        }
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#3f4141",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Grey/TealGrey-700",
+            "variableId": "VariableID:2107:5485"
+          }
+        }
+      },
+      "800": {
+        "$type": "color",
+        "$value": "#282a2a",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Grey/TealGrey-800",
+            "variableId": "VariableID:2107:5486"
+          }
+        }
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#0f1010",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Grey/TealGrey-900",
+            "variableId": "VariableID:2107:5487"
+          }
+        }
+      }
+    },
+    "teal": {
+      "50": {
+        "$type": "color",
+        "$value": "#f4fbfa",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Teal/Teal-50",
+            "variableId": "VariableID:6:1623"
+          }
+        }
+      },
+      "75": {
+        "$type": "color",
+        "$value": "#e9f7f5",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Teal/Teal-75",
+            "variableId": "VariableID:2946:30479"
+          }
+        }
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#ddf4f1",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Teal/Teal-100",
+            "variableId": "VariableID:6:1624"
+          }
+        }
+      },
+      "200": {
+        "$type": "color",
+        "$value": "#b3e5e1",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Teal/Teal-200",
+            "variableId": "VariableID:6:1625"
+          }
+        }
+      },
+      "300": {
+        "$type": "color",
+        "$value": "#7ac7c1",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Teal/Teal-300",
+            "variableId": "VariableID:6:1626"
+          }
+        }
+      },
+      "400": {
+        "$type": "color",
+        "$value": "#39a9a1",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Teal/Teal-400",
+            "variableId": "VariableID:6:1627"
+          }
+        }
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#008a80",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Teal/Teal-500",
+            "variableId": "VariableID:6:1628"
+          }
+        }
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#02746c",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Teal/Teal-600",
+            "variableId": "VariableID:6:1629"
+          }
+        }
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#015a54",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Teal/Teal-700",
+            "variableId": "VariableID:6:1630"
+          }
+        }
+      },
+      "800": {
+        "$type": "color",
+        "$value": "#01423d",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Teal/Teal-800",
+            "variableId": "VariableID:6:1631"
+          }
+        }
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#013733",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Teal/Teal-900",
+            "variableId": "VariableID:6:1632"
+          }
+        }
+      }
+    },
+    "red": {
+      "50": {
+        "$type": "color",
+        "$value": "#fef2f1",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Red/Red-50",
+            "variableId": "VariableID:2102:5136"
+          }
+        }
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#ffe7e5",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Red/Red-100",
+            "variableId": "VariableID:2102:5137"
+          }
+        }
+      },
+      "200": {
+        "$type": "color",
+        "$value": "#fdb4b4",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Red/Red-200",
+            "variableId": "VariableID:2102:5138"
+          }
+        }
+      },
+      "300": {
+        "$type": "color",
+        "$value": "#f88c8c",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Red/Red-300",
+            "variableId": "VariableID:2102:5139"
+          }
+        }
+      },
+      "400": {
+        "$type": "color",
+        "$value": "#ed6464",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Red/Red-400",
+            "variableId": "VariableID:2102:5140"
+          }
+        }
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#dc3d3d",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Red/Red-500",
+            "variableId": "VariableID:2102:5141"
+          }
+        }
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#c21f14",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Red/Red-600",
+            "variableId": "VariableID:2102:5142"
+          }
+        }
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#a60303",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Red/Red-700",
+            "variableId": "VariableID:2102:5143"
+          }
+        }
+      },
+      "800": {
+        "$type": "color",
+        "$value": "#8d0202",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Red/Red-800",
+            "variableId": "VariableID:2102:5144"
+          }
+        }
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#690101",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Red/Red-900",
+            "variableId": "VariableID:2102:5145"
+          }
+        }
+      }
+    },
+    "yellow": {
+      "50": {
+        "$type": "color",
+        "$value": "#fff7e0",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Yellow/Yellow-50",
+            "variableId": "VariableID:2102:5146"
+          }
+        }
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#fff0c2",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Yellow/Yellow-100",
+            "variableId": "VariableID:2102:5147"
+          }
+        }
+      },
+      "200": {
+        "$type": "color",
+        "$value": "#ffe79e",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Yellow/Yellow-200",
+            "variableId": "VariableID:2102:5148"
+          }
+        }
+      },
+      "300": {
+        "$type": "color",
+        "$value": "#fed971",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Yellow/Yellow-300",
+            "variableId": "VariableID:2102:5149"
+          }
+        }
+      },
+      "400": {
+        "$type": "color",
+        "$value": "#fdc23a",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Yellow/Yellow-400",
+            "variableId": "VariableID:2102:5150"
+          }
+        }
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#f59b00",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Yellow/Yellow-500",
+            "variableId": "VariableID:2102:5151"
+          }
+        }
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#ed8002",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Yellow/Yellow-600",
+            "variableId": "VariableID:2102:5152"
+          }
+        }
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#c25d05",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Yellow/Yellow-700",
+            "variableId": "VariableID:2102:5153"
+          }
+        }
+      },
+      "800": {
+        "$type": "color",
+        "$value": "#833f0c",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Yellow/Yellow-800",
+            "variableId": "VariableID:2102:5154"
+          }
+        }
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#542e07",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Yellow/Yellow-900",
+            "variableId": "VariableID:2102:5155"
+          }
+        }
+      }
+    },
+    "green": {
+      "50": {
+        "$type": "color",
+        "$value": "#edfdf3",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Green/Green-50",
+            "variableId": "VariableID:2102:5156"
+          }
+        }
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#d9f7e3",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Green/Green-100",
+            "variableId": "VariableID:2102:5157"
+          }
+        }
+      },
+      "200": {
+        "$type": "color",
+        "$value": "#b3efc6",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Green/Green-200",
+            "variableId": "VariableID:2102:5158"
+          }
+        }
+      },
+      "300": {
+        "$type": "color",
+        "$value": "#81e4a9",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Green/Green-300",
+            "variableId": "VariableID:2102:5159"
+          }
+        }
+      },
+      "400": {
+        "$type": "color",
+        "$value": "#44c580",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Green/Green-400",
+            "variableId": "VariableID:2102:5160"
+          }
+        }
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#06a768",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Green/Green-500",
+            "variableId": "VariableID:2102:5161"
+          }
+        }
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#06844c",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Green/Green-600",
+            "variableId": "VariableID:2102:5162"
+          }
+        }
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#076940",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Green/Green-700",
+            "variableId": "VariableID:2102:5163"
+          }
+        }
+      },
+      "800": {
+        "$type": "color",
+        "$value": "#095837",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Green/Green-800",
+            "variableId": "VariableID:2102:5164"
+          }
+        }
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#053322",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Green/Green-900",
+            "variableId": "VariableID:2102:5165"
+          }
+        }
+      }
+    },
+    "violet": {
+      "50": {
+        "$type": "color",
+        "$value": "#f6f0ff",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Violet/Violet-50",
+            "variableId": "VariableID:2107:5876"
+          }
+        }
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#eee3fc",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Violet/Violet-100",
+            "variableId": "VariableID:2107:5877"
+          }
+        }
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#ad6feb",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Violet/Violet-500",
+            "variableId": "VariableID:2107:5880"
+          }
+        }
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#7f39c6",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Violet/Violet-600",
+            "variableId": "VariableID:2107:5881"
+          }
+        }
+      }
+    },
+    "purple": {
+      "50": {
+        "$type": "color",
+        "$value": "#f5f3fc",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Purple/Purple-50",
+            "variableId": "VariableID:2107:5887"
+          }
+        }
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#eae5fb",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Purple/Purple-100",
+            "variableId": "VariableID:2107:5888"
+          }
+        }
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#8771e0",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Purple/Purple-500",
+            "variableId": "VariableID:2107:5889"
+          }
+        }
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#634ac9",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Purple/Purple-600",
+            "variableId": "VariableID:2107:5890"
+          }
+        }
+      }
+    },
+    "pink": {
+      "50": {
+        "$type": "color",
+        "$value": "#fff0f7",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Pink/Pink-50",
+            "variableId": "VariableID:2107:5892"
+          }
+        }
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#ffe0f1",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Pink/Pink-100",
+            "variableId": "VariableID:2107:5893"
+          }
+        }
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#ee63a9",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Pink/Pink-500",
+            "variableId": "VariableID:2107:5894"
+          }
+        }
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#d92680",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Pink/Pink-600",
+            "variableId": "VariableID:2107:5895"
+          }
+        }
+      }
+    },
+    "cobalt": {
+      "50": {
+        "$type": "color",
+        "$value": "#f0f4ff",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Cobalt/Cobalt-50",
+            "variableId": "VariableID:2107:5900"
+          }
+        }
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#e0e8ff",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Cobalt/Cobalt-100",
+            "variableId": "VariableID:2107:5901"
+          }
+        }
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#5e7ff2",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Cobalt/Cobalt-500",
+            "variableId": "VariableID:2107:5902"
+          }
+        }
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#385cdc",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Cobalt/Cobalt-600",
+            "variableId": "VariableID:2107:5903"
+          }
+        }
+      }
+    },
+    "blue": {
+      "50": {
+        "$type": "color",
+        "$value": "#ebf4ff",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Blue/Blue-50",
+            "variableId": "VariableID:2107:5904"
+          }
+        }
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#dbecff",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Blue/Blue-100",
+            "variableId": "VariableID:2107:5905"
+          }
+        }
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#2e8fff",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Blue/Blue-500",
+            "variableId": "VariableID:2107:5906"
+          }
+        }
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#0068e0",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Blue/Blue-600",
+            "variableId": "VariableID:2107:5907"
+          }
+        }
+      }
+    },
+    "brown": {
+      "50": {
+        "$type": "color",
+        "$value": "#f8f5f1",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Brown/Brown-50",
+            "variableId": "VariableID:2107:5912"
+          }
+        }
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#eee6dd",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Brown/Brown-100",
+            "variableId": "VariableID:2107:5913"
+          }
+        }
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#ac835d",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Brown/Brown-500",
+            "variableId": "VariableID:2107:5914"
+          }
+        }
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#886544",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Brown/Brown-600",
+            "variableId": "VariableID:2107:5915"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+---
+import { PageHeader } from "@umc-product/react"
+
+import { breadcrumbsOf } from "../../lib/docs-navigation.ts"
+
+const { entry, sidebar } = Astro.locals.starlightRoute
+const { title, description } = entry.data
+---
+
+<div id="_top" class="docs-page-header">
+  <PageHeader
+    title={title}
+    description={description}
+    breadcrumbs={breadcrumbsOf(sidebar, title)}
+  />
+</div>

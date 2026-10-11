@@ -1,0 +1,78 @@
+{
+  "component": "Tabs",
+  "figmaSection": "3325:62141",
+  "page": "/components/selection/tabs/",
+  "nodes": [
+    {
+      "specId": "tab-selected-default",
+      "node": "2621:35318",
+      "variant": "State=Selected, Type=Default",
+      "target": ".umc-tab[data-active]",
+      "expected": {
+        "background-color": "#00000000",
+        "color": "#02746c",
+        "height": "44px",
+        "padding-top": "8px",
+        "padding-bottom": "12px",
+        "padding-left": "20px",
+        "padding-right": "20px",
+        "font-size": "16px",
+        "font-weight": "600",
+        "line-height": "22.4px",
+        "letter-spacing": "-0.32px",
+        "border-bottom-width": "2px",
+        "border-bottom-color": "#0b6b64"
+      }
+    },
+    {
+      "specId": "tab-unselected-default",
+      "node": "2621:35310",
+      "variant": "State=Unselected, Type=Default",
+      "target": ".umc-tab:nth-child(2)",
+      "expected": {
+        "background-color": "#00000000",
+        "color": "#606262",
+        "height": "44px",
+        "font-size": "16px",
+        "font-weight": "500",
+        "letter-spacing": "-0.48px",
+        "border-bottom-width": "2px",
+        "border-bottom-color": "#e2e3e3"
+      }
+    },
+    {
+      "specId": "tab-hover-default",
+      "interaction": "hover",
+      "node": "2621:35314",
+      "variant": "State=Hover & Pressed, Type=Default",
+      "target": ".umc-tab:nth-child(2)",
+      "expected": {
+        "color": "#606262",
+        "border-bottom-color": "#adadad"
+      }
+    },
+    {
+      "specId": "tab-icon-unselected",
+      "node": "2621:35312",
+      "variant": "State=Unselected, Type=Icon",
+      "target": ".umc-tab[data-icon]:nth-child(2)",
+      "expected": {
+        "height": "44px",
+        "padding-left": "12px",
+        "padding-right": "12px",
+        "border-bottom-color": "#e2e3e3"
+      }
+    },
+    {
+      "specId": "tab-icon-glyph",
+      "node": "2505:17095",
+      "variant": "Icon/Filter Weight=Regular",
+      "target": ".umc-tab[data-icon] .umc-tab__icon",
+      "expected": {
+        "color": "#3f4141",
+        "width": "24px",
+        "height": "24px"
+      }
+    }
+  ]
+}

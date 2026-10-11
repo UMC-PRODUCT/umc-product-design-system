@@ -1,0 +1,20 @@
+---
+import { ColorTokenTable } from "./react/color/ColorTokenTable.tsx"
+import {
+  colorTokenRows,
+  semanticColorRows,
+} from "./react/color/color-token-rows.ts"
+import { countCodeSyntax } from "./react/color/color-tokens.ts"
+
+interface Props {
+  group: string
+}
+
+const { group } = Astro.props
+const codeSyntaxCounts = countCodeSyntax(colorTokenRows)
+---
+
+<ColorTokenTable
+  rows={semanticColorRows(group)}
+  codeSyntaxCounts={codeSyntaxCounts}
+/>
