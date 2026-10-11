@@ -11,7 +11,7 @@ import { NotImplemented } from "../variants/VariantCells.tsx"
 import type { FigmaVariant } from "../variants/figma-variants.ts"
 import { VariantGrid } from "../variants/VariantGrid.tsx"
 
-function Control({
+function renderControl({
   placeholder,
   defaultValue,
 }: {
@@ -37,7 +37,7 @@ export function FieldDefault() {
         data-spec-id="field-root field-label field-required field-caption"
       >
         <Field label="학교 이메일" required caption="학교 도메인만 받습니다">
-          <Control placeholder="umc@school.ac.kr" />
+          {renderControl({ placeholder: "umc@school.ac.kr" })}
         </Field>
       </div>
     </div>
@@ -56,7 +56,7 @@ export function FieldCaptionTones() {
           caption="사용할 수 있는 닉네임입니다"
           captionColor="primary"
         >
-          <Control defaultValue="umc" />
+          {renderControl({ defaultValue: "umc" })}
         </Field>
       </div>
       <div
@@ -68,7 +68,7 @@ export function FieldCaptionTones() {
           invalid
           errorMessage="이미 사용 중인 닉네임입니다"
         >
-          <Control defaultValue="umc" />
+          {renderControl({ defaultValue: "umc" })}
         </Field>
       </div>
       <div
@@ -76,7 +76,7 @@ export function FieldCaptionTones() {
         data-spec-id="field-caption-disabled field-label-disabled"
       >
         <Field label="닉네임" caption="수정할 수 없습니다" disabled>
-          <Control defaultValue="umc" />
+          {renderControl({ defaultValue: "umc" })}
         </Field>
       </div>
     </div>
@@ -91,7 +91,7 @@ export function FieldWithInfo() {
           label="개별 지원 코드"
           info={<TextInfoButton>개별 지원 코드란?</TextInfoButton>}
         >
-          <Control placeholder="코드 입력" />
+          {renderControl({ placeholder: "코드 입력" })}
         </Field>
       </div>
     </div>

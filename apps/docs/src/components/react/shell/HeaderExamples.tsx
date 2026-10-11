@@ -149,7 +149,7 @@ const LOGGED_IN_REASON =
 const darkTone = (variant: FigmaVariant) =>
   variant.props["Mode"] === "Dark" ? "dark" : undefined
 
-function LoggedOutActions({ withCta }: { withCta: boolean }) {
+function renderLoggedOutActions(withCta: boolean) {
   return (
     <>
       {withCta && <Button size="md">버튼</Button>}
@@ -171,11 +171,9 @@ function HeaderVariantCell({ variant }: { variant: FigmaVariant }) {
         mode={lookup(HEADER_MODES, variant, "Mode")}
         navItems={NAV_ITEMS}
         currentPath="/matching"
-        actions={
-          <LoggedOutActions
-            withCta={variant.props["Show CTA Button"] === "True"}
-          />
-        }
+        actions={renderLoggedOutActions(
+          variant.props["Show CTA Button"] === "True",
+        )}
       />
     </div>
   )
@@ -189,11 +187,9 @@ function HeaderActionsCell({ variant }: { variant: FigmaVariant }) {
     <Header
       mode={lookup(HEADER_MODES, variant, "Mode")}
       logo={null}
-      actions={
-        <LoggedOutActions
-          withCta={variant.props["Show CTA Button"] === "True"}
-        />
-      }
+      actions={renderLoggedOutActions(
+        variant.props["Show CTA Button"] === "True",
+      )}
     />
   )
 }
