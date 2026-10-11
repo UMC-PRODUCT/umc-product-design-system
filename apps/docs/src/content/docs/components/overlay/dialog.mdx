@@ -1,0 +1,80 @@
+---
+title: Dialog
+description: 사용자에게 중요한 확인이나 알림을 전달하는 모달 다이얼로그입니다.
+---
+
+import {
+  DialogAllVariants,
+  DialogButtonAreaVariants,
+  DialogInteractiveAlert,
+  DialogInteractiveConfirm,
+  DialogStaticPreview,
+} from "../../../../components/react/overlay/DialogExamples.tsx"
+
+`cancelLabel`을 넘기면 취소·확인 버튼 두 개가 나오는 Alert 타입이 되고, 생략하면 확인 버튼 하나만 나오는 Confirm 타입이 됩니다. Base UI AlertDialog를 내부적으로 씁니다.
+
+```tsx
+import { Dialog } from "@umc-product/react"
+
+// Alert 타입 (두 버튼)
+<Dialog
+  trigger={<button>열기</button>}
+  title="정말 삭제할까요?"
+  description="삭제한 데이터는 복구할 수 없습니다."
+  confirmLabel="삭제"
+  cancelLabel="취소"
+  onConfirm={() => {}}
+  onCancel={() => {}}
+/>
+
+// Confirm 타입 (한 버튼)
+<Dialog
+  trigger={<button>열기</button>}
+  title="저장되었습니다."
+  confirmLabel="확인"
+  onConfirm={() => {}}
+/>
+```
+
+## 외형 미리보기
+
+피그마 `App/Dialog`의 Alert와 Confirm 타입을 고정해 그린 미리보기입니다.
+
+<DialogStaticPreview />
+
+## Alert 타입
+
+`cancelLabel`을 넘기면 취소·확인 두 버튼이 가로로 나란히 나옵니다.
+
+<DialogInteractiveAlert client:visible />
+
+## Confirm 타입
+
+`cancelLabel`을 생략하면 확인 버튼 하나가 오른쪽 끝에 놓입니다.
+
+<DialogInteractiveConfirm client:visible />
+
+## 모든 변형
+
+<DialogAllVariants />
+
+## 버튼 영역 변형
+
+<DialogButtonAreaVariants />
+
+## props
+
+| prop           | 타입                      | 기본값 | 설명                                     |
+| -------------- | ------------------------- | ------ | ---------------------------------------- |
+| `title`        | `ReactNode`               | 필수   | 다이얼로그 제목                          |
+| `confirmLabel` | `ReactNode`               | 필수   | 확인 버튼 레이블                         |
+| `cancelLabel`  | `ReactNode`               | -      | 넘기면 Alert 타입, 생략하면 Confirm 타입 |
+| `onConfirm`    | `() => void`              | -      | 확인 버튼 클릭 시 호출                   |
+| `onCancel`     | `() => void`              | -      | 취소 버튼 클릭 시 호출                   |
+| `description`  | `ReactNode`               | -      | 제목 아래 설명 문구                      |
+| `children`     | `ReactNode`               | -      | 설명 아래 추가 콘텐츠                    |
+| `trigger`      | `ReactElement`            | -      | 다이얼로그를 여는 트리거 요소            |
+| `open`         | `boolean`                 | -      | 제어 모드에서 열림 상태                  |
+| `defaultOpen`  | `boolean`                 | -      | 비제어 모드 초기 상태                    |
+| `onOpenChange` | `(open: boolean) => void` | -      | 열림 상태 변경 콜백                      |
+| `className`    | `string`                  | -      | 팝업 루트에 추가할 CSS 클래스            |

@@ -1027,6 +1027,51 @@
         "Type=Error, Leading Acc=False, Text Button=True"
       ]
     },
+    "dialog": {
+      "node": "2538:25065",
+      "name": "App/Dialog",
+      "axes": {
+        "Type": ["Alert", "Confirm"]
+      },
+      "variants": ["Type=Alert", "Type=Confirm"]
+    },
+    "dialog-button-area": {
+      "node": "2538:14973",
+      "name": ".primitive/App/Dialog/Button Area",
+      "axes": {
+        "Type": ["Weak", "Default"]
+      },
+      "variants": ["Type=Weak", "Type=Default"]
+    },
+    "bottom-sheet": {
+      "node": "2536:12127",
+      "name": "App/Bottom Sheet",
+      "axes": {
+        "Type": ["Title", "Center"],
+        "Keyboard": ["Off", "On"]
+      },
+      "variants": [
+        "Type=Title, Keyboard=Off",
+        "Type=Center, Keyboard=Off",
+        "Type=Title, Keyboard=On",
+        "Type=Center, Keyboard=On"
+      ]
+    },
+    "bottom-sheet-button-area": {
+      "node": "2535:8789",
+      "name": "Button Area",
+      "axes": {
+        "Number of Buttons": ["1", "2"],
+        "Type": ["Full", "Stacked", "Equal", "Emphasis", "PrimaryTop"]
+      },
+      "variants": [
+        "Number of Buttons=1, Type=Full",
+        "Number of Buttons=2, Type=Stacked",
+        "Number of Buttons=2, Type=Equal",
+        "Number of Buttons=2, Type=Emphasis",
+        "Number of Buttons=2, Type=PrimaryTop"
+      ]
+    },
     "dimmed": {
       "node": "2621:33088",
       "name": "Dimmed",
