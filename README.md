@@ -11,7 +11,7 @@ UMC 프로덕트 팀의 디자인 토큰, 아이콘, React 컴포넌트입니다
 | ---------------------------- | -------------------------------------------------------------------------------- |
 | `@umc-product/design-tokens` | 컬러, 텍스트 스타일, 그림자, 그리드 토큰. CSS 변수, Tailwind v4, vanilla-extract |
 | `@umc-product/icons`         | 아이콘 65종, 픽토그램 11종, UMC 로고 React 컴포넌트                              |
-| `@umc-product/react`         | Base UI 기반 컴포넌트 31종과 미리 빌드한 CSS                                     |
+| `@umc-product/react`         | Base UI 기반 컴포넌트 39종과 미리 빌드한 CSS                                     |
 
 세 패키지는 항상 같은 버전으로 함께 배포합니다.
 
