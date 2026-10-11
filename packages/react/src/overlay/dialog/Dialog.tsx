@@ -68,7 +68,7 @@ export function Dialog({
               <AlertDialog.Close
                 render={
                   <Button
-                    variant="fill"
+                    variant="weak"
                     color="neutral"
                     size="md"
                     onClick={onCancel}

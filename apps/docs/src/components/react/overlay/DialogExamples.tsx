@@ -16,13 +16,9 @@ function DialogPreviewItem({
   const hasTwoButtons = type === "alert"
   return (
     <div
+      className="umc-dialog__popup"
       data-spec-id={specId}
-      style={{
-        padding: "16px",
-        background: "#f4f5f5",
-        borderRadius: "24px",
-        width: "311px",
-      }}
+      style={{ position: "static", translate: "none", zIndex: "auto" }}
     >
       <div className="umc-dialog__text" data-layout={type}>
         <div className="umc-dialog__title">제목을 입력하세요</div>
@@ -34,7 +30,7 @@ function DialogPreviewItem({
         <div className="umc-dialog__button-area" data-variant="default">
           <button
             className="umc-button"
-            data-variant="fill"
+            data-variant="weak"
             data-color="neutral"
             data-size="md"
             type="button"
@@ -70,7 +66,10 @@ function DialogPreviewItem({
 
 export function DialogStaticPreview() {
   return (
-    <div className="umc-example umc-example-stack">
+    <div
+      className="umc-example umc-example-stack"
+      style={{ background: "var(--umc-color-fill-neutral-medium-100)" }}
+    >
       <DialogPreviewItem
         specId="dialog-alert dialog-alert-title dialog-alert-description dialog-alert-button-area"
         type="alert"
