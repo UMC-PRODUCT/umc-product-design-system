@@ -20,7 +20,6 @@ type CodeTarget = {
 
 type Tip = {
   root: HTMLElement
-  caption: HTMLElement
   code: HTMLElement
 }
 
@@ -123,13 +122,11 @@ const createTip = (): Tip => {
   root.className = "docs-code-tip"
   root.setAttribute("aria-hidden", "true")
   root.hidden = true
-  const caption = document.createElement("p")
-  caption.className = "docs-code-tip__caption"
   const code = document.createElement("pre")
   code.className = "docs-code-tip__code"
-  root.append(caption, code)
+  root.append(code)
   document.body.append(root)
-  return { root, caption, code }
+  return { root, code }
 }
 
 const place = (tip: HTMLElement, anchor: Element) => {
@@ -164,10 +161,8 @@ export const applyCodeTooltips = () => {
     hide()
   }
 
-  const show = (target: CodeTarget, caption: string) => {
+  const show = (target: CodeTarget) => {
     if (!target.anchor.isConnected) return
-    tip.caption.textContent = caption
-    tip.caption.hidden = caption === ""
     tip.code.textContent = clampLines(target.code)
     tip.root.hidden = false
     place(tip.root, target.anchor)
@@ -187,10 +182,7 @@ export const applyCodeTooltips = () => {
     if (next.anchor === dismissed) return
     dismissed = undefined
     anchor = next.anchor
-    const caption =
-      event.target.closest(VARIANT_CELL)?.getAttribute("data-figma-variant") ??
-      ""
-    timer = window.setTimeout(() => show(next, caption), SHOW_DELAY_MS)
+    timer = window.setTimeout(() => show(next), SHOW_DELAY_MS)
   })
 
   document.addEventListener("pointerout", (event) => {

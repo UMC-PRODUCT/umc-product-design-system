@@ -544,13 +544,6 @@
   pointer-events: none;
 }
 
-.docs-code-tip__caption {
-  margin: 0 0 0.375rem;
-  color: var(--umc-color-teal-grey-300);
-  font-size: var(--sl-text-xs);
-  line-height: 1.4;
-}
-
 .docs-code-tip__code {
   margin: 0;
   padding: 0;
