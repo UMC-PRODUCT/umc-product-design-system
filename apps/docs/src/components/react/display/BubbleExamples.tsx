@@ -26,10 +26,13 @@ export function BubbleStaticPreview() {
         background: "var(--umc-color-fill-neutral-medium-100)",
       }}
     >
-      <span data-spec-id="bubble-incoming">
+      <span data-spec-id="bubble-incoming bubble-incoming-tail">
         <Bubble direction="incoming">UMC PRODUCT 모여라</Bubble>
       </span>
-      <span data-spec-id="bubble-outgoing" style={{ alignSelf: "flex-end" }}>
+      <span
+        data-spec-id="bubble-outgoing bubble-outgoing-tail"
+        style={{ alignSelf: "flex-end" }}
+      >
         <Bubble direction="outgoing">함께 성장합시다</Bubble>
       </span>
     </div>

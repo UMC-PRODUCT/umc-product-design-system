@@ -12,6 +12,7 @@
     width: 16px;
     height: 18px;
     flex-shrink: 0;
+    transform: scaleX(-1);
   }
 
   .umc-bubble__body {
