@@ -8,7 +8,8 @@ import type { FigmaVariant } from "../variants/figma-variants.ts"
 import { VariantGrid } from "../variants/VariantGrid.tsx"
 import { PreviewLinks } from "./PreviewLinks.tsx"
 
-const PHONE_FRAME = "w-[375px] bg-white shadow-sm overflow-hidden"
+const PHONE_FRAME = "w-full max-w-[375px] bg-white shadow-sm overflow-hidden"
+const VARIANT_PHONE_FRAME = "w-[375px] bg-white shadow-sm overflow-hidden"
 
 const NAV_ITEMS = [
   { label: "홈", href: "/" },
@@ -44,7 +45,7 @@ function BottomNavigationCell({ variant }: { variant: FigmaVariant }) {
   const platform = variant.props["Platform"]
 
   return (
-    <div className={PHONE_FRAME}>
+    <div className={VARIANT_PHONE_FRAME}>
       <div className="text-xs text-center py-1 text-gray-400">{platform}</div>
       <BottomNavigation>
         {NAV_ITEMS.map((item, index) => (

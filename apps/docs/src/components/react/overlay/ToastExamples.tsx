@@ -109,7 +109,7 @@ function ToastPreviewItem({
 
 export function ToastStaticPreview() {
   return (
-    <div className="umc-example umc-example-stack">
+    <div className="umc-example umc-example-stack docs-toast-preview">
       <ToastPreviewItem
         specId="toast-primary-icon toast-primary-icon-glyph toast-close"
         color="primary"

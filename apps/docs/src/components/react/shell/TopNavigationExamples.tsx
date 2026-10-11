@@ -13,7 +13,8 @@ import type { FigmaVariant } from "../variants/figma-variants.ts"
 import { VariantGrid } from "../variants/VariantGrid.tsx"
 import { PreviewLinks } from "./PreviewLinks.tsx"
 
-const PHONE_FRAME = "w-[375px] bg-white shadow-sm overflow-hidden"
+const PHONE_FRAME = "w-full max-w-[375px] bg-white shadow-sm overflow-hidden"
+const VARIANT_PHONE_FRAME = "w-[375px] bg-white shadow-sm overflow-hidden"
 
 function makeActions(withSearch: boolean) {
   return (
@@ -87,7 +88,7 @@ function TopNavigationCell({ variant }: { variant: FigmaVariant }) {
   const hasDropdown = variant.props["Icon"] === "Dropdown"
 
   return (
-    <div className={PHONE_FRAME}>
+    <div className={VARIANT_PHONE_FRAME}>
       <TopNavigation
         title={isMain ? "홈" : "상세 페이지"}
         titleAlign={isCenter ? "center" : "start"}
