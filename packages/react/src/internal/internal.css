@@ -4,6 +4,8 @@
     --umc-z-dropdown: 1100;
     --umc-z-tooltip: 1200;
     --umc-z-toast: 1300;
+    --umc-z-dialog: 1400;
+    --umc-z-sheet: 1500;
     --umc-motion-duration: 150ms;
   }
 
