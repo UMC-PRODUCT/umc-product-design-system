@@ -1,0 +1,38 @@
+---
+import {
+  CheckCircleIcon,
+  InfoIcon,
+  WarningIcon,
+  WarningTriangleIcon,
+} from "@umc-product/icons"
+
+type AsideType = "note" | "tip" | "caution" | "danger"
+
+type Props = {
+  type?: AsideType
+  title?: string
+}
+
+const ICONS = {
+  note: InfoIcon,
+  tip: CheckCircleIcon,
+  caution: WarningTriangleIcon,
+  danger: WarningIcon,
+} as const satisfies Record<AsideType, unknown>
+
+const ICON_SIZE = 20
+
+const { type = "note", title } = Astro.props
+const Icon = ICONS[type]
+const heading = title ?? Astro.locals.t(`aside.${type}`)
+---
+
+<aside class="docs-aside" data-type={type} aria-label={heading}>
+  <p class="docs-aside__title text-body-2-semibold" aria-hidden="true">
+    <Icon className="docs-aside__icon" size={ICON_SIZE} />
+    {heading}
+  </p>
+  <div class="docs-aside__content">
+    <slot />
+  </div>
+</aside>
