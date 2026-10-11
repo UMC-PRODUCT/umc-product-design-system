@@ -1,0 +1,98 @@
+---
+title: Chip
+description: 필터, 태그, 또는 드롭다운 트리거에 쓰는 소형 버튼입니다. 피그마 Chip(변형 96개)을 옮겼습니다.
+---
+
+import {
+  ChipAllVariants,
+  ChipMenuTrigger,
+  ChipStates,
+  ChipToggle,
+} from "../../../../components/react/selection/ChipExamples.tsx"
+
+피그마 `Chip`을 `<button>`으로 옮겼습니다. 선택·해제를 토글하거나 드롭다운을 여는 두 가지 역할로 씁니다.
+
+```tsx
+import { Chip } from "@umc-product/react"
+
+<Chip selected={selected} onClick={() => setSelected((s) => !s)}>
+  정규 모집
+</Chip>
+```
+
+<ChipStates client:visible />
+
+## 토글로 쓰기
+
+`selected`와 `onClick`을 같이 주면 선택·해제를 토글합니다. `selected`가 있으면 `aria-pressed`를 붙이고, `aria-haspopup`이 있으면 붙이지 않습니다.
+
+```tsx
+import { useState } from "react"
+import { Chip } from "@umc-product/react"
+
+function FilterChip() {
+  const [selected, setSelected] = useState(false)
+  return (
+    <Chip selected={selected} onClick={() => setSelected((s) => !s)}>
+      정규 모집
+    </Chip>
+  )
+}
+```
+
+<ChipToggle client:visible />
+
+## 메뉴 트리거로 쓰기
+
+`aria-haspopup`을 주면 `aria-pressed`를 붙이지 않습니다. `Menu`의 `trigger`로 넘기면 `BaseUI`가 열림·닫힘 상태를 관리합니다.
+
+```tsx
+import { ExpandMoreIcon } from "@umc-product/icons"
+import { Chip, Menu } from "@umc-product/react"
+
+<Menu
+  trigger={
+    <Chip trailingIcon={<ExpandMoreIcon size={14} />} aria-haspopup="menu">
+      파트 선택
+    </Chip>
+  }
+  items={[
+    { label: "기획" },
+    { label: "디자인" },
+    { label: "프론트엔드" },
+    { label: "백엔드" },
+  ]}
+/>
+```
+
+<ChipMenuTrigger client:visible />
+
+## 모든 변형
+
+피그마 `Chip` 변형 96개를 그렸습니다.
+
+<ChipAllVariants client:visible />
+
+## props
+
+| prop           | 타입                              | 기본값     | 설명                                                        |
+| -------------- | --------------------------------- | ---------- | ----------------------------------------------------------- |
+| `variant`      | `"weak" \| "fill"`                | `"weak"`   | 외형. `weak`은 테두리 있음, `fill`은 배경 채움              |
+| `color`        | `"brand" \| "neutral"`            | `"brand"`  | 색. 선택 시 강조 색을 바꿈                                  |
+| `size`         | `"sm" \| "md"`                    | `"sm"`     | 높이. `sm`=34px, `md`=38px                                  |
+| `selected`     | `boolean`                         | 없음       | 선택 상태. 전달하면 `aria-pressed`와 `data-selected`를 붙임 |
+| `leadingIcon`  | `ReactNode`                       | 없음       | 텍스트 앞 아이콘 슬롯. `aria-hidden` 래퍼로 감쌈            |
+| `trailingIcon` | `ReactNode`                       | 없음       | 텍스트 뒤 아이콘 슬롯. `aria-hidden` 래퍼로 감쌈            |
+| `type`         | `"button" \| "submit" \| "reset"` | `"button"` | 네이티브 버튼 타입                                          |
+| `disabled`     | `boolean`                         | `false`    | 비활성                                                      |
+| `className`    | `string`                          | 없음       | 추가 클래스                                                 |
+| `ref`          | `Ref<HTMLButtonElement>`          | 없음       | 버튼 엘리먼트 참조                                          |
+
+그 밖에 네이티브 `<button>` 속성을 모두 받습니다. 단, 네이티브 `color` 속성은 `variant`·`color` prop과 충돌하므로 제외했습니다.
+
+## 알아 둘 점
+
+- `selected`를 전달하지 않으면 `aria-pressed`가 붙지 않습니다. 드롭다운 트리거처럼 선택 상태가 없는 칩에는 `selected`를 주지 마세요.
+- `aria-haspopup`이 있으면 `aria-pressed`를 붙이지 않습니다. 드롭다운 트리거에 `selected`를 같이 줘도 접근성 속성이 충돌하지 않습니다.
+- 아이콘 슬롯은 `aria-hidden`으로 감쌉니다. 아이콘이 의미를 전달해야 한다면 `aria-label`로 칩 전체에 이름을 주세요.
+- 피그마에 비활성 상태와 포커스 상태가 없어 기존 비활성 토큰과 2px `border-primary-strong-500` outline을 각각 적용했습니다.

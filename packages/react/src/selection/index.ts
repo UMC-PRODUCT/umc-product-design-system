@@ -1,5 +1,12 @@
 export { CheckButton, type CheckButtonProps } from "./check-button/index.ts"
 export {
+  Chip,
+  type ChipColor,
+  type ChipProps,
+  type ChipSize,
+  type ChipVariant,
+} from "./chip/index.ts"
+export {
   Checkbox,
   type CheckboxColor,
   type CheckboxLabelPlacement,
