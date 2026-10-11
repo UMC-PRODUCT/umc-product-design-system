@@ -17,6 +17,10 @@ export type FigmaVariantSet = {
   variants: readonly FigmaVariant[]
 }
 
+const VARIANT_NAME_CORRECTIONS: Readonly<Record<string, string>> = {
+  "Part=Tag, Size=Part, Style=PM": "Part=PM, Size=Sm, Style=Outlined",
+}
+
 const parseVariantName = (name: string): VariantProps =>
   Object.fromEntries(
     name.split(", ").map((part) => {
@@ -34,7 +38,7 @@ export const variantSet = (key: VariantSetKey): FigmaVariantSet => {
     axes: set.axes,
     variants: set.variants.map((name) => ({
       name,
-      props: parseVariantName(name),
+      props: parseVariantName(VARIANT_NAME_CORRECTIONS[name] ?? name),
     })),
   }
 }

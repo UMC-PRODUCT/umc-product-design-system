@@ -47,12 +47,7 @@ const roleSizeMap: Record<string, RoleTagSize> = {
   Lg: "lg",
 }
 
-const BROKEN_VARIANT_NAME = "Part=Tag, Size=Part, Style=PM"
-
 function renderPartTag(variant: FigmaVariant) {
-  if (variant.name === BROKEN_VARIANT_NAME) {
-    return <PartTag part="pm" variant="outlined" size="sm" />
-  }
   const part = lookup(partMap, variant, "Part")
   const style = lookup(variantMap, variant, "Style")
   const size = lookup(partSizeMap, variant, "Size")
@@ -67,6 +62,60 @@ function renderRoleTag(variant: FigmaVariant) {
     <RoleTag color={color} size={size}>
       {roleText}
     </RoleTag>
+  )
+}
+
+export function PartTagStaticPreview() {
+  return (
+    <div className="umc-example" style={{ flexWrap: "wrap", gap: "8px" }}>
+      <span data-spec-id="part-tag-pm-sm-filled">
+        <PartTag part="pm" />
+      </span>
+      <span data-spec-id="part-tag-pm-sm-outlined">
+        <PartTag part="pm" variant="outlined" />
+      </span>
+      <span data-spec-id="part-tag-design-sm-outlined">
+        <PartTag part="design" variant="outlined" />
+      </span>
+      <span data-spec-id="part-tag-web-pe-sm-filled">
+        <PartTag part="web-pe" />
+      </span>
+      <span data-spec-id="part-tag-mobile-pe-sm-filled">
+        <PartTag part="mobile-pe" />
+      </span>
+      <span data-spec-id="part-tag-pm-lg-filled">
+        <PartTag part="pm" size="lg" />
+      </span>
+      <span data-spec-id="part-tag-design-lg-outlined">
+        <PartTag part="design" variant="outlined" size="lg" />
+      </span>
+    </div>
+  )
+}
+
+export function RoleTagStaticPreview() {
+  return (
+    <div className="umc-example" style={{ flexWrap: "wrap", gap: "8px" }}>
+      <span data-spec-id="role-tag-admin-sm">
+        <RoleTag color="challenger-super-admin">Admin</RoleTag>
+      </span>
+      <span data-spec-id="role-tag-product-lg">
+        <RoleTag color="product" size="lg">
+          Product
+        </RoleTag>
+      </span>
+      <span data-spec-id="role-tag-central-md">
+        <RoleTag color="central" size="md">
+          중앙 운영진
+        </RoleTag>
+      </span>
+      <span data-spec-id="role-tag-chapter-sm">
+        <RoleTag color="chapter">지부장</RoleTag>
+      </span>
+      <span data-spec-id="role-tag-campus-sm">
+        <RoleTag color="campus">교내 회장</RoleTag>
+      </span>
+    </div>
   )
 }
 

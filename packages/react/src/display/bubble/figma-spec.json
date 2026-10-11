@@ -7,19 +7,24 @@
       "specId": "bubble-incoming",
       "node": "2534:8760",
       "variant": "Direction=Incoming",
+      "target": ".umc-bubble__body",
       "expected": {
         "background-color": "#ffffff",
         "border-top-left-radius": "12px",
         "font-size": "15px",
         "font-weight": "400",
-        "line-height": "1.5"
-      },
-      "figmaDiffers": "흰 배경 버블은 흰 배경에서 보이지 않는다. 피그마 외형을 그대로 유지하되, forced-colors 모드에서는 inset 0 0 0 1px CanvasText 테두리를 추가하고 꼬리를 숨긴다."
+        "line-height": "22.5px",
+        "color": "#0f1010",
+        "padding-left": "12px",
+        "padding-top": "10px",
+        "letter-spacing": "-0.15px"
+      }
     },
     {
       "specId": "bubble-outgoing",
       "node": "2534:8758",
       "variant": "Direction=Outgoing",
+      "target": ".umc-bubble__body",
       "expected": {
         "background-color": "#008a80",
         "border-top-left-radius": "12px",

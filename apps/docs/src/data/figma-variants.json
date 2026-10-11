@@ -1318,7 +1318,6 @@
         "Part=Mobile PE, Size=Sm, Style=Filled",
         "Part=Mobile PE, Size=Md, Style=Filled",
         "Part=Mobile PE, Size=Lg, Style=Filled",
-        "Part=PM, Size=Sm, Style=Outlined",
         "Part=PM, Size=Md, Style=Outlined",
         "Part=PM, Size=Lg, Style=Outlined",
         "Part=Design, Size=Sm, Style=Outlined",
