@@ -1,0 +1,43 @@
+{
+  "component": "TopNavigation",
+  "figmaNode": "2555:27386",
+  "fetchedAt": "2026-10-11",
+  "specimens": [
+    {
+      "id": "top-navigation-main-left",
+      "description": "Main / Left-aligned title",
+      "variant": "Page Type=Main, Title Alignment=Left, Icon=Default",
+      "selector": "[data-spec-id='top-navigation-main-left'] .umc-top-navigation",
+      "expected": {
+        "height": "52px",
+        "display": "flex",
+        "alignItems": "center",
+        "paddingInlineStart": "16px",
+        "paddingInlineEnd": "8px"
+      }
+    },
+    {
+      "id": "top-navigation-sub-center",
+      "description": "Sub / Center-aligned title with back button",
+      "variant": "Page Type=Sub, Title Alignment=Center, Icon=Left",
+      "selector": "[data-spec-id='top-navigation-sub-center'] .umc-top-navigation",
+      "expected": {
+        "height": "52px",
+        "display": "flex",
+        "alignItems": "center",
+        "paddingInlineStart": "8px",
+        "paddingInlineEnd": "8px"
+      }
+    }
+  ],
+  "figmaDiffers": [
+    {
+      "property": "inactive text color for BottomNavigation",
+      "figmaToken": "--color-text-disabled",
+      "figmaHex": "#adadad",
+      "umcToken": "--umc-color-text-disabled",
+      "umcHex": "#cccccc",
+      "resolution": "Use --umc-color-icon-neutral-weak-400 which resolves to #adadad"
+    }
+  ]
+}
