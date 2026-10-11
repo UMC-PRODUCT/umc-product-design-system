@@ -17,7 +17,7 @@ UMC PRODUCT Design Chapter의 디자인 토큰, 아이콘, React 컴포넌트입
 
 ## 설치
 
-첫 릴리스 뒤 GitHub Packages에 비공개로 배포합니다(지금은 배포 전). 설치하려면 `read:packages` 권한이 있는 GitHub 토큰이 필요합니다. 로컬, GitHub Actions, AWS Amplify에서 토큰을 설정하는 방법은 문서의 [설치와 불러오기](https://umc-product.github.io/umc-product-design-system/getting-started/installation/)에 있습니다.
+GitHub Packages에 비공개로 배포합니다. 설치하려면 `read:packages` 권한이 있는 GitHub 토큰이 필요합니다. 로컬, GitHub Actions, AWS Amplify에서 토큰을 설정하는 방법은 문서의 [설치와 불러오기](https://umc-product.github.io/umc-product-design-system/getting-started/installation/)에 있습니다.
 
 ```ini
 # 앱 저장소의 .npmrc
