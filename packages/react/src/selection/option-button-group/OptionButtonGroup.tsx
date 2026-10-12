@@ -72,7 +72,7 @@ function OptionButtonGroupSingle<V extends string>({
 }: SingleProps<V>) {
   return (
     <RadioGroup
-      value={value ?? undefined}
+      value={value}
       defaultValue={defaultValue ?? undefined}
       onValueChange={(next) => {
         const found = options.find((option) => option.value === next)

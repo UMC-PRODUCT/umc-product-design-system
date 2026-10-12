@@ -62,6 +62,8 @@ import { OptionButtonGroup } from "@umc-product/react"
 
 `value`와 `onValueChange`로 외부 상태와 연결합니다. React Hook Form을 쓸 때는 `Controller`의 `field.value`를 `value`에, `field.onChange`를 `onValueChange`에 연결합니다.
 
+단일 선택에서 선택을 비우려면 `value`에 `null`을 넘깁니다. `undefined`는 값을 넘기지 않은 것과 같아서 비제어 모드가 됩니다.
+
 <OptionButtonGroupControlled client:visible />
 
 ## 모든 변형
@@ -72,16 +74,16 @@ import { OptionButtonGroup } from "@umc-product/react"
 
 ## props
 
-| prop              | 타입                     | 기본값     | 설명                       |
-| ----------------- | ------------------------ | ---------- | -------------------------- |
-| `type`            | `"single" \| "multiple"` | `"single"` | 선택 모드                  |
-| `options`         | `OptionItem[]`           | 필수       | 선택 항목 목록             |
-| `variant`         | `"weak" \| "strong"`     | `"weak"`   | 선택 색 강도               |
-| `size`            | `"xl" \| "sm" \| "xs"`   | `"sm"`     | 버튼 크기                  |
-| `value`           | `string` 또는 `string[]` | 없음       | 제어 선택값                |
-| `defaultValue`    | `string` 또는 `string[]` | 없음       | 비제어 초기값              |
-| `onValueChange`   | `(value) => void`        | 없음       | 선택 변경 핸들러           |
-| `name`            | `string`                 | 없음       | form `name` 속성           |
-| `aria-label`      | `string`                 | 없음       | 그룹 접근 가능 이름        |
-| `aria-labelledby` | `string`                 | 없음       | 그룹 이름을 담은 요소의 id |
-| `disabled`        | `boolean`                | 없음       | 모든 항목 비활성           |
+| prop              | 타입                             | 기본값     | 설명                                        |
+| ----------------- | -------------------------------- | ---------- | ------------------------------------------- |
+| `type`            | `"single" \| "multiple"`         | `"single"` | 선택 모드                                   |
+| `options`         | `OptionItem[]`                   | 필수       | 선택 항목 목록                              |
+| `variant`         | `"weak" \| "strong"`             | `"weak"`   | 선택 색 강도                                |
+| `size`            | `"xl" \| "sm" \| "xs"`           | `"sm"`     | 버튼 크기                                   |
+| `value`           | `string`, `null` 또는 `string[]` | 없음       | 제어 선택값. 단일 선택의 `null`은 선택 없음 |
+| `defaultValue`    | `string` 또는 `string[]`         | 없음       | 비제어 초기값                               |
+| `onValueChange`   | `(value) => void`                | 없음       | 선택 변경 핸들러                            |
+| `name`            | `string`                         | 없음       | form `name` 속성                            |
+| `aria-label`      | `string`                         | 없음       | 그룹 접근 가능 이름                         |
+| `aria-labelledby` | `string`                         | 없음       | 그룹 이름을 담은 요소의 id                  |
+| `disabled`        | `boolean`                        | 없음       | 모든 항목 비활성                            |
