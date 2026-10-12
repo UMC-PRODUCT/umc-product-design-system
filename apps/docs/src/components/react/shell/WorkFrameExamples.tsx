@@ -66,6 +66,8 @@ const GENERATIONS: ContextSwitcherOption[] = [
   { value: "11", label: "11기" },
 ]
 
+const CURRENT_GENERATION = "11"
+
 const PAGE_DESCRIPTION = "페이지를 간결하고 명확하게 설명합니다."
 
 const menuIcon = <PeoplePictogram color="currentColor" />
@@ -187,7 +189,7 @@ function RecruitingFrame({
 
 export function WorkFrameDemo() {
   const [path, setPath] = useState(RECRUITMENT_LIST.href)
-  const [generation, setGeneration] = useState("10")
+  const [generation, setGeneration] = useState(CURRENT_GENERATION)
 
   return (
     <PreviewLinks onNavigate={setPath}>
@@ -327,7 +329,7 @@ export function WorkFrameLevels() {
             <RecruitingFrame
               path={RECRUITMENT_LIST.href}
               labelOf={anchoredLabel}
-              generation="10"
+              generation={CURRENT_GENERATION}
               onGenerationChange={keepGeneration}
               className="h-[480px]"
             />
