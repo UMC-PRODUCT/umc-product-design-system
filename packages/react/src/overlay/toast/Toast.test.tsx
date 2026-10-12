@@ -1,5 +1,5 @@
 import { act, fireEvent, render, screen } from "@testing-library/react"
-import type { ReactElement } from "react"
+import { useEffect, useRef, type ReactElement } from "react"
 import {
   afterEach,
   beforeAll,
@@ -12,7 +12,7 @@ import {
 
 import { CloseIcon } from "@umc-product/icons"
 
-import { ToastProvider } from "./Toast.tsx"
+import { ToastProvider, type ToastApi } from "./Toast.tsx"
 import { useToast } from "./useToast.ts"
 
 beforeAll(() => {
@@ -47,7 +47,7 @@ function ShowApp({
 
 function ShowCloseApp({ message }: { message: string }) {
   const toast = useToast()
-  const idRef = { current: "" }
+  const idRef = useRef("")
   return (
     <div>
       <button
@@ -66,6 +66,25 @@ function ShowCloseApp({ message }: { message: string }) {
       </button>
     </div>
   )
+}
+
+function RenderProbe({ onRender }: { onRender: (api: ToastApi) => void }) {
+  const toast = useToast()
+  onRender(toast)
+  return (
+    <button onClick={() => toast.show({ message: "렌더 확인" })}>보여줘</button>
+  )
+}
+
+function ShowOnMount({ message }: { message: string }) {
+  const toast = useToast()
+  const shownRef = useRef(false)
+  useEffect(() => {
+    if (shownRef.current) return
+    shownRef.current = true
+    toast.show({ message })
+  }, [toast, message])
+  return null
 }
 
 const svgOf = (element: ReactElement) =>
@@ -264,9 +283,33 @@ describe("ToastProvider & useToast", () => {
     expect(screen.getByText("수동 닫힘")).toBeInTheDocument()
     await act(async () => {
       fireEvent.click(screen.getByRole("button", { name: "닫아줘" }))
-      await vi.runAllTimersAsync()
+      await vi.advanceTimersByTimeAsync(500)
     })
     expect(screen.queryByText("수동 닫힘")).not.toBeInTheDocument()
+  })
+
+  it("토스트가 떠도 useToast를 쓰는 컴포넌트는 다시 렌더되지 않고 같은 객체를 받는다", async () => {
+    const apis: ToastApi[] = []
+    render(
+      <ToastProvider>
+        <RenderProbe onRender={(api) => apis.push(api)} />
+      </ToastProvider>,
+    )
+    await act(async () => {
+      fireEvent.click(screen.getByRole("button", { name: "보여줘" }))
+      await vi.advanceTimersByTimeAsync(500)
+    })
+    expect(screen.getByText("렌더 확인")).toBeInTheDocument()
+    expect(apis).toHaveLength(1)
+  })
+
+  it("자식이 첫 effect에서 부른 show()도 토스트를 띄운다", () => {
+    render(
+      <ToastProvider>
+        <ShowOnMount message="마운트하며 띄움" />
+      </ToastProvider>,
+    )
+    expect(screen.getByText("마운트하며 띄움")).toBeInTheDocument()
   })
 
   it("warning 색상은 data-color=warning을 단다", () => {

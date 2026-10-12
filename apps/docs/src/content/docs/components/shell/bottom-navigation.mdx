@@ -8,7 +8,7 @@ import {
   BottomNavigationDefault,
 } from "../../../../components/react/shell/BottomNavigationExamples.tsx"
 
-피그마 `App/Bottom navigation`을 구현했습니다. iOS는 `env(safe-area-inset-bottom)`으로 홈 인디케이터 영역을 자동 확보하고, Android는 최소 4px 하단 패딩을 유지합니다. 현재 경로와 `href`가 일치하는 탭에 `aria-current="page"`가 붙습니다.
+피그마 `App/Bottom navigation`을 구현했습니다. iOS는 `env(safe-area-inset-bottom)`으로 홈 인디케이터 영역을 자동 확보하고, Android는 최소 4px 하단 패딩을 유지합니다. 현재 경로가 `href`와 같거나 그 하위 경로이면 그 탭에 `aria-current="page"`가 붙습니다.
 
 ```tsx
 import {

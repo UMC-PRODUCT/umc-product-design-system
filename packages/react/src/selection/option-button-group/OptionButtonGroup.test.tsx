@@ -84,6 +84,45 @@ describe("OptionButtonGroup single", () => {
     )
   })
 
+  it("value={null}로 시작해도 제어 모드라서 나중에 받은 value를 따른다", () => {
+    const { rerender } = render(
+      <OptionButtonGroup
+        options={[...SINGLE_OPTIONS]}
+        aria-label="파트"
+        value={null}
+      />,
+    )
+    rerender(
+      <OptionButtonGroup
+        options={[...SINGLE_OPTIONS]}
+        aria-label="파트"
+        value="be"
+      />,
+    )
+    expect(screen.getByRole("radio", { name: "백엔드" })).toHaveAttribute(
+      "data-checked",
+      "",
+    )
+  })
+
+  it("value={null}이면 눌러도 선택은 그대로이고 onValueChange만 부른다", async () => {
+    const onValueChange = vi.fn()
+    render(
+      <OptionButtonGroup
+        options={[...SINGLE_OPTIONS]}
+        aria-label="파트"
+        value={null}
+        onValueChange={onValueChange}
+      />,
+    )
+    await userEvent.click(screen.getByRole("radio", { name: "백엔드" }))
+    expect(onValueChange).toHaveBeenCalledWith("be")
+    expect(screen.getByRole("radio", { name: "백엔드" })).toHaveAttribute(
+      "data-unchecked",
+      "",
+    )
+  })
+
   it("첫 번째 항목은 data-position=start", () => {
     render(
       <OptionButtonGroup options={[...SINGLE_OPTIONS]} aria-label="파트" />,
