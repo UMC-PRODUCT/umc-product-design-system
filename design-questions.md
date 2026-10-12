@@ -138,7 +138,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 
 1. Header 다크 모드 hover 글자색 `#02746c`는 어두운 배경 위에서 대비가 낮습니다. 랜딩 배경 이미지 위에서 읽히는지 확인해 주세요.
 2. Header 다크 모드 선택 항목은 1px 테두리와 좌우 16px입니다. 선택이 바뀔 때 폭이 흔들리지 않도록 코드는 18px 패딩과 inset 그림자를 씁니다.
-3. Header의 `Profile`(원형 아바타)은 기본 아바타 이미지가 정해지지 않아 아직 컴포넌트로 만들지 않았습니다. 기본 이미지를 패키지에 넣을지 알려 주세요. `Action Button`은 `HeaderActionButton`, `Home Link`는 `HeaderHomeLink`로 만들었습니다.
+3. Header의 `Profile`(원형 아바타)은 기본 아바타 이미지가 정해지지 않아 아직 컴포넌트로 만들지 않았습니다. 기본 이미지를 패키지에 넣을지 알려 주세요. `Action Button`은 `HeaderActionButton`, `Home Link`는 `HeaderHomeLink`로 만들었습니다. 2026-10-12에 기수 선택을 프로필 드롭다운으로 옮긴다고 들었습니다. 문서 예시에서는 사이드 내비게이션 슬롯의 기수 전환을 뺐습니다. 드롭다운을 만들려면 펼친 목록의 항목, 열림 모양, 기본 아바타 디자인이 필요합니다.
 4. Side Navigation 그룹은 피그마 설명대로라면 누르면 첫 하위 페이지로 이동합니다. 코드는 펼침과 접힘만 맡습니다. 접으려고 누를 때도 페이지가 바뀌는 문제 때문입니다. 이동이 꼭 필요한지 알려 주세요.
 5. Side Navigation 그룹에 펼침 여부를 알리는 표시(화살표 등)가 없습니다. 그대로 둘지 알려 주세요. 하위 메뉴의 hover 상태도 없습니다.
 6. Side Navigation 오른쪽 경계선이 `Type=Default`는 `#e9ecec`, `Type=With Slot`은 `#e2e3e3`입니다. `#e2e3e3`으로 통일했습니다.
