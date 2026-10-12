@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react"
-import { beforeAll, describe, expect, it } from "vitest"
+import userEvent from "@testing-library/user-event"
+import { beforeAll, describe, expect, it, vi } from "vitest"
 
 import { BottomSheet, BottomSheetActions } from "./BottomSheet.tsx"
 
@@ -99,6 +100,41 @@ describe("BottomSheet", () => {
     const popup = document.querySelector(".umc-bottom-sheet__popup")
     expect(popup).not.toBeNull()
     expect(popup?.querySelector(".umc-bottom-sheet__handle")).not.toBeNull()
+  })
+
+  it("팝업은 스와이프와 터치 스크롤을 다루는 viewport 안에 놓인다", () => {
+    render(
+      <BottomSheet open>
+        <p>내용</p>
+      </BottomSheet>,
+    )
+    const popup = document.querySelector(".umc-bottom-sheet__popup")
+    expect(popup?.parentElement).toHaveClass("umc-bottom-sheet__viewport")
+  })
+
+  it("팝업 바깥(viewport)을 누르면 닫힌다", async () => {
+    const onOpenChange = vi.fn()
+    render(
+      <BottomSheet open onOpenChange={onOpenChange}>
+        <p>내용</p>
+      </BottomSheet>,
+    )
+    const viewport = document.querySelector(".umc-bottom-sheet__viewport")
+    expect(viewport).not.toBeNull()
+    await userEvent.click(viewport as HTMLElement)
+    expect(onOpenChange).toHaveBeenCalled()
+    expect(onOpenChange.mock.calls[0]?.[0]).toBe(false)
+  })
+
+  it("팝업 안을 누르면 닫히지 않는다", async () => {
+    const onOpenChange = vi.fn()
+    render(
+      <BottomSheet open onOpenChange={onOpenChange}>
+        <p>내용</p>
+      </BottomSheet>,
+    )
+    await userEvent.click(screen.getByText("내용"))
+    expect(onOpenChange).not.toHaveBeenCalled()
   })
 })
 

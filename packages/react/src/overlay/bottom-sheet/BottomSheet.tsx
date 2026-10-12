@@ -144,38 +144,43 @@ export function BottomSheet({
       defaultOpen={defaultOpen}
       onOpenChange={onOpenChange}
     >
-      {trigger !== undefined && <Drawer.Trigger render={trigger} />}
-      <Drawer.Portal>
-        <Drawer.Backdrop className="umc-bottom-sheet__backdrop" />
-        <Drawer.VirtualKeyboardProvider>
-          <Drawer.Popup className={cx("umc-bottom-sheet__popup", className)}>
-            <span aria-hidden="true" className="umc-bottom-sheet__handle" />
-            {hasHeader && (
-              <div className="umc-bottom-sheet__header" data-align={titleAlign}>
-                {title !== undefined && (
-                  <Drawer.Title className="umc-bottom-sheet__title">
-                    {title}
-                  </Drawer.Title>
-                )}
-                {description !== undefined && (
-                  <Drawer.Description className="umc-bottom-sheet__description">
-                    {description}
-                  </Drawer.Description>
-                )}
-                {headerAction !== undefined && (
-                  <div className="umc-bottom-sheet__header-action">
-                    {headerAction}
-                  </div>
-                )}
-              </div>
-            )}
-            <div className="umc-bottom-sheet__body">{children}</div>
-            {actions !== undefined && (
-              <div className="umc-bottom-sheet__actions-area">{actions}</div>
-            )}
-          </Drawer.Popup>
-        </Drawer.VirtualKeyboardProvider>
-      </Drawer.Portal>
+      <Drawer.VirtualKeyboardProvider>
+        {trigger !== undefined && <Drawer.Trigger render={trigger} />}
+        <Drawer.Portal>
+          <Drawer.Backdrop className="umc-bottom-sheet__backdrop" />
+          <Drawer.Viewport className="umc-bottom-sheet__viewport">
+            <Drawer.Popup className={cx("umc-bottom-sheet__popup", className)}>
+              <span aria-hidden="true" className="umc-bottom-sheet__handle" />
+              {hasHeader && (
+                <div
+                  className="umc-bottom-sheet__header"
+                  data-align={titleAlign}
+                >
+                  {title !== undefined && (
+                    <Drawer.Title className="umc-bottom-sheet__title">
+                      {title}
+                    </Drawer.Title>
+                  )}
+                  {description !== undefined && (
+                    <Drawer.Description className="umc-bottom-sheet__description">
+                      {description}
+                    </Drawer.Description>
+                  )}
+                  {headerAction !== undefined && (
+                    <div className="umc-bottom-sheet__header-action">
+                      {headerAction}
+                    </div>
+                  )}
+                </div>
+              )}
+              <div className="umc-bottom-sheet__body">{children}</div>
+              {actions !== undefined && (
+                <div className="umc-bottom-sheet__actions-area">{actions}</div>
+              )}
+            </Drawer.Popup>
+          </Drawer.Viewport>
+        </Drawer.Portal>
+      </Drawer.VirtualKeyboardProvider>
     </Drawer.Root>
   )
 }

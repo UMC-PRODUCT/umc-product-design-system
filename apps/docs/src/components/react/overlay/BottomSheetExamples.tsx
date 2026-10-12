@@ -25,8 +25,6 @@ const actionsOf = (layout: ActionLayout) =>
   )
 
 const STATIC_SHEET = {
-  position: "static",
-  zIndex: "auto",
   width: "320px",
 } as const
 
