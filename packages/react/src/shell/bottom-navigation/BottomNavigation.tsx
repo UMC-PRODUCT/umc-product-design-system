@@ -28,7 +28,7 @@ export function BottomNavigationItem({
   ...props
 }: BottomNavigationItemProps) {
   const Link = useLinkComponent()
-  const isActive = currentPath !== undefined && isActivePath(href, currentPath)
+  const isActive = isActivePath(currentPath, href)
 
   return (
     <Link

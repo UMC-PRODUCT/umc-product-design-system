@@ -95,6 +95,39 @@ describe("BottomNavigationItem", () => {
     )
   })
 
+  it("sets aria-current=page when current path is under href", () => {
+    render(
+      <BottomNavigation>
+        <BottomNavigationItem
+          href="/settings"
+          label="설정"
+          icon={<HomeIcon />}
+          currentPath="/settings/profile"
+        />
+      </BottomNavigation>,
+    )
+    expect(screen.getByRole("link", { name: "설정" })).toHaveAttribute(
+      "aria-current",
+      "page",
+    )
+  })
+
+  it("does not set aria-current when href is under current path", () => {
+    render(
+      <BottomNavigation>
+        <BottomNavigationItem
+          href="/settings/profile"
+          label="프로필"
+          icon={<HomeIcon />}
+          currentPath="/settings"
+        />
+      </BottomNavigation>,
+    )
+    expect(screen.getByRole("link", { name: "프로필" })).not.toHaveAttribute(
+      "aria-current",
+    )
+  })
+
   it("does not set aria-current when currentPath is not provided", () => {
     render(
       <BottomNavigation>
