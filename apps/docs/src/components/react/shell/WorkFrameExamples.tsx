@@ -4,15 +4,23 @@ import {
   ContextSwitcher,
   Header,
   HeaderHomeLink,
+  NumberBadge,
   PageHeader,
   SideNavigation,
   type BreadcrumbItem,
   type ContextSwitcherOption,
   type NavItem,
+  type NumberBadgeColor,
   type SideNavigationItem,
 } from "@umc-product/react"
 import { PeoplePictogram } from "@umc-product/icons"
-import { useState, type ReactNode } from "react"
+import {
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+  type RefObject,
+} from "react"
 
 import { PreviewLinks } from "./PreviewLinks.tsx"
 
@@ -201,5 +209,136 @@ export function WorkFrameDemo() {
         </RecruitingFrame>
       </div>
     </PreviewLinks>
+  )
+}
+
+const LEVEL_COLORS = {
+  1: "neutral",
+  2: "brand",
+  3: "warning",
+} as const satisfies Record<number, NumberBadgeColor>
+
+type Level = keyof typeof LEVEL_COLORS
+
+const LEVEL_OF = new Map<MenuEntry, Level>([
+  [RECRUITING_AREA, 1],
+  [RECRUITMENT_GROUP, 2],
+  [RECRUITMENT_LIST, 3],
+])
+
+const isLevel = (value: number): value is Level => value in LEVEL_COLORS
+
+const anchoredLabel: LabelOf = (entry, place) => {
+  const level = LEVEL_OF.get(entry)
+  if (level === undefined) return entry.label
+  return (
+    <span data-level-mark={level} data-level-place={place}>
+      {entry.label}
+    </span>
+  )
+}
+
+const MARK_SIZE = 20
+const MARK_GAP = 6
+
+type MarkPosition = { left: number; top: number }
+
+const MARK_POSITION: Record<LabelPlace, (box: DOMRect) => MarkPosition> = {
+  header: (box) => ({
+    left: box.left - MARK_SIZE / 2,
+    top: box.top - MARK_SIZE / 2,
+  }),
+  side: (box) => ({
+    left: box.right + MARK_GAP,
+    top: box.top + (box.height - MARK_SIZE) / 2,
+  }),
+  breadcrumb: (box) => ({
+    left: box.left + (box.width - MARK_SIZE) / 2,
+    top: box.top - MARK_SIZE - MARK_GAP,
+  }),
+  title: (box) => ({
+    left: box.left - MARK_SIZE - MARK_GAP,
+    top: box.top + (box.height - MARK_SIZE) / 2,
+  }),
+}
+
+const isLabelPlace = (value: string | undefined): value is LabelPlace =>
+  value !== undefined && value in MARK_POSITION
+
+type PlacedMark = MarkPosition & { key: string; level: Level }
+
+function placeMarks(frame: HTMLElement): PlacedMark[] {
+  const origin = frame.getBoundingClientRect()
+  const anchors = frame.querySelectorAll<HTMLElement>("[data-level-mark]")
+  return [...anchors].flatMap((anchor, index) => {
+    const level = Number(anchor.dataset.levelMark)
+    const place = anchor.dataset.levelPlace
+    if (!isLevel(level) || !isLabelPlace(place)) return []
+    const target = place === "header" ? (anchor.closest("a") ?? anchor) : anchor
+    const position = MARK_POSITION[place](target.getBoundingClientRect())
+    return [
+      {
+        key: `${place}-${index}`,
+        level,
+        left: position.left - origin.left,
+        top: position.top - origin.top,
+      },
+    ]
+  })
+}
+
+function LevelMarks({ frameRef }: { frameRef: RefObject<HTMLElement | null> }) {
+  const [marks, setMarks] = useState<PlacedMark[]>([])
+
+  useEffect(() => {
+    const frame = frameRef.current
+    if (!frame) return
+    const update = () => setMarks(placeMarks(frame))
+    update()
+    document.fonts.ready.then(update)
+    const observer = new ResizeObserver(update)
+    observer.observe(frame)
+    return () => observer.disconnect()
+  }, [frameRef])
+
+  return marks.map((mark) => (
+    <NumberBadge
+      key={mark.key}
+      color={LEVEL_COLORS[mark.level]}
+      size="md"
+      className="docs-level-mark"
+      style={{ left: mark.left, top: mark.top }}
+    >
+      {mark.level}
+    </NumberBadge>
+  ))
+}
+
+const keepGeneration = () => {}
+
+export function WorkFrameLevels() {
+  const frameRef = useRef<HTMLDivElement>(null)
+
+  return (
+    <figure>
+      <PreviewLinks>
+        <div className="umc-example umc-example-flush overflow-x-auto">
+          <div ref={frameRef} inert className="relative">
+            <RecruitingFrame
+              path={RECRUITMENT_LIST.href}
+              labelOf={anchoredLabel}
+              generation="10"
+              onGenerationChange={keepGeneration}
+              className="h-[480px]"
+            />
+            <LevelMarks frameRef={frameRef} />
+          </div>
+        </div>
+      </PreviewLinks>
+      <figcaption className="text-body-3-regular text-neutral-medium-600">
+        ① 헤더 메뉴, ② 사이드 내비게이션 그룹, ③ 그룹 안 메뉴가 브레드크럼과
+        제목에 같은 이름으로 다시 나옵니다.
+      </figcaption>
+    </figure>
   )
 }

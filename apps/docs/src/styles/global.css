@@ -240,6 +240,11 @@
   max-width: 100cqi;
 }
 
+.docs-level-mark {
+  position: absolute;
+  z-index: 1;
+}
+
 .umc-example-flush {
   display: block;
   padding: 0;
