@@ -80,6 +80,8 @@ function Page() {
 | `show`  | `(options: ToastOptions) => string` | 토스트를 열고 id를 반환한다 |
 | `close` | `(id: string) => void`              | 해당 id의 토스트를 닫는다   |
 
+반환값은 `ToastProvider`마다 하나로 고정됩니다. 토스트가 열리고 닫혀도 `useToast()`를 부른 컴포넌트는 다시 렌더되지 않으므로, 반환값을 `useEffect`나 `useCallback`의 의존성에 넣어도 됩니다.
+
 ### ToastOptions
 
 | prop       | 타입                                             | 기본값      | 설명                                         |

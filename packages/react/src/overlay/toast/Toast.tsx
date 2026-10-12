@@ -2,7 +2,7 @@
 
 import { Toast } from "@base-ui/react"
 import { CloseIcon } from "@umc-product/icons"
-import type { ReactNode } from "react"
+import { createContext, useMemo, type ReactNode } from "react"
 
 export type ToastOptions = {
   message: ReactNode
@@ -26,6 +26,36 @@ type ToastData = {
   color?: ToastOptions["color"]
   icon?: ReactNode
   action?: ToastOptions["action"]
+}
+
+export const ToastApiContext = createContext<ToastApi | null>(null)
+
+function ToastApiProvider({ children }: { children: ReactNode }) {
+  const { add, close } = Toast.useToastManager<ToastData>()
+  const api = useMemo<ToastApi>(
+    () => ({
+      show(options) {
+        const timeout =
+          options.duration ?? (options.action !== undefined ? 6000 : 3000)
+        return add({
+          description: options.message,
+          timeout,
+          priority: options.color === "error" ? "high" : "low",
+          data: {
+            color: options.color ?? "primary",
+            icon: options.icon,
+            action: options.action,
+          },
+        })
+      },
+      close,
+    }),
+    [add, close],
+  )
+
+  return (
+    <ToastApiContext.Provider value={api}>{children}</ToastApiContext.Provider>
+  )
 }
 
 function ToastViewportPortal({ placement }: { placement: "top" | "bottom" }) {
@@ -86,7 +116,7 @@ export function ToastProvider({
 }: ToastProviderProps) {
   return (
     <Toast.Provider>
-      {children}
+      <ToastApiProvider>{children}</ToastApiProvider>
       <ToastViewportPortal placement={placement} />
     </Toast.Provider>
   )
