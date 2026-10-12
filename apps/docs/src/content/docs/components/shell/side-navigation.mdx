@@ -46,15 +46,19 @@ export function AdminSidebar({ pathname }: { pathname: string }) {
 
 ## 슬롯
 
-`slot`은 메뉴 위에 놓입니다. 피그마 예시처럼 `ContextSwitcher`나 검색 필드를 넣습니다. 슬롯 영역의 좌우 패딩은 32px, 16px입니다.
+`slot`은 메뉴 위 자리입니다. 서비스마다 맥락에 맞는 요소를 넣고, 필요 없으면 `slot`을 넘기지 않습니다. 피그마 예시는 메뉴를 거르는 검색 필드(`SearchField`)와, 워크스페이스·계정 뷰·관리 권한처럼 작업 맥락을 바꾸는 `ContextSwitcher`입니다. 슬롯 영역의 좌우 패딩은 32px, 16px입니다.
 
 <SideNavigationWithSlot client:visible />
+
+- 기수는 슬롯에 넣지 않습니다. 기수는 헤더의 프로필 메뉴에서 고르도록 디자인하고 있습니다.
+- 메뉴 위 제목(`title`, 피그마의 서브 타이틀)도 필요할 때만 넘깁니다.
 
 ## 선택과 펼침
 
 - `currentPath`와 맞는 `href` 가운데 가장 구체적인 항목 하나만 선택합니다. `/matching`과 `/matching/status`가 함께 있으면 `/matching/status/3`에서는 `/matching/status`만 선택됩니다.
 - 선택된 하위 메뉴를 담은 그룹은 그룹 버튼에도 선택 스타일을 적용합니다.
 - 처음 렌더할 때, 그리고 `currentPath`가 다른 그룹 안으로 바뀔 때 그 그룹을 펼칩니다. 이미 펼쳐 둔 다른 그룹은 닫지 않습니다.
+- 헤더 메뉴, 사이드 내비게이션, 브레드크럼의 이름을 맞추는 규칙은 [WorkFrame](../work-frame/#헤더-사이드-내비게이션-브레드크럼-맞추기)에 있습니다.
 
 ## 아이콘
 

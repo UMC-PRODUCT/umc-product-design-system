@@ -2,7 +2,9 @@
 
 import {
   ContextSwitcher,
+  SearchField,
   SideNavigation,
+  type ContextSwitcherOption,
   type SideNavigationItem,
 } from "@umc-product/react"
 import { PeoplePictogram } from "@umc-product/icons"
@@ -37,10 +39,28 @@ const ITEMS: SideNavigationItem[] = [
   { label: "설정", href: "/settings", icon: menuIcon },
 ]
 
-const GENERATIONS = [
-  { value: "10", label: "10기 운영진 뷰" },
-  { value: "11", label: "11기 운영진 뷰" },
+type View = "chapter" | "central"
+
+const VIEWS: ContextSwitcherOption<View>[] = [
+  { value: "chapter", label: "지부 운영진 뷰" },
+  { value: "central", label: "중앙 운영진 뷰" },
 ]
+
+function filterItems(
+  items: SideNavigationItem[],
+  query: string,
+): SideNavigationItem[] {
+  const keyword = query.trim()
+  if (!keyword) return items
+  return items.flatMap((item) => {
+    if (String(item.label).includes(keyword)) return [item]
+    if (!("children" in item)) return []
+    const children = item.children.filter((child) =>
+      String(child.label).includes(keyword),
+    )
+    return children.length > 0 ? [{ ...item, children }] : []
+  })
+}
 
 export function SideNavigationDefault() {
   const [path, setPath] = useState("/matching/status")
@@ -60,19 +80,35 @@ export function SideNavigationDefault() {
 
 export function SideNavigationWithSlot() {
   const [path, setPath] = useState("/dashboard")
-  const [generation, setGeneration] = useState("10")
+  const [query, setQuery] = useState("")
+  const [view, setView] = useState<View>("chapter")
   return (
-    <div className="umc-example umc-example-flush overflow-hidden">
+    <div className="umc-example">
       <PreviewLinks onNavigate={setPath}>
+        <div className="h-[480px]">
+          <SideNavigation
+            aria-label="검색 슬롯 예시"
+            items={filterItems(ITEMS, query)}
+            currentPath={path}
+            slot={
+              <SearchField
+                placeholder="메뉴 검색"
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+              />
+            }
+          />
+        </div>
         <div className="h-[480px]" data-spec-id="side-navigation-slot">
           <SideNavigation
+            aria-label="맥락 전환 슬롯 예시"
             items={ITEMS}
             currentPath={path}
             slot={
               <ContextSwitcher
-                options={GENERATIONS}
-                value={generation}
-                onValueChange={setGeneration}
+                options={VIEWS}
+                value={view}
+                onValueChange={setView}
               />
             }
           />
@@ -82,13 +118,13 @@ export function SideNavigationWithSlot() {
   )
 }
 
-const ignoreGenerationChange = () => {}
+const ignoreViewChange = () => {}
 
-const generationSlot = (
+const viewSlot = (
   <ContextSwitcher
-    options={GENERATIONS}
-    value="10"
-    onValueChange={ignoreGenerationChange}
+    options={VIEWS}
+    value="chapter"
+    onValueChange={ignoreViewChange}
   />
 )
 
@@ -117,7 +153,7 @@ function MenuItemCell({ variant }: { variant: FigmaVariant }) {
           aria-label="메뉴 항목"
           items={[selected ? SELECTED_GROUP : PLAIN_ITEM]}
           currentPath={selected ? "/matching/status" : "/"}
-          slot={variant.props["Slot"] === "True" ? generationSlot : undefined}
+          slot={variant.props["Slot"] === "True" ? viewSlot : undefined}
         />
       </ForceState>
     </div>
@@ -162,9 +198,7 @@ export function SideNavigationAllVariants() {
               items={ITEMS}
               currentPath="/matching/status"
               slot={
-                variant.props["Type"] === "With Slot"
-                  ? generationSlot
-                  : undefined
+                variant.props["Type"] === "With Slot" ? viewSlot : undefined
               }
             />
           </div>
