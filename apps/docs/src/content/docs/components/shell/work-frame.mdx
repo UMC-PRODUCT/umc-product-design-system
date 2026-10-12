@@ -100,7 +100,6 @@ export function RecruitingShell({ pathname }: { pathname: string }) {
 
 ```tsx
 import {
-  ContextSwitcher,
   Header,
   HeaderHomeLink,
   LinkProvider,
@@ -122,11 +121,7 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
           currentPath={pathname}
         />
         <div className="flex flex-1">
-          <SideNavigation
-            items={sideItems}
-            currentPath={pathname}
-            slot={<GenerationSwitcher />}
-          />
+          <SideNavigation items={sideItems} currentPath={pathname} />
           <main className="flex min-w-0 flex-1 flex-col gap-8 px-8 pt-12 pb-20">
             {children}
           </main>
@@ -137,4 +132,4 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
 }
 ```
 
-`Header`는 위치를 정하지 않으므로 고정이 필요하면 `className`으로 `sticky`를 줍니다. `SideNavigation`은 `min-height: 100%`라서 부모 높이만큼 늘어납니다.
+`Header`는 위치를 정하지 않으므로 고정이 필요하면 `className`으로 `sticky`를 줍니다. `SideNavigation`은 `min-height: 100%`라서 부모 높이만큼 늘어납니다. 메뉴 위 `slot`은 서비스에 맞게 넣고 빼며, 넣을 수 있는 요소는 [SideNavigation 슬롯](../side-navigation/#슬롯)에 있습니다.

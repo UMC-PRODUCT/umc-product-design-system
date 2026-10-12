@@ -1,14 +1,12 @@
 "use client"
 
 import {
-  ContextSwitcher,
   Header,
   HeaderHomeLink,
   NumberBadge,
   PageHeader,
   SideNavigation,
   type BreadcrumbItem,
-  type ContextSwitcherOption,
   type NavItem,
   type NumberBadgeColor,
   type SideNavigationItem,
@@ -61,12 +59,7 @@ const RECRUITING_MENU: MenuEntry[] = [
   { label: "히스토리", href: "/recruiting/history" },
 ]
 
-const GENERATIONS: ContextSwitcherOption[] = [
-  { value: "10", label: "10기" },
-  { value: "11", label: "11기" },
-]
-
-const CURRENT_GENERATION = "11"
+const CURRENT_GENERATION = 11
 
 const PAGE_DESCRIPTION = "페이지를 간결하고 명확하게 설명합니다."
 
@@ -139,8 +132,6 @@ function titleOf(path: string, labelOf: LabelOf): ReactNode {
 type RecruitingFrameProps = {
   path: string
   labelOf: LabelOf
-  generation: string
-  onGenerationChange: (generation: string) => void
   className: string
   children?: ReactNode
 }
@@ -148,8 +139,6 @@ type RecruitingFrameProps = {
 function RecruitingFrame({
   path,
   labelOf,
-  generation,
-  onGenerationChange,
   className,
   children,
 }: RecruitingFrameProps) {
@@ -157,23 +146,13 @@ function RecruitingFrame({
     <div className={`flex min-w-[960px] flex-col ${className}`}>
       <Header
         logo={
-          <HeaderHomeLink context="operation" generation={Number(generation)} />
+          <HeaderHomeLink context="operation" generation={CURRENT_GENERATION} />
         }
         navItems={navItemsOf(labelOf)}
         currentPath={path}
       />
       <div className="flex min-h-0 flex-1">
-        <SideNavigation
-          items={sideItemsOf(labelOf)}
-          currentPath={path}
-          slot={
-            <ContextSwitcher
-              options={GENERATIONS}
-              value={generation}
-              onValueChange={onGenerationChange}
-            />
-          }
-        />
+        <SideNavigation items={sideItemsOf(labelOf)} currentPath={path} />
         <main className="flex min-w-0 flex-1 flex-col gap-8 overflow-auto px-8 pt-12 pb-20">
           <PageHeader
             title={titleOf(path, labelOf)}
@@ -189,18 +168,11 @@ function RecruitingFrame({
 
 export function WorkFrameDemo() {
   const [path, setPath] = useState(RECRUITMENT_LIST.href)
-  const [generation, setGeneration] = useState(CURRENT_GENERATION)
 
   return (
     <PreviewLinks onNavigate={setPath}>
       <div className="umc-example umc-example-flush overflow-x-auto">
-        <RecruitingFrame
-          path={path}
-          labelOf={plainLabel}
-          generation={generation}
-          onGenerationChange={setGeneration}
-          className="h-[640px]"
-        >
+        <RecruitingFrame path={path} labelOf={plainLabel} className="h-[640px]">
           <div
             className="min-h-40 flex-1 rounded-xl"
             style={{
@@ -316,8 +288,6 @@ function LevelMarks({ frameRef }: { frameRef: RefObject<HTMLElement | null> }) {
   ))
 }
 
-const keepGeneration = () => {}
-
 export function WorkFrameLevels() {
   const frameRef = useRef<HTMLDivElement>(null)
 
@@ -329,9 +299,7 @@ export function WorkFrameLevels() {
             <RecruitingFrame
               path={RECRUITMENT_LIST.href}
               labelOf={anchoredLabel}
-              generation={CURRENT_GENERATION}
-              onGenerationChange={keepGeneration}
-              className="h-[480px]"
+              className="h-[440px]"
             />
             <LevelMarks frameRef={frameRef} />
           </div>
