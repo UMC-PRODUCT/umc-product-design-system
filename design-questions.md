@@ -2,7 +2,7 @@
 
 - 독자: 3기 디자인 팀, 웹 파트
 - 소유자: UMC PRODUCT Design Chapter
-- 기준일: 2026-10-11
+- 기준일: 2026-10-13
 
 문서 사이트에는 싣지 않는 작업 목록입니다.
 
@@ -97,6 +97,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 23. Chip 아이콘 없는 변형만 폭이 52px로 고정되어 있습니다. 코드는 글자 길이를 따릅니다.
 24. Chip 아이콘 색에 2기 `WarmGray-700`이 남아 있습니다. 코드는 3기 `icon-neutral-strong-600`을 씁니다.
 25. Chip/Draggable은 토큰에 없는 `Subtitle/2-Medium`(18px, 줄 높이 1.5, 자간 -1%)과 이름 없는 여백 9px, 간격 3px을 씁니다. 코드는 피그마 값을 컴포넌트 변수로 옮겼습니다.
+26. (해결 2026-10-13) Segmented Control의 선택하지 않은 항목과 Hover 글자색을 TealGray-800(`text-neutral-strong-800`, `#282a2a`)으로 바꿨습니다. 완성형 Segmented Control도 같은 항목을 쓰므로 함께 바뀝니다. 피그마 수정이 저장되지 않아 `Web/ Segmented Control / Button`(2281:6404)과 완성형은 아직 `#02746c`입니다. 피그마에도 다시 반영해 주세요.
 
 ## 표시
 

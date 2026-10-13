@@ -48,9 +48,12 @@
       "target": ".umc-segmented-control__item[data-unchecked]",
       "expected": {
         "background-color": "#00000000",
-        "color": "#02746c",
+        "color": "#282a2a",
         "height": "38px",
         "font-weight": "600"
+      },
+      "figmaDiffers": {
+        "color": "디자인 팀이 2026-10-13에 글자색을 TealGray-800으로 바꾼다고 확인했다. 피그마 수정이 저장되지 않아 피그마는 아직 #02746c다"
       }
     },
     {
@@ -61,10 +64,11 @@
       "target": ".umc-segmented-control__item[data-unchecked]",
       "expected": {
         "background-color": "#eff0f0",
-        "color": "#02746c",
+        "color": "#282a2a",
         "box-shadow~": "rgba(11, 107, 100, 0.13) 1px 1px 3px 0px inset"
       },
       "figmaDiffers": {
+        "color": "디자인 팀이 2026-10-13에 글자색을 TealGray-800으로 바꾼다고 확인했다. 피그마 수정이 저장되지 않아 피그마는 아직 #02746c다",
         "box-shadow~": "피그마는 이름이 같은 Shadow/Inner/Neutral_1의 다른 정의(#D3D8D833, 1, 1, 2)를 쓴다. 이름 있는 스타일은 토큰을 쓰는 규칙에 따라 토큰 정의를 썼다"
       }
     }
