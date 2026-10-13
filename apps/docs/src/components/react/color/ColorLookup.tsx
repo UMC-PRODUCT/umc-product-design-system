@@ -2,7 +2,6 @@ import { useDeferredValue, useMemo, useState } from "react"
 
 import { ColorTokenTable } from "./ColorTokenTable.tsx"
 import {
-  countCodeSyntax,
   searchColorTokens,
   type ColorSearchNotice,
   type ColorTokenRow,
@@ -61,7 +60,6 @@ function SearchNotice({ notice }: { notice: ColorSearchNotice }) {
 export function ColorLookup({ rows }: { rows: readonly ColorTokenRow[] }) {
   const [query, setQuery] = useState("")
   const deferredQuery = useDeferredValue(query)
-  const codeSyntaxCounts = useMemo(() => countCodeSyntax(rows), [rows])
   const result = useMemo(
     () => searchColorTokens(rows, deferredQuery),
     [rows, deferredQuery],
@@ -82,10 +80,7 @@ export function ColorLookup({ rows }: { rows: readonly ColorTokenRow[] }) {
       </p>
       {result.notice === null ? null : <SearchNotice notice={result.notice} />}
       {result.rows.length > 0 ? (
-        <ColorTokenTable
-          rows={result.rows.slice(0, RESULT_LIMIT)}
-          codeSyntaxCounts={codeSyntaxCounts}
-        />
+        <ColorTokenTable rows={result.rows.slice(0, RESULT_LIMIT)} />
       ) : null}
     </div>
   )
