@@ -1,0 +1,36 @@
+@layer components {
+  .umc-skeleton {
+    --umc-skeleton-color: #e9ecec;
+    --umc-skeleton-radius: 4px;
+
+    display: block;
+    width: 100%;
+    height: 14px;
+    border-radius: var(--umc-skeleton-radius);
+    background-color: var(--umc-skeleton-color);
+    animation: umc-skeleton-pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes umc-skeleton-pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .umc-skeleton {
+      animation: none;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .umc-skeleton {
+      forced-color-adjust: none;
+      background-color: GrayText;
+    }
+  }
+}

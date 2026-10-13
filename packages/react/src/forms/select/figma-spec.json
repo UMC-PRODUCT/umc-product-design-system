@@ -79,7 +79,7 @@
       "specId": "select-item",
       "interaction": "open",
       "node": "2281:4252",
-      "variant": "Dropdown/Item, Size=Sm, State=Default",
+      "variant": ".primitve/Meue Item/Text Only, Size=Sm, State=Default",
       "target": ".umc-dropdown-item:not([data-selected]):not([data-highlighted])",
       "expected": {
         "height": "38px",
@@ -97,7 +97,7 @@
       "specId": "select-item-highlighted",
       "interaction": "open",
       "node": "2281:4259",
-      "variant": "Dropdown/Item, Size=Sm, State=Hover",
+      "variant": ".primitve/Meue Item/Text Only, Size=Sm, State=Hover",
       "target": ".umc-dropdown-item[data-highlighted]",
       "expected": {
         "background-color": "#fbfcfc",
@@ -121,7 +121,7 @@
       "specId": "select-item-selected",
       "interaction": "open",
       "node": "2281:4271",
-      "variant": "Dropdown/Item, Size=Sm, State=Active",
+      "variant": ".primitve/Meue Item/Text Only, Size=Sm, State=Selected",
       "target": ".umc-dropdown-item[data-selected]",
       "expected": {
         "background-color": "#f4fbfa",

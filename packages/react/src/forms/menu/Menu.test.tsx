@@ -45,6 +45,34 @@ describe("Menu", () => {
     )
   })
 
+  it("목록에도 크기를 data-size로 달아 최소 폭을 고른다", async () => {
+    const user = userEvent.setup()
+    render(<Menu trigger={<button>메뉴</button>} items={baseItems} size="md" />)
+    await user.click(screen.getByText("메뉴"))
+    await waitFor(() => screen.getByText("삭제"))
+    expect(screen.getByRole("menu")).toHaveAttribute("data-size", "md")
+  })
+
+  it("title을 넘기면 항목 묶음의 이름으로 읽힌다", async () => {
+    const user = userEvent.setup()
+    render(
+      <Menu trigger={<button>메뉴</button>} items={baseItems} title="정렬" />,
+    )
+    await user.click(screen.getByText("메뉴"))
+    const group = await screen.findByRole("group", { name: "정렬" })
+    expect(group).toContainElement(
+      screen.getByRole("menuitem", { name: "수정" }),
+    )
+  })
+
+  it("title이 없으면 항목 묶음을 만들지 않는다", async () => {
+    const user = userEvent.setup()
+    render(<Menu trigger={<button>메뉴</button>} items={baseItems} />)
+    await user.click(screen.getByText("메뉴"))
+    await waitFor(() => screen.getByText("수정"))
+    expect(screen.queryByRole("group")).not.toBeInTheDocument()
+  })
+
   it("disabled 항목은 onClick이 호출되지 않는다", async () => {
     const onClick = vi.fn()
     const user = userEvent.setup()

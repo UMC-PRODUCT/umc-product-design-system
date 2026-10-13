@@ -559,12 +559,20 @@
         "Action=Increase, Disabled=False"
       ]
     },
+    "meue-list": {
+      "node": "4050:63398",
+      "name": "Meue List",
+      "axes": {
+        "Size": ["Sm", "Md"]
+      },
+      "variants": ["Size=Sm", "Size=Md"]
+    },
     "dropdown-item": {
       "node": "2281:4241",
-      "name": "Dropdown/Item",
+      "name": ".primitve/Meue Item/Text Only",
       "axes": {
         "Size": ["Md", "Sm", "Xs"],
-        "State": ["Default", "Disabled", "Hover", "Active"]
+        "State": ["Default", "Disabled", "Hover", "Selected"]
       },
       "variants": [
         "Size=Md, State=Default",
@@ -573,12 +581,12 @@
         "Size=Sm, State=Disabled",
         "Size=Md, State=Hover",
         "Size=Sm, State=Hover",
-        "Size=Md, State=Active",
-        "Size=Sm, State=Active",
+        "Size=Md, State=Selected",
+        "Size=Sm, State=Selected",
         "Size=Xs, State=Default",
         "Size=Xs, State=Disabled",
         "Size=Xs, State=Hover",
-        "Size=Xs, State=Active"
+        "Size=Xs, State=Selected"
       ]
     },
     "option-button": {

@@ -1,1 +1,39 @@
 @import "../dropdown-list/dropdown-list.css";
+
+@layer components {
+  .umc-dropdown-list.umc-menu {
+    --umc-menu-title-color: #98938f;
+
+    gap: 0;
+    min-width: 100px;
+    padding: var(--umc-spacing-padding-4);
+    border: 0;
+    border-radius: var(--umc-radius-12);
+  }
+
+  .umc-dropdown-list.umc-menu[data-size="md"] {
+    min-width: 140px;
+  }
+
+  .umc-menu__title {
+    padding: 7px var(--umc-spacing-padding-12);
+    color: var(--umc-menu-title-color);
+    font-family: var(--umc-typography-label-5-medium-font-family);
+    font-size: var(--umc-typography-label-5-medium-font-size);
+    font-weight: var(--umc-typography-label-5-medium-font-weight);
+    line-height: var(--umc-typography-label-5-medium-line-height);
+    letter-spacing: var(--umc-typography-label-5-medium-letter-spacing);
+    white-space: nowrap;
+  }
+
+  .umc-menu[data-size="md"] .umc-menu__title {
+    padding-inline: var(--umc-spacing-padding-16);
+  }
+
+  @media (forced-colors: active) {
+    .umc-dropdown-list.umc-menu {
+      outline: 1px solid CanvasText;
+      outline-offset: -1px;
+    }
+  }
+}

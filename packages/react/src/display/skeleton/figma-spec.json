@@ -1,0 +1,19 @@
+{
+  "component": "Skeleton",
+  "figmaSection": "4090:64083",
+  "page": "/components/display/skeleton/",
+  "nodes": [
+    {
+      "specId": "skeleton-line",
+      "node": "4090:64073",
+      "variant": "Skeleton/Line",
+      "target": ".umc-skeleton",
+      "expected": {
+        "background-color": "#e9ecec",
+        "width": "400px",
+        "height": "14px",
+        "border-top-left-radius": "4px"
+      }
+    }
+  ]
+}

@@ -7,6 +7,7 @@
 @import "./progress-bar/progress-bar.css";
 @import "./number-badge/number-badge.css";
 @import "./dot-badge/dot-badge.css";
+@import "./skeleton/skeleton.css";
 
 @layer components {
 }

@@ -36,6 +36,26 @@ export function MenuDefault() {
   )
 }
 
+export function MenuWithTitle() {
+  return (
+    <div className="umc-example" data-spec-id="menu-title">
+      <Menu
+        title="정렬 기준"
+        trigger={
+          <Button variant="weak" color="neutral" size="sm">
+            정렬
+          </Button>
+        }
+        items={[
+          { label: "최신 순" },
+          { label: "등록 순" },
+          { label: "정렬 순" },
+        ]}
+      />
+    </div>
+  )
+}
+
 export function MenuSizes() {
   return (
     <div className="umc-example">
@@ -60,13 +80,52 @@ export function MenuSizes() {
 }
 
 const ITEM_SIZES = { Xs: "xs", Sm: "sm", Md: "md" } as const
+const LIST_SIZES = { Sm: "sm", Md: "md" } as const
 
 type ItemSize = (typeof ITEM_SIZES)[keyof typeof ITEM_SIZES]
 
 const ITEM_LABEL = "항목"
 const ITEM_VALUE = "item"
+const LIST_TITLE = "타이틀"
+const LIST_ITEMS = [{ label: "메뉴" }, { label: "메뉴" }, { label: "메뉴" }]
 
 const presence = (condition: boolean) => (condition ? "" : undefined)
+
+function MenuListPreview({ variant }: { variant: FigmaVariant }) {
+  const size = lookup(LIST_SIZES, variant, "Size")
+  const code = componentCodeOf(Menu, {
+    size,
+    title: LIST_TITLE,
+    trigger: CODE_PLACEHOLDER,
+    items: LIST_ITEMS,
+  })
+  return (
+    <div
+      className="umc-dropdown-list umc-menu"
+      data-size={size}
+      {...codeAttributeOf(code)}
+    >
+      <div className="umc-menu__title">{LIST_TITLE}</div>
+      {LIST_ITEMS.map((item, index) => (
+        <div key={index} className="umc-dropdown-item" data-size={size}>
+          {item.label}
+        </div>
+      ))}
+    </div>
+  )
+}
+
+export function MenuListAllVariants() {
+  return (
+    <VariantGrid
+      set="meue-list"
+      rows={[]}
+      columns={["Size"]}
+      order={{ Size: ["Sm", "Md"] }}
+      render={(variant) => <MenuListPreview variant={variant} />}
+    />
+  )
+}
 
 const menuItemCodeOf = (size: ItemSize, disabled: boolean) =>
   componentCodeOf(Menu, {
@@ -86,7 +145,7 @@ function DropdownItemPreview({ variant }: { variant: FigmaVariant }) {
   const state = variant.props["State"]
   const size = lookup(ITEM_SIZES, variant, "Size")
   const code =
-    state === "Active"
+    state === "Selected"
       ? selectedItemCodeOf(size)
       : menuItemCodeOf(size, state === "Disabled")
   return (
@@ -95,11 +154,11 @@ function DropdownItemPreview({ variant }: { variant: FigmaVariant }) {
         className="umc-dropdown-item"
         data-size={size}
         data-highlighted={presence(state === "Hover")}
-        data-selected={presence(state === "Active")}
+        data-selected={presence(state === "Selected")}
         data-disabled={presence(state === "Disabled")}
       >
         <span className="umc-dropdown-item__content">{ITEM_LABEL}</span>
-        {state === "Active" && (
+        {state === "Selected" && (
           <span className="umc-dropdown-item__indicator">
             <LegacyCheckGlyph />
           </span>
@@ -116,7 +175,7 @@ export function DropdownItemAllVariants() {
       rows={["State"]}
       columns={["Size"]}
       order={{
-        State: ["Default", "Hover", "Active", "Disabled"],
+        State: ["Default", "Hover", "Selected", "Disabled"],
         Size: ["Xs", "Sm", "Md"],
       }}
       render={(variant) => <DropdownItemPreview variant={variant} />}
