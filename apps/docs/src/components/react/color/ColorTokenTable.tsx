@@ -2,7 +2,6 @@ import type { ColorTokenRow } from "./color-tokens.ts"
 
 type ColorTokenTableProps = {
   rows: readonly ColorTokenRow[]
-  codeSyntaxCounts: ReadonlyMap<string, number>
 }
 
 function TailwindName({ row }: { row: ColorTokenRow }) {
@@ -21,29 +20,7 @@ function TailwindName({ row }: { row: ColorTokenRow }) {
   )
 }
 
-function DevModeName({
-  codeSyntax,
-  sharedCount,
-}: {
-  codeSyntax: string
-  sharedCount: number
-}) {
-  return (
-    <div className="umc-sub">
-      Dev Mode <code>{codeSyntax}</code>
-      {sharedCount > 1 ? (
-        <span className="umc-color-shared">
-          변수 {sharedCount}개가 같은 이름
-        </span>
-      ) : null}
-    </div>
-  )
-}
-
-export function ColorTokenTable({
-  rows,
-  codeSyntaxCounts,
-}: ColorTokenTableProps) {
+export function ColorTokenTable({ rows }: ColorTokenTableProps) {
   return (
     <div className="not-content umc-scroll">
       <table className="umc-table">
@@ -70,10 +47,9 @@ export function ColorTokenTable({
                   CSS <code>{row.cssVariable}</code>
                 </div>
                 {row.codeSyntax === null ? null : (
-                  <DevModeName
-                    codeSyntax={row.codeSyntax}
-                    sharedCount={codeSyntaxCounts.get(row.codeSyntax) ?? 0}
-                  />
+                  <div className="umc-sub">
+                    Dev Mode <code>{row.codeSyntax}</code>
+                  </div>
                 )}
               </td>
               <td>

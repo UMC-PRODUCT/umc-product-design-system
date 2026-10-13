@@ -61,18 +61,6 @@ const OPAQUE_ALPHA = 1
 const ALPHA_CHANNEL_MAX = 255
 const PERCENT = 100
 
-export const countCodeSyntax = (
-  rows: readonly ColorTokenRow[],
-): ReadonlyMap<string, number> => {
-  const counts = new Map<string, number>()
-  for (const row of rows) {
-    if (row.codeSyntax !== null) {
-      counts.set(row.codeSyntax, (counts.get(row.codeSyntax) ?? 0) + 1)
-    }
-  }
-  return counts
-}
-
 const expandShortHex = (digits: string): string =>
   digits.length === SHORT_HEX_DIGITS
     ? [...digits].map((digit) => digit.repeat(2)).join("")
