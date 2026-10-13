@@ -53,3 +53,4 @@ export {
   type DotBadgeProps,
   type DotBadgeSize,
 } from "./dot-badge/index.ts"
+export { Skeleton, type SkeletonProps } from "./skeleton/index.ts"

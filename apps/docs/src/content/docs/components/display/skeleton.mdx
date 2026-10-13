@@ -1,0 +1,57 @@
+---
+title: Skeleton
+description: 내용을 불러오는 동안 자리를 잡아 두는 회색 막대입니다.
+---
+
+import {
+  SkeletonDefault,
+  SkeletonLoadingList,
+  SkeletonSizes,
+} from "../../../../components/react/display/SkeletonExamples.tsx"
+
+피그마 `Skeleton/Line`을 옮긴 컴포넌트입니다. 실제 글 길이에 1:1로 맞추지 않고, 내용이 왔을 때 화면이 덜 흔들릴 만큼만 비슷한 모양으로 둡니다. 기본 모양은 부모 폭을 채우는 14px 높이 막대입니다. 투명도가 천천히 바뀌며 불러오는 중임을 보여 줍니다.
+
+```tsx
+import { Skeleton } from "@umc-product/react"
+
+<Skeleton />
+<Skeleton width={200} height={18} />
+```
+
+<SkeletonDefault />
+
+## 높이와 너비
+
+`width`와 `height`에 숫자를 넘기면 px로 씁니다. 문자열(`"60%"`)은 그대로 씁니다. 제목 자리는 조금 높고 짧게, 본문 자리는 부모 폭을 채우게 두면 실제 화면과 비슷해집니다.
+
+<SkeletonSizes />
+
+## 불러오는 동안 알리기
+
+Skeleton은 화면 낭독기에서 숨겨지므로(`aria-hidden`), 불러오는 상태는 Skeleton을 감싸는 영역이 알립니다. 영역에 `aria-busy="true"`를 주고 눈에 보이지 않는 안내 문구를 함께 둡니다. 내용이 오면 Skeleton을 지우고 `aria-busy`도 뗍니다.
+
+```tsx
+<section aria-busy="true" aria-label="공지 목록">
+  <span className="sr-only">공지를 불러오는 중입니다</span>
+  <Skeleton width={200} />
+  <Skeleton />
+</section>
+```
+
+<SkeletonLoadingList />
+
+## props
+
+| prop        | 타입                      | 기본값   | 설명                 |
+| ----------- | ------------------------- | -------- | -------------------- |
+| `width`     | `CSSProperties["width"]`  | `"100%"` | 막대 너비. 숫자는 px |
+| `height`    | `CSSProperties["height"]` | `14`     | 막대 높이. 숫자는 px |
+| `ref`       | `Ref<HTMLSpanElement>`    |          | 루트 요소 ref        |
+| `className` | `string`                  |          | 추가 클래스          |
+
+나머지 `span` 속성은 루트 요소에 전달됩니다. `children`은 받지 않습니다.
+
+## 알아 둘 점
+
+- 움직임 줄이기 설정(`prefers-reduced-motion: reduce`)에서는 깜빡이지 않습니다.
+- `forced-colors` 모드에서는 막대를 `GrayText`로 그립니다.
