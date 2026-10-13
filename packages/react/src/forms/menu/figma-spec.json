@@ -6,25 +6,41 @@
     {
       "specId": "menu-list",
       "interaction": "open",
-      "node": "2281:4301",
-      "variant": "Dropdown_List",
-      "target": ".umc-dropdown-list",
+      "node": "4050:63397",
+      "variant": "Meue List, Size=Sm",
+      "target": ".umc-menu",
       "expected": {
         "background-color": "#ffffff",
-        "border-top-width": "1px",
-        "border-top-color": "#fbfcfc",
-        "border-top-left-radius": "8px",
-        "padding-top": "2px",
-        "padding-left": "2px",
-        "row-gap": "2px",
+        "border-top-width": "0px",
+        "border-top-left-radius": "12px",
+        "padding-top": "4px",
+        "padding-left": "4px",
+        "row-gap": "0px",
+        "min-width": "100px",
         "box-shadow~": "#40444329 0px 4px 16px 0px"
+      }
+    },
+    {
+      "specId": "menu-title",
+      "interaction": "open",
+      "node": "4050:63388",
+      "variant": "Meue List, Size=Sm",
+      "target": ".umc-menu__title",
+      "expected": {
+        "padding-top": "7px",
+        "padding-left": "12px",
+        "color": "#98938f",
+        "font-size": "14px",
+        "font-weight": "500",
+        "line-height": "18.9px",
+        "letter-spacing": "0px"
       }
     },
     {
       "specId": "menu-item",
       "interaction": "open",
       "node": "2281:4252",
-      "variant": "Dropdown/Item, Size=Sm, State=Default",
+      "variant": ".primitve/Meue Item/Text Only, Size=Sm, State=Default",
       "target": ".umc-dropdown-item:not([data-highlighted])",
       "expected": {
         "height": "38px",

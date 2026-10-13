@@ -22,7 +22,7 @@
    - Context Switcher 체크와 화살표: `icon/Check/16 icon/Regular`, `icon/Expand_more/16 icon/Regular`
 6. Hover와 Focus 상태가 없는 컴포넌트가 많습니다. 포커스 표시는 2px `border-primary-strong-500` 외곽선으로 통일했습니다.
 7. 나타나고 사라지는 움직임 정의가 없습니다. 150ms 투명도 전환을 기본으로 넣었고, 움직임 줄이기 설정에서는 끕니다.
-8. 노션 명명 규칙과 다른 이름이 있습니다: `Pressed(Hover)`, `Focused & Hover`, Tooltip의 `Appearance`, Option Button의 `Direction`, 오타 `Disalbed`, `Defalut`, `Numberic`, `Varient`, `Meue`, `Sub Meue`, `Eye_visable`, `Solt`.
+8. 노션 명명 규칙과 다른 이름이 있습니다: `Pressed(Hover)`, `Focused & Hover`, Tooltip의 `Appearance`, Option Button의 `Direction`, 오타 `Disalbed`, `Defalut`, `Numberic`, `Varient`, `Meue`, `Sub Meue`, `.primitve`(Menu 항목), `Eye_visable`, `Solt`.
 9. 파비콘 에셋이 없습니다. 문서 사이트는 `Logo/UMC`의 U 글자 모양과 색(`#3F4141`)을 그대로 떼어 임시로 씁니다. 정사각형 파비콘이나 앱 아이콘을 주시면 바꾸겠습니다.
 
 ## 토큰
@@ -161,9 +161,12 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 4. Text Field Label의 `Caption=True`(레이블 옆 회색 보조 문구)는 아직 넣지 않았습니다. 쓰임새를 알려 주세요.
 5. 지우기 아이콘 색 `#e2e4e3`이 3기 토큰에 없습니다(`#e2e3e3`과 1단계 차이).
 6. Select 목록이 열린 상태가 따로 없어 hover 배경(`#fbfcfc`)을 유지하고 화살표를 180도 돌립니다.
-7. Dropdown에 위험한 동작(삭제) 항목 스타일과 아이콘 자리가 없습니다. Menu의 `tone`, `icon`은 확인 전까지 뺐습니다.
+7. Dropdown에 위험한 동작(삭제) 항목 스타일과 아이콘 자리가 없습니다. Menu의 `tone`, `icon`은 확인 전까지 뺐습니다. 2026-10-13 `Meue List` 예시에 빨간 글자 "삭제" 항목이 생겼습니다. 이 모양을 항목 변형으로 만들지 알려 주세요.
 8. Code Input의 Hover 설명 "Focus 중, Error 중 Success 중, 디폴트 미포함"의 뜻을 알려 주세요. 지금은 비활성이 아니면 모든 칸에 hover를 적용합니다. Success 상태도 피그마에 없습니다.
 9. Numeric Stepper 숫자 칸의 좌우 패딩 20px은 106px 너비 안에 들어가지 않아(34px 칸) 패딩 없이 가운데 정렬했습니다. 기본 범위는 설명대로 0부터 999입니다.
+10. Menu 완성형 `Meue List`의 타이틀 글자색이 2기 변수 `Color/Neutrals/WarmGray-400`(`#98938f`)입니다. 3기에 같은 값이 없어 피그마 값을 컴포넌트 변수로 씁니다. 가까운 3기 값은 `TealGrey-400`(`#adadad`)과 `TealGrey-500`(`#7e7f7f`)입니다. 어느 변수로 연결할지 알려 주세요.
+11. `Meue List`에는 Sm과 Md만 있고, 항목 `.primitve/Meue Item/Text Only`에는 Xs가 남아 있습니다. 코드 Menu는 `xs`를 유지하고, Xs 목록은 Sm과 같은 모양(최소 폭 100px, 타이틀 좌우 여백 12px)으로 가정했습니다. Xs 목록을 계속 쓸지 알려 주세요.
+12. Select 목록도 `Meue List` 모양(여백 4px, 모서리 12px, 테두리 없음, 항목 간격 0)을 따르는지 알려 주세요. 예시의 Select 목록은 아직 `Dropdown_List`(여백 2px, 모서리 8px, 테두리 1px, 항목 간격 2px)라 코드는 Menu만 바꿨습니다.
 
 ## 부록: 문서에서 옮겨 온 '피그마와 다른 점'
 

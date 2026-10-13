@@ -6,10 +6,12 @@ description: 버튼을 눌러 여는 동작 목록입니다.
 import {
   DropdownItemAllVariants,
   MenuDefault,
+  MenuListAllVariants,
   MenuSizes,
+  MenuWithTitle,
 } from "../../../../components/react/forms/MenuExamples.tsx"
 
-피그마 `Dropdown_List`와 `Dropdown/Item`을 동작 목록으로 씁니다. `Select`가 값을 고르는 목록이라면 `Menu`는 수정, 삭제 같은 동작을 고릅니다. 고른 상태를 남기지 않으므로 체크 표시가 없습니다.
+피그마 `Meue List`를 동작 목록으로 씁니다. 목록 항목은 `.primitve/Meue Item/Text Only`입니다. `Select`가 값을 고르는 목록이라면 `Menu`는 수정, 삭제 같은 동작을 고릅니다. 고른 상태를 남기지 않으므로 체크 표시가 없습니다.
 
 ```tsx
 import { Button, Menu } from "@umc-product/react"
@@ -29,15 +31,23 @@ import { Button, Menu } from "@umc-product/react"
 
 <MenuDefault client:visible />
 
+## 타이틀
+
+`title`을 넘기면 항목 위에 회색 타이틀이 붙습니다. 화면 낭독기는 타이틀을 항목 묶음의 이름으로 읽습니다. 타이틀이 목록보다 길면 목록이 타이틀 폭만큼 넓어집니다.
+
+<MenuWithTitle client:visible />
+
 ## 크기
 
-`size`는 피그마 `Dropdown/Item`의 Xs, Sm, Md입니다.
+`size`는 항목 크기 Xs, Sm, Md입니다. 목록의 최소 폭도 함께 정해져 Xs와 Sm은 100px, Md는 140px입니다.
 
 <MenuSizes client:visible />
 
 ## 모든 변형
 
-피그마 `Dropdown/Item` 변형 12개를 그렸습니다. 목록은 열려 있을 때만 보이므로 항목을 목록 밖에 고정해 그렸고, Select 목록도 같은 항목을 씁니다. 칸에 마우스를 올리면 코드가 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
+피그마 `Meue List` 변형 2개와 `.primitve/Meue Item/Text Only` 변형 12개를 그렸습니다. 목록은 열려 있을 때만 보이므로 펼친 모습을 고정해 그렸습니다. 항목은 Select 목록도 같이 씁니다. 칸에 마우스를 올리면 코드가 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
+
+<MenuListAllVariants />
 
 <DropdownItemAllVariants />
 
@@ -47,7 +57,8 @@ import { Button, Menu } from "@umc-product/react"
 | --------- | ---------------------- | ------ | ---------------------------------- |
 | `trigger` | `ReactElement`         | 없음   | 목록을 여는 요소. 버튼 요소여야 함 |
 | `items`   | `MenuItemDef[]`        | 없음   | `label`, `onClick`, `disabled`     |
-| `size`    | `"xs" \| "sm" \| "md"` | `"sm"` | 항목 크기                          |
+| `title`   | `ReactNode`            | 없음   | 항목 위에 두는 타이틀              |
+| `size`    | `"xs" \| "sm" \| "md"` | `"sm"` | 항목 크기와 목록 최소 폭           |
 
 ## 알아 둘 점
 
