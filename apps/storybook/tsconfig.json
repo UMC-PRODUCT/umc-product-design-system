@@ -7,5 +7,12 @@
     "jsx": "react-jsx",
     "types": ["node", "vite/client"]
   },
-  "include": [".storybook/*.ts", ".storybook/*.tsx", "src", "vite.config.ts"]
+  "include": [
+    ".storybook/*.ts",
+    ".storybook/*.tsx",
+    "src",
+    "vite.config.ts",
+    "vitest.config.ts",
+    "vitest.setup.ts"
+  ]
 }
