@@ -20,4 +20,5 @@
 - [ ] 깨지는 변경이면 changeset에 옛 이름과 새 이름의 대응표를 넣었다
 - [ ] 값만 바뀌어 화면이 달라지면 changeset을 **화면 변화**로 시작하고 전후 값을 적었다
 - [ ] 컴포넌트 문서(예시, props 표, 알아 둘 점)를 함께 고쳤다
+- [ ] 컴포넌트를 추가하거나 props를 바꿨으면 `apps/storybook` 스토리도 고쳤다
 - [ ] 피그마와 다르게 옮긴 값은 `figma-spec.json`의 `figmaDiffers`와 `design-questions.md`에 남겼다

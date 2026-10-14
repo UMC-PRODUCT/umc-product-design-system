@@ -4,7 +4,7 @@
 
 - 독자: `@umc-product/react`에 컴포넌트를 추가하는 개발자
 - 소유자: UMC PRODUCT Design Chapter
-- 기준일: 2026-10-09
+- 기준일: 2026-10-13
 
 기준 구현은 `packages/react/src/button/`입니다. 막히면 Button이 같은 문제를 어떻게 풀었는지 먼저 봅니다.
 
@@ -22,6 +22,7 @@ packages/react/src/<group>/
     figma-spec.json         피그마 대조 기준
 apps/docs/src/content/docs/components/<group>/<component>.mdx
 apps/docs/src/components/react/<group>/<Component>Examples.tsx
+apps/storybook/src/stories/<group>/<Component>.stories.tsx
 ```
 
 그룹은 `forms`, `selection`, `display`, `overlay`, `shell`이고, Button, TextButton처럼 단독 컴포넌트는 자기 폴더를 가집니다. 단독 컴포넌트의 문서는 `components/actions/`에, 예시는 그룹 폴더 없이 `apps/docs/src/components/react/`에 둡니다. `styles.css`와 `src/index.ts`는 그룹 단위로만 불러오므로, 그룹에 컴포넌트를 더할 때는 이 두 파일을 고치지 않습니다. 단독 컴포넌트는 자기 폴더가 곧 그룹이라 두 파일에 한 줄씩 더합니다.
@@ -132,3 +133,16 @@ apps/docs/src/components/react/<group>/<Component>Examples.tsx
 - **검사**: `pnpm docs:build` 뒤 `pnpm docs:variants`를 실행합니다. 스냅샷의 모든 변형이 문서에 정확히 한 번 그려졌는지 확인하고, 빠지거나 겹치면 실패합니다.
 
 피그마가 바뀌면 스냅샷을 다시 받고, 새 값에 맞춰 `render`의 대응표를 고친 뒤 검사를 돌립니다.
+
+## Storybook 스토리
+
+컴포넌트마다 `apps/storybook/src/stories/<group>/<Component>.stories.tsx`에 스토리 파일을 하나 둡니다. Storybook은 props를 바꾸고 hover, focus 상태를 켜 보는 곳입니다. 피그마 변형을 모두 모은 그리드는 문서 사이트가 맡습니다.
+
+- `title`은 문서 사이드바와 같은 그룹 이름을 붙인 문자열(`"액션/Button"`)입니다. `id`는 kebab-case 문자열(`"button"`)로 두어 그룹 이름이 바뀌어도 주소가 유지되게 합니다. Storybook이 두 값을 정적으로 읽으므로 상수로 만들지 않습니다.
+- `parameters`에 `componentParameters("<Component>")`를 넣습니다. `figma-spec.json`의 `page`로 문서 링크를 만듭니다.
+- 기본 스토리는 `Playground` 하나입니다. 목록이 열린 모습처럼 상태 강제 도구로 켤 수 없는 모습만 `Opened` 같은 스토리를 더하고 play 함수로 엽니다.
+- `value`, `checked`, `open`은 `useArgs`로 Controls와 맞춥니다. 텍스트 입력은 `defaultValue`와 `key`로 다시 마운트합니다.
+- 스토리 단위로 viewport를 정하지 않습니다. 정하면 도구 막대에서 화면 폭을 바꿀 수 없습니다.
+- 스토리는 컴포넌트 소스(`packages/react/src`)를 직접 읽으므로 props 타입이 곧 Controls가 됩니다.
+
+`apps/storybook/src/stories.test.tsx`가 모든 스토리를 jsdom에서 렌더합니다. `@umc-product/react`가 export하는 컴포넌트나 `figma-spec.json`이 있는 컴포넌트에 스토리가 없으면 실패합니다.
