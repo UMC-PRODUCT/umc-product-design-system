@@ -3,7 +3,11 @@ type FigmaSpec = {
   page?: string
 }
 
-const DOCS_SITE_URL = "https://umc-product.github.io/umc-product-design-system"
+const PAGES_DOCS_URL = "https://umc-product.github.io/umc-product-design-system"
+
+export const DOCS_SITE_URL = (
+  import.meta.env.STORYBOOK_DOCS_URL || PAGES_DOCS_URL
+).replace(/\/+$/, "")
 
 const PAGES_OUTSIDE_SPEC: Readonly<Record<string, string>> = {
   TopNavigation: "/components/shell/top-navigation/",
