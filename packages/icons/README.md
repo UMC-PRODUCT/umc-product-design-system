@@ -29,3 +29,5 @@ import { AddIcon, SearchIcon } from "@umc-product/icons"
 ## 라이선스
 
 UMC PRODUCT Design Chapter가 소유하고 관리합니다. UMC-PRODUCT 조직이나 Design Chapter가 승인한 팀의 구성원이 UMC PRODUCT 프로젝트에서만 쓸 수 있습니다. 조건은 패키지에 들어 있는 `LICENSE`에 있습니다.
+
+일부 아이콘은 [Ionicons](https://github.com/ionic-team/ionicons)에서 가져왔고 MIT License를 따릅니다. Ionicons의 저작권 표시와 라이선스 고지는 `LICENSE` 끝에 있습니다.
