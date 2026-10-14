@@ -2,9 +2,10 @@ import { existsSync, readdirSync, readFileSync, statSync } from "node:fs"
 import { join, relative } from "node:path"
 import { fileURLToPath } from "node:url"
 
+import { BASE_PATH } from "../site-config.mjs"
+
 const docsDir = fileURLToPath(new URL("..", import.meta.url))
 const distDir = join(docsDir, "dist")
-const BASE_PATH = "/umc-product-design-system"
 
 const URL_TAG = /<(?:a|link|script|img|source|iframe)\b[^>]*>/gi
 const URL_ATTRIBUTE = /\s(?:href|src)="([^"]*)"/g
