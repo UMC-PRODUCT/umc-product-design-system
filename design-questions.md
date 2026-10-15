@@ -22,7 +22,7 @@
    - Context Switcher 체크와 화살표: `icon/Check/16 icon/Regular`, `icon/Expand_more/16 icon/Regular`
 6. Hover와 Focus 상태가 없는 컴포넌트가 많습니다. 포커스 표시는 2px `border-primary-strong-500` 외곽선으로 통일했습니다.
 7. 나타나고 사라지는 움직임 정의가 없습니다. 150ms 투명도 전환을 기본으로 넣었고, 움직임 줄이기 설정에서는 끕니다.
-8. 노션 명명 규칙과 다른 이름이 있습니다: `Pressed(Hover)`, `Focused & Hover`, Tooltip의 `Appearance`, Option Button의 `Direction`, 오타 `Disalbed`, `Defalut`, `Numberic`, `Varient`, `Meue`, `Sub Meue`, `.primitve`(Menu 항목), `Eye_visable`, `Solt`.
+8. 노션 명명 규칙과 다른 이름이 있습니다: `Pressed(Hover)`, `Focused & Hover`, Tooltip의 `Appearance`, Option Button의 `Direction`, 오타 `Disalbed`, `Defalut`, `Numberic`, `Varient`, `Meue`, `Sub Meue`, `.primitve`(Menu 항목), `Eye_visable`, `Solt`, `Waring`(Web/Dialog Action Button Area). Web/Dialog의 상태 속성 이름은 `State 이거 변경 필요`입니다.
 9. 파비콘 에셋이 없습니다. 문서 사이트는 `Logo/UMC`의 U 글자 모양과 색(`#3F4141`)을 그대로 떼어 임시로 씁니다. 정사각형 파비콘이나 앱 아이콘을 주시면 바꾸겠습니다.
 
 ## 토큰
@@ -130,6 +130,18 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 7. `Toast Top` 변형은 닫기 버튼 없이 내용 폭이라 코드도 상단 토스트를 그렇게 그립니다. 그런데 `Toast Top`의 설명은 하단 설명과 같습니다(하단 96px, X로 닫기). 상단 토스트에도 닫기 버튼이 필요한지 알려 주세요. 하단 위치는 캔버스 메모(아래 여백 40px, 48px 토스트의 윗변 -88px)대로 바꿨습니다(2026-10-10). `Toast Bottom` 설명에는 아직 -86px로 적혀 있어 고쳐 주세요.
 8. Error 토스트와 입력 필드(CodeField 포함) 오류의 흔들림은 주석만 있어 400ms 동안 6px씩 두 번 흔들리게 가정했습니다.
 9. Scroll Fog는 아래쪽(74px)만 있어 다른 세 방향은 같은 값을 돌려 썼고, 끝 색을 흰 배경으로 가정했습니다. 회색 배경용 안개가 필요한지 알려 주세요.
+
+## 웹 오버레이
+
+2026-10-15에 새로 올라온 Web/Dialog를 옮기면서 찾은 내용입니다.
+
+1. Web/Dialog의 `Warning` 상태는 빨간 에러 색입니다(제목 `#dc3d3d`, 확인 버튼 Weak Red). 코드는 주황 경고와 헷갈리지 않게 `color="error"`로 부릅니다. 주황 경고 다이얼로그가 따로 필요한지 알려 주세요.
+2. Action Button Area의 `Neutral` 타입(확인 버튼 Fill Neutral)은 Web/Dialog 변형에 쓰인 곳이 없습니다. 코드는 `color="neutral"`로 열어 두었습니다. 어느 화면에 쓰는지 알려 주세요.
+3. Fill 버튼 영역은 Button Xs(36px)를 40px 높이로 늘려 씁니다. 코드도 Xs의 글자와 여백에 높이만 40px로 둡니다. Button에 40px 크기를 따로 둘지 알려 주세요.
+4. Weak 텍스트 버튼은 hover 모양이 없습니다. 기본 색은 Text Button hover를, 에러 색은 `Red-700`(`#c21f14`)을 hover에 가정했습니다.
+5. Slot Content 변형만 글과 버튼 사이 간격(32→24px), 글 사이 간격(12→10px), 제목(Title/2 20px→Title/1 22px)이 다릅니다. 코드는 콘텐츠를 넘기면 이 값으로 바꿉니다. 콘텐츠가 있으면 늘 이렇게 바뀌는 규칙인지 알려 주세요.
+6. Slot Content에 Weak 버튼을 둔 변형은 버튼 줄 높이가 68px로, 다른 Weak 변형의 40px과 다릅니다. 코드는 모든 Weak 버튼 줄을 40px로 둡니다.
+7. Web/Dialog의 `Shadow/Drop/Neutral_2`도 `#EFF0F080`으로 정의되어 파운데이션 토큰(`#eceeee85`)과 다릅니다(표시 7과 같음). 코드는 토큰을 씁니다.
 
 ## 모바일 앱 컴포넌트
 

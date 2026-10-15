@@ -3,6 +3,7 @@
 @import "./dimmed/dimmed.css";
 @import "./scroll-fog/scroll-fog.css";
 @import "./app-dialog/app-dialog.css";
+@import "./dialog/dialog.css";
 @import "./bottom-sheet/bottom-sheet.css";
 
 @layer components {
