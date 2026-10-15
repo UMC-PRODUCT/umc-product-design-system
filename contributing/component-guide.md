@@ -54,7 +54,7 @@ apps/docs/src/components/react/<group>/<Component>Examples.tsx
 - 변형은 data 속성(`data-variant`, `data-size`)으로 고르고, 변형 규칙은 팔레트 변수(`--umc-<component>-bg`)만 바꿉니다. 상태 규칙은 그 변수를 실제 속성에 넣습니다. 상태 규칙에서 팔레트 변수를 다시 정의하면 자기 참조가 생겨 값이 무효가 되니 피합니다.
 - 토큰에 없는 값은 `--umc-<component>-<role>` 변수에 담습니다. 색 리터럴이 규칙 본문에 바로 나오면 계약 테스트가 실패합니다.
 - 포커스는 `:focus-visible`에 `outline: 2px solid var(--umc-color-border-primary-strong-500)`를 줍니다. 혼자 있는 요소는 `outline-offset: 2px`, 붙어 있는 요소는 `-2px`입니다.
-- 떠 있는 요소의 쌓임 순서는 `--umc-z-dimmed`, `--umc-z-dropdown`, `--umc-z-tooltip`, `--umc-z-toast`를 씁니다.
+- 떠 있는 요소의 쌓임 순서는 아래부터 `--umc-z-dimmed`, `--umc-z-dialog`, `--umc-z-sheet`, `--umc-z-dropdown`, `--umc-z-tooltip`, `--umc-z-toast`입니다. 모달 안에서 여는 목록과 툴팁이 모달 위에 뜨도록 목록이 모달보다 위에 있습니다.
 - 나타나고 사라지는 동작은 `var(--umc-motion-duration)` 동안 투명도를 바꾸고, `prefers-reduced-motion: reduce`이면 없앱니다.
 
 ## 피그마 값
