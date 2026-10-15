@@ -1,0 +1,105 @@
+@layer components {
+  .umc-app-dialog__backdrop {
+    --umc-app-dialog-backdrop-bg: var(--umc-color-dimmed-medium);
+    position: fixed;
+    inset: 0;
+    z-index: var(--umc-z-dialog);
+    background-color: var(--umc-app-dialog-backdrop-bg);
+    opacity: 1;
+    transition: opacity var(--umc-motion-duration);
+  }
+
+  .umc-app-dialog__backdrop[data-starting-style],
+  .umc-app-dialog__backdrop[data-ending-style] {
+    opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .umc-app-dialog__backdrop,
+    .umc-app-dialog__popup {
+      transition: none;
+    }
+  }
+
+  .umc-app-dialog__popup {
+    --umc-app-dialog-bg: var(--umc-color-surface-default);
+    --umc-app-dialog-title-fg: #0d121c;
+    --umc-app-dialog-description-fg: var(--umc-color-text-neutral-medium-600);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: calc(var(--umc-z-dialog) + 1);
+    width: min(311px, calc(100vw - 32px));
+    max-height: 640px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--umc-radius-24);
+    background-color: var(--umc-app-dialog-bg);
+    opacity: 1;
+    transition: opacity var(--umc-motion-duration);
+  }
+
+  .umc-app-dialog__popup[data-starting-style],
+  .umc-app-dialog__popup[data-ending-style] {
+    opacity: 0;
+  }
+
+  .umc-app-dialog__text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--umc-spacing-gap-6);
+    padding-block-start: var(--umc-spacing-padding-20);
+    padding-inline: var(--umc-spacing-padding-20);
+    padding-block-end: var(--umc-spacing-padding-4);
+  }
+
+  .umc-app-dialog__text[data-layout="confirm"] {
+    padding-block-end: var(--umc-spacing-padding-0);
+  }
+
+  .umc-app-dialog__title {
+    font-family: var(--umc-typography-title-2-semibold-font-family);
+    font-size: var(--umc-typography-title-2-semibold-font-size);
+    font-weight: var(--umc-typography-title-2-semibold-font-weight);
+    line-height: var(--umc-typography-title-2-semibold-line-height);
+    letter-spacing: var(--umc-typography-title-2-semibold-letter-spacing);
+    color: var(--umc-app-dialog-title-fg);
+    width: 100%;
+  }
+
+  .umc-app-dialog__description {
+    font-family: var(--umc-typography-body-2-regular-font-family);
+    font-size: var(--umc-typography-body-2-regular-font-size);
+    font-weight: var(--umc-typography-body-2-regular-font-weight);
+    line-height: var(--umc-typography-body-2-regular-line-height);
+    letter-spacing: var(--umc-typography-body-2-regular-letter-spacing);
+    color: var(--umc-app-dialog-description-fg);
+    width: 100%;
+  }
+
+  .umc-app-dialog__button-area {
+    display: flex;
+    padding: var(--umc-spacing-padding-16);
+  }
+
+  .umc-app-dialog__button-area[data-variant="default"] {
+    gap: var(--umc-spacing-gap-10);
+    align-items: stretch;
+  }
+
+  .umc-app-dialog__button-area[data-variant="default"] .umc-button {
+    --umc-button-radius: var(--umc-radius-button-10);
+    --umc-button-font-size: var(--umc-typography-label-4-medium-font-size);
+    --umc-button-letter-spacing: var(
+      --umc-typography-label-4-medium-letter-spacing
+    );
+    flex: 1 0 0;
+    min-width: 0;
+  }
+
+  .umc-app-dialog__button-area[data-variant="weak"] {
+    justify-content: flex-end;
+  }
+}

@@ -1,6 +1,6 @@
 ---
 title: Bottom Navigation
-description: 모바일 앱 하단에 놓는 탭 바입니다.
+description: Android 앱과 웹 화면 하단에 놓는 탭 바입니다.
 ---
 
 import {
@@ -8,7 +8,9 @@ import {
   BottomNavigationDefault,
 } from "../../../../components/react/shell/BottomNavigationExamples.tsx"
 
-피그마 `App/Bottom navigation`을 구현했습니다. iOS는 `env(safe-area-inset-bottom)`으로 홈 인디케이터 영역을 자동 확보하고, Android는 최소 4px 하단 패딩을 유지합니다. 현재 경로가 `href`와 같거나 그 하위 경로이면 그 탭에 `aria-current="page"`가 붙습니다.
+피그마 `App/Bottom navigation`의 Android 변형을 구현했습니다. iOS 앱은 시스템이 제공하는 리퀴드 글래스 탭 바를 씁니다([Apple 탭 바 가이드](https://developer.apple.com/design/human-interface-guidelines/tab-bars)). 그래서 이 컴포넌트는 Android 앱과 웹 화면에서 씁니다.
+
+iPhone 브라우저로 연 웹 화면에서는 `env(safe-area-inset-bottom)`으로 홈 인디케이터 영역을 비우고, 그 밖의 화면에서는 아래 여백을 최소 4px 둡니다. 현재 경로가 `href`와 같거나 그 하위 경로이면 그 탭에 `aria-current="page"`가 붙습니다.
 
 ```tsx
 import {

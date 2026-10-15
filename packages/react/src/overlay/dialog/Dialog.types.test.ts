@@ -1,34 +1,43 @@
+import type { ReactNode } from "react"
 import { describe, expectTypeOf, it } from "vitest"
 
-import type { DialogProps } from "./Dialog.tsx"
+import type { DialogColor, DialogProps } from "./Dialog.tsx"
+
+type RequiredKeys<T> = {
+  [K in keyof T]-?: object extends Pick<T, K> ? never : K
+}[keyof T]
 
 describe("DialogProps", () => {
-  it("confirmLabel은 ReactNode다", () => {
-    expectTypeOf<DialogProps["confirmLabel"]>().not.toBeUndefined()
-  })
-
-  it("cancelLabel은 ReactNode이거나 undefined다", () => {
-    expectTypeOf<DialogProps["cancelLabel"]>().toEqualTypeOf<
-      import("react").ReactNode
+  it("color는 primary, neutral, error 세 가지다", () => {
+    expectTypeOf<DialogColor>().toEqualTypeOf<"primary" | "neutral" | "error">()
+    expectTypeOf<DialogProps["color"]>().toEqualTypeOf<
+      DialogColor | undefined
     >()
   })
 
-  it("open은 boolean이거나 undefined다", () => {
-    expectTypeOf<DialogProps["open"]>().toEqualTypeOf<boolean | undefined>()
+  it("반드시 넘길 값은 title과 confirmLabel뿐이다", () => {
+    expectTypeOf<RequiredKeys<DialogProps>>().toEqualTypeOf<
+      "title" | "confirmLabel"
+    >()
+  })
+
+  it("icon과 children은 ReactNode다", () => {
+    expectTypeOf<DialogProps["icon"]>().toEqualTypeOf<ReactNode>()
+    expectTypeOf<DialogProps["children"]>().toEqualTypeOf<ReactNode>()
+  })
+
+  it("onConfirm과 onCancel은 인자 없이 호출된다", () => {
+    expectTypeOf<
+      NonNullable<DialogProps["onConfirm"]>
+    >().parameters.toEqualTypeOf<[]>()
+    expectTypeOf<
+      NonNullable<DialogProps["onCancel"]>
+    >().parameters.toEqualTypeOf<[]>()
   })
 
   it("onOpenChange는 boolean을 받는다", () => {
-    type OnOpenChange = NonNullable<DialogProps["onOpenChange"]>
-    expectTypeOf<OnOpenChange>().parameter(0).toEqualTypeOf<boolean>()
-  })
-
-  it("onConfirm은 인자 없이 호출된다", () => {
-    type OnConfirm = NonNullable<DialogProps["onConfirm"]>
-    expectTypeOf<OnConfirm>().parameters.toEqualTypeOf<[]>()
-  })
-
-  it("onCancel은 인자 없이 호출된다", () => {
-    type OnCancel = NonNullable<DialogProps["onCancel"]>
-    expectTypeOf<OnCancel>().parameters.toEqualTypeOf<[]>()
+    expectTypeOf<NonNullable<DialogProps["onOpenChange"]>>()
+      .parameter(0)
+      .toEqualTypeOf<boolean>()
   })
 })

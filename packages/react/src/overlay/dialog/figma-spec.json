@@ -1,79 +1,210 @@
 {
   "component": "Dialog",
-  "figmaSection": "2538:25065",
+  "figmaSection": "4153:74862",
   "page": "/components/overlay/dialog/",
   "nodes": [
     {
-      "specId": "dialog-alert",
-      "node": "2538:25066",
-      "variant": "Type=Alert",
+      "specId": "dialog-default",
+      "node": "2281:4349",
+      "variant": "State 이거 변경 필요=Default, Button Style=Fill, Show Icon=False",
       "target": ".umc-dialog__popup",
       "expected": {
-        "width": "311px",
+        "width": "430px",
+        "padding-top": "20px",
+        "padding-right": "20px",
+        "padding-bottom": "20px",
+        "padding-left": "20px",
         "border-top-left-radius": "24px",
-        "border-top-right-radius": "24px",
-        "border-bottom-left-radius": "24px",
-        "border-bottom-right-radius": "24px",
-        "background-color": "#f4f5f5"
+        "background-color": "#ffffff",
+        "row-gap": "32px",
+        "box-shadow~": "#eceeee85 0px 4px 16px 0px"
+      },
+      "figmaDiffers": {
+        "box-shadow~": "피그마는 이름이 같은 Shadow/Drop/Neutral_2의 다른 정의(#EFF0F080, 0, 4, 16)를 쓴다. 이름 있는 스타일은 토큰을 쓰는 규칙에 따라 토큰 정의를 썼다"
       }
     },
     {
-      "specId": "dialog-alert-title",
-      "node": "2538:25066",
-      "variant": "Type=Alert",
+      "specId": "dialog-default-text",
+      "node": "2281:4351",
+      "variant": "State 이거 변경 필요=Default, Button Style=Fill, Show Icon=False",
+      "target": ".umc-dialog__text",
+      "expected": {
+        "padding-top": "4px",
+        "padding-left": "4px",
+        "padding-right": "4px",
+        "row-gap": "12px"
+      }
+    },
+    {
+      "specId": "dialog-default-title",
+      "node": "2281:4354",
+      "variant": "State 이거 변경 필요=Default, Button Style=Fill, Show Icon=False",
       "target": ".umc-dialog__title",
       "expected": {
+        "color": "#0f1010",
         "font-size": "20px",
         "font-weight": "600",
-        "line-height": "28px"
+        "line-height": "28px",
+        "letter-spacing": "-0.2px"
       }
     },
     {
-      "specId": "dialog-alert-description",
-      "node": "2538:25066",
-      "variant": "Type=Alert",
+      "specId": "dialog-default-description",
+      "node": "2281:4356",
+      "variant": "State 이거 변경 필요=Default, Button Style=Fill, Show Icon=False",
       "target": ".umc-dialog__description",
       "expected": {
-        "font-size": "15px",
-        "font-weight": "400",
-        "line-height": "22.5px"
+        "color": "#606262",
+        "font-size": "16px",
+        "font-weight": "500",
+        "line-height": "23.2px",
+        "letter-spacing": "-0.16px"
       }
     },
     {
-      "specId": "dialog-alert-button-area",
-      "node": "2538:14973",
-      "variant": "Type=Default",
-      "target": ".umc-dialog__button-area[data-variant='default']",
+      "specId": "dialog-default-actions",
+      "node": "2281:4357",
+      "variant": "State 이거 변경 필요=Default, Button Style=Fill, Show Icon=False",
+      "target": ".umc-dialog__actions",
       "expected": {
-        "padding-top": "16px",
-        "padding-left": "16px",
-        "padding-right": "16px",
-        "padding-bottom": "16px",
-        "column-gap": "10px"
+        "justify-content": "flex-end",
+        "column-gap": "12px"
       }
     },
     {
-      "specId": "dialog-alert-cancel-button",
-      "node": "2538:14973",
-      "variant": "Type=Default 취소 버튼",
-      "target": ".umc-dialog__button-area[data-variant='default'] .umc-button[data-color='neutral']",
+      "specId": "dialog-default-cancel",
+      "node": "3928:61522",
+      "variant": "State 이거 변경 필요=Default, Button Style=Fill, Show Icon=False",
+      "target": ".umc-dialog__actions .umc-button:first-child",
       "expected": {
-        "height": "48px",
+        "height": "40px",
+        "min-width": "60px",
+        "padding-left": "14px",
         "border-top-left-radius": "10px",
-        "font-size": "15px"
+        "font-size": "15px",
+        "background-color": "#eff0f0",
+        "color": "#606262"
       }
     },
     {
-      "specId": "dialog-confirm-button-area",
-      "node": "2538:14973",
-      "variant": "Type=Weak",
-      "target": ".umc-dialog__button-area[data-variant='weak']",
+      "specId": "dialog-default-confirm",
+      "node": "3928:61523",
+      "variant": "State 이거 변경 필요=Default, Button Style=Fill, Show Icon=False",
+      "target": ".umc-dialog__actions .umc-button:last-child",
       "expected": {
-        "padding-top": "16px",
-        "padding-left": "16px",
-        "padding-right": "16px",
-        "padding-bottom": "16px",
-        "justify-content": "flex-end"
+        "height": "40px",
+        "background-color": "#008a80",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "dialog-icon",
+      "node": "3928:61965",
+      "variant": "State 이거 변경 필요=Default, Button Style=Fill, Show Icon=True",
+      "target": ".umc-dialog__heading",
+      "expected": {
+        "column-gap": "8px",
+        "align-items": "center"
+      }
+    },
+    {
+      "specId": "dialog-icon-graphic",
+      "node": "3928:61760",
+      "variant": "State 이거 변경 필요=Default, Button Style=Fill, Show Icon=True",
+      "target": ".umc-dialog__icon",
+      "expected": {
+        "width": "24px",
+        "height": "24px"
+      }
+    },
+    {
+      "specId": "dialog-error-title",
+      "node": "3928:61636",
+      "variant": "State 이거 변경 필요=Warning, Button Style=Fill, Show Icon=False",
+      "target": ".umc-dialog__title",
+      "expected": {
+        "color": "#dc3d3d"
+      }
+    },
+    {
+      "specId": "dialog-error-confirm",
+      "node": "3928:61695",
+      "variant": "State 이거 변경 필요=Warning, Button Style=Fill, Show Icon=False",
+      "target": ".umc-dialog__actions .umc-button:last-child",
+      "expected": {
+        "background-color": "#ffe7e5",
+        "color": "#c21f14"
+      }
+    },
+    {
+      "specId": "dialog-weak",
+      "node": "3928:63137",
+      "variant": "State 이거 변경 필요=Default, Button Style=Weak, Show Icon=False",
+      "target": ".umc-dialog__popup",
+      "expected": {
+        "padding-top": "20px",
+        "padding-bottom": "16px"
+      }
+    },
+    {
+      "specId": "dialog-weak-actions",
+      "node": "3928:63033",
+      "variant": "State 이거 변경 필요=Default, Button Style=Weak, Show Icon=False",
+      "target": ".umc-dialog__actions",
+      "expected": {
+        "height": "40px",
+        "padding-top": "6px",
+        "padding-left": "12px"
+      }
+    },
+    {
+      "specId": "dialog-weak-button",
+      "node": "3690:99355",
+      "variant": "State 이거 변경 필요=Default, Button Style=Weak, Show Icon=False",
+      "target": ".umc-dialog__actions .umc-text-button",
+      "expected": {
+        "color": "#02746c",
+        "font-size": "18px",
+        "font-weight": "500",
+        "letter-spacing": "-0.36px"
+      }
+    },
+    {
+      "specId": "dialog-error-weak-button",
+      "node": "4158:76181",
+      "variant": "State 이거 변경 필요=Warning, Button Style=Weak, Show Icon=False",
+      "target": ".umc-dialog__actions .umc-text-button",
+      "expected": {
+        "color": "#dc3d3d",
+        "font-size": "18px"
+      }
+    },
+    {
+      "specId": "dialog-content",
+      "node": "4139:64957",
+      "variant": "State 이거 변경 필요=Slot Content, Button Style=Fill, Show Icon=False",
+      "target": ".umc-dialog__popup",
+      "expected": {
+        "row-gap": "24px"
+      }
+    },
+    {
+      "specId": "dialog-content-text",
+      "node": "4139:64959",
+      "variant": "State 이거 변경 필요=Slot Content, Button Style=Fill, Show Icon=False",
+      "target": ".umc-dialog__text",
+      "expected": {
+        "row-gap": "10px"
+      }
+    },
+    {
+      "specId": "dialog-content-title",
+      "node": "4139:64961",
+      "variant": "State 이거 변경 필요=Slot Content, Button Style=Fill, Show Icon=False",
+      "target": ".umc-dialog__title",
+      "expected": {
+        "font-size": "22px",
+        "line-height": "30.8px"
       }
     }
   ]

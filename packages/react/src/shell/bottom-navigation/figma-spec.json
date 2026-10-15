@@ -1,13 +1,13 @@
 {
   "component": "BottomNavigation",
   "figmaNode": "2472:19950",
-  "fetchedAt": "2026-10-11",
+  "fetchedAt": "2026-10-15",
   "specimens": [
     {
-      "id": "bottom-navigation-ios",
-      "description": "iOS platform — with safe-area padding",
-      "variant": "Platform=iOS",
-      "selector": "[data-spec-id='bottom-navigation-ios'] .umc-bottom-navigation__bar",
+      "id": "bottom-navigation-android",
+      "description": "Android platform — iOS apps use the system tab bar",
+      "variant": "Platform=Android",
+      "selector": "[data-spec-id='bottom-navigation-android'] .umc-bottom-navigation__bar",
       "expected": {
         "display": "flex",
         "alignItems": "stretch",

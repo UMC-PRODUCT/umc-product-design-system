@@ -195,6 +195,12 @@ describe("buildComponents", () => {
     ).toBe(false)
   })
 
+  it("Location은 모든 굵기를 24×24 프레임으로 그린다", () => {
+    expect(
+      byName("LocationIcon").variants.map((variant) => variant.viewBox),
+    ).toEqual(["0 0 24 24", "0 0 24 24", "0 0 24 24"])
+  })
+
   it("Logo/UMC를 currentColor로 그리는 UmcLogo로 만든다", () => {
     const logo = byName("UmcLogo")
     expect(logo.kind).toBe("logo")

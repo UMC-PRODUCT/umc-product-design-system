@@ -8,10 +8,12 @@ export {
 export { useToast } from "./toast/useToast.ts"
 export { Dimmed, type DimmedProps } from "./dimmed/Dimmed.tsx"
 export { ScrollFog, type ScrollFogProps } from "./scroll-fog/ScrollFog.tsx"
-export { Dialog, type DialogProps } from "./dialog/Dialog.tsx"
+export { AppDialog, type AppDialogProps } from "./app-dialog/AppDialog.tsx"
+export { Dialog, type DialogColor, type DialogProps } from "./dialog/Dialog.tsx"
 export {
   BottomSheet,
   type BottomSheetProps,
   BottomSheetActions,
   type BottomSheetActionsProps,
 } from "./bottom-sheet/BottomSheet.tsx"
+export { Panel, type PanelProps } from "./panel/Panel.tsx"

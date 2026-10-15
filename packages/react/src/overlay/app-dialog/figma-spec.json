@@ -1,0 +1,80 @@
+{
+  "component": "AppDialog",
+  "figmaSection": "2538:25065",
+  "page": "/components/overlay/app-dialog/",
+  "nodes": [
+    {
+      "specId": "app-dialog-alert",
+      "node": "2538:25066",
+      "variant": "Type=Alert",
+      "target": ".umc-app-dialog__popup",
+      "expected": {
+        "width": "311px",
+        "border-top-left-radius": "24px",
+        "border-top-right-radius": "24px",
+        "border-bottom-left-radius": "24px",
+        "border-bottom-right-radius": "24px",
+        "background-color": "#f4f5f5"
+      }
+    },
+    {
+      "specId": "app-dialog-alert-title",
+      "node": "2538:25066",
+      "variant": "Type=Alert",
+      "target": ".umc-app-dialog__title",
+      "expected": {
+        "font-size": "20px",
+        "font-weight": "600",
+        "line-height": "28px"
+      }
+    },
+    {
+      "specId": "app-dialog-alert-description",
+      "node": "2538:25066",
+      "variant": "Type=Alert",
+      "target": ".umc-app-dialog__description",
+      "expected": {
+        "font-size": "15px",
+        "font-weight": "400",
+        "line-height": "22.5px"
+      }
+    },
+    {
+      "specId": "app-dialog-alert-button-area",
+      "node": "2538:14973",
+      "variant": "Type=Default",
+      "target": ".umc-app-dialog__button-area[data-variant='default']",
+      "expected": {
+        "padding-top": "16px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "padding-bottom": "16px",
+        "column-gap": "10px"
+      }
+    },
+    {
+      "specId": "app-dialog-alert-cancel-button",
+      "node": "2538:14973",
+      "variant": "Type=Default 취소 버튼",
+      "target": ".umc-app-dialog__button-area[data-variant='default'] .umc-button[data-color='neutral']",
+      "expected": {
+        "height": "48px",
+        "border-top-left-radius": "10px",
+        "font-size": "15px"
+      }
+    },
+    {
+      "specId": "app-dialog-confirm-button-area",
+      "node": "2538:14973",
+      "variant": "Type=Weak",
+      "target": ".umc-app-dialog__button-area[data-variant='weak']",
+      "expected": {
+        "padding-top": "16px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "padding-bottom": "16px",
+        "justify-content": "flex-end"
+      }
+    }
+  ]
+}

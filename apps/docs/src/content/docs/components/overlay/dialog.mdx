@@ -1,56 +1,94 @@
 ---
 title: Dialog
-description: 사용자에게 중요한 확인이나 알림을 전달하는 모달 다이얼로그입니다.
+description: 웹 화면에서 중요한 확인이나 알림을 전달하는 모달 다이얼로그입니다.
 ---
 
 import {
+  DialogActionButtonAreaVariants,
   DialogAllVariants,
-  DialogButtonAreaVariants,
-  DialogInteractiveAlert,
-  DialogInteractiveConfirm,
+  DialogContentExample,
+  DialogErrorExample,
+  DialogFillExample,
   DialogStaticPreview,
+  DialogStatusGraphicVariants,
+  DialogWeakExample,
 } from "../../../../components/react/overlay/DialogExamples.tsx"
 
-`cancelLabel`을 넘기면 취소·확인 버튼 두 개가 나오는 Alert 타입이 되고, 생략하면 확인 버튼 하나만 나오는 Confirm 타입이 됩니다. Base UI AlertDialog를 내부적으로 씁니다.
+피그마 `Web/Dialog`를 옮긴 컴포넌트로, 웹 화면에 씁니다. 모바일 앱 화면에는 [AppDialog](../app-dialog/)를 씁니다. 목록에서 여러 항목을 고르거나 긴 글을 보여 줄 때는 [Panel](../panel/)을 씁니다. 내부에서는 Base UI AlertDialog를 씁니다.
 
 ```tsx
 import { Dialog } from "@umc-product/react"
 
 <Dialog
   trigger={<button>열기</button>}
-  title="정말 삭제할까요?"
-  description="삭제한 데이터는 복구할 수 없습니다."
-  confirmLabel="삭제"
+  title="지원서를 제출할까요?"
+  description="제출한 지원서는 수정할 수 없어요."
+  confirmLabel="제출"
   cancelLabel="취소"
-  onConfirm={() => {}}
-  onCancel={() => {}}
-/>
-
-<Dialog
-  trigger={<button>열기</button>}
-  title="저장되었습니다."
-  confirmLabel="확인"
   onConfirm={() => {}}
 />
 ```
 
 ## 외형 미리보기
 
-피그마 `App/Dialog`의 Alert와 Confirm 타입을 고정해 그린 미리보기입니다.
+피그마 `Web/Dialog`의 기본 모양과 에러 색에 아이콘을 더한 모양을 고정해 그린 미리보기입니다.
 
 <DialogStaticPreview />
 
-## Alert 타입
+## 버튼 스타일
 
-`cancelLabel`을 넘기면 취소·확인 두 버튼이 가로로 나란히 나옵니다.
+`cancelLabel`을 넘기면 취소와 확인 버튼 두 개가 오른쪽에 나란히 놓입니다(피그마 `Fill`). 두 버튼은 `Button`의 xs 크기를 40px 높이로 씁니다.
 
-<DialogInteractiveAlert client:visible />
+<DialogFillExample client:visible />
 
-## Confirm 타입
+`cancelLabel`을 생략하면 확인 텍스트 버튼 하나만 남습니다(피그마 `Weak`). 알림을 읽었다는 확인만 받을 때 씁니다.
 
-`cancelLabel`을 생략하면 확인 버튼 하나가 오른쪽 끝에 놓입니다.
+<DialogWeakExample client:visible />
 
-<DialogInteractiveConfirm client:visible />
+## 색
+
+`color`는 확인 버튼과 제목의 색을 함께 정합니다. 기본값은 `primary`입니다.
+
+| `color`   | 확인 버튼(Fill)  | 확인 텍스트 버튼(Weak) | 제목·아이콘 |
+| --------- | ---------------- | ---------------------- | ----------- |
+| `primary` | `fill` `primary` | `brand`                | 기본 색     |
+| `neutral` | `fill` `neutral` | `neutral`              | 기본 색     |
+| `error`   | `weak` `red`     | 빨강                   | 빨강        |
+
+피그마의 `Warning` 상태는 빨간 에러 색입니다. 주황 경고 색과 헷갈리지 않게 코드에서는 `color="error"`라고 부릅니다. 삭제처럼 되돌릴 수 없는 결정을 물을 때 씁니다.
+
+<DialogErrorExample client:visible />
+
+## 아이콘
+
+`icon`에 넘긴 그래픽은 제목 앞 24px 자리에 그립니다. 화면 낭독기는 이 자리를 건너뛰므로 전할 뜻은 제목에 담습니다. 아이콘 색은 `color`를 따르고, 그래픽에 `className`으로 색을 주면 그 색이 우선합니다.
+
+| 피그마 Status Graphic | 코드                                                                |
+| --------------------- | ------------------------------------------------------------------- |
+| Success               | `<CheckPictogram size={24} />`                                      |
+| Construction          | `<UnderConstructionPictogram size={24} />`                          |
+| Warning Circle        | `<WarningIcon weight="fill" className="text-icon-warning" />`       |
+| Error Circle          | `<WarningIcon weight="fill" className="text-icon-error" />`         |
+| Error Triangle        | `<WarningTriangleIcon weight="fill" className="text-icon-error" />` |
+
+<DialogStatusGraphicVariants />
+
+## 콘텐츠
+
+`children`을 넘기면 설명과 버튼 사이에 콘텐츠 영역이 생깁니다. 이때 제목은 Title/1(22px)로 커지고, 글과 버튼 사이 간격은 32px에서 24px로 줄어듭니다. 짧은 요약이나 선택지 몇 개를 보여 줄 때 씁니다. 내용이 길어 스크롤이 필요하면 [Panel](../panel/)을 씁니다.
+
+<DialogContentExample client:visible />
+
+## 폭
+
+기본 폭은 430px, 최소 폭은 420px입니다. 화면이 그보다 좁으면 좌우에 16px씩 남기고 화면 폭에 맞춥니다. 375px 화면에서는 343px이 됩니다. 폭을 바꾸려면 `className="w-[560px]"`처럼 넘깁니다.
+
+## 동작
+
+- 화면 가운데에 뜨고, 열려 있는 동안 뒤 화면은 스크롤되지 않습니다.
+- Esc를 누르면 닫힙니다. 바깥을 눌러도 닫히지 않아서, 확인이 필요한 결정을 실수로 넘기지 않습니다.
+- 열리면 포커스가 다이얼로그 안으로 옮겨 갑니다. 닫히면 연 요소로 돌아옵니다.
+- 버튼을 누르면 `onConfirm`이나 `onCancel`을 부른 뒤 닫히고, `onOpenChange(false)`를 알립니다.
 
 ## 모든 변형
 
@@ -58,21 +96,23 @@ import { Dialog } from "@umc-product/react"
 
 ## 버튼 영역 변형
 
-<DialogButtonAreaVariants />
+<DialogActionButtonAreaVariants />
 
 ## props
 
-| prop           | 타입                      | 기본값 | 설명                                     |
-| -------------- | ------------------------- | ------ | ---------------------------------------- |
-| `title`        | `ReactNode`               | 필수   | 다이얼로그 제목                          |
-| `confirmLabel` | `ReactNode`               | 필수   | 확인 버튼 레이블                         |
-| `cancelLabel`  | `ReactNode`               | -      | 넘기면 Alert 타입, 생략하면 Confirm 타입 |
-| `onConfirm`    | `() => void`              | -      | 확인 버튼 클릭 시 호출                   |
-| `onCancel`     | `() => void`              | -      | 취소 버튼 클릭 시 호출                   |
-| `description`  | `ReactNode`               | -      | 제목 아래 설명 문구                      |
-| `children`     | `ReactNode`               | -      | 설명 아래 추가 콘텐츠                    |
-| `trigger`      | `ReactElement`            | -      | 다이얼로그를 여는 트리거 요소            |
-| `open`         | `boolean`                 | -      | 제어 모드에서 열림 상태                  |
-| `defaultOpen`  | `boolean`                 | -      | 비제어 모드 초기 상태                    |
-| `onOpenChange` | `(open: boolean) => void` | -      | 열림 상태 변경 콜백                      |
-| `className`    | `string`                  | -      | 팝업 루트에 추가할 CSS 클래스            |
+| prop           | 타입                                | 기본값      | 설명                                           |
+| -------------- | ----------------------------------- | ----------- | ---------------------------------------------- |
+| `title`        | `ReactNode`                         | 필수        | 다이얼로그 제목. 다이얼로그의 접근 가능한 이름 |
+| `confirmLabel` | `ReactNode`                         | 필수        | 확인 버튼 레이블                               |
+| `cancelLabel`  | `ReactNode`                         | -           | 넘기면 Fill, 생략하면 Weak 버튼 스타일         |
+| `color`        | `"primary" \| "neutral" \| "error"` | `"primary"` | 확인 버튼과 제목·아이콘 색                     |
+| `icon`         | `ReactNode`                         | -           | 제목 앞 24px 그래픽                            |
+| `description`  | `ReactNode`                         | -           | 제목 아래 설명 문구                            |
+| `children`     | `ReactNode`                         | -           | 설명과 버튼 사이 콘텐츠                        |
+| `onConfirm`    | `() => void`                        | -           | 확인 버튼을 누르면 호출                        |
+| `onCancel`     | `() => void`                        | -           | 취소 버튼을 누르면 호출                        |
+| `trigger`      | `ReactElement`                      | -           | 다이얼로그를 여는 트리거 요소                  |
+| `open`         | `boolean`                           | -           | 제어 모드의 열림 상태                          |
+| `defaultOpen`  | `boolean`                           | -           | 비제어 모드의 처음 열림 상태                   |
+| `onOpenChange` | `(open: boolean) => void`           | -           | 열림 상태가 바뀌면 호출                        |
+| `className`    | `string`                            | -           | 팝업에 더할 CSS 클래스                         |
