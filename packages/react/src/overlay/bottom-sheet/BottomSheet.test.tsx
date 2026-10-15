@@ -181,7 +181,7 @@ describe("BottomSheetActions", () => {
     expect(screen.getAllByRole("button")).toHaveLength(2)
   })
 
-  it("primary-top 레이아웃은 버튼과 텍스트 버튼을 그린다", () => {
+  it("primary-top 레이아웃은 주요 버튼 아래에 흰 Weak 버튼을 그린다", () => {
     render(
       <BottomSheetActions
         layout="primary-top"
@@ -189,8 +189,49 @@ describe("BottomSheetActions", () => {
         secondary={{ label: "나중에" }}
       />,
     )
-    expect(screen.getByText("확인")).toBeInTheDocument()
-    expect(screen.getByText("나중에")).toBeInTheDocument()
+    const [primary, secondary] = screen.getAllByRole("button")
+    expect(primary).toHaveTextContent("확인")
+    expect(secondary).toHaveTextContent("나중에")
+    expect(secondary).toHaveAttribute("data-variant", "weak")
+    expect(secondary).toHaveAttribute("data-color", "white")
+    expect(document.querySelector(".umc-text-button")).toBeNull()
+  })
+
+  it("모든 레이아웃의 버튼이 md 크기다", () => {
+    const layouts = ["stacked", "equal", "emphasis", "primary-top"] as const
+    for (const layout of layouts) {
+      const { unmount } = render(
+        <BottomSheetActions
+          layout={layout}
+          primary={{ label: "확인" }}
+          secondary={{ label: "취소" }}
+        />,
+      )
+      for (const button of screen.getAllByRole("button")) {
+        expect(button).toHaveAttribute("data-size", "md")
+      }
+      unmount()
+    }
+  })
+
+  it("stacked는 주요 버튼을 먼저, equal과 emphasis는 보조 버튼을 먼저 그린다", () => {
+    const orderOf = (layout: "stacked" | "equal" | "emphasis") => {
+      const { unmount } = render(
+        <BottomSheetActions
+          layout={layout}
+          primary={{ label: "확인" }}
+          secondary={{ label: "취소" }}
+        />,
+      )
+      const labels = screen
+        .getAllByRole("button")
+        .map((button) => button.textContent)
+      unmount()
+      return labels
+    }
+    expect(orderOf("stacked")).toEqual(["확인", "취소"])
+    expect(orderOf("equal")).toEqual(["취소", "확인"])
+    expect(orderOf("emphasis")).toEqual(["취소", "확인"])
   })
 
   it("data-layout 속성이 layout prop과 일치한다", () => {

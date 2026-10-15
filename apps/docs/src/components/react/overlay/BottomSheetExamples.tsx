@@ -96,6 +96,16 @@ function BottomSheetPreviewItem({
   )
 }
 
+const ACTIONS_SPEC_IDS = {
+  full: "bottom-sheet-actions-full bottom-sheet-actions-button",
+  stacked: "bottom-sheet-actions-stacked",
+  equal: "bottom-sheet-actions-equal",
+  emphasis:
+    "bottom-sheet-actions-emphasis bottom-sheet-actions-emphasis-primary",
+  "primary-top":
+    "bottom-sheet-actions-primary-top bottom-sheet-actions-primary-top-secondary",
+} as const
+
 export function BottomSheetActionsAll() {
   return (
     <div
@@ -104,7 +114,11 @@ export function BottomSheetActionsAll() {
     >
       {(["full", "stacked", "equal", "emphasis", "primary-top"] as const).map(
         (layout) => (
-          <div key={layout}>
+          <div
+            key={layout}
+            className="w-full max-w-[352px]"
+            data-spec-id={ACTIONS_SPEC_IDS[layout]}
+          >
             <p
               style={{
                 fontSize: "12px",

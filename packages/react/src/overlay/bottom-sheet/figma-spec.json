@@ -37,45 +37,108 @@
     },
     {
       "specId": "bottom-sheet-actions-full",
-      "node": "2535:8789",
+      "node": "2535:8814",
       "variant": "Number of Buttons=1, Type=Full",
       "target": ".umc-bottom-sheet-actions",
       "expected": {
+        "display": "flex",
+        "flex-direction": "row",
         "padding-top": "32px",
+        "padding-bottom": "0px",
         "padding-left": "20px",
         "padding-right": "20px",
+        "column-gap": "10px"
+      }
+    },
+    {
+      "specId": "bottom-sheet-actions-button",
+      "node": "2535:8815",
+      "variant": "Number of Buttons=1, Type=Full",
+      "target": ".umc-bottom-sheet-actions .umc-button",
+      "expected": {
+        "height": "48px",
+        "min-width": "80px",
+        "padding-left": "16px",
+        "border-top-left-radius": "14px",
+        "font-size": "17px",
+        "font-weight": "500",
+        "letter-spacing": "-0.34px",
+        "background-color": "#008a80",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "bottom-sheet-actions-stacked",
+      "node": "2946:28856",
+      "variant": "Number of Buttons=2, Type=Stacked",
+      "target": ".umc-bottom-sheet-actions",
+      "expected": {
+        "flex-direction": "column",
+        "padding-top": "32px",
+        "padding-bottom": "0px",
         "row-gap": "10px"
       }
     },
     {
-      "specId": "bottom-sheet-actions-button-font",
-      "node": "2535:8789",
-      "variant": "Number of Buttons=1, Type=Full",
-      "target": ".umc-bottom-sheet-actions .umc-button",
+      "specId": "bottom-sheet-actions-equal",
+      "node": "2535:8788",
+      "variant": "Number of Buttons=2, Type=Equal",
+      "target": ".umc-bottom-sheet-actions",
       "expected": {
-        "font-size": "18px"
+        "flex-direction": "row",
+        "padding-top": "32px",
+        "padding-bottom": "0px",
+        "column-gap": "10px"
       }
     },
     {
       "specId": "bottom-sheet-actions-emphasis",
-      "node": "2535:8789",
+      "node": "2946:28882",
       "variant": "Number of Buttons=2, Type=Emphasis",
       "target": ".umc-bottom-sheet-actions",
       "expected": {
-        "padding-top": "16px",
+        "display": "grid",
+        "padding-top": "32px",
+        "padding-bottom": "0px",
         "padding-left": "20px",
         "padding-right": "20px",
         "column-gap": "8px"
       }
     },
     {
+      "specId": "bottom-sheet-actions-emphasis-primary",
+      "node": "4146:71932",
+      "variant": "Number of Buttons=2, Type=Emphasis",
+      "target": ".umc-bottom-sheet-actions .umc-button:last-child",
+      "expected": {
+        "grid-column-start": "span 2",
+        "background-color": "#008a80"
+      }
+    },
+    {
       "specId": "bottom-sheet-actions-primary-top",
-      "node": "2535:8789",
+      "node": "2946:28902",
       "variant": "Number of Buttons=2, Type=PrimaryTop",
       "target": ".umc-bottom-sheet-actions",
       "expected": {
+        "flex-direction": "column",
+        "align-items": "center",
         "padding-top": "16px",
-        "padding-bottom": "4px"
+        "padding-bottom": "4px",
+        "row-gap": "8px"
+      }
+    },
+    {
+      "specId": "bottom-sheet-actions-primary-top-secondary",
+      "node": "2946:28899",
+      "variant": "Number of Buttons=2, Type=PrimaryTop",
+      "target": ".umc-bottom-sheet-actions .umc-button:last-child",
+      "expected": {
+        "height": "48px",
+        "min-width": "80px",
+        "background-color": "#ffffff",
+        "color": "#606262",
+        "font-size": "17px"
       }
     }
   ]
