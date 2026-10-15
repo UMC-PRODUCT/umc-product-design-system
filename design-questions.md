@@ -2,7 +2,7 @@
 
 - 독자: 3기 디자인 팀, 웹 파트
 - 소유자: UMC PRODUCT Design Chapter
-- 기준일: 2026-10-13
+- 기준일: 2026-10-15
 
 문서 사이트에는 싣지 않는 작업 목록입니다.
 
@@ -136,6 +136,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 1. App/Top Navigation Sub 페이지의 왼쪽 아이콘이 `Icon/Expand_more`(아래 화살표)입니다. 뒤로 가기라면 `Icon/Chevron_Left`가 맞는지, 아래로 내려 닫는 화면의 닫기인지 알려 주세요. 코드는 피그마대로 아래 화살표를 그리고 이름은 "뒤로 가기"로 둡니다.
 2. App/Dialog와 App/Bottom Sheet 제목 색이 `grey950`(`#0d121c`)입니다. 3기 토큰에 없는 색이라 컴포넌트 변수로 씁니다.
 3. App/Bottom navigation과 App/Bottom Sheet의 iOS, Android 차이는 홈 인디케이터 영역입니다. 웹에서는 운영체제가 주는 안전 영역(`safe-area-inset-bottom`)으로 처리하고 인디케이터는 그리지 않습니다.
+4. 2026-10-15에 App/Bottom navigation의 iOS 변형이 Apple `Tab Bar - iPhone`(리퀴드 글래스) 인스턴스로 바뀌었습니다. iOS 앱은 시스템 탭 바를 쓰는 것으로 보고, 문서의 iOS 칸은 미구현으로 두고 Android 칸만 그립니다. iPhone 브라우저로 여는 모바일 웹 화면에서는 이 컴포넌트를 써도 되는지 알려 주세요.
 
 ## 앱 셸
 
