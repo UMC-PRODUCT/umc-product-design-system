@@ -5,7 +5,6 @@ import type { ReactElement, ReactNode } from "react"
 
 import { Button } from "../../button/Button.tsx"
 import { cx } from "../../internal/cx.ts"
-import { TextButton } from "../../text-button/TextButton.tsx"
 
 export type BottomSheetProps = {
   open?: boolean
@@ -71,9 +70,14 @@ export function BottomSheetActions(props: BottomSheetActionsProps) {
         >
           {primary.label}
         </Button>
-        <TextButton color="neutral" size="xs" onClick={secondary.onClick}>
+        <Button
+          variant="weak"
+          color="white"
+          size="md"
+          onClick={secondary.onClick}
+        >
           {secondary.label}
-        </TextButton>
+        </Button>
       </div>
     )
   }

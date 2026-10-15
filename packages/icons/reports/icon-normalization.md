@@ -11,7 +11,7 @@
 
 1. `Icon/Search`는 Regular 굵기만 있습니다. Thin과 Fill 굵기를 추가할지 알려 주세요.
 2. `Icon/Eye_visable`, `Icon/Eye_invisable`의 철자가 visable입니다. visible로 바꿔 주실 수 있나요?
-3. Bold, Italic, Strikethrough, Underline, Time의 Fill 변형과 ThumbsUp 전체는 프레임이 23.85×25이고, Link는 24×25, Location Fill은 19×24.51, Person Regular와 Fill은 22×24입니다. 코드에서는 24px 정사각형 안에 비율을 지켜 줄여 넣어서, 기본 크기에서 2~4% 작게 보입니다. warning Fill처럼 24×24로 맞춰 주실 수 있나요?
+3. Bold, Italic, Strikethrough, Underline, Time의 Fill 변형과 ThumbsUp 전체는 프레임이 23.85×25이고, Link는 24×25, Person Regular와 Fill은 22×24입니다. 코드에서는 24px 정사각형 안에 비율을 지켜 줄여 넣어서, 기본 크기에서 2~4% 작게 보입니다. warning Fill과 Location Fill처럼 24×24로 맞춰 주실 수 있나요?
 4. `Icon/ThumbsUp`에 보이지 않는 `Format italic` 요소가 남아 있습니다.
 5. Notification, Notification-Off의 빨간 점(`#dc3d3d`)과 흰 테두리, Check_circle Fill의 흰 체크, warning과 warning-Triangle Fill의 흰 느낌표는 아이콘 색을 바꿔도 고정입니다. 흰 배경이 아닌 곳에서도 흰색으로 보이는 것이 의도인지, 뚫린 모양으로 그릴지 알려 주세요.
 6. 아이콘 섹션 설명대로 패키지 아이콘은 24px이 기본이고, 다른 크기는 Scale(K)처럼 선 두께까지 비례해 줄어듭니다. 그런데 Scale 없이 크기만 줄인 인스턴스는 선 아이콘의 두께가 그대로 남습니다(예: Option Button 20px의 `Icon/Check`는 선 두께 2). 이런 인스턴스를 Scale로 다시 맞춰 주시거나, 선 아이콘을 면(Outline stroke)으로 바꿔 주실 수 있나요?
@@ -48,7 +48,6 @@
 | --- | --- | --- |
 | `Icon/Bold` Weight=Fill(3060:96491)<br>`Icon/Italic` Weight=Fill(3060:96492)<br>`Icon/Strikethrough` Weight=Fill(3060:96494)<br>`Icon/Underline` Weight=Fill(3060:96493)<br>`Icon/Time` Weight=Fill(3060:96072)<br>`Icon/ThumbsUp` Weight=Regular(3095:97510)<br>`Icon/ThumbsUp` Weight=Fill(3095:97511)<br>`Icon/ThumbsUp` Weight=Thin(3095:97517) | 0 0 23.8462 25 | 피그마 프레임이 23.85×25다. 피그마 값 그대로 두고 정사각형 svg 안에 비율을 지켜 가운데 놓는다 |
 | `Icon/Link` Weight=Fill(3095:97369)<br>`Icon/Link` Weight=Regular(3095:97372)<br>`Icon/Link` Weight=Thin(3095:97376) | 0 0 24 25 | 피그마 프레임이 24×25다. 피그마 값 그대로 두고 정사각형 svg 안에 비율을 지켜 가운데 놓는다 |
-| `Icon/Location` Weight=Fill(3060:96435) | 0 0 19 24.5087 | 피그마 프레임이 19×24.51이다. 피그마 값 그대로 두고 정사각형 svg 안에 비율을 지켜 가운데 놓는다 |
 
 ## 색 규칙
 

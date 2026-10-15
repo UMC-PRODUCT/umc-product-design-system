@@ -5,6 +5,7 @@ import { ExpandMoreIcon } from "@umc-product/icons"
 import { useState } from "react"
 
 import type { FigmaVariant } from "../variants/figma-variants.ts"
+import { NotImplemented } from "../variants/VariantCells.tsx"
 import { VariantGrid } from "../variants/VariantGrid.tsx"
 import { PreviewLinks } from "./PreviewLinks.tsx"
 
@@ -23,7 +24,7 @@ export function BottomNavigationDefault() {
   return (
     <div className="umc-example umc-example-flush">
       <PreviewLinks onNavigate={setPath}>
-        <div className={PHONE_FRAME} data-spec-id="bottom-navigation-ios">
+        <div className={PHONE_FRAME} data-spec-id="bottom-navigation-android">
           <BottomNavigation>
             {NAV_ITEMS.map((item) => (
               <BottomNavigationItem
@@ -41,8 +42,14 @@ export function BottomNavigationDefault() {
   )
 }
 
+const IOS_SYSTEM_TAB_BAR = "iOS 앱은 시스템 탭 바(리퀴드 글래스)를 씁니다"
+
 function BottomNavigationCell({ variant }: { variant: FigmaVariant }) {
   const platform = variant.props["Platform"]
+
+  if (platform === "iOS") {
+    return <NotImplemented reason={IOS_SYSTEM_TAB_BAR} />
+  }
 
   return (
     <div className={VARIANT_PHONE_FRAME}>

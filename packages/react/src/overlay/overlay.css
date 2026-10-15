@@ -2,7 +2,9 @@
 @import "./toast/toast.css";
 @import "./dimmed/dimmed.css";
 @import "./scroll-fog/scroll-fog.css";
+@import "./app-dialog/app-dialog.css";
 @import "./dialog/dialog.css";
+@import "./panel/panel.css";
 @import "./bottom-sheet/bottom-sheet.css";
 
 @layer components {

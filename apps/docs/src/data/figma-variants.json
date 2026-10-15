@@ -1035,7 +1035,7 @@
         "Type=Error, Leading Acc=False, Text Button=True"
       ]
     },
-    "dialog": {
+    "app-dialog": {
       "node": "2538:25065",
       "name": "App/Dialog",
       "axes": {
@@ -1043,13 +1043,68 @@
       },
       "variants": ["Type=Alert", "Type=Confirm"]
     },
-    "dialog-button-area": {
+    "app-dialog-button-area": {
       "node": "2538:14973",
       "name": ".primitive/App/Dialog/Button Area",
       "axes": {
         "Type": ["Weak", "Default"]
       },
       "variants": ["Type=Weak", "Type=Default"]
+    },
+    "web-dialog": {
+      "node": "2281:4348",
+      "name": "Web/Dialog",
+      "axes": {
+        "State 이거 변경 필요": ["Default", "Slot Content", "Warning"],
+        "Button Style": ["Fill", "Weak"],
+        "Show Icon": ["False", "True"]
+      },
+      "variants": [
+        "State 이거 변경 필요=Default, Button Style=Fill, Show Icon=False",
+        "State 이거 변경 필요=Default, Button Style=Weak, Show Icon=False",
+        "State 이거 변경 필요=Default, Button Style=Fill, Show Icon=True",
+        "State 이거 변경 필요=Slot Content, Button Style=Fill, Show Icon=False",
+        "State 이거 변경 필요=Slot Content, Button Style=Weak, Show Icon=False",
+        "State 이거 변경 필요=Warning, Button Style=Fill, Show Icon=False",
+        "State 이거 변경 필요=Warning, Button Style=Weak, Show Icon=False",
+        "State 이거 변경 필요=Warning, Button Style=Fill, Show Icon=True"
+      ]
+    },
+    "web-dialog-action-button-area": {
+      "node": "3928:61528",
+      "name": ".primitive/Web/Action Button Area",
+      "axes": {
+        "Type": ["Default", "Neutral", "Waring"],
+        "Style": ["Default", "Weak"]
+      },
+      "variants": [
+        "Type=Default, Style=Default",
+        "Type=Default, Style=Weak",
+        "Type=Neutral, Style=Default",
+        "Type=Neutral, Style=Weak",
+        "Type=Waring, Style=Default",
+        "Type=Waring, Style=Weak"
+      ]
+    },
+    "web-dialog-status-graphic": {
+      "node": "3928:61483",
+      "name": ".primitive/Web/Status Graphic",
+      "axes": {
+        "Graphic": [
+          "Error Triangle",
+          "Warning Circle",
+          "Error Circle",
+          "Success",
+          "Construction"
+        ]
+      },
+      "variants": [
+        "Graphic=Error Triangle",
+        "Graphic=Warning Circle",
+        "Graphic=Error Circle",
+        "Graphic=Success",
+        "Graphic=Construction"
+      ]
     },
     "bottom-sheet": {
       "node": "2536:12127",

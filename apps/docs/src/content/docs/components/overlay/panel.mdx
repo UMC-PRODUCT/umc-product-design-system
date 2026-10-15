@@ -1,0 +1,85 @@
+---
+title: Panel
+description: 웹 화면 가운데에 띄워 목록이나 선택처럼 긴 내용을 다루는 모달 패널입니다.
+---
+
+import {
+  PanelContentOnlyExample,
+  PanelExample,
+  PanelStaticPreview,
+} from "../../../../components/react/overlay/PanelExamples.tsx"
+
+피그마 `Web/Panel`을 옮긴 컴포넌트로, 모바일의 [BottomSheet](../bottom-sheet/)가 하는 일을 웹 화면에서 맡습니다. 확인 한 번으로 끝나는 짧은 질문은 [Dialog](../dialog/)로 묻고, 여러 항목을 고르거나 긴 글을 보여 줄 때 Panel을 씁니다. 내부에서는 Base UI Dialog를 씁니다.
+
+```tsx
+import { BottomSheetActions, Panel } from "@umc-product/react"
+
+<Panel
+  trigger={<button>열기</button>}
+  title="모집 공고 복제하기"
+  description="선택한 학교의 공유 보관함에 추가돼요"
+  control={<SelectionSummary />}
+  actions={
+    <BottomSheetActions
+      layout="emphasis"
+      primary={{ label: "복제하기", onClick: () => {} }}
+      secondary={{ label: "돌아가기" }}
+    />
+  }
+>
+  <SchoolPicker />
+</Panel>
+```
+
+## 외형 미리보기
+
+피그마 예시 화면인 모집 공고 복제를 기본 폭 512px에 고정해 그린 미리보기입니다.
+
+<PanelStaticPreview client:visible />
+
+## 영역
+
+Panel은 위에서부터 머리, 본문, 아래쪽 영역으로 나뉩니다.
+
+| 영역      | prop                   | 스크롤 | 설명                                                  |
+| --------- | ---------------------- | ------ | ----------------------------------------------------- |
+| 머리      | `title`, `description` | 고정   | 제목(Heading/2 24px)과 설명                           |
+| 본문      | `children`             | 스크롤 | 내용이 화면보다 길면 이 영역만 스크롤됩니다           |
+| 조작 영역 | `control`              | 고정   | 고른 항목 요약이나 초기화처럼 본문과 함께 바뀌는 조작 |
+| 버튼 영역 | `actions`              | 고정   | `BottomSheetActions`를 넘깁니다                       |
+
+`control`과 `actions`를 둘 다 생략하면 아래쪽 영역을 그리지 않습니다. 버튼 영역은 BottomSheet와 같은 `BottomSheetActions`라서 레이아웃 다섯 가지를 그대로 고를 수 있습니다.
+
+## 폭과 높이
+
+기본 폭은 512px입니다. 본문이 넓어야 하면 `className="w-[733px]"`처럼 폭을 넘깁니다. 화면이 좁으면 좌우에 32px씩 남기고 화면 폭에 맞춥니다.
+
+높이는 내용을 따르고, 화면 높이에서 위아래 32px을 뺀 값을 넘지 않습니다. 넘치면 머리와 아래쪽 영역은 제자리에 두고 본문만 스크롤됩니다.
+
+<PanelExample client:visible />
+
+본문만 있는 패널은 `description`, `control`, `actions`를 모두 생략합니다.
+
+<PanelContentOnlyExample client:visible />
+
+## 동작
+
+- 화면 가운데에 뜨고, 열려 있는 동안 뒤 화면은 스크롤되지 않습니다.
+- Esc를 누르거나 바깥을 누르면 닫힙니다. 고르던 내용을 지켜야 하면 `onOpenChange`에서 닫기 전에 확인합니다.
+- 열리면 포커스가 패널 안으로 옮겨 갑니다. 닫히면 연 요소로 돌아옵니다.
+- 버튼 영역의 버튼은 패널을 스스로 닫지 않습니다. `onClick`에서 할 일을 마친 뒤 `open`을 `false`로 바꿉니다.
+
+## props
+
+| prop           | 타입                      | 기본값 | 설명                                        |
+| -------------- | ------------------------- | ------ | ------------------------------------------- |
+| `title`        | `ReactNode`               | 필수   | 패널 제목. 패널의 접근 가능한 이름          |
+| `children`     | `ReactNode`               | 필수   | 스크롤되는 본문                             |
+| `description`  | `ReactNode`               | -      | 제목 아래 설명 문구                         |
+| `control`      | `ReactNode`               | -      | 본문 아래, 버튼 영역 위의 조작 영역         |
+| `actions`      | `ReactNode`               | -      | 버튼 영역. `BottomSheetActions`를 넘깁니다  |
+| `trigger`      | `ReactElement`            | -      | 패널을 여는 트리거 요소                     |
+| `open`         | `boolean`                 | -      | 제어 모드의 열림 상태                       |
+| `defaultOpen`  | `boolean`                 | -      | 비제어 모드의 처음 열림 상태                |
+| `onOpenChange` | `(open: boolean) => void` | -      | 열림 상태가 바뀌면 호출                     |
+| `className`    | `string`                  | -      | 팝업에 더할 CSS 클래스. 폭을 바꿀 때 씁니다 |

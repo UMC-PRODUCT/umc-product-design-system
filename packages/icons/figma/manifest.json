@@ -1311,7 +1311,7 @@
       "files": [
         {
           "file": "svg/3060-96544.svg",
-          "sha256": "940590a5a81c012b90accf994e97b1f108bd03c5afd54dafb2800230ab89df0a"
+          "sha256": "a3a5a436bd0f5ae60b0cdd0b8a4e4ad4d0625dffaf76cde1fc863ee21a3d63be"
         }
       ],
       "status": "ok"
@@ -1324,7 +1324,7 @@
       "files": [
         {
           "file": "svg/3060-96545.svg",
-          "sha256": "fdc9b78c9a2be9808434c850e11dbaa3fd649e94824f5de5123f0aa161328e09"
+          "sha256": "364f3034ee18e1f1bea5800a828c65238cf71936ed0a48940b61d281c1045b91"
         }
       ],
       "status": "ok"
@@ -1337,7 +1337,7 @@
       "files": [
         {
           "file": "svg/3060-96555.svg",
-          "sha256": "44f911d8640ea5a7e3717f339767cb935736b314673e27bcbfb422db18181c8f"
+          "sha256": "de94534f786889376770a9bce92a516843d8fffc9fd393065a42b6ac42ef43d7"
         }
       ],
       "status": "ok"
@@ -1662,7 +1662,7 @@
       "files": [
         {
           "file": "svg/3060-96435.svg",
-          "sha256": "6dccd4da6e536ed0835ff7dd57c23a10ee9407928b8b0b91b2f4211a82954ba9"
+          "sha256": "bf4c820040fc65fa8d149055d5b6f47f8261216405ac0c6bb88db2e806035526"
         }
       ],
       "status": "ok"
