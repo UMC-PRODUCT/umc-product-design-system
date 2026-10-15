@@ -16,3 +16,4 @@ export {
   BottomSheetActions,
   type BottomSheetActionsProps,
 } from "./bottom-sheet/BottomSheet.tsx"
+export { Panel, type PanelProps } from "./panel/Panel.tsx"

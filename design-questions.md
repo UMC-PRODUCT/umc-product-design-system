@@ -22,7 +22,7 @@
    - Context Switcher 체크와 화살표: `icon/Check/16 icon/Regular`, `icon/Expand_more/16 icon/Regular`
 6. Hover와 Focus 상태가 없는 컴포넌트가 많습니다. 포커스 표시는 2px `border-primary-strong-500` 외곽선으로 통일했습니다.
 7. 나타나고 사라지는 움직임 정의가 없습니다. 150ms 투명도 전환을 기본으로 넣었고, 움직임 줄이기 설정에서는 끕니다.
-8. 노션 명명 규칙과 다른 이름이 있습니다: `Pressed(Hover)`, `Focused & Hover`, Tooltip의 `Appearance`, Option Button의 `Direction`, 오타 `Disalbed`, `Defalut`, `Numberic`, `Varient`, `Meue`, `Sub Meue`, `.primitve`(Menu 항목), `Eye_visable`, `Solt`, `Waring`(Web/Dialog Action Button Area). Web/Dialog의 상태 속성 이름은 `State 이거 변경 필요`입니다.
+8. 노션 명명 규칙과 다른 이름이 있습니다: `Pressed(Hover)`, `Focused & Hover`, Tooltip의 `Appearance`, Option Button의 `Direction`, 오타 `Disalbed`, `Defalut`, `Numberic`, `Varient`, `Meue`, `Sub Meue`, `.primitve`(Menu 항목), `Eye_visable`, `Solt`, `Waring`(Web/Dialog Action Button Area), `Pannel`(Web/Panel 섹션), `Positon`(Web/Panel 예시 프레임). Web/Dialog의 상태 속성 이름은 `State 이거 변경 필요`입니다.
 9. 파비콘 에셋이 없습니다. 문서 사이트는 `Logo/UMC`의 U 글자 모양과 색(`#3F4141`)을 그대로 떼어 임시로 씁니다. 정사각형 파비콘이나 앱 아이콘을 주시면 바꾸겠습니다.
 
 ## 토큰
@@ -133,7 +133,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 
 ## 웹 오버레이
 
-2026-10-15에 새로 올라온 Web/Dialog를 옮기면서 찾은 내용입니다.
+2026-10-15에 새로 올라온 Web/Dialog와 Web/Panel을 옮기면서 찾은 내용입니다.
 
 1. Web/Dialog의 `Warning` 상태는 빨간 에러 색입니다(제목 `#dc3d3d`, 확인 버튼 Weak Red). 코드는 주황 경고와 헷갈리지 않게 `color="error"`로 부릅니다. 주황 경고 다이얼로그가 따로 필요한지 알려 주세요.
 2. Action Button Area의 `Neutral` 타입(확인 버튼 Fill Neutral)은 Web/Dialog 변형에 쓰인 곳이 없습니다. 코드는 `color="neutral"`로 열어 두었습니다. 어느 화면에 쓰는지 알려 주세요.
@@ -141,7 +141,12 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 4. Weak 텍스트 버튼은 hover 모양이 없습니다. 기본 색은 Text Button hover를, 에러 색은 `Red-700`(`#c21f14`)을 hover에 가정했습니다.
 5. Slot Content 변형만 글과 버튼 사이 간격(32→24px), 글 사이 간격(12→10px), 제목(Title/2 20px→Title/1 22px)이 다릅니다. 코드는 콘텐츠를 넘기면 이 값으로 바꿉니다. 콘텐츠가 있으면 늘 이렇게 바뀌는 규칙인지 알려 주세요.
 6. Slot Content에 Weak 버튼을 둔 변형은 버튼 줄 높이가 68px로, 다른 Weak 변형의 40px과 다릅니다. 코드는 모든 Weak 버튼 줄을 40px로 둡니다.
-7. Web/Dialog의 `Shadow/Drop/Neutral_2`도 `#EFF0F080`으로 정의되어 파운데이션 토큰(`#eceeee85`)과 다릅니다(표시 7과 같음). 코드는 토큰을 씁니다.
+7. Web/Dialog와 Web/Panel의 `Shadow/Drop/Neutral_2`도 `#EFF0F080`으로 정의되어 파운데이션 토큰(`#eceeee85`)과 다릅니다(표시 7과 같음). 코드는 토큰을 씁니다.
+8. Web/Panel에는 닫기(X) 버튼이 없습니다. 코드는 Esc와 바깥 누르기로 닫고, 버튼 영역의 버튼은 앱이 닫게 둡니다. 닫기 버튼이 필요한지 알려 주세요.
+9. Control Slot은 컴포넌트에서 높이 64px 고정인데, 예시 인스턴스에서는 내용에 맞춰 42px과 74px로 바뀝니다. 코드는 위 여백 20px에 내용 높이를 따릅니다.
+10. 560px 예시 인스턴스(4152:74197)는 아래쪽 영역만 560px로 늘고, 제목과 본문 영역은 512px에 머물러 있습니다. 코드는 폭을 바꾸면 모든 영역이 함께 늘어납니다.
+11. 버튼 영역의 좌우 여백은 20px이고 본문과 Control Slot은 32px이라, 버튼이 본문보다 양쪽으로 12px씩 넓습니다. 의도한 정렬인지 알려 주세요.
+12. Web/Panel 예시의 왼쪽 지부 목록(`Side Meue`)은 라이브러리 컴포넌트가 아니고 2기 색(`#e5f5f2`, `#0b6b64`, `#656b6b`)을 씁니다. 문서 예시는 3기 토큰으로 비슷하게 그렸습니다. 컴포넌트로 만들 계획인지 알려 주세요.
 
 ## 모바일 앱 컴포넌트
 

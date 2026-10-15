@@ -1,0 +1,96 @@
+{
+  "component": "Panel",
+  "figmaSection": "4153:75043",
+  "page": "/components/overlay/panel/",
+  "nodes": [
+    {
+      "specId": "panel",
+      "node": "4146:72025",
+      "variant": "Web/Panel",
+      "target": ".umc-panel__popup",
+      "expected": {
+        "width": "512px",
+        "padding-bottom": "24px",
+        "border-top-left-radius": "16px",
+        "background-color": "#ffffff",
+        "box-shadow~": "#eceeee85 0px 4px 16px 0px"
+      },
+      "figmaDiffers": {
+        "box-shadow~": "피그마는 이름이 같은 Shadow/Drop/Neutral_2의 다른 정의(#EFF0F080, 0, 4, 16)를 쓴다. 이름 있는 스타일은 토큰을 쓰는 규칙에 따라 토큰 정의를 썼다"
+      }
+    },
+    {
+      "specId": "panel-main",
+      "node": "4139:70869",
+      "variant": "Web/Panel",
+      "target": ".umc-panel__main",
+      "expected": {
+        "padding-top": "32px",
+        "padding-left": "32px",
+        "padding-right": "32px",
+        "row-gap": "16px"
+      }
+    },
+    {
+      "specId": "panel-header",
+      "node": "4139:70870",
+      "variant": "Web/Panel",
+      "target": ".umc-panel__header",
+      "expected": {
+        "padding-left": "4px",
+        "padding-right": "4px",
+        "row-gap": "8px"
+      }
+    },
+    {
+      "specId": "panel-title",
+      "node": "4139:70871",
+      "variant": "Web/Panel",
+      "target": ".umc-panel__title",
+      "expected": {
+        "color": "#0f1010",
+        "font-size": "24px",
+        "font-weight": "600",
+        "line-height": "32.4px",
+        "letter-spacing": "-0.24px"
+      }
+    },
+    {
+      "specId": "panel-description",
+      "node": "4139:70872",
+      "variant": "Web/Panel",
+      "target": ".umc-panel__description",
+      "expected": {
+        "color": "#606262",
+        "font-size": "16px",
+        "font-weight": "400",
+        "line-height": "23.2px",
+        "letter-spacing": "-0.16px"
+      }
+    },
+    {
+      "specId": "panel-control",
+      "node": "4139:70902",
+      "variant": "Web/Panel",
+      "target": ".umc-panel__control",
+      "expected": {
+        "padding-top": "20px",
+        "padding-left": "32px",
+        "padding-right": "32px"
+      }
+    },
+    {
+      "specId": "panel-actions",
+      "node": "4146:72015",
+      "variant": "Web/Panel",
+      "target": ".umc-bottom-sheet-actions",
+      "expected": {
+        "height": "80px",
+        "padding-top": "32px",
+        "padding-left": "20px",
+        "padding-right": "20px",
+        "column-gap": "8px"
+      }
+    }
+  ]
+}

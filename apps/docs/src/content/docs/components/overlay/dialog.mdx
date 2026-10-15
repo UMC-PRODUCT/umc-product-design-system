@@ -14,7 +14,7 @@ import {
   DialogWeakExample,
 } from "../../../../components/react/overlay/DialogExamples.tsx"
 
-피그마 `Web/Dialog`를 옮긴 컴포넌트로, 웹 화면에 씁니다. 모바일 앱 화면에는 [AppDialog](../app-dialog/)를 씁니다. 내부에서는 Base UI AlertDialog를 씁니다.
+피그마 `Web/Dialog`를 옮긴 컴포넌트로, 웹 화면에 씁니다. 모바일 앱 화면에는 [AppDialog](../app-dialog/)를 씁니다. 목록에서 여러 항목을 고르거나 긴 글을 보여 줄 때는 [Panel](../panel/)을 씁니다. 내부에서는 Base UI AlertDialog를 씁니다.
 
 ```tsx
 import { Dialog } from "@umc-product/react"
@@ -75,7 +75,7 @@ import { Dialog } from "@umc-product/react"
 
 ## 콘텐츠
 
-`children`을 넘기면 설명과 버튼 사이에 콘텐츠 영역이 생깁니다. 이때 제목은 Title/1(22px)로 커지고, 글과 버튼 사이 간격은 32px에서 24px로 줄어듭니다. 짧은 요약이나 선택지 몇 개를 보여 줄 때 씁니다.
+`children`을 넘기면 설명과 버튼 사이에 콘텐츠 영역이 생깁니다. 이때 제목은 Title/1(22px)로 커지고, 글과 버튼 사이 간격은 32px에서 24px로 줄어듭니다. 짧은 요약이나 선택지 몇 개를 보여 줄 때 씁니다. 내용이 길어 스크롤이 필요하면 [Panel](../panel/)을 씁니다.
 
 <DialogContentExample client:visible />
 
