@@ -6,7 +6,7 @@
     --umc-checkbox-check: var(--umc-color-icon-inverse);
 
     display: inline-flex;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--umc-checkbox-gap);
     min-height: 24px;
     color: var(--umc-color-text-neutral-strong-800);
@@ -79,13 +79,6 @@
     );
     --umc-checkbox-letter-spacing: var(
       --umc-typography-label-3-medium-letter-spacing
-    );
-  }
-
-  .umc-checkbox__label {
-    padding-block: calc(
-      (24px - var(--umc-checkbox-font-size) * var(--umc-checkbox-line-height)) /
-        2
     );
   }
 

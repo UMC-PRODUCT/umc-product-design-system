@@ -108,6 +108,11 @@ export function CheckboxSizes() {
           Lg 라벨
         </Checkbox>
       </span>
+      <span data-spec-id="checkbox-custom-label">
+        <Checkbox size="lg" className="text-title-2-medium">
+          큰 라벨
+        </Checkbox>
+      </span>
     </div>
   )
 }
