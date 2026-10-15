@@ -7,7 +7,7 @@ import { Button } from "../../button/Button.tsx"
 import { cx } from "../../internal/cx.ts"
 import { TextButton } from "../../text-button/TextButton.tsx"
 
-export type DialogProps = {
+export type AppDialogProps = {
   open?: boolean
   defaultOpen?: boolean
   onOpenChange?: (open: boolean) => void
@@ -22,7 +22,7 @@ export type DialogProps = {
   className?: string
 }
 
-export function Dialog({
+export function AppDialog({
   open,
   defaultOpen,
   onOpenChange,
@@ -35,7 +35,7 @@ export function Dialog({
   cancelLabel,
   onCancel,
   className,
-}: DialogProps) {
+}: AppDialogProps) {
   const hasTwoButtons = cancelLabel !== undefined
 
   return (
@@ -46,17 +46,17 @@ export function Dialog({
     >
       {trigger !== undefined && <AlertDialog.Trigger render={trigger} />}
       <AlertDialog.Portal>
-        <AlertDialog.Backdrop className="umc-dialog__backdrop" />
-        <AlertDialog.Popup className={cx("umc-dialog__popup", className)}>
+        <AlertDialog.Backdrop className="umc-app-dialog__backdrop" />
+        <AlertDialog.Popup className={cx("umc-app-dialog__popup", className)}>
           <div
-            className="umc-dialog__text"
+            className="umc-app-dialog__text"
             data-layout={hasTwoButtons ? "alert" : "confirm"}
           >
-            <AlertDialog.Title className="umc-dialog__title">
+            <AlertDialog.Title className="umc-app-dialog__title">
               {title}
             </AlertDialog.Title>
             {description !== undefined && (
-              <AlertDialog.Description className="umc-dialog__description">
+              <AlertDialog.Description className="umc-app-dialog__description">
                 {description}
               </AlertDialog.Description>
             )}
@@ -64,7 +64,7 @@ export function Dialog({
           </div>
 
           {hasTwoButtons ? (
-            <div className="umc-dialog__button-area" data-variant="default">
+            <div className="umc-app-dialog__button-area" data-variant="default">
               <AlertDialog.Close
                 render={
                   <Button
@@ -91,7 +91,7 @@ export function Dialog({
               />
             </div>
           ) : (
-            <div className="umc-dialog__button-area" data-variant="weak">
+            <div className="umc-app-dialog__button-area" data-variant="weak">
               <AlertDialog.Close
                 render={
                   <TextButton color="brand" size="xs" onClick={onConfirm}>

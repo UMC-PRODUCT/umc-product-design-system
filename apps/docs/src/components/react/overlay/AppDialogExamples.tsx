@@ -1,6 +1,6 @@
 "use client"
 
-import { Button, Dialog } from "@umc-product/react"
+import { Button, AppDialog } from "@umc-product/react"
 import { useState } from "react"
 
 import {
@@ -15,7 +15,7 @@ const PREVIEW_DESCRIPTION = "다이얼로그 설명 문구가 들어갑니다."
 const CONFIRM_LABEL = "확인"
 const CANCEL_LABEL = "취소"
 
-function DialogPreviewItem({
+function AppDialogPreviewItem({
   specId,
   type,
 }: {
@@ -23,7 +23,7 @@ function DialogPreviewItem({
   type: "alert" | "confirm"
 }) {
   const hasTwoButtons = type === "alert"
-  const code = componentCodeOf(Dialog, {
+  const code = componentCodeOf(AppDialog, {
     open: true,
     title: PREVIEW_TITLE,
     description: PREVIEW_DESCRIPTION,
@@ -32,17 +32,17 @@ function DialogPreviewItem({
   })
   return (
     <div
-      className="umc-dialog__popup"
+      className="umc-app-dialog__popup"
       data-spec-id={specId}
       style={{ position: "static", translate: "none", zIndex: "auto" }}
       {...codeAttributeOf(code)}
     >
-      <div className="umc-dialog__text" data-layout={type}>
-        <div className="umc-dialog__title">{PREVIEW_TITLE}</div>
-        <div className="umc-dialog__description">{PREVIEW_DESCRIPTION}</div>
+      <div className="umc-app-dialog__text" data-layout={type}>
+        <div className="umc-app-dialog__title">{PREVIEW_TITLE}</div>
+        <div className="umc-app-dialog__description">{PREVIEW_DESCRIPTION}</div>
       </div>
       {hasTwoButtons ? (
-        <div className="umc-dialog__button-area" data-variant="default">
+        <div className="umc-app-dialog__button-area" data-variant="default">
           <button
             className="umc-button"
             data-variant="weak"
@@ -63,7 +63,7 @@ function DialogPreviewItem({
           </button>
         </div>
       ) : (
-        <div className="umc-dialog__button-area" data-variant="weak">
+        <div className="umc-app-dialog__button-area" data-variant="weak">
           <button
             className="umc-text-button"
             data-color="brand"
@@ -79,22 +79,25 @@ function DialogPreviewItem({
   )
 }
 
-export function DialogStaticPreview() {
+export function AppDialogStaticPreview() {
   return (
     <div
       className="umc-example umc-example-stack"
       style={{ background: "var(--umc-color-fill-neutral-medium-100)" }}
     >
-      <DialogPreviewItem
-        specId="dialog-alert dialog-alert-title dialog-alert-description dialog-alert-button-area"
+      <AppDialogPreviewItem
+        specId="app-dialog-alert app-dialog-alert-title app-dialog-alert-description app-dialog-alert-button-area"
         type="alert"
       />
-      <DialogPreviewItem specId="dialog-confirm-button-area" type="confirm" />
+      <AppDialogPreviewItem
+        specId="app-dialog-confirm-button-area"
+        type="confirm"
+      />
     </div>
   )
 }
 
-export function DialogInteractiveAlert() {
+export function AppDialogInteractiveAlert() {
   const [open, setOpen] = useState(false)
   return (
     <div className="umc-example">
@@ -106,7 +109,7 @@ export function DialogInteractiveAlert() {
       >
         Alert 다이얼로그 열기
       </Button>
-      <Dialog
+      <AppDialog
         open={open}
         onOpenChange={setOpen}
         title="정말 삭제할까요?"
@@ -120,7 +123,7 @@ export function DialogInteractiveAlert() {
   )
 }
 
-export function DialogInteractiveConfirm() {
+export function AppDialogInteractiveConfirm() {
   const [open, setOpen] = useState(false)
   return (
     <div className="umc-example">
@@ -132,7 +135,7 @@ export function DialogInteractiveConfirm() {
       >
         Confirm 다이얼로그 열기
       </Button>
-      <Dialog
+      <AppDialog
         open={open}
         onOpenChange={setOpen}
         title="저장되었습니다."
@@ -149,30 +152,33 @@ const DIALOG_TYPES: Record<string, "alert" | "confirm"> = {
   Confirm: "confirm",
 }
 
-export function DialogAllVariants() {
+export function AppDialogAllVariants() {
   return (
     <VariantGrid
-      set="dialog"
+      set="app-dialog"
       rows={["Type"]}
       columns={[]}
       render={(variant: FigmaVariant) => (
-        <DialogPreviewItem type={lookup(DIALOG_TYPES, variant, "Type")} />
+        <AppDialogPreviewItem type={lookup(DIALOG_TYPES, variant, "Type")} />
       )}
     />
   )
 }
 
-export function DialogButtonAreaVariants() {
+export function AppDialogButtonAreaVariants() {
   return (
     <div className="umc-example umc-example-stack">
       <div
-        data-figma-set="dialog-button-area"
+        data-figma-set="app-dialog-button-area"
         data-figma-variant="Type=Default"
       >
-        <DialogPreviewItem type="alert" />
+        <AppDialogPreviewItem type="alert" />
       </div>
-      <div data-figma-set="dialog-button-area" data-figma-variant="Type=Weak">
-        <DialogPreviewItem type="confirm" />
+      <div
+        data-figma-set="app-dialog-button-area"
+        data-figma-variant="Type=Weak"
+      >
+        <AppDialogPreviewItem type="confirm" />
       </div>
     </div>
   )

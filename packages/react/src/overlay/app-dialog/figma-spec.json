@@ -1,13 +1,13 @@
 {
-  "component": "Dialog",
+  "component": "AppDialog",
   "figmaSection": "2538:25065",
-  "page": "/components/overlay/dialog/",
+  "page": "/components/overlay/app-dialog/",
   "nodes": [
     {
-      "specId": "dialog-alert",
+      "specId": "app-dialog-alert",
       "node": "2538:25066",
       "variant": "Type=Alert",
-      "target": ".umc-dialog__popup",
+      "target": ".umc-app-dialog__popup",
       "expected": {
         "width": "311px",
         "border-top-left-radius": "24px",
@@ -18,10 +18,10 @@
       }
     },
     {
-      "specId": "dialog-alert-title",
+      "specId": "app-dialog-alert-title",
       "node": "2538:25066",
       "variant": "Type=Alert",
-      "target": ".umc-dialog__title",
+      "target": ".umc-app-dialog__title",
       "expected": {
         "font-size": "20px",
         "font-weight": "600",
@@ -29,10 +29,10 @@
       }
     },
     {
-      "specId": "dialog-alert-description",
+      "specId": "app-dialog-alert-description",
       "node": "2538:25066",
       "variant": "Type=Alert",
-      "target": ".umc-dialog__description",
+      "target": ".umc-app-dialog__description",
       "expected": {
         "font-size": "15px",
         "font-weight": "400",
@@ -40,10 +40,10 @@
       }
     },
     {
-      "specId": "dialog-alert-button-area",
+      "specId": "app-dialog-alert-button-area",
       "node": "2538:14973",
       "variant": "Type=Default",
-      "target": ".umc-dialog__button-area[data-variant='default']",
+      "target": ".umc-app-dialog__button-area[data-variant='default']",
       "expected": {
         "padding-top": "16px",
         "padding-left": "16px",
@@ -53,10 +53,10 @@
       }
     },
     {
-      "specId": "dialog-alert-cancel-button",
+      "specId": "app-dialog-alert-cancel-button",
       "node": "2538:14973",
       "variant": "Type=Default 취소 버튼",
-      "target": ".umc-dialog__button-area[data-variant='default'] .umc-button[data-color='neutral']",
+      "target": ".umc-app-dialog__button-area[data-variant='default'] .umc-button[data-color='neutral']",
       "expected": {
         "height": "48px",
         "border-top-left-radius": "10px",
@@ -64,10 +64,10 @@
       }
     },
     {
-      "specId": "dialog-confirm-button-area",
+      "specId": "app-dialog-confirm-button-area",
       "node": "2538:14973",
       "variant": "Type=Weak",
-      "target": ".umc-dialog__button-area[data-variant='weak']",
+      "target": ".umc-app-dialog__button-area[data-variant='weak']",
       "expected": {
         "padding-top": "16px",
         "padding-left": "16px",

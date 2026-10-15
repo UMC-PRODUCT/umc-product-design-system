@@ -1035,7 +1035,7 @@
         "Type=Error, Leading Acc=False, Text Button=True"
       ]
     },
-    "dialog": {
+    "app-dialog": {
       "node": "2538:25065",
       "name": "App/Dialog",
       "axes": {
@@ -1043,7 +1043,7 @@
       },
       "variants": ["Type=Alert", "Type=Confirm"]
     },
-    "dialog-button-area": {
+    "app-dialog-button-area": {
       "node": "2538:14973",
       "name": ".primitive/App/Dialog/Button Area",
       "axes": {

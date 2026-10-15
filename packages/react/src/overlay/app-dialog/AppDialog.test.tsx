@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react"
 import { beforeAll, describe, expect, it, vi } from "vitest"
 
-import { Dialog } from "./Dialog.tsx"
+import { AppDialog } from "./AppDialog.tsx"
 
 beforeAll(() => {
   if (!Element.prototype.getAnimations) {
@@ -9,15 +9,15 @@ beforeAll(() => {
   }
 })
 
-describe("Dialog", () => {
+describe("AppDialog", () => {
   it("열린 상태에서 title을 그린다", () => {
-    render(<Dialog open title="삭제할까요?" confirmLabel="확인" />)
+    render(<AppDialog open title="삭제할까요?" confirmLabel="확인" />)
     expect(screen.getByText("삭제할까요?")).toBeInTheDocument()
   })
 
   it("description을 넘기면 렌더링한다", () => {
     render(
-      <Dialog
+      <AppDialog
         open
         title="삭제할까요?"
         description="삭제된 데이터는 복구할 수 없습니다."
@@ -30,18 +30,18 @@ describe("Dialog", () => {
   })
 
   it("description 없으면 렌더링하지 않는다", () => {
-    render(<Dialog open title="확인" confirmLabel="확인" />)
+    render(<AppDialog open title="확인" confirmLabel="확인" />)
     expect(screen.queryByRole("paragraph")).toBeNull()
   })
 
   it("cancelLabel 없으면 버튼이 하나다", () => {
-    render(<Dialog open title="완료되었습니다." confirmLabel="확인" />)
+    render(<AppDialog open title="완료되었습니다." confirmLabel="확인" />)
     expect(screen.getAllByRole("button")).toHaveLength(1)
   })
 
   it("cancelLabel 있으면 버튼이 둘이다", () => {
     render(
-      <Dialog
+      <AppDialog
         open
         title="삭제할까요?"
         confirmLabel="삭제"
@@ -54,7 +54,7 @@ describe("Dialog", () => {
   it("onConfirm을 호출한다", () => {
     const onConfirm = vi.fn()
     render(
-      <Dialog open title="확인" confirmLabel="확인" onConfirm={onConfirm} />,
+      <AppDialog open title="확인" confirmLabel="확인" onConfirm={onConfirm} />,
     )
     fireEvent.click(screen.getByRole("button", { name: "확인" }))
     expect(onConfirm).toHaveBeenCalledTimes(1)
@@ -63,7 +63,7 @@ describe("Dialog", () => {
   it("onCancel을 호출한다", () => {
     const onCancel = vi.fn()
     render(
-      <Dialog
+      <AppDialog
         open
         title="삭제할까요?"
         confirmLabel="삭제"
@@ -77,33 +77,33 @@ describe("Dialog", () => {
 
   it("cancelLabel이 있으면 data-layout=alert, 없으면 confirm이다", () => {
     const { rerender } = render(
-      <Dialog open title="확인" confirmLabel="확인" />,
+      <AppDialog open title="확인" confirmLabel="확인" />,
     )
-    expect(document.querySelector(".umc-dialog__text")).toHaveAttribute(
+    expect(document.querySelector(".umc-app-dialog__text")).toHaveAttribute(
       "data-layout",
       "confirm",
     )
 
     rerender(
-      <Dialog open title="확인" confirmLabel="확인" cancelLabel="취소" />,
+      <AppDialog open title="확인" confirmLabel="확인" cancelLabel="취소" />,
     )
-    expect(document.querySelector(".umc-dialog__text")).toHaveAttribute(
+    expect(document.querySelector(".umc-app-dialog__text")).toHaveAttribute(
       "data-layout",
       "alert",
     )
   })
 
   it("닫힌 상태에서는 팝업이 없다", () => {
-    render(<Dialog title="확인" confirmLabel="확인" />)
-    expect(document.querySelector(".umc-dialog__popup")).toBeNull()
+    render(<AppDialog title="확인" confirmLabel="확인" />)
+    expect(document.querySelector(".umc-app-dialog__popup")).toBeNull()
   })
 
-  it("DOM 구조: .umc-dialog__popup > .umc-dialog__text > .umc-dialog__title", () => {
-    render(<Dialog open title="제목" confirmLabel="확인" />)
-    const popup = document.querySelector(".umc-dialog__popup")
+  it("DOM 구조: .umc-app-dialog__popup > .umc-app-dialog__text > .umc-app-dialog__title", () => {
+    render(<AppDialog open title="제목" confirmLabel="확인" />)
+    const popup = document.querySelector(".umc-app-dialog__popup")
     expect(popup).not.toBeNull()
-    const text = popup?.querySelector(".umc-dialog__text")
+    const text = popup?.querySelector(".umc-app-dialog__text")
     expect(text).not.toBeNull()
-    expect(text?.querySelector(".umc-dialog__title")).not.toBeNull()
+    expect(text?.querySelector(".umc-app-dialog__title")).not.toBeNull()
   })
 })
