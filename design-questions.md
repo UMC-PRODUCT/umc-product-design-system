@@ -47,6 +47,8 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 
 2026-10-10에 고쳐 주신 내용을 반영했습니다. `Icon/warning` Fill 프레임이 24×24가 되어 비율 보정을 뺐고, 새 `Icon/warning-Triangle`(Thin, Regular, Fill)은 `WarningTriangleIcon`으로 더했습니다. Search 변형 이름이 `Weight=Regular`로 바로잡혀 코드의 변형 이름 보정 규칙을 지웠습니다. `_`로 나눴던 이름 5개(`Icon/warning`, `Icon/Location` 등)도 `/`로 바뀌어 원문 이름을 맞췄고, 코드의 컴포넌트 이름은 그대로입니다. 새 `Pictogram/Check`는 `CheckPictogram`으로 더했습니다. 같은 날 아이콘 전체를 다시 받아 대조했는데, `Icon/Checkbox`의 Thin과 Regular 그림이 서로 바뀌어 있어 코드는 섹션 설명(Thin 1.2px, Regular 1.6px)대로 두었습니다.
 
+2026-10-15에 고쳐 주신 내용을 반영했습니다. `Icon/Reset` 세 굵기를 시계 반대 방향 그림으로 바꿨고, `Icon/Location` Fill 프레임이 24×24가 되어 비율 보정을 뺐습니다. 아직 24×24가 아닌 프레임은 Bold, Italic, Strikethrough, Underline, Time의 Fill과 ThumbsUp 전체(23.85×25), Link 전체(24×25), Person Regular와 Fill(22×24)입니다. 같은 방식으로 맞춰 주시면 코드의 보정 규칙을 지우겠습니다.
+
 ## Button
 
 노드 2621:33584. 코드가 쓰는 값은 [Button figma-spec](packages/react/src/button/figma-spec.json)에 있습니다.
