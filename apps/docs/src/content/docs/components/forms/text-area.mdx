@@ -6,6 +6,7 @@ description: 공지처럼 긴 글을 쓰는 여러 줄 입력 칸입니다.
 import {
   TextAreaAllVariants,
   TextAreaDefault,
+  TextAreaHeight,
   TextAreaStates,
 } from "../../../../components/react/forms/TextAreaExamples.tsx"
 
@@ -30,13 +31,29 @@ import { TextArea } from "@umc-product/react"
 | ------- | --------------------------------------- | ------------------------------------------ |
 | 피그마  | `Text Area`                             | `Text Field/ Input Box`의 `Type=Text Area` |
 | 쓰임    | 공지처럼 긴 글                          | 주소처럼 짧은 글                           |
-| 높이    | 최소 198px, 넘치면 상자 안에서 스크롤   | 2줄부터 시작하고 손잡이로 늘림             |
+| 높이    | 최소 120px, 넘치면 상자 안에서 스크롤   | 2줄부터 시작하고 손잡이로 늘림             |
 | 글자 수 | `maxLength`를 넘기면 오른쪽 아래에 표시 | 없음                                       |
 | 크기    | 16px 한 가지                            | `lg`(18px), `md`(16px)                     |
 
 ## 글자 수
 
 `maxLength`를 넘기면 오른쪽 아래에 "현재/최대" 글자 수가 나옵니다. 최대 글자 수를 넘겨서는 입력할 수 없습니다. 비활성 상태에서는 피그마처럼 글자 수를 숨깁니다.
+
+## 높이
+
+기본 최소 높이는 120px이고 최대 높이는 없습니다. 피그마 설명대로 최소·최대 높이는 페이지마다 달라질 수 있습니다. `className`으로 `--umc-text-area-min-height`와 `--umc-text-area-max-height` 변수를 넘겨 바꿉니다. 최대 높이를 넘는 내용은 상자 안에서 스크롤됩니다.
+
+```tsx
+<TextArea
+  label="모집 공고 본문"
+  maxLength={2000}
+  className="[--umc-text-area-min-height:240px] [--umc-text-area-max-height:320px]"
+/>
+```
+
+Tailwind를 쓰지 않는 앱은 CSS 클래스에서 같은 변수를 선언하고 그 클래스를 `className`으로 넘깁니다.
+
+<TextAreaHeight client:visible />
 
 ## 상태
 
