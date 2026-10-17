@@ -1,10 +1,10 @@
 {
-  "component": "TextArea",
+  "component": "TextFieldArea",
   "figmaSection": "2621:33115",
-  "page": "/components/forms/text-area/",
+  "page": "/components/forms/text-field-area/",
   "nodes": [
     {
-      "specId": "text-area-box",
+      "specId": "text-field-area-box",
       "node": "2621:33262",
       "variant": "State=Default, Type=Text Area, Size=Lg",
       "target": ".umc-input-box",
@@ -19,7 +19,7 @@
       }
     },
     {
-      "specId": "text-area-input",
+      "specId": "text-field-area-input",
       "node": "2621:33264",
       "variant": "Text Area 글자, Size=Lg",
       "target": ".umc-input-box__input",
@@ -31,7 +31,7 @@
       }
     },
     {
-      "specId": "text-area-md",
+      "specId": "text-field-area-md",
       "node": "2621:33267",
       "variant": "Text Area 글자, Size=Md",
       "target": ".umc-input-box__input",
@@ -43,7 +43,7 @@
       }
     },
     {
-      "specId": "text-area-invalid",
+      "specId": "text-field-area-invalid",
       "node": "2621:33383",
       "variant": "Text Field/ Box, State=Filled, Error=True",
       "target": ".umc-input-box",
@@ -53,7 +53,7 @@
       }
     },
     {
-      "specId": "text-area-disabled",
+      "specId": "text-field-area-disabled",
       "node": "2621:33290",
       "variant": "State=Disabled, Type=Text Area, Size=Lg",
       "target": ".umc-input-box",

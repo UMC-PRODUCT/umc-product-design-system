@@ -8,14 +8,17 @@ import { mergeRefs } from "../../internal/merge-refs.ts"
 import { Field, type FieldOwnProps } from "../field/Field.tsx"
 import { InputBox } from "../input-box/InputBox.tsx"
 
-export type TextAreaProps = Omit<ComponentPropsWithRef<"textarea">, "size"> &
+export type TextFieldAreaProps = Omit<
+  ComponentPropsWithRef<"textarea">,
+  "size"
+> &
   FieldOwnProps & {
     size?: "lg" | "md"
   }
 
 const DEFAULT_ROWS = 2
 
-export function TextArea({
+export function TextFieldArea({
   label,
   required,
   caption,
@@ -30,7 +33,7 @@ export function TextArea({
   defaultValue,
   ref,
   ...textareaProps
-}: TextAreaProps) {
+}: TextFieldAreaProps) {
   return (
     <Field
       label={label}
@@ -46,7 +49,7 @@ export function TextArea({
         size={size}
         invalid={invalid}
         disabled={disabled}
-        className="umc-text-area"
+        className="umc-text-field-area"
       >
         <BaseUIField.Control
           value={value}
@@ -58,7 +61,7 @@ export function TextArea({
               {...mergeProps<"textarea">(controlProps, {
                 ...textareaProps,
                 rows,
-                className: "umc-input-box__input umc-text-area__input",
+                className: "umc-input-box__input umc-text-field-area__input",
               })}
               ref={mergeRefs(controlProps.ref, ref)}
             />

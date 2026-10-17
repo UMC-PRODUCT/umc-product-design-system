@@ -1,6 +1,6 @@
 "use client"
 
-import { TextArea } from "@umc-product/react"
+import { TextFieldArea } from "@umc-product/react"
 
 import { ForceState } from "../variants/VariantCells.tsx"
 import { lookup, type FigmaVariant } from "../variants/figma-variants.ts"
@@ -13,21 +13,21 @@ import {
 } from "../variants/input-states.ts"
 import { VariantGrid } from "../variants/VariantGrid.tsx"
 
-export function TextAreaDefault() {
+export function TextFieldAreaDefault() {
   return (
     <div className="umc-example umc-example-stack">
       <div
         className="w-full max-w-[350px]"
-        data-spec-id="text-area-box text-area-input"
+        data-spec-id="text-field-area-box text-field-area-input"
       >
-        <TextArea
-          label="지원 동기"
-          placeholder="UMC에 지원한 이유를 적어 주세요"
-          caption="500자 이내"
+        <TextFieldArea
+          label="주소"
+          placeholder="도로명 주소를 입력하세요"
+          caption="건물 이름과 호수까지 적어 주세요"
         />
       </div>
-      <div className="w-full max-w-[350px]" data-spec-id="text-area-md">
-        <TextArea
+      <div className="w-full max-w-[350px]" data-spec-id="text-field-area-md">
+        <TextFieldArea
           label="한 줄 소개"
           size="md"
           placeholder="자신을 소개해 주세요"
@@ -37,20 +37,26 @@ export function TextAreaDefault() {
   )
 }
 
-export function TextAreaStates() {
+export function TextFieldAreaStates() {
   return (
     <div className="umc-example umc-example-stack">
-      <div className="w-full max-w-[350px]" data-spec-id="text-area-invalid">
-        <TextArea
-          label="지원 동기"
-          defaultValue="짧은 답변"
+      <div
+        className="w-full max-w-[350px]"
+        data-spec-id="text-field-area-invalid"
+      >
+        <TextFieldArea
+          label="주소"
+          defaultValue="서울특별시"
           invalid
-          errorMessage="50자 이상 적어 주세요"
+          errorMessage="상세 주소까지 적어 주세요"
         />
       </div>
-      <div className="w-full max-w-[350px]" data-spec-id="text-area-disabled">
-        <TextArea
-          label="지원 동기"
+      <div
+        className="w-full max-w-[350px]"
+        data-spec-id="text-field-area-disabled"
+      >
+        <TextFieldArea
+          label="주소"
           placeholder="제출 후에는 수정할 수 없습니다"
           disabled
         />
@@ -59,11 +65,11 @@ export function TextAreaStates() {
   )
 }
 
-function TextAreaVariantCell({ variant }: { variant: FigmaVariant }) {
+function TextFieldAreaVariantCell({ variant }: { variant: FigmaVariant }) {
   return (
     <div className="w-[260px]">
       <ForceState states={forcedInputStates(variant)}>
-        <TextArea
+        <TextFieldArea
           aria-label="예시 입력"
           size={lookup(INPUT_SIZES, variant, "Size")}
           placeholder="내용을 입력하세요"
@@ -77,7 +83,7 @@ function TextAreaVariantCell({ variant }: { variant: FigmaVariant }) {
   )
 }
 
-export function TextAreaAllVariants() {
+export function TextFieldAreaAllVariants() {
   return (
     <VariantGrid
       set="input-box"
@@ -85,7 +91,7 @@ export function TextAreaAllVariants() {
       rows={["State"]}
       columns={["Size"]}
       order={{ State: INPUT_STATE_ORDER }}
-      render={(variant) => <TextAreaVariantCell variant={variant} />}
+      render={(variant) => <TextFieldAreaVariantCell variant={variant} />}
     />
   )
 }

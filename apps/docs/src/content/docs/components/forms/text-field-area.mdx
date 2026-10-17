@@ -1,0 +1,41 @@
+---
+title: TextFieldArea
+description: 주소처럼 짧은 글을 여러 줄로 입력하는 텍스트 필드입니다.
+---
+
+import {
+  TextFieldAreaAllVariants,
+  TextFieldAreaDefault,
+  TextFieldAreaStates,
+} from "../../../../components/react/forms/TextFieldAreaExamples.tsx"
+
+피그마 `Text Field/ Input Box`의 `Type=Text Area`를 구현했습니다. 피그마 설명대로 주소처럼 짧은 단문형 텍스트를 쓰는 칸입니다. 상자는 `InputBox`와 같고 안쪽 여백만 위아래 12px, 좌우 16px입니다. 네이티브 `textarea` 속성과 `ref`를 그대로 받습니다.
+
+```tsx
+import { TextFieldArea } from "@umc-product/react"
+
+<TextFieldArea label="주소" {...register("address")} />
+```
+
+<TextFieldAreaDefault client:visible />
+
+## 상태
+
+<TextFieldAreaStates client:visible />
+
+## 모든 변형
+
+피그마 `Text Field/ Input Box`의 Text Area 변형 10개를 그렸습니다. 칸에 마우스를 올리면 코드가 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
+
+<TextFieldAreaAllVariants client:visible />
+
+## props
+
+`Field`의 props와 네이티브 `textarea` 속성을 받습니다.
+
+| prop   | 타입           | 기본값 | 설명                     |
+| ------ | -------------- | ------ | ------------------------ |
+| `size` | `"lg" \| "md"` | `"lg"` | 글자 크기 18px 또는 16px |
+| `rows` | `number`       | `2`    | 처음 높이(줄 수)         |
+
+높이는 사용자가 세로로만 늘릴 수 있습니다.
