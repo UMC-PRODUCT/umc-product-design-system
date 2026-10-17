@@ -90,7 +90,7 @@ export function AppDialogStaticPreview() {
         type="alert"
       />
       <AppDialogPreviewItem
-        specId="app-dialog-confirm-button-area"
+        specId="app-dialog-confirm-button-area app-dialog-confirm-button"
         type="confirm"
       />
     </div>
