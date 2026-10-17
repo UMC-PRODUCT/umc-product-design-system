@@ -69,11 +69,28 @@
       "variant": "Type=Weak",
       "target": ".umc-app-dialog__button-area[data-variant='weak']",
       "expected": {
+        "height": "62px",
         "padding-top": "16px",
         "padding-left": "16px",
         "padding-right": "16px",
         "padding-bottom": "16px",
         "justify-content": "flex-end"
+      }
+    },
+    {
+      "specId": "app-dialog-confirm-button",
+      "node": "3928:63088",
+      "variant": "Type=Weak 확인 버튼 area",
+      "target": ".umc-app-dialog__button-area[data-variant='weak'] .umc-text-button",
+      "expected": {
+        "height": "30px",
+        "padding-top": "4px",
+        "padding-bottom": "4px",
+        "padding-left": "8px",
+        "padding-right": "8px"
+      },
+      "figmaDiffers": {
+        "height": "피그마 area 프레임은 높이 44px 고정이라 버튼 영역(62px)의 위아래 여백으로 7px씩 넘친다. 디자인 팀 요청대로 상하 4px 여백만 줘서 버튼 높이 30px, 버튼 영역 62px로 피그마와 같은 바깥 크기를 맞췄다"
       }
     }
   ]

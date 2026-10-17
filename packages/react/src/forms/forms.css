@@ -2,6 +2,7 @@
 @import "./field/field.css";
 @import "./text-field/text-field.css";
 @import "./text-area/text-area.css";
+@import "./text-field-area/text-field-area.css";
 @import "./search-field/search-field.css";
 @import "./dropdown-list/dropdown-list.css";
 @import "./select/select.css";

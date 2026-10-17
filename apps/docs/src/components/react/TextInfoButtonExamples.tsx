@@ -2,8 +2,8 @@
 
 import { TextInfoButton, Tooltip } from "@umc-product/react"
 
-import { ForceState } from "../variants/VariantCells.tsx"
-import { VariantGrid } from "../variants/VariantGrid.tsx"
+import { ForceState } from "./variants/VariantCells.tsx"
+import { VariantGrid } from "./variants/VariantGrid.tsx"
 
 export function TextInfoButtonDefault() {
   return (

@@ -20,10 +20,15 @@ const COMPONENT_GROUPS = [
   { label: "앱 셸", directory: "components/shell" },
 ]
 
+const MOVED_PAGES = {
+  "/components/forms/text-info-button": `${BASE_PATH}/components/actions/text-info-button/`,
+}
+
 export default defineConfig({
   site: SITE_URL,
   base: BASE_PATH,
   server: { port: 5174 },
+  redirects: MOVED_PAGES,
   integrations: [
     react(),
     starlight({

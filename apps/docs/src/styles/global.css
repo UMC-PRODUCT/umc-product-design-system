@@ -236,8 +236,11 @@
 }
 
 .docs-toast-preview .umc-toast {
-  min-width: min(400px, 100cqi);
   max-width: 100cqi;
+}
+
+.docs-toast-preview .umc-toast:not([data-placement="top"]) {
+  min-width: min(400px, 100cqi);
 }
 
 .docs-level-mark {

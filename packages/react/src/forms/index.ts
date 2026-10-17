@@ -15,6 +15,10 @@ export {
 export { SearchField, type SearchFieldProps } from "./search-field/index.ts"
 export { Select, type SelectOption, type SelectProps } from "./select/index.ts"
 export { TextArea, type TextAreaProps } from "./text-area/index.ts"
+export {
+  TextFieldArea,
+  type TextFieldAreaProps,
+} from "./text-field-area/index.ts"
 export { TextField, type TextFieldProps } from "./text-field/index.ts"
 export {
   TextInfoButton,

@@ -5,56 +5,79 @@ import { describe, expect, it, vi } from "vitest"
 
 import { TextArea } from "./TextArea.tsx"
 
+const counterOf = () => document.querySelector(".umc-text-area__counter")
+
 describe("TextArea", () => {
   it("label과 textarea가 연결된다", () => {
-    render(<TextArea label="내용" />)
-    expect(screen.getByLabelText("내용")).toBeInTheDocument()
+    render(<TextArea label="공지 내용" />)
+    expect(screen.getByLabelText("공지 내용").tagName).toBe("TEXTAREA")
   })
 
-  it("invalid이면 aria-invalid를 단다", () => {
-    render(<TextArea label="내용" invalid errorMessage="필수 입력" />)
-    expect(screen.getByLabelText("내용")).toHaveAttribute(
+  it("maxLength를 넘기면 글자 수를 현재/최대로 보여 준다", () => {
+    render(<TextArea aria-label="내용" maxLength={300} defaultValue="안녕" />)
+    expect(counterOf()).toHaveTextContent("2/300")
+  })
+
+  it("입력하면 글자 수가 늘어난다", async () => {
+    render(<TextArea aria-label="내용" maxLength={300} />)
+    await userEvent.type(screen.getByLabelText("내용"), "공지")
+    expect(counterOf()).toHaveTextContent("2/300")
+  })
+
+  it("value를 넘기면 그 길이를 센다", () => {
+    render(
+      <TextArea
+        aria-label="내용"
+        maxLength={10}
+        value="다섯 글자"
+        onChange={() => {}}
+      />,
+    )
+    expect(counterOf()).toHaveTextContent("5/10")
+  })
+
+  it("maxLength가 없으면 글자 수를 그리지 않는다", () => {
+    render(<TextArea aria-label="내용" defaultValue="안녕" />)
+    expect(counterOf()).toBeNull()
+  })
+
+  it("disabled이면 글자 수를 숨긴다", () => {
+    render(<TextArea aria-label="내용" maxLength={300} disabled />)
+    expect(counterOf()).toBeNull()
+    expect(document.querySelector(".umc-text-area")).toHaveAttribute(
+      "data-disabled",
+    )
+  })
+
+  it("onChange를 그대로 부른다", async () => {
+    const onChange = vi.fn()
+    render(<TextArea aria-label="내용" maxLength={300} onChange={onChange} />)
+    await userEvent.type(screen.getByLabelText("내용"), "가")
+    expect(onChange).toHaveBeenCalledTimes(1)
+  })
+
+  it("invalid이면 aria-invalid와 오류 문구를 단다", () => {
+    render(
+      <TextArea label="공지 내용" invalid errorMessage="내용을 적어 주세요" />,
+    )
+    expect(screen.getByLabelText("공지 내용")).toHaveAttribute(
       "aria-invalid",
       "true",
     )
-  })
-
-  it("required이면 * 표시를 렌더한다", () => {
-    render(<TextArea label="내용" required />)
-    expect(screen.getByText("*", { exact: false })).toBeInTheDocument()
-  })
-
-  it("caption이 표시된다", () => {
-    render(<TextArea label="내용" caption="500자 이내로 작성하세요" />)
-    expect(screen.getByText("500자 이내로 작성하세요")).toBeInTheDocument()
-  })
-
-  it("invalid이고 errorMessage가 있으면 caption을 대체한다", () => {
-    render(
-      <TextArea
-        label="내용"
-        invalid
-        errorMessage="필수 입력 항목입니다"
-        caption="도움말"
-      />,
+    expect(screen.getByText("내용을 적어 주세요")).toBeInTheDocument()
+    expect(document.querySelector(".umc-text-area")).toHaveAttribute(
+      "data-invalid",
     )
-    expect(screen.queryByText("도움말")).not.toBeInTheDocument()
-    expect(screen.getByText("필수 입력 항목입니다")).toBeInTheDocument()
   })
 
-  it("textarea 요소에 ref와 onChange를 그대로 연결한다", async () => {
-    const user = userEvent.setup()
-    const onChange = vi.fn()
+  it("ref는 textarea를 가리킨다", () => {
     const ref = createRef<HTMLTextAreaElement>()
-    render(<TextArea label="내용" ref={ref} onChange={onChange} />)
-    expect(ref.current).toBeInstanceOf(HTMLTextAreaElement)
-    await user.type(screen.getByLabelText("내용"), "안녕")
-    expect(onChange).toHaveBeenCalled()
-    expect(onChange.mock.calls[0]?.[0].target).toBe(ref.current)
+    render(<TextArea aria-label="내용" ref={ref} />)
+    expect(ref.current).toBe(screen.getByLabelText("내용"))
   })
 
-  it("기본 2줄 높이로 시작한다", () => {
-    render(<TextArea label="내용" />)
-    expect(screen.getByLabelText("내용")).toHaveAttribute("rows", "2")
+  it("className은 바깥 틀에 붙는다", () => {
+    render(<TextArea aria-label="내용" className="mt-4" />)
+    expect(document.querySelector(".umc-field")).toHaveClass("mt-4")
   })
 })

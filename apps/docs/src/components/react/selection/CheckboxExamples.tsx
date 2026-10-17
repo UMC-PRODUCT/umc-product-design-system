@@ -7,7 +7,11 @@ import {
   type CheckboxSize,
 } from "@umc-product/react"
 
-import { lookup, type FigmaVariant } from "../variants/figma-variants.ts"
+import {
+  lookup,
+  type FigmaVariant,
+  type VariantProps,
+} from "../variants/figma-variants.ts"
 import { VariantGrid } from "../variants/VariantGrid.tsx"
 
 const PARTS = ["PM", "Design", "Web PE", "Mobile PE"]
@@ -163,26 +167,42 @@ const FIGMA_COLORS: Readonly<Record<string, CheckboxColor>> = {
   Error: "neutral",
 }
 
-const checkboxPropsOf = (variant: FigmaVariant) => {
-  const invalid = variant.props["Color"] === "Error"
-  return {
-    size: lookup(FIGMA_SIZES, variant, "Size"),
-    color: lookup(FIGMA_COLORS, variant, "Color"),
-    invalid,
-    disabled: !invalid && variant.props["Disabled"] === "True",
-    defaultChecked: variant.props["Selected"] === "True",
-  }
+const isErrorVariant = (props: VariantProps) => props["Color"] === "Error"
+
+const isDrawnDisabled = (props: VariantProps) =>
+  !isErrorVariant(props) && props["Disabled"] === "True"
+
+const isSelectedVariant = (props: VariantProps) => props["Selected"] === "True"
+
+const checkboxPropsOf = (variant: FigmaVariant) => ({
+  size: lookup(FIGMA_SIZES, variant, "Size"),
+  color: lookup(FIGMA_COLORS, variant, "Color"),
+  invalid: isErrorVariant(variant.props),
+  disabled: isDrawnDisabled(variant.props),
+  defaultChecked: isSelectedVariant(variant.props),
+})
+
+const STATE_AXIS = "State"
+
+const stateOf = (props: VariantProps) => {
+  const checkedState = isSelectedVariant(props) ? "Checked" : "Unchecked"
+  return isDrawnDisabled(props) ? `Disabled ${checkedState}` : checkedState
 }
 
 const GRID_LAYOUT = {
   sections: ["Size"],
-  rows: ["Selected"],
-  columns: ["Color", "Disabled"],
+  rows: [STATE_AXIS],
+  columns: ["Color"],
+  derivedAxes: { [STATE_AXIS]: stateOf },
   order: {
     Size: ["Md", "Lg"],
     Color: ["Neutral", "Brand", "Error"],
-    Selected: ["False", "True"],
-    Disabled: ["False", "True"],
+    [STATE_AXIS]: [
+      "Unchecked",
+      "Checked",
+      "Disabled Unchecked",
+      "Disabled Checked",
+    ],
   },
 } as const
 

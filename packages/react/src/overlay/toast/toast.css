@@ -28,7 +28,7 @@
   .umc-toast {
     --umc-toast-neutral-bg: rgba(63, 65, 65, 0.8);
     --umc-toast-error-bg: #fed7d7;
-    --umc-toast-letter-spacing: -0.02em;
+    --umc-toast-action-letter-spacing: -0.02em;
 
     display: flex;
     align-items: center;
@@ -51,7 +51,7 @@
     font-size: var(--umc-typography-label-3-medium-font-size);
     font-weight: var(--umc-typography-label-3-medium-font-weight);
     line-height: var(--umc-typography-label-3-medium-line-height);
-    letter-spacing: var(--umc-toast-letter-spacing);
+    letter-spacing: var(--umc-typography-label-3-medium-letter-spacing);
     opacity: 1;
     transition: opacity var(--umc-motion-duration);
   }
@@ -154,6 +154,7 @@
     background: none;
     color: var(--umc-toast-action);
     font: inherit;
+    letter-spacing: var(--umc-toast-action-letter-spacing);
     text-decoration: underline;
     cursor: pointer;
     white-space: nowrap;
