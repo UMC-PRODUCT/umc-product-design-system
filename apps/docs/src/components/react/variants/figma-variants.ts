@@ -9,6 +9,28 @@ export type FigmaVariant = {
   props: VariantProps
 }
 
+export type DerivedAxes = Readonly<
+  Record<string, (props: VariantProps) => string>
+>
+
+export const withDerivedAxes = (
+  variant: FigmaVariant,
+  derivedAxes: DerivedAxes,
+): FigmaVariant => {
+  const derivedProps = Object.entries(derivedAxes).map(([axis, derive]) => {
+    if (axis in variant.props) {
+      throw new Error(
+        `${variant.name}: 계산할 축 ${axis}가 피그마 축과 이름이 같습니다`,
+      )
+    }
+    return [axis, derive(variant.props)] as const
+  })
+  return {
+    name: variant.name,
+    props: { ...variant.props, ...Object.fromEntries(derivedProps) },
+  }
+}
+
 export type FigmaVariantSet = {
   key: VariantSetKey
   node: string
