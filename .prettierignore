@@ -8,3 +8,4 @@ packages/design-tokens/reports
 packages/icons/figma
 packages/icons/src/generated
 packages/icons/reports
+storybook-static

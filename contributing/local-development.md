@@ -4,7 +4,7 @@
 
 - 독자: 디자인 시스템 저장소에 기여하는 개발자
 - 소유자: UMC PRODUCT Design Chapter
-- 기준일: 2026-10-09
+- 기준일: 2026-10-13
 
 ## 시작하기
 
@@ -21,6 +21,8 @@ pnpm docs:dev
 
 문서 사이트는 워크스페이스 패키지의 `dist`를 불러옵니다. 컴포넌트, 토큰, 아이콘 코드를 고치면 `pnpm build:packages`를 다시 돌려야 문서에 반영됩니다.
 
+Storybook은 `pnpm storybook:dev`로 띄우고 `http://localhost:6006/`에서 봅니다. 컴포넌트는 소스(`packages/react/src`)를 바로 읽어서 고치면 곧바로 반영됩니다. 토큰과 아이콘은 `dist`를 읽으므로 고친 뒤 `pnpm build:packages`를 다시 돌립니다.
+
 ## 저장소 구조
 
 ```
@@ -28,6 +30,7 @@ packages/design-tokens   피그마 변수를 CSS 변수와 Tailwind로
 packages/icons           피그마 SVG를 React 아이콘 컴포넌트로
 packages/react           Base UI 기반 컴포넌트와 미리 빌드한 CSS
 apps/docs                Astro Starlight 문서 사이트
+apps/storybook           컴포넌트 Playground(Storybook)
 scripts                  배포물 검사와 소비자 스모크 테스트
 .changeset               다음 배포에 들어갈 변경 기록
 .github/workflows        CI, 버전 PR, 패키지 배포, 문서 배포
@@ -39,8 +42,8 @@ PR을 열면 CI가 아래 명령을 모두 돌립니다. 패키지 코드를 고
 
 | 명령                              | 하는 일                                                    |
 | --------------------------------- | ---------------------------------------------------------- |
-| `pnpm test`                       | 세 패키지의 Vitest 테스트                                  |
-| `pnpm typecheck`                  | 패키지와 문서의 타입 검사                                  |
+| `pnpm test`                       | 패키지와 앱의 Vitest 테스트. 모든 스토리 렌더 포함         |
+| `pnpm typecheck`                  | 패키지, 문서, Storybook의 타입 검사                        |
 | `pnpm format:check`               | Prettier 형식 검사. 고칠 때는 `pnpm format`                |
 | `pnpm tokens:check`               | 피그마 원문으로 다시 만든 토큰이 커밋된 결과와 같은지 비교 |
 | `pnpm icons:check`                | 아이콘 생성물이 원문과 같은지 비교                         |
@@ -49,6 +52,7 @@ PR을 열면 CI가 아래 명령을 모두 돌립니다. 패키지 코드를 고
 | `pnpm docs:build`                 | 문서 빌드                                                  |
 | `pnpm docs:variants`              | 피그마 변형이 문서에 빠짐없이 한 번씩 그려졌는지 확인      |
 | `pnpm docs:links`                 | 빌드한 문서의 내부 링크가 모두 열리는지 확인               |
+| `pnpm storybook:build`            | Storybook 빌드. 결과는 `apps/storybook/storybook-static`   |
 
 ## 브랜치와 PR
 

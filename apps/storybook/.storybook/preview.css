@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import "@umc-product/react/styles.css";
+@import "@umc-product/design-tokens/tailwind.css";
+
+@source "../src";
+
+@layer base {
+  body {
+    font-family: var(--umc-font-family-brand);
+    color: var(--umc-color-text-neutral-default-900);
+  }
+}

@@ -51,13 +51,15 @@ pnpm docs:dev
 
 | 명령                              | 하는 일                                         |
 | --------------------------------- | ----------------------------------------------- |
-| `pnpm test`                       | 세 패키지 테스트                                |
-| `pnpm typecheck`                  | 패키지와 문서 타입 검사                         |
+| `pnpm test`                       | 패키지와 앱 테스트                              |
+| `pnpm typecheck`                  | 패키지, 문서, Storybook 타입 검사               |
 | `pnpm tokens:check`               | 피그마 원문과 토큰 생성물이 같은지 확인         |
 | `pnpm icons:check`                | 아이콘 원문과 생성물이 같은지 확인              |
 | `pnpm lint:package`               | 배포할 tarball 검사(publint, attw)              |
 | `node scripts/smoke-consumer.mjs` | 새 Vite 앱에 설치해 타입 검사와 빌드            |
 | `pnpm docs:build`                 | 문서 빌드(`docs:variants`, `docs:links`로 검사) |
+| `pnpm storybook:dev`              | Storybook 개발 서버(http://localhost:6006/)     |
+| `pnpm storybook:build`            | Storybook 빌드                                  |
 | `pnpm changeset`                  | 배포할 변경 기록 작성                           |
 
 로컬 개발, 컴포넌트 추가 규칙, 토큰 갱신, 배포 절차는 [CONTRIBUTING.md](CONTRIBUTING.md)에 있습니다. PR은 develop으로 보내고, develop을 main에 병합하면 패키지와 문서가 자동으로 배포됩니다.

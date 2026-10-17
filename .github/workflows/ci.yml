@@ -63,6 +63,9 @@ jobs:
           pnpm docs:variants
           pnpm docs:links
 
+      - name: Storybook 빌드
+        run: pnpm storybook:build
+
   consumer:
     name: 소비자 스모크 테스트
     runs-on: ubuntu-latest
