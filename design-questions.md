@@ -121,6 +121,8 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 13. Skeleton 움직임 정의가 없습니다. 1.5초 주기로 투명도가 1과 0.5 사이를 오가는 깜빡임을 넣었고, 움직임 줄이기 설정에서는 끕니다. 원하는 움직임(깜빡임, 빛이 지나가는 모양, 움직임 없음)을 알려 주세요.
 14. 2026-10-17에 새로 올라온 Divider의 가로 얇은 선(`Type=Line`)은 0.5px이고, 세로선(`Divider_Vertical`)은 1px입니다. 0.5px은 일반 해상도 화면에서 1px로 그려지거나 흐리게 보일 수 있습니다. 두 선의 두께를 맞출지 알려 주세요.
 15. Divider `Type=Solid`는 `#eff0f0`에 레이어 투명도 30%를 줘서 그립니다. 코드도 같은 색에 투명도를 씁니다. 이름 있는 색으로 연결할지 알려 주세요.
+16. Guidance Message는 Error와 Yellow에도 체크 아이콘(`Icon/Check` Fill)을 씁니다. 오류나 경고에도 체크 표시가 맞는지, `Icon/warning` 같은 다른 아이콘을 쓸지 알려 주세요.
+17. Guidance Message `Type=Yellow`는 주황 경고 색(`#ed8002`)입니다. 코드는 다른 컴포넌트처럼 `color="warning"`으로 부릅니다. 이름을 Warning으로 맞출지 알려 주세요.
 
 ## 오버레이와 피드백
 

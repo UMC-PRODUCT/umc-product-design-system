@@ -1,0 +1,59 @@
+{
+  "component": "GuidanceMessage",
+  "figmaSection": "4386:47850",
+  "page": "/components/display/guidance-message/",
+  "nodes": [
+    {
+      "specId": "guidance-message-default",
+      "node": "4298:58765",
+      "variant": "Type=Default",
+      "target": ".umc-guidance-message",
+      "expected": {
+        "color": "#606262",
+        "column-gap": "4px",
+        "font-size": "15px",
+        "font-weight": "500",
+        "line-height": "22.5px",
+        "letter-spacing": "-0.15px"
+      }
+    },
+    {
+      "specId": "guidance-message-icon",
+      "node": "4298:58786",
+      "variant": "Type=Default",
+      "target": ".umc-guidance-message__icon",
+      "expected": {
+        "width": "16px",
+        "height": "16px",
+        "color": "#606262"
+      }
+    },
+    {
+      "specId": "guidance-message-success",
+      "node": "4298:58764",
+      "variant": "Type=Success",
+      "target": ".umc-guidance-message",
+      "expected": {
+        "color": "#06844c"
+      }
+    },
+    {
+      "specId": "guidance-message-warning",
+      "node": "4298:58770",
+      "variant": "Type=Yellow",
+      "target": ".umc-guidance-message",
+      "expected": {
+        "color": "#ed8002"
+      }
+    },
+    {
+      "specId": "guidance-message-error",
+      "node": "4298:58761",
+      "variant": "Type=Error",
+      "target": ".umc-guidance-message",
+      "expected": {
+        "color": "#dc3d3d"
+      }
+    }
+  ]
+}

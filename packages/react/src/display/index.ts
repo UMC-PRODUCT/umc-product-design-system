@@ -59,3 +59,8 @@ export {
   type DividerProps,
   type DividerVariant,
 } from "./divider/index.ts"
+export {
+  GuidanceMessage,
+  type GuidanceMessageColor,
+  type GuidanceMessageProps,
+} from "./guidance-message/index.ts"

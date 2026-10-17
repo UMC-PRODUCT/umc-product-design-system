@@ -9,6 +9,7 @@
 @import "./dot-badge/dot-badge.css";
 @import "./skeleton/skeleton.css";
 @import "./divider/divider.css";
+@import "./guidance-message/guidance-message.css";
 
 @layer components {
 }
