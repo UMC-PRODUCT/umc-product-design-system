@@ -9,7 +9,7 @@ import {
   componentCodeOf,
 } from "../../../lib/component-code.ts"
 import type { FigmaVariant } from "../variants/figma-variants.ts"
-import { VariantGrid } from "../variants/VariantGrid.tsx"
+import { VariantGrid, type CellTone } from "../variants/VariantGrid.tsx"
 
 type ActionLayout = "full" | "stacked" | "equal" | "emphasis" | "primary-top"
 
@@ -214,12 +214,15 @@ const TITLE_ALIGNS: Record<string, "start" | "center"> = {
   Center: "center",
 }
 
+const SHEET_BACKDROP_TONE = (): CellTone => "muted"
+
 export function BottomSheetAllVariants() {
   return (
     <VariantGrid
       set="bottom-sheet"
       rows={["Type"]}
       columns={["Keyboard"]}
+      tone={SHEET_BACKDROP_TONE}
       render={(variant: FigmaVariant) => {
         const typeValue = variant.props["Type"] ?? "Title"
         const align = TITLE_ALIGNS[typeValue] ?? "start"
