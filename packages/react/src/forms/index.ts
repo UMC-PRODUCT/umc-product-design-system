@@ -14,6 +14,7 @@ export {
 } from "./numeric-stepper/index.ts"
 export { SearchField, type SearchFieldProps } from "./search-field/index.ts"
 export { Select, type SelectOption, type SelectProps } from "./select/index.ts"
+export { TextArea, type TextAreaProps } from "./text-area/index.ts"
 export {
   TextFieldArea,
   type TextFieldAreaProps,

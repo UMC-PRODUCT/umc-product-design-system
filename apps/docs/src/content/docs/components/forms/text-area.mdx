@@ -1,0 +1,68 @@
+---
+title: TextArea
+description: 공지처럼 긴 글을 쓰는 여러 줄 입력 칸입니다.
+---
+
+import {
+  TextAreaAllVariants,
+  TextAreaDefault,
+  TextAreaStates,
+} from "../../../../components/react/forms/TextAreaExamples.tsx"
+
+피그마 `Text Area`를 구현했습니다. 피그마 설명대로 공지 작성 페이지처럼 장문형 텍스트를 쓰는 칸입니다. 주소처럼 짧은 글을 여러 줄로 받을 때는 [TextFieldArea](../text-field-area/)를 씁니다. 네이티브 `textarea` 속성과 `ref`를 그대로 받고, 레이블과 도움말은 [Field](../field/)와 같습니다.
+
+```tsx
+import { TextArea } from "@umc-product/react"
+
+<TextArea
+  label="공지 내용"
+  placeholder="챌린저에게 전할 공지를 작성하세요"
+  maxLength={1000}
+  {...register("notice")}
+/>
+```
+
+<TextAreaDefault client:visible />
+
+## TextFieldArea와 다른 점
+
+|         | TextArea                                | TextFieldArea                              |
+| ------- | --------------------------------------- | ------------------------------------------ |
+| 피그마  | `Text Area`                             | `Text Field/ Input Box`의 `Type=Text Area` |
+| 쓰임    | 공지처럼 긴 글                          | 주소처럼 짧은 글                           |
+| 높이    | 최소 198px, 넘치면 상자 안에서 스크롤   | 2줄부터 시작하고 손잡이로 늘림             |
+| 글자 수 | `maxLength`를 넘기면 오른쪽 아래에 표시 | 없음                                       |
+| 크기    | 16px 한 가지                            | `lg`(18px), `md`(16px)                     |
+
+## 글자 수
+
+`maxLength`를 넘기면 오른쪽 아래에 "현재/최대" 글자 수가 나옵니다. 최대 글자 수를 넘겨서는 입력할 수 없습니다. 비활성 상태에서는 피그마처럼 글자 수를 숨깁니다.
+
+## 상태
+
+피그마에는 오류 상태가 없습니다. 그래서 오류 모양은 `TextField`처럼 빨간 테두리와 배경으로 그립니다.
+
+<TextAreaStates client:visible />
+
+## 문구 규칙
+
+피그마 설명대로 플레이스홀더 끝에는 온점(.)을 찍지 않습니다.
+
+## 모든 변형
+
+피그마 `Text Area` 변형 6개를 그렸습니다. 칸에 마우스를 올리면 코드가 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
+
+<TextAreaAllVariants client:visible />
+
+## props
+
+`Field`의 props와 네이티브 `textarea` 속성을 받습니다.
+
+| prop           | 타입        | 기본값 | 설명                                   |
+| -------------- | ----------- | ------ | -------------------------------------- |
+| `maxLength`    | `number`    | -      | 최대 글자 수. 넘기면 글자 수를 보여 줌 |
+| `label`        | `ReactNode` | -      | 레이블                                 |
+| `caption`      | `ReactNode` | -      | 도움말                                 |
+| `invalid`      | `boolean`   | -      | 오류 상태                              |
+| `errorMessage` | `ReactNode` | -      | 오류 문구                              |
+| `disabled`     | `boolean`   | -      | 비활성. 글자 수를 숨김                 |
