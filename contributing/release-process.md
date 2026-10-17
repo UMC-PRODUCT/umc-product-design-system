@@ -4,7 +4,7 @@ changeset 작성부터 GitHub Packages와 GitHub Pages 배포, 문제가 생겼�
 
 - 독자: 디자인 시스템을 배포하는 담당자
 - 소유자: UMC PRODUCT Design Chapter
-- 기준일: 2026-10-09
+- 기준일: 2026-10-13
 
 ## 흐름
 
@@ -99,3 +99,32 @@ develop → main PR을 열고 병합합니다. 병합하면 두 워크플로가 
   - Settings → Pages → Source: GitHub Actions
   - Settings → Actions → General → Workflow permissions: "Allow GitHub Actions to create and approve pull requests"를 켭니다. Version 워크플로가 버전 PR을 열 때 필요합니다.
   - Settings → Environments → github-pages → Deployment branches: main이 들어 있어야 합니다. 기본 브랜치를 develop으로 바꾸면 main 배포가 막힐 수 있습니다.
+
+## AWS Amplify 배포(전환 중)
+
+문서 사이트와 Storybook을 AWS Amplify로 옮기는 중입니다. Amplify 빌드가 안정적으로 도는 것을 확인할 때까지 GitHub Pages 배포는 그대로 둡니다.
+
+저장소 루트의 `amplify.yml`이 앱 두 개의 빌드를 정합니다. Amplify 콘솔에서 이 저장소를 모노레포로 두 번 연결하고, 앱 루트를 각각 `apps/docs`와 `apps/storybook`으로 지정합니다. 빌드는 Node 22에 pnpm 10.28.0을 설치하고 `pnpm install --frozen-lockfile` 뒤 각 앱의 `build` 스크립트를 돌립니다. 루트 `package.json`의 `packageManager`를 올리면 `amplify.yml`의 pnpm 버전도 같이 올립니다.
+
+콘솔에서는 아래 순서로 연결합니다.
+
+1. Amplify 콘솔에서 새 앱을 만들고 GitHub의 `UMC-PRODUCT/umc-product-design-system` 저장소와 `main` 브랜치를 고릅니다. 처음 연결할 때 조직에 AWS Amplify GitHub 앱을 설치하고 이 저장소 접근을 허락해야 합니다.
+2. "My app is a monorepo"를 켜고 앱 루트에 `apps/docs`를 적습니다. 콘솔이 `AMPLIFY_MONOREPO_APP_ROOT` 환경 변수를 같은 값으로 넣습니다. 이 값은 `amplify.yml`의 `appRoot`와 같아야 합니다.
+3. 빌드 설정은 저장소의 `amplify.yml`을 그대로 씁니다.
+4. 아래 표의 환경 변수를 넣고 배포합니다. 앱 주소는 첫 배포 뒤에 정해지므로, 두 앱을 모두 만든 다음 서로의 주소를 넣고 한 번 더 배포합니다.
+5. Storybook 앱도 같은 순서로 만들고 앱 루트에 `apps/storybook`을 적습니다.
+
+앱마다 환경 변수를 넣습니다.
+
+| 앱        | 변수                   | 값                                                       |
+| --------- | ---------------------- | -------------------------------------------------------- |
+| 문서      | `DOCS_BASE_PATH`       | `/`                                                      |
+| 문서      | `DOCS_SITE_URL`        | 문서 앱 주소(예: `https://main.<앱 ID>.amplifyapp.com`)  |
+| 문서      | `PUBLIC_STORYBOOK_URL` | Storybook 앱 주소. 넣지 않으면 헤더에 링크가 없습니다    |
+| Storybook | `STORYBOOK_DOCS_URL`   | 문서 앱 주소. 넣지 않으면 GitHub Pages 문서를 가리킵니다 |
+
+환경 변수가 없으면 문서는 GitHub Pages 경로(`/umc-product-design-system`)로 빌드됩니다. 그래서 `docs.yml`은 바꾸지 않아도 됩니다.
+
+문서 앱에는 콘솔의 Rewrites and redirects에서 404 규칙을 하나 더합니다. 원본 `/<*>`, 대상 `/404.html`, 종류 `404 (Rewrite)`입니다. 이 규칙은 `amplify.yml`로는 정할 수 없습니다.
+
+Amplify 빌드도 문서 링크 검사(`links:check`)를 돌리므로, 깨진 내부 링크가 있으면 배포되지 않습니다.

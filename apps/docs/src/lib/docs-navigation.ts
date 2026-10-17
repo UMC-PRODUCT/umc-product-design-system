@@ -22,6 +22,13 @@ const isGroup = (entry: SidebarEntry): entry is SidebarGroup =>
 
 const firstHrefOf = (group: SidebarGroup) => linksOf(group.entries)[0]?.href
 
+const STORYBOOK_URL = import.meta.env.PUBLIC_STORYBOOK_URL
+
+export const STORYBOOK_NAV_ITEMS: NavItem[] =
+  STORYBOOK_URL === undefined || STORYBOOK_URL === ""
+    ? []
+    : [{ label: "Storybook", href: STORYBOOK_URL }]
+
 export const sectionNavItems = (sidebar: readonly SidebarEntry[]): NavItem[] =>
   sidebar.filter(isGroup).flatMap((group) => {
     const href = firstHrefOf(group)

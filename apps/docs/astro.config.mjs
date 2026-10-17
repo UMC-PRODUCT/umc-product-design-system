@@ -4,10 +4,9 @@ import tailwindcss from "@tailwindcss/vite"
 import { defineConfig } from "astro/config"
 import starlightLlmsTxt from "starlight-llms-txt"
 
+import { BASE_PATH, SITE_URL, STORYBOOK_URL } from "./site-config.mjs"
 import { componentCodePlugin } from "./src/lib/component-code-plugin.mjs"
 
-const SITE_URL = "https://umc-product.github.io"
-const BASE_PATH = "/umc-product-design-system"
 const REPOSITORY_URL =
   "https://github.com/UMC-PRODUCT/umc-product-design-system"
 
@@ -26,7 +25,7 @@ const MOVED_PAGES = {
 
 export default defineConfig({
   site: SITE_URL,
-  base: BASE_PATH,
+  base: BASE_PATH || "/",
   server: { port: 5174 },
   redirects: MOVED_PAGES,
   integrations: [
@@ -35,7 +34,12 @@ export default defineConfig({
       title: "UMC Design System",
       description: "UMC 프로덕트 팀의 디자인 토큰과 사용 가이드",
       favicon: "/favicon.svg",
-      social: [{ icon: "github", label: "GitHub", href: REPOSITORY_URL }],
+      social: [
+        { icon: "github", label: "GitHub", href: REPOSITORY_URL },
+        ...(STORYBOOK_URL === undefined
+          ? []
+          : [{ icon: "storybook", label: "Storybook", href: STORYBOOK_URL }]),
+      ],
       lastUpdated: true,
       defaultLocale: "root",
       locales: {
