@@ -1,10 +1,10 @@
 # 배포 절차
 
-changeset 작성부터 GitHub Packages와 GitHub Pages 배포, 문제가 생겼을 때 되돌리는 방법까지의 순서입니다.
+changeset 작성부터 GitHub Packages, GitHub Pages, AWS Amplify 배포, 문제가 생겼을 때 되돌리는 방법까지의 순서입니다.
 
 - 독자: 디자인 시스템을 배포하는 담당자
 - 소유자: UMC PRODUCT Design Chapter
-- 기준일: 2026-10-13
+- 기준일: 2026-10-18
 
 ## 흐름
 
@@ -15,7 +15,8 @@ changeset 작성부터 GitHub Packages와 GitHub Pages 배포, 문제가 생겼�
                                │
 develop → main PR 병합 ─────▶ main
                                ├ Release: 레지스트리에 없는 버전을 GitHub Packages에 배포
-                               └ Docs: 문서를 GitHub Pages에 배포
+                               ├ Docs: 문서를 GitHub Pages에 배포
+                               └ Amplify: 문서와 Storybook을 사용자 지정 도메인에 배포(전환 중)
 ```
 
 버전을 올리는 일과 배포하는 일을 나눴습니다. 버전 PR을 병합하지 않고 develop을 main에 보내면 문서만 배포되고 패키지는 그대로입니다.
@@ -60,16 +61,18 @@ git commit -m "chore: 패키지 버전 올리기"
 
 ## 3. develop을 main에 병합하기
 
-develop → main PR을 열고 병합합니다. 병합하면 두 워크플로가 돌아갑니다.
+develop → main PR을 열고 병합합니다. 병합하면 GitHub Actions 워크플로 두 개와 Amplify 빌드가 돌아갑니다.
 
 - **Release**: 패키지를 빌드하고 배포물을 검사한 뒤, 레지스트리에 없는 버전만 GitHub Packages에 올립니다. `@umc-product/react@0.1.1` 같은 git 태그를 만들어 push합니다.
 - **Docs**: 문서를 빌드하고 링크를 검사한 뒤 GitHub Pages에 올립니다.
+- **Amplify**: GitHub Actions와 따로 Amplify가 main push를 받아 문서와 Storybook을 빌드하고 배포합니다. 설정은 [AWS Amplify 배포](#aws-amplify-배포전환-중)에 있습니다.
 
 문서는 main에 병합할 때마다 배포됩니다. 새 기능의 문서가 develop에 들어 있다면 버전 PR을 먼저 병합합니다. 그래야 문서와 배포된 패키지가 어긋나지 않습니다.
 
 ## 4. 배포 확인하기
 
 - Actions 탭에서 Release와 Docs가 성공했는지 봅니다.
+- Amplify 콘솔에서 main 빌드가 성공했는지 봅니다.
 - 조직의 Packages 탭에서 세 패키지에 새 버전이 있는지 봅니다.
 - 토큰을 설정한 컴퓨터에서 `pnpm view @umc-product/react version`으로 새 버전이 나오는지 확인합니다.
 
@@ -82,6 +85,7 @@ develop → main PR을 열고 병합합니다. 병합하면 두 워크플로가 
 | 잘못된 버전이 올라갔다       | 고친 내용을 다음 patch로 배포합니다. 앱이 이미 받았을 수 있으니 같은 번호를 다시 쓰지 않습니다                                                                                                                 |
 | 잘못된 버전을 막아야 한다    | 고친 버전을 먼저 배포한 뒤, 패키지 페이지의 버전 목록에서 그 버전을 지웁니다. 지운 버전은 30일 안에 되살릴 수 있습니다                                                                                         |
 | Docs가 실패했다              | Re-run하거나 Actions 탭에서 Docs 워크플로를 수동으로 실행합니다. 패키지 배포와는 상관없습니다                                                                                                                  |
+| Amplify 빌드가 실패했다      | 콘솔에서 실패한 단계의 로그를 봅니다. 환경 변수가 빠졌다면 넣은 뒤 Redeploy this version을 누릅니다. 빌드가 실패해도 사이트는 이전 배포를 그대로 보여 줍니다                                                   |
 
 ## 권한과 설정
 
@@ -104,27 +108,64 @@ develop → main PR을 열고 병합합니다. 병합하면 두 워크플로가 
 
 문서 사이트와 Storybook을 AWS Amplify로 옮기는 중입니다. Amplify 빌드가 안정적으로 도는 것을 확인할 때까지 GitHub Pages 배포는 그대로 둡니다.
 
-저장소 루트의 `amplify.yml`이 앱 두 개의 빌드를 정합니다. Amplify 콘솔에서 이 저장소를 모노레포로 두 번 연결하고, 앱 루트를 각각 `apps/docs`와 `apps/storybook`으로 지정합니다. 빌드는 Node 22에 pnpm 10.28.0을 설치하고 `pnpm install --frozen-lockfile` 뒤 각 앱의 `build` 스크립트를 돌립니다. 루트 `package.json`의 `packageManager`를 올리면 `amplify.yml`의 pnpm 버전도 같이 올립니다.
+Amplify 앱 하나가 문서와 Storybook을 함께 배포합니다.
 
-콘솔에서는 아래 순서로 연결합니다.
+| 사이트    | 주소                                                             |
+| --------- | ---------------------------------------------------------------- |
+| 문서      | `https://www.university.neordinary.com/design-system/`           |
+| Storybook | `https://www.university.neordinary.com/design-system/storybook/` |
+
+Amplify의 사용자 지정 도메인은 앱 하나에만 붙습니다. 앱 두 개를 한 도메인의 두 경로로 나누려면 앱 사이에 프록시가 필요한데, AWS re:Post에는 Amplify 앱 사이의 rewrite를 지원하지 않는다는 답변이 있습니다. 그래서 Storybook을 별도 앱으로 두지 않고 문서 앱이 함께 빌드합니다.
+
+저장소 루트의 `amplify.yml`은 Node 22에 pnpm 10.28.0을 설치하고 `pnpm install --frozen-lockfile` 뒤 문서 앱의 `build:amplify`(`apps/docs/scripts/build-amplify.mjs`)를 돌립니다. 루트 `package.json`의 `packageManager`를 올리면 `amplify.yml`의 pnpm 버전도 같이 올립니다.
+
+`build:amplify`는 아래 순서로 결과물을 만듭니다.
+
+1. 문서를 빌드하고 내부 링크를 검사합니다. 깨진 링크가 있으면 여기서 멈춥니다.
+2. Storybook을 빌드합니다. Storybook 빌드가 깨지면 문서도 배포하지 않습니다.
+3. 문서 결과물은 `apps/docs/amplify-dist/<기준 경로>/`에, Storybook 결과물은 `apps/docs/amplify-dist/<기준 경로>/storybook/`에 모읍니다. Amplify는 `amplify-dist`를 그대로 올립니다.
+
+두 사이트가 서로를 가리키는 주소(`PUBLIC_STORYBOOK_URL`, `STORYBOOK_DOCS_URL`)는 `build:amplify`가 `DOCS_SITE_URL`과 `DOCS_BASE_PATH`로 만듭니다. 로컬에서 같은 결과물을 만들려면 두 변수를 넣고 돌립니다.
+
+```bash
+DOCS_SITE_URL=https://www.university.neordinary.com DOCS_BASE_PATH=/design-system pnpm --filter @umc-product/docs build:amplify
+```
+
+### 콘솔 설정
 
 1. Amplify 콘솔에서 새 앱을 만들고 GitHub의 `UMC-PRODUCT/umc-product-design-system` 저장소와 `main` 브랜치를 고릅니다. 처음 연결할 때 조직에 AWS Amplify GitHub 앱을 설치하고 이 저장소 접근을 허락해야 합니다.
 2. "My app is a monorepo"를 켜고 앱 루트에 `apps/docs`를 적습니다. 콘솔이 `AMPLIFY_MONOREPO_APP_ROOT` 환경 변수를 같은 값으로 넣습니다. 이 값은 `amplify.yml`의 `appRoot`와 같아야 합니다.
-3. 빌드 설정은 저장소의 `amplify.yml`을 그대로 씁니다.
-4. 아래 표의 환경 변수를 넣고 배포합니다. 앱 주소는 첫 배포 뒤에 정해지므로, 두 앱을 모두 만든 다음 서로의 주소를 넣고 한 번 더 배포합니다.
-5. Storybook 앱도 같은 순서로 만들고 앱 루트에 `apps/storybook`을 적습니다.
+3. 빌드 설정은 저장소의 `amplify.yml`을 그대로 씁니다. 저장소에 `amplify.yml`이 있으면 콘솔의 빌드 설정보다 우선합니다.
+4. 환경 변수 두 개를 넣고 배포합니다. 하나라도 없으면 `build:amplify`가 처음에 멈춥니다.
 
-앱마다 환경 변수를 넣습니다.
+   | 변수             | 값                                      |
+   | ---------------- | --------------------------------------- |
+   | `DOCS_BASE_PATH` | `/design-system`                        |
+   | `DOCS_SITE_URL`  | `https://www.university.neordinary.com` |
 
-| 앱        | 변수                   | 값                                                       |
-| --------- | ---------------------- | -------------------------------------------------------- |
-| 문서      | `DOCS_BASE_PATH`       | `/`                                                      |
-| 문서      | `DOCS_SITE_URL`        | 문서 앱 주소(예: `https://main.<앱 ID>.amplifyapp.com`)  |
-| 문서      | `PUBLIC_STORYBOOK_URL` | Storybook 앱 주소. 넣지 않으면 헤더에 링크가 없습니다    |
-| Storybook | `STORYBOOK_DOCS_URL`   | 문서 앱 주소. 넣지 않으면 GitHub Pages 문서를 가리킵니다 |
+5. Hosting → Custom domains에서 `www.university.neordinary.com`을 연결합니다.
+6. Hosting → Rewrites and redirects → Manage redirects의 JSON 편집기를 아래 규칙으로 바꿉니다. 이 규칙은 `amplify.yml`로 정할 수 없습니다.
 
-환경 변수가 없으면 문서는 GitHub Pages 경로(`/umc-product-design-system`)로 빌드됩니다. 그래서 `docs.yml`은 바꾸지 않아도 됩니다.
+   ```json
+   [
+     {
+       "source": "/",
+       "status": "302",
+       "target": "/design-system/",
+       "condition": null
+     },
+     {
+       "source": "/<*>",
+       "status": "404",
+       "target": "/design-system/404.html",
+       "condition": null
+     }
+   ]
+   ```
 
-문서 앱에는 콘솔의 Rewrites and redirects에서 404 규칙을 하나 더합니다. 원본 `/<*>`, 대상 `/404.html`, 종류 `404 (Rewrite)`입니다. 이 규칙은 `amplify.yml`로는 정할 수 없습니다.
+   - 첫 규칙은 도메인 루트를 문서로 보냅니다. 나중에 도메인 루트를 다른 서비스가 쓰면 브라우저에 남은 영구 이동(301)이 방해하므로 임시 이동(302)으로 둡니다.
+   - 둘째 규칙은 없는 주소에 문서의 404 페이지를 404 상태로 보여 줍니다.
 
-Amplify 빌드도 문서 링크 검사(`links:check`)를 돌리므로, 깨진 내부 링크가 있으면 배포되지 않습니다.
+기준 경로를 바꿀 때는 `DOCS_BASE_PATH`와 위 JSON의 `/design-system`을 함께 고칩니다. 환경 변수 없이 빌드하는 `pnpm docs:build`와 `docs.yml`은 GitHub Pages 경로(`/umc-product-design-system`)를 그대로 씁니다.
+
+도메인 루트를 다른 서비스가 쓰게 되면 앱 두 개가 한 도메인을 경로로 나눠 써야 합니다. 이 경우 앞단에 CloudFront를 두고 `/design-system/*`만 이 앱의 기본 주소(`https://main.<앱 ID>.amplifyapp.com`)로 보냅니다. 이 앱은 기본 주소에서도 `/design-system/` 아래로 서빙하므로 경로를 바꾸지 않고 넘깁니다.

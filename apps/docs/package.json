@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "pnpm -w run build:packages && astro dev",
     "build": "pnpm -w run build:packages && astro build",
+    "build:amplify": "node scripts/build-amplify.mjs",
     "preview": "astro preview",
     "typecheck": "pnpm -w run build:packages && astro check",
     "variants:check": "node scripts/check-variant-coverage.mjs",
