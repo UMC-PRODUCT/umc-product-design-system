@@ -23,15 +23,21 @@ const specs = Object.values(
 
 export const specComponents = specs.map((spec) => spec.component)
 
-export const docsParameters = (page: string) => ({
+const docsLinkOf = (page: string) =>
+  `<a href="${DOCS_SITE_URL}${page}" target="_blank" rel="noreferrer">문서 사이트에서 모든 변형 보기</a>`
+
+export const docsParameters = (page: string, summary?: string) => ({
   docs: {
     description: {
-      component: `<a href="${DOCS_SITE_URL}${page}" target="_blank" rel="noreferrer">문서 사이트에서 모든 변형 보기</a>`,
+      component:
+        summary === undefined
+          ? docsLinkOf(page)
+          : `${summary}\n\n${docsLinkOf(page)}`,
     },
   },
 })
 
-export const componentParameters = (component: string) => {
+export const componentParameters = (component: string, summary?: string) => {
   const page =
     specs.find((spec) => spec.component === component)?.page ??
     PAGES_OUTSIDE_SPEC[component]
@@ -40,5 +46,5 @@ export const componentParameters = (component: string) => {
       `${component}의 figma-spec.json에서 문서 경로를 찾지 못했습니다`,
     )
   }
-  return { specComponent: component, ...docsParameters(page) }
+  return { specComponent: component, ...docsParameters(page, summary) }
 }

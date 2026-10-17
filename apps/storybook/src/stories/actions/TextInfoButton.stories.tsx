@@ -7,7 +7,7 @@ import { componentParameters } from "../../docs-links.ts"
 import { withWidth } from "../../decorators.tsx"
 
 const meta = {
-  title: "폼 입력/TextInfoButton",
+  title: "액션/TextInfoButton",
   id: "text-info-button",
   component: TextInfoButton,
   decorators: [withWidth(360)],

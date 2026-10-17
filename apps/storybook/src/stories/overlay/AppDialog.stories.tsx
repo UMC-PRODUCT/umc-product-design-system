@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import { Button, Dialog } from "@umc-product/react"
+import { AppDialog, Button } from "@umc-product/react"
 import { useArgs } from "storybook/preview-api"
 import { fn } from "storybook/test"
 
@@ -7,10 +7,13 @@ import { hiddenControl, textControl } from "../../arg-types.tsx"
 import { componentParameters } from "../../docs-links.ts"
 
 const meta = {
-  title: "오버레이와 피드백/Dialog",
-  id: "dialog",
-  component: Dialog,
-  parameters: componentParameters("Dialog"),
+  title: "오버레이와 피드백/AppDialog",
+  id: "app-dialog",
+  component: AppDialog,
+  parameters: componentParameters(
+    "AppDialog",
+    "모바일 앱 화면에서 쓰는 다이얼로그입니다. 웹 화면은 Dialog를 씁니다.",
+  ),
   argTypes: {
     trigger: hiddenControl,
     title: textControl,
@@ -31,7 +34,7 @@ const meta = {
   render: function Render(args) {
     const [, updateArgs] = useArgs<typeof args>()
     return (
-      <Dialog
+      <AppDialog
         {...args}
         trigger={<Button>열기</Button>}
         onOpenChange={(open) => {
@@ -41,7 +44,7 @@ const meta = {
       />
     )
   },
-} satisfies Meta<typeof Dialog>
+} satisfies Meta<typeof AppDialog>
 
 export default meta
 
@@ -66,7 +69,7 @@ export const ConfirmOnly: Story = {
   render: function Render(args) {
     const [, updateArgs] = useArgs<typeof args>()
     return (
-      <Dialog
+      <AppDialog
         {...args}
         cancelLabel={undefined}
         trigger={<Button>열기</Button>}
