@@ -106,6 +106,14 @@ develop → main PR을 열고 병합합니다. 병합하면 두 워크플로가 
 
 저장소 루트의 `amplify.yml`이 앱 두 개의 빌드를 정합니다. Amplify 콘솔에서 이 저장소를 모노레포로 두 번 연결하고, 앱 루트를 각각 `apps/docs`와 `apps/storybook`으로 지정합니다. 빌드는 Node 22에 pnpm 10.28.0을 설치하고 `pnpm install --frozen-lockfile` 뒤 각 앱의 `build` 스크립트를 돌립니다. 루트 `package.json`의 `packageManager`를 올리면 `amplify.yml`의 pnpm 버전도 같이 올립니다.
 
+콘솔에서는 아래 순서로 연결합니다.
+
+1. Amplify 콘솔에서 새 앱을 만들고 GitHub의 `UMC-PRODUCT/umc-product-design-system` 저장소와 `main` 브랜치를 고릅니다. 처음 연결할 때 조직에 AWS Amplify GitHub 앱을 설치하고 이 저장소 접근을 허락해야 합니다.
+2. "My app is a monorepo"를 켜고 앱 루트에 `apps/docs`를 적습니다. 콘솔이 `AMPLIFY_MONOREPO_APP_ROOT` 환경 변수를 같은 값으로 넣습니다. 이 값은 `amplify.yml`의 `appRoot`와 같아야 합니다.
+3. 빌드 설정은 저장소의 `amplify.yml`을 그대로 씁니다.
+4. 아래 표의 환경 변수를 넣고 배포합니다. 앱 주소는 첫 배포 뒤에 정해지므로, 두 앱을 모두 만든 다음 서로의 주소를 넣고 한 번 더 배포합니다.
+5. Storybook 앱도 같은 순서로 만들고 앱 루트에 `apps/storybook`을 적습니다.
+
 앱마다 환경 변수를 넣습니다.
 
 | 앱        | 변수                   | 값                                                       |
