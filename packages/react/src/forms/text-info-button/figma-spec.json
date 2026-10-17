@@ -1,7 +1,7 @@
 {
   "component": "TextInfoButton",
   "figmaSection": "2621:36342",
-  "page": "/components/forms/text-info-button/",
+  "page": "/components/actions/text-info-button/",
   "nodes": [
     {
       "specId": "text-info-button",
