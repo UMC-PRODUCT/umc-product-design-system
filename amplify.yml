@@ -10,24 +10,8 @@ applications:
             - pnpm install --frozen-lockfile
         build:
           commands:
-            - pnpm run build
-            - pnpm run links:check
+            - pnpm run build:amplify
       artifacts:
-        baseDirectory: dist
-        files:
-          - "**/*"
-  - appRoot: apps/storybook
-    frontend:
-      phases:
-        preBuild:
-          commands:
-            - nvm install 22
-            - npm install -g pnpm@10.28.0
-            - pnpm install --frozen-lockfile
-        build:
-          commands:
-            - pnpm run build
-      artifacts:
-        baseDirectory: storybook-static
+        baseDirectory: amplify-dist
         files:
           - "**/*"
