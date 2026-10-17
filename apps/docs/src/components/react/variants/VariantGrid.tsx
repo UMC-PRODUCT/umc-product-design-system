@@ -2,6 +2,8 @@ import type { ReactNode } from "react"
 
 import {
   variantSet,
+  withDerivedAxes,
+  type DerivedAxes,
   type FigmaVariant,
   type VariantProps,
   type VariantSetKey,
@@ -18,6 +20,7 @@ export type VariantGridProps = {
   rows: readonly string[]
   columns: readonly string[]
   sections?: readonly string[]
+  derivedAxes?: DerivedAxes
   only?: AxisValues
   order?: AxisValues
   tone?: (variant: FigmaVariant) => CellTone | undefined
@@ -65,15 +68,16 @@ export function VariantGrid({
   rows,
   columns,
   sections = [],
+  derivedAxes = {},
   only = {},
   order = {},
   tone,
   render,
 }: VariantGridProps) {
   const set = variantSet(key)
-  const variants = set.variants.filter((variant) =>
-    matchesFilter(variant.props, only),
-  )
+  const variants = set.variants
+    .map((variant) => withDerivedAxes(variant, derivedAxes))
+    .filter((variant) => matchesFilter(variant.props, only))
   const rank = (axis: string, value: string) => {
     const index = (order[axis] ?? set.axes[axis] ?? []).indexOf(value)
     return index === -1 ? UNRANKED : index

@@ -2,18 +2,17 @@
 
 import { Field as BaseUIField } from "@base-ui/react"
 import { mergeProps } from "@base-ui/react/merge-props"
-import type { ComponentPropsWithRef } from "react"
+import { useState, type ChangeEvent, type ComponentPropsWithRef } from "react"
 
 import { mergeRefs } from "../../internal/merge-refs.ts"
 import { Field, type FieldOwnProps } from "../field/Field.tsx"
-import { InputBox } from "../input-box/InputBox.tsx"
 
-export type TextAreaProps = Omit<ComponentPropsWithRef<"textarea">, "size"> &
-  FieldOwnProps & {
-    size?: "lg" | "md"
-  }
+export type TextAreaProps = ComponentPropsWithRef<"textarea"> & FieldOwnProps
 
-const DEFAULT_ROWS = 2
+type TextAreaValue = TextAreaProps["value"]
+
+const lengthOf = (text: TextAreaValue) =>
+  text === undefined ? 0 : String(text).length
 
 export function TextArea({
   label,
@@ -22,15 +21,25 @@ export function TextArea({
   captionColor,
   invalid,
   errorMessage,
-  size = "lg",
-  rows = DEFAULT_ROWS,
   disabled,
   className,
   value,
   defaultValue,
+  maxLength,
+  onChange,
   ref,
   ...textareaProps
 }: TextAreaProps) {
+  const [typedLength, setTypedLength] = useState(() => lengthOf(defaultValue))
+  const isControlled = value !== undefined
+  const currentLength = isControlled ? lengthOf(value) : typedLength
+  const showCounter = maxLength !== undefined && !disabled
+
+  const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    if (!isControlled) setTypedLength(event.target.value.length)
+    onChange?.(event)
+  }
+
   return (
     <Field
       label={label}
@@ -42,11 +51,10 @@ export function TextArea({
       disabled={disabled}
       className={className}
     >
-      <InputBox
-        size={size}
-        invalid={invalid}
-        disabled={disabled}
+      <div
         className="umc-text-area"
+        data-invalid={invalid ? "" : undefined}
+        data-disabled={disabled ? "" : undefined}
       >
         <BaseUIField.Control
           value={value}
@@ -57,14 +65,20 @@ export function TextArea({
             <textarea
               {...mergeProps<"textarea">(controlProps, {
                 ...textareaProps,
-                rows,
-                className: "umc-input-box__input umc-text-area__input",
+                maxLength,
+                onChange: handleChange,
+                className: "umc-text-area__input",
               })}
               ref={mergeRefs(controlProps.ref, ref)}
             />
           )}
         />
-      </InputBox>
+        {showCounter && (
+          <span className="umc-text-area__counter">
+            {currentLength}/{maxLength}
+          </span>
+        )}
+      </div>
     </Field>
   )
 }

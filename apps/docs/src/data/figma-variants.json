@@ -413,6 +413,21 @@
         "State=Error, Caption=True"
       ]
     },
+    "text-area": {
+      "node": "4359:31609",
+      "name": "Text Area",
+      "axes": {
+        "State": ["Default", "Hover", "Focused", "Typing", "Filled", "Disabled"]
+      },
+      "variants": [
+        "State=Default",
+        "State=Hover",
+        "State=Focused",
+        "State=Typing",
+        "State=Filled",
+        "State=Disabled"
+      ]
+    },
     "help-text": {
       "node": "2621:33341",
       "name": "Help Text",

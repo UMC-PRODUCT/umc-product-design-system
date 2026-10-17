@@ -2,7 +2,7 @@
 
 - 독자: 3기 디자인 팀, 웹 파트
 - 소유자: UMC PRODUCT Design Chapter
-- 기준일: 2026-10-15
+- 기준일: 2026-10-17
 
 문서 사이트에는 싣지 않는 작업 목록입니다.
 
@@ -15,7 +15,8 @@
    - `Shadow/Inner/Neutral_1`: 파운데이션은 청록 2겹인데, Side Navigation hover와 Segmented Control hover는 같은 이름으로 `#D3D8D833` 1겹(1, 1, 2)을 씁니다. 코드는 토큰 정의를 씁니다.
    - 같은 `#D3D8D833` 1겹이 이름 없이 붙은 곳도 있습니다(Context Switcher 눌림, Dropdown/Item Active). 이름이 없어 피그마 값을 컴포넌트 변수로 썼습니다. 어느 스타일에 연결할지 알려 주세요.
    - `Shadow/Inner/Neutral_2`: Segmented Control 컨테이너만 `#E4E4E433`(-1, 2.5, 4)입니다.
-3. 스타일 이름과 실제 값이 다른 곳이 있습니다. Toast `Label/1-Medium`이 16px, Code Input 칸 `Heading/4-Semibold`가 26px, Numeric Stepper `Label/1-Semibold`가 16px입니다. Numeric Stepper는 값이 같은 다른 토큰을 씁니다. Toast는 `Label/3-Medium` 토큰에 자간만 피그마 값(-2%)을, Code Input은 피그마 값을 씁니다.
+3. 스타일 이름과 실제 값이 다른 곳이 있습니다. Code Input 칸 `Heading/4-Semibold`가 26px, Numeric Stepper `Label/1-Semibold`가 16px입니다. Numeric Stepper는 값이 같은 다른 토큰을 쓰고, Code Input은 피그마 값을 씁니다.
+   - 2026-10-16에 Toast 본문은 `Label/3-Medium`(16px, 자간 -3%)으로 바뀌어 코드도 토큰을 씁니다. 그런데 Toast의 텍스트 버튼(2621:33510)은 아직 2기 `Label/1-Medium`(16px, 자간 -2%)입니다. 코드는 텍스트 버튼만 피그마 값(-2%)을 씁니다. 텍스트 버튼도 `Label/3-Medium`으로 바꿀지 알려 주세요.
 4. 3기 파운데이션에 없는 `Mobile Web/*` 텍스트 스타일이 Text Field 레이블(15px/23px, -3%), 도움말(13px/17px), 단위(18px/24px, -3%)에 남아 있습니다. 3기 스타일로 바꿀지 알려 주세요. 지금은 피그마 값을 그대로 씁니다.
 5. 16px 아이콘 세트는 따로 없고, 최근 컴포넌트는 24px 아이콘을 줄여 씁니다(`Icon/Expand_more`·`Icon/Add`·`Icon/Subtraction`은 Fill, `Icon/Info`는 Regular). 코드도 같은 아이콘과 굵기를 따릅니다. 원본 컴포넌트가 파일에서 지워진 인스턴스 세 개는 피그마 그림을 그대로 그렸습니다. 라이브러리 아이콘으로 바꿀지, 바꾼다면 어떤 굵기로 바꿀지 알려 주세요.
    - Dropdown/Item 선택 체크: `16 icon`
@@ -156,6 +157,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 2. App/Dialog와 App/Bottom Sheet 제목 색이 `grey950`(`#0d121c`)입니다. 3기 토큰에 없는 색이라 컴포넌트 변수로 씁니다.
 3. App/Bottom navigation과 App/Bottom Sheet의 iOS, Android 차이는 홈 인디케이터 영역입니다. 웹에서는 운영체제가 주는 안전 영역(`safe-area-inset-bottom`)으로 처리하고 인디케이터는 그리지 않습니다.
 4. 2026-10-15에 App/Bottom navigation의 iOS 변형이 Apple `Tab Bar - iPhone`(리퀴드 글래스) 인스턴스로 바뀌었습니다. iOS 앱은 시스템 탭 바를 쓰는 것으로 보고, 문서의 iOS 칸은 미구현으로 두고 Android 칸만 그립니다. iPhone 브라우저로 여는 모바일 웹 화면에서는 이 컴포넌트를 써도 되는지 알려 주세요.
+5. 2026-10-17에 App/Dialog Confirm 타입의 확인 버튼에 좌우 8px, 상하 4px 여백을 더했습니다. 피그마 `area` 프레임(3928:63088)은 높이가 44px 고정이라 버튼 영역(62px)의 위아래 여백으로 7px씩 넘칩니다. 코드는 요청한 여백대로 버튼 높이를 30px로 두었고, 버튼 영역 높이 62px은 피그마와 같습니다. 눌리는 영역을 44px로 키워야 하면 알려 주세요.
 
 ## 앱 셸
 
@@ -189,6 +191,11 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 10. Menu 완성형 `Meue List`의 타이틀 글자색이 2기 변수 `Color/Neutrals/WarmGray-400`(`#98938f`)입니다. 3기에 같은 값이 없어 피그마 값을 컴포넌트 변수로 씁니다. 가까운 3기 값은 `TealGrey-400`(`#adadad`)과 `TealGrey-500`(`#7e7f7f`)입니다. 어느 변수로 연결할지 알려 주세요.
 11. `Meue List`에는 Sm과 Md만 있고, 항목 `.primitve/Meue Item/Text Only`에는 Xs가 남아 있습니다. 코드 Menu는 `xs`를 유지하고, Xs 목록은 Sm과 같은 모양(최소 폭 100px, 타이틀 좌우 여백 12px)으로 가정했습니다. Xs 목록을 계속 쓸지 알려 주세요.
 12. Select 목록도 `Meue List` 모양(여백 4px, 모서리 12px, 테두리 없음, 항목 간격 0)을 따르는지 알려 주세요. 예시의 Select 목록은 아직 `Dropdown_List`(여백 2px, 모서리 8px, 테두리 1px, 항목 간격 2px)라 코드는 Menu만 바꿨습니다.
+13. 2026-10-17에 새로 올라온 `Text Area`(장문형)를 `TextArea`로 옮기고, 기존 `Text Field/ Input Box`의 `Type=Text Area`(단문형)는 `TextFieldArea`로 이름을 바꿨습니다. 피그마 이름도 장문형은 `Text Area`, 단문형은 Text Field의 한 타입으로 계속 나뉘어 있으면 좋겠습니다.
+14. `Text Area`에 오류 상태가 없습니다. 코드는 `TextField`처럼 빨간 테두리와 배경으로 그립니다. 장문형 오류 모양을 따로 정할지 알려 주세요.
+15. `Text Area`의 hover와 포커스 테두리는 Teal-300(`#7ac7c1`)이고, Input Box는 Teal-500입니다. Input Box의 Typing은 옅은 청록 배경이지만 `Text Area`는 흰색 그대로입니다. 의도한 차이인지 알려 주세요.
+16. `Text Area`의 글자 수는 모든 변형에 `0/0`으로 그려져 있습니다. 코드는 최대 글자 수(`maxLength`)를 정한 칸에만 "현재/최대"로 보여 주고, 피그마처럼 비활성 상태에서는 숨깁니다. 최대 글자 수에 닿았을 때 모양이 따로 필요한지 알려 주세요.
+17. `Text Area` 설명의 `Place Hoder`는 `Placeholder`의 오타입니다.
 
 ## 부록: 문서에서 옮겨 온 '피그마와 다른 점'
 

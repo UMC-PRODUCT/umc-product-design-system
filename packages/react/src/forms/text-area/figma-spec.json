@@ -1,40 +1,31 @@
 {
   "component": "TextArea",
-  "figmaSection": "2621:33115",
+  "figmaSection": "4360:32532",
   "page": "/components/forms/text-area/",
   "nodes": [
     {
-      "specId": "text-area-box",
-      "node": "2621:33262",
-      "variant": "State=Default, Type=Text Area, Size=Lg",
-      "target": ".umc-input-box",
+      "specId": "text-area-default",
+      "node": "4359:31610",
+      "variant": "State=Default",
+      "target": ".umc-text-area",
       "expected": {
-        "padding-top": "12px",
-        "padding-bottom": "12px",
+        "min-height": "198px",
+        "padding-top": "14px",
+        "padding-bottom": "14px",
         "padding-left": "16px",
-        "padding-right": "16px",
-        "border-top-color": "#cccccc",
-        "border-top-left-radius": "14px",
-        "background-color": "#ffffff"
+        "padding-right": "12px",
+        "border-top-width": "1px",
+        "border-top-color": "#e2e3e3",
+        "border-top-left-radius": "12px",
+        "background-color": "#ffffff",
+        "box-shadow~": "#d3d8d826 1px 1px 2px 0px inset, #ffffff40 -1px -1px 1px 0px inset"
       }
     },
     {
-      "specId": "text-area-input",
-      "node": "2621:33264",
-      "variant": "Text Area 글자, Size=Lg",
-      "target": ".umc-input-box__input",
-      "expected": {
-        "font-size": "18px",
-        "font-weight": "500",
-        "line-height": "25.2px",
-        "letter-spacing": "-0.36px"
-      }
-    },
-    {
-      "specId": "text-area-md",
-      "node": "2621:33267",
-      "variant": "Text Area 글자, Size=Md",
-      "target": ".umc-input-box__input",
+      "specId": "text-area-placeholder",
+      "node": "4359:31612",
+      "variant": "State=Default",
+      "target": ".umc-text-area__input",
       "expected": {
         "font-size": "16px",
         "font-weight": "500",
@@ -43,26 +34,82 @@
       }
     },
     {
-      "specId": "text-area-invalid",
-      "node": "2621:33383",
-      "variant": "Text Field/ Box, State=Filled, Error=True",
-      "target": ".umc-input-box",
+      "specId": "text-area-counter",
+      "node": "4317:58823",
+      "variant": "State=Default",
+      "target": ".umc-text-area__counter",
       "expected": {
-        "border-top-color": "#dc3d3d",
-        "background-color": "#fef2f1"
+        "color": "#adadad",
+        "font-size": "15px",
+        "font-weight": "400",
+        "line-height": "22.5px",
+        "letter-spacing": "-0.15px"
+      }
+    },
+    {
+      "specId": "text-area-hover",
+      "node": "4359:31613",
+      "variant": "State=Hover",
+      "target": ".umc-text-area",
+      "expected": {
+        "border-top-color": "#7ac7c1"
+      }
+    },
+    {
+      "specId": "text-area-focused",
+      "node": "4360:32499",
+      "variant": "State=Focused",
+      "target": ".umc-text-area",
+      "expected": {
+        "border-top-color": "#7ac7c1"
+      }
+    },
+    {
+      "specId": "text-area-typing",
+      "node": "4359:31616",
+      "variant": "State=Typing",
+      "target": ".umc-text-area",
+      "expected": {
+        "border-top-color": "#7ac7c1",
+        "background-color": "#ffffff"
+      }
+    },
+    {
+      "specId": "text-area-typing-value",
+      "node": "4360:32424",
+      "variant": "State=Typing",
+      "target": ".umc-text-area__input",
+      "expected": {
+        "color": "#0f1010"
+      }
+    },
+    {
+      "specId": "text-area-filled",
+      "node": "4359:31620",
+      "variant": "State=Filled",
+      "target": ".umc-text-area",
+      "expected": {
+        "border-top-color": "#e2e3e3",
+        "background-color": "#ffffff"
       }
     },
     {
       "specId": "text-area-disabled",
-      "node": "2621:33290",
-      "variant": "State=Disabled, Type=Text Area, Size=Lg",
-      "target": ".umc-input-box",
+      "node": "4359:31623",
+      "variant": "State=Disabled",
+      "target": ".umc-text-area",
       "expected": {
-        "border-top-color": "#eff0f0",
+        "border-top-color": "#e2e3e3",
         "background-color": "#fbfcfc"
-      },
-      "figmaDiffers": {
-        "border-top-color": "Input Box는 2기 변수 warmgray-150(#efedeb), Text Field/ Box는 TealGrey-100(#eff0f0)을 쓴다. 3기 토큰인 #eff0f0로 통일했다"
+      }
+    },
+    {
+      "specId": "text-area-disabled-value",
+      "node": "4360:32430",
+      "variant": "State=Disabled",
+      "target": ".umc-text-area__input",
+      "expected": {
+        "color": "#cccccc"
       }
     }
   ]

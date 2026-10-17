@@ -102,4 +102,9 @@
   .umc-app-dialog__button-area[data-variant="weak"] {
     justify-content: flex-end;
   }
+
+  .umc-app-dialog__button-area[data-variant="weak"] .umc-text-button {
+    padding-block: var(--umc-spacing-padding-4);
+    padding-inline: var(--umc-spacing-padding-8);
+  }
 }
