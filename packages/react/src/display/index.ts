@@ -54,3 +54,8 @@ export {
   type DotBadgeSize,
 } from "./dot-badge/index.ts"
 export { Skeleton, type SkeletonProps } from "./skeleton/index.ts"
+export {
+  Divider,
+  type DividerProps,
+  type DividerVariant,
+} from "./divider/index.ts"

@@ -1,0 +1,59 @@
+---
+title: Divider
+description: 내용 묶음 사이를 나누는 구분선입니다.
+---
+
+import {
+  DividerAllVariants,
+  DividerLine,
+  DividerSolid,
+  DividerVertical,
+} from "../../../../components/react/display/DividerExamples.tsx"
+
+피그마 `Divider`와 `Divider_Vertical`을 옮긴 컴포넌트입니다. 얇은 선(`line`)은 목록 항목 사이를 나누고, 두꺼운 띠(`solid`)는 화면 안의 큰 묶음 사이를 나눕니다. 글자나 버튼을 가로로 늘어놓을 때는 세로 구분선(`orientation="vertical"`)을 씁니다. 내부에서는 Base UI Separator를 씁니다.
+
+```tsx
+import { Divider } from "@umc-product/react"
+
+<Divider />
+<Divider variant="solid" />
+<Divider orientation="vertical" />
+```
+
+## 얇은 선
+
+기본값입니다. 0.5px 두께의 연한 회색(`#eff0f0`) 선이고, 부모 폭을 채웁니다.
+
+<DividerLine />
+
+## 두꺼운 띠
+
+`variant="solid"`는 8px 높이의 띠입니다. 피그마처럼 같은 회색을 30% 투명도로 그립니다.
+
+<DividerSolid />
+
+## 세로 구분선
+
+`orientation="vertical"`은 1px 두께, 21.5px 길이의 세로선입니다. 세로선은 얇은 선 모양만 있습니다. 길이를 바꾸려면 `className`으로 `--umc-divider-vertical-length` 변수를 넘깁니다(예: `[--umc-divider-vertical-length:44px]`).
+
+<DividerVertical />
+
+## 접근성
+
+`role="separator"`가 붙어 화면 낭독기가 구분선으로 읽습니다. 묶음을 나누는 뜻 없이 꾸미기만 하는 선이면 `aria-hidden`을 넘깁니다.
+
+## 모든 변형
+
+피그마 `Divider` 변형 2개를 그렸습니다. 세로 구분선(`Divider_Vertical`)은 변형이 없는 단일 컴포넌트라 위 예시로 대신합니다.
+
+<DividerAllVariants />
+
+## props
+
+네이티브 `div` 속성을 받습니다.
+
+| prop          | 타입                         | 기본값         | 설명                                      |
+| ------------- | ---------------------------- | -------------- | ----------------------------------------- |
+| `variant`     | `"line" \| "solid"`          | `"line"`       | 얇은 선 또는 두꺼운 띠. 세로선은 `line`만 |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | 가로 또는 세로                            |
+| `className`   | `string`                     | -              | 구분선에 더할 CSS 클래스                  |

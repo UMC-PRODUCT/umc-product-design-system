@@ -1711,6 +1711,14 @@
         "Size=Md, Color=Yellow",
         "Size=Md, Color=Success"
       ]
+    },
+    "divider": {
+      "node": "4321:58831",
+      "name": "Divider",
+      "axes": {
+        "Type": ["Line", "Solid"]
+      },
+      "variants": ["Type=Line", "Type=Solid"]
     }
   }
 }
