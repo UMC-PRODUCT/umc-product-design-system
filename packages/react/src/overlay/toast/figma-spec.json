@@ -20,7 +20,7 @@
         "font-size": "16px",
         "font-weight": "500",
         "line-height": "22.4px",
-        "letter-spacing": "-0.32px",
+        "letter-spacing": "-0.48px",
         "box-shadow~": "rgba(64, 68, 67, 0.16) 0px 4px 16px 0px",
         "column-gap": "10px"
       }
@@ -66,6 +66,7 @@
       "expected": {
         "color": "#008a80",
         "font-size": "16px",
+        "letter-spacing": "-0.32px",
         "text-decoration-line": "underline",
         "padding-left": "12px"
       }
