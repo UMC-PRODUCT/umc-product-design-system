@@ -64,6 +64,7 @@ import { UsersIcon } from "./icons/UsersIcon.tsx"
 import { WarningIcon } from "./icons/WarningIcon.tsx"
 import { WarningTriangleIcon } from "./icons/WarningTriangleIcon.tsx"
 import { UmcLogo } from "./logos/UmcLogo.tsx"
+import { BlankDocumentPictogram } from "./pictograms/BlankDocumentPictogram.tsx"
 import { CheckPictogram } from "./pictograms/CheckPictogram.tsx"
 import { DocumentPictogram } from "./pictograms/DocumentPictogram.tsx"
 import { FlagPictogram } from "./pictograms/FlagPictogram.tsx"
@@ -143,6 +144,7 @@ export {
   WarningIcon,
   WarningTriangleIcon,
   UmcLogo,
+  BlankDocumentPictogram,
   CheckPictogram,
   DocumentPictogram,
   FlagPictogram,
@@ -225,6 +227,7 @@ export const iconCatalog = [
 ] as const
 
 export const pictogramCatalog = [
+  { name: "BlankDocumentPictogram", figmaName: "Pictogram/Blank Document", modes: ["light"], component: BlankDocumentPictogram },
   { name: "CheckPictogram", figmaName: "Pictogram/Check", modes: ["light"], component: CheckPictogram },
   { name: "DocumentPictogram", figmaName: "Pictogram/Document", modes: ["light"], component: DocumentPictogram },
   { name: "FlagPictogram", figmaName: "Pictogram/Flag", modes: ["light"], component: FlagPictogram },

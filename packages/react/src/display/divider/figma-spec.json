@@ -1,0 +1,39 @@
+{
+  "component": "Divider",
+  "figmaSection": "4386:47831",
+  "page": "/components/display/divider/",
+  "nodes": [
+    {
+      "specId": "divider-line",
+      "node": "4321:58833",
+      "variant": "Type=Line",
+      "target": ".umc-divider",
+      "expected": {
+        "border-top-width": "0.5px",
+        "border-top-color": "#eff0f0"
+      }
+    },
+    {
+      "specId": "divider-solid",
+      "node": "4321:58835",
+      "variant": "Type=Solid",
+      "target": ".umc-divider",
+      "expected": {
+        "border-top-width": "8px",
+        "border-top-color": "#eff0f0",
+        "opacity": "0.3"
+      }
+    },
+    {
+      "specId": "divider-vertical",
+      "node": "4321:58840",
+      "variant": "Divider_Vertical",
+      "target": ".umc-divider",
+      "expected": {
+        "border-left-width": "1px",
+        "border-left-color": "#eff0f0",
+        "height": "21.5px"
+      }
+    }
+  ]
+}

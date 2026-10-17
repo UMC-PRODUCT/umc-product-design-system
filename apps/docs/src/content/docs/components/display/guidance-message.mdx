@@ -1,0 +1,64 @@
+---
+title: GuidanceMessage
+description: 버튼이나 카드 아래에서 지금 상태를 한 줄로 알려 주는 안내 문구입니다.
+---
+
+import {
+  GuidanceMessageAllVariants,
+  GuidanceMessageColors,
+  GuidanceMessageDefault,
+  GuidanceMessageWithoutIcon,
+} from "../../../../components/react/display/GuidanceMessageExamples.tsx"
+
+피그마 `Guidance Message`를 옮긴 컴포넌트입니다. 버튼을 누를 수 없는 이유나 방금 끝난 일의 결과처럼, 지금 상태를 한 줄로 알려 줍니다. 입력칸에 붙는 도움말과 오류 문구는 [Field](../../forms/field/)의 `caption`과 `errorMessage`를 씁니다.
+
+```tsx
+import { GuidanceMessage } from "@umc-product/react"
+
+<GuidanceMessage>지금은 프로젝트 지원 기간이 아니에요</GuidanceMessage>
+<GuidanceMessage color="error">이미 사용 중인 아이디예요</GuidanceMessage>
+```
+
+<GuidanceMessageDefault />
+
+## 색
+
+`color`로 문구와 아이콘 색을 함께 고릅니다. 기본값은 `neutral`입니다.
+
+| 피그마 `Type` | `color`   | 쓰임                        |
+| ------------- | --------- | --------------------------- |
+| Default       | `neutral` | 일반 안내                   |
+| Success       | `success` | 확인이 끝났거나 성공한 결과 |
+| Yellow        | `warning` | 주의가 필요한 안내          |
+| Error         | `error`   | 할 수 없거나 잘못된 상태    |
+
+피그마의 `Yellow`는 주황 경고 색이라 코드에서는 `warning`이라고 부릅니다.
+
+<GuidanceMessageColors />
+
+## 아이콘
+
+문구 앞에 16px 체크 아이콘(`Icon/Check` Fill)이 붙습니다. 화면 낭독기는 이 아이콘을 건너뜁니다. 아이콘 없이 쓰려면 `showIcon={false}`를 넘깁니다(피그마 `Show Prefix`).
+
+<GuidanceMessageWithoutIcon />
+
+## 접근성
+
+화면이 바뀔 때 새로 나타나는 안내라면 `role="status"`를 넘겨 화면 낭독기가 읽게 합니다. 처음부터 있는 안내에는 넘기지 않습니다.
+
+## 모든 변형
+
+피그마 `Guidance Message` 변형 4개를 그렸습니다.
+
+<GuidanceMessageAllVariants />
+
+## props
+
+네이티브 `p` 속성을 받습니다.
+
+| prop        | 타입                                             | 기본값      | 설명                   |
+| ----------- | ------------------------------------------------ | ----------- | ---------------------- |
+| `color`     | `"neutral" \| "success" \| "warning" \| "error"` | `"neutral"` | 문구와 아이콘 색       |
+| `showIcon`  | `boolean`                                        | `true`      | 앞 체크 아이콘 표시    |
+| `children`  | `ReactNode`                                      | -           | 안내 문구              |
+| `className` | `string`                                         | -           | 바깥에 더할 CSS 클래스 |

@@ -27,6 +27,34 @@ export function TextAreaDefault() {
   )
 }
 
+const RECRUIT_BODY = [
+  "UMC 11기 챌린저를 모집합니다.",
+  "서류 접수는 3월 2일부터 3월 9일까지예요.",
+  "면접은 3월 14일 토요일에 온라인으로 진행해요.",
+  "합격자는 3월 20일에 개별로 안내드려요.",
+  "OT는 3월 28일 토요일 오후 2시에 시작해요.",
+  "궁금한 점은 지부 운영진에게 문의해 주세요.",
+  "모집 공고는 지부별 공유 보관함에서도 볼 수 있어요.",
+  "지원서는 제출한 뒤에 수정할 수 없으니 꼼꼼히 확인해 주세요.",
+  "파트별 모집 인원은 지부 상황에 따라 달라질 수 있어요.",
+  "많은 관심과 지원 부탁드려요.",
+].join("\n")
+
+export function TextAreaHeight() {
+  return (
+    <div className="umc-example">
+      <div className="w-full max-w-[734px]">
+        <TextArea
+          label="모집 공고 본문"
+          maxLength={2000}
+          defaultValue={RECRUIT_BODY}
+          className="[--umc-text-area-min-height:240px] [--umc-text-area-max-height:320px]"
+        />
+      </div>
+    </div>
+  )
+}
+
 export function TextAreaStates() {
   return (
     <div className="umc-example umc-example-stack">

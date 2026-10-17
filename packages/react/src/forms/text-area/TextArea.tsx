@@ -4,6 +4,7 @@ import { Field as BaseUIField } from "@base-ui/react"
 import { mergeProps } from "@base-ui/react/merge-props"
 import { useState, type ChangeEvent, type ComponentPropsWithRef } from "react"
 
+import { cx } from "../../internal/cx.ts"
 import { mergeRefs } from "../../internal/merge-refs.ts"
 import { Field, type FieldOwnProps } from "../field/Field.tsx"
 
@@ -49,7 +50,7 @@ export function TextArea({
       invalid={invalid}
       errorMessage={errorMessage}
       disabled={disabled}
-      className={className}
+      className={cx("umc-text-area-field", className)}
     >
       <div
         className="umc-text-area"
