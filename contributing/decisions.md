@@ -4,7 +4,7 @@
 
 - 독자: 디자인 시스템을 고치거나 쓰는 개발자
 - 소유자: UMC PRODUCT Design Chapter
-- 기준일: 2026-10-13
+- 기준일: 2026-10-18
 
 결정마다 결정, 문제, 대안, 포기한 것, 성공 기준, 재검토 조건을 적습니다. 재검토 조건에 해당하는 일이 생기면 이 문서부터 고칩니다.
 
@@ -97,17 +97,20 @@ codeSyntax 이름은 변수마다 유일해지면 더 낫습니다. Dev Mode 코
 ## 9. Storybook은 별도 앱으로 두고 컴포넌트 소스를 직접 읽는다
 
 - **결정**
-  - Storybook을 비공개 워크스페이스 앱 `apps/storybook`에 두고, 문서 사이트와 따로 AWS Amplify에 배포합니다.
+  - Storybook을 비공개 워크스페이스 앱 `apps/storybook`에 둡니다. 배포는 문서 사이트와 같은 AWS Amplify 앱이 맡아, 문서 기준 경로 아래 `storybook/`(`/design-system/storybook/`)에 함께 올립니다.
   - Vite alias로 `@umc-product/react`를 `packages/react/src`에 연결해 props 타입에서 Controls를 만듭니다. 토큰과 아이콘은 빌드한 `dist`를 씁니다.
   - 컴포넌트마다 Playground 스토리를 기본으로 둡니다. 피그마 변형 그리드는 Storybook에 다시 만들지 않고 문서 페이지로 연결하며, 문서 앱의 코드는 가져다 쓰지 않습니다.
   - 공개 사이트에 피그마 링크를 노출하지 않도록 피그마 패널(addon-designs)은 넣지 않습니다.
 - **문제**: 디자이너가 문서 사이트에서는 props를 바꿔 보거나 원하는 조합에 hover와 focus를 켜 볼 수 없었습니다.
-- **대안**: 스토리를 `packages/react/src`의 컴포넌트 옆에 두기, 문서 사이트에 Playground 예시 더하기, 문서의 변형 그리드를 Storybook에서 재사용하기, 문서 사이트의 하위 경로(`/storybook/`)로 배포하기, Chromatic 같은 Storybook 전용 호스팅
+- **대안**: 스토리를 `packages/react/src`의 컴포넌트 옆에 두기, 문서 사이트에 Playground 예시 더하기, 문서의 변형 그리드를 Storybook에서 재사용하기, Storybook을 별도 Amplify 앱으로 배포하기, Chromatic 같은 Storybook 전용 호스팅
 - **포기한 것**
   - 컴포넌트 옆에 스토리를 두는 응집: 패키지 안에 두면 tsc 빌드가 스토리를 `dist`에 넣고, use-client 계약 테스트에도 걸립니다.
   - Storybook 안에서 모든 변형 보기: 문서 그리드를 재사용하면 두 앱이 문서의 CSS, 코드 툴팁 플러그인, 상태 강제 스크립트를 함께 써야 합니다. 그러면 한쪽을 고칠 때 다른 쪽이 깨집니다.
   - 배포 전 미리보기: 기본은 main 브랜치만 배포하므로 병합한 뒤에야 바뀐 모습을 봅니다.
-- **성공 기준**: export한 모든 컴포넌트와 `figma-spec.json`이 있는 모든 컴포넌트에 스토리가 있고 jsdom에서 렌더됩니다(`apps/storybook/src/stories.test.tsx`). 배포할 패키지에 스토리 파일이 들어가지 않습니다.
-- **재검토 조건**: 디자이너가 배포 전 검토를 원할 때, 스토리와 문서 예시를 함께 고치는 일이 잦아질 때, Storybook을 거의 쓰지 않을 때
+  - Storybook만 따로 배포하기: 문서와 한 빌드로 묶여서 Storybook 빌드가 깨지면 문서도 배포하지 않습니다. 빌드 시간도 Storybook 빌드만큼 늘어납니다.
+- **성공 기준**: export한 모든 컴포넌트와 `figma-spec.json`이 있는 모든 컴포넌트에 스토리가 있고 jsdom에서 렌더됩니다(`apps/storybook/src/stories.test.tsx`). 배포할 패키지에 스토리 파일이 들어가지 않습니다. 문서와 Storybook이 한 도메인의 `/design-system/`과 `/design-system/storybook/`에서 열립니다.
+- **재검토 조건**: 디자이너가 배포 전 검토를 원할 때, 스토리와 문서 예시를 함께 고치는 일이 잦아질 때, Storybook을 거의 쓰지 않을 때, Storybook을 문서와 다른 주소나 다른 주기로 배포해야 할 때
 
 배포 전 검토가 필요해지면 Amplify에 develop 브랜치나 PR 미리보기를 연결합니다. 화면 변화를 승인하는 흐름까지 필요하면 Chromatic이 더 낫습니다.
+
+Storybook을 별도 Amplify 앱으로 두는 쪽은 Storybook을 서브도메인처럼 문서와 다른 주소에 둘 때 더 낫습니다. Amplify의 사용자 지정 도메인은 앱 하나에만 붙고 Amplify 앱 사이의 rewrite도 기대기 어려워서, 한 도메인의 두 경로로 나누려면 앞단에 CloudFront 같은 프록시가 필요합니다.
