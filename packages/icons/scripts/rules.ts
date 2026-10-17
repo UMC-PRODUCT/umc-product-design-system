@@ -159,6 +159,7 @@ export const PICTOGRAM_PRIMARY_COLORS: Readonly<Record<string, string>> = {
   "#008a80": "var(--umc-color-icon-brand-medium-500)",
   "#0b6b64": "#0b6b64",
   "#0e8179": "#0e8179",
+  "#cccccc": "var(--umc-color-teal-grey-300)",
 }
 
 export const PICTOGRAM_FIXED_COLORS: Readonly<

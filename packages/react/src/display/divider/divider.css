@@ -1,0 +1,35 @@
+@layer components {
+  .umc-divider {
+    --umc-divider-color: var(--umc-color-border-neutral-weaker-100);
+    --umc-divider-line-thickness: 0.5px;
+    --umc-divider-solid-thickness: 8px;
+    --umc-divider-solid-opacity: 0.3;
+    --umc-divider-vertical-length: 21.5px;
+
+    flex: none;
+    box-sizing: border-box;
+    margin: 0;
+    border: 0 solid var(--umc-divider-color);
+  }
+
+  .umc-divider[data-orientation="horizontal"] {
+    display: block;
+    block-size: 0;
+    border-block-start-width: var(--umc-divider-line-thickness);
+  }
+
+  .umc-divider[data-orientation="horizontal"][data-variant="solid"] {
+    border-block-start-width: var(--umc-divider-solid-thickness);
+    opacity: var(--umc-divider-solid-opacity);
+  }
+
+  .umc-divider[data-orientation="vertical"] {
+    display: inline-block;
+    align-self: center;
+    inline-size: 0;
+    block-size: var(--umc-divider-vertical-length);
+    border-inline-start-width: 1px;
+    border-radius: var(--umc-radius-full);
+    vertical-align: middle;
+  }
+}

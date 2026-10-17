@@ -9,11 +9,11 @@
       "variant": "State=Default",
       "target": ".umc-text-area",
       "expected": {
-        "min-height": "198px",
+        "min-height": "120px",
         "padding-top": "14px",
         "padding-bottom": "14px",
         "padding-left": "16px",
-        "padding-right": "12px",
+        "padding-right": "16px",
         "border-top-width": "1px",
         "border-top-color": "#e2e3e3",
         "border-top-left-radius": "12px",

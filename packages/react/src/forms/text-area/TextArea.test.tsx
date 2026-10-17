@@ -80,4 +80,17 @@ describe("TextArea", () => {
     render(<TextArea aria-label="내용" className="mt-4" />)
     expect(document.querySelector(".umc-field")).toHaveClass("mt-4")
   })
+
+  it("바깥 틀에 높이 변수를 받는 클래스를 단다", () => {
+    render(
+      <TextArea
+        aria-label="내용"
+        className="[--umc-text-area-min-height:240px]"
+      />,
+    )
+    expect(document.querySelector(".umc-field")).toHaveClass(
+      "umc-text-area-field",
+      "[--umc-text-area-min-height:240px]",
+    )
+  })
 })
