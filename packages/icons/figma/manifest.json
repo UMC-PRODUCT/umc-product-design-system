@@ -1915,6 +1915,19 @@
       "status": "ok"
     },
     {
+      "nodeId": "4394:48997",
+      "kind": "pictogram",
+      "componentName": "Pictogram/Blank Document",
+      "variantName": "",
+      "files": [
+        {
+          "file": "svg/4394-48997.svg",
+          "sha256": "42d1d0dafeb5d796189a71d56bf6f02c55e0279eea57695f67f6c5747af503c4"
+        }
+      ],
+      "status": "ok"
+    },
+    {
       "nodeId": "3095:99528",
       "kind": "pictogram",
       "componentName": "Pictogram/Flag",

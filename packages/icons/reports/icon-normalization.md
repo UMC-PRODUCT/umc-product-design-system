@@ -5,7 +5,7 @@
 ## 입력
 
 - 피그마 파일 `U3pRZp6BjQBW5aMljCBwo9`, get_design_context asset download, 받은 날 2026-10-10
-- 노드 159개, 컴포넌트 77개(아이콘 65, 픽토그램 11, 로고 1)
+- 노드 160개, 컴포넌트 78개(아이콘 65, 픽토그램 12, 로고 1)
 
 ## 디자인 팀 확인 요청
 
@@ -61,6 +61,7 @@
 | 픽토그램 주색 | #008a80 | `currentColor`, 기본 `color`는 `var(--umc-color-icon-brand-medium-500)` |
 | 픽토그램 주색 | #0b6b64 | `currentColor`, 기본 `color`는 `#0b6b64` |
 | 픽토그램 주색 | #0e8179 | `currentColor`, 기본 `color`는 `#0e8179` |
+| 픽토그램 주색 | #cccccc | `currentColor`, 기본 `color`는 `var(--umc-color-teal-grey-300)` |
 | 픽토그램 고정색 | #ddf4f1 | style `var(--umc-color-teal-100)` |
 | 픽토그램 고정색 | #ffffff | style `var(--umc-color-white)` |
 | 픽토그램 고정색 | #b3e6e1 | 속성 `#b3e6e1` |
@@ -135,6 +136,7 @@
 | `Icon/warning` | `WarningIcon` | thin(3060:96160), regular(3060:96165), fill(3060:96170) |
 | `Icon/warning-Triangle` | `WarningTriangleIcon` | thin(3928:61423), regular(3928:61412), fill(3928:61411) |
 | `Logo/UMC` | `UmcLogo` | default(2678:52296) |
+| `Pictogram/Blank Document` | `BlankDocumentPictogram` | light(4394:48997) |
 | `Pictogram/Check` | `CheckPictogram` | light(3928:61741) |
 | `Pictogram/Document` | `DocumentPictogram` | light(3095:99530) |
 | `Pictogram/Flag` | `FlagPictogram` | light(3095:99528) |
