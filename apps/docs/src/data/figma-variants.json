@@ -1727,6 +1727,15 @@
         "Type": ["Error", "Success", "Default", "Yellow"]
       },
       "variants": ["Type=Error", "Type=Success", "Type=Default", "Type=Yellow"]
+    },
+    "image-thumbnail": {
+      "node": "4383:44171",
+      "name": "Image Thumbnail",
+      "axes": {
+        "Size": ["50px"],
+        "Type": ["Default", "Fallback"]
+      },
+      "variants": ["Size=50px, Type=Default", "Size=50px, Type=Fallback"]
     }
   }
 }

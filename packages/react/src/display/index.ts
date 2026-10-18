@@ -64,3 +64,7 @@ export {
   type GuidanceMessageColor,
   type GuidanceMessageProps,
 } from "./guidance-message/index.ts"
+export {
+  ImageThumbnail,
+  type ImageThumbnailProps,
+} from "./image-thumbnail/index.ts"

@@ -2,7 +2,7 @@
 
 - 독자: 3기 디자인 팀, 웹 파트
 - 소유자: UMC PRODUCT Design Chapter
-- 기준일: 2026-10-17
+- 기준일: 2026-10-18
 
 문서 사이트에는 싣지 않는 작업 목록입니다.
 
@@ -123,6 +123,8 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 15. Divider `Type=Solid`는 `#eff0f0`에 레이어 투명도 30%를 줘서 그립니다. 코드도 같은 색에 투명도를 씁니다. 이름 있는 색으로 연결할지 알려 주세요.
 16. Guidance Message는 Error와 Yellow에도 체크 아이콘(`Icon/Check` Fill)을 씁니다. 오류나 경고에도 체크 표시가 맞는지, `Icon/warning` 같은 다른 아이콘을 쓸지 알려 주세요.
 17. Guidance Message `Type=Yellow`는 주황 경고 색(`#ed8002`)입니다. 코드는 다른 컴포넌트처럼 `color="warning"`으로 부릅니다. 이름을 Warning으로 맞출지 알려 주세요.
+18. Image Thumbnail의 배경(`#e9ecec`)과 Fallback 로고 색(`#d3d8d8`)은 3기 변수에 없는 값입니다. 배경은 Skeleton과 같은 값이니 같은 이름 있는 색으로 연결할지 알려 주세요.
+19. Image Thumbnail은 50px만 있고, 설명에 "다른 사이즈는 Scale 변경"이라고 되어 있습니다. 그래서 코드는 크기를 바꾸면 모서리(8px)와 로고(34px)도 같은 비율로 키웁니다. 큰 크기에서도 모서리를 8px로 둘지 알려 주세요.
 
 ## 오버레이와 피드백
 

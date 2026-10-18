@@ -1,0 +1,33 @@
+{
+  "component": "ImageThumbnail",
+  "figmaSection": "4383:44201",
+  "page": "/components/display/image-thumbnail/",
+  "nodes": [
+    {
+      "specId": "image-thumbnail-default",
+      "node": "4383:44172",
+      "variant": "Size=50px, Type=Default",
+      "target": ".umc-image-thumbnail",
+      "expected": {
+        "width": "50px",
+        "height": "50px",
+        "border-top-left-radius": "8px",
+        "border-bottom-right-radius": "8px",
+        "background-color": "#e9ecec"
+      }
+    },
+    {
+      "specId": "image-thumbnail-fallback",
+      "node": "4383:44174",
+      "variant": "Size=50px, Type=Fallback",
+      "target": ".umc-image-thumbnail__logo",
+      "expected": {
+        "width": "34px",
+        "color": "#d3d8d8"
+      },
+      "figmaDiffers": {
+        "height": "피그마는 로고를 34×10px로 줄였지만 UmcLogo 원본 비율(148:44)을 지키면 높이가 10.11px이다. 비율을 지키려고 높이를 폭에 맞춰 둔다"
+      }
+    }
+  ]
+}
