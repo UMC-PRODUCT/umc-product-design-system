@@ -30,7 +30,7 @@ pnpm changeset
 ```
 
 - 실제로 바뀐 패키지를 고릅니다. 세 패키지는 어차피 같은 버전으로 함께 올라갑니다.
-- bump는 [버전 정책](https://umc-product.github.io/umc-product-design-system/releases/versioning/)을 따릅니다. 0.x에서는 깨지는 변경이 minor, 나머지가 patch입니다.
+- bump는 [버전 정책](https://umc-product.github.io/umc-product-design-system/releases/versioning/)을 따릅니다. 0.x에서는 깨지는 변경과 추가(컴포넌트, prop, 토큰, 아이콘)가 minor, 수정과 피그마 값 동기화가 patch입니다.
 - 요약은 앱 개발자가 읽는 문장으로 씁니다. 무엇이 바뀌었고 앱이 무엇을 해야 하는지 적습니다. 요약은 `CHANGELOG.md`, README의 릴리스 절, 문서의 변경 기록에 그대로 실립니다.
 - 깨지는 변경은 요약을 **깨지는 변경**으로 시작하고 옛 이름과 새 이름의 대응표를 넣습니다. 값만 바뀌는 변경은 **화면 변화**로 시작하고 전후 값을 적습니다. README의 릴리스 절이 이 표시로 항목을 나누고, 표시가 없으면 minor는 새 기능, patch는 수정으로 묶습니다.
 
