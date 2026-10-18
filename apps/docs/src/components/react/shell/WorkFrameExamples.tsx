@@ -152,7 +152,11 @@ function RecruitingFrame({
         currentPath={path}
       />
       <div className="flex min-h-0 flex-1">
-        <SideNavigation items={sideItemsOf(labelOf)} currentPath={path} />
+        <SideNavigation
+          className="w-(--umc-layout-sidebar-width) shrink-0"
+          items={sideItemsOf(labelOf)}
+          currentPath={path}
+        />
         <main className="flex min-w-0 flex-1 flex-col gap-8 overflow-auto px-8 pt-12 pb-20">
           <PageHeader
             title={titleOf(path, labelOf)}

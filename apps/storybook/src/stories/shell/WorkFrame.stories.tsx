@@ -127,6 +127,7 @@ const meta = {
         />
         <div style={{ display: "flex", flex: 1, minHeight: 0 }}>
           <SideNavigation
+            className="w-(--umc-layout-sidebar-width) shrink-0"
             title="관리 메뉴"
             items={SIDE_ITEMS}
             currentPath={currentPath}
