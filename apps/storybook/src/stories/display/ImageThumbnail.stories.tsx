@@ -11,7 +11,7 @@ const meta = {
   component: ImageThumbnail,
   parameters: componentParameters(
     "ImageThumbnail",
-    "학교 로고처럼 작은 이미지를 보여 주는 칸입니다. `src`를 지우면 UMC 로고가 대신 나옵니다.",
+    "학교 로고처럼 작은 이미지를 보여 주는 칸입니다. `src`를 지우면 UMC 로고가 대신 나옵니다. 이미지를 고르는 칸은 ImageThumbnailEditor를 씁니다.",
   ),
   argTypes: {
     src: textControl,

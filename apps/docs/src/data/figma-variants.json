@@ -1736,6 +1736,14 @@
         "Type": ["Default", "Fallback"]
       },
       "variants": ["Size=50px, Type=Default", "Size=50px, Type=Fallback"]
+    },
+    "image-thumbnail-editor": {
+      "node": "4383:44175",
+      "name": "Image Thumbnail Editor",
+      "axes": {
+        "State": ["Default", "Hover", "Filled"]
+      },
+      "variants": ["State=Default", "State=Hover", "State=Filled"]
     }
   }
 }
