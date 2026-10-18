@@ -1744,6 +1744,14 @@
         "State": ["Default", "Hover", "Filled"]
       },
       "variants": ["State=Default", "State=Hover", "State=Filled"]
+    },
+    "progress-summary": {
+      "node": "3101:99550",
+      "name": "Progress Summary",
+      "axes": {
+        "Property 1": ["0%", "100%"]
+      },
+      "variants": ["Property 1=0%", "Property 1=100%"]
     }
   }
 }

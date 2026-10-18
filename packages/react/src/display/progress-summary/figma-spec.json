@@ -1,0 +1,107 @@
+{
+  "component": "ProgressSummary",
+  "figmaSection": "4403:49711",
+  "page": "/components/display/progress-summary/",
+  "figmaDiffers": {
+    "width": "피그마 컴포넌트는 180px 고정이지만 예시가 180px과 296px을 함께 쓰므로 부모 폭을 채운다."
+  },
+  "nodes": [
+    {
+      "specId": "progress-summary-root",
+      "node": "3101:99551",
+      "variant": "Property 1=0%",
+      "target": ".umc-progress-summary",
+      "expected": {
+        "row-gap": "5px",
+        "padding-bottom": "8px"
+      }
+    },
+    {
+      "specId": "progress-summary-header",
+      "node": "3101:99552",
+      "variant": "Property 1=0%",
+      "target": ".umc-progress-summary__header",
+      "expected": {
+        "align-items": "center",
+        "justify-content": "space-between"
+      },
+      "figmaDiffers": {
+        "column-gap": "피그마는 라벨 묶음과 퍼센트를 양 끝에 붙여 간격이 없다. 폭이 좁아도 둘이 붙지 않게 최소 간격 8px을 두었고, 피그마 폭에서는 차이가 보이지 않는다"
+      }
+    },
+    {
+      "specId": "progress-summary-label",
+      "node": "3101:99554",
+      "variant": "Property 1=0%",
+      "target": ".umc-progress-summary__label",
+      "expected": {
+        "color": "#282a2a",
+        "font-size": "16px",
+        "font-weight": "400",
+        "line-height": "23.2px",
+        "letter-spacing": "-0.16px"
+      }
+    },
+    {
+      "specId": "progress-summary-count",
+      "node": "3101:99555",
+      "variant": "Property 1=0%",
+      "target": ".umc-progress-summary__count",
+      "expected": {
+        "color": "#7e7f7f",
+        "font-size": "13px",
+        "font-weight": "400",
+        "line-height": "18.85px"
+      }
+    },
+    {
+      "specId": "progress-summary-title",
+      "node": "3101:99553",
+      "variant": "Property 1=0%",
+      "target": ".umc-progress-summary__title",
+      "expected": {
+        "column-gap": "4px",
+        "align-items": "center"
+      }
+    },
+    {
+      "specId": "progress-summary-percent",
+      "node": "3101:99556",
+      "variant": "Property 1=0%",
+      "target": ".umc-progress-summary__percent",
+      "expected": {
+        "color": "#02746c",
+        "font-size": "16px",
+        "font-weight": "600",
+        "line-height": "22.4px",
+        "letter-spacing": "-0.32px",
+        "text-align": "right"
+      }
+    },
+    {
+      "specId": "progress-summary-track",
+      "node": "3101:99558",
+      "variant": "Property 1=0%",
+      "target": ".umc-progress-summary__track",
+      "expected": {
+        "height": "8px",
+        "border-top-left-radius": "999px",
+        "background-color": "#eff0f0"
+      }
+    },
+    {
+      "specId": "progress-summary-indicator",
+      "node": "3101:99576",
+      "variant": "Property 1=100%",
+      "target": ".umc-progress-summary__indicator",
+      "expected": {
+        "height": "8px",
+        "border-top-left-radius": "999px",
+        "background-image~": "linear-gradient(to right, #0e8179"
+      },
+      "figmaDiffers": {
+        "background-image": "피그마는 채움 막대를 그라데이션 PNG 이미지로 칠했다. 이미지에서 다섯 지점(0, 25, 50, 75, 100%)의 투명도 100, 97, 87, 72, 50%를 읽어 같은 색의 CSS 그라데이션으로 옮겼다"
+      }
+    }
+  ]
+}

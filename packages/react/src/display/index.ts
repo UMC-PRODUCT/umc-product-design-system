@@ -41,6 +41,10 @@ export {
   type ProgressBarSize,
 } from "./progress-bar/index.ts"
 export {
+  ProgressSummary,
+  type ProgressSummaryProps,
+} from "./progress-summary/index.ts"
+export {
   NumberBadge,
   type NumberBadgeColor,
   type NumberBadgeProps,
