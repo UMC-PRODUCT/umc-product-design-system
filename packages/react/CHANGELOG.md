@@ -1,6 +1,6 @@
 # @umc-product/react
 
-## 0.5.0
+## 0.5.0 (2026-10-18)
 
 ### Minor Changes
 
@@ -14,7 +14,7 @@
   - @umc-product/icons@0.5.0
   - @umc-product/design-tokens@0.5.0
 
-## 0.4.0
+## 0.4.0 (2026-10-17)
 
 ### Minor Changes
 
@@ -43,7 +43,7 @@
   - @umc-product/icons@0.4.0
   - @umc-product/design-tokens@0.4.0
 
-## 0.3.0
+## 0.3.0 (2026-10-15)
 
 ### Minor Changes
 
@@ -76,7 +76,7 @@
   - @umc-product/icons@0.3.0
   - @umc-product/design-tokens@0.3.0
 
-## 0.2.0
+## 0.2.0 (2026-10-13)
 
 ### Minor Changes
 
@@ -92,7 +92,7 @@
 - @umc-product/design-tokens@0.2.0
   - @umc-product/icons@0.2.0
 
-## 0.1.1
+## 0.1.1 (2026-10-13)
 
 ### Patch Changes
 
@@ -103,7 +103,7 @@
 - @umc-product/design-tokens@0.1.1
   - @umc-product/icons@0.1.1
 
-## 0.1.0
+## 0.1.0 (2026-10-12)
 
 ### Minor Changes
 

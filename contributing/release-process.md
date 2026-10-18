@@ -48,6 +48,8 @@ pnpm changeset
 
 develop에 changeset이 쌓이면 Version 워크플로가 "chore: 패키지 버전 올리기" PR을 열고, 다음 push마다 갱신합니다. 이 PR은 changeset 파일을 지우고, 버전 번호를 올리고, `CHANGELOG.md`에 내용을 옮깁니다. 배포할 때가 되면 이 PR을 develop에 병합합니다.
 
+`pnpm version-packages`는 새 버전 제목에 그날 날짜(한국 시간)를 붙입니다(`## 0.6.0 (2026-10-20)`). PR이 다음 push로 갱신되면 날짜도 그날로 바뀝니다.
+
 - 이 PR은 GitHub Actions 토큰으로 만들어져 CI가 돌지 않습니다. 검사 결과가 필요하면 PR을 닫았다가 다시 열어 CI를 돌립니다.
 - 저장소 설정에서 Actions의 PR 생성이 꺼져 있으면 Version 워크플로가 실패합니다. 그때는 로컬에서 같은 일을 하고 PR을 직접 엽니다.
 

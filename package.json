@@ -27,7 +27,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "changeset": "changeset",
-    "version-packages": "changeset version",
+    "version-packages": "changeset version && node scripts/stamp-changelog-dates.mjs",
     "release": "pnpm build:packages && pnpm lint:package && changeset publish"
   },
   "devDependencies": {
