@@ -2,8 +2,9 @@
 
 UMC PRODUCT Design Chapter의 디자인 토큰, 아이콘, React 컴포넌트입니다. 피그마 디자인 시스템을 코드로 옮겼고, 다른 저장소에서 패키지로 설치해 씁니다.
 
-- 문서: https://umc-product.github.io/umc-product-design-system/
-- 변경 기록과 버전 정책: 문서의 "릴리스" 메뉴
+- 문서: https://www.university.neordinary.com/design-system/
+- Storybook: https://www.university.neordinary.com/design-system/storybook/
+- 변경 기록: 이 문서의 [릴리스](#릴리스), 문서 사이트의 [변경 기록](https://www.university.neordinary.com/design-system/releases/changelog/)
 
 ## 패키지
 
@@ -15,18 +16,41 @@ UMC PRODUCT Design Chapter의 디자인 토큰, 아이콘, React 컴포넌트입
 
 세 패키지는 항상 같은 버전으로 함께 배포합니다.
 
-## 설치
+## 시작하기
 
-GitHub Packages에 비공개로 배포합니다. 설치하려면 `read:packages` 권한이 있는 GitHub 토큰이 필요합니다. 로컬, GitHub Actions, AWS Amplify에서 토큰을 설정하는 방법은 문서의 [설치와 불러오기](https://umc-product.github.io/umc-product-design-system/getting-started/installation/)에 있습니다.
+패키지는 GitHub Packages에 비공개로 배포합니다. UMC-PRODUCT 조직 멤버라면 설치할 수 있지만, 공개 npm과 달리 GitHub 토큰이 필요합니다. 앱은 React 19를 써야 하고, 패키지는 ESM으로만 나갑니다.
+
+### 1. GitHub 토큰 만들기
+
+GitHub의 **Settings → Developer settings → Personal access tokens → Tokens (classic)** 에서 토큰을 만듭니다. 권한은 `read:packages` 하나면 됩니다. GitHub Packages의 npm 레지스트리는 classic 토큰만 받으니 fine-grained 토큰은 만들지 마세요.
+
+### 2. `.npmrc` 두 곳에 적기
+
+내 컴퓨터의 `~/.npmrc`(사용자 폴더)에 토큰을 적습니다. 이 파일은 저장소에 올리지 않습니다.
 
 ```ini
-# 앱 저장소의 .npmrc
+//npm.pkg.github.com/:_authToken=ghp_여기에_토큰
+```
+
+앱 저장소 루트의 `.npmrc`에는 레지스트리만 적고 커밋합니다.
+
+```ini
 @umc-product:registry=https://npm.pkg.github.com
 ```
+
+앱 저장소의 `.npmrc`에는 토큰도, `${NODE_AUTH_TOKEN}` 같은 변수도 넣지 마세요. 변수가 비어 있으면 pnpm이 파일을 통째로 무시해 레지스트리 줄까지 사라집니다.
+
+### 3. 설치하기
 
 ```bash
 pnpm add @umc-product/react @umc-product/icons @umc-product/design-tokens
 ```
+
+토큰만 쓰는 앱은 `@umc-product/design-tokens` 하나만 설치합니다.
+
+### 4. CSS 불러오기
+
+앱 전역 CSS 파일에 적습니다. Vite 앱이라면 `main.tsx`가 불러오는 `src/index.css`, Next.js App Router라면 `app/layout.tsx`가 불러오는 `app/globals.css`입니다.
 
 ```css
 @import "tailwindcss";
@@ -34,7 +58,70 @@ pnpm add @umc-product/react @umc-product/icons @umc-product/design-tokens
 @import "@umc-product/design-tokens/tailwind.css";
 ```
 
-React 19가 필요하고 ESM으로만 배포합니다.
+`styles.css`가 글꼴과 토큰 CSS를 함께 불러옵니다. 토큰만 쓰는 앱의 불러오기 순서는 문서의 [CSS 불러오기](https://www.university.neordinary.com/design-system/getting-started/installation/#css-불러오기)를 따르세요.
+
+### 5. 컴포넌트 쓰기
+
+```tsx
+import { SearchIcon } from "@umc-product/icons"
+import { Button, TextField } from "@umc-product/react"
+
+export function SearchForm() {
+  return (
+    <form>
+      <TextField label="이름" placeholder="이름을 입력하세요" />
+      <Button leadingIcon={<SearchIcon />}>검색</Button>
+    </form>
+  )
+}
+```
+
+컴포넌트별 쓰임과 모든 변형은 [문서](https://www.university.neordinary.com/design-system/)에서 보고, props를 바꿔 보려면 [Storybook](https://www.university.neordinary.com/design-system/storybook/)을 엽니다.
+
+### 6. 설치 확인하기
+
+```bash
+pnpm view @umc-product/react version
+```
+
+최신 버전 번호가 나오면 토큰과 레지스트리 설정이 맞습니다.
+
+### CI와 배포 환경
+
+CI와 배포 서버도 설치할 때 토큰이 필요합니다. 전체 설정은 문서의 [앱의 CI와 배포 환경](https://www.university.neordinary.com/design-system/getting-started/installation/#앱의-ci와-배포-환경)에 있습니다.
+
+- **GitHub Actions**: 디자인 시스템 저장소 관리자에게 앱 저장소를 세 패키지의 **Manage Actions access**에 더해 달라고 요청하세요. 앱 워크플로에는 `packages: read` 권한을 주고, job의 `NODE_AUTH_TOKEN`에 `secrets.GITHUB_TOKEN`을 넣습니다.
+- **AWS Amplify**: 조직 공용 계정에서 만든 `read:packages` classic 토큰을 환경 변수(예: `UMC_PACKAGES_TOKEN`)에 넣고, 설치 전에 `.npmrc`에 적습니다. 토큰 주인이 조직을 떠나거나 기수가 바뀌면 모든 빌드가 멈추므로 개인 토큰은 쓰지 않습니다.
+
+```yaml
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - printf '\n//npm.pkg.github.com/:_authToken=%s\n' "$UMC_PACKAGES_TOKEN" >> .npmrc
+        - pnpm install --frozen-lockfile
+```
+
+### 막히면
+
+| 오류               | 흔한 원인                                                                                                                              |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `404 Not Found`    | 주소가 `registry.npmjs.org`라면 앱 `.npmrc`에 레지스트리 줄이 없거나, 같은 파일의 빈 변수 때문에 pnpm이 파일을 무시했습니다            |
+| `401 Unauthorized` | `~/.npmrc`에 토큰이 없거나 만료됐습니다. CI라면 `NODE_AUTH_TOKEN`이 설치 단계까지 전달되지 않았습니다                                  |
+| `403 Forbidden`    | 토큰에 `read:packages`가 없거나, fine-grained 토큰이거나, 토큰 주인이 조직 멤버가 아닙니다. Actions라면 Manage Actions access를 봅니다 |
+
+그 밖의 문제는 문서의 [문제 해결](https://www.university.neordinary.com/design-system/getting-started/troubleshooting/)에 있습니다.
+
+## 버전 올리기
+
+0.x 동안에는 minor가 깨지는 변경입니다. 앱의 `^0.5.0`은 0.5.x만 받고 0.6.0은 받지 않습니다.
+
+```bash
+pnpm up "@umc-product/*"
+pnpm up "@umc-product/*" --latest
+```
+
+첫 줄은 범위 안의 최신 patch로 올립니다. 둘째 줄은 범위를 넘어 최신 minor까지 올리니, 먼저 [릴리스](#릴리스)에서 **깨지는 변경**과 **화면 변화**를 확인하세요. 세 패키지는 같은 버전으로 맞춥니다. 자세한 기준은 문서의 [버전 정책](https://www.university.neordinary.com/design-system/releases/versioning/)에 있습니다.
 
 ## 릴리스
 
@@ -180,7 +267,7 @@ React 19가 필요하고 ESM으로만 배포합니다.
 
 ## 개발
 
-Node 22.12 이상과 pnpm 10(corepack)을 씁니다.
+이 저장소를 고치려면 Node 22.12 이상과 pnpm 10(corepack)이 필요합니다.
 
 ```bash
 corepack enable
@@ -189,22 +276,7 @@ pnpm build:packages
 pnpm docs:dev
 ```
 
-문서 개발 서버는 http://localhost:5174/umc-product-design-system/ 에 뜹니다. 패키지 코드를 고치면 `pnpm build:packages`를 다시 돌려야 문서에 반영됩니다.
-
-| 명령                              | 하는 일                                         |
-| --------------------------------- | ----------------------------------------------- |
-| `pnpm test`                       | 패키지와 앱 테스트                              |
-| `pnpm typecheck`                  | 패키지, 문서, Storybook 타입 검사               |
-| `pnpm tokens:check`               | 피그마 원문과 토큰 생성물이 같은지 확인         |
-| `pnpm icons:check`                | 아이콘 원문과 생성물이 같은지 확인              |
-| `pnpm lint:package`               | 배포할 tarball 검사(publint, attw)              |
-| `node scripts/smoke-consumer.mjs` | 새 Vite 앱에 설치해 타입 검사와 빌드            |
-| `pnpm docs:build`                 | 문서 빌드(`docs:variants`, `docs:links`로 검사) |
-| `pnpm storybook:dev`              | Storybook 개발 서버(http://localhost:6006/)     |
-| `pnpm storybook:build`            | Storybook 빌드                                  |
-| `pnpm changeset`                  | 배포할 변경 기록 작성                           |
-
-로컬 개발, 컴포넌트 추가 규칙, 토큰 갱신, 배포 절차는 [CONTRIBUTING.md](CONTRIBUTING.md)에 있습니다. PR은 develop으로 보내고, develop을 main에 병합하면 패키지와 문서가 자동으로 배포됩니다.
+검사 명령, 컴포넌트 추가 규칙, 토큰 갱신, 배포 절차는 [CONTRIBUTING.md](CONTRIBUTING.md)에 있습니다. PR은 develop으로 보내고, develop을 main에 병합하면 패키지와 문서가 배포됩니다.
 
 ## 라이선스
 
