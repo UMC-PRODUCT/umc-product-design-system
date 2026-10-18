@@ -114,14 +114,14 @@ frontend:
 
 ## 버전 올리기
 
-0.x 동안에는 minor가 깨지는 변경입니다. 앱의 `^0.5.0`은 0.5.x만 받고 0.6.0은 받지 않습니다.
+0.x 동안에는 깨지는 변경과 추가(컴포넌트, prop, 토큰, 아이콘)를 minor로, 수정과 피그마 값 동기화를 patch로 올립니다. 앱의 `^0.5.0`은 0.5.x만 받고 0.6.0은 받지 않습니다.
 
 ```bash
 pnpm up "@umc-product/*"
 pnpm up "@umc-product/*" --latest
 ```
 
-첫 줄은 범위 안의 최신 patch로 올립니다. 둘째 줄은 범위를 넘어 최신 minor까지 올리니, 먼저 [릴리스](#릴리스)에서 **깨지는 변경**과 **화면 변화**를 확인하세요. 세 패키지는 같은 버전으로 맞춥니다. 자세한 기준은 문서의 [버전 정책](https://www.university.neordinary.com/design-system/releases/versioning/)에 있습니다.
+첫 줄은 범위 안의 최신 patch로 올립니다. 둘째 줄은 범위를 넘어 최신 minor까지 올리니, 먼저 [릴리스](#릴리스)에서 **깨지는 변경**과 **화면 변화**를 확인하세요. 새 컴포넌트가 필요할 때도 둘째 줄로 올립니다. 세 패키지는 같은 버전으로 맞춥니다. 자세한 기준은 문서의 [버전 정책](https://www.university.neordinary.com/design-system/releases/versioning/)에 있습니다.
 
 ## 릴리스
 
