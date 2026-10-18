@@ -158,7 +158,7 @@ DOCS_SITE_URL=https://www.university.neordinary.com DOCS_BASE_PATH=/design-syste
      },
      {
        "source": "/<*>",
-       "status": "404",
+       "status": "404-200",
        "target": "/design-system/404.html",
        "condition": null
      }
@@ -166,7 +166,7 @@ DOCS_SITE_URL=https://www.university.neordinary.com DOCS_BASE_PATH=/design-syste
    ```
 
    - 첫 규칙은 도메인 루트를 문서로 보냅니다. 나중에 도메인 루트를 다른 서비스가 쓰면 브라우저에 남은 영구 이동(301)이 방해하므로 임시 이동(302)으로 둡니다.
-   - 둘째 규칙은 없는 주소에 문서의 404 페이지를 404 상태로 보여 줍니다.
+   - 둘째 규칙은 없는 주소에서 주소를 바꾸지 않고 문서의 404 페이지를 404 상태로 보여 줍니다. `"404-200"`은 Amplify API의 404 rewrite이고, 이름과 달리 응답 상태는 404입니다(2026-10-18 확인). AWS 가이드 예시의 `"404"`는 404 redirect라서, 없는 주소를 `/design-system/404.html`로 302 이동시킵니다.
 
 기준 경로를 바꿀 때는 `DOCS_BASE_PATH`와 위 JSON의 `/design-system`을 함께 고칩니다. 환경 변수 없이 빌드하는 `pnpm docs:build`와 `docs.yml`은 GitHub Pages 경로(`/umc-product-design-system`)를 그대로 씁니다.
 
