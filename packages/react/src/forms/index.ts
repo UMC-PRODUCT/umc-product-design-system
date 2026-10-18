@@ -6,6 +6,11 @@ export {
   type FieldOwnProps,
   type FieldProps,
 } from "./field/index.ts"
+export {
+  ImageThumbnailEditor,
+  type ImageThumbnailEditorProps,
+  type ImageThumbnailEditorRejection,
+} from "./image-thumbnail-editor/index.ts"
 export { InputBox, type InputBoxProps } from "./input-box/index.ts"
 export { Menu, type MenuItemDef, type MenuProps } from "./menu/index.ts"
 export {

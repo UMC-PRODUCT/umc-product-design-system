@@ -1,0 +1,91 @@
+{
+  "component": "ImageThumbnailEditor",
+  "figmaSection": "4383:44201",
+  "page": "/components/forms/image-thumbnail-editor/",
+  "nodes": [
+    {
+      "specId": "image-thumbnail-editor-default",
+      "node": "4383:44176",
+      "variant": "State=Default",
+      "target": ".umc-image-thumbnail-editor",
+      "expected": {
+        "width": "120px",
+        "height": "120px",
+        "border-top-left-radius": "14px",
+        "border-bottom-right-radius": "14px",
+        "background-color": "#9ca3a3b3"
+      }
+    },
+    {
+      "specId": "image-thumbnail-editor-hover",
+      "node": "4383:44182",
+      "variant": "State=Hover",
+      "target": ".umc-image-thumbnail-editor",
+      "expected": {
+        "background-color": "#9ca3a3"
+      }
+    },
+    {
+      "specId": "image-thumbnail-editor-filled",
+      "node": "4383:44188",
+      "variant": "State=Filled",
+      "target": ".umc-image-thumbnail-editor",
+      "expected": {
+        "background-color": "#9ca3a3"
+      }
+    },
+    {
+      "specId": "image-thumbnail-editor-guide",
+      "node": "4383:44177",
+      "variant": "State=Default",
+      "target": ".umc-image-thumbnail-editor__guide",
+      "expected": {
+        "row-gap": "4.8px"
+      }
+    },
+    {
+      "specId": "image-thumbnail-editor-icon",
+      "node": "4383:44178",
+      "variant": "State=Default",
+      "target": ".umc-image-thumbnail-editor__icon",
+      "expected": {
+        "width": "30px",
+        "height": "30px",
+        "color": "#eff0f0"
+      }
+    },
+    {
+      "specId": "image-thumbnail-editor-text",
+      "node": "4383:44179",
+      "variant": "State=Default",
+      "target": ".umc-image-thumbnail-editor__text",
+      "expected": {
+        "row-gap": "2.4px",
+        "color": "#ffffff",
+        "text-align": "center"
+      }
+    },
+    {
+      "specId": "image-thumbnail-editor-label",
+      "node": "4383:44180",
+      "variant": "State=Default",
+      "target": ".umc-image-thumbnail-editor__label",
+      "expected": {
+        "font-size": "16px",
+        "font-weight": "500",
+        "line-height": "22.4px"
+      }
+    },
+    {
+      "specId": "image-thumbnail-editor-description",
+      "node": "4383:44181",
+      "variant": "State=Default",
+      "target": ".umc-image-thumbnail-editor__description",
+      "expected": {
+        "font-size": "11px",
+        "font-weight": "400",
+        "line-height": "16.5px"
+      }
+    }
+  ]
+}

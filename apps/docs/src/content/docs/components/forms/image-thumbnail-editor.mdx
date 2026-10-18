@@ -1,0 +1,97 @@
+---
+title: ImageThumbnailEditor
+description: 눌러서 이미지 파일을 고르고 미리 보는 업로드 칸입니다.
+---
+
+import {
+  ImageThumbnailEditorAllVariants,
+  ImageThumbnailEditorCustom,
+  ImageThumbnailEditorDefault,
+  ImageThumbnailEditorWithImage,
+} from "../../../../components/react/forms/ImageThumbnailEditorExamples.tsx"
+
+피그마 `Image Thumbnail Editor`를 옮긴 컴포넌트입니다. 칸을 눌러 이미지 파일을 고르면 미리보기를 보여 주고, 고른 `File`을 `onValueChange`로 넘깁니다. 형식과 용량 검사까지가 이 컴포넌트의 일이고, 서버로 올리는 일은 앱이 합니다. 고른 이미지를 보여 주기만 할 때는 [ImageThumbnail](../../display/image-thumbnail/)을 씁니다.
+
+```tsx
+import { ImageThumbnailEditor } from "@umc-product/react"
+
+const [logo, setLogo] = useState<File | null>(null)
+
+<ImageThumbnailEditor
+  value={logo}
+  onValueChange={setLogo}
+  onReject={({ reason }) => showError(reason)}
+/>
+```
+
+아래 예시에서 PNG나 SVG가 아닌 파일, 5MB를 넘는 파일을 골라 보세요.
+
+<ImageThumbnailEditorDefault client:visible />
+
+## 업로드
+
+`onValueChange`가 넘긴 `File`을 앱이 보관했다가, 저장할 때 서버로 보냅니다.
+
+```tsx
+const save = async () => {
+  const body = new FormData()
+  if (logo !== null) body.append("logo", logo)
+  await fetch(`/api/schools/${schoolId}/logo`, { method: "POST", body })
+}
+```
+
+## 형식과 용량
+
+기본으로 PNG(`image/png`)와 SVG(`image/svg+xml`), 5MB 이하 파일만 받습니다. 조건에 맞지 않는 파일은 미리보기에 넣지 않고 `onReject`로 파일과 이유(`"type"`, `"size"`)를 넘깁니다. 이 컴포넌트에는 오류 모양이 없으니, 앱이 [GuidanceMessage](../../display/guidance-message/)나 Toast로 알려 줍니다.
+
+받는 형식은 `accept`(MIME 타입 목록), 최대 용량은 `maxSize`(바이트)로 바꿉니다. 조건을 바꾸면 칸 안의 안내 문구도 `description`으로 함께 바꿉니다.
+
+```tsx
+<ImageThumbnailEditor
+  accept={["image/png"]}
+  maxSize={2 * 1024 * 1024}
+  description="PNG, 2MB 이하"
+/>
+```
+
+같은 파일을 다시 골라도 다시 검사하도록, 파일을 고른 뒤에는 입력 값을 비웁니다.
+
+## 이미 있는 이미지
+
+서버에 저장된 이미지는 `src`로 보여 줍니다. 새 파일을 고르면 새 파일을 먼저 보여 줍니다. 이미지가 있는 칸을 다시 누르면 다른 이미지로 바꿉니다.
+
+<ImageThumbnailEditorWithImage />
+
+## 크기와 문구
+
+기본 크기는 120px입니다. 피그마 설명대로 칸의 크기와 문구는 화면에 맞춰 바꿔 씁니다. 크기는 `className`으로, 문구는 `label`과 `description`으로 바꿉니다.
+
+<ImageThumbnailEditorCustom client:visible />
+
+## 접근성
+
+칸 전체가 파일 입력입니다. Tab으로 칸에 가서 Enter나 Space를 누르면 파일 창이 열립니다. `label`은 입력의 이름으로, `description`은 설명으로 읽힙니다. 앱이 오류 문구를 보여 준다면 그 요소의 `id`를 `aria-describedby`로 넘기세요. 설명 뒤에 이어서 읽힙니다.
+
+## 모든 변형
+
+피그마 `Image Thumbnail Editor` 변형 3개를 그렸습니다. Filled 칸에는 예시 이미지를 넣었습니다.
+
+<ImageThumbnailEditorAllVariants client:visible />
+
+## props
+
+`type`, `accept`, `multiple`, `onChange`를 뺀 네이티브 `input` 속성과 `ref`를 받습니다. `className`과 `style`은 바깥 칸에 붙습니다.
+
+| prop            | 타입                                                            | 기본값                            | 설명                                         |
+| --------------- | --------------------------------------------------------------- | --------------------------------- | -------------------------------------------- |
+| `value`         | `File \| null`                                                  | -                                 | 고른 파일(제어형)                            |
+| `defaultValue`  | `File \| null`                                                  | `null`                            | 처음 파일(비제어형)                          |
+| `onValueChange` | `(value: File) => void`                                         | -                                 | 형식과 용량 검사를 통과한 파일을 받음        |
+| `onReject`      | `(rejection: { file: File; reason: "type" \| "size" }) => void` | -                                 | 받지 않은 파일과 이유를 받음                 |
+| `src`           | `string`                                                        | -                                 | 고른 파일이 없을 때 보여 줄 이미지 주소      |
+| `accept`        | `readonly string[]`                                             | `["image/png", "image/svg+xml"]`  | 받을 MIME 타입                               |
+| `maxSize`       | `number`                                                        | `5242880`(5MB)                    | 받을 최대 용량(바이트)                       |
+| `label`         | `ReactNode`                                                     | `"클릭 후 업로드"`                | 칸 안의 첫 줄. 입력의 이름                   |
+| `description`   | `ReactNode`                                                     | `"PNG, SVG 형식의 5MB 이하 파일"` | 칸 안의 둘째 줄. 입력의 설명                 |
+| `disabled`      | `boolean`                                                       | -                                 | 파일을 고를 수 없음                          |
+| `className`     | `string`                                                        | -                                 | 바깥 칸에 더할 CSS 클래스. 크기를 바꿀 때 씀 |

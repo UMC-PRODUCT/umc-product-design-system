@@ -10,6 +10,7 @@
 @import "./skeleton/skeleton.css";
 @import "./divider/divider.css";
 @import "./guidance-message/guidance-message.css";
+@import "./image-thumbnail/image-thumbnail.css";
 
 @layer components {
 }

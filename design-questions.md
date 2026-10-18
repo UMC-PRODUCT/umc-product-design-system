@@ -2,7 +2,7 @@
 
 - 독자: 3기 디자인 팀, 웹 파트
 - 소유자: UMC PRODUCT Design Chapter
-- 기준일: 2026-10-17
+- 기준일: 2026-10-18
 
 문서 사이트에는 싣지 않는 작업 목록입니다.
 
@@ -123,6 +123,8 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 15. Divider `Type=Solid`는 `#eff0f0`에 레이어 투명도 30%를 줘서 그립니다. 코드도 같은 색에 투명도를 씁니다. 이름 있는 색으로 연결할지 알려 주세요.
 16. Guidance Message는 Error와 Yellow에도 체크 아이콘(`Icon/Check` Fill)을 씁니다. 오류나 경고에도 체크 표시가 맞는지, `Icon/warning` 같은 다른 아이콘을 쓸지 알려 주세요.
 17. Guidance Message `Type=Yellow`는 주황 경고 색(`#ed8002`)입니다. 코드는 다른 컴포넌트처럼 `color="warning"`으로 부릅니다. 이름을 Warning으로 맞출지 알려 주세요.
+18. Image Thumbnail의 배경(`#e9ecec`)과 Fallback 로고 색(`#d3d8d8`)은 3기 변수에 없는 값입니다. 배경은 Skeleton과 같은 값이니 같은 이름 있는 색으로 연결할지 알려 주세요.
+19. Image Thumbnail은 50px만 있고, 설명에 "다른 사이즈는 Scale 변경"이라고 되어 있습니다. 그래서 코드는 크기를 바꾸면 모서리(8px)와 로고(34px)도 같은 비율로 키웁니다. 큰 크기에서도 모서리를 8px로 둘지 알려 주세요.
 
 ## 오버레이와 피드백
 
@@ -200,6 +202,11 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 15. `Text Area`의 hover와 포커스 테두리는 Teal-300(`#7ac7c1`)이고, Input Box는 Teal-500입니다. Input Box의 Typing은 옅은 청록 배경이지만 `Text Area`는 흰색 그대로입니다. 의도한 차이인지 알려 주세요.
 16. `Text Area`의 글자 수는 모든 변형에 `0/0`으로 그려져 있습니다. 코드는 최대 글자 수(`maxLength`)를 정한 칸에만 "현재/최대"로 보여 주고, 피그마처럼 비활성 상태에서는 숨깁니다. 최대 글자 수에 닿았을 때 모양이 따로 필요한지 알려 주세요.
 17. `Text Area` 설명의 `Place Hoder`는 `Placeholder`의 오타입니다.
+18. Image Thumbnail Editor의 배경(`#9ca3a3`, Default는 투명도 70%)은 3기 변수에 없는 값입니다. 이름 있는 색으로 연결할지 알려 주세요.
+19. Image Thumbnail Editor 안의 간격이 4.8px(아이콘과 문구)과 2.4px(두 문구 사이)입니다. 150px 칸을 0.8배로 줄인 값으로 보입니다. 정수 값으로 맞출지 알려 주세요.
+20. Image Thumbnail Editor에는 오류와 비활성 상태가 없습니다. 코드는 형식이나 용량이 맞지 않는 파일을 받지 않고 `onReject`로 앱에 알릴 뿐, 칸 모양은 바꾸지 않습니다. 비활성이면 hover를 끄고 커서만 바꿉니다. 오류와 비활성 모양이 필요한지 알려 주세요.
+21. Filled 상태에 이미지를 지우거나 바꾸는 표시가 없습니다. 코드는 칸을 다시 누르면 다른 이미지로 바꾸고, 지우는 동작은 앱에 맡깁니다. 삭제 버튼이나 hover 표시가 필요한지 알려 주세요.
+22. Image Thumbnail Editor는 눌러서 고르기만 합니다. 파일을 끌어다 놓아 올리는 동작이 필요한지 알려 주세요.
 
 ## 부록: 문서에서 옮겨 온 '피그마와 다른 점'
 
