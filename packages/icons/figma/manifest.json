@@ -1473,6 +1473,45 @@
       "status": "ok"
     },
     {
+      "nodeId": "4437:76996",
+      "kind": "icon",
+      "componentName": "Icon/Text_Line",
+      "variantName": "Weight=Fill",
+      "files": [
+        {
+          "file": "svg/4437-76996.svg",
+          "sha256": "905214acc474ac7f1d3d5fd2c916f647c1b4f35629b01d09e07328c0c77ad520"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "4437:76992",
+      "kind": "icon",
+      "componentName": "Icon/Text_Line",
+      "variantName": "Weight=Regular",
+      "files": [
+        {
+          "file": "svg/4437-76992.svg",
+          "sha256": "e3097542556ca430834878147cc6aa4ab704049d732d9290c214f09f2e7e4cf6"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "4437:76988",
+      "kind": "icon",
+      "componentName": "Icon/Text_Line",
+      "variantName": "Weight=Thin",
+      "files": [
+        {
+          "file": "svg/4437-76988.svg",
+          "sha256": "80b7539874c3776849da3b73cc588bfbd49636299b47a8c4838f785dd30ca433"
+        }
+      ],
+      "status": "ok"
+    },
+    {
       "nodeId": "3095:97511",
       "kind": "icon",
       "componentName": "Icon/ThumbsUp",
