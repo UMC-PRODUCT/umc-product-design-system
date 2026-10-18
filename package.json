@@ -20,6 +20,8 @@
     "docs:preview": "pnpm --filter @umc-product/docs preview",
     "docs:variants": "pnpm --filter @umc-product/docs variants:check",
     "docs:links": "pnpm --filter @umc-product/docs links:check",
+    "readme:build": "node scripts/readme-releases.mjs",
+    "readme:check": "node scripts/readme-releases.mjs --check",
     "storybook:dev": "pnpm --filter @umc-product/storybook dev",
     "storybook:build": "pnpm --filter @umc-product/storybook build",
     "test": "pnpm -r test",
@@ -27,7 +29,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "changeset": "changeset",
-    "version-packages": "changeset version && node scripts/stamp-changelog-dates.mjs",
+    "version-packages": "changeset version && node scripts/stamp-changelog-dates.mjs && pnpm readme:build",
     "release": "pnpm build:packages && pnpm lint:package && changeset publish"
   },
   "devDependencies": {

@@ -31,8 +31,8 @@ pnpm changeset
 
 - 실제로 바뀐 패키지를 고릅니다. 세 패키지는 어차피 같은 버전으로 함께 올라갑니다.
 - bump는 [버전 정책](https://umc-product.github.io/umc-product-design-system/releases/versioning/)을 따릅니다. 0.x에서는 깨지는 변경이 minor, 나머지가 patch입니다.
-- 요약은 앱 개발자가 읽는 문장으로 씁니다. 무엇이 바뀌었고 앱이 무엇을 해야 하는지 적습니다.
-- 깨지는 변경에는 옛 이름과 새 이름의 대응표를, 값만 바뀌는 변경에는 **화면 변화**와 전후 값을 적습니다.
+- 요약은 앱 개발자가 읽는 문장으로 씁니다. 무엇이 바뀌었고 앱이 무엇을 해야 하는지 적습니다. 요약은 `CHANGELOG.md`, README의 릴리스 절, 문서의 변경 기록에 그대로 실립니다.
+- 깨지는 변경은 요약을 **깨지는 변경**으로 시작하고 옛 이름과 새 이름의 대응표를 넣습니다. 값만 바뀌는 변경은 **화면 변화**로 시작하고 전후 값을 적습니다. README의 릴리스 절이 이 표시로 항목을 나누고, 표시가 없으면 minor는 새 기능, patch는 수정으로 묶습니다.
 
 명령이 `.changeset/` 아래에 파일을 만듭니다. 이 파일을 PR에 함께 커밋합니다. 값만 바뀌는 patch라면 예를 들어 이렇게 씁니다.
 
@@ -48,7 +48,7 @@ pnpm changeset
 
 develop에 changeset이 쌓이면 Version 워크플로가 "chore: 패키지 버전 올리기" PR을 열고, 다음 push마다 갱신합니다. 이 PR은 changeset 파일을 지우고, 버전 번호를 올리고, `CHANGELOG.md`에 내용을 옮깁니다. 배포할 때가 되면 이 PR을 develop에 병합합니다.
 
-`pnpm version-packages`는 새 버전 제목에 그날 날짜(한국 시간)를 붙입니다(`## 0.6.0 (2026-10-20)`). PR이 다음 push로 갱신되면 날짜도 그날로 바뀝니다.
+`pnpm version-packages`는 새 버전 제목에 그날 날짜(한국 시간)를 붙입니다(`## 0.6.0 (2026-10-20)`). PR이 다음 push로 갱신되면 날짜도 그날로 바뀝니다. 같은 명령이 README의 릴리스 절도 CHANGELOG에서 다시 만듭니다(`pnpm readme:build`). README의 릴리스 절은 직접 고치지 않습니다. CHANGELOG와 다르면 CI의 `pnpm readme:check`가 실패합니다.
 
 - 이 PR은 GitHub Actions 토큰으로 만들어져 CI가 돌지 않습니다. 검사 결과가 필요하면 PR을 닫았다가 다시 열어 CI를 돌립니다.
 - 저장소 설정에서 Actions의 PR 생성이 꺼져 있으면 Version 워크플로가 실패합니다. 그때는 로컬에서 같은 일을 하고 PR을 직접 엽니다.
@@ -57,7 +57,7 @@ develop에 changeset이 쌓이면 Version 워크플로가 "chore: 패키지 버�
 git switch develop && git pull
 git switch -c chore/version-packages
 pnpm version-packages
-git add .changeset packages
+git add .changeset packages README.md
 git commit -m "chore: 패키지 버전 올리기"
 ```
 

@@ -54,6 +54,9 @@ jobs:
           pnpm tokens:check
           pnpm icons:check
 
+      - name: README 릴리스 절 비교
+        run: pnpm readme:check
+
       - name: 배포물 검사
         run: pnpm lint:package
 
