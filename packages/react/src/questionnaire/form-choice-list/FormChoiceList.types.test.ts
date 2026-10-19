@@ -27,6 +27,12 @@ describe("FormChoiceListProps 타입", () => {
     >()
   })
 
+  it("질문 밖에서 쓸 이름을 aria-label로 받는다", () => {
+    expectTypeOf<FormChoiceListProps["aria-label"]>().toEqualTypeOf<
+      string | undefined
+    >()
+  })
+
   it("type은 single과 multiple만 받는다", () => {
     expectTypeOf<FormChoiceListProps["type"]>().toEqualTypeOf<
       "single" | "multiple"

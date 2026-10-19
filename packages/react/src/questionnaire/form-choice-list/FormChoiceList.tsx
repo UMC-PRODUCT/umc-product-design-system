@@ -23,6 +23,7 @@ type FormChoiceListCommonProps = {
   disabled?: boolean
   readOnly?: boolean
   className?: string
+  "aria-label"?: string
   "aria-labelledby"?: string
   "aria-describedby"?: string
 }
@@ -83,6 +84,7 @@ function SingleChoiceList(props: FormSingleChoiceListProps) {
       disabled={isDisabled}
       readOnly={isReadOnly}
       required={isRequired}
+      aria-label={props["aria-label"]}
       aria-labelledby={labelledBy}
       aria-describedby={describedBy}
       className={cx("umc-form-choice-list", props.className)}
@@ -125,6 +127,7 @@ function MultipleChoiceList(props: FormMultipleChoiceListProps) {
         onValueChange?.(next)
       }}
       disabled={isDisabled}
+      aria-label={props["aria-label"]}
       aria-labelledby={labelledBy}
       aria-describedby={describedBy}
       className={cx("umc-form-choice-list", props.className)}

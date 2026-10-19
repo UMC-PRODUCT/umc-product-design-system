@@ -103,6 +103,25 @@ describe("FormChoiceList 단일 선택", () => {
   })
 })
 
+describe("FormChoiceList 이름", () => {
+  it("질문 밖에서는 aria-label을 목록 이름으로 쓴다", () => {
+    render(
+      <>
+        <FormChoiceList type="single" options={PARTS} aria-label="지원 파트" />
+        <FormChoiceList
+          type="multiple"
+          options={PARTS}
+          aria-label="관심 파트"
+        />
+      </>,
+    )
+    expect(
+      screen.getByRole("radiogroup", { name: "지원 파트" }),
+    ).toBeInTheDocument()
+    expect(screen.getByRole("group", { name: "관심 파트" })).toBeInTheDocument()
+  })
+})
+
 describe("FormChoiceList 복수 선택", () => {
   it("질문 제목을 이름으로 가진 체크박스 묶음을 그린다", () => {
     render(
