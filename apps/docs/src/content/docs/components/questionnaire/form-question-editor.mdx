@@ -62,7 +62,7 @@ import {
 
 - 어느 질문이 활성인지는 앱이 정합니다. 질문을 누르거나 키보드 포커스가 들어오면 활성으로 바꾸고, 질문 밖을 누르면 풀어 주세요.
 - 활성이 바뀌면 도구와 툴바가 생기거나 사라져 아래 내용이 움직입니다. 마우스를 누른 채 화면이 움직이면 클릭이 엉뚱한 곳에 떨어지니, 마우스로 바꿀 때는 `pointerdown`이나 포커스가 아니라 `click`에서 바꿔 주세요.
-- `disabled`를 주면 안쪽 `FormEditableQuestion`의 제목과 설명 칸, `FormChoiceListEditor`의 보기, `FormAttachmentField`의 미리보기도 함께 막힙니다. `TextArea`처럼 질문지 밖 부품에는 `disabled`를 직접 줍니다.
+- `disabled`를 주면 안쪽 `FormEditableQuestion`의 제목과 설명 칸, `FormChoiceListEditor`의 보기, `FormAttachmentField`의 미리보기도 함께 막힙니다. 안쪽 부품에 `disabled={false}`를 줘도 풀리지 않습니다. `TextArea`처럼 질문지 밖 부품에는 `disabled`를 직접 줍니다.
 
 ## 필수 항목
 
@@ -154,14 +154,14 @@ function SortableQuestion({ question }: { question: Question }) {
 
 나머지 `div` 속성과 `ref`는 루트 요소에 붙습니다.
 
-| prop               | 타입         | 기본값    | 설명                             |
-| ------------------ | ------------ | --------- | -------------------------------- |
-| `number`           | `ReactNode`  | 없음      | 제목 앞 번호                     |
-| `titleProps`       | `input` 속성 | 없음      | 제목 입력 칸. `type`은 받지 않음 |
-| `descriptionProps` | `input` 속성 | 없음      | 설명 입력 칸. `type`은 받지 않음 |
-| `required`         | `boolean`    | 편집기 값 | 제목 뒤 `*`                      |
-| `disabled`         | `boolean`    | 편집기 값 | 제목과 설명 칸 비활성            |
-| `children`         | `ReactNode`  | 필수      | 답 칸 미리보기                   |
+| prop               | 타입         | 기본값    | 설명                                                 |
+| ------------------ | ------------ | --------- | ---------------------------------------------------- |
+| `number`           | `ReactNode`  | 없음      | 제목 앞 번호                                         |
+| `titleProps`       | `input` 속성 | 없음      | 제목 입력 칸. `type`은 받지 않음                     |
+| `descriptionProps` | `input` 속성 | 없음      | 설명 입력 칸. `type`은 받지 않음                     |
+| `required`         | `boolean`    | 편집기 값 | 제목 뒤 `*`                                          |
+| `disabled`         | `boolean`    | `false`   | 제목과 설명 칸 비활성. 편집기가 비활성이면 늘 비활성 |
+| `children`         | `ReactNode`  | 필수      | 답 칸 미리보기                                       |
 
 ## 알아 둘 점
 

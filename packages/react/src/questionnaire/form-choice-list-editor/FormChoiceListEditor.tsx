@@ -51,7 +51,8 @@ export function FormChoiceListEditor({
   className,
 }: FormChoiceListEditorProps) {
   const editor = useFormQuestionEditor()
-  const isDisabled = disabled ?? editor?.disabled ?? false
+  const lockedByEditor = editor?.disabled ?? false
+  const isDisabled = lockedByEditor || (disabled ?? false)
   const editable = !isDisabled
   const listRef = useRef<HTMLUListElement>(null)
   const focusNewOption = useRef(false)

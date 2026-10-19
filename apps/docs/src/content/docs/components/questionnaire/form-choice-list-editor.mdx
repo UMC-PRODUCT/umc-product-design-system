@@ -66,19 +66,19 @@ import { FormChoiceListEditor } from "@umc-product/react"
 
 ## props
 
-| prop             | 타입                                  | 기본값        | 설명                          |
-| ---------------- | ------------------------------------- | ------------- | ----------------------------- |
-| `type`           | `"single" \| "multiple"`              | 필수          | 보기 앞 표시 모양             |
-| `options`        | `FormChoiceDraftOption[]`             | 필수          | 보기 목록                     |
-| `onOptionChange` | `(id: string, label: string) => void` | 없음          | 보기 글자가 바뀔 때           |
-| `onOptionAdd`    | `() => void`                          | 없음          | 옵션 추가를 누를 때           |
-| `onOptionRemove` | `(id: string) => void`                | 없음          | 삭제를 누를 때                |
-| `placeholder`    | `string`                              | 유형별 안내   | 빈 보기의 안내 문구           |
-| `addLabel`       | `ReactNode`                           | `"옵션 추가"` | 추가 줄 글자                  |
-| `optionLabel`    | `string`                              | `"보기"`      | 입력 칸 이름의 앞부분         |
-| `removeLabel`    | `string`                              | `"삭제"`      | 삭제 버튼 이름의 뒷부분       |
-| `disabled`       | `boolean`                             | 편집기 값     | 입력을 막고 추가·삭제를 숨김  |
-| `className`      | `string`                              | 없음          | 루트 요소(`ul`)에 붙일 클래스 |
+| prop             | 타입                                  | 기본값        | 설명                                                        |
+| ---------------- | ------------------------------------- | ------------- | ----------------------------------------------------------- |
+| `type`           | `"single" \| "multiple"`              | 필수          | 보기 앞 표시 모양                                           |
+| `options`        | `FormChoiceDraftOption[]`             | 필수          | 보기 목록                                                   |
+| `onOptionChange` | `(id: string, label: string) => void` | 없음          | 보기 글자가 바뀔 때                                         |
+| `onOptionAdd`    | `() => void`                          | 없음          | 옵션 추가를 누를 때                                         |
+| `onOptionRemove` | `(id: string) => void`                | 없음          | 삭제를 누를 때                                              |
+| `placeholder`    | `string`                              | 유형별 안내   | 빈 보기의 안내 문구                                         |
+| `addLabel`       | `ReactNode`                           | `"옵션 추가"` | 추가 줄 글자                                                |
+| `optionLabel`    | `string`                              | `"보기"`      | 입력 칸 이름의 앞부분                                       |
+| `removeLabel`    | `string`                              | `"삭제"`      | 삭제 버튼 이름의 뒷부분                                     |
+| `disabled`       | `boolean`                             | `false`       | 입력을 막고 추가·삭제를 숨김. 편집기가 비활성이면 늘 비활성 |
+| `className`      | `string`                              | 없음          | 루트 요소(`ul`)에 붙일 클래스                               |
 
 ```ts
 type FormChoiceDraftOption = { id: string; label: string }

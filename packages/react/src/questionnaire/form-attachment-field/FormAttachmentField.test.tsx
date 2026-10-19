@@ -158,11 +158,11 @@ describe("FormAttachmentField", () => {
     expect(screen.getByRole("button", { name: "파일 업로드" })).toBeDisabled()
   })
 
-  it("비활성 편집기 안의 preview는 입력 칸도 비활성으로 그린다", () => {
+  it("비활성 편집기 안의 preview는 disabled={false}를 줘도 입력 칸을 비활성으로 그린다", () => {
     render(
       <FormQuestionEditor disabled>
         <FormEditableQuestion>
-          <FormAttachmentField preview aria-label="첨부 칸" />
+          <FormAttachmentField preview disabled={false} aria-label="첨부 칸" />
         </FormEditableQuestion>
       </FormQuestionEditor>,
     )

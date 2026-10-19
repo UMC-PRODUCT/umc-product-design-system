@@ -37,7 +37,8 @@ export function FormEditableQuestion({
 }: FormEditableQuestionProps) {
   const editor = useFormQuestionEditor()
   const isRequired = required ?? editor?.required ?? false
-  const isDisabled = disabled ?? editor?.disabled ?? false
+  const lockedByEditor = editor?.disabled ?? false
+  const isDisabled = lockedByEditor || (disabled ?? false)
 
   return (
     <div

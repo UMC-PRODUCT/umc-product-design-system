@@ -179,6 +179,24 @@ describe("FormChoiceListEditor", () => {
     expect(screen.queryByRole("button", { name: "보기 1 삭제" })).toBeNull()
   })
 
+  it("편집기가 비활성이면 disabled={false}를 줘도 보기 칸이 풀리지 않는다", () => {
+    render(
+      <FormQuestionEditor disabled>
+        <FormEditableQuestion>
+          <FormChoiceListEditor
+            type="single"
+            options={OPTIONS}
+            disabled={false}
+            onOptionChange={vi.fn()}
+            onOptionAdd={vi.fn()}
+          />
+        </FormEditableQuestion>
+      </FormQuestionEditor>,
+    )
+    expect(screen.getByRole("textbox", { name: "보기 1" })).toBeDisabled()
+    expect(screen.queryByRole("button", { name: "옵션 추가" })).toBeNull()
+  })
+
   it("보기 이름과 버튼 문구를 바꿔 쓸 수 있다", () => {
     render(
       <FormChoiceListEditor

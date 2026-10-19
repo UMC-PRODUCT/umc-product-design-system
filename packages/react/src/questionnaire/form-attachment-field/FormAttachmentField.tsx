@@ -252,7 +252,8 @@ export function FormAttachmentField({
   const fileInputRef = useRef<HTMLInputElement>(null)
   const isReadOnly = readOnly ?? question?.readOnly ?? false
   const editor = useFormQuestionEditor()
-  const isDisabled = disabled ?? question?.disabled ?? editor?.disabled ?? false
+  const lockedByEditor = editor?.disabled ?? false
+  const isDisabled = lockedByEditor || (disabled ?? question?.disabled ?? false)
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
