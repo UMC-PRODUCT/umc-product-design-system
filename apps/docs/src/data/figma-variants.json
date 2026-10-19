@@ -1752,6 +1752,14 @@
         "Property 1": ["0%", "100%"]
       },
       "variants": ["Property 1=0%", "Property 1=100%"]
+    },
+    "section-header": {
+      "node": "4437:78030",
+      "name": "Web/Section Header",
+      "axes": {
+        "Size": ["Lg", "Md", "Sm"]
+      },
+      "variants": ["Size=Lg", "Size=Md", "Size=Sm"]
     }
   }
 }

@@ -186,6 +186,10 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 13. Home Link 색 변수의 codeSyntax `--color-action-primary-default` 하나가 `#3f4141`(라이트), `#02746c`(라이트 hover), `#f4fbfa`(다크) 세 값을 가리킵니다. 어느 변수인지 알 수 없어 코드는 값이 같은 `icon-neutral-stronger-700`, `icon-brand-strong-600`, `teal-50`, `teal-200`을 씁니다.
 14. `Web/Header/Home Link`의 왼쪽 여백은 Main이 60px, 라벨 있는 맥락이 34px입니다. 라벨 칸 200px 안에서 내용을 가운데 두므로 로고 시작 위치가 맥락마다 다릅니다(헤더 왼쪽에서 Main 76px, Operation 51.5px, Study 68.5px, Product Tech 57.8px). 맥락이 바뀌어도 로고 위치가 같아야 하는지 알려 주세요.
 15. 좁은 화면용 Header가 없습니다. 라벨 있는 홈 링크는 로고 칸이 250px(여백 34px과 16px, 링크 200px)이라, 375px 화면에서 액션 버튼과 함께 두면 가로로 넘칩니다. 모바일 헤더 규칙과 브레이크포인트를 알려 주세요.
+16. Section Header Md의 제목(`Title/3-Semibold`, 18px)과 Sm의 설명(`Body/4-Regular`, 13px)은 2026-10-08에 받은 3기 텍스트 스타일에 없습니다. 코드는 피그마 값을 컴포넌트 변수로 둡니다. Export modes를 다시 주시면 토큰으로 바꾸겠습니다.
+17. Section Header Sm은 번호가 18px, 제목이 16px로 크기가 다릅니다. Lg와 Md는 번호와 제목이 같은 크기입니다. 의도한 것인지 알려 주세요.
+18. Section Header 필수 별표 색이 `--color-text-link`(`#dc3d3d`)에 연결되어 있습니다. 이름은 링크인데 값은 빨강이라, 코드는 같은 값의 `text-error`를 씁니다.
+19. Section Header의 Caption Slot은 200px 고정 칸이고 번호는 늘 보입니다. 코드는 슬롯을 내용 폭으로 두고, 번호를 넘기지 않으면 번호 칸을 그리지 않습니다. 번호 없이 쓰는 화면이 있는지, 슬롯에 시간 표기 말고 무엇을 넣는지 알려 주세요.
 
 ## 폼
 

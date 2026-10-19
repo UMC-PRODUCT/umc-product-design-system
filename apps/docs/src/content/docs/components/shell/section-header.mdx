@@ -1,0 +1,70 @@
+---
+title: SectionHeader
+description: 페이지 안 구획마다 번호, 제목, 설명을 붙이는 머리말입니다.
+---
+
+import {
+  SectionHeaderAllVariants,
+  SectionHeaderDefault,
+  SectionHeaderSizes,
+  SectionHeaderWithSlot,
+} from "../../../../components/react/shell/SectionHeaderExamples.tsx"
+
+피그마 `Web/Section Header`를 구현했습니다. 한 페이지를 여러 구획으로 나눌 때, 구획마다 번호와 제목을 달고 필요하면 설명을 덧붙입니다. 페이지 맨 위 제목은 [PageHeader](../page-header/)가 맡습니다.
+
+```tsx
+import { SectionHeader } from "@umc-product/react"
+
+<SectionHeader
+  number="01"
+  title="기본 정보"
+  description="프로젝트 이름과 한 줄 소개를 적어 주세요"
+  required
+/>
+```
+
+<SectionHeaderDefault />
+
+## 슬롯
+
+`slot`은 제목 줄 오른쪽 끝 자리입니다. 피그마 예시처럼 집계 기준 시각을 적거나 작은 버튼을 둡니다. 슬롯은 제목 첫 줄의 세로 가운데에 놓입니다.
+
+<SectionHeaderWithSlot />
+
+## 크기
+
+`size`는 `lg`(제목 20px), `md`(18px), `sm`(16px) 세 가지이고 기본은 `lg`입니다. 번호 칸은 크기마다 폭이 정해져 있어(30px, 28px, 26px), 구획이 여러 개여도 제목이 같은 위치에서 시작합니다.
+
+<SectionHeaderSizes />
+
+## 접근성
+
+- 제목은 기본으로 `h2`입니다. 문서 구조에 맞게 `level`로 `h3`부터 `h6`까지 고릅니다.
+- `required`의 빨간 별표는 화면 낭독기에서 숨기고, 대신 제목 뒤에 "(필수)"를 읽게 합니다.
+- 번호는 제목 밖에 있어 제목 이름에 들어가지 않습니다.
+
+## 모든 변형
+
+피그마 `Web/Section Header` 변형 3개를 그렸습니다.
+
+<SectionHeaderAllVariants />
+
+## props
+
+나머지 `div` 속성은 루트 요소에 붙습니다.
+
+| prop          | 타입                    | 기본값  | 설명                        |
+| ------------- | ----------------------- | ------- | --------------------------- |
+| `title`       | `ReactNode`             | 필수    | 구획 제목                   |
+| `number`      | `ReactNode`             | 없음    | 제목 앞 번호(예: `"01"`)    |
+| `required`    | `boolean`               | `false` | 제목 뒤 빨간 별표           |
+| `description` | `ReactNode`             | 없음    | 제목 아래 설명              |
+| `slot`        | `ReactNode`             | 없음    | 제목 줄 오른쪽 끝에 둘 요소 |
+| `size`        | `"lg" \| "md" \| "sm"`  | `"lg"`  | 크기                        |
+| `level`       | `2 \| 3 \| 4 \| 5 \| 6` | `2`     | 제목 단계                   |
+| `className`   | `string`                | 없음    | 루트 요소에 붙일 클래스     |
+
+## 알아 둘 점
+
+- 긴 제목은 줄을 바꿉니다. 슬롯은 제목 첫 줄 오른쪽에 그대로 남습니다.
+- 부모 폭을 채우는 블록이라, flex 행 안에 둘 때는 `className`으로 폭을 정합니다.
