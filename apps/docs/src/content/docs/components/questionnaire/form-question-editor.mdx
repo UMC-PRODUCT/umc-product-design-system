@@ -141,7 +141,7 @@ function SortableQuestion({ question }: { question: Question }) {
 | `required`                | `boolean`                              | `false`       | 필수 항목 체크와 제목 뒤 `*`                        |
 | `onRequiredChange`        | `(required: boolean) => void`          | 없음          | 필수 항목을 누를 때. 없으면 체크박스가 읽기 전용    |
 | `questionEnabled`         | `boolean`                              | 없음          | 넘기면 질문 사용 스위치를 그림                      |
-| `onQuestionEnabledChange` | `(enabled: boolean) => void`           | 없음          | 질문 사용 스위치를 누를 때                          |
+| `onQuestionEnabledChange` | `(enabled: boolean) => void`           | 없음          | 질문 사용 스위치를 누를 때. 없으면 스위치가 비활성  |
 | `onDelete`                | `() => void`                           | 없음          | 삭제 버튼을 누를 때. 없으면 삭제 버튼을 그리지 않음 |
 | `dragHandleProps`         | `button` 속성(`type`, `children` 제외) | 없음          | 넘기면 이동 손잡이를 그림                           |
 | `toolbar`                 | `ReactNode`                            | 없음          | 활성일 때 카드 아래에 놓을 도구                     |

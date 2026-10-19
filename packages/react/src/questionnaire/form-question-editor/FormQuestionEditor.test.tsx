@@ -133,6 +133,20 @@ describe("FormQuestionEditor", () => {
     expect(onQuestionEnabledChange).toHaveBeenCalledWith(false)
   })
 
+  it("onQuestionEnabledChange가 없으면 질문 사용 스위치를 비활성으로 둔다", () => {
+    render(
+      <FormQuestionEditor active questionEnabled>
+        <FormEditableQuestion>
+          <span />
+        </FormEditableQuestion>
+      </FormQuestionEditor>,
+    )
+    expect(screen.getByRole("switch", { name: "질문 사용" })).toHaveAttribute(
+      "aria-disabled",
+      "true",
+    )
+  })
+
   it("삭제 버튼을 누르면 인자 없이 onDelete를 부른다", async () => {
     const user = userEvent.setup()
     const onDelete = vi.fn()

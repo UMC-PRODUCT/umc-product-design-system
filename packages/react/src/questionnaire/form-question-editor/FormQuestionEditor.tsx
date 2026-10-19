@@ -123,6 +123,7 @@ export function FormQuestionEditor({
                     className="umc-form-question-editor__switch"
                     checked={questionEnabled}
                     onCheckedChange={onQuestionEnabledChange}
+                    disabled={onQuestionEnabledChange === undefined}
                   >
                     {questionEnabledLabel}
                   </Switch>
