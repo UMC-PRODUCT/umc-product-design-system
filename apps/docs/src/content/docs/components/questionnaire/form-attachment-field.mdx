@@ -47,7 +47,7 @@ import { FormAttachmentField, FormQuestion } from "@umc-product/react"
 
 ## 질문지 편집 화면의 미리보기
 
-질문지를 만드는 화면에서는 `preview`를 줍니다. 응답자가 보게 될 입력 칸과 "파일 업로드" 버튼을 그대로 그리되, 글자를 받지 않고 버튼도 누를 수 없습니다. [FormEditableQuestion](../form-question-editor/#편집-모드-질문)의 답 칸 미리보기로 씁니다. 비활성 편집기 안이라면 `disabled`를 함께 넘겨 미리보기도 비활성으로 그립니다.
+질문지를 만드는 화면에서는 `preview`를 줍니다. 응답자가 보게 될 입력 칸과 "파일 업로드" 버튼을 그대로 그리되, 글자를 받지 않고 버튼도 누를 수 없습니다. [FormEditableQuestion](../form-question-editor/#편집-모드-질문)의 답 칸 미리보기로 씁니다. 비활성 편집기(`FormQuestionEditor`의 `disabled`) 안에서는 미리보기도 비활성으로 그립니다.
 
 ```tsx
 <FormEditableQuestion number="03" titleProps={titleProps}>
@@ -65,20 +65,20 @@ import { FormAttachmentField, FormQuestion } from "@umc-product/react"
 
 나머지 네이티브 `input` 속성과 `ref`는 링크 입력 칸에 붙습니다.
 
-| prop                   | 타입                     | 기본값                | 설명                                      |
-| ---------------------- | ------------------------ | --------------------- | ----------------------------------------- |
-| `attachment`           | `FormAttachment \| null` | 없음                  | 첨부된 링크나 파일. 있으면 입력 대신 보임 |
-| `onAttachmentRemove`   | `() => void`             | 없음                  | 첨부 옆 삭제를 눌렀을 때                  |
-| `onFileSelect`         | `(file: File) => void`   | 없음                  | 형식과 용량 검사를 통과한 파일            |
-| `onReject`             | `(rejection) => void`    | 없음                  | 받지 않은 파일과 이유                     |
-| `accept`               | `string[]`               | `["application/pdf"]` | 받을 MIME 형식                            |
-| `maxSize`              | `number`                 | 200MB                 | 최대 용량(바이트)                         |
-| `placeholder`          | `string`                 | 링크와 파일 안내      | 입력 칸 안내 문구                         |
-| `uploadLabel`          | `ReactNode`              | `"파일 업로드"`       | 업로드 버튼 글자                          |
-| `removeLabel`          | `ReactNode`              | `"삭제"`              | 삭제 버튼 글자                            |
-| `readOnly`, `disabled` | `boolean`                | 질문 값               | 읽기 전용, 비활성                         |
-| `preview`              | `boolean`                | `false`               | 질문지 편집 화면의 미리보기로 그림        |
-| `className`            | `string`                 | 없음                  | 루트 요소에 붙일 클래스                   |
+| prop                   | 타입                     | 기본값                | 설명                                         |
+| ---------------------- | ------------------------ | --------------------- | -------------------------------------------- |
+| `attachment`           | `FormAttachment \| null` | 없음                  | 첨부된 링크나 파일. 있으면 입력 대신 보임    |
+| `onAttachmentRemove`   | `() => void`             | 없음                  | 첨부 옆 삭제를 눌렀을 때                     |
+| `onFileSelect`         | `(file: File) => void`   | 없음                  | 형식과 용량 검사를 통과한 파일               |
+| `onReject`             | `(rejection) => void`    | 없음                  | 받지 않은 파일과 이유                        |
+| `accept`               | `string[]`               | `["application/pdf"]` | 받을 MIME 형식                               |
+| `maxSize`              | `number`                 | 200MB                 | 최대 용량(바이트)                            |
+| `placeholder`          | `string`                 | 링크와 파일 안내      | 입력 칸 안내 문구                            |
+| `uploadLabel`          | `ReactNode`              | `"파일 업로드"`       | 업로드 버튼 글자                             |
+| `removeLabel`          | `ReactNode`              | `"삭제"`              | 삭제 버튼 글자                               |
+| `readOnly`, `disabled` | `boolean`                | 질문 값               | 읽기 전용, 비활성. 비활성은 편집기 값도 따름 |
+| `preview`              | `boolean`                | `false`               | 질문지 편집 화면의 미리보기로 그림           |
+| `className`            | `string`                 | 없음                  | 루트 요소에 붙일 클래스                      |
 
 ```ts
 import type { ReactNode } from "react"

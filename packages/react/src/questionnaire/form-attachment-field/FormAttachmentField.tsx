@@ -16,6 +16,7 @@ import {
 } from "../../forms/input-box/input-value.ts"
 import { cx } from "../../internal/cx.ts"
 import { mergeRefs } from "../../internal/merge-refs.ts"
+import { useFormQuestionEditor } from "../form-question-editor/form-question-editor-context.ts"
 import { useFormQuestion } from "../form-question/form-question-context.ts"
 
 export type FormAttachment = {
@@ -250,7 +251,8 @@ export function FormAttachmentField({
   const question = useFormQuestion()
   const fileInputRef = useRef<HTMLInputElement>(null)
   const isReadOnly = readOnly ?? question?.readOnly ?? false
-  const isDisabled = disabled ?? question?.disabled ?? false
+  const editor = useFormQuestionEditor()
+  const isDisabled = disabled ?? question?.disabled ?? editor?.disabled ?? false
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]

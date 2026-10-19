@@ -4,6 +4,7 @@ import { AddIcon, CloseIcon } from "@umc-product/icons"
 import { useEffect, useRef, type ReactNode } from "react"
 
 import { cx } from "../../internal/cx.ts"
+import { useFormQuestionEditor } from "../form-question-editor/form-question-editor-context.ts"
 
 export type FormChoiceDraftOption = {
   id: string
@@ -46,10 +47,12 @@ export function FormChoiceListEditor({
   addLabel = DEFAULT_ADD_LABEL,
   optionLabel = DEFAULT_OPTION_LABEL,
   removeLabel = DEFAULT_REMOVE_LABEL,
-  disabled = false,
+  disabled,
   className,
 }: FormChoiceListEditorProps) {
-  const editable = !disabled
+  const editor = useFormQuestionEditor()
+  const isDisabled = disabled ?? editor?.disabled ?? false
+  const editable = !isDisabled
   const listRef = useRef<HTMLUListElement>(null)
   const focusNewOption = useRef(false)
   const previousCount = useRef(options.length)
@@ -79,7 +82,7 @@ export function FormChoiceListEditor({
       ref={listRef}
       className={cx("umc-form-choice-list-editor", className)}
       data-type={type}
-      data-disabled={disabled ? "" : undefined}
+      data-disabled={isDisabled ? "" : undefined}
     >
       {options.map((option, index) => {
         const name = `${optionLabel} ${index + 1}`
@@ -95,7 +98,7 @@ export function FormChoiceListEditor({
               value={option.label}
               placeholder={placeholder}
               aria-label={name}
-              disabled={disabled}
+              disabled={isDisabled}
               readOnly={onOptionChange === undefined}
               onChange={(event) =>
                 onOptionChange?.(option.id, event.target.value)

@@ -3,6 +3,8 @@ import userEvent from "@testing-library/user-event"
 import { useState } from "react"
 import { describe, expect, it, vi } from "vitest"
 
+import { FormEditableQuestion } from "../form-editable-question/FormEditableQuestion.tsx"
+import { FormQuestionEditor } from "../form-question-editor/FormQuestionEditor.tsx"
 import {
   FormChoiceListEditor,
   type FormChoiceDraftOption,
@@ -156,6 +158,25 @@ describe("FormChoiceListEditor", () => {
     expect(screen.getByRole("textbox", { name: "보기 1" })).toBeDisabled()
     expect(screen.queryByRole("button")).toBeNull()
     expect(screen.getByRole("list")).toHaveAttribute("data-disabled", "")
+  })
+
+  it("비활성 편집기 안에서는 보기 칸을 막고 추가와 삭제 버튼을 숨긴다", () => {
+    render(
+      <FormQuestionEditor active disabled>
+        <FormEditableQuestion>
+          <FormChoiceListEditor
+            type="single"
+            options={OPTIONS}
+            onOptionChange={vi.fn()}
+            onOptionAdd={vi.fn()}
+            onOptionRemove={vi.fn()}
+          />
+        </FormEditableQuestion>
+      </FormQuestionEditor>,
+    )
+    expect(screen.getByRole("textbox", { name: "보기 1" })).toBeDisabled()
+    expect(screen.queryByRole("button", { name: "옵션 추가" })).toBeNull()
+    expect(screen.queryByRole("button", { name: "보기 1 삭제" })).toBeNull()
   })
 
   it("보기 이름과 버튼 문구를 바꿔 쓸 수 있다", () => {

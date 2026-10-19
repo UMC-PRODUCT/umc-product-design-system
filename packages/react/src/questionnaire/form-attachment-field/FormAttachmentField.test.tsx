@@ -2,6 +2,8 @@ import { fireEvent, render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import { describe, expect, it, vi } from "vitest"
 
+import { FormEditableQuestion } from "../form-editable-question/FormEditableQuestion.tsx"
+import { FormQuestionEditor } from "../form-question-editor/FormQuestionEditor.tsx"
 import { FormQuestion } from "../form-question/FormQuestion.tsx"
 import { FormAttachmentField } from "./FormAttachmentField.tsx"
 
@@ -154,6 +156,17 @@ describe("FormAttachmentField", () => {
     render(<FormAttachmentField preview disabled aria-label="첨부 칸" />)
     expect(screen.getByRole("textbox", { name: "첨부 칸" })).toBeDisabled()
     expect(screen.getByRole("button", { name: "파일 업로드" })).toBeDisabled()
+  })
+
+  it("비활성 편집기 안의 preview는 입력 칸도 비활성으로 그린다", () => {
+    render(
+      <FormQuestionEditor disabled>
+        <FormEditableQuestion>
+          <FormAttachmentField preview aria-label="첨부 칸" />
+        </FormEditableQuestion>
+      </FormQuestionEditor>,
+    )
+    expect(screen.getByRole("textbox", { name: "첨부 칸" })).toBeDisabled()
   })
 
   it("읽기 전용 질문 안에서는 버튼과 파일 입력을 그리지 않는다", () => {
