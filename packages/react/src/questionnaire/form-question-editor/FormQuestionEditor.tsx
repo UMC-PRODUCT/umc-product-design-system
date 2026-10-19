@@ -115,6 +115,7 @@ export function FormQuestionEditor({
                   color={required ? "brand" : "neutral"}
                   checked={required}
                   onCheckedChange={onRequiredChange}
+                  readOnly={onRequiredChange === undefined}
                   labelPlacement="end"
                 >
                   {requiredLabel}
@@ -128,14 +129,16 @@ export function FormQuestionEditor({
                     {questionEnabledLabel}
                   </Switch>
                 )}
-                <button
-                  type="button"
-                  className="umc-form-question-editor__delete"
-                  aria-label={deleteLabel}
-                  onClick={() => onDelete?.()}
-                >
-                  <TrashIcon weight="thin" size={24} />
-                </button>
+                {onDelete !== undefined && (
+                  <button
+                    type="button"
+                    className="umc-form-question-editor__delete"
+                    aria-label={deleteLabel}
+                    onClick={() => onDelete()}
+                  >
+                    <TrashIcon weight="thin" size={24} />
+                  </button>
+                )}
               </div>
             )}
           </div>

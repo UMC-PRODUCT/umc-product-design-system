@@ -111,6 +111,8 @@ type EditorState = {
   specId: string
 }
 
+const keepState = () => {}
+
 const EDITOR_STATES: Readonly<Record<string, EditorState>> = {
   Default: { forced: [], specId: "form-question-editor-default" },
   "Hover&Pressed": {
@@ -150,6 +152,8 @@ function renderEditorVariant(variant: FigmaVariant) {
           active={state.active}
           disabled={state.disabled}
           required
+          onRequiredChange={keepState}
+          onDelete={keepState}
           dragHandleProps={{}}
           toolbar={
             <FormQuestionTypeList items={QUESTION_TYPES} value="short" />
@@ -181,8 +185,6 @@ export function FormQuestionEditorAllVariants() {
     />
   )
 }
-
-const keepOptions = () => {}
 
 const choiceOptionsOf = (
   label: string,
@@ -216,14 +218,14 @@ const EDIT_ANSWERS: Readonly<Record<string, (filled: boolean) => ReactNode>> = {
     <FormChoiceListEditor
       type="multiple"
       options={choiceOptionsOf("복수 선택 옵션", filled)}
-      onOptionAdd={keepOptions}
+      onOptionAdd={keepState}
     />
   ),
   "Single Select (단일 선택)": (filled) => (
     <FormChoiceListEditor
       type="single"
       options={choiceOptionsOf("단일 선택 옵션", filled)}
-      onOptionAdd={keepOptions}
+      onOptionAdd={keepState}
     />
   ),
   "File Upload (파일 업로드&포트폴리오 업로드)": () => (

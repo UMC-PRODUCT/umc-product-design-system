@@ -66,7 +66,7 @@ import {
 
 ## 필수 항목
 
-"필수 항목" 체크와 제목 뒤 `*` 표시는 같은 `required` 값을 따릅니다. 피그마 설명이 둘을 늘 함께 바꾸라고 해서 값 하나로 묶었습니다. 체크하면 체크박스가 브랜드색으로 바뀌고, `onRequiredChange`가 새 값을 넘깁니다.
+"필수 항목" 체크와 제목 뒤 `*` 표시는 같은 `required` 값을 따릅니다. 피그마 설명이 둘을 늘 함께 바꾸라고 해서 값 하나로 묶었습니다. 체크하면 체크박스가 브랜드색으로 바뀌고, `onRequiredChange`가 새 값을 넘깁니다. `onRequiredChange`를 넘기지 않으면 체크박스는 읽기 전용이고, `onDelete`를 넘기지 않으면 삭제 버튼을 그리지 않습니다. 지울 수 없는 공통 질문에 씁니다.
 
 ## 질문 사용 스위치
 
@@ -134,22 +134,22 @@ function SortableQuestion({ question }: { question: Question }) {
 
 나머지 `div` 속성과 `ref`는 루트 요소에 붙습니다.
 
-| prop                      | 타입                                   | 기본값               | 설명                            |
-| ------------------------- | -------------------------------------- | -------------------- | ------------------------------- |
-| `active`                  | `boolean`                              | `false`              | 편집 중인 질문인지              |
-| `disabled`                | `boolean`                              | `false`              | 고칠 수 없게 막음               |
-| `required`                | `boolean`                              | `false`              | 필수 항목 체크와 제목 뒤 `*`    |
-| `onRequiredChange`        | `(required: boolean) => void`          | 없음                 | 필수 항목을 누를 때             |
-| `questionEnabled`         | `boolean`                              | 없음                 | 넘기면 질문 사용 스위치를 그림  |
-| `onQuestionEnabledChange` | `(enabled: boolean) => void`           | 없음                 | 질문 사용 스위치를 누를 때      |
-| `onDelete`                | `() => void`                           | 없음                 | 삭제 버튼을 누를 때             |
-| `dragHandleProps`         | `button` 속성(`type`, `children` 제외) | 없음                 | 넘기면 이동 손잡이를 그림       |
-| `toolbar`                 | `ReactNode`                            | 없음                 | 활성일 때 카드 아래에 놓을 도구 |
-| `requiredLabel`           | `ReactNode`                            | `"필수 항목"`        | 체크박스 글자                   |
-| `questionEnabledLabel`    | `ReactNode`                            | `"질문 사용"`        | 스위치 글자                     |
-| `deleteLabel`             | `string`                               | `"질문 삭제"`        | 삭제 버튼 이름                  |
-| `dragHandleLabel`         | `string`                               | `"질문 순서 바꾸기"` | 손잡이 이름                     |
-| `children`                | `ReactNode`                            | 필수                 | 질문(`FormEditableQuestion`)    |
+| prop                      | 타입                                   | 기본값               | 설명                                                |
+| ------------------------- | -------------------------------------- | -------------------- | --------------------------------------------------- |
+| `active`                  | `boolean`                              | `false`              | 편집 중인 질문인지                                  |
+| `disabled`                | `boolean`                              | `false`              | 고칠 수 없게 막음                                   |
+| `required`                | `boolean`                              | `false`              | 필수 항목 체크와 제목 뒤 `*`                        |
+| `onRequiredChange`        | `(required: boolean) => void`          | 없음                 | 필수 항목을 누를 때. 없으면 체크박스가 읽기 전용    |
+| `questionEnabled`         | `boolean`                              | 없음                 | 넘기면 질문 사용 스위치를 그림                      |
+| `onQuestionEnabledChange` | `(enabled: boolean) => void`           | 없음                 | 질문 사용 스위치를 누를 때                          |
+| `onDelete`                | `() => void`                           | 없음                 | 삭제 버튼을 누를 때. 없으면 삭제 버튼을 그리지 않음 |
+| `dragHandleProps`         | `button` 속성(`type`, `children` 제외) | 없음                 | 넘기면 이동 손잡이를 그림                           |
+| `toolbar`                 | `ReactNode`                            | 없음                 | 활성일 때 카드 아래에 놓을 도구                     |
+| `requiredLabel`           | `ReactNode`                            | `"필수 항목"`        | 체크박스 글자                                       |
+| `questionEnabledLabel`    | `ReactNode`                            | `"질문 사용"`        | 스위치 글자                                         |
+| `deleteLabel`             | `string`                               | `"질문 삭제"`        | 삭제 버튼 이름                                      |
+| `dragHandleLabel`         | `string`                               | `"질문 순서 바꾸기"` | 손잡이 이름                                         |
+| `children`                | `ReactNode`                            | 필수                 | 질문(`FormEditableQuestion`)                        |
 
 ### FormEditableQuestion
 

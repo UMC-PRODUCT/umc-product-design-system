@@ -30,7 +30,12 @@ describe("FormQuestionEditor", () => {
 
   it("활성이면 필수 항목, 삭제, 툴바를 보여 준다", () => {
     render(
-      <FormQuestionEditor active toolbar={<div>툴바</div>}>
+      <FormQuestionEditor
+        active
+        onRequiredChange={vi.fn()}
+        onDelete={vi.fn()}
+        toolbar={<div>툴바</div>}
+      >
         <FormEditableQuestion>
           <span>답 미리보기</span>
         </FormEditableQuestion>
@@ -75,6 +80,21 @@ describe("FormQuestionEditor", () => {
     expect(editorOf().querySelector(".umc-checkbox")).toHaveAttribute(
       "data-color",
       "brand",
+    )
+  })
+
+  it("onDelete가 없으면 삭제 버튼을 그리지 않고, onRequiredChange가 없으면 필수 항목을 읽기 전용으로 둔다", () => {
+    render(
+      <FormQuestionEditor active required>
+        <FormEditableQuestion>
+          <span />
+        </FormEditableQuestion>
+      </FormQuestionEditor>,
+    )
+    expect(screen.queryByRole("button", { name: "질문 삭제" })).toBeNull()
+    expect(screen.getByRole("checkbox", { name: "필수 항목" })).toHaveAttribute(
+      "aria-readonly",
+      "true",
     )
   })
 

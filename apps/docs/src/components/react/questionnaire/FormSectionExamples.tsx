@@ -131,11 +131,15 @@ export function FormSectionControlAllVariants() {
   )
 }
 
+const keepState = () => {}
+
 function SampleEditor({ active = false }: { active?: boolean }) {
   return (
     <FormQuestionEditor
       active={active}
       required
+      onRequiredChange={keepState}
+      onDelete={keepState}
       dragHandleProps={{}}
       toolbar={<FormQuestionTypeList items={QUESTION_TYPES} value="short" />}
     >
