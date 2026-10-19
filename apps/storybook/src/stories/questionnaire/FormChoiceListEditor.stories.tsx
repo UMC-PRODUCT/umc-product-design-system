@@ -59,10 +59,7 @@ const meta = {
         onOptionAdd={() => {
           args.onOptionAdd?.()
           updateArgs({
-            options: [
-              ...options,
-              { id: `option-${options.length}`, label: "" },
-            ],
+            options: [...options, { id: crypto.randomUUID(), label: "" }],
           })
         }}
         onOptionRemove={(id) => {
