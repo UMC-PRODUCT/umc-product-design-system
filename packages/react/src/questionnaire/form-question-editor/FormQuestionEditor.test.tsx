@@ -98,6 +98,21 @@ describe("FormQuestionEditor", () => {
     )
   })
 
+  it("손잡이 이름은 dragHandleProps의 aria-label로 바꾼다", () => {
+    render(
+      <FormQuestionEditor
+        dragHandleProps={{ "aria-label": "01번 질문 옮기기" }}
+      >
+        <FormEditableQuestion>
+          <span />
+        </FormEditableQuestion>
+      </FormQuestionEditor>,
+    )
+    expect(
+      screen.getByRole("button", { name: "01번 질문 옮기기" }),
+    ).toHaveAttribute("type", "button")
+  })
+
   it("questionEnabled를 넘기면 질문 사용 스위치를 그린다", async () => {
     const user = userEvent.setup()
     const onQuestionEnabledChange = vi.fn()

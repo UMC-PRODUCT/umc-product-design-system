@@ -29,7 +29,6 @@ export type FormQuestionEditorProps = Omit<
   requiredLabel?: ReactNode
   questionEnabledLabel?: ReactNode
   deleteLabel?: string
-  dragHandleLabel?: string
   children: ReactNode
 }
 
@@ -71,7 +70,6 @@ export function FormQuestionEditor({
   requiredLabel = DEFAULT_REQUIRED_LABEL,
   questionEnabledLabel = DEFAULT_QUESTION_ENABLED_LABEL,
   deleteLabel = DEFAULT_DELETE_LABEL,
-  dragHandleLabel = DEFAULT_DRAG_HANDLE_LABEL,
   className,
   children,
   ...props
@@ -92,7 +90,7 @@ export function FormQuestionEditor({
           <div className="umc-form-question-editor__handle-area">
             {draggable && (
               <button
-                aria-label={dragHandleLabel}
+                aria-label={DEFAULT_DRAG_HANDLE_LABEL}
                 {...dragHandleProps}
                 type="button"
                 className={cx(
