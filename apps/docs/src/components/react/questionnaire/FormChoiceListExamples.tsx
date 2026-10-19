@@ -4,7 +4,7 @@ import {
   type FormChoiceOption,
 } from "@umc-product/react"
 
-import { ForceState, NotImplemented } from "../variants/VariantCells.tsx"
+import { ForceState } from "../variants/VariantCells.tsx"
 import type { FigmaVariant } from "../variants/figma-variants.ts"
 import { VariantGrid } from "../variants/VariantGrid.tsx"
 
@@ -85,12 +85,7 @@ export function FormChoiceListDisabledOption() {
   )
 }
 
-function renderListVariant(variant: FigmaVariant, type: "single" | "multiple") {
-  if (variant.props["Mode"] === "Edit") {
-    return (
-      <NotImplemented reason="보기 편집(FormChoiceListEditor)과 함께 구현합니다" />
-    )
-  }
+function renderListVariant(type: "single" | "multiple") {
   return (
     <div className="w-[360px]">
       {type === "single" ? (
@@ -118,7 +113,8 @@ export function FormRadioOptionListAllVariants() {
       set="form-radio-button-option-list"
       rows={[]}
       columns={["Mode"]}
-      render={(variant) => renderListVariant(variant, "single")}
+      only={{ Mode: ["Respond"] }}
+      render={() => renderListVariant("single")}
     />
   )
 }
@@ -129,7 +125,8 @@ export function FormCheckboxOptionListAllVariants() {
       set="form-check-box-option-list"
       rows={[]}
       columns={["Mode"]}
-      render={(variant) => renderListVariant(variant, "multiple")}
+      only={{ Mode: ["Respond"] }}
+      render={() => renderListVariant("multiple")}
     />
   )
 }
@@ -137,11 +134,6 @@ export function FormCheckboxOptionListAllVariants() {
 const OPTION = { value: "option", label: "선택 옵션" } as const
 
 function renderItemVariant(variant: FigmaVariant, type: "single" | "multiple") {
-  if (variant.props["Mode"] === "Edit") {
-    return (
-      <NotImplemented reason="보기 편집(FormChoiceListEditor)과 함께 구현합니다" />
-    )
-  }
   const disabled = variant.props["Disabled"] === "True"
   const selected = variant.props["State"] === "Selected"
   const options = [{ ...OPTION, disabled }]
@@ -181,6 +173,7 @@ export function FormRadioOptionItemAllVariants() {
       set="radio-button-option-item"
       rows={["State"]}
       columns={["Mode", "Disabled"]}
+      only={{ Mode: ["Respond"] }}
       render={(variant) => renderItemVariant(variant, "single")}
     />
   )
@@ -192,6 +185,7 @@ export function FormCheckboxOptionItemAllVariants() {
       set="check-box-option-item"
       rows={["State"]}
       columns={["Mode", "Disabled"]}
+      only={{ Mode: ["Respond"] }}
       render={(variant) => renderItemVariant(variant, "multiple")}
     />
   )

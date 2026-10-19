@@ -9,7 +9,7 @@ import {
   FormQuestionReadOnly,
 } from "../../../../components/react/questionnaire/FormQuestionExamples.tsx"
 
-피그마 `Form/Question`의 응답(Respond)과 읽기 전용(Read Only) 모드를 구현했습니다. 머리는 [SectionHeader](../../shell/section-header/) md를 그대로 쓰고, 답 칸은 20px 들여 그립니다. 답 칸은 `children`으로 넣습니다. 글로 답하는 질문에는 `FormTextAnswer`를, 고르는 질문에는 [FormChoiceList](../form-choice-list/)를, 링크나 파일을 붙이는 질문에는 [FormAttachmentField](../form-attachment-field/)를 넣습니다. 질문마다 어떤 부품을 쓸지는 앱이 고릅니다.
+피그마 `Form/Question`의 응답(Respond)과 읽기 전용(Read Only) 모드를 구현했습니다. 머리는 [SectionHeader](../../shell/section-header/) md를 그대로 쓰고, 답 칸은 20px 들여 그립니다. 답 칸은 `children`으로 넣습니다. 글로 답하는 질문에는 `FormTextAnswer`를, 고르는 질문에는 [FormChoiceList](../form-choice-list/)를, 링크나 파일을 붙이는 질문에는 [FormAttachmentField](../form-attachment-field/)를 넣습니다. 질문마다 어떤 부품을 쓸지는 앱이 고릅니다. 질문을 만드는 편집(Edit) 모드는 [FormQuestionEditor](../form-question-editor/)의 `FormEditableQuestion`이 맡습니다.
 
 ```tsx
 import { FormQuestion, FormTextAnswer } from "@umc-product/react"
@@ -44,7 +44,7 @@ import { FormQuestion, FormTextAnswer } from "@umc-product/react"
 
 ## 모든 변형
 
-피그마 `Form/Question` 변형 20개 가운데 응답과 읽기 전용 10개를 그렸습니다. 질문을 만드는 편집(Edit) 모드는 질문지 편집 부품과 함께 구현합니다.
+피그마 `Form/Question` 변형 20개 가운데 응답과 읽기 전용 10개를 그렸습니다. 편집(Edit) 모드 10개는 [FormQuestionEditor](../form-question-editor/#모든-변형)에 있습니다.
 
 <FormQuestionAllVariants />
 

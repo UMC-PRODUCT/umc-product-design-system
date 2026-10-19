@@ -107,6 +107,26 @@
         "font-size": "17px",
         "font-weight": "500"
       }
+    },
+    {
+      "specId": "form-attachment-field-preview",
+      "node": "4469:58178",
+      "variant": "Mode=Form Create (생성 중), State=Default",
+      "target": ".umc-button",
+      "expected": {
+        "height": "48px",
+        "background-color": "#ddf4f1",
+        "color": "#7ac7c1"
+      }
+    },
+    {
+      "specId": "form-attachment-field-preview-hover",
+      "node": "4469:58175",
+      "variant": "Mode=Form Create (생성 중), State=Hover",
+      "target": ".umc-form-attachment-field__box",
+      "expected": {
+        "border-top-color": "#008a80"
+      }
     }
   ]
 }

@@ -7,7 +7,6 @@ import {
 } from "@umc-product/react"
 import type { ReactNode } from "react"
 
-import { NotImplemented } from "../variants/VariantCells.tsx"
 import { lookup, type FigmaVariant } from "../variants/figma-variants.ts"
 import { VariantGrid } from "../variants/VariantGrid.tsx"
 
@@ -88,11 +87,6 @@ const ANSWERS: Readonly<Record<string, () => ReactNode>> = {
 }
 
 function renderQuestionVariant(variant: FigmaVariant) {
-  if (variant.props["Mode"] === "Edit (폼 생성)") {
-    return (
-      <NotImplemented reason="질문지 편집 부품(FormQuestionEditor)과 함께 구현합니다" />
-    )
-  }
   return (
     <div className="w-[520px]">
       <FormQuestion
@@ -113,7 +107,8 @@ export function FormQuestionAllVariants() {
     <VariantGrid
       set="form-question"
       rows={["Type"]}
-      columns={["Mode", "Question State"]}
+      columns={["Mode"]}
+      only={{ Mode: ["Respond (폼 응답)", "Read Only"] }}
       render={renderQuestionVariant}
     />
   )

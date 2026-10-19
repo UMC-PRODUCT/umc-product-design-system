@@ -9,11 +9,7 @@ import {
 } from "@umc-product/react"
 import { useId, useState, type KeyboardEvent } from "react"
 
-import {
-  ForceState,
-  NotImplemented,
-  type ForcedState,
-} from "../variants/VariantCells.tsx"
+import { ForceState, type ForcedState } from "../variants/VariantCells.tsx"
 import type { FigmaVariant } from "../variants/figma-variants.ts"
 import { VariantGrid } from "../variants/VariantGrid.tsx"
 
@@ -89,6 +85,7 @@ type FieldState = {
   value?: string
   attachment?: FormAttachment
   readOnly?: boolean
+  preview?: boolean
   specId?: string
 }
 
@@ -122,13 +119,26 @@ const FIELD_STATES: Readonly<Record<string, FieldState>> = {
   "Read Only": { forced: [], attachment: SAMPLE_ATTACHMENT, readOnly: true },
 }
 
+const PREVIEW_STATES: Readonly<Record<string, FieldState>> = {
+  Default: {
+    forced: [],
+    preview: true,
+    specId: "form-attachment-field-preview",
+  },
+  Hover: {
+    forced: ["hover"],
+    preview: true,
+    specId: "form-attachment-field-preview-hover",
+  },
+  Focus: { forced: ["focus-within"], preview: true },
+}
+
 function renderFieldVariant(variant: FigmaVariant) {
-  if (variant.props["Mode"] === "Form Create (생성 중)") {
-    return (
-      <NotImplemented reason="질문지 편집 화면의 미리보기라 편집 부품과 함께 구현합니다" />
-    )
-  }
-  const state = FIELD_STATES[variant.props["State"] ?? ""]
+  const states =
+    variant.props["Mode"] === "Form Create (생성 중)"
+      ? PREVIEW_STATES
+      : FIELD_STATES
+  const state = states[variant.props["State"] ?? ""]
   if (state === undefined) {
     throw new Error(`${variant.name}: 대응하는 상태가 없습니다`)
   }
@@ -140,6 +150,7 @@ function renderFieldVariant(variant: FigmaVariant) {
           defaultValue={state.value}
           attachment={state.attachment}
           readOnly={state.readOnly}
+          preview={state.preview}
         />
       </ForceState>
     </div>

@@ -42,6 +42,7 @@ export type FormAttachmentFieldProps = NativeInputProps & {
   maxSize?: number
   uploadLabel?: ReactNode
   removeLabel?: ReactNode
+  preview?: boolean
 }
 
 const MEGABYTE = 1024 * 1024
@@ -193,6 +194,39 @@ function LinkInput({
   )
 }
 
+type AttachmentPreviewProps = {
+  inputProps: NativeInputProps
+  disabled: boolean
+  uploadLabel: ReactNode
+}
+
+function AttachmentPreview({
+  inputProps,
+  disabled,
+  uploadLabel,
+}: AttachmentPreviewProps) {
+  return (
+    <>
+      <InputBox
+        size="lg"
+        disabled={disabled}
+        className="umc-form-attachment-field__box"
+      >
+        <input
+          {...inputProps}
+          type="text"
+          className="umc-input-box__input"
+          readOnly
+          disabled={disabled}
+        />
+      </InputBox>
+      <Button type="button" variant="weak" color="primary" size="md" disabled>
+        {uploadLabel}
+      </Button>
+    </>
+  )
+}
+
 export function FormAttachmentField({
   attachment,
   onAttachmentRemove,
@@ -203,6 +237,7 @@ export function FormAttachmentField({
   uploadLabel = DEFAULT_UPLOAD_LABEL,
   removeLabel = DEFAULT_REMOVE_LABEL,
   placeholder = DEFAULT_PLACEHOLDER,
+  preview = false,
   readOnly,
   disabled,
   required,
@@ -234,8 +269,21 @@ export function FormAttachmentField({
       className={cx("umc-form-attachment-field", className)}
       style={style}
       data-attached={attachment ? "" : undefined}
+      data-preview={preview ? "" : undefined}
     >
-      {attachment ? (
+      {preview ? (
+        <AttachmentPreview
+          inputProps={{
+            ...inputProps,
+            placeholder,
+            "aria-labelledby": labelledBy ?? question?.titleId,
+            "aria-describedby":
+              cx(question?.descriptionId, describedBy) || undefined,
+          }}
+          disabled={isDisabled}
+          uploadLabel={uploadLabel}
+        />
+      ) : attachment ? (
         <AttachedFile
           attachment={attachment}
           removable={!isReadOnly}
@@ -260,7 +308,7 @@ export function FormAttachmentField({
           onUploadClick={() => fileInputRef.current?.click()}
         />
       )}
-      {!isReadOnly && (
+      {!isReadOnly && !preview && (
         <input
           ref={fileInputRef}
           type="file"

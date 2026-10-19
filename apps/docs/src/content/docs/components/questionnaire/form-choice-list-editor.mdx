@@ -1,0 +1,90 @@
+---
+title: FormChoiceListEditor
+description: 질문지 편집 화면에서 선택 질문의 보기를 쓰고 더하고 지우는 목록입니다.
+---
+
+import {
+  FormCheckboxOptionItemEditAllVariants,
+  FormCheckboxOptionListEditAllVariants,
+  FormChoiceListEditorMultiple,
+  FormChoiceListEditorSingle,
+  FormRadioOptionItemEditAllVariants,
+  FormRadioOptionListEditAllVariants,
+} from "../../../../components/react/questionnaire/FormChoiceListEditorExamples.tsx"
+
+피그마 `Form/Radio Button Option List`와 `Form/Check Box Option List`의 편집(Edit) 모드를 구현했습니다. 보기마다 입력 칸이 있고, 맨 아래 "옵션 추가" 줄로 보기를 더합니다. 줄에 마우스를 올리거나 줄 안에 포커스가 있으면 삭제 버튼이 보입니다. 보기 목록은 앱이 들고 있고, 컴포넌트는 바뀐 내용을 콜백으로 알립니다.
+
+```tsx
+import { FormChoiceListEditor } from "@umc-product/react"
+
+<FormChoiceListEditor
+  type="single"
+  options={options}
+  onOptionChange={(id, label) =>
+    setOptions(options.map((option) => (option.id === id ? { id, label } : option)))
+  }
+  onOptionAdd={() => setOptions([...options, { id: crypto.randomUUID(), label: "" }])}
+  onOptionRemove={(id) => setOptions(options.filter((option) => option.id !== id))}
+/>
+```
+
+<FormChoiceListEditorSingle client:visible />
+
+## 여러 개 고르는 질문
+
+`type="multiple"`이면 보기 앞 표시가 네모 체크박스 모양으로 바뀝니다. 빈 보기의 안내 문구도 유형에 맞춰 달라집니다.
+
+<FormChoiceListEditorMultiple client:visible />
+
+## 콜백과 버튼
+
+| 콜백                        | 부르는 때           | 넘기지 않으면              |
+| --------------------------- | ------------------- | -------------------------- |
+| `onOptionChange(id, label)` | 보기 글자를 바꿀 때 | 입력 칸이 읽기 전용        |
+| `onOptionAdd()`             | 옵션 추가를 누를 때 | 옵션 추가 줄을 그리지 않음 |
+| `onOptionRemove(id)`        | 삭제 버튼을 누를 때 | 삭제 버튼을 그리지 않음    |
+
+- 삭제 버튼으로 보기를 지우면 이웃 보기로, 옵션 추가를 누르면 새 보기로 포커스가 옮겨 갑니다.
+- 보기 id는 앱이 정합니다. 저장한 보기에는 서버 id를, 새 보기에는 `crypto.randomUUID()` 같은 임시 id를 씁니다.
+- 보기를 몇 개까지 둘지, 빈 보기를 저장할지는 앱이 검사합니다.
+
+## 이름
+
+보기 입력 칸의 이름은 "보기 1", "보기 2"처럼 순서를 붙여 만들고, 삭제 버튼의 이름은 "보기 1 삭제"가 됩니다. 한 화면에 선택 질문이 여럿이면 `optionLabel`에 질문 번호를 넣어 주세요. "2번 질문 보기 1"처럼 질문마다 이름이 갈립니다.
+
+## 모든 변형
+
+보기 목록과 보기 항목의 편집 변형을 그렸습니다. 응답 변형은 [FormChoiceList](../form-choice-list/#모든-변형)에 있습니다.
+
+<FormRadioOptionListEditAllVariants />
+
+<FormCheckboxOptionListEditAllVariants />
+
+<FormRadioOptionItemEditAllVariants />
+
+<FormCheckboxOptionItemEditAllVariants />
+
+## props
+
+| prop             | 타입                                  | 기본값        | 설명                          |
+| ---------------- | ------------------------------------- | ------------- | ----------------------------- |
+| `type`           | `"single" \| "multiple"`              | 필수          | 보기 앞 표시 모양             |
+| `options`        | `FormChoiceDraftOption[]`             | 필수          | 보기 목록                     |
+| `onOptionChange` | `(id: string, label: string) => void` | 없음          | 보기 글자가 바뀔 때           |
+| `onOptionAdd`    | `() => void`                          | 없음          | 옵션 추가를 누를 때           |
+| `onOptionRemove` | `(id: string) => void`                | 없음          | 삭제를 누를 때                |
+| `placeholder`    | `string`                              | 유형별 안내   | 빈 보기의 안내 문구           |
+| `addLabel`       | `ReactNode`                           | `"옵션 추가"` | 추가 줄 글자                  |
+| `optionLabel`    | `string`                              | `"보기"`      | 입력 칸 이름의 앞부분         |
+| `removeLabel`    | `string`                              | `"삭제"`      | 삭제 버튼 이름의 뒷부분       |
+| `disabled`       | `boolean`                             | `false`       | 입력을 막고 추가·삭제를 숨김  |
+| `className`      | `string`                              | 없음          | 루트 요소(`ul`)에 붙일 클래스 |
+
+```ts
+type FormChoiceDraftOption = { id: string; label: string }
+```
+
+## 알아 둘 점
+
+- 피그마는 Hover 줄에만 닫기 아이콘을 그립니다. 코드는 키보드로도 지울 수 있도록 줄 안에 포커스가 있을 때도 삭제 버튼을 보여 줍니다.
+- 숨은 삭제 버튼은 눌리지 않습니다. 터치 화면에서는 보기 입력 칸을 누르면 삭제 버튼이 나타납니다.

@@ -127,6 +127,35 @@ describe("FormAttachmentField", () => {
     expect(screen.getByRole("button", { name: "파일 업로드" })).toBeVisible()
   })
 
+  it("preview이면 입력과 업로드 버튼을 보여 주기만 하고 파일 창은 두지 않는다", async () => {
+    const user = userEvent.setup()
+    const onChange = vi.fn()
+    render(
+      <FormQuestion title="포트폴리오를 첨부해 주세요">
+        <FormAttachmentField preview onChange={onChange} />
+      </FormQuestion>,
+    )
+    const input = screen.getByRole("textbox", {
+      name: "포트폴리오를 첨부해 주세요",
+    })
+    expect(input).toHaveAttribute("readonly")
+    await user.type(input, "https://umc.dev")
+    expect(input).toHaveValue("")
+    expect(screen.getByRole("button", { name: "파일 업로드" })).toBeDisabled()
+    expect(
+      document.querySelector(".umc-form-attachment-field__file"),
+    ).toBeNull()
+    expect(
+      document.querySelector(".umc-form-attachment-field"),
+    ).toHaveAttribute("data-preview", "")
+  })
+
+  it("preview에 disabled를 주면 입력 칸도 비활성으로 그린다", () => {
+    render(<FormAttachmentField preview disabled aria-label="첨부 칸" />)
+    expect(screen.getByRole("textbox", { name: "첨부 칸" })).toBeDisabled()
+    expect(screen.getByRole("button", { name: "파일 업로드" })).toBeDisabled()
+  })
+
   it("읽기 전용 질문 안에서는 버튼과 파일 입력을 그리지 않는다", () => {
     render(
       <FormQuestion title="포트폴리오" readOnly>

@@ -1,0 +1,150 @@
+@layer components {
+  .umc-form-section {
+    --umc-form-section-accent: var(--umc-color-fill-primary-inverse-medium-500);
+
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .umc-form-section[data-variant="static"] .umc-form-section__header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .umc-form-section__tab-row {
+    display: flex;
+    align-items: flex-end;
+    max-width: 100%;
+  }
+
+  .umc-form-section__tab {
+    min-width: 0;
+    margin: 0;
+    padding-block: var(--umc-spacing-padding-8) 2px;
+    padding-inline: 42px var(--umc-spacing-padding-16);
+    border-start-start-radius: var(--umc-radius-12);
+    background-color: var(--umc-form-section-accent);
+    color: var(--umc-color-text-inverse);
+  }
+
+  .umc-form-section__tab,
+  .umc-form-section__title {
+    font-family: var(--umc-font-family-brand);
+    font-size: var(--umc-font-size-18);
+    font-weight: var(--umc-font-weight-semibold);
+    line-height: 1.4;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .umc-form-section__tab-curve {
+    display: block;
+    flex: 0 0 auto;
+    color: var(--umc-form-section-accent);
+  }
+
+  .umc-form-section__tab-bar {
+    height: 6px;
+    border-start-end-radius: var(--umc-radius-12);
+    background-color: var(--umc-form-section-accent);
+  }
+
+  .umc-form-section[data-variant="toggle"] .umc-form-section__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--umc-spacing-gap-8) var(--umc-spacing-gap-16);
+    box-sizing: border-box;
+    padding-block: var(--umc-spacing-padding-10) var(--umc-spacing-padding-8);
+    padding-inline: var(--umc-spacing-padding-32) var(--umc-spacing-padding-20);
+    border: 1px solid var(--umc-color-border-primary-medium-300);
+    border-bottom: 0;
+    border-start-start-radius: var(--umc-radius-12);
+    border-start-end-radius: var(--umc-radius-12);
+    background-color: var(--umc-color-fill-primary-weak-75);
+  }
+
+  .umc-form-section[data-variant="toggle"]:not([data-enabled])
+    .umc-form-section__header {
+    padding-block: var(--umc-spacing-padding-10);
+    border-bottom: 1px solid var(--umc-color-border-primary-medium-300);
+    border-radius: var(--umc-radius-12);
+  }
+
+  .umc-form-section__title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    min-width: 0;
+    margin: 0;
+    color: var(--umc-color-text-brand-default-600);
+  }
+
+  .umc-form-section__optional {
+    flex: 0 0 auto;
+    color: var(--umc-color-icon-brand-medium-500);
+    font-family: var(--umc-typography-body-3-medium-font-family);
+    font-size: var(--umc-typography-body-3-medium-font-size);
+    font-weight: var(--umc-typography-body-3-medium-font-weight);
+    line-height: var(--umc-typography-body-3-medium-line-height);
+    letter-spacing: var(--umc-typography-body-3-medium-letter-spacing);
+    white-space: nowrap;
+  }
+
+  .umc-form-section__header > .umc-form-section__switch {
+    --umc-switch-font-family: var(--umc-typography-body-3-regular-font-family);
+    --umc-switch-font-size: var(--umc-typography-body-3-regular-font-size);
+    --umc-switch-font-weight: var(--umc-typography-body-3-regular-font-weight);
+    --umc-switch-line-height: var(--umc-typography-body-3-regular-line-height);
+    --umc-switch-letter-spacing: var(
+      --umc-typography-body-3-regular-letter-spacing
+    );
+
+    flex: 0 0 auto;
+    align-items: center;
+    margin-inline-start: auto;
+    color: var(--umc-color-text-neutral-weak-500);
+  }
+
+  .umc-form-section__body {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-bottom: var(--umc-spacing-padding-12);
+    border: 1px solid var(--umc-color-border-primary-medium-300);
+    border-top: 0;
+    border-end-start-radius: var(--umc-radius-12);
+    border-end-end-radius: var(--umc-radius-12);
+    background-color: var(--umc-color-fill-neutral-weaker-50);
+    box-shadow: var(--umc-shadow-inner-neutral-2);
+  }
+
+  .umc-form-section__body[hidden] {
+    display: none;
+  }
+
+  @media (forced-colors: active) {
+    .umc-form-section__tab,
+    .umc-form-section__tab-curve,
+    .umc-form-section__tab-bar {
+      forced-color-adjust: none;
+    }
+
+    .umc-form-section__tab {
+      background-color: CanvasText;
+      color: Canvas;
+    }
+
+    .umc-form-section__tab-curve {
+      color: CanvasText;
+    }
+
+    .umc-form-section__tab-bar {
+      background-color: CanvasText;
+    }
+  }
+}

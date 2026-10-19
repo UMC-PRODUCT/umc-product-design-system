@@ -1,0 +1,171 @@
+---
+title: FormQuestionEditor
+description: 질문지 편집 화면에서 질문 하나를 감싸 편집 상태와 도구를 그립니다.
+---
+
+import {
+  FormQuestionEditModeAllVariants,
+  FormQuestionEditorAllVariants,
+  FormQuestionEditorDefault,
+  FormQuestionEditorDisabled,
+  FormQuestionEditorQuestionEnabled,
+} from "../../../../components/react/questionnaire/FormQuestionEditorExamples.tsx"
+
+피그마 `Form/Question Editor`와 `Form/Question`의 편집(Edit) 모드를 구현했습니다. `FormQuestionEditor`는 카드와 왼쪽 강조선, 이동 손잡이, 필수 항목과 삭제 도구를 그리는 틀입니다. 안쪽 질문은 `FormEditableQuestion`이 그립니다. 제목과 설명이 입력 칸이고, 답 칸 자리(`children`)에는 응답자가 보게 될 칸의 미리보기를 넣습니다.
+
+```tsx
+import {
+  FormEditableQuestion,
+  FormQuestionEditor,
+  FormQuestionTypeList,
+  TextArea,
+} from "@umc-product/react"
+
+<FormQuestionEditor
+  active={activeId === question.id}
+  required={question.required}
+  onRequiredChange={(required) => update({ required })}
+  onDelete={removeQuestion}
+  onClick={() => setActiveId(question.id)}
+  toolbar={
+    <FormQuestionTypeList
+      items={questionTypes}
+      value={question.type}
+      onValueChange={changeType}
+    />
+  }
+>
+  <FormEditableQuestion
+    number="01"
+    titleProps={{
+      value: question.title,
+      onChange: (event) => update({ title: event.target.value }),
+    }}
+  >
+    <TextArea placeholder="작성하세요" maxLength={500} readOnly aria-label="01번 답 칸" />
+  </FormEditableQuestion>
+</FormQuestionEditor>
+```
+
+<FormQuestionEditorDefault client:visible />
+
+위 예시에서 질문을 누르면 그 질문이 활성이 되고, 질문 밖을 누르면 활성이 풀립니다. 맨 아래 더하기 버튼으로 질문을 더하고, 손잡이에 포커스를 둔 채 위아래 화살표 키를 누르면 순서가 바뀝니다. 입력 칸과 손잡이의 이름에는 질문 번호를 붙였습니다. 이 흐름은 모두 예시의 앱 코드가 처리합니다.
+
+## 상태
+
+| 상태               | 언제                                      | 모습                                     |
+| ------------------ | ----------------------------------------- | ---------------------------------------- |
+| 기본               | 질문에 아무 상호작용이 없을 때            | 배경 없음                                |
+| Hover              | 마우스를 올렸거나 안쪽에 포커스가 있을 때 | 회색 배경, 회색 강조선, 손잡이           |
+| 활성(`active`)     | 앱이 편집 중인 질문으로 정했을 때         | 청록 강조선, 필수 항목과 삭제, `toolbar` |
+| 비활성(`disabled`) | 기간이나 권한 때문에 고칠 수 없을 때      | 회색 글자, 도구와 손잡이 없음, 입력 막힘 |
+
+- 어느 질문이 활성인지는 앱이 정합니다. 질문을 누르거나 키보드 포커스가 들어오면 활성으로 바꾸고, 질문 밖을 누르면 풀어 주세요.
+- 활성이 바뀌면 도구와 툴바가 생기거나 사라져 아래 내용이 움직입니다. 마우스를 누른 채 화면이 움직이면 클릭이 엉뚱한 곳에 떨어지니, 마우스로 바꿀 때는 `pointerdown`이나 포커스가 아니라 `click`에서 바꿔 주세요.
+- `disabled`를 주면 안쪽 `FormEditableQuestion`의 제목과 설명 칸도 막힙니다. 답 칸 미리보기는 앱이 넣은 컴포넌트라 `disabled`를 직접 줍니다.
+
+## 필수 항목
+
+"필수 항목" 체크와 제목 뒤 `*` 표시는 같은 `required` 값을 따릅니다. 피그마 설명이 둘을 늘 함께 바꾸라고 해서 값 하나로 묶었습니다. 체크하면 체크박스가 브랜드색으로 바뀌고, `onRequiredChange`가 새 값을 넘깁니다.
+
+## 질문 사용 스위치
+
+`questionEnabled`에 값을 넘기면 활성 상태의 도구에 "질문 사용" 스위치가 생깁니다. 넘기지 않으면 스위치가 없습니다. 피그마의 `Show 질문 사용` 속성과 같은 역할입니다. 스위치를 끈 질문을 어떻게 다룰지는 앱이 정합니다. 끈 질문을 흐리게 보이려고 `disabled`를 주면 스위치까지 사라져 다시 켤 수 없습니다. `disabled`는 기간이나 권한 때문에 아무것도 고칠 수 없을 때만 씁니다.
+
+<FormQuestionEditorQuestionEnabled client:visible />
+
+## 순서 바꾸기
+
+이동 손잡이는 `dragHandleProps`를 넘길 때만 버튼으로 그립니다. 끌어서 옮기는 기능은 디자인 시스템에 없으니, @dnd-kit 같은 라이브러리가 주는 속성을 손잡이에 그대로 넘깁니다. 루트 요소에는 `ref`와 `style`을 넘길 수 있습니다.
+
+```tsx
+import { useSortable } from "@dnd-kit/sortable"
+import { CSS } from "@dnd-kit/utilities"
+
+function SortableQuestion({ question }: { question: Question }) {
+  const sortable = useSortable({ id: question.id })
+  return (
+    <FormQuestionEditor
+      ref={sortable.setNodeRef}
+      style={{
+        transform: CSS.Transform.toString(sortable.transform),
+        transition: sortable.transition,
+      }}
+      dragHandleProps={{
+        ref: sortable.setActivatorNodeRef,
+        ...sortable.attributes,
+        ...sortable.listeners,
+      }}
+    >
+      <FormEditableQuestion>
+        <TextArea placeholder="작성하세요" readOnly aria-label="답 칸" />
+      </FormEditableQuestion>
+    </FormQuestionEditor>
+  )
+}
+```
+
+손잡이의 기본 이름은 "질문 순서 바꾸기"입니다. 마우스가 없는 사용자도 옮길 수 있게 라이브러리의 키보드 센서를 켜거나, 위 예시처럼 화살표 키를 직접 받아 주세요.
+
+## 비활성
+
+<FormQuestionEditorDisabled client:visible />
+
+## 편집 모드 질문
+
+`FormEditableQuestion`은 [FormQuestion](../form-question/)의 편집 모드 짝입니다. 머리 모양은 같고 제목과 설명이 입력 칸입니다.
+
+- 제목이 비어 있으면 번호가 연한 청록으로 바뀝니다. 피그마의 Empty 상태입니다.
+- 입력 칸의 이름은 기본으로 "질문 제목", "질문 설명"입니다. 질문이 여럿이면 `titleProps`와 `descriptionProps`에 번호를 넣은 `aria-label`을 넘겨 주세요.
+- 답 칸 미리보기로 글 질문에는 `TextArea`를 `readOnly`로 넣습니다. 선택 질문에는 [FormChoiceListEditor](../form-choice-list-editor/)를, 첨부 질문에는 [FormAttachmentField](../form-attachment-field/)를 `preview`로 넣습니다.
+- 선택 목록을 넣은 질문은 제목과 답 사이가 16px, 나머지는 12px입니다.
+
+## 모든 변형
+
+피그마 `Form/Question Editor` 변형 4개와 `Form/Question`의 편집 모드 변형 10개를 그렸습니다. 응답과 읽기 전용 변형은 [FormQuestion](../form-question/#모든-변형)에 있습니다.
+
+<FormQuestionEditorAllVariants />
+
+<FormQuestionEditModeAllVariants />
+
+## props
+
+### FormQuestionEditor
+
+나머지 `div` 속성과 `ref`는 루트 요소에 붙습니다.
+
+| prop                      | 타입                                   | 기본값               | 설명                            |
+| ------------------------- | -------------------------------------- | -------------------- | ------------------------------- |
+| `active`                  | `boolean`                              | `false`              | 편집 중인 질문인지              |
+| `disabled`                | `boolean`                              | `false`              | 고칠 수 없게 막음               |
+| `required`                | `boolean`                              | `false`              | 필수 항목 체크와 제목 뒤 `*`    |
+| `onRequiredChange`        | `(required: boolean) => void`          | 없음                 | 필수 항목을 누를 때             |
+| `questionEnabled`         | `boolean`                              | 없음                 | 넘기면 질문 사용 스위치를 그림  |
+| `onQuestionEnabledChange` | `(enabled: boolean) => void`           | 없음                 | 질문 사용 스위치를 누를 때      |
+| `onDelete`                | `() => void`                           | 없음                 | 삭제 버튼을 누를 때             |
+| `dragHandleProps`         | `button` 속성(`type`, `children` 제외) | 없음                 | 넘기면 이동 손잡이를 그림       |
+| `toolbar`                 | `ReactNode`                            | 없음                 | 활성일 때 카드 아래에 놓을 도구 |
+| `requiredLabel`           | `ReactNode`                            | `"필수 항목"`        | 체크박스 글자                   |
+| `questionEnabledLabel`    | `ReactNode`                            | `"질문 사용"`        | 스위치 글자                     |
+| `deleteLabel`             | `string`                               | `"질문 삭제"`        | 삭제 버튼 이름                  |
+| `dragHandleLabel`         | `string`                               | `"질문 순서 바꾸기"` | 손잡이 이름                     |
+| `children`                | `ReactNode`                            | 필수                 | 질문(`FormEditableQuestion`)    |
+
+### FormEditableQuestion
+
+나머지 `div` 속성과 `ref`는 루트 요소에 붙습니다.
+
+| prop               | 타입         | 기본값    | 설명                             |
+| ------------------ | ------------ | --------- | -------------------------------- |
+| `number`           | `ReactNode`  | 없음      | 제목 앞 번호                     |
+| `titleProps`       | `input` 속성 | 없음      | 제목 입력 칸. `type`은 받지 않음 |
+| `descriptionProps` | `input` 속성 | 없음      | 설명 입력 칸. `type`은 받지 않음 |
+| `required`         | `boolean`    | 편집기 값 | 제목 뒤 `*`                      |
+| `disabled`         | `boolean`    | 편집기 값 | 제목과 설명 칸 비활성            |
+| `children`         | `ReactNode`  | 필수      | 답 칸 미리보기                   |
+
+## 알아 둘 점
+
+- 손잡이 색(#D9D9D9, #BFBFBF)과 기본 상태의 아래 여백 38px은 3기 변수에 없어 피그마 값을 그대로 썼습니다.
+- 피그마는 편집 화면을 900px 폭으로만 그렸습니다. 좁은 화면에서는 긴 제목과 보기가 한 줄 입력 칸 안에서 잘리고, 칸 안에서 가로로 움직여 읽습니다.
+- 피그마 기본 상태에는 손잡이 자리가 없고 위 여백이 32px입니다. 코드는 늘 손잡이 자리를 비워 두어, 상태가 바뀌어도 질문이 같은 자리에 있습니다. 질문의 위치는 피그마와 같습니다.

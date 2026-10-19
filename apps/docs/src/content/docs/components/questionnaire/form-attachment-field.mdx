@@ -45,9 +45,19 @@ import { FormAttachmentField, FormQuestion } from "@umc-product/react"
 
 <FormAttachmentFieldReadOnly client:visible />
 
+## 질문지 편집 화면의 미리보기
+
+질문지를 만드는 화면에서는 `preview`를 줍니다. 응답자가 보게 될 입력 칸과 "파일 업로드" 버튼을 그대로 그리되, 글자를 받지 않고 버튼도 누를 수 없습니다. [FormEditableQuestion](../form-question-editor/#편집-모드-질문)의 답 칸 미리보기로 씁니다. 비활성 편집기 안이라면 `disabled`를 함께 넘겨 미리보기도 비활성으로 그립니다.
+
+```tsx
+<FormEditableQuestion number="03" titleProps={titleProps}>
+  <FormAttachmentField preview aria-label="03번 첨부 칸" />
+</FormEditableQuestion>
+```
+
 ## 모든 변형
 
-피그마 `Form/Attachment Field` 변형 9개 가운데 응답 6개를 그렸습니다. 질문지를 만들 때 보이는 생성 중 미리보기는 질문지 편집 부품과 함께 구현합니다.
+피그마 `Form/Attachment Field` 변형 9개를 그렸습니다. 생성 중(Form Create) 칸은 `preview`를 준 모습입니다.
 
 <FormAttachmentFieldAllVariants />
 
@@ -67,6 +77,7 @@ import { FormAttachmentField, FormQuestion } from "@umc-product/react"
 | `uploadLabel`          | `ReactNode`              | `"파일 업로드"`       | 업로드 버튼 글자                          |
 | `removeLabel`          | `ReactNode`              | `"삭제"`              | 삭제 버튼 글자                            |
 | `readOnly`, `disabled` | `boolean`                | 질문 값               | 읽기 전용, 비활성                         |
+| `preview`              | `boolean`                | `false`               | 질문지 편집 화면의 미리보기로 그림        |
 | `className`            | `string`                 | 없음                  | 루트 요소에 붙일 클래스                   |
 
 ```ts

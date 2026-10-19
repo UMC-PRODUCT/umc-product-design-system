@@ -30,6 +30,7 @@ const meta = {
   },
   args: {
     attached: false,
+    preview: false,
     readOnly: false,
     disabled: false,
     onFileSelect: fn(),
