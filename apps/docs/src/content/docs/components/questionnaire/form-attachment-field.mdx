@@ -29,11 +29,11 @@ import { FormAttachmentField, FormQuestion } from "@umc-product/react"
 
 ## 첨부 흐름
 
-| 상태                 | 칸                 | 버튼                                             |
-| -------------------- | ------------------ | ------------------------------------------------ |
-| 비어 있음            | 링크 입력          | 파일 업로드. 파일 창을 열고 형식과 용량을 검사함 |
-| 글자를 입력함        | 입력한 글자        | 삭제. 입력을 비우고 `onChange`를 부름            |
-| 첨부됨(`attachment`) | 클립 아이콘과 링크 | 삭제. `onAttachmentRemove`를 부름                |
+| 상태                 | 칸                 | 버튼                                                           |
+| -------------------- | ------------------ | -------------------------------------------------------------- |
+| 비어 있음            | 링크 입력          | 파일 업로드. 파일 창을 열고 형식과 용량을 검사함               |
+| 글자를 입력함        | 입력한 글자        | 삭제. 입력을 비우고 `onChange`를 부름                          |
+| 첨부됨(`attachment`) | 클립 아이콘과 링크 | 삭제. `onAttachmentRemove`를 부르고, 없으면 버튼을 그리지 않음 |
 
 - 입력한 글자만으로는 첨부가 되지 않습니다. 링크를 언제 첨부로 확정할지는 앱이 정합니다. 위 예시는 Enter를 누르면 http(s) 주소를 첨부로 바꿉니다.
 - 파일은 기본으로 200MB 이하의 PDF만 받습니다. `accept`(MIME 형식 배열)와 `maxSize`(바이트)로 바꿉니다. 맞지 않는 파일은 `onReject`가 이유(`type`, `size`)와 함께 받습니다.
@@ -65,20 +65,20 @@ import { FormAttachmentField, FormQuestion } from "@umc-product/react"
 
 나머지 네이티브 `input` 속성과 `ref`는 링크 입력 칸에 붙습니다.
 
-| prop                   | 타입                     | 기본값                | 설명                                             |
-| ---------------------- | ------------------------ | --------------------- | ------------------------------------------------ |
-| `attachment`           | `FormAttachment \| null` | 없음                  | 첨부된 링크나 파일. 있으면 입력 대신 보임        |
-| `onAttachmentRemove`   | `() => void`             | 없음                  | 첨부 옆 삭제를 눌렀을 때                         |
-| `onFileSelect`         | `(file: File) => void`   | 없음                  | 형식과 용량 검사를 통과한 파일                   |
-| `onReject`             | `(rejection) => void`    | 없음                  | 받지 않은 파일과 이유                            |
-| `accept`               | `string[]`               | `["application/pdf"]` | 받을 MIME 형식                                   |
-| `maxSize`              | `number`                 | 200MB                 | 최대 용량(바이트)                                |
-| `placeholder`          | `string`                 | 링크와 파일 안내      | 입력 칸 안내 문구                                |
-| `uploadLabel`          | `ReactNode`              | `"파일 업로드"`       | 업로드 버튼 글자                                 |
-| `removeLabel`          | `ReactNode`              | `"삭제"`              | 삭제 버튼 글자                                   |
-| `readOnly`, `disabled` | `boolean`                | 질문 값               | 읽기 전용, 비활성. 편집기가 비활성이면 늘 비활성 |
-| `preview`              | `boolean`                | `false`               | 질문지 편집 화면의 미리보기로 그림               |
-| `className`            | `string`                 | 없음                  | 루트 요소에 붙일 클래스                          |
+| prop                   | 타입                     | 기본값                | 설명                                                     |
+| ---------------------- | ------------------------ | --------------------- | -------------------------------------------------------- |
+| `attachment`           | `FormAttachment \| null` | 없음                  | 첨부된 링크나 파일. 있으면 입력 대신 보임                |
+| `onAttachmentRemove`   | `() => void`             | 없음                  | 첨부 옆 삭제를 눌렀을 때. 없으면 삭제 버튼을 그리지 않음 |
+| `onFileSelect`         | `(file: File) => void`   | 없음                  | 형식과 용량 검사를 통과한 파일                           |
+| `onReject`             | `(rejection) => void`    | 없음                  | 받지 않은 파일과 이유                                    |
+| `accept`               | `string[]`               | `["application/pdf"]` | 받을 MIME 형식                                           |
+| `maxSize`              | `number`                 | 200MB                 | 최대 용량(바이트)                                        |
+| `placeholder`          | `string`                 | 링크와 파일 안내      | 입력 칸 안내 문구                                        |
+| `uploadLabel`          | `ReactNode`              | `"파일 업로드"`       | 업로드 버튼 글자                                         |
+| `removeLabel`          | `ReactNode`              | `"삭제"`              | 삭제 버튼 글자                                           |
+| `readOnly`, `disabled` | `boolean`                | 질문 값               | 읽기 전용, 비활성. 편집기가 비활성이면 늘 비활성         |
+| `preview`              | `boolean`                | `false`               | 질문지 편집 화면의 미리보기로 그림                       |
+| `className`            | `string`                 | 없음                  | 루트 요소에 붙일 클래스                                  |
 
 ```ts
 import type { ReactNode } from "react"

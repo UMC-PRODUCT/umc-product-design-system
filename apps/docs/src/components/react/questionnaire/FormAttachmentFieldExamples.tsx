@@ -133,6 +133,8 @@ const PREVIEW_STATES: Readonly<Record<string, FieldState>> = {
   Focus: { forced: ["focus-within"], preview: true },
 }
 
+const keepAttachment = () => {}
+
 function renderFieldVariant(variant: FigmaVariant) {
   const states =
     variant.props["Mode"] === "Form Create (생성 중)"
@@ -149,6 +151,7 @@ function renderFieldVariant(variant: FigmaVariant) {
           aria-label="포트폴리오"
           defaultValue={state.value}
           attachment={state.attachment}
+          onAttachmentRemove={keepAttachment}
           readOnly={state.readOnly}
           preview={state.preview}
         />

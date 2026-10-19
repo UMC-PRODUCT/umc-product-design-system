@@ -66,6 +66,8 @@ export function FormQuestionReadOnly() {
   )
 }
 
+const keepAttachment = () => {}
+
 const ANSWERS: Readonly<Record<string, () => ReactNode>> = {
   "Short Text (주관식)": () => (
     <FormTextAnswer maxLength={500} defaultValue="Value" />
@@ -82,6 +84,7 @@ const ANSWERS: Readonly<Record<string, () => ReactNode>> = {
   "File Upload (파일 업로드&포트폴리오 업로드)": () => (
     <FormAttachmentField
       attachment={{ label: "portfolio.pdf", href: "#portfolio" }}
+      onAttachmentRemove={keepAttachment}
     />
   ),
 }

@@ -112,6 +112,17 @@ describe("FormAttachmentField", () => {
     expect(onAttachmentRemove).toHaveBeenCalledTimes(1)
   })
 
+  it("onAttachmentRemove가 없으면 첨부 옆 삭제 버튼을 그리지 않는다", () => {
+    render(
+      <FormAttachmentField
+        aria-label="포트폴리오"
+        attachment={{ label: "portfolio.pdf" }}
+      />,
+    )
+    expect(screen.getByText("portfolio.pdf")).toBeInTheDocument()
+    expect(screen.queryByRole("button", { name: "삭제" })).toBeNull()
+  })
+
   it("첨부를 지우고 다시 그리면 입력이 빈 상태로 돌아온다", async () => {
     const user = userEvent.setup()
     const { rerender } = render(<FormAttachmentField aria-label="포트폴리오" />)

@@ -66,7 +66,6 @@ const rejectionReasonOf = (
 
 type AttachedFileProps = {
   attachment: FormAttachment
-  removable: boolean
   disabled: boolean
   removeLabel: ReactNode
   onRemove: (() => void) | undefined
@@ -74,7 +73,6 @@ type AttachedFileProps = {
 
 function AttachedFile({
   attachment,
-  removable,
   disabled,
   removeLabel,
   onRemove,
@@ -106,14 +104,14 @@ function AttachedFile({
           </a>
         )}
       </InputBox>
-      {removable && (
+      {onRemove !== undefined && (
         <Button
           type="button"
           variant="weak"
           color="neutral"
           size="md"
           disabled={disabled}
-          onClick={onRemove}
+          onClick={() => onRemove()}
         >
           {removeLabel}
         </Button>
@@ -289,10 +287,9 @@ export function FormAttachmentField({
       ) : attachment ? (
         <AttachedFile
           attachment={attachment}
-          removable={!isReadOnly}
           disabled={isDisabled}
           removeLabel={removeLabel}
-          onRemove={onAttachmentRemove}
+          onRemove={isReadOnly ? undefined : onAttachmentRemove}
         />
       ) : (
         <LinkInput
