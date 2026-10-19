@@ -163,6 +163,24 @@ describe("FormChoiceList 복수 선택", () => {
     )
   })
 
+  it("필수 질문이면 하나도 고르지 않았을 때만 검사에 걸린다", async () => {
+    const user = userEvent.setup()
+    const { container } = render(
+      <form>
+        <FormQuestion title="가능한 면접 요일" required>
+          <FormChoiceList type="multiple" options={PARTS} />
+        </FormQuestion>
+      </form>,
+    )
+    const form = container.querySelector("form")
+    if (form === null) throw new Error("폼이 없습니다")
+    expect(form.checkValidity()).toBe(false)
+
+    await user.click(screen.getByText("Web"))
+    expect(form.checkValidity()).toBe(true)
+    expect(container.querySelectorAll("input[required]")).toHaveLength(0)
+  })
+
   it("읽기 전용이면 고른 상태를 보여 주기만 한다", async () => {
     const user = userEvent.setup()
     const onValueChange = vi.fn()

@@ -114,10 +114,11 @@ function MultipleChoiceList(props: FormMultipleChoiceListProps) {
     onValueChange,
     name,
   } = props
-  const { isDisabled, isReadOnly, labelledBy, describedBy } =
+  const { isDisabled, isReadOnly, isRequired, labelledBy, describedBy } =
     useListState(props)
   const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue)
   const selectedValues = value === undefined ? uncontrolledValue : value
+  const needsSelection = isRequired && selectedValues.length === 0
 
   return (
     <BaseCheckboxGroup
@@ -149,6 +150,7 @@ function MultipleChoiceList(props: FormMultipleChoiceListProps) {
               color={isSelected ? "brand" : "neutral"}
               disabled={isDisabled || option.disabled}
               readOnly={isReadOnly}
+              required={needsSelection}
             />
             <span className="umc-form-choice-list__label">{option.label}</span>
           </label>
