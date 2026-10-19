@@ -1760,6 +1760,118 @@
         "Size": ["Lg", "Md", "Sm"]
       },
       "variants": ["Size=Lg", "Size=Md", "Size=Sm"]
+    },
+    "form-question": {
+      "node": "4430:50829",
+      "name": "Form/Question",
+      "axes": {
+        "Type": [
+          "Short Text (주관식)",
+          "Long Text (장문형)",
+          "Multi Select (복수 선택)",
+          "Single Select (단일 선택)",
+          "File Upload (파일 업로드&포트폴리오 업로드)"
+        ],
+        "Mode": ["Edit (폼 생성)", "Respond (폼 응답)", "Read Only"],
+        "Question State": ["Empty", "Filled"]
+      },
+      "variants": [
+        "Type=Short Text (주관식), Mode=Edit (폼 생성), Question State=Empty",
+        "Type=Short Text (주관식), Mode=Edit (폼 생성), Question State=Filled",
+        "Type=Short Text (주관식), Mode=Respond (폼 응답), Question State=Filled",
+        "Type=Short Text (주관식), Mode=Read Only, Question State=Filled",
+        "Type=Long Text (장문형), Mode=Edit (폼 생성), Question State=Empty",
+        "Type=Long Text (장문형), Mode=Edit (폼 생성), Question State=Filled",
+        "Type=Long Text (장문형), Mode=Respond (폼 응답), Question State=Filled",
+        "Type=Long Text (장문형), Mode=Read Only, Question State=Filled",
+        "Type=Multi Select (복수 선택), Mode=Edit (폼 생성), Question State=Empty",
+        "Type=Multi Select (복수 선택), Mode=Edit (폼 생성), Question State=Filled",
+        "Type=Multi Select (복수 선택), Mode=Respond (폼 응답), Question State=Filled",
+        "Type=Multi Select (복수 선택), Mode=Read Only, Question State=Filled",
+        "Type=Single Select (단일 선택), Mode=Edit (폼 생성), Question State=Empty",
+        "Type=Single Select (단일 선택), Mode=Edit (폼 생성), Question State=Filled",
+        "Type=Single Select (단일 선택), Mode=Respond (폼 응답), Question State=Filled",
+        "Type=Single Select (단일 선택), Mode=Read Only, Question State=Filled",
+        "Type=File Upload (파일 업로드&포트폴리오 업로드), Mode=Edit (폼 생성), Question State=Empty",
+        "Type=File Upload (파일 업로드&포트폴리오 업로드), Mode=Edit (폼 생성), Question State=Filled",
+        "Type=File Upload (파일 업로드&포트폴리오 업로드), Mode=Respond (폼 응답), Question State=Filled",
+        "Type=File Upload (파일 업로드&포트폴리오 업로드), Mode=Read Only, Question State=Filled"
+      ]
+    },
+    "form-radio-button-option-list": {
+      "node": "4437:82397",
+      "name": "Form/Radio Button Option List",
+      "axes": {
+        "Mode": ["Edit", "Respond"]
+      },
+      "variants": ["Mode=Edit", "Mode=Respond"]
+    },
+    "form-check-box-option-list": {
+      "node": "4437:82267",
+      "name": "Form/Check Box Option List",
+      "axes": {
+        "Mode": ["Edit", "Respond"]
+      },
+      "variants": ["Mode=Edit", "Mode=Respond"]
+    },
+    "radio-button-option-item": {
+      "node": "4430:50983",
+      "name": "Radio Button Option Item",
+      "axes": {
+        "Mode": ["Edit", "Respond"],
+        "State": ["Add", "Default", "Filled", "Hover", "Selected"],
+        "Disabled": ["False", "True"]
+      },
+      "variants": [
+        "Mode=Edit, State=Add, Disabled=False",
+        "Mode=Edit, State=Default, Disabled=False",
+        "Mode=Edit, State=Filled, Disabled=False",
+        "Mode=Respond, State=Filled, Disabled=False",
+        "Mode=Edit, State=Hover, Disabled=False",
+        "Mode=Respond, State=Hover, Disabled=False",
+        "Mode=Respond, State=Selected, Disabled=False",
+        "Mode=Respond, State=Filled, Disabled=True",
+        "Mode=Respond, State=Selected, Disabled=True"
+      ]
+    },
+    "check-box-option-item": {
+      "node": "4437:80988",
+      "name": "Check Box Option Item",
+      "axes": {
+        "Mode": ["Edit", "Respond"],
+        "State": ["Add", "Default", "Filled", "Hover", "Selected"],
+        "Disabled": ["False", "True"]
+      },
+      "variants": [
+        "Mode=Edit, State=Add, Disabled=False",
+        "Mode=Edit, State=Default, Disabled=False",
+        "Mode=Edit, State=Filled, Disabled=False",
+        "Mode=Respond, State=Filled, Disabled=False",
+        "Mode=Edit, State=Hover, Disabled=False",
+        "Mode=Respond, State=Hover, Disabled=False",
+        "Mode=Respond, State=Selected, Disabled=False",
+        "Mode=Respond, State=Filled, Disabled=True",
+        "Mode=Respond, State=Selected, Disabled=True"
+      ]
+    },
+    "form-attachment-field": {
+      "node": "4456:32610",
+      "name": "Form/Attachment Field",
+      "axes": {
+        "Mode": ["Form Respond (입력 중)", "Form Create (생성 중)"],
+        "State": ["Read Only", "Filled", "Typing", "Focus", "Hover", "Default"]
+      },
+      "variants": [
+        "Mode=Form Respond (입력 중), State=Read Only",
+        "Mode=Form Respond (입력 중), State=Filled",
+        "Mode=Form Respond (입력 중), State=Typing",
+        "Mode=Form Respond (입력 중), State=Focus",
+        "Mode=Form Create (생성 중), State=Focus",
+        "Mode=Form Respond (입력 중), State=Hover",
+        "Mode=Form Create (생성 중), State=Hover",
+        "Mode=Form Respond (입력 중), State=Default",
+        "Mode=Form Create (생성 중), State=Default"
+      ]
     }
   }
 }
