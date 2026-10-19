@@ -41,6 +41,16 @@ describe("TextArea", () => {
     expect(counterOf()).toBeNull()
   })
 
+  it("readOnly이면 입력을 막고 상자에 읽기 전용 표시를 단다", () => {
+    render(<TextArea aria-label="내용" defaultValue="제출한 답변" readOnly />)
+    expect(screen.getByRole("textbox", { name: "내용" })).toHaveAttribute(
+      "readonly",
+    )
+    expect(document.querySelector(".umc-text-area")).toHaveAttribute(
+      "data-readonly",
+    )
+  })
+
   it("disabled여도 글자 수를 보여 준다", () => {
     render(<TextArea aria-label="내용" maxLength={300} disabled />)
     expect(counterOf()).toHaveTextContent("0/300")

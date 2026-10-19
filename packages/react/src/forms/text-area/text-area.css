@@ -34,7 +34,7 @@
   }
 
   @media (hover: hover) {
-    .umc-text-area:not([data-disabled]):hover {
+    .umc-text-area:not([data-disabled], [data-readonly]):hover {
       --umc-text-area-border-color: var(--umc-color-border-primary-medium-300);
     }
   }
@@ -51,7 +51,7 @@
   }
 
   @media (hover: hover) {
-    .umc-text-area[data-invalid]:not([data-disabled]):hover {
+    .umc-text-area[data-invalid]:not([data-disabled], [data-readonly]):hover {
       --umc-text-area-border-color: var(--umc-color-red-400);
     }
   }
