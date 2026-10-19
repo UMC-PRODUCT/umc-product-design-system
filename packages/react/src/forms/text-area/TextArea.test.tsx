@@ -41,9 +41,9 @@ describe("TextArea", () => {
     expect(counterOf()).toBeNull()
   })
 
-  it("disabled이면 글자 수를 숨긴다", () => {
+  it("disabled여도 글자 수를 보여 준다", () => {
     render(<TextArea aria-label="내용" maxLength={300} disabled />)
-    expect(counterOf()).toBeNull()
+    expect(counterOf()).toHaveTextContent("0/300")
     expect(document.querySelector(".umc-text-area")).toHaveAttribute(
       "data-disabled",
     )

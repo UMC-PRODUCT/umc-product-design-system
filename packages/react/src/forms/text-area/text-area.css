@@ -2,7 +2,7 @@
 
 @layer components {
   .umc-text-area-field {
-    --umc-text-area-min-height: 120px;
+    --umc-text-area-min-height: auto;
     --umc-text-area-max-height: none;
   }
 
@@ -16,6 +16,7 @@
 
     display: flex;
     flex-direction: column;
+    gap: var(--umc-spacing-gap-4);
     box-sizing: border-box;
     width: 100%;
     min-height: var(--umc-text-area-min-height);

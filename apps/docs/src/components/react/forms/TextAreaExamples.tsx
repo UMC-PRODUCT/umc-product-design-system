@@ -100,7 +100,8 @@ const TEXT_AREA_STATES: Readonly<Record<string, TextAreaState>> = {
   Disabled: {
     forced: [],
     disabled: true,
-    specId: "text-area-disabled text-area-disabled-value",
+    specId:
+      "text-area-disabled text-area-disabled-value text-area-disabled-counter",
   },
 }
 
