@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
-import { createRef } from "react"
+import { createRef, useState } from "react"
 import { describe, expect, it, vi } from "vitest"
 
 import { DateNavigator } from "./DateNavigator.tsx"
@@ -56,10 +56,42 @@ describe("DateNavigator", () => {
     expect(onNext).toHaveBeenCalledOnce()
   })
 
-  it("콜백이 없는 쪽 버튼은 비활성이다", () => {
+  it("콜백이 없는 쪽 버튼은 aria-disabled로 비활성을 알린다", () => {
     render(<DateNavigator onPrevious={vi.fn()}>2026년 10월 20일</DateNavigator>)
-    expect(screen.getByRole("button", { name: "이전" })).toBeEnabled()
-    expect(screen.getByRole("button", { name: "다음" })).toBeDisabled()
+    expect(screen.getByRole("button", { name: "이전" })).not.toHaveAttribute(
+      "aria-disabled",
+    )
+    expect(screen.getByRole("button", { name: "다음" })).toHaveAttribute(
+      "aria-disabled",
+      "true",
+    )
+  })
+
+  it("끝에 닿아 비활성이 된 버튼에도 초점이 남는다", async () => {
+    const user = userEvent.setup()
+    function Today() {
+      const [offset, setOffset] = useState(-1)
+      return (
+        <DateNavigator
+          onPrevious={() => setOffset((current) => current - 1)}
+          onNext={
+            offset < 0 ? () => setOffset((current) => current + 1) : undefined
+          }
+        >
+          {`${offset}일`}
+        </DateNavigator>
+      )
+    }
+    render(<Today />)
+    const next = screen.getByRole("button", { name: "다음" })
+    next.focus()
+    await user.keyboard("{Enter}")
+    expect(screen.getByText("0일")).toBeInTheDocument()
+    expect(next).toHaveAttribute("aria-disabled", "true")
+    expect(next).toBeEnabled()
+    expect(next).toHaveFocus()
+    await user.keyboard("{Enter}")
+    expect(screen.getByText("0일")).toBeInTheDocument()
   })
 
   it("버튼 이름을 previousLabel, nextLabel로 바꿀 수 있다", () => {

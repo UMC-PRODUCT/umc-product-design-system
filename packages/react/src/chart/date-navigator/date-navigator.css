@@ -28,7 +28,7 @@
     content: "";
   }
 
-  .umc-date-navigator__button:disabled {
+  .umc-date-navigator__button[aria-disabled="true"] {
     color: var(--umc-color-icon-disabled);
     cursor: default;
   }
@@ -54,7 +54,7 @@
       color: ButtonText;
     }
 
-    .umc-date-navigator__button:disabled {
+    .umc-date-navigator__button[aria-disabled="true"] {
       color: GrayText;
     }
   }

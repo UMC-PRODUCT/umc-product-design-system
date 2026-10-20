@@ -66,7 +66,7 @@ export function DateNavigator({
         type="button"
         className="umc-date-navigator__button"
         aria-label={previousLabel}
-        disabled={onPrevious === undefined}
+        aria-disabled={onPrevious === undefined ? true : undefined}
         onClick={() => onPrevious?.()}
       >
         <TriangleGlyph direction="previous" />
@@ -78,7 +78,7 @@ export function DateNavigator({
         type="button"
         className="umc-date-navigator__button"
         aria-label={nextLabel}
-        disabled={onNext === undefined}
+        aria-disabled={onNext === undefined ? true : undefined}
         onClick={() => onNext?.()}
       >
         <TriangleGlyph direction="next" />
