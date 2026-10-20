@@ -36,7 +36,7 @@ export function ChartTooltipLayer({
   contentOf,
 }: ChartTooltipLayerProps) {
   return (
-    <Tooltip.Root handle={handle} disableHoverablePopup>
+    <Tooltip.Root handle={handle}>
       {({ payload }) => {
         const content = payload === undefined ? undefined : contentOf(payload)
         if (content === undefined) return null

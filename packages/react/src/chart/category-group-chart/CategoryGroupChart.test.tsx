@@ -216,6 +216,23 @@ describe("CategoryGroupChart", () => {
       })
     })
 
+    it("마우스를 툴팁 위로 옮겨도 툴팁을 닫지 않는다", async () => {
+      const user = userEvent.setup()
+      render(<CategoryGroupChart series={PARTS} groups={SCHOOLS} />)
+      await user.hover(groupButton("중앙대"))
+      await waitFor(() => {
+        expect(popup()).toBeInTheDocument()
+      })
+      const openPopup = popup()
+      if (!(openPopup instanceof HTMLElement)) {
+        throw new Error("툴팁이 열리지 않았다")
+      }
+      fireEvent.mouseLeave(groupButton("중앙대"), { relatedTarget: openPopup })
+      fireEvent.mouseMove(openPopup)
+      await new Promise((resolve) => setTimeout(resolve, 100))
+      expect(popup()).toHaveTextContent("중앙대")
+    })
+
     it("키보드로 묶음에 가면 툴팁을 띄우고 Esc로 닫는다", async () => {
       const user = userEvent.setup()
       render(<CategoryGroupChart series={PARTS} groups={SCHOOLS} />)
