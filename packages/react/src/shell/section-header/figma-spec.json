@@ -1,0 +1,171 @@
+{
+  "component": "SectionHeader",
+  "figmaSection": "4508:63300",
+  "page": "/components/shell/section-header/",
+  "figmaDiffers": {
+    "slot": "피그마 Caption Slot은 200px 고정 칸이지만 코드는 내용 폭을 따르고 제목 줄 오른쪽 끝에 붙인다",
+    "white-space": "피그마는 제목을 한 줄로 고정했지만 코드는 긴 제목을 줄바꿈한다"
+  },
+  "nodes": [
+    {
+      "specId": "section-header-lg-root",
+      "node": "4437:78031",
+      "variant": "Size=Lg",
+      "target": ".umc-section-header",
+      "expected": {
+        "padding-left": "6px",
+        "padding-right": "6px",
+        "column-gap": "4px",
+        "align-items": "flex-start"
+      }
+    },
+    {
+      "specId": "section-header-lg-number",
+      "node": "4437:78032",
+      "variant": "Size=Lg",
+      "target": ".umc-section-header__number",
+      "expected": {
+        "width": "30px",
+        "color": "#02746c",
+        "font-size": "20px",
+        "font-weight": "600",
+        "line-height": "28px",
+        "letter-spacing": "-0.2px"
+      }
+    },
+    {
+      "specId": "section-header-lg-body",
+      "node": "4437:78033",
+      "variant": "Size=Lg",
+      "target": ".umc-section-header__body",
+      "expected": {
+        "row-gap": "6px"
+      }
+    },
+    {
+      "specId": "section-header-lg-title",
+      "node": "4437:78035",
+      "variant": "Size=Lg",
+      "target": ".umc-section-header__title",
+      "expected": {
+        "color": "#0f1010",
+        "font-size": "20px",
+        "font-weight": "600",
+        "line-height": "28px",
+        "letter-spacing": "-0.2px"
+      }
+    },
+    {
+      "specId": "section-header-lg-description",
+      "node": "4437:78037",
+      "variant": "Size=Lg",
+      "target": ".umc-section-header__description",
+      "expected": {
+        "color": "#606262",
+        "font-size": "15px",
+        "font-weight": "400",
+        "line-height": "22.5px",
+        "letter-spacing": "-0.15px"
+      }
+    },
+    {
+      "specId": "section-header-required",
+      "node": "4437:86530",
+      "variant": "Size=Lg",
+      "target": ".umc-section-header__required",
+      "expected": {
+        "color": "#dc3d3d",
+        "margin-left": "2px"
+      }
+    },
+    {
+      "specId": "section-header-title-row",
+      "node": "4437:78034",
+      "variant": "Size=Lg",
+      "target": ".umc-section-header__title-row",
+      "expected": {
+        "align-items": "flex-start",
+        "justify-content": "space-between"
+      },
+      "figmaDiffers": {
+        "column-gap": "피그마는 제목과 슬롯을 양 끝에 붙여 간격이 없다. 제목이 길어도 슬롯과 붙지 않게 최소 간격 8px을 두었고, 피그마 폭에서는 차이가 보이지 않는다"
+      }
+    },
+    {
+      "specId": "section-header-md-number",
+      "node": "4437:78039",
+      "variant": "Size=Md",
+      "target": ".umc-section-header__number",
+      "expected": {
+        "width": "28px",
+        "font-size": "18px",
+        "line-height": "25.2px"
+      }
+    },
+    {
+      "specId": "section-header-md-body",
+      "node": "4437:78040",
+      "variant": "Size=Md",
+      "target": ".umc-section-header__body",
+      "expected": {
+        "row-gap": "4px"
+      }
+    },
+    {
+      "specId": "section-header-md-title",
+      "node": "4437:78042",
+      "variant": "Size=Md",
+      "target": ".umc-section-header__title",
+      "expected": {
+        "font-size": "18px",
+        "font-weight": "600",
+        "line-height": "25.2px"
+      }
+    },
+    {
+      "specId": "section-header-md-description",
+      "node": "4437:78044",
+      "variant": "Size=Md",
+      "target": ".umc-section-header__description",
+      "expected": {
+        "font-size": "15px",
+        "line-height": "22.5px",
+        "letter-spacing": "-0.15px"
+      }
+    },
+    {
+      "specId": "section-header-sm-number",
+      "node": "4437:78046",
+      "variant": "Size=Sm",
+      "target": ".umc-section-header__number",
+      "expected": {
+        "width": "26px",
+        "font-size": "18px",
+        "line-height": "25.2px"
+      }
+    },
+    {
+      "specId": "section-header-sm-title",
+      "node": "4437:78049",
+      "variant": "Size=Sm",
+      "target": ".umc-section-header__title",
+      "expected": {
+        "font-size": "16px",
+        "font-weight": "600",
+        "line-height": "22.4px"
+      }
+    },
+    {
+      "specId": "section-header-sm-description",
+      "node": "4437:78051",
+      "variant": "Size=Sm",
+      "target": ".umc-section-header__description",
+      "expected": {
+        "color": "#606262",
+        "font-size": "13px",
+        "font-weight": "400",
+        "line-height": "19.5px"
+      }
+    }
+  ]
+}

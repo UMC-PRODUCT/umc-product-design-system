@@ -1,0 +1,68 @@
+---
+title: FormQuestion
+description: 지원서 같은 질문지에서 질문 하나를 번호, 제목, 답 칸으로 그립니다.
+---
+
+import {
+  FormQuestionAllVariants,
+  FormQuestionDefault,
+  FormQuestionReadOnly,
+} from "../../../../components/react/questionnaire/FormQuestionExamples.tsx"
+
+피그마 `Form/Question`의 응답(Respond)과 읽기 전용(Read Only) 모드를 구현했습니다. 머리는 [SectionHeader](../../shell/section-header/) md를 그대로 쓰고, 답 칸은 20px 들여 그립니다. 답 칸은 `children`으로 넣습니다. 글로 답하는 질문에는 `FormTextAnswer`를, 고르는 질문에는 [FormChoiceList](../form-choice-list/)를, 링크나 파일을 붙이는 질문에는 [FormAttachmentField](../form-attachment-field/)를 넣습니다. 질문마다 어떤 부품을 쓸지는 앱이 고릅니다. 질문을 만드는 편집(Edit) 모드는 [FormQuestionEditor](../form-question-editor/)의 `FormEditableQuestion`이 맡습니다.
+
+```tsx
+import { FormQuestion, FormTextAnswer } from "@umc-product/react"
+
+<FormQuestion
+  number="01"
+  title="자기소개를 적어 주세요"
+  description="500자 이내로 적어 주세요"
+  required
+>
+  <FormTextAnswer maxLength={500} {...register("introduction")} />
+</FormQuestion>
+```
+
+<FormQuestionDefault client:visible />
+
+## 질문과 답 연결
+
+- 질문 제목은 안쪽 답 칸의 이름이 되고, 설명은 답 칸의 설명이 됩니다. 화면 낭독기는 답 칸에 들어가면서 질문 제목을 함께 읽습니다.
+- `required`, `readOnly`, `disabled`를 질문에 한 번 주면 안쪽 답 부품이 따라갑니다. 답 부품에 같은 prop을 직접 주면 그 값을 먼저 씁니다.
+- 제목은 기본 `h3`입니다. 페이지 구획 제목(`SectionHeader`의 `h2`) 아래에 질문이 놓이는 구조를 가정했고, 다르면 `level`로 바꿉니다.
+
+## 글로 답하기
+
+`FormTextAnswer`는 [TextArea](../../forms/text-area/)에 질문 연결만 더한 컴포넌트라 props가 같습니다. 주관식과 장문형은 같은 칸을 쓰고, 길이는 `maxLength`로 다르게 줍니다.
+
+## 읽기 전용
+
+제출한 지원서를 조회할 때는 `readOnly`를 줍니다. 모양은 응답할 때와 같고 입력과 선택만 막습니다. 첨부한 링크는 그대로 열 수 있습니다.
+
+<FormQuestionReadOnly client:visible />
+
+## 모든 변형
+
+피그마 `Form/Question` 변형 20개 가운데 응답과 읽기 전용 10개를 그렸습니다. 편집(Edit) 모드 10개는 [FormQuestionEditor](../form-question-editor/#모든-변형)에 있습니다.
+
+<FormQuestionAllVariants />
+
+## props
+
+나머지 `div` 속성은 루트 요소에 붙습니다. `FormTextAnswer`의 props는 [TextArea](../../forms/text-area/#props)와 같습니다.
+
+| prop          | 타입                    | 기본값  | 설명                              |
+| ------------- | ----------------------- | ------- | --------------------------------- |
+| `title`       | `ReactNode`             | 필수    | 질문 제목. 답 칸의 이름이 됨      |
+| `number`      | `ReactNode`             | 없음    | 제목 앞 번호                      |
+| `required`    | `boolean`               | `false` | 필수 별표. 답 칸도 필수가 됨      |
+| `description` | `ReactNode`             | 없음    | 제목 아래 설명. 답 칸의 설명이 됨 |
+| `readOnly`    | `boolean`               | `false` | 안쪽 답 칸을 읽기 전용으로 둠     |
+| `disabled`    | `boolean`               | `false` | 안쪽 답 칸을 비활성으로 둠        |
+| `level`       | `2 \| 3 \| 4 \| 5 \| 6` | `3`     | 제목 단계                         |
+| `children`    | `ReactNode`             | 필수    | 답 칸                             |
+
+## 알아 둘 점
+
+- 선택 목록을 넣은 질문은 제목과 답 사이가 16px, 글 칸과 첨부 칸을 넣은 질문은 12px입니다. 답 부품을 질문 바로 안에 넣었을 때만 이 간격을 맞춥니다.

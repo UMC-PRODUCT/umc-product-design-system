@@ -62,7 +62,9 @@ const meta = {
   },
   decorators: [
     (Story) => (
-      <div style={{ height: "100vh" }}>
+      <div
+        style={{ height: "100vh", width: "var(--umc-layout-sidebar-width)" }}
+      >
         <Story />
       </div>
     ),

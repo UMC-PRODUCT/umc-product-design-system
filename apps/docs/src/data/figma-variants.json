@@ -13,7 +13,7 @@
         "State": ["Default", "Loading", "Pressed", "Disabled"],
         "Style": ["Fill", "Weak"],
         "Icon Position": ["None", "Left", "Right"],
-        "Icon Only": ["False"]
+        "Icon Only": ["False", "True"]
       },
       "variants": [
         "Size=Md, Color=Primary, State=Default, Style=Fill, Icon Position=None, Icon Only=False",
@@ -221,7 +221,124 @@
         "Size=XS, Color=Red, State=Pressed, Style=Weak, Icon Position=None, Icon Only=False",
         "Size=XS, Color=Primary, State=Loading, Style=Weak, Icon Position=None, Icon Only=False",
         "Size=XS, Color=Neutral, State=Loading, Style=Weak, Icon Position=None, Icon Only=False",
-        "Size=XS, Color=Red, State=Loading, Style=Weak, Icon Position=None, Icon Only=False"
+        "Size=XS, Color=Red, State=Loading, Style=Weak, Icon Position=None, Icon Only=False",
+        "Size=XS, Color=White, State=Default, Style=Fill, Icon Position=Right, Icon Only=True",
+        "Size=Sm, Color=White, State=Default, Style=Fill, Icon Position=Right, Icon Only=True",
+        "Size=Md, Color=White, State=Default, Style=Fill, Icon Position=Right, Icon Only=True",
+        "Size=Md, Color=Neutral, State=Default, Style=Fill, Icon Position=Right, Icon Only=True",
+        "Size=Sm, Color=Neutral, State=Default, Style=Fill, Icon Position=Right, Icon Only=True",
+        "Size=XS, Color=Neutral, State=Default, Style=Fill, Icon Position=Right, Icon Only=True",
+        "Size=Md, Color=Neutral, State=Pressed, Style=Fill, Icon Position=Right, Icon Only=True",
+        "Size=Sm, Color=Neutral, State=Pressed, Style=Fill, Icon Position=Right, Icon Only=True",
+        "Size=XS, Color=Neutral, State=Pressed, Style=Fill, Icon Position=Right, Icon Only=True",
+        "Size=Md, Color=Neutral, State=Disabled, Style=Fill, Icon Position=Right, Icon Only=True",
+        "Size=Sm, Color=Neutral, State=Disabled, Style=Fill, Icon Position=Right, Icon Only=True",
+        "Size=XS, Color=Neutral, State=Disabled, Style=Fill, Icon Position=Right, Icon Only=True",
+        "Size=XS, Color=White, State=Disabled, Style=Fill, Icon Position=Right, Icon Only=True",
+        "Size=Sm, Color=White, State=Disabled, Style=Fill, Icon Position=Right, Icon Only=True",
+        "Size=Md, Color=White, State=Disabled, Style=Fill, Icon Position=Right, Icon Only=True",
+        "Size=XS, Color=White, State=Disabled, Style=Weak, Icon Position=Left, Icon Only=False",
+        "Size=XS, Color=White, State=Disabled, Style=Weak, Icon Position=Right, Icon Only=False",
+        "Size=XS, Color=White, State=Disabled, Style=Weak, Icon Position=Right, Icon Only=True",
+        "Size=Sm, Color=White, State=Disabled, Style=Weak, Icon Position=Right, Icon Only=True",
+        "Size=Md, Color=White, State=Disabled, Style=Weak, Icon Position=Right, Icon Only=True",
+        "Size=Md, Color=Neutral, State=Default, Style=Weak, Icon Position=Right, Icon Only=True",
+        "Size=Sm, Color=Neutral, State=Default, Style=Weak, Icon Position=Right, Icon Only=True",
+        "Size=XS, Color=Neutral, State=Default, Style=Weak, Icon Position=Right, Icon Only=True",
+        "Size=Md, Color=Neutral, State=Pressed, Style=Weak, Icon Position=Right, Icon Only=True",
+        "Size=Sm, Color=Neutral, State=Pressed, Style=Weak, Icon Position=Right, Icon Only=True",
+        "Size=XS, Color=Neutral, State=Pressed, Style=Weak, Icon Position=Right, Icon Only=True",
+        "Size=Md, Color=Neutral, State=Disabled, Style=Weak, Icon Position=Right, Icon Only=True",
+        "Size=Sm, Color=Neutral, State=Disabled, Style=Weak, Icon Position=Right, Icon Only=True",
+        "Size=XS, Color=Neutral, State=Disabled, Style=Weak, Icon Position=Right, Icon Only=True",
+        "Size=XS, Color=White, State=Default, Style=Weak, Icon Position=Left, Icon Only=False",
+        "Size=XS, Color=White, State=Default, Style=Weak, Icon Position=Right, Icon Only=False",
+        "Size=XS, Color=White, State=Default, Style=Weak, Icon Position=Right, Icon Only=True",
+        "Size=Sm, Color=White, State=Default, Style=Weak, Icon Position=Right, Icon Only=True",
+        "Size=Md, Color=White, State=Default, Style=Weak, Icon Position=Right, Icon Only=True",
+        "Size=XS, Color=White, State=Pressed, Style=Fill, Icon Position=Right, Icon Only=True",
+        "Size=Sm, Color=White, State=Pressed, Style=Fill, Icon Position=Right, Icon Only=True",
+        "Size=Md, Color=White, State=Pressed, Style=Fill, Icon Position=Right, Icon Only=True",
+        "Size=XS, Color=White, State=Pressed, Style=Weak, Icon Position=Left, Icon Only=False",
+        "Size=XS, Color=White, State=Pressed, Style=Weak, Icon Position=Right, Icon Only=False",
+        "Size=XS, Color=White, State=Pressed, Style=Weak, Icon Position=Right, Icon Only=True",
+        "Size=Sm, Color=White, State=Pressed, Style=Weak, Icon Position=Right, Icon Only=True",
+        "Size=Md, Color=White, State=Pressed, Style=Weak, Icon Position=Right, Icon Only=True"
+      ]
+    },
+    "icon-button": {
+      "node": "4624:80459",
+      "name": "Icon Button",
+      "axes": {
+        "State": ["Hover&Pressed", "Default"],
+        "Color": ["White", "Neutral", "Error", "Primary"],
+        "Style": ["Weak", "Fill"],
+        "Size": ["Md", "Lg"]
+      },
+      "variants": [
+        "State=Hover&Pressed, Color=White, Style=Weak, Size=Md",
+        "State=Hover&Pressed, Color=White, Style=Weak, Size=Lg",
+        "State=Hover&Pressed, Color=Neutral, Style=Weak, Size=Md",
+        "State=Hover&Pressed, Color=Neutral, Style=Weak, Size=Lg",
+        "State=Hover&Pressed, Color=Error, Style=Weak, Size=Md",
+        "State=Hover&Pressed, Color=Error, Style=Weak, Size=Lg",
+        "State=Default, Color=Neutral, Style=Fill, Size=Md",
+        "State=Default, Color=Neutral, Style=Fill, Size=Lg",
+        "State=Default, Color=Error, Style=Fill, Size=Md",
+        "State=Default, Color=Error, Style=Fill, Size=Lg",
+        "State=Hover&Pressed, Color=Neutral, Style=Fill, Size=Md",
+        "State=Hover&Pressed, Color=Neutral, Style=Fill, Size=Lg",
+        "State=Hover&Pressed, Color=Error, Style=Fill, Size=Md",
+        "State=Hover&Pressed, Color=Error, Style=Fill, Size=Lg",
+        "State=Default, Color=White, Style=Fill, Size=Md",
+        "State=Default, Color=White, Style=Fill, Size=Lg",
+        "State=Default, Color=Primary, Style=Weak, Size=Md",
+        "State=Default, Color=Primary, Style=Weak, Size=Lg",
+        "State=Default, Color=Primary, Style=Fill, Size=Md",
+        "State=Default, Color=Primary, Style=Fill, Size=Lg",
+        "State=Hover&Pressed, Color=Primary, Style=Weak, Size=Md",
+        "State=Hover&Pressed, Color=Primary, Style=Weak, Size=Lg",
+        "State=Hover&Pressed, Color=Primary, Style=Fill, Size=Md",
+        "State=Hover&Pressed, Color=Primary, Style=Fill, Size=Lg",
+        "State=Hover&Pressed, Color=White, Style=Fill, Size=Md",
+        "State=Hover&Pressed, Color=White, Style=Fill, Size=Lg",
+        "State=Default, Color=White, Style=Weak, Size=Md",
+        "State=Default, Color=White, Style=Weak, Size=Lg",
+        "State=Default, Color=Neutral, Style=Weak, Size=Md",
+        "State=Default, Color=Neutral, Style=Weak, Size=Lg",
+        "State=Default, Color=Error, Style=Weak, Size=Md",
+        "State=Default, Color=Error, Style=Weak, Size=Lg"
+      ]
+    },
+    "pagination": {
+      "node": "4649:83604",
+      "name": "Pagination",
+      "axes": {
+        "Current Page": ["First (첫 페이지)", "Middle", "Last (마지막 페이지)"]
+      },
+      "variants": [
+        "Current Page=First (첫 페이지)",
+        "Current Page=Middle",
+        "Current Page=Last (마지막 페이지)"
+      ]
+    },
+    "pagination-item": {
+      "node": "4642:83125",
+      "name": "primitive/Pagination Item",
+      "axes": {
+        "State": ["Selected", "Hover&Pressed", "Unselected"],
+        "Type": ["Number", "Arrow-Left", "Arrow-Right"]
+      },
+      "variants": [
+        "State=Selected, Type=Number",
+        "State=Selected, Type=Arrow-Left",
+        "State=Selected, Type=Arrow-Right",
+        "State=Hover&Pressed, Type=Number",
+        "State=Hover&Pressed, Type=Arrow-Left",
+        "State=Hover&Pressed, Type=Arrow-Right",
+        "State=Unselected, Type=Number",
+        "State=Unselected, Type=Arrow-Left",
+        "State=Unselected, Type=Arrow-Right"
       ]
     },
     "text-button": {
@@ -1727,6 +1844,365 @@
         "Type": ["Error", "Success", "Default", "Yellow"]
       },
       "variants": ["Type=Error", "Type=Success", "Type=Default", "Type=Yellow"]
+    },
+    "image-thumbnail": {
+      "node": "4383:44171",
+      "name": "Image Thumbnail",
+      "axes": {
+        "Size": ["50px"],
+        "Type": ["Default", "Fallback"]
+      },
+      "variants": ["Size=50px, Type=Default", "Size=50px, Type=Fallback"]
+    },
+    "image-thumbnail-editor": {
+      "node": "4383:44175",
+      "name": "Image Thumbnail Editor",
+      "axes": {
+        "State": ["Default", "Hover", "Filled"]
+      },
+      "variants": ["State=Default", "State=Hover", "State=Filled"]
+    },
+    "progress-summary": {
+      "node": "3101:99550",
+      "name": "Progress Summary",
+      "axes": {
+        "Property 1": ["0%", "100%"]
+      },
+      "variants": ["Property 1=0%", "Property 1=100%"]
+    },
+    "section-header": {
+      "node": "4437:78030",
+      "name": "Web/Section Header",
+      "axes": {
+        "Size": ["Lg", "Md", "Sm"]
+      },
+      "variants": ["Size=Lg", "Size=Md", "Size=Sm"]
+    },
+    "form-question": {
+      "node": "4430:50829",
+      "name": "Form/Question",
+      "axes": {
+        "Type": [
+          "Short Text (주관식)",
+          "Long Text (장문형)",
+          "Multi Select (복수 선택)",
+          "Single Select (단일 선택)",
+          "File Upload (파일 업로드&포트폴리오 업로드)"
+        ],
+        "Mode": ["Edit (폼 생성)", "Respond (폼 응답)", "Read Only"],
+        "Question State": ["Empty", "Filled"]
+      },
+      "variants": [
+        "Type=Short Text (주관식), Mode=Edit (폼 생성), Question State=Empty",
+        "Type=Short Text (주관식), Mode=Edit (폼 생성), Question State=Filled",
+        "Type=Short Text (주관식), Mode=Respond (폼 응답), Question State=Filled",
+        "Type=Short Text (주관식), Mode=Read Only, Question State=Filled",
+        "Type=Long Text (장문형), Mode=Edit (폼 생성), Question State=Empty",
+        "Type=Long Text (장문형), Mode=Edit (폼 생성), Question State=Filled",
+        "Type=Long Text (장문형), Mode=Respond (폼 응답), Question State=Filled",
+        "Type=Long Text (장문형), Mode=Read Only, Question State=Filled",
+        "Type=Multi Select (복수 선택), Mode=Edit (폼 생성), Question State=Empty",
+        "Type=Multi Select (복수 선택), Mode=Edit (폼 생성), Question State=Filled",
+        "Type=Multi Select (복수 선택), Mode=Respond (폼 응답), Question State=Filled",
+        "Type=Multi Select (복수 선택), Mode=Read Only, Question State=Filled",
+        "Type=Single Select (단일 선택), Mode=Edit (폼 생성), Question State=Empty",
+        "Type=Single Select (단일 선택), Mode=Edit (폼 생성), Question State=Filled",
+        "Type=Single Select (단일 선택), Mode=Respond (폼 응답), Question State=Filled",
+        "Type=Single Select (단일 선택), Mode=Read Only, Question State=Filled",
+        "Type=File Upload (파일 업로드&포트폴리오 업로드), Mode=Edit (폼 생성), Question State=Empty",
+        "Type=File Upload (파일 업로드&포트폴리오 업로드), Mode=Edit (폼 생성), Question State=Filled",
+        "Type=File Upload (파일 업로드&포트폴리오 업로드), Mode=Respond (폼 응답), Question State=Filled",
+        "Type=File Upload (파일 업로드&포트폴리오 업로드), Mode=Read Only, Question State=Filled"
+      ]
+    },
+    "form-radio-button-option-list": {
+      "node": "4437:82397",
+      "name": "Form/Radio Button Option List",
+      "axes": {
+        "Mode": ["Edit", "Respond"]
+      },
+      "variants": ["Mode=Edit", "Mode=Respond"]
+    },
+    "form-check-box-option-list": {
+      "node": "4437:82267",
+      "name": "Form/Check Box Option List",
+      "axes": {
+        "Mode": ["Edit", "Respond"]
+      },
+      "variants": ["Mode=Edit", "Mode=Respond"]
+    },
+    "radio-button-option-item": {
+      "node": "4430:50983",
+      "name": "Radio Button Option Item",
+      "axes": {
+        "Mode": ["Edit", "Respond"],
+        "State": ["Add", "Default", "Filled", "Hover", "Selected"],
+        "Disabled": ["False", "True"]
+      },
+      "variants": [
+        "Mode=Edit, State=Add, Disabled=False",
+        "Mode=Edit, State=Default, Disabled=False",
+        "Mode=Edit, State=Filled, Disabled=False",
+        "Mode=Respond, State=Filled, Disabled=False",
+        "Mode=Edit, State=Hover, Disabled=False",
+        "Mode=Respond, State=Hover, Disabled=False",
+        "Mode=Respond, State=Selected, Disabled=False",
+        "Mode=Respond, State=Filled, Disabled=True",
+        "Mode=Respond, State=Selected, Disabled=True"
+      ]
+    },
+    "check-box-option-item": {
+      "node": "4437:80988",
+      "name": "Check Box Option Item",
+      "axes": {
+        "Mode": ["Edit", "Respond"],
+        "State": ["Add", "Default", "Filled", "Hover", "Selected"],
+        "Disabled": ["False", "True"]
+      },
+      "variants": [
+        "Mode=Edit, State=Add, Disabled=False",
+        "Mode=Edit, State=Default, Disabled=False",
+        "Mode=Edit, State=Filled, Disabled=False",
+        "Mode=Respond, State=Filled, Disabled=False",
+        "Mode=Edit, State=Hover, Disabled=False",
+        "Mode=Respond, State=Hover, Disabled=False",
+        "Mode=Respond, State=Selected, Disabled=False",
+        "Mode=Respond, State=Filled, Disabled=True",
+        "Mode=Respond, State=Selected, Disabled=True"
+      ]
+    },
+    "form-attachment-field": {
+      "node": "4456:32610",
+      "name": "Form/Attachment Field",
+      "axes": {
+        "Mode": ["Form Respond (입력 중)", "Form Create (생성 중)"],
+        "State": ["Read Only", "Filled", "Typing", "Focus", "Hover", "Default"]
+      },
+      "variants": [
+        "Mode=Form Respond (입력 중), State=Read Only",
+        "Mode=Form Respond (입력 중), State=Filled",
+        "Mode=Form Respond (입력 중), State=Typing",
+        "Mode=Form Respond (입력 중), State=Focus",
+        "Mode=Form Create (생성 중), State=Focus",
+        "Mode=Form Respond (입력 중), State=Hover",
+        "Mode=Form Create (생성 중), State=Hover",
+        "Mode=Form Respond (입력 중), State=Default",
+        "Mode=Form Create (생성 중), State=Default"
+      ]
+    },
+    "form-question-editor": {
+      "node": "4430:50887",
+      "name": "Form/Question Editor",
+      "axes": {
+        "State": ["Default", "Disabled", "Focus", "Hover&Pressed"]
+      },
+      "variants": [
+        "State=Default",
+        "State=Disabled",
+        "State=Focus",
+        "State=Hover&Pressed"
+      ]
+    },
+    "form-question-toolbar": {
+      "node": "4456:34347",
+      "name": "Form/Question Toolbar",
+      "axes": {
+        "Variant": ["Expanded", "Default"]
+      },
+      "variants": ["Variant=Expanded", "Variant=Default"]
+    },
+    "floating-action-button": {
+      "node": "4437:76914",
+      "name": "Floating Action Button",
+      "axes": {
+        "State": ["Default", "Hover"]
+      },
+      "variants": ["State=Default", "State=Hover"]
+    },
+    "form-question-type-item": {
+      "node": "4437:76907",
+      "name": ".primitive/Form/Question Type Item",
+      "axes": {
+        "State": ["Default", "Selected"]
+      },
+      "variants": ["State=Default", "State=Selected"]
+    },
+    "form-section-control": {
+      "node": "4430:50868",
+      "name": ".primitive/Form/Section Control",
+      "axes": {
+        "Type": ["Static(공통 문항)", "Toggle(파트 문항)"],
+        "Enabled": ["True", "False"]
+      },
+      "variants": [
+        "Type=Static(공통 문항), Enabled=True",
+        "Type=Toggle(파트 문항), Enabled=True",
+        "Type=Toggle(파트 문항), Enabled=False"
+      ]
+    },
+    "form-question-section": {
+      "node": "4529:69541",
+      "name": "Form/Question Section",
+      "axes": {
+        "Section Type": ["Common", "Custom"],
+        "State": ["Focus", "Default", "Add Menu Open", "Question Editing"],
+        "Use Section": ["True", "False"]
+      },
+      "variants": [
+        "Section Type=Common, State=Focus, Use Section=True",
+        "Section Type=Common, State=Default, Use Section=True",
+        "Section Type=Custom, State=Focus, Use Section=True",
+        "Section Type=Custom, State=Default, Use Section=True",
+        "Section Type=Common, State=Add Menu Open, Use Section=True",
+        "Section Type=Custom, State=Add Menu Open, Use Section=True",
+        "Section Type=Common, State=Question Editing, Use Section=True",
+        "Section Type=Custom, State=Question Editing, Use Section=True",
+        "Section Type=Custom, State=Question Editing, Use Section=False"
+      ]
+    },
+    "chart-legend-item": {
+      "node": "4394:49278",
+      "name": "Chart/Legend Item",
+      "axes": {
+        "Property 1": [
+          "Teal-500",
+          "Teal-400",
+          "Teal-300",
+          "Teal-200",
+          "Gray-200",
+          "Purple-500",
+          "Pink-500",
+          "Yellow-500",
+          "Blue-500"
+        ]
+      },
+      "variants": [
+        "Property 1=Teal-500",
+        "Property 1=Teal-400",
+        "Property 1=Teal-300",
+        "Property 1=Teal-200",
+        "Property 1=Gray-200",
+        "Property 1=Purple-500",
+        "Property 1=Pink-500",
+        "Property 1=Yellow-500",
+        "Property 1=Blue-500"
+      ]
+    },
+    "chart-tooltip": {
+      "node": "2678:50658",
+      "name": "Chart/Tooltip",
+      "axes": {
+        "Show Caption": ["False", "True"],
+        "Value Display": ["Single", "Comparison"]
+      },
+      "variants": [
+        "Show Caption=False, Value Display=Single",
+        "Show Caption=True, Value Display=Single",
+        "Show Caption=False, Value Display=Comparison",
+        "Show Caption=True, Value Display=Comparison"
+      ]
+    },
+    "bar-chart-column": {
+      "node": "2929:81105",
+      "name": "Bar Chart/Column",
+      "axes": {
+        "Appearance": ["Neutral", "Primary Weak", "Primary Strong"]
+      },
+      "variants": [
+        "Appearance=Neutral",
+        "Appearance=Primary Weak",
+        "Appearance=Primary Strong"
+      ]
+    },
+    "bar-chart-category-group": {
+      "node": "2678:50643",
+      "name": "Bar Chart/Category Group",
+      "axes": {
+        "Data State": ["Default", "None"]
+      },
+      "variants": ["Data State=Default", "Data State=None"]
+    },
+    "bar-chart-category-group-reference-bar": {
+      "node": "4360:44014",
+      "name": "Bar Chart/Category Group/Reference Bar",
+      "axes": {
+        "Data State": ["Default", "None"]
+      },
+      "variants": ["Data State=Default", "Data State=None"]
+    },
+    "bar-chart-category-group-related-series": {
+      "node": "4360:44154",
+      "name": "Bar Chart/Category Group/Related Series",
+      "axes": {
+        "Data State": ["Default", "None"]
+      },
+      "variants": ["Data State=Default", "Data State=None"]
+    },
+    "bar-chart-category-group-related-series-reference-bar": {
+      "node": "4394:49011",
+      "name": "Bar Chart/Category Group/Related Series/Reference Bar",
+      "axes": {
+        "Data State": ["Default", "None"]
+      },
+      "variants": ["Data State=Default", "Data State=None"]
+    },
+    "web-bar-chart-ranked-bar": {
+      "node": "2678:50456",
+      "name": "Web/Bar Chart/Ranked Bar",
+      "axes": {
+        "Value Range": [
+          "5층: 81~100",
+          "4층: 61~80",
+          "3층: 41~60",
+          "2층: 21~40",
+          "*1층:14~20",
+          "*1층: 1~13",
+          "0"
+        ],
+        "Rank": ["1st", "2nd", "3rd", "4th", "None"]
+      },
+      "variants": [
+        "Value Range=5층: 81~100, Rank=1st",
+        "Value Range=5층: 81~100, Rank=2nd",
+        "Value Range=5층: 81~100, Rank=3rd",
+        "Value Range=5층: 81~100, Rank=4th",
+        "Value Range=4층: 61~80, Rank=1st",
+        "Value Range=4층: 61~80, Rank=2nd",
+        "Value Range=4층: 61~80, Rank=3rd",
+        "Value Range=4층: 61~80, Rank=4th",
+        "Value Range=3층: 41~60, Rank=1st",
+        "Value Range=3층: 41~60, Rank=2nd",
+        "Value Range=3층: 41~60, Rank=3rd",
+        "Value Range=3층: 41~60, Rank=4th",
+        "Value Range=2층: 21~40, Rank=1st",
+        "Value Range=2층: 21~40, Rank=2nd",
+        "Value Range=2층: 21~40, Rank=3rd",
+        "Value Range=2층: 21~40, Rank=4th",
+        "Value Range=*1층: 1~13, Rank=1st",
+        "Value Range=*1층: 1~13, Rank=2nd",
+        "Value Range=*1층: 1~13, Rank=3rd",
+        "Value Range=*1층:14~20, Rank=1st",
+        "Value Range=*1층:14~20, Rank=2nd",
+        "Value Range=*1층:14~20, Rank=3rd",
+        "Value Range=*1층:14~20, Rank=4th",
+        "Value Range=*1층: 1~13, Rank=4th",
+        "Value Range=0, Rank=None"
+      ]
+    },
+    "web-bar-chart-fixed-ranked-bar": {
+      "node": "4365:29588",
+      "name": "Web/Bar Chart/Fixed Ranked Bar",
+      "axes": {
+        "Rank": ["1st", "2nd", "3rd", "4th", "5th", "None"]
+      },
+      "variants": [
+        "Rank=1st",
+        "Rank=2nd",
+        "Rank=3rd",
+        "Rank=4th",
+        "Rank=5th",
+        "Rank=None"
+      ]
     }
   }
 }

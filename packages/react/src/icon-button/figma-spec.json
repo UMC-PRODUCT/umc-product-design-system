@@ -1,0 +1,259 @@
+{
+  "component": "IconButton",
+  "figmaSection": "4626:81117",
+  "page": "/components/actions/icon-button/",
+  "nodes": [
+    {
+      "specId": "icon-button-size-md",
+      "node": "4626:80550",
+      "variant": "State=Default, Color=Primary, Style=Weak, Size=Md",
+      "expected": {
+        "width": "26px",
+        "height": "26px",
+        "border-top-left-radius": "8px"
+      },
+      "figmaDiffers": {
+        "padding-left": "피그마는 좌우 여백 8px을 두지만 아이콘(24px)이 칸(26px)보다 넓어 여백이 보이지 않는다. 코드는 여백 없이 아이콘을 가운데에 둔다"
+      }
+    },
+    {
+      "specId": "icon-button-size-lg",
+      "node": "4626:80826",
+      "variant": "State=Default, Color=Primary, Style=Weak, Size=Lg",
+      "expected": {
+        "width": "30px",
+        "height": "30px",
+        "border-top-left-radius": "10px"
+      }
+    },
+    {
+      "specId": "icon-button-weak-primary",
+      "node": "4626:80550",
+      "variant": "State=Default, Color=Primary, Style=Weak, Size=Md",
+      "expected": {
+        "background-color": "#ddf4f1"
+      }
+    },
+    {
+      "specId": "icon-button-weak-primary-icon",
+      "node": "4626:80550",
+      "variant": "State=Default, Color=Primary, Style=Weak, Size=Md",
+      "target": ".umc-icon-button__icon",
+      "expected": {
+        "width": "24px",
+        "height": "24px",
+        "color": "#3f4141"
+      }
+    },
+    {
+      "specId": "icon-button-fill-primary",
+      "node": "4626:80720",
+      "variant": "State=Default, Color=Primary, Style=Fill, Size=Md",
+      "expected": {
+        "background-color": "#008a80"
+      }
+    },
+    {
+      "specId": "icon-button-fill-primary-icon",
+      "node": "4626:80720",
+      "variant": "State=Default, Color=Primary, Style=Fill, Size=Md",
+      "target": ".umc-icon-button__icon",
+      "expected": {
+        "width": "24px",
+        "height": "24px",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "icon-button-weak-white",
+      "node": "4624:80455",
+      "variant": "State=Default, Color=White, Style=Weak, Size=Md",
+      "expected": {
+        "background-color": "#ffffff"
+      }
+    },
+    {
+      "specId": "icon-button-weak-white-icon",
+      "node": "4624:80455",
+      "variant": "State=Default, Color=White, Style=Weak, Size=Md",
+      "target": ".umc-icon-button__icon",
+      "expected": {
+        "width": "24px",
+        "height": "24px",
+        "color": "#606262"
+      }
+    },
+    {
+      "specId": "icon-button-fill-white",
+      "node": "4624:80456",
+      "variant": "State=Default, Color=White, Style=Fill, Size=Md",
+      "expected": {
+        "background-color": "#f7f8f8"
+      }
+    },
+    {
+      "specId": "icon-button-fill-white-icon",
+      "node": "4624:80456",
+      "variant": "State=Default, Color=White, Style=Fill, Size=Md",
+      "target": ".umc-icon-button__icon",
+      "expected": {
+        "width": "24px",
+        "height": "24px",
+        "color": "#606262"
+      }
+    },
+    {
+      "specId": "icon-button-weak-neutral",
+      "node": "4626:80648",
+      "variant": "State=Default, Color=Neutral, Style=Weak, Size=Md",
+      "expected": {
+        "background-color": "#eff0f0"
+      }
+    },
+    {
+      "specId": "icon-button-weak-neutral-icon",
+      "node": "4626:80648",
+      "variant": "State=Default, Color=Neutral, Style=Weak, Size=Md",
+      "target": ".umc-icon-button__icon",
+      "expected": {
+        "width": "24px",
+        "height": "24px",
+        "color": "#3f4141"
+      }
+    },
+    {
+      "specId": "icon-button-fill-neutral",
+      "node": "4626:80520",
+      "variant": "State=Default, Color=Neutral, Style=Fill, Size=Md",
+      "expected": {
+        "background-color": "#606262"
+      }
+    },
+    {
+      "specId": "icon-button-fill-neutral-icon",
+      "node": "4626:80520",
+      "variant": "State=Default, Color=Neutral, Style=Fill, Size=Md",
+      "target": ".umc-icon-button__icon",
+      "expected": {
+        "width": "24px",
+        "height": "24px",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "icon-button-weak-error",
+      "node": "4626:80682",
+      "variant": "State=Default, Color=Error, Style=Weak, Size=Md",
+      "expected": {
+        "background-color": "#fef2f1"
+      }
+    },
+    {
+      "specId": "icon-button-weak-error-icon",
+      "node": "4626:80682",
+      "variant": "State=Default, Color=Error, Style=Weak, Size=Md",
+      "target": ".umc-icon-button__icon",
+      "expected": {
+        "width": "24px",
+        "height": "24px",
+        "color": "#dc3d3d"
+      }
+    },
+    {
+      "specId": "icon-button-fill-error",
+      "node": "4626:80678",
+      "variant": "State=Default, Color=Error, Style=Fill, Size=Md",
+      "expected": {
+        "background-color": "#dc3d3d"
+      }
+    },
+    {
+      "specId": "icon-button-fill-error-icon",
+      "node": "4626:80678",
+      "variant": "State=Default, Color=Error, Style=Fill, Size=Md",
+      "target": ".umc-icon-button__icon",
+      "expected": {
+        "width": "24px",
+        "height": "24px",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "icon-button-weak-primary",
+      "interaction": "hover",
+      "node": "4626:80591",
+      "variant": "State=Hover&Pressed, Color=Primary, Style=Weak, Size=Md",
+      "expected": {
+        "background-color": "#b3e5e1",
+        "box-shadow~": "1px 1px 2px 0px inset"
+      }
+    },
+    {
+      "specId": "icon-button-fill-primary",
+      "interaction": "hover",
+      "node": "4626:80722",
+      "variant": "State=Hover&Pressed, Color=Primary, Style=Fill, Size=Md",
+      "expected": {
+        "background-color": "#015a54"
+      }
+    },
+    {
+      "specId": "icon-button-weak-white",
+      "interaction": "hover",
+      "node": "4624:80458",
+      "variant": "State=Hover&Pressed, Color=White, Style=Weak, Size=Md",
+      "expected": {
+        "background-color": "#fbfcfc",
+        "box-shadow~": "1px 1px 2px 0px inset"
+      }
+    },
+    {
+      "specId": "icon-button-fill-white",
+      "interaction": "hover",
+      "node": "4626:80510",
+      "variant": "State=Hover&Pressed, Color=White, Style=Fill, Size=Md",
+      "expected": {
+        "background-color": "#f7f8f8",
+        "box-shadow~": "1px 1px 2px 0px inset"
+      }
+    },
+    {
+      "specId": "icon-button-weak-neutral",
+      "interaction": "hover",
+      "node": "4626:80646",
+      "variant": "State=Hover&Pressed, Color=Neutral, Style=Weak, Size=Md",
+      "expected": {
+        "background-color": "#e2e3e3",
+        "box-shadow~": "1px 1px 2px 0px inset"
+      }
+    },
+    {
+      "specId": "icon-button-fill-neutral",
+      "interaction": "hover",
+      "node": "4626:80560",
+      "variant": "State=Hover&Pressed, Color=Neutral, Style=Fill, Size=Md",
+      "expected": {
+        "background-color": "#7e7f7f"
+      }
+    },
+    {
+      "specId": "icon-button-weak-error",
+      "interaction": "hover",
+      "node": "4626:80676",
+      "variant": "State=Hover&Pressed, Color=Error, Style=Weak, Size=Md",
+      "expected": {
+        "background-color": "#ffe7e5",
+        "box-shadow~": "1px 1px 2px 0px inset"
+      }
+    },
+    {
+      "specId": "icon-button-fill-error",
+      "interaction": "hover",
+      "node": "4626:80680",
+      "variant": "State=Hover&Pressed, Color=Error, Style=Fill, Size=Md",
+      "expected": {
+        "background-color": "#dc3d3d"
+      }
+    }
+  ]
+}

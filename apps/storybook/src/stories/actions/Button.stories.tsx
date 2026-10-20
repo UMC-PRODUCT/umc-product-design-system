@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
+import { AddIcon } from "@umc-product/icons"
 import { Button } from "@umc-product/react"
 import { fn } from "storybook/test"
 
@@ -14,6 +15,7 @@ const meta = {
     children: textControl,
     leadingIcon: iconArgType,
     trailingIcon: iconArgType,
+    icon: iconArgType,
   },
   args: {
     children: "확인",
@@ -31,3 +33,13 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {}
+
+export const IconOnly: Story = {
+  args: {
+    children: undefined,
+    icon: <AddIcon weight="fill" />,
+    "aria-label": "추가",
+    color: "neutral",
+    size: "sm",
+  },
+}

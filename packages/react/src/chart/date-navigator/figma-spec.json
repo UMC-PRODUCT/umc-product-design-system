@@ -1,0 +1,46 @@
+{
+  "component": "DateNavigator",
+  "figmaSection": "3032:90019",
+  "page": "/components/chart/date-navigator/",
+  "figmaDiffers": {
+    "disabled": "피그마에 비활성 모양이 없다. 콜백을 넘기지 않은 쪽 화살표를 icon-disabled(#cccccc)로 칠한다",
+    "hit-area": "피그마 화살표는 9×14px이다. 모양과 간격은 그대로 두고 누를 수 있는 영역만 25×24px로 넓혔다"
+  },
+  "nodes": [
+    {
+      "specId": "date-navigator",
+      "node": "3032:91724",
+      "variant": "Date Navigator",
+      "target": ".umc-date-navigator",
+      "expected": {
+        "column-gap": "10px",
+        "align-items": "center"
+      }
+    },
+    {
+      "specId": "date-navigator",
+      "node": "3032:91720",
+      "variant": "Date Navigator",
+      "target": ".umc-date-navigator__button",
+      "expected": {
+        "width": "9px",
+        "height": "14px",
+        "color": "#adadad"
+      }
+    },
+    {
+      "specId": "date-navigator",
+      "node": "3032:91721",
+      "variant": "Date Navigator",
+      "target": ".umc-date-navigator__label",
+      "expected": {
+        "color": "#0f1010",
+        "font-size": "16px",
+        "font-weight": "500",
+        "line-height": "23.2px",
+        "letter-spacing": "-0.16px",
+        "opacity": "0.9"
+      }
+    }
+  ]
+}

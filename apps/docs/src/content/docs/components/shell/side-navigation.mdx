@@ -9,7 +9,7 @@ import {
   SideNavigationWithSlot,
 } from "../../../../components/react/shell/SideNavigationExamples.tsx"
 
-피그마 `Web/Side Navigation`을 구현했습니다. 너비는 `--umc-layout-sidebar-width`(216px)입니다. 항목은 링크 하나로 끝나는 메뉴와 하위 메뉴를 펼치는 그룹 두 종류입니다.
+피그마 `Web/Side Navigation`을 구현했습니다. 부모 폭을 채우므로 사이드바 칸의 폭(`--umc-layout-sidebar-width`, 216px)은 레이아웃이 정합니다. 항목은 링크 하나로 끝나는 메뉴와 하위 메뉴를 펼치는 그룹 두 종류입니다.
 
 ```tsx
 import { SideNavigation, type SideNavigationItem } from "@umc-product/react"
@@ -43,6 +43,23 @@ export function AdminSidebar({ pathname }: { pathname: string }) {
 메뉴를 누르면 선택이 옮겨 가고, 그룹을 누르면 하위 메뉴를 펼치거나 접습니다. 여러 그룹을 동시에 펼칠 수 있습니다.
 
 <SideNavigationDefault client:visible />
+
+## 폭
+
+피그마의 너비가 Fill이라 부모 폭을 그대로 채웁니다. 관리자 화면에서는 사이드바 칸을 `--umc-layout-sidebar-width`(216px)로 정합니다. 본문과 같은 flex 행에 놓을 때는 줄어들지 않게 `shrink-0`도 함께 줍니다. 폭을 정하지 않으면 내비게이션이 행 전체로 늘어나 본문이 밀려납니다.
+
+```tsx
+<div className="flex min-h-screen">
+  <SideNavigation
+    className="w-(--umc-layout-sidebar-width) shrink-0"
+    items={items}
+    currentPath={pathname}
+  />
+  <main className="min-w-0 flex-1">{children}</main>
+</div>
+```
+
+Tailwind를 쓰지 않는 앱은 감싸는 요소에 `width: var(--umc-layout-sidebar-width)`와 `flex-shrink: 0`을 줍니다.
 
 ## 슬롯
 

@@ -2,6 +2,7 @@
 
 import type { ComponentPropsWithRef, MouseEvent, ReactNode } from "react"
 
+import type { AccessibleName } from "../internal/accessible-name.ts"
 import { cx } from "../internal/cx.ts"
 
 export type ButtonVariant = "fill" | "weak"
@@ -10,14 +11,35 @@ export type ButtonColor = "primary" | "neutral" | "red" | "white"
 
 export type ButtonSize = "lg" | "md" | "sm" | "xs"
 
-export type ButtonProps = Omit<ComponentPropsWithRef<"button">, "color"> & {
+export type ButtonIconOnlySize = Exclude<ButtonSize, "lg">
+
+type ButtonBaseProps = Omit<
+  ComponentPropsWithRef<"button">,
+  "color" | "children"
+> & {
   variant?: ButtonVariant
   color?: ButtonColor
-  size?: ButtonSize
   isLoading?: boolean
+}
+
+export type ButtonLabelProps = ButtonBaseProps & {
+  size?: ButtonSize
   leadingIcon?: ReactNode
   trailingIcon?: ReactNode
+  icon?: undefined
+  children?: ReactNode
 }
+
+export type ButtonIconOnlyProps = ButtonBaseProps &
+  AccessibleName & {
+    size?: ButtonIconOnlySize
+    icon: NonNullable<ReactNode>
+    leadingIcon?: undefined
+    trailingIcon?: undefined
+    children?: undefined
+  }
+
+export type ButtonProps = ButtonLabelProps | ButtonIconOnlyProps
 
 const LOADING_LABEL = "로딩 중"
 const LOADER_DOTS = ["first", "second", "third"] as const
@@ -30,6 +52,7 @@ export function Button({
   color = "primary",
   size = "md",
   isLoading = false,
+  icon,
   leadingIcon,
   trailingIcon,
   className,
@@ -38,6 +61,8 @@ export function Button({
   children,
   ...props
 }: ButtonProps) {
+  const isIconOnly = icon != null
+
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     if (isLoading) {
       event.preventDefault()
@@ -55,22 +80,31 @@ export function Button({
       data-color={color}
       data-size={size}
       data-loading={presence(isLoading)}
+      data-icon-only={presence(isIconOnly)}
       data-leading-icon={presence(leadingIcon)}
       data-trailing-icon={presence(trailingIcon)}
       aria-busy={isLoading ? true : props["aria-busy"]}
       aria-disabled={isLoading ? true : props["aria-disabled"]}
       onClick={handleClick}
     >
-      {leadingIcon && (
+      {isIconOnly ? (
         <span className="umc-button__icon" aria-hidden="true">
-          {leadingIcon}
+          {icon}
         </span>
-      )}
-      <span className="umc-button__label">{children}</span>
-      {trailingIcon && (
-        <span className="umc-button__icon" aria-hidden="true">
-          {trailingIcon}
-        </span>
+      ) : (
+        <>
+          {leadingIcon && (
+            <span className="umc-button__icon" aria-hidden="true">
+              {leadingIcon}
+            </span>
+          )}
+          <span className="umc-button__label">{children}</span>
+          {trailingIcon && (
+            <span className="umc-button__icon" aria-hidden="true">
+              {trailingIcon}
+            </span>
+          )}
+        </>
       )}
       {isLoading && (
         <>

@@ -1,0 +1,120 @@
+{
+  "component": "Pagination",
+  "figmaSection": "4649:83804",
+  "page": "/components/actions/pagination/",
+  "nodes": [
+    {
+      "specId": "pagination-first",
+      "node": "4649:83603",
+      "variant": "Current Page=First (첫 페이지)",
+      "expected": {
+        "width": "180px",
+        "height": "30px",
+        "column-gap": "12px"
+      }
+    },
+    {
+      "specId": "pagination-first-pages",
+      "node": "4649:83584",
+      "variant": "Slot",
+      "target": ".umc-pagination__pages",
+      "expected": {
+        "column-gap": "6px"
+      }
+    },
+    {
+      "specId": "pagination-middle",
+      "node": "4649:83649",
+      "variant": "Current Page=Middle",
+      "expected": {
+        "width": "222px",
+        "height": "30px"
+      }
+    },
+    {
+      "specId": "pagination-last",
+      "node": "4649:83693",
+      "variant": "Current Page=Last (마지막 페이지)",
+      "expected": {
+        "width": "180px",
+        "height": "30px"
+      }
+    },
+    {
+      "specId": "pagination-item-selected",
+      "node": "4642:83132",
+      "variant": "State=Selected, Type=Number",
+      "target": ".umc-pagination__item[aria-current=\"page\"]",
+      "expected": {
+        "width": "30px",
+        "height": "30px",
+        "border-top-left-radius": "10px",
+        "background-color": "#eff0f0",
+        "color": "#161919",
+        "font-size": "15px",
+        "font-weight": "600",
+        "line-height": "21px",
+        "letter-spacing": "-0.3px",
+        "box-shadow~": "1px 1px 2px 0px inset"
+      }
+    },
+    {
+      "specId": "pagination-item-number",
+      "node": "4642:83184",
+      "variant": "State=Unselected, Type=Number",
+      "target": ".umc-pagination__item[data-type=\"number\"]:not([aria-current])",
+      "expected": {
+        "width": "30px",
+        "height": "30px",
+        "background-color": "#00000000",
+        "color": "#161919"
+      },
+      "figmaDiffers": {
+        "padding-left": "피그마는 30px 칸에 좌우 여백 8px을 둔다. 두 자리 번호가 칸을 넘지 않도록 최소 폭 30px에 좌우 4px로 두었다"
+      }
+    },
+    {
+      "specId": "pagination-item-arrow",
+      "node": "4649:83547",
+      "variant": "State=Unselected, Type=Arrow-Right",
+      "target": ".umc-pagination__item[data-type=\"next\"]",
+      "expected": {
+        "width": "30px",
+        "height": "30px",
+        "color": "#adadad"
+      }
+    },
+    {
+      "specId": "pagination-item-arrow-icon",
+      "node": "4649:83548",
+      "variant": "Icon/Chevron_Right",
+      "target": ".umc-pagination__item[data-type=\"next\"] .umc-pagination__icon",
+      "expected": {
+        "width": "16px",
+        "height": "16px"
+      }
+    },
+    {
+      "specId": "pagination-item-number",
+      "interaction": "hover",
+      "node": "4642:83180",
+      "variant": "State=Hover&Pressed, Type=Number",
+      "target": ".umc-pagination__item[data-type=\"number\"]:not([aria-current])",
+      "expected": {
+        "background-color": "#f7f8f8",
+        "box-shadow~": "1px 1px 2px 0px inset"
+      }
+    },
+    {
+      "specId": "pagination-item-arrow",
+      "interaction": "hover",
+      "node": "4649:83545",
+      "variant": "State=Hover&Pressed, Type=Arrow-Right",
+      "target": ".umc-pagination__item[data-type=\"next\"]",
+      "expected": {
+        "background-color": "#f7f8f8",
+        "color": "#3f4141"
+      }
+    }
+  ]
+}

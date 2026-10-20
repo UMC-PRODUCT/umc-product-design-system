@@ -1,0 +1,98 @@
+{
+  "component": "ColumnChart",
+  "figmaSection": "3032:90019",
+  "page": "/components/chart/column-chart/",
+  "figmaDiffers": {
+    "height": "피그마 막대는 칸을 채우는 한 가지 높이다. 코드는 값을 가장 큰 값(또는 max)으로 나눈 비율로 막대 높이를 정하고, 가장 큰 값의 막대가 피그마 높이 122.1px이 된다"
+  },
+  "nodes": [
+    {
+      "specId": "column-chart-modes",
+      "node": "2929:81106",
+      "variant": "Appearance=Neutral",
+      "target": ".umc-column-chart__column[data-mode=\"neutral\"]",
+      "expected": {
+        "width": "40px",
+        "height": "164px",
+        "row-gap": "8px"
+      }
+    },
+    {
+      "specId": "column-chart-modes",
+      "node": "2929:81107",
+      "variant": "Appearance=Neutral",
+      "target": ".umc-column-chart__column[data-mode=\"neutral\"] .umc-column-chart__plot",
+      "expected": {
+        "row-gap": "4px",
+        "justify-content": "flex-end"
+      }
+    },
+    {
+      "specId": "column-chart-modes",
+      "node": "2929:81108",
+      "variant": "Appearance=Neutral",
+      "target": ".umc-column-chart__column[data-mode=\"neutral\"] .umc-column-chart__value",
+      "expected": {
+        "color": "#606262",
+        "font-size": "12px",
+        "font-weight": "500",
+        "line-height": "15.6px"
+      }
+    },
+    {
+      "specId": "column-chart-modes",
+      "node": "2929:81109",
+      "variant": "Appearance=Neutral",
+      "target": ".umc-column-chart__column[data-mode=\"neutral\"] .umc-column-chart__bar",
+      "expected": {
+        "width": "32px",
+        "height~": "122.1",
+        "border-top-left-radius": "8px",
+        "border-top-right-radius": "8px",
+        "border-bottom-left-radius": "4px",
+        "border-bottom-right-radius": "4px",
+        "background-image~": "#eff0f0 0%, #eff0f0 100%"
+      }
+    },
+    {
+      "specId": "column-chart-modes",
+      "node": "2929:81110",
+      "variant": "Appearance=Neutral",
+      "target": ".umc-column-chart__column[data-mode=\"neutral\"] .umc-column-chart__label",
+      "expected": {
+        "color": "#606262",
+        "font-size": "11px",
+        "font-weight": "500",
+        "line-height": "14.3px",
+        "text-align": "center"
+      }
+    },
+    {
+      "specId": "column-chart-modes",
+      "node": "2929:81114",
+      "variant": "Appearance=Primary Weak",
+      "target": ".umc-column-chart__column[data-mode=\"primary-weak\"] .umc-column-chart__bar",
+      "expected": {
+        "background-image~": "#91ded8 14.904%, #b3e5e1 100%"
+      }
+    },
+    {
+      "specId": "column-chart-modes",
+      "node": "2929:81118",
+      "variant": "Appearance=Primary Strong",
+      "target": ".umc-column-chart__column[data-mode=\"primary-strong\"] .umc-column-chart__value",
+      "expected": {
+        "color": "#02746c"
+      }
+    },
+    {
+      "specId": "column-chart-modes",
+      "node": "2929:81119",
+      "variant": "Appearance=Primary Strong",
+      "target": ".umc-column-chart__column[data-mode=\"primary-strong\"] .umc-column-chart__bar",
+      "expected": {
+        "background-image~": "#39a9a1 0%, #5abeb7 86.538%"
+      }
+    }
+  ]
+}

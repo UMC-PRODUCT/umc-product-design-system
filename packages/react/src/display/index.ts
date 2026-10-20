@@ -41,6 +41,10 @@ export {
   type ProgressBarSize,
 } from "./progress-bar/index.ts"
 export {
+  ProgressSummary,
+  type ProgressSummaryProps,
+} from "./progress-summary/index.ts"
+export {
   NumberBadge,
   type NumberBadgeColor,
   type NumberBadgeProps,
@@ -64,3 +68,7 @@ export {
   type GuidanceMessageColor,
   type GuidanceMessageProps,
 } from "./guidance-message/index.ts"
+export {
+  ImageThumbnail,
+  type ImageThumbnailProps,
+} from "./image-thumbnail/index.ts"

@@ -1,0 +1,129 @@
+{
+  "component": "FormSection",
+  "figmaSection": "4469:58260",
+  "page": "/components/questionnaire/form-section/",
+  "figmaDiffers": {
+    "switch-label": "섹션 사용 스위치 글자는 피그마 변수 이름이 15px인데 값이 14px이다. 값을 따라 Body/3-Regular(14px)를 썼다"
+  },
+  "nodes": [
+    {
+      "specId": "form-section-static-tab",
+      "node": "4437:77662",
+      "variant": "Type=Static(공통 문항), Enabled=True",
+      "target": ".umc-form-section__tab",
+      "expected": {
+        "padding-top": "8px",
+        "padding-right": "16px",
+        "padding-bottom": "2px",
+        "padding-left": "42px",
+        "border-top-left-radius": "12px",
+        "background-color": "#008a80",
+        "color": "#ffffff",
+        "font-size": "18px",
+        "font-weight": "600",
+        "line-height": "25.2px"
+      }
+    },
+    {
+      "specId": "form-section-static-curve",
+      "node": "4437:77664",
+      "variant": "Type=Static(공통 문항), Enabled=True",
+      "target": ".umc-form-section__tab-curve",
+      "expected": {
+        "width": "50px",
+        "height": "35px",
+        "color": "#008a80"
+      }
+    },
+    {
+      "specId": "form-section-static-bar",
+      "node": "4430:50872",
+      "variant": "Type=Static(공통 문항), Enabled=True",
+      "target": ".umc-form-section__tab-bar",
+      "expected": {
+        "height": "6px",
+        "border-top-right-radius": "12px",
+        "background-color": "#008a80"
+      }
+    },
+    {
+      "specId": "form-section-toggle-header",
+      "node": "4430:50873",
+      "variant": "Type=Toggle(파트 문항), Enabled=True",
+      "target": ".umc-form-section__header",
+      "expected": {
+        "padding-top": "10px",
+        "padding-right": "20px",
+        "padding-bottom": "8px",
+        "padding-left": "32px",
+        "border-top-color": "#7ac7c1",
+        "border-bottom-width": "0px",
+        "border-top-left-radius": "12px",
+        "border-bottom-left-radius": "0px",
+        "background-color": "#e9f7f5"
+      }
+    },
+    {
+      "specId": "form-section-toggle-title",
+      "node": "4430:50875",
+      "variant": "Type=Toggle(파트 문항), Enabled=True",
+      "target": ".umc-form-section__title",
+      "expected": {
+        "column-gap": "5px",
+        "color": "#02746c",
+        "font-size": "18px",
+        "font-weight": "600"
+      }
+    },
+    {
+      "specId": "form-section-toggle-optional",
+      "node": "4430:50876",
+      "variant": "Type=Toggle(파트 문항), Enabled=True",
+      "target": ".umc-form-section__optional",
+      "expected": {
+        "color": "#008a80",
+        "font-size": "14px",
+        "font-weight": "500",
+        "line-height": "21px"
+      }
+    },
+    {
+      "specId": "form-section-toggle-switch",
+      "node": "I4437:77389;3696:100341",
+      "variant": "Type=Toggle(파트 문항), Enabled=True",
+      "target": ".umc-form-section__switch",
+      "expected": {
+        "color": "#7e7f7f",
+        "font-size": "14px",
+        "font-weight": "400"
+      }
+    },
+    {
+      "specId": "form-section-toggle-off",
+      "node": "4430:50880",
+      "variant": "Type=Toggle(파트 문항), Enabled=False",
+      "target": ".umc-form-section__header",
+      "expected": {
+        "padding-top": "10px",
+        "padding-bottom": "10px",
+        "border-bottom-width": "1px",
+        "border-bottom-color": "#7ac7c1",
+        "border-bottom-left-radius": "12px"
+      }
+    },
+    {
+      "specId": "form-section-body",
+      "node": "4562:74693",
+      "variant": "Section Type=Custom, State=Default, Use Section=True",
+      "target": ".umc-form-section__body",
+      "expected": {
+        "padding-bottom": "12px",
+        "border-top-width": "0px",
+        "border-left-color": "#7ac7c1",
+        "border-bottom-left-radius": "12px",
+        "background-color": "#fbfcfc",
+        "box-shadow~": "#d3d8d826 1px 1px 2px 0px inset"
+      }
+    }
+  ]
+}

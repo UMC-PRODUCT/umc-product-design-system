@@ -1,0 +1,53 @@
+@layer components {
+  .umc-form-attachment-field {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--umc-spacing-gap-10);
+    box-sizing: border-box;
+    min-width: 0;
+  }
+
+  .umc-form-attachment-field > .umc-form-attachment-field__box[data-size] {
+    --umc-input-box-font-size: var(--umc-typography-label-2-medium-font-size);
+    --umc-input-box-line-height: var(
+      --umc-typography-label-2-medium-line-height
+    );
+    --umc-input-box-letter-spacing: var(
+      --umc-typography-label-2-medium-letter-spacing
+    );
+
+    flex: 1 1 auto;
+    gap: var(--umc-spacing-gap-8);
+    min-width: 0;
+  }
+
+  .umc-form-attachment-field__clip {
+    flex: 0 0 auto;
+    color: var(--umc-color-icon-neutral-stronger-700);
+  }
+
+  .umc-form-attachment-field__name {
+    min-width: 0;
+    overflow: hidden;
+    color: var(--umc-color-text-brand-default-600);
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  @media (hover: hover) {
+    a.umc-form-attachment-field__name:hover {
+      text-decoration: underline;
+    }
+  }
+
+  a.umc-form-attachment-field__name:focus-visible {
+    border-radius: var(--umc-radius-6);
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
+    outline-offset: 2px;
+  }
+
+  .umc-form-attachment-field__file {
+    display: none;
+  }
+}

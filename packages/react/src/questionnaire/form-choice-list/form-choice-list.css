@@ -1,0 +1,93 @@
+@layer components {
+  .umc-form-choice-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: var(--umc-spacing-padding-4);
+    border: 1px solid var(--umc-color-border-neutral-weak-200);
+    border-radius: var(--umc-radius-12);
+    background-color: var(--umc-color-fill-neutral-default);
+  }
+
+  .umc-form-choice-list__option {
+    --umc-form-choice-list-option-bg: var(--umc-color-fill-neutral-default);
+    --umc-form-choice-list-label-color: var(
+      --umc-color-text-neutral-default-900
+    );
+    --umc-form-choice-list-label-weight: var(
+      --umc-typography-body-1-regular-font-weight
+    );
+
+    display: flex;
+    align-items: center;
+    gap: var(--umc-spacing-gap-12);
+    box-sizing: border-box;
+    min-height: 40px;
+    margin: 0;
+    padding-block: var(--umc-spacing-padding-8);
+    padding-inline: var(--umc-spacing-padding-6) var(--umc-spacing-padding-10);
+    border-radius: var(--umc-radius-8);
+    background-color: var(--umc-form-choice-list-option-bg);
+    cursor: pointer;
+    transition: background-color var(--umc-motion-duration) ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (hover: hover) {
+    .umc-form-choice-list:not([data-readonly])
+      .umc-form-choice-list__option:not(
+        [data-selected],
+        [data-disabled]
+      ):hover {
+      --umc-form-choice-list-option-bg: var(--umc-color-fill-neutral-weaker-50);
+    }
+  }
+
+  .umc-form-choice-list__option[data-selected] {
+    --umc-form-choice-list-option-bg: var(--umc-color-background-brand-weak);
+    --umc-form-choice-list-label-color: var(--umc-color-text-brand-default-600);
+    --umc-form-choice-list-label-weight: var(
+      --umc-typography-body-1-medium-font-weight
+    );
+  }
+
+  .umc-form-choice-list__option[data-disabled] {
+    --umc-form-choice-list-option-bg: var(--umc-color-fill-neutral-default);
+    --umc-form-choice-list-label-color: var(--umc-color-text-disabled);
+    --umc-form-choice-list-label-weight: var(
+      --umc-typography-body-1-regular-font-weight
+    );
+
+    cursor: default;
+  }
+
+  .umc-form-choice-list[data-readonly] .umc-form-choice-list__option {
+    cursor: default;
+  }
+
+  .umc-form-choice-list__label {
+    min-width: 0;
+    color: var(--umc-form-choice-list-label-color);
+    font-family: var(--umc-typography-body-1-regular-font-family);
+    font-size: var(--umc-typography-body-1-regular-font-size);
+    font-weight: var(--umc-form-choice-list-label-weight);
+    line-height: var(--umc-typography-body-1-regular-line-height);
+    letter-spacing: var(--umc-typography-body-1-regular-letter-spacing);
+    overflow-wrap: break-word;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .umc-form-choice-list__option {
+      transition: none;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .umc-form-choice-list__option[data-selected] {
+      outline: 2px solid Highlight;
+      outline-offset: -2px;
+    }
+  }
+}

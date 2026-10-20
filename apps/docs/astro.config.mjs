@@ -17,6 +17,8 @@ const COMPONENT_GROUPS = [
   { label: "표시", directory: "components/display" },
   { label: "오버레이와 피드백", directory: "components/overlay" },
   { label: "앱 셸", directory: "components/shell" },
+  { label: "질문지", directory: "components/questionnaire" },
+  { label: "차트", directory: "components/chart" },
 ]
 
 const MOVED_PAGES = {

@@ -23,6 +23,7 @@ export function TextArea({
   invalid,
   errorMessage,
   disabled,
+  readOnly,
   className,
   value,
   defaultValue,
@@ -34,7 +35,7 @@ export function TextArea({
   const [typedLength, setTypedLength] = useState(() => lengthOf(defaultValue))
   const isControlled = value !== undefined
   const currentLength = isControlled ? lengthOf(value) : typedLength
-  const showCounter = maxLength !== undefined && !disabled
+  const showCounter = maxLength !== undefined
 
   const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     if (!isControlled) setTypedLength(event.target.value.length)
@@ -56,11 +57,13 @@ export function TextArea({
         className="umc-text-area"
         data-invalid={invalid ? "" : undefined}
         data-disabled={disabled ? "" : undefined}
+        data-readonly={readOnly ? "" : undefined}
       >
         <BaseUIField.Control
           value={value}
           defaultValue={defaultValue}
           disabled={disabled}
+          readOnly={readOnly}
           required={required}
           render={(controlProps) => (
             <textarea

@@ -31,6 +31,10 @@
     --umc-checkbox-checked-bg: var(--umc-color-red-400);
   }
 
+  .umc-checkbox:has(> .umc-checkbox__control[data-readonly]) {
+    cursor: default;
+  }
+
   .umc-checkbox:has(> .umc-checkbox__control[data-disabled]) {
     --umc-checkbox-bg: var(--umc-color-fill-neutral-weak-75);
     --umc-checkbox-border: var(--umc-color-border-neutral-disabled);

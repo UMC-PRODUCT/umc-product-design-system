@@ -1,0 +1,15 @@
+@layer components {
+  .umc-form-question-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--umc-spacing-gap-16);
+    box-sizing: border-box;
+    min-width: 76px;
+    max-width: 100%;
+    min-height: 76px;
+    margin: 0;
+    padding: 0;
+  }
+}

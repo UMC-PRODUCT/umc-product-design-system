@@ -1,0 +1,38 @@
+@layer components {
+  .umc-image-thumbnail {
+    --umc-image-thumbnail-size: 50px;
+    --umc-image-thumbnail-bg: #e9ecec;
+    --umc-image-thumbnail-logo-color: #d3d8d8;
+
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    inline-size: var(--umc-image-thumbnail-size);
+    block-size: var(--umc-image-thumbnail-size);
+    overflow: hidden;
+    border-radius: calc(var(--umc-image-thumbnail-size) * 8 / 50);
+    background-color: var(--umc-image-thumbnail-bg);
+    color: var(--umc-image-thumbnail-logo-color);
+  }
+
+  .umc-image-thumbnail__image {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+
+  .umc-image-thumbnail__logo {
+    flex: none;
+    inline-size: calc(var(--umc-image-thumbnail-size) * 34 / 50);
+    block-size: auto;
+  }
+
+  @media (forced-colors: active) {
+    .umc-image-thumbnail {
+      outline: 1px solid CanvasText;
+      outline-offset: -1px;
+    }
+  }
+}

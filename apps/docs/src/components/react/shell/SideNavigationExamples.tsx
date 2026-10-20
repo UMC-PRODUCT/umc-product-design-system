@@ -71,7 +71,12 @@ export function SideNavigationDefault() {
           className="h-[560px]"
           data-spec-id="side-navigation-root side-navigation-title side-navigation-menu-item side-navigation-menu-item-hover side-navigation-menu-item-label side-navigation-menu-item-icon side-navigation-group-selected side-navigation-group-selected-icon side-navigation-submenu-item side-navigation-submenu-bullet side-navigation-submenu-item-selected side-navigation-submenu-bullet-selected"
         >
-          <SideNavigation title="관리 메뉴" items={ITEMS} currentPath={path} />
+          <SideNavigation
+            className="w-(--umc-layout-sidebar-width)"
+            title="관리 메뉴"
+            items={ITEMS}
+            currentPath={path}
+          />
         </div>
       </PreviewLinks>
     </div>
@@ -87,6 +92,7 @@ export function SideNavigationWithSlot() {
       <PreviewLinks onNavigate={setPath}>
         <div className="h-[480px]">
           <SideNavigation
+            className="w-(--umc-layout-sidebar-width)"
             aria-label="검색 슬롯 예시"
             items={filterItems(ITEMS, query)}
             currentPath={path}
@@ -101,6 +107,7 @@ export function SideNavigationWithSlot() {
         </div>
         <div className="h-[480px]" data-spec-id="side-navigation-slot">
           <SideNavigation
+            className="w-(--umc-layout-sidebar-width)"
             aria-label="맥락 전환 슬롯 예시"
             items={ITEMS}
             currentPath={path}

@@ -1,0 +1,121 @@
+{
+  "component": "ChartLegend",
+  "figmaSection": "3032:92195",
+  "page": "/components/chart/chart-legend/",
+  "figmaDiffers": {
+    "flex-wrap": "피그마 범례는 한 줄이다. 좁은 폭에서 넘치지 않게 줄을 바꾸고, 바꾼 줄 사이를 4px 띄운다"
+  },
+  "nodes": [
+    {
+      "specId": "chart-legend-list",
+      "node": "4394:49356",
+      "variant": "Bar Chart/Category Group 예시의 범례",
+      "target": ".umc-chart-legend",
+      "expected": {
+        "column-gap": "8px",
+        "align-items": "center"
+      },
+      "figmaDiffers": {
+        "column-gap": "피그마 예시마다 범례 간격이 다르다(학교별 지원·평가 현황 8px, 프로젝트별 지원 현황 10px). 학교별 현황의 8px을 쓴다"
+      }
+    },
+    {
+      "specId": "chart-legend-item",
+      "node": "4394:49291",
+      "variant": "Property 1=Purple-500",
+      "target": ".umc-chart-legend__item",
+      "expected": {
+        "column-gap": "4px",
+        "align-items": "center",
+        "color": "#3f4141",
+        "font-size": "13px",
+        "font-weight": "500",
+        "line-height": "18.85px"
+      }
+    },
+    {
+      "specId": "chart-legend-item",
+      "node": "4394:49292",
+      "variant": "Property 1=Purple-500",
+      "target": ".umc-chart-legend__item[data-color=\"pm\"] .umc-chart-legend__dot",
+      "expected": {
+        "width": "8px",
+        "height": "8px",
+        "border-top-left-radius": "999px",
+        "background-color": "#ad6feb"
+      }
+    },
+    {
+      "specId": "chart-legend-item",
+      "node": "4394:49295",
+      "variant": "Property 1=Pink-500",
+      "target": ".umc-chart-legend__item[data-color=\"design\"] .umc-chart-legend__dot",
+      "expected": {
+        "background-color": "#ee63a9"
+      }
+    },
+    {
+      "specId": "chart-legend-item",
+      "node": "4394:49300",
+      "variant": "Property 1=Yellow-500",
+      "target": ".umc-chart-legend__item[data-color=\"web-pe\"] .umc-chart-legend__dot",
+      "expected": {
+        "background-color": "#f59b00"
+      }
+    },
+    {
+      "specId": "chart-legend-item",
+      "node": "4394:49303",
+      "variant": "Property 1=Blue-500",
+      "target": ".umc-chart-legend__item[data-color=\"mobile-pe\"] .umc-chart-legend__dot",
+      "expected": {
+        "background-color": "#5e7ff2"
+      }
+    },
+    {
+      "specId": "chart-legend-teal",
+      "node": "4394:49272",
+      "variant": "Property 1=Teal-500",
+      "target": ".umc-chart-legend__item[data-color=\"teal-500\"] .umc-chart-legend__dot",
+      "expected": {
+        "background-color": "#008a80"
+      }
+    },
+    {
+      "specId": "chart-legend-teal",
+      "node": "4394:49280",
+      "variant": "Property 1=Teal-400",
+      "target": ".umc-chart-legend__item[data-color=\"teal-400\"] .umc-chart-legend__dot",
+      "expected": {
+        "background-color": "#39a9a1"
+      }
+    },
+    {
+      "specId": "chart-legend-teal",
+      "node": "4394:49283",
+      "variant": "Property 1=Teal-300",
+      "target": ".umc-chart-legend__item[data-color=\"teal-300\"] .umc-chart-legend__dot",
+      "expected": {
+        "background-color": "#7ac7c1"
+      }
+    },
+    {
+      "specId": "chart-legend-teal",
+      "node": "4394:49286",
+      "variant": "Property 1=Teal-200",
+      "target": ".umc-chart-legend__item[data-color=\"teal-200\"] .umc-chart-legend__dot",
+      "expected": {
+        "background-color": "#b3e6e1"
+      }
+    },
+    {
+      "specId": "chart-legend-teal",
+      "node": "4394:49289",
+      "variant": "Property 1=Gray-200",
+      "target": ".umc-chart-legend__item[data-color=\"reference\"] .umc-chart-legend__dot",
+      "expected": {
+        "background-color": "#e2e4e3"
+      }
+    }
+  ]
+}

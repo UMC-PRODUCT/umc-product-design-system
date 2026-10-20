@@ -1,0 +1,57 @@
+---
+title: ImageThumbnail
+description: 학교 로고처럼 작은 이미지를 정사각형 칸에 보여 주는 썸네일입니다.
+---
+
+import {
+  ImageThumbnailAllVariants,
+  ImageThumbnailDefault,
+  ImageThumbnailSizes,
+} from "../../../../components/react/display/ImageThumbnailExamples.tsx"
+
+피그마 `Image Thumbnail`을 옮긴 컴포넌트입니다. 학교 로고나 프로젝트 대표 이미지처럼 작은 이미지를 둥근 정사각형 칸에 채워 보여 줍니다. 이미지를 고르고 미리 보는 칸은 [ImageThumbnailEditor](../../forms/image-thumbnail-editor/)를 씁니다.
+
+```tsx
+import { ImageThumbnail } from "@umc-product/react"
+
+<ImageThumbnail src={school.logoUrl} alt={`${school.name} 로고`} />
+```
+
+<ImageThumbnailDefault />
+
+## 대체 로고
+
+`src`가 없거나 이미지를 불러오지 못하면 회색 UMC 로고를 대신 보여 줍니다. 대체 로고를 보여 줄 때는 칸 전체가 `alt`를 이름으로 가진 이미지가 되므로, 화면 낭독기는 어느 쪽이든 같은 이름을 읽습니다.
+
+## 크기
+
+기본 크기는 50px입니다. `size`에 한 변의 px 값을 넘기면 모서리 반지름과 대체 로고도 같은 비율로 커집니다. 피그마에서 Scale로 키운 것과 같은 모양입니다.
+
+```tsx
+<ImageThumbnail size={80} src={school.logoUrl} alt={`${school.name} 로고`} />
+```
+
+<ImageThumbnailSizes />
+
+Tailwind로 크기를 정하려면 `size` 대신 `className`으로 `--umc-image-thumbnail-size` 변수를 바꿉니다(예: `[--umc-image-thumbnail-size:64px]`). `width`나 `height`만 바꾸면 모서리와 로고는 50px 기준으로 남습니다.
+
+## 접근성
+
+`alt`는 꼭 넘깁니다. 옆에 학교 이름이 이미 있는 것처럼 이미지가 꾸밈일 뿐이면 `alt=""`를 넘겨 화면 낭독기가 건너뛰게 합니다.
+
+## 모든 변형
+
+피그마 `Image Thumbnail` 변형 2개를 그렸습니다.
+
+<ImageThumbnailAllVariants />
+
+## props
+
+네이티브 `span` 속성을 받습니다.
+
+| prop        | 타입             | 기본값 | 설명                                                   |
+| ----------- | ---------------- | ------ | ------------------------------------------------------ |
+| `src`       | `string \| null` | -      | 이미지 주소. 없거나 불러오지 못하면 UMC 로고를 보여 줌 |
+| `alt`       | `string`         | -      | 대체 텍스트(필수). 꾸밈용 이미지는 `""`                |
+| `size`      | `number`         | `50`   | 한 변의 px 크기. 모서리와 대체 로고가 같은 비율로 커짐 |
+| `className` | `string`         | -      | 바깥에 더할 CSS 클래스                                 |

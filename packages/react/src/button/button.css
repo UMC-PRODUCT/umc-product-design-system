@@ -12,6 +12,7 @@
     --umc-button-inset-shadow-pressed: 0 0 #0000;
     --umc-button-loader-dot-size: 8px;
     --umc-button-loader-gap: 5px;
+    --umc-button-icon-fg: var(--umc-button-fg);
 
     position: relative;
     display: inline-flex;
@@ -111,6 +112,7 @@
     --umc-button-inset-shadow-pressed: var(--umc-shadow-inner-neutral-2);
     --umc-button-fg: var(--umc-color-teal-grey-600);
     --umc-button-fg-disabled: var(--umc-color-teal-grey-300);
+    --umc-button-icon-fg: var(--umc-color-icon-neutral-medium-500);
   }
 
   .umc-button[data-variant="weak"][data-color="white"] {
@@ -119,6 +121,7 @@
     --umc-button-inset-shadow-pressed: var(--umc-shadow-inner-neutral-2);
     --umc-button-fg: var(--umc-color-teal-grey-600);
     --umc-button-fg-disabled: var(--umc-color-teal-grey-300);
+    --umc-button-icon-fg: var(--umc-color-icon-neutral-medium-500);
   }
 
   .umc-button[data-size="lg"] {
@@ -144,6 +147,8 @@
     --umc-button-padding-icon: 14px;
     --umc-button-radius: var(--umc-radius-button-14);
     --umc-button-icon-size: 16px;
+    --umc-button-icon-only-padding-inline: var(--umc-spacing-padding-12);
+    --umc-button-icon-only-icon-size: 30px;
     --umc-button-font-family: var(--umc-typography-label-2-medium-font-family);
     --umc-button-font-size: var(--umc-typography-label-2-medium-font-size);
     --umc-button-font-weight: var(--umc-typography-label-2-medium-font-weight);
@@ -160,6 +165,8 @@
     --umc-button-padding-icon: var(--umc-spacing-padding-10);
     --umc-button-radius: var(--umc-radius-button-12);
     --umc-button-icon-size: 14px;
+    --umc-button-icon-only-padding-inline: var(--umc-spacing-padding-8);
+    --umc-button-icon-only-icon-size: 24px;
     --umc-button-font-family: var(--umc-typography-label-3-medium-font-family);
     --umc-button-font-size: var(--umc-typography-label-3-medium-font-size);
     --umc-button-font-weight: var(--umc-typography-label-3-medium-font-weight);
@@ -176,6 +183,8 @@
     --umc-button-padding-icon: var(--umc-spacing-padding-10);
     --umc-button-radius: var(--umc-radius-button-10);
     --umc-button-icon-size: 14px;
+    --umc-button-icon-only-padding-inline: var(--umc-spacing-padding-8);
+    --umc-button-icon-only-icon-size: 20px;
     --umc-button-font-family: var(--umc-typography-label-4-medium-font-family);
     --umc-button-font-size: var(--umc-typography-label-4-medium-font-size);
     --umc-button-font-weight: var(--umc-typography-label-4-medium-font-weight);
@@ -193,11 +202,19 @@
     padding-inline-end: var(--umc-button-padding-icon);
   }
 
+  .umc-button[data-icon-only] {
+    --umc-button-icon-size: var(--umc-button-icon-only-icon-size);
+
+    min-width: 0;
+    padding-inline: var(--umc-button-icon-only-padding-inline);
+  }
+
   .umc-button__icon {
     display: inline-flex;
     flex-shrink: 0;
     width: var(--umc-button-icon-size);
     height: var(--umc-button-icon-size);
+    color: var(--umc-button-icon-fg);
   }
 
   .umc-button__icon > svg {
@@ -243,6 +260,11 @@
     );
     color: var(--umc-button-fg-disabled);
     cursor: default;
+  }
+
+  .umc-button:disabled .umc-button__icon,
+  .umc-button[aria-disabled="true"] .umc-button__icon {
+    color: var(--umc-button-fg-disabled);
   }
 
   .umc-button[data-loading] {

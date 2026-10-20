@@ -253,6 +253,10 @@
   padding: 0;
 }
 
+.umc-example-last-bar .umc-ranked-bar-chart__item:not(:last-child) {
+  display: none;
+}
+
 .umc-icon-gallery {
   display: grid;
   gap: 1rem;

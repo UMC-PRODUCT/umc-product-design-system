@@ -5,11 +5,13 @@
 @import "./role-tag/role-tag.css";
 @import "./bubble/bubble.css";
 @import "./progress-bar/progress-bar.css";
+@import "./progress-summary/progress-summary.css";
 @import "./number-badge/number-badge.css";
 @import "./dot-badge/dot-badge.css";
 @import "./skeleton/skeleton.css";
 @import "./divider/divider.css";
 @import "./guidance-message/guidance-message.css";
+@import "./image-thumbnail/image-thumbnail.css";
 
 @layer components {
 }

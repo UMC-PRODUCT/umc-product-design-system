@@ -23,6 +23,7 @@ export type CheckboxProps = {
   size?: CheckboxSize
   invalid?: boolean
   disabled?: boolean
+  readOnly?: boolean
   required?: boolean
   name?: string
   value?: string
@@ -49,6 +50,7 @@ export function Checkbox({
   size = "md",
   invalid,
   disabled,
+  readOnly,
   required,
   name,
   value,
@@ -80,6 +82,7 @@ export function Checkbox({
           onCheckedChange ? (next) => onCheckedChange(next) : undefined
         }
         disabled={disabled}
+        readOnly={readOnly}
         required={required}
         name={name}
         value={value}

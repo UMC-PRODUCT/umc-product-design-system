@@ -1,0 +1,99 @@
+{
+  "component": "FormChoiceList",
+  "figmaSection": "4469:58260",
+  "page": "/components/questionnaire/form-choice-list/",
+  "nodes": [
+    {
+      "specId": "form-choice-list-box",
+      "node": "4437:82408",
+      "variant": "Form/Radio Button Option List, Mode=Respond",
+      "target": ".umc-form-choice-list",
+      "expected": {
+        "padding-top": "4px",
+        "padding-left": "4px",
+        "row-gap": "2px",
+        "border-top-width": "1px",
+        "border-top-color": "#e2e3e3",
+        "border-top-left-radius": "12px",
+        "background-color": "#ffffff"
+      }
+    },
+    {
+      "specId": "form-choice-list-option",
+      "node": "4480:63085",
+      "variant": "Radio Button Option Item, Mode=Respond, State=Filled, Disabled=False",
+      "target": ".umc-form-choice-list__option:not([data-selected])",
+      "expected": {
+        "height": "40px",
+        "padding-top": "8px",
+        "padding-left": "6px",
+        "padding-right": "10px",
+        "column-gap": "12px",
+        "border-top-left-radius": "8px",
+        "background-color": "#ffffff"
+      }
+    },
+    {
+      "specId": "form-choice-list-label",
+      "node": "4480:63087",
+      "variant": "Radio Button Option Item, Mode=Respond, State=Filled, Disabled=False",
+      "target": ".umc-form-choice-list__option:not([data-selected]) .umc-form-choice-list__label",
+      "expected": {
+        "color": "#0f1010",
+        "font-size": "16px",
+        "font-weight": "400",
+        "line-height": "23.2px",
+        "letter-spacing": "-0.16px"
+      }
+    },
+    {
+      "specId": "form-choice-list-selected",
+      "node": "4430:51003",
+      "variant": "Radio Button Option Item, Mode=Respond, State=Selected, Disabled=False",
+      "target": ".umc-form-choice-list__option[data-selected]",
+      "expected": {
+        "background-color": "#f4fbfa"
+      },
+      "figmaDiffers": {
+        "padding-right": "피그마는 고른 줄만 오른쪽 여백이 8px(나머지 10px)이다. 줄이 목록 폭을 채워 차이가 보이지 않아 코드는 10px로 둔다"
+      }
+    },
+    {
+      "specId": "form-choice-list-selected-label",
+      "node": "4430:51005",
+      "variant": "Radio Button Option Item, Mode=Respond, State=Selected, Disabled=False",
+      "target": ".umc-form-choice-list__option[data-selected] .umc-form-choice-list__label",
+      "expected": {
+        "color": "#02746c",
+        "font-weight": "500"
+      }
+    },
+    {
+      "specId": "form-choice-list-hover",
+      "node": "4480:63088",
+      "variant": "Radio Button Option Item, Mode=Respond, State=Hover, Disabled=False",
+      "target": ".umc-form-choice-list__option",
+      "expected": {
+        "background-color": "#fbfcfc"
+      }
+    },
+    {
+      "specId": "form-choice-list-disabled",
+      "node": "4430:50987",
+      "variant": "Radio Button Option Item, Mode=Respond, State=Filled, Disabled=True",
+      "target": ".umc-form-choice-list__label",
+      "expected": {
+        "color": "#cccccc"
+      }
+    },
+    {
+      "specId": "form-choice-list-disabled-selected",
+      "node": "4437:79773",
+      "variant": "Radio Button Option Item, Mode=Respond, State=Selected, Disabled=True",
+      "target": ".umc-form-choice-list__option",
+      "expected": {
+        "background-color": "#ffffff"
+      }
+    }
+  ]
+}
