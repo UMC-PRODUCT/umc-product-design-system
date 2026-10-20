@@ -1,0 +1,287 @@
+{
+  "component": "RankedBarChart",
+  "figmaSection": "2678:50455",
+  "page": "/components/chart/ranked-bar-chart/",
+  "figmaDiffers": {
+    "padding-block": "피그마 막대 묶음은 위아래 여백이 없다. 막대에 키보드 초점이 갔을 때 외곽선이 잘리지 않게 위아래 4px을 더했다",
+    "overflow-x": "피그마는 988px 카드 폭만 그린다. 좁은 화면에서는 막대 줄을 가로로 스크롤한다",
+    "min-height": "피그마 1~13 구간 막대는 2px부터다. 코드는 0보다 큰 값이면 2px보다 낮아지지 않게 하고, 0은 1px로 그린다"
+  },
+  "nodes": [
+    {
+      "specId": "ranked-bar-chart",
+      "node": "3032:89920",
+      "variant": "래퍼런스 값이 있는 순위 그래프의 막대 줄",
+      "target": ".umc-ranked-bar-chart",
+      "expected": {
+        "column-gap": "10px",
+        "padding-left": "10px",
+        "background-image~": "#eff0f0 0px, #eff0f0 0.5px"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart",
+      "node": "2678:50457",
+      "variant": "Value Range=5층: 81~100, Rank=1st",
+      "target": ".umc-ranked-bar-chart__item[data-tone=\"1st\"]",
+      "expected": {
+        "width": "82px"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart",
+      "node": "2678:50458",
+      "variant": "Value Range=5층: 81~100, Rank=1st",
+      "target": ".umc-ranked-bar-chart__item[data-tone=\"1st\"] .umc-ranked-bar-chart__amount",
+      "expected": {
+        "column-gap": "1px",
+        "padding-left": "4px",
+        "margin-bottom": "10px",
+        "color": "#02746c"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart",
+      "node": "2678:50459",
+      "variant": "Value Range=5층: 81~100, Rank=1st",
+      "target": ".umc-ranked-bar-chart__item[data-tone=\"1st\"] .umc-ranked-bar-chart__number",
+      "expected": {
+        "font-size": "22px",
+        "font-weight": "700",
+        "line-height": "22px",
+        "letter-spacing": "-0.44px"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart",
+      "node": "2678:50460",
+      "variant": "Value Range=5층: 81~100, Rank=1st",
+      "target": ".umc-ranked-bar-chart__item[data-tone=\"1st\"] .umc-ranked-bar-chart__unit",
+      "expected": {
+        "color": "#02746c",
+        "font-size": "12px",
+        "letter-spacing": "-0.24px",
+        "padding-bottom": "2px"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart",
+      "node": "2678:50462",
+      "variant": "Value Range=5층: 81~100, Rank=1st",
+      "target": ".umc-ranked-bar-chart__item[data-tone=\"1st\"] .umc-ranked-bar-chart__bar",
+      "expected": {
+        "height": "200px",
+        "padding-top": "8px",
+        "padding-left": "8px",
+        "border-top-left-radius": "6px",
+        "border-top-right-radius": "6px",
+        "background-color": "#02746c"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart",
+      "node": "2678:50463",
+      "variant": "Value Range=5층: 81~100, Rank=1st",
+      "target": ".umc-ranked-bar-chart__item[data-tone=\"1st\"] .umc-ranked-bar-chart__label",
+      "expected": {
+        "color": "#ffffff",
+        "font-size": "12px",
+        "font-weight": "700",
+        "line-height": "16.8px"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart",
+      "node": "2678:50469",
+      "variant": "Value Range=5층: 81~100, Rank=2nd",
+      "target": ".umc-ranked-bar-chart__item[data-tone=\"2nd\"] .umc-ranked-bar-chart__bar",
+      "expected": {
+        "background-color": "#39a9a1"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart",
+      "node": "2678:50470",
+      "variant": "Value Range=5층: 81~100, Rank=2nd",
+      "target": ".umc-ranked-bar-chart__item[data-tone=\"2nd\"] .umc-ranked-bar-chart__label",
+      "expected": {
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart",
+      "node": "2678:50476",
+      "variant": "Value Range=5층: 81~100, Rank=3rd",
+      "target": ".umc-ranked-bar-chart__item[data-tone=\"3rd\"] .umc-ranked-bar-chart__bar",
+      "expected": {
+        "background-color": "#b3e5e1"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart",
+      "node": "2678:50477",
+      "variant": "Value Range=5층: 81~100, Rank=3rd",
+      "target": ".umc-ranked-bar-chart__item[data-tone=\"3rd\"] .umc-ranked-bar-chart__label",
+      "expected": {
+        "color": "#02746c"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart",
+      "node": "2678:50511",
+      "variant": "Value Range=4층: 61~80, Rank=4th",
+      "target": ".umc-ranked-bar-chart__item[data-tone=\"4th\"] .umc-ranked-bar-chart__bar",
+      "expected": {
+        "background-color": "#ddf4f1"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart",
+      "node": "2678:50629",
+      "variant": "Value Range=*1층: 1~13, Rank=4th",
+      "target": ".umc-ranked-bar-chart__item[data-label=\"outside\"][data-tone=\"4th\"] .umc-ranked-bar-chart__stack",
+      "expected": {
+        "row-gap": "4px"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart",
+      "node": "2678:50631",
+      "variant": "Value Range=*1층: 1~13, Rank=4th",
+      "target": ".umc-ranked-bar-chart__item[data-label=\"outside\"][data-tone=\"4th\"] .umc-ranked-bar-chart__label",
+      "expected": {
+        "padding-top": "4px",
+        "padding-left": "8px",
+        "color": "#02746c",
+        "white-space": "nowrap",
+        "text-overflow": "ellipsis"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart",
+      "node": "2678:50632",
+      "variant": "Value Range=*1층: 1~13, Rank=4th",
+      "target": ".umc-ranked-bar-chart__item[data-label=\"outside\"][data-tone=\"4th\"] .umc-ranked-bar-chart__bar",
+      "expected": {
+        "border-top-left-radius": "4px",
+        "background-color": "#ddf4f1"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart",
+      "node": "2678:50641",
+      "variant": "Value Range=0, Rank=None",
+      "target": ".umc-ranked-bar-chart__item[data-tone=\"none\"] .umc-ranked-bar-chart__bar",
+      "expected": {
+        "height": "1px",
+        "background-color": "#ddf4f1"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart-reference",
+      "node": "2678:50642",
+      "variant": "Web/Bar Chart/Reference Bar",
+      "target": ".umc-ranked-bar-chart__reference",
+      "expected": {
+        "width": "82px",
+        "border-top-left-radius": "6px",
+        "background-color": "#f6f7f7"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart-rank",
+      "node": "4365:29589",
+      "variant": "Rank=1st",
+      "target": ".umc-ranked-bar-chart__item[data-tone=\"1st\"]",
+      "expected": {
+        "width": "72px"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart-rank",
+      "node": "4365:29594",
+      "variant": "Rank=1st",
+      "target": ".umc-ranked-bar-chart__item[data-tone=\"1st\"] .umc-ranked-bar-chart__bar",
+      "expected": {
+        "height": "143px",
+        "background-color": "#02746c"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart-rank",
+      "node": "4365:29593",
+      "variant": "Rank=1st",
+      "target": ".umc-ranked-bar-chart__item[data-tone=\"1st\"] .umc-ranked-bar-chart__unit",
+      "expected": {
+        "color": "#0b6b64"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart-rank",
+      "node": "4365:29595",
+      "variant": "Rank=1st",
+      "target": ".umc-ranked-bar-chart__item[data-tone=\"1st\"] .umc-ranked-bar-chart__label",
+      "expected": {
+        "letter-spacing": "-0.24px"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart-rank",
+      "node": "4365:29601",
+      "variant": "Rank=2nd",
+      "target": ".umc-ranked-bar-chart__item[data-tone=\"2nd\"] .umc-ranked-bar-chart__bar",
+      "expected": {
+        "height": "107.25px"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart-rank",
+      "node": "4365:29608",
+      "variant": "Rank=3rd",
+      "target": ".umc-ranked-bar-chart__item[data-tone=\"3rd\"] .umc-ranked-bar-chart__bar",
+      "expected": {
+        "height": "71.5px"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart-rank",
+      "node": "4365:29615",
+      "variant": "Rank=4th",
+      "target": ".umc-ranked-bar-chart__item[data-tone=\"4th\"] .umc-ranked-bar-chart__bar",
+      "expected": {
+        "height": "35.75px"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart-rank",
+      "node": "4365:29623",
+      "variant": "Rank=5th",
+      "target": ".umc-ranked-bar-chart__item[data-tone=\"5th\"] .umc-ranked-bar-chart__label",
+      "expected": {
+        "padding-left": "4px",
+        "padding-top": "0px"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart-rank",
+      "node": "4365:29625",
+      "variant": "Rank=5th",
+      "target": ".umc-ranked-bar-chart__item[data-tone=\"5th\"] .umc-ranked-bar-chart__bar",
+      "expected": {
+        "height": "8px",
+        "border-top-left-radius": "6px",
+        "background-color": "#e9f7f5"
+      }
+    },
+    {
+      "specId": "ranked-bar-chart-rank",
+      "node": "4365:29628",
+      "variant": "Rank=None",
+      "target": ".umc-ranked-bar-chart__item[data-tone=\"none\"] .umc-ranked-bar-chart__bar",
+      "expected": {
+        "height": "5px",
+        "background-color": "#eff0f0"
+      }
+    }
+  ]
+}

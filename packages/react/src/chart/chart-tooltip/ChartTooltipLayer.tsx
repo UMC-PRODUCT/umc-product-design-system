@@ -146,15 +146,21 @@ const partsOf = ({
 type ChartTooltipDescriptionProps = {
   id: string
   content: ChartTooltipContent
+  leading?: ReactNode
 }
 
 export function ChartTooltipDescription({
   id,
   content,
+  leading,
 }: ChartTooltipDescriptionProps) {
+  const parts = [
+    ...(leading === undefined ? [] : [{ key: "leading", node: leading }]),
+    ...partsOf(content),
+  ]
   return (
     <span id={id} className="umc-visually-hidden">
-      {partsOf(content).map(({ key, node }, index) => (
+      {parts.map(({ key, node }, index) => (
         <Fragment key={key}>
           {index > 0 && ", "}
           {node}

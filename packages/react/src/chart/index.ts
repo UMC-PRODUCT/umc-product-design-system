@@ -23,3 +23,9 @@ export {
   type CategoryGroupChartProps,
   type CategoryGroupChartSeries,
 } from "./category-group-chart/index.ts"
+export {
+  RankedBarChart,
+  type RankedBarChartHeightBy,
+  type RankedBarChartItem,
+  type RankedBarChartProps,
+} from "./ranked-bar-chart/index.ts"
