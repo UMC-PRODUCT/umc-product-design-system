@@ -66,7 +66,7 @@ export function ChartTooltipLayer({
 
 type ChartTooltipTriggerProps = Omit<
   ComponentPropsWithRef<"button">,
-  "type" | "id"
+  "type" | "id" | "onPointerDown" | "onClick"
 > & {
   handle: ChartTooltipHandle
   payload: string
@@ -79,8 +79,6 @@ export function ChartTooltipTrigger({
   handle,
   payload,
   id,
-  onPointerDown,
-  onClick,
   ...props
 }: ChartTooltipTriggerProps) {
   const pointerTypeRef = useRef("")
@@ -95,10 +93,8 @@ export function ChartTooltipTrigger({
       closeOnClick={false}
       onPointerDown={(event) => {
         pointerTypeRef.current = event.pointerType
-        onPointerDown?.(event)
       }}
       onClick={(event) => {
-        onClick?.(event)
         if (pointerTypeRef.current !== "touch") return
         const openedHere =
           event.currentTarget.hasAttribute(POPUP_OPEN_ATTRIBUTE)
