@@ -130,6 +130,83 @@ pnpm up "@umc-product/*" --latest
 <!-- releases:start -->
 
 <details open>
+<summary><b>0.6.0</b> · 2026-10-20 · 깨지는 변경 1 · 새 기능 23 · 화면 변화 2 · 수정 1</summary>
+
+**깨지는 변경**
+
+- **react** `SideNavigation`이 216px 고정 폭 대신 부모 폭을 채웁니다. 피그마 `Web/Side Navigation`의 너비가 Fill이라, 사이드바 칸의 폭은 레이아웃이 정합니다.
+
+  | 이전                                                                   | 이후                                 |
+  | ---------------------------------------------------------------------- | ------------------------------------ |
+  | `width: var(--umc-layout-sidebar-width)`(216px), 넓은 부모에서도 216px | `width: 100%`, 부모 폭을 그대로 채움 |
+
+  본문과 같은 flex 행에 바로 놓았다면 내비게이션이 행 전체로 늘어나 본문이 밀려납니다. 사이드바 칸 폭을 정하고 줄어들지 않게 합니다.
+
+  ```tsx
+  <SideNavigation
+    className="w-(--umc-layout-sidebar-width) shrink-0"
+    items={items}
+    currentPath={pathname}
+  />
+  ```
+
+  Tailwind를 쓰지 않는 앱은 감싸는 요소에 `width: var(--umc-layout-sidebar-width)`와 `flex-shrink: 0`을 줍니다. 쓰는 곳은 아래 명령으로 찾습니다.
+
+  ```bash
+  rg -n "<SideNavigation" -g "*.{ts,tsx}"
+  ```
+
+**새 기능**
+
+- **react** `Button`에 아이콘만 있는 버튼을 더합니다. `icon`에 아이콘을 넘기고 라벨을 비우면 md 54×48, sm 40×40, xs 36×36 크기로 그리고, 글자가 없는 대신 `aria-label`이나 `aria-labelledby`를 빠뜨리면 타입 검사에서 걸립니다.
+- **react** `CategoryGroupChart`를 더합니다. 피그마 `Bar Chart/Category Group`을 옮긴 막대 차트로, 학교나 프로젝트 같은 묶음마다 계열(`series`)의 값을 가는 막대로 나란히 그립니다. 묶음에 비교값(`references`)을 넘기면 회색 비교 막대를 겹쳐 그리고, 묶음에 마우스를 올리거나 키보드로 가거나 누르면 `ChartTooltip` 모양의 요약이 뜹니다. 묶음은 버튼이며 화살표 키로 옮겨 다닙니다.
+- **react** 새 문서 그룹 "차트"에 `ChartLegend`를 더합니다. 피그마 `Chart/Legend Item`을 옮긴 범례로, 계열 목록(`series`)을 받아 색 점과 이름을 늘어놓습니다. 색은 파트 4종(`pm`, `design`, `web-pe`, `mobile-pe`), 청록 4단계(`teal-500`~`teal-200`), 비교값(`reference`) 중에서 고릅니다.
+- **react** `ChartTooltip`을 더합니다. 피그마 `Chart/Tooltip`을 옮긴 요약 상자로, 제목, 합계, 항목(색 점, 이름, 값)과 보조 설명을 그립니다. 항목에 비교값(`reference`)이나 합계 비교값(`referenceSummary`)을 넘기면 "10명 / 16명"처럼 값과 비교값을 나란히 보여 줍니다.
+- **react** `Checkbox`에 `readOnly`를 더합니다. 읽기 전용이면 눌러도 체크 상태가 바뀌지 않고, 화면 낭독기에는 `aria-readonly`로 알립니다. 모양은 그대로이고 커서만 기본 화살표로 바뀝니다. 작성된 지원서를 조회하는 화면처럼 선택 결과를 보여 주기만 할 때 씁니다.
+- **react** `ColumnChart`를 더합니다. 피그마 `Bar Chart/Column`을 옮긴 세로 막대 차트로, 항목마다 막대 위에 값을, 아래에 이름을 적습니다. 막대 높이는 값을 가장 큰 값으로 나눈 비율이고, 정해진 기준이 있으면 `max`로 넘깁니다. 막대 모양은 항목의 `mode`(`neutral`, `primary-weak`, `primary-strong`)로 고릅니다.
+- **react** `DateNavigator`를 더합니다. 피그마 `Date Navigator`를 옮긴 컴포넌트로, 가운데 날짜(`children`) 양옆에 이전, 다음 화살표 버튼을 둡니다. 콜백(`onPrevious`, `onNext`)을 넘기지 않은 쪽 화살표는 비활성이 되고, 바뀐 날짜는 화면 낭독기가 읽습니다.
+- **react** 피그마 `Floating Action Button`을 옮긴 `FloatingActionButton`을 더합니다. 54px 원 안에 30px 아이콘(`icon`) 하나만 두는 버튼이고, 마우스를 올리면 배경과 테두리, 아이콘이 브랜드색으로 바뀝니다. 글자가 없어 `aria-label`이 타입에서 필수입니다.
+- **react** 질문지에서 링크나 파일을 붙이는 `FormAttachmentField`를 더합니다. 피그마 `Form/Attachment Field`의 응답 모드로, 비어 있으면 링크 입력과 "파일 업로드" 버튼을, 첨부(`attachment`)가 있으면 클립 아이콘과 링크, "삭제" 버튼을 보여 줍니다. 파일은 기본으로 200MB 이하 PDF만 받아 `onFileSelect`로 넘기고, 맞지 않으면 `onReject`로 이유를 넘깁니다. 업로드와 링크를 첨부로 확정하는 일은 앱이 맡습니다. 질문지 편집 화면에서는 `preview`를 주면 입력 칸과 버튼을 누를 수 없는 미리보기로 그립니다.
+- **react** 선택 질문의 보기를 편집하는 `FormChoiceListEditor`를 더합니다. 피그마 `Form/Radio Button Option List`와 `Form/Check Box Option List`의 편집 모드로, 보기마다 입력 칸을 두고 "옵션 추가" 줄과 삭제 버튼을 그립니다. 보기 목록은 앱이 들고 있고 `onOptionChange`, `onOptionAdd`, `onOptionRemove`로 바뀐 내용을 받습니다. 추가와 삭제 콜백을 넘기지 않으면 그 버튼도 그리지 않습니다.
+- **react** 질문지에서 보기를 고르는 `FormChoiceList`를 더합니다. 피그마 `Form/Radio Button Option List`와 `Form/Check Box Option List`의 응답 모드로, `type="single"`이면 라디오로 하나를, `type="multiple"`이면 체크박스로 여러 개를 고릅니다. 고른 줄은 연한 청록 배경에 브랜드색 글자로 바뀌고, 보기마다 `disabled`를 줄 수 있습니다.
+- **react** 질문지 편집 화면의 `FormQuestionEditor`와 `FormEditableQuestion`을 더합니다. 피그마 `Form/Question Editor`를 옮긴 `FormQuestionEditor`는 질문을 감싸 Hover 강조선과 활성(`active`) 상태의 필수 항목, 삭제, 질문 사용 스위치, `toolbar`를 그립니다. 필수 항목 체크와 제목 뒤 `*`는 `required` 하나를 따르고, `disabled`를 주면 안쪽 제목·설명 칸과 보기 편집, 첨부 미리보기도 함께 막힙니다. `onDelete`를 넘기지 않으면 삭제 버튼을 그리지 않습니다. 이동 손잡이는 `dragHandleProps`를 넘길 때만 그려서 끌어 옮기기 라이브러리와 연결합니다. `FormEditableQuestion`은 `Form/Question`의 편집 모드로, 제목과 설명이 입력 칸이고 답 칸 자리에 미리보기를 받습니다.
+- **react** 질문지 편집 화면에서 질문을 더하는 `FormQuestionToolbar`와 `FormQuestionTypeList`를 더합니다. 피그마 `Form/Question Toolbar`를 옮긴 툴바는 더하기 버튼으로 질문 유형 버튼을 열고 닫으며, 누른 유형을 `onTypeSelect`로 넘깁니다. `FormQuestionTypeList`는 유형 목록만 따로 쓰는 컴포넌트로, 편집 중인 질문의 유형을 고른 표시로 보여 주고 바꿉니다. 유형 목록(`items`)은 앱이 값, 라벨, 아이콘으로 넘깁니다.
+- **react** 새 문서 그룹 "질문지"에 `FormQuestion`과 `FormTextAnswer`를 더합니다. 피그마 `Form/Question`의 응답과 읽기 전용 모드를 옮긴 것으로, `FormQuestion`은 번호, 제목, 필수 별표, 설명(`SectionHeader` md)과 20px 들여 쓴 답 칸을 그립니다. 질문 제목과 설명이 안쪽 답 칸의 이름과 설명이 되고, `required`, `readOnly`, `disabled`가 답 칸에 전해집니다. `FormTextAnswer`는 `TextArea`에 이 연결만 더한 글 답 칸입니다.
+- **react** 질문을 묶는 `FormSection`을 더합니다. 피그마 `Form/Question Section`과 `Section Control`을 옮긴 것으로, `variant="static"`은 탭 모양 제목을, `variant="toggle"`은 "섹션 사용" 스위치가 있는 머리를 그립니다. 스위치를 끄면 본문을 지우지 않고 숨겨서 다시 켜도 쓰던 내용이 남습니다.
+- **react** `IconButton`을 더합니다. 피그마 `Icon Button`을 옮긴 26px, 30px 아이콘 버튼으로, 닫기나 표 머리 설정처럼 화면 안에 작게 놓는 버튼에 씁니다. 색은 `primary`, `white`, `neutral`, `error`이고 스타일은 `weak`, `fill`입니다. `aria-label`이나 `aria-labelledby`를 빠뜨리면 타입 검사에서 걸립니다.
+- **react** `ImageThumbnailEditor`를 더합니다. 피그마 `Image Thumbnail Editor`를 옮긴 업로드 칸입니다. 칸을 눌러 이미지 파일을 고르면 미리보기를 보여 주고 `onValueChange`로 `File`을 넘깁니다. 기본으로 PNG, SVG, 5MB 이하 파일만 받고(`accept`, `maxSize`로 변경), 맞지 않는 파일은 받지 않고 `onReject`로 파일과 이유(`"type"`, `"size"`)를 넘깁니다. 서버 업로드는 앱이 합니다. 기본 크기는 120px이고 `className`으로 바꾸며, 칸 안 문구는 `label`과 `description`으로 바꿉니다.
+- **react** `ImageThumbnail`을 더합니다. 피그마 `Image Thumbnail`을 옮긴 정사각형 이미지 칸으로, 학교 로고처럼 작은 이미지를 보여 줍니다. 기본 50px, 모서리 8px이고 `size`로 키우면 모서리와 대체 로고도 같은 비율로 커집니다. `src`가 없거나 이미지를 불러오지 못하면 회색 UMC 로고를 보여 주고, 이때 칸 전체가 `alt`를 이름으로 가진 이미지가 됩니다.
+- **react** `Pagination`을 더합니다. 피그마 `Pagination`을 옮긴 페이지 이동 번호 묶음으로 `totalPages`, `page`(또는 `defaultPage`), `onPageChange`를 받습니다. 번호는 `visibleCount`(기본 4)개씩 묶어 보여 주고, 넘어갈 페이지가 없는 쪽 화살표는 지웁니다. 화살표가 사라질 때 포커스는 현재 번호로 옮깁니다.
+- **react** `ProgressSummary`를 더합니다. 피그마 `Progress Summary`를 옮긴 진행 요약으로, 라벨, 개수(`value`/`max`), 퍼센트, 그라데이션 막대를 한 묶음으로 보여 줍니다. 퍼센트는 반올림하지만 끝나지 않았으면 99%, 하나라도 마쳤으면 1%에서 멈춥니다. 폭은 부모를 채웁니다.
+- **react** `RankedBarChart`를 더합니다. 피그마 `Web/Bar Chart/Ranked Bar`와 `Fixed Ranked Bar`를 옮긴 순위 막대 차트로, 항목을 값이 큰 순서로 늘어놓고 1~3위를 진한 청록에서 옅은 청록으로, 4위부터는 같은 색으로 칠합니다. 같은 값은 같은 순위입니다. `heightBy="value"`(기본)는 가장 큰 값을 200px로 두고 비례하며, `heightBy="rank"`는 순위마다 정해진 높이를 씁니다. 비교값(`reference`)을 넘기면 회색 비교 막대를 겹쳐 그리고, 막대에 마우스를 올리거나 키보드로 가거나 누르면 요약 툴팁이 뜹니다.
+- **react** `SectionHeader`를 더합니다. 피그마 `Web/Section Header`를 옮긴 구획 머리말로, 번호(`number`), 제목, 필수 별표(`required`), 설명(`description`), 제목 줄 오른쪽 슬롯(`slot`)을 보여 줍니다. 크기는 `lg`, `md`, `sm`이고, 제목은 기본 `h2`라 `level`로 단계를 바꿉니다.
+- **icons** 아이콘 `TextLineIcon`을 더합니다. 피그마 `Icon/Text_Line`을 옮긴 가로줄 두 개 아이콘입니다. 다른 아이콘처럼 굵기 세 가지(thin, regular, fill)를 `weight`로 고르고, 기본 굵기는 regular입니다.
+
+**화면 변화**
+
+- **react** `white` 버튼의 아이콘 색을 피그마에 맞춥니다. 글자색은 그대로입니다.
+
+  | 항목                | 전                     | 후                                 |
+  | ------------------- | ---------------------- | ---------------------------------- |
+  | `white` 버튼 아이콘 | #606262(글자색과 같음) | #7e7f7f(`icon-neutral-medium-500`) |
+
+- **react** 피그마 `Text Area`가 최소 높이를 빼고 Disabled 변형에 글자 수를 더한 것에 맞춰 `TextArea`가 바뀝니다.
+
+  | 항목                | 전    | 후                            |
+  | ------------------- | ----- | ----------------------------- |
+  | 최소 높이           | 120px | 없음(한 줄과 글자 수 약 79px) |
+  | 입력과 글자 수 사이 | 0px   | 4px                           |
+  | 비활성일 때 글자 수 | 숨김  | 보임                          |
+
+  전처럼 120px에서 시작하려면 `className="[--umc-text-area-min-height:120px]"`를 넘깁니다.
+
+**수정**
+
+- **react** 읽기 전용(`readOnly`) `TextArea`에 마우스를 올려도 테두리 색이 바뀌지 않습니다. 고칠 수 없는 칸이 고칠 수 있는 것처럼 보이던 문제입니다. 키보드 포커스 표시는 그대로 둡니다.
+
+</details>
+
+<details>
 <summary><b>0.5.0</b> · 2026-10-18 · 새 기능 3 · 화면 변화 1</summary>
 
 **새 기능**
