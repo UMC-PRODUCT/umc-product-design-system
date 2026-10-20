@@ -131,6 +131,25 @@ describe("RankedBarChart", () => {
       expect(itemOf("낮음").dataset["label"]).toBe("outside")
     })
 
+    it("막대 안 이름은 막대 높이에 들어가는 줄까지만 보여 주고 여섯 줄을 넘지 않는다", () => {
+      render(
+        <RankedBarChart
+          items={[
+            { key: "full", label: "가득", value: 100 },
+            { key: "two", label: "두 줄", value: 21 },
+            { key: "one", label: "한 줄", value: 14 },
+          ]}
+        />,
+      )
+      const linesOf = (name: string) =>
+        itemOf(name).style.getPropertyValue(
+          "--umc-ranked-bar-chart-label-lines",
+        )
+      expect(linesOf("가득")).toBe("6")
+      expect(linesOf("두 줄")).toBe("2")
+      expect(linesOf("한 줄")).toBe("1")
+    })
+
     it("max를 넘기면 그 값을 200px로 쓴다", () => {
       render(
         <RankedBarChart
@@ -202,6 +221,25 @@ describe("RankedBarChart", () => {
         "5th",
       ])
       expect(itemOf("마").dataset["label"]).toBe("outside")
+    })
+
+    it("4위 막대 안 이름은 한 줄만 보여 준다", () => {
+      render(
+        <RankedBarChart
+          heightBy="rank"
+          items={[
+            { key: "a", label: "가", value: 60 },
+            { key: "b", label: "나", value: 50 },
+            { key: "c", label: "다", value: 40 },
+            { key: "d", label: "Cassiopeia", value: 30 },
+          ]}
+        />,
+      )
+      expect(
+        itemOf("Cassiopeia").style.getPropertyValue(
+          "--umc-ranked-bar-chart-label-lines",
+        ),
+      ).toBe("1")
     })
 
     it("값이 없으면 숫자 없이 낮은 회색 막대만 그리고 이름은 화면 낭독기로 읽는다", () => {

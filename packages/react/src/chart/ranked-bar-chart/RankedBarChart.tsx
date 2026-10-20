@@ -47,6 +47,7 @@ export type RankedBarChartProps = Omit<
 
 type ColumnStyle = CSSProperties & {
   "--umc-ranked-bar-chart-bar-height": string
+  "--umc-ranked-bar-chart-label-lines": string
   "--umc-ranked-bar-chart-reference-height"?: string
 }
 
@@ -55,6 +56,9 @@ const INSIDE_LABEL_MIN_HEIGHT = 28
 const OUTSIDE_BAR_MIN_HEIGHT = 2
 const EMPTY_BAR_HEIGHT = 1
 const REFERENCE_MIN_HEIGHT = 32
+const INSIDE_LABEL_TOP_PADDING = 8
+const LABEL_LINE_HEIGHT = 16.8
+const INSIDE_LABEL_MAX_LINES = 6
 
 const RANK_HEIGHTS: Readonly<Record<RankTone, number>> = {
   "1st": 143,
@@ -70,6 +74,15 @@ const valueBarHeightOf = (value: number, max: number) => {
   if (height === 0) return EMPTY_BAR_HEIGHT
   return Math.max(height, OUTSIDE_BAR_MIN_HEIGHT)
 }
+
+const insideLabelLinesOf = (barHeight: number) =>
+  Math.min(
+    INSIDE_LABEL_MAX_LINES,
+    Math.max(
+      1,
+      Math.floor((barHeight - INSIDE_LABEL_TOP_PADDING) / LABEL_LINE_HEIGHT),
+    ),
+  )
 
 const referenceHeightOf = (reference: number, max: number) =>
   Math.max(ratioOf(reference, max) * PLOT_HEIGHT, REFERENCE_MIN_HEIGHT)
@@ -134,6 +147,9 @@ export function RankedBarChart({
         const hasReference = scalesByValue && item.reference !== undefined
         const style: ColumnStyle = {
           "--umc-ranked-bar-chart-bar-height": `${barHeight}px`,
+          "--umc-ranked-bar-chart-label-lines": String(
+            insideLabelLinesOf(barHeight),
+          ),
           ...(hasReference && {
             "--umc-ranked-bar-chart-reference-height": `${referenceHeightOf(item.reference ?? 0, scale)}px`,
           }),

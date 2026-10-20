@@ -44,6 +44,7 @@
   .umc-ranked-bar-chart__item {
     --umc-ranked-bar-chart-bar-height: 0;
     --umc-ranked-bar-chart-reference-height: 0;
+    --umc-ranked-bar-chart-label-lines: 1;
     --umc-ranked-bar-chart-bar: var(--umc-color-teal-100);
     --umc-ranked-bar-chart-inside-label: var(
       --umc-color-text-brand-default-600
@@ -181,7 +182,7 @@
     overflow: hidden;
     color: var(--umc-ranked-bar-chart-inside-label);
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 6;
+    -webkit-line-clamp: var(--umc-ranked-bar-chart-label-lines);
   }
 
   .umc-ranked-bar-chart__item[data-label="outside"]
