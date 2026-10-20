@@ -1942,6 +1942,48 @@
         "Section Type=Custom, State=Question Editing, Use Section=True",
         "Section Type=Custom, State=Question Editing, Use Section=False"
       ]
+    },
+    "chart-legend-item": {
+      "node": "4394:49278",
+      "name": "Chart/Legend Item",
+      "axes": {
+        "Property 1": [
+          "Teal-500",
+          "Teal-400",
+          "Teal-300",
+          "Teal-200",
+          "Gray-200",
+          "Purple-500",
+          "Pink-500",
+          "Yellow-500",
+          "Blue-500"
+        ]
+      },
+      "variants": [
+        "Property 1=Teal-500",
+        "Property 1=Teal-400",
+        "Property 1=Teal-300",
+        "Property 1=Teal-200",
+        "Property 1=Gray-200",
+        "Property 1=Purple-500",
+        "Property 1=Pink-500",
+        "Property 1=Yellow-500",
+        "Property 1=Blue-500"
+      ]
+    },
+    "chart-tooltip": {
+      "node": "2678:50658",
+      "name": "Chart/Tooltip",
+      "axes": {
+        "Show Caption": ["False", "True"],
+        "Value Display": ["Single", "Comparison"]
+      },
+      "variants": [
+        "Show Caption=False, Value Display=Single",
+        "Show Caption=True, Value Display=Single",
+        "Show Caption=False, Value Display=Comparison",
+        "Show Caption=True, Value Display=Comparison"
+      ]
     }
   }
 }

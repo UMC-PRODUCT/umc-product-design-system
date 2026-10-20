@@ -1,0 +1,171 @@
+{
+  "component": "ChartTooltip",
+  "figmaSection": "3032:92291",
+  "page": "/components/chart/chart-tooltip/",
+  "figmaDiffers": {
+    "font-family": "피그마 항목 글자는 정적 Pretendard지만 같은 글꼴의 가변 버전인 브랜드 글꼴을 쓴다"
+  },
+  "nodes": [
+    {
+      "specId": "chart-tooltip-single",
+      "node": "2678:50660",
+      "variant": "Show Caption=False, Value Display=Single",
+      "target": ".umc-chart-tooltip__arrow",
+      "expected": {
+        "width": "16px",
+        "height": "8px",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "chart-tooltip-single",
+      "node": "2678:50662",
+      "variant": "Show Caption=False, Value Display=Single",
+      "target": ".umc-chart-tooltip__body",
+      "expected": {
+        "row-gap": "2px",
+        "padding-top": "8px",
+        "padding-right": "12px",
+        "padding-bottom": "8px",
+        "padding-left": "12px",
+        "border-top-left-radius": "6px",
+        "background-color": "#ffffff"
+      }
+    },
+    {
+      "specId": "chart-tooltip-single",
+      "node": "2678:50664",
+      "variant": "Show Caption=False, Value Display=Single",
+      "target": ".umc-chart-tooltip__title",
+      "expected": {
+        "color": "#9ca3a3",
+        "font-size": "11px",
+        "font-weight": "600",
+        "line-height": "16.5px"
+      }
+    },
+    {
+      "specId": "chart-tooltip-single",
+      "node": "2678:50665",
+      "variant": "Show Caption=False, Value Display=Single",
+      "target": ".umc-chart-tooltip__summary-value",
+      "expected": {
+        "color": "#02746c",
+        "font-size": "11px",
+        "font-weight": "700",
+        "line-height": "17.6px"
+      }
+    },
+    {
+      "specId": "chart-tooltip-single",
+      "node": "2678:50667",
+      "variant": "Show Caption=False, Value Display=Single",
+      "target": ".umc-chart-tooltip__item",
+      "expected": {
+        "column-gap": "4px",
+        "color": "#404443",
+        "font-size": "11px",
+        "font-weight": "400",
+        "line-height": "17.6px"
+      }
+    },
+    {
+      "specId": "chart-tooltip-single",
+      "node": "2678:50666",
+      "variant": "Show Caption=False, Value Display=Single",
+      "target": ".umc-chart-tooltip__items",
+      "expected": {
+        "row-gap": "2px"
+      }
+    },
+    {
+      "specId": "chart-tooltip-single",
+      "node": "2678:50668",
+      "variant": "Show Caption=False, Value Display=Single",
+      "target": ".umc-chart-tooltip__dot",
+      "expected": {
+        "width": "7px",
+        "height": "7px",
+        "border-top-left-radius": "999px"
+      }
+    },
+    {
+      "specId": "chart-tooltip-comparison",
+      "node": "2678:50711",
+      "variant": "Show Caption=False, Value Display=Comparison",
+      "target": ".umc-chart-tooltip__body",
+      "expected": {
+        "row-gap": "8px"
+      }
+    },
+    {
+      "specId": "chart-tooltip-comparison",
+      "node": "2678:50712",
+      "variant": "Show Caption=False, Value Display=Comparison",
+      "target": ".umc-chart-tooltip__header",
+      "expected": {
+        "row-gap": "1px"
+      }
+    },
+    {
+      "specId": "chart-tooltip-comparison",
+      "node": "2678:50716",
+      "variant": "Show Caption=False, Value Display=Comparison",
+      "target": ".umc-chart-tooltip__summary-reference",
+      "expected": {
+        "color": "#9ca3a3",
+        "font-weight": "500",
+        "letter-spacing": "-0.22px"
+      }
+    },
+    {
+      "specId": "chart-tooltip-comparison",
+      "node": "2678:50718",
+      "variant": "Show Caption=False, Value Display=Comparison",
+      "target": ".umc-chart-tooltip__item",
+      "expected": {
+        "justify-content": "space-between"
+      }
+    },
+    {
+      "specId": "chart-tooltip-comparison",
+      "node": "2678:50722",
+      "variant": "Show Caption=False, Value Display=Comparison",
+      "target": ".umc-chart-tooltip__values",
+      "expected": {
+        "column-gap": "3px"
+      }
+    },
+    {
+      "specId": "chart-tooltip-comparison",
+      "node": "2678:50724",
+      "variant": "Show Caption=False, Value Display=Comparison",
+      "target": ".umc-chart-tooltip__slash",
+      "expected": {
+        "color": "#e2e3e3"
+      }
+    },
+    {
+      "specId": "chart-tooltip-comparison",
+      "node": "2678:50725",
+      "variant": "Show Caption=False, Value Display=Comparison",
+      "target": ".umc-chart-tooltip__reference",
+      "expected": {
+        "color": "#9ca3a3"
+      }
+    },
+    {
+      "specId": "chart-tooltip-caption",
+      "node": "2678:50707",
+      "variant": "Show Caption=True, Value Display=Single",
+      "target": ".umc-chart-tooltip__caption",
+      "expected": {
+        "color": "#9ca3a3",
+        "font-size": "11px",
+        "font-weight": "500",
+        "line-height": "17.6px",
+        "letter-spacing": "-0.22px"
+      }
+    }
+  ]
+}
