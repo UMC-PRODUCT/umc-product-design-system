@@ -1,0 +1,227 @@
+@layer components {
+  .umc-ranked-bar-chart {
+    --umc-ranked-bar-chart-grid: var(--umc-color-teal-grey-100);
+    --umc-ranked-bar-chart-plot-height: 200px;
+    --umc-ranked-bar-chart-amount-height: 22px;
+    --umc-ranked-bar-chart-amount-gap: 10px;
+    --umc-ranked-bar-chart-column-width: 82px;
+    --umc-ranked-bar-chart-unit-color: var(--umc-color-text-brand-default-600);
+    --umc-ranked-bar-chart-label-spacing: 0;
+
+    display: flex;
+    gap: var(--umc-spacing-gap-10);
+    box-sizing: content-box;
+    height: calc(
+      var(--umc-ranked-bar-chart-amount-height) +
+        var(--umc-ranked-bar-chart-amount-gap) +
+        var(--umc-ranked-bar-chart-plot-height)
+    );
+    margin: 0;
+    padding: 4px var(--umc-spacing-padding-10);
+    overflow-x: auto;
+    list-style: none;
+    background-image: repeating-linear-gradient(
+      to top,
+      var(--umc-ranked-bar-chart-grid) 0 0.5px,
+      transparent 0.5px 40px
+    );
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 100% calc(var(--umc-ranked-bar-chart-plot-height) + 0.5px);
+    background-origin: content-box;
+  }
+
+  .umc-ranked-bar-chart[data-height-by="rank"] {
+    --umc-ranked-bar-chart-column-width: 72px;
+    --umc-ranked-bar-chart-unit-color: #0b6b64;
+    --umc-ranked-bar-chart-label-spacing: -0.02em;
+
+    align-items: flex-end;
+    height: auto;
+    background-image: none;
+  }
+
+  .umc-ranked-bar-chart__item {
+    --umc-ranked-bar-chart-bar-height: 0;
+    --umc-ranked-bar-chart-reference-height: 0;
+    --umc-ranked-bar-chart-label-lines: 1;
+    --umc-ranked-bar-chart-bar: var(--umc-color-teal-100);
+    --umc-ranked-bar-chart-inside-label: var(
+      --umc-color-text-brand-default-600
+    );
+
+    position: relative;
+    display: flex;
+    flex: none;
+    width: var(--umc-ranked-bar-chart-column-width);
+  }
+
+  .umc-ranked-bar-chart__item[data-tone="1st"] {
+    --umc-ranked-bar-chart-bar: var(--umc-color-teal-600);
+    --umc-ranked-bar-chart-inside-label: var(--umc-color-text-inverse);
+  }
+
+  .umc-ranked-bar-chart__item[data-tone="2nd"] {
+    --umc-ranked-bar-chart-bar: var(--umc-color-teal-400);
+    --umc-ranked-bar-chart-inside-label: var(--umc-color-text-inverse);
+  }
+
+  .umc-ranked-bar-chart__item[data-tone="3rd"] {
+    --umc-ranked-bar-chart-bar: var(--umc-color-teal-200);
+  }
+
+  .umc-ranked-bar-chart__item[data-tone="5th"] {
+    --umc-ranked-bar-chart-bar: var(--umc-color-teal-75);
+  }
+
+  .umc-ranked-bar-chart[data-height-by="rank"]
+    .umc-ranked-bar-chart__item[data-tone="none"] {
+    --umc-ranked-bar-chart-bar: var(--umc-color-teal-grey-100);
+  }
+
+  .umc-ranked-bar-chart__column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 6px 6px 0 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: start;
+    cursor: default;
+  }
+
+  .umc-ranked-bar-chart__column:focus-visible {
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
+    outline-offset: 2px;
+  }
+
+  .umc-ranked-bar-chart__reference {
+    --umc-ranked-bar-chart-reference-color: #f6f7f7;
+
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: var(--umc-ranked-bar-chart-reference-height);
+    border-radius: 6px 6px 0 0;
+    background-color: var(--umc-ranked-bar-chart-reference-color);
+  }
+
+  .umc-ranked-bar-chart__amount {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    gap: 1px;
+    padding-inline: var(--umc-spacing-padding-4);
+    color: var(--umc-color-text-brand-default-600);
+    font-family: var(--umc-font-family-brand);
+    font-weight: var(--umc-font-weight-bold);
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .umc-ranked-bar-chart__item[data-label="inside"]
+    .umc-ranked-bar-chart__amount {
+    margin-bottom: var(--umc-ranked-bar-chart-amount-gap);
+  }
+
+  .umc-ranked-bar-chart__number,
+  .umc-ranked-bar-chart__unit {
+    letter-spacing: -0.02em;
+  }
+
+  .umc-ranked-bar-chart__number {
+    font-size: var(--umc-ranked-bar-chart-amount-height);
+  }
+
+  .umc-ranked-bar-chart__unit {
+    padding-bottom: 2px;
+    color: var(--umc-ranked-bar-chart-unit-color);
+    font-size: var(--umc-font-size-12);
+  }
+
+  .umc-ranked-bar-chart__stack {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--umc-spacing-gap-4);
+  }
+
+  .umc-ranked-bar-chart__bar {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: var(--umc-ranked-bar-chart-bar-height);
+    overflow: hidden;
+    border-radius: 6px 6px 0 0;
+    background-color: var(--umc-ranked-bar-chart-bar);
+  }
+
+  .umc-ranked-bar-chart__item[data-label="inside"] .umc-ranked-bar-chart__bar {
+    padding: var(--umc-spacing-padding-8) var(--umc-spacing-padding-8) 0;
+  }
+
+  .umc-ranked-bar-chart__label {
+    font-family: var(--umc-font-family-brand);
+    font-size: var(--umc-font-size-12);
+    font-weight: var(--umc-font-weight-bold);
+    line-height: 1.4;
+    letter-spacing: var(--umc-ranked-bar-chart-label-spacing);
+    overflow-wrap: anywhere;
+  }
+
+  .umc-ranked-bar-chart__item[data-label="inside"]
+    .umc-ranked-bar-chart__label {
+    display: -webkit-box;
+    overflow: hidden;
+    color: var(--umc-ranked-bar-chart-inside-label);
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--umc-ranked-bar-chart-label-lines);
+  }
+
+  .umc-ranked-bar-chart__item[data-label="outside"]
+    .umc-ranked-bar-chart__label {
+    overflow: hidden;
+    padding: var(--umc-spacing-padding-4) var(--umc-spacing-padding-8) 0;
+    color: var(--umc-color-text-brand-default-600);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .umc-ranked-bar-chart__item[data-label="outside"] .umc-ranked-bar-chart__bar {
+    border-radius: 4px 4px 0 0;
+  }
+
+  .umc-ranked-bar-chart[data-height-by="rank"]
+    .umc-ranked-bar-chart__item[data-label="outside"]
+    .umc-ranked-bar-chart__label {
+    padding: 0 var(--umc-spacing-padding-4);
+  }
+
+  .umc-ranked-bar-chart[data-height-by="rank"]
+    .umc-ranked-bar-chart__item[data-label="outside"]
+    .umc-ranked-bar-chart__bar {
+    border-radius: 6px 6px 0 0;
+  }
+
+  @media (forced-colors: active) {
+    .umc-ranked-bar-chart {
+      background-image: none;
+    }
+
+    .umc-ranked-bar-chart__bar,
+    .umc-ranked-bar-chart__reference {
+      forced-color-adjust: none;
+    }
+
+    .umc-ranked-bar-chart__bar {
+      outline: 1px solid CanvasText;
+    }
+  }
+}

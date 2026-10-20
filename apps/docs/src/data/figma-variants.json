@@ -1942,6 +1942,150 @@
         "Section Type=Custom, State=Question Editing, Use Section=True",
         "Section Type=Custom, State=Question Editing, Use Section=False"
       ]
+    },
+    "chart-legend-item": {
+      "node": "4394:49278",
+      "name": "Chart/Legend Item",
+      "axes": {
+        "Property 1": [
+          "Teal-500",
+          "Teal-400",
+          "Teal-300",
+          "Teal-200",
+          "Gray-200",
+          "Purple-500",
+          "Pink-500",
+          "Yellow-500",
+          "Blue-500"
+        ]
+      },
+      "variants": [
+        "Property 1=Teal-500",
+        "Property 1=Teal-400",
+        "Property 1=Teal-300",
+        "Property 1=Teal-200",
+        "Property 1=Gray-200",
+        "Property 1=Purple-500",
+        "Property 1=Pink-500",
+        "Property 1=Yellow-500",
+        "Property 1=Blue-500"
+      ]
+    },
+    "chart-tooltip": {
+      "node": "2678:50658",
+      "name": "Chart/Tooltip",
+      "axes": {
+        "Show Caption": ["False", "True"],
+        "Value Display": ["Single", "Comparison"]
+      },
+      "variants": [
+        "Show Caption=False, Value Display=Single",
+        "Show Caption=True, Value Display=Single",
+        "Show Caption=False, Value Display=Comparison",
+        "Show Caption=True, Value Display=Comparison"
+      ]
+    },
+    "bar-chart-column": {
+      "node": "2929:81105",
+      "name": "Bar Chart/Column",
+      "axes": {
+        "Appearance": ["Neutral", "Primary Weak", "Primary Strong"]
+      },
+      "variants": [
+        "Appearance=Neutral",
+        "Appearance=Primary Weak",
+        "Appearance=Primary Strong"
+      ]
+    },
+    "bar-chart-category-group": {
+      "node": "2678:50643",
+      "name": "Bar Chart/Category Group",
+      "axes": {
+        "Data State": ["Default", "None"]
+      },
+      "variants": ["Data State=Default", "Data State=None"]
+    },
+    "bar-chart-category-group-reference-bar": {
+      "node": "4360:44014",
+      "name": "Bar Chart/Category Group/Reference Bar",
+      "axes": {
+        "Data State": ["Default", "None"]
+      },
+      "variants": ["Data State=Default", "Data State=None"]
+    },
+    "bar-chart-category-group-related-series": {
+      "node": "4360:44154",
+      "name": "Bar Chart/Category Group/Related Series",
+      "axes": {
+        "Data State": ["Default", "None"]
+      },
+      "variants": ["Data State=Default", "Data State=None"]
+    },
+    "bar-chart-category-group-related-series-reference-bar": {
+      "node": "4394:49011",
+      "name": "Bar Chart/Category Group/Related Series/Reference Bar",
+      "axes": {
+        "Data State": ["Default", "None"]
+      },
+      "variants": ["Data State=Default", "Data State=None"]
+    },
+    "web-bar-chart-ranked-bar": {
+      "node": "2678:50456",
+      "name": "Web/Bar Chart/Ranked Bar",
+      "axes": {
+        "Value Range": [
+          "5층: 81~100",
+          "4층: 61~80",
+          "3층: 41~60",
+          "2층: 21~40",
+          "*1층:14~20",
+          "*1층: 1~13",
+          "0"
+        ],
+        "Rank": ["1st", "2nd", "3rd", "4th", "None"]
+      },
+      "variants": [
+        "Value Range=5층: 81~100, Rank=1st",
+        "Value Range=5층: 81~100, Rank=2nd",
+        "Value Range=5층: 81~100, Rank=3rd",
+        "Value Range=5층: 81~100, Rank=4th",
+        "Value Range=4층: 61~80, Rank=1st",
+        "Value Range=4층: 61~80, Rank=2nd",
+        "Value Range=4층: 61~80, Rank=3rd",
+        "Value Range=4층: 61~80, Rank=4th",
+        "Value Range=3층: 41~60, Rank=1st",
+        "Value Range=3층: 41~60, Rank=2nd",
+        "Value Range=3층: 41~60, Rank=3rd",
+        "Value Range=3층: 41~60, Rank=4th",
+        "Value Range=2층: 21~40, Rank=1st",
+        "Value Range=2층: 21~40, Rank=2nd",
+        "Value Range=2층: 21~40, Rank=3rd",
+        "Value Range=2층: 21~40, Rank=4th",
+        "Value Range=*1층: 1~13, Rank=1st",
+        "Value Range=*1층: 1~13, Rank=2nd",
+        "Value Range=*1층: 1~13, Rank=3rd",
+        "Value Range=*1층:14~20, Rank=1st",
+        "Value Range=*1층:14~20, Rank=2nd",
+        "Value Range=*1층:14~20, Rank=3rd",
+        "Value Range=*1층:14~20, Rank=4th",
+        "Value Range=*1층: 1~13, Rank=4th",
+        "Value Range=0, Rank=None"
+      ]
+    },
+    "web-bar-chart-fixed-ranked-bar": {
+      "node": "4365:29588",
+      "name": "Web/Bar Chart/Fixed Ranked Bar",
+      "axes": {
+        "Rank": ["1st", "2nd", "3rd", "4th", "5th", "None"]
+      },
+      "variants": [
+        "Rank=1st",
+        "Rank=2nd",
+        "Rank=3rd",
+        "Rank=4th",
+        "Rank=5th",
+        "Rank=None"
+      ]
     }
   }
 }

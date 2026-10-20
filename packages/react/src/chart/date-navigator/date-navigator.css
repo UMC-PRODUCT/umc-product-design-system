@@ -1,0 +1,61 @@
+@layer components {
+  .umc-date-navigator {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--umc-spacing-gap-10);
+  }
+
+  .umc-date-navigator__button {
+    position: relative;
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 9px;
+    height: 14px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 2px;
+    background: transparent;
+    color: var(--umc-color-icon-neutral-weak-400);
+    cursor: pointer;
+  }
+
+  .umc-date-navigator__button::before {
+    position: absolute;
+    inset: -5px -8px;
+    content: "";
+  }
+
+  .umc-date-navigator__button[aria-disabled="true"] {
+    color: var(--umc-color-icon-disabled);
+    cursor: default;
+  }
+
+  .umc-date-navigator__button:focus-visible {
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
+    outline-offset: 2px;
+  }
+
+  .umc-date-navigator__label {
+    color: var(--umc-color-text-neutral-default-900);
+    font-family: var(--umc-typography-body-1-medium-font-family);
+    font-size: var(--umc-typography-body-1-medium-font-size);
+    font-weight: var(--umc-typography-body-1-medium-font-weight);
+    line-height: var(--umc-typography-body-1-medium-line-height);
+    letter-spacing: var(--umc-typography-body-1-medium-letter-spacing);
+    white-space: nowrap;
+    opacity: 0.9;
+  }
+
+  @media (forced-colors: active) {
+    .umc-date-navigator__button {
+      color: ButtonText;
+    }
+
+    .umc-date-navigator__button[aria-disabled="true"] {
+      color: GrayText;
+    }
+  }
+}

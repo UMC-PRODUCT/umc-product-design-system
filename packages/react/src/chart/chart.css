@@ -1,0 +1,44 @@
+@import "./chart-legend/chart-legend.css";
+@import "./chart-tooltip/chart-tooltip.css";
+@import "./column-chart/column-chart.css";
+@import "./date-navigator/date-navigator.css";
+@import "./category-group-chart/category-group-chart.css";
+@import "./ranked-bar-chart/ranked-bar-chart.css";
+
+@layer components {
+  .umc-chart-color[data-color="pm"] {
+    --umc-chart-color-dot: var(--umc-color-violet-500);
+  }
+
+  .umc-chart-color[data-color="design"] {
+    --umc-chart-color-dot: var(--umc-color-pink-500);
+  }
+
+  .umc-chart-color[data-color="web-pe"] {
+    --umc-chart-color-dot: var(--umc-color-yellow-500);
+  }
+
+  .umc-chart-color[data-color="mobile-pe"] {
+    --umc-chart-color-dot: var(--umc-color-cobalt-500);
+  }
+
+  .umc-chart-color[data-color="teal-500"] {
+    --umc-chart-color-dot: var(--umc-color-teal-500);
+  }
+
+  .umc-chart-color[data-color="teal-400"] {
+    --umc-chart-color-dot: var(--umc-color-teal-400);
+  }
+
+  .umc-chart-color[data-color="teal-300"] {
+    --umc-chart-color-dot: var(--umc-color-teal-300);
+  }
+
+  .umc-chart-color[data-color="teal-200"] {
+    --umc-chart-color-dot: #b3e6e1;
+  }
+
+  .umc-chart-color[data-color="reference"] {
+    --umc-chart-color-dot: #e2e4e3;
+  }
+}

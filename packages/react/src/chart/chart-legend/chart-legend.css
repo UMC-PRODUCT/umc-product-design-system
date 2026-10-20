@@ -1,0 +1,39 @@
+@layer components {
+  .umc-chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--umc-spacing-gap-4) var(--umc-spacing-gap-8);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .umc-chart-legend__item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--umc-spacing-gap-4);
+    color: var(--umc-color-teal-grey-700);
+    font-family: var(--umc-typography-caption-1-medium-font-family);
+    font-size: var(--umc-typography-caption-1-medium-font-size);
+    font-weight: var(--umc-typography-caption-1-medium-font-weight);
+    line-height: var(--umc-typography-caption-1-medium-line-height);
+    letter-spacing: var(--umc-typography-caption-1-medium-letter-spacing);
+    white-space: nowrap;
+  }
+
+  .umc-chart-legend__dot {
+    flex: 0 0 auto;
+    width: 8px;
+    height: 8px;
+    border-radius: var(--umc-radius-full);
+    background-color: var(--umc-chart-color-dot);
+  }
+
+  @media (forced-colors: active) {
+    .umc-chart-legend__dot {
+      forced-color-adjust: none;
+      outline: 1px solid CanvasText;
+    }
+  }
+}
