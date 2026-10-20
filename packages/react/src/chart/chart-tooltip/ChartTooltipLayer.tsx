@@ -146,16 +146,16 @@ const partsOf = ({
 type ChartTooltipDescriptionProps = {
   id: string
   content: ChartTooltipContent
-  leading?: ReactNode
+  leading?: readonly ReactNode[]
 }
 
 export function ChartTooltipDescription({
   id,
   content,
-  leading,
+  leading = [],
 }: ChartTooltipDescriptionProps) {
   const parts = [
-    ...(leading === undefined ? [] : [{ key: "leading", node: leading }]),
+    ...leading.map((node, index) => ({ key: `leading-${index}`, node })),
     ...partsOf(content),
   ]
   return (

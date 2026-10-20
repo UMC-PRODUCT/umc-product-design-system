@@ -122,14 +122,37 @@ export function RankedBarChart({
     </>
   )
 
-  const contentOf = (item: RankedBarChartItem): ChartTooltipContent =>
-    item.tooltip ?? {
-      summary: amountOf(item.value),
-      referenceSummary:
-        scalesByValue && item.reference !== undefined
-          ? amountOf(item.reference)
-          : undefined,
-    }
+  const referenceOf = (item: RankedBarChartItem) =>
+    scalesByValue ? item.reference : undefined
+
+  const contentOf = (item: RankedBarChartItem): ChartTooltipContent => {
+    const reference = referenceOf(item)
+    return (
+      item.tooltip ?? {
+        summary: amountOf(item.value),
+        referenceSummary:
+          reference === undefined ? undefined : amountOf(reference),
+      }
+    )
+  }
+
+  const descriptionLeadOf = (
+    item: RankedBarChartItem,
+    rank: number | undefined,
+    tied: boolean,
+  ): ReactNode[] => {
+    const rankText = rankTextOf(rank, tied)
+    const reference = referenceOf(item)
+    const amount =
+      reference === undefined ? (
+        amountOf(item.value)
+      ) : (
+        <>
+          {amountOf(item.value)} / {amountOf(reference)}
+        </>
+      )
+    return rankText === undefined ? [amount] : [rankText, amount]
+  }
 
   return (
     <ul
@@ -144,14 +167,15 @@ export function RankedBarChart({
           : RANK_HEIGHTS[tone]
         const hidesAmount = !scalesByValue && tone === "none"
         const labelInside = barHeight >= INSIDE_LABEL_MIN_HEIGHT
-        const hasReference = scalesByValue && item.reference !== undefined
+        const reference = referenceOf(item)
+        const hasReference = reference !== undefined
         const style: ColumnStyle = {
           "--umc-ranked-bar-chart-bar-height": `${barHeight}px`,
           "--umc-ranked-bar-chart-label-lines": String(
             insideLabelLinesOf(barHeight),
           ),
           ...(hasReference && {
-            "--umc-ranked-bar-chart-reference-height": `${referenceHeightOf(item.reference ?? 0, scale)}px`,
+            "--umc-ranked-bar-chart-reference-height": `${referenceHeightOf(reference ?? 0, scale)}px`,
           }),
         }
         const triggerId = `${baseId}-bar-${index}`
@@ -214,8 +238,8 @@ export function RankedBarChart({
             </ChartTooltipTrigger>
             <ChartTooltipDescription
               id={descriptionId}
-              leading={rankTextOf(rank, tied)}
-              content={contentOf(item)}
+              leading={descriptionLeadOf(item, rank, tied)}
+              content={item.tooltip ?? {}}
             />
           </li>
         )

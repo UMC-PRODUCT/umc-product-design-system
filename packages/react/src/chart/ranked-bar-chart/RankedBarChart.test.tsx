@@ -311,7 +311,7 @@ describe("RankedBarChart", () => {
       )
       const button = screen.getByRole("button", { name: "Chromium" })
       expect(button).toHaveAccessibleDescription(
-        "1위, 100명 평가 완료 / 120명 지원, PM: 10명 / 16명",
+        "1위, 100명 / 120명, 100명 평가 완료 / 120명 지원, PM: 10명 / 16명",
       )
       await user.hover(button)
       await waitFor(() => {
@@ -319,6 +319,27 @@ describe("RankedBarChart", () => {
       })
       expect(popup()).toHaveTextContent("PM10명/16명")
     })
+  })
+
+  it("tooltip에 합계가 없어도 막대 숫자를 설명으로 읽는다", () => {
+    render(
+      <RankedBarChart
+        unit="명"
+        items={[
+          {
+            key: "neon",
+            label: "Neon",
+            value: 100,
+            tooltip: {
+              items: [{ key: "pm", label: "PM", color: "pm", value: "10명" }],
+            },
+          },
+        ]}
+      />,
+    )
+    expect(
+      screen.getByRole("button", { name: "Neon" }),
+    ).toHaveAccessibleDescription("1위, 100명, PM: 10명")
   })
 
   it("화살표 키로 막대 사이를 옮긴다", async () => {
