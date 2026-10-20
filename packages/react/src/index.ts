@@ -1,5 +1,6 @@
 export * from "./button/index.ts"
 export * from "./text-button/index.ts"
+export * from "./icon-button/index.ts"
 export * from "./floating-action-button/index.ts"
 export * from "./forms/index.ts"
 export * from "./selection/index.ts"

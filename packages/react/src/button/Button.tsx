@@ -2,6 +2,7 @@
 
 import type { ComponentPropsWithRef, MouseEvent, ReactNode } from "react"
 
+import type { AccessibleName } from "../internal/accessible-name.ts"
 import { cx } from "../internal/cx.ts"
 
 export type ButtonVariant = "fill" | "weak"
@@ -29,11 +30,8 @@ export type ButtonLabelProps = ButtonBaseProps & {
   children?: ReactNode
 }
 
-type ButtonAccessibleName =
-  { "aria-label": string } | { "aria-labelledby": string }
-
 export type ButtonIconOnlyProps = ButtonBaseProps &
-  ButtonAccessibleName & {
+  AccessibleName & {
     size?: ButtonIconOnlySize
     icon: NonNullable<ReactNode>
     leadingIcon?: undefined

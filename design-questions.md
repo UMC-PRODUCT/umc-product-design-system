@@ -77,6 +77,19 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 3. Underline 변형은 Brand 기본을 빼고 글자색이 변수에 연결되어 있지 않습니다. Plain과 값이 같아 같은 토큰을 씁니다.
 4. `Type` 하나에 아이콘 자리(Leading Acc, Tailling Acc)와 글자 모양(Plain, Underline)이 섞여 있습니다. 코드는 아이콘 props와 `variant`로 나눴습니다. `Tailling`은 `Trailing`의 오타로 보입니다.
 
+## Icon Button
+
+노드 4626:81117. 코드가 쓰는 값은 [IconButton figma-spec](packages/react/src/icon-button/figma-spec.json)에 있습니다.
+
+1. 비활성 상태가 없어 코드는 투명도 40%로 흐리게 합니다. 비활성 모양을 알려 주세요.
+2. Error Fill만 Hover&Pressed 배경이 Default와 같은 #DC3D3D이고, 다른 색은 배경이 바뀝니다. 의도인지 알려 주세요.
+3. Focus 상태가 없어 다른 버튼처럼 2px `border-primary-strong-500` 외곽선을 씁니다.
+4. Md 모서리 8px은 변수에 연결되어 있지 않습니다(Lg는 `R Button 10`). 코드는 `radius-8`을 씁니다.
+5. Primary Weak 아이콘은 Neutral Weak와 같은 #3F4141입니다. 청록 아이콘을 쓰지 않은 것이 의도인지 알려 주세요.
+6. 색 이름이 Button은 `Red`, Icon Button은 `Error`입니다. 코드는 피그마대로 `error`를 씁니다.
+7. Md(26px)는 터치 화면 권장 크기(44px)보다 작은데, 코드는 누르는 영역을 넓히지 않았습니다. 터치 화면에서 쓸 때의 기준을 알려 주세요.
+8. 섹션 설명 "일반 Button 컴포넌트의 Icon Only 버튼보다 작고 CTA 성격이 약한 성격의 버튼이에요"가 Pagination 섹션에도 똑같이 들어가 있습니다.
+
 ## 선택
 
 1. Option Button Xl의 선택하지 않은 글자는 `Title/2-Medium`을 Regular로 바꾼 값(20px, 400)이라 텍스트 스타일이 없습니다.

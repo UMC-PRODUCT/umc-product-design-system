@@ -1,0 +1,65 @@
+---
+title: IconButton
+description: 피그마 Icon Button(변형 32개)을 옮긴 작은 아이콘 버튼입니다.
+---
+
+import {
+  IconButtonAllVariants,
+  IconButtonBasics,
+  IconButtonColors,
+  IconButtonSizes,
+  IconButtonWithTooltip,
+} from "../../../../components/react/IconButtonExamples.tsx"
+
+닫기, 표 머리의 설정, 줄 끝의 더 보기처럼 화면 안에 작게 놓는 아이콘 버튼입니다. 화면의 주요 행동을 맡는 [Button](../button/)의 아이콘만 있는 버튼보다 작고 눈에 덜 띕니다. 렌더되는 요소는 `<button>`이고 네이티브 `button` 속성과 `ref`를 그대로 받습니다.
+
+```tsx
+import { CloseIcon } from "@umc-product/icons"
+import { IconButton } from "@umc-product/react"
+
+<IconButton icon={<CloseIcon />} aria-label="닫기" onClick={close} />
+```
+
+<IconButtonBasics />
+
+## 색과 스타일
+
+마우스를 올리거나 누르면 배경이 진해지고, `weak`는 안쪽 그림자가 생깁니다. `fill`은 아이콘이 흰색이고 `weak`는 배경이 옅습니다.
+
+<IconButtonColors />
+
+## 크기
+
+| size | 크기  | 모서리             | 아이콘 |
+| ---- | ----- | ------------------ | ------ |
+| `md` | 26×26 | `radius-8`         | 24px   |
+| `lg` | 30×30 | `radius-button-10` | 24px   |
+
+<IconButtonSizes />
+
+## 이름과 툴팁
+
+글자가 없으니 `aria-label`이나 `aria-labelledby`로 이름을 붙여야 하고, 빠뜨리면 타입 검사에서 걸립니다. 마우스 사용자에게도 뜻을 보여 주려면 [Tooltip](../../overlay/tooltip/)으로 감쌉니다. `ref`와 나머지 props를 버튼에 그대로 넘기므로 Tooltip의 트리거로 바로 쓸 수 있습니다. 비활성이면 투명도 40%로 흐려집니다.
+
+<IconButtonWithTooltip client:visible />
+
+## 모든 변형
+
+피그마 `Icon Button`의 변형 32개를 실제 컴포넌트로 그렸습니다. Hover&Pressed 칸은 눌림 상태를 켜 둔 모습입니다.
+
+<IconButtonAllVariants />
+
+## props
+
+| prop      | 타입                                           | 기본값          | 설명                                       |
+| --------- | ---------------------------------------------- | --------------- | ------------------------------------------ |
+| `icon`    | `ReactNode`                                    | 필수            | 가운데 그릴 아이콘(24px)                   |
+| `color`   | `"primary" \| "white" \| "neutral" \| "error"` | `"primary"`     | 피그마 Color                               |
+| `variant` | `"weak" \| "fill"`                             | `"weak"`        | 피그마 Style                               |
+| `size`    | `"md" \| "lg"`                                 | `"md"`          | 피그마 Size                                |
+| 이름      | `aria-label` 또는 `aria-labelledby`            | 필수            | 화면 낭독기가 읽는 버튼 이름               |
+| 나머지    | `ComponentPropsWithRef<"button">`              | `type="button"` | `ref`, `disabled`, `aria-*`, 이벤트 핸들러 |
+
+## 알아 둘 점
+
+- `md`는 26px이라 손가락으로 누르기에는 작습니다. 터치 화면에서 홀로 쓰는 버튼은 [Button](../button/)의 아이콘만 있는 버튼을 고려합니다.

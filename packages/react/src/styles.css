@@ -4,6 +4,7 @@
 @import "./internal/internal.css";
 @import "./button/button.css";
 @import "./text-button/text-button.css";
+@import "./icon-button/icon-button.css";
 @import "./floating-action-button/floating-action-button.css";
 @import "./forms/forms.css";
 @import "./selection/selection.css";

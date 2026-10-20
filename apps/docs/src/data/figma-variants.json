@@ -266,6 +266,50 @@
         "Size=Md, Color=White, State=Pressed, Style=Weak, Icon Position=Right, Icon Only=True"
       ]
     },
+    "icon-button": {
+      "node": "4624:80459",
+      "name": "Icon Button",
+      "axes": {
+        "State": ["Hover&Pressed", "Default"],
+        "Color": ["White", "Neutral", "Error", "Primary"],
+        "Style": ["Weak", "Fill"],
+        "Size": ["Md", "Lg"]
+      },
+      "variants": [
+        "State=Hover&Pressed, Color=White, Style=Weak, Size=Md",
+        "State=Hover&Pressed, Color=White, Style=Weak, Size=Lg",
+        "State=Hover&Pressed, Color=Neutral, Style=Weak, Size=Md",
+        "State=Hover&Pressed, Color=Neutral, Style=Weak, Size=Lg",
+        "State=Hover&Pressed, Color=Error, Style=Weak, Size=Md",
+        "State=Hover&Pressed, Color=Error, Style=Weak, Size=Lg",
+        "State=Default, Color=Neutral, Style=Fill, Size=Md",
+        "State=Default, Color=Neutral, Style=Fill, Size=Lg",
+        "State=Default, Color=Error, Style=Fill, Size=Md",
+        "State=Default, Color=Error, Style=Fill, Size=Lg",
+        "State=Hover&Pressed, Color=Neutral, Style=Fill, Size=Md",
+        "State=Hover&Pressed, Color=Neutral, Style=Fill, Size=Lg",
+        "State=Hover&Pressed, Color=Error, Style=Fill, Size=Md",
+        "State=Hover&Pressed, Color=Error, Style=Fill, Size=Lg",
+        "State=Default, Color=White, Style=Fill, Size=Md",
+        "State=Default, Color=White, Style=Fill, Size=Lg",
+        "State=Default, Color=Primary, Style=Weak, Size=Md",
+        "State=Default, Color=Primary, Style=Weak, Size=Lg",
+        "State=Default, Color=Primary, Style=Fill, Size=Md",
+        "State=Default, Color=Primary, Style=Fill, Size=Lg",
+        "State=Hover&Pressed, Color=Primary, Style=Weak, Size=Md",
+        "State=Hover&Pressed, Color=Primary, Style=Weak, Size=Lg",
+        "State=Hover&Pressed, Color=Primary, Style=Fill, Size=Md",
+        "State=Hover&Pressed, Color=Primary, Style=Fill, Size=Lg",
+        "State=Hover&Pressed, Color=White, Style=Fill, Size=Md",
+        "State=Hover&Pressed, Color=White, Style=Fill, Size=Lg",
+        "State=Default, Color=White, Style=Weak, Size=Md",
+        "State=Default, Color=White, Style=Weak, Size=Lg",
+        "State=Default, Color=Neutral, Style=Weak, Size=Md",
+        "State=Default, Color=Neutral, Style=Weak, Size=Lg",
+        "State=Default, Color=Error, Style=Weak, Size=Md",
+        "State=Default, Color=Error, Style=Weak, Size=Lg"
+      ]
+    },
     "text-button": {
       "node": "3573:95925",
       "name": "Text Button",
