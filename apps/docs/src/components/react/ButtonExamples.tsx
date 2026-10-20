@@ -2,6 +2,7 @@ import { AddIcon, ChevronRightIcon } from "@umc-product/icons"
 import {
   Button,
   type ButtonColor,
+  type ButtonIconOnlySize,
   type ButtonSize,
   type ButtonVariant,
 } from "@umc-product/react"
@@ -109,6 +110,91 @@ export function ButtonIcons() {
   )
 }
 
+export function ButtonWhiteIcons() {
+  return (
+    <div className="umc-example umc-example-muted">
+      <Button
+        size="xs"
+        variant="weak"
+        color="white"
+        leadingIcon={<AddIcon weight="fill" />}
+        data-spec-id="button-weak-white-xs-leading-icon button-weak-white-xs-leading-icon-icon"
+      >
+        추가
+      </Button>
+      <Button
+        size="xs"
+        color="white"
+        trailingIcon={<ChevronRightIcon weight="fill" />}
+      >
+        다음
+      </Button>
+    </div>
+  )
+}
+
+export function ButtonIconOnly() {
+  return (
+    <div className="umc-example umc-example-stack">
+      <div className="umc-example">
+        <Button
+          icon={<AddIcon weight="fill" />}
+          aria-label="추가"
+          color="neutral"
+          size="md"
+          data-spec-id="button-icon-only-fill-neutral-md button-icon-only-fill-neutral-md-icon"
+        />
+        <Button
+          icon={<AddIcon weight="fill" />}
+          aria-label="추가"
+          color="neutral"
+          size="sm"
+          data-spec-id="button-icon-only-fill-neutral-sm button-icon-only-fill-neutral-sm-icon"
+        />
+        <Button
+          icon={<AddIcon weight="fill" />}
+          aria-label="추가"
+          color="neutral"
+          size="xs"
+          data-spec-id="button-icon-only-fill-neutral-xs button-icon-only-fill-neutral-xs-icon"
+        />
+        <Button
+          icon={<AddIcon weight="fill" />}
+          aria-label="추가"
+          variant="weak"
+          color="neutral"
+          size="md"
+          data-spec-id="button-icon-only-weak-neutral-md"
+        />
+      </div>
+      <div className="umc-example umc-example-muted">
+        <Button
+          icon={<AddIcon weight="fill" />}
+          aria-label="추가"
+          color="white"
+          size="md"
+          data-spec-id="button-icon-only-fill-white-md-icon"
+        />
+        <Button
+          icon={<AddIcon weight="fill" />}
+          aria-label="추가"
+          variant="weak"
+          color="white"
+          size="md"
+        />
+        <Button
+          icon={<AddIcon weight="fill" />}
+          aria-label="추가"
+          color="white"
+          size="md"
+          disabled
+          data-spec-id="button-icon-only-fill-white-md-disabled-icon"
+        />
+      </div>
+    </div>
+  )
+}
+
 export function ButtonLoadingWidth() {
   return (
     <div className="umc-example umc-example-stack">
@@ -140,6 +226,12 @@ const FIGMA_SIZES: Readonly<Record<string, ButtonSize>> = {
   XS: "xs",
 }
 
+const FIGMA_ICON_ONLY_SIZES: Readonly<Record<string, ButtonIconOnlySize>> = {
+  Md: "md",
+  Sm: "sm",
+  XS: "xs",
+}
+
 const FIGMA_COLORS: Readonly<Record<string, ButtonColor>> = {
   Primary: "primary",
   Neutral: "neutral",
@@ -157,6 +249,21 @@ const figmaIcon = <AddIcon weight="fill" />
 function ButtonVariantCell({ variant }: { variant: FigmaVariant }) {
   const state = variant.props["State"]
   const iconPosition = variant.props["Icon Position"]
+  if (variant.props["Icon Only"] === "True") {
+    return (
+      <ForceState states={state === "Pressed" ? ["active"] : []}>
+        <Button
+          icon={figmaIcon}
+          aria-label="추가"
+          size={lookup(FIGMA_ICON_ONLY_SIZES, variant, "Size")}
+          color={lookup(FIGMA_COLORS, variant, "Color")}
+          variant={lookup(FIGMA_STYLES, variant, "Style")}
+          disabled={state === "Disabled"}
+          isLoading={state === "Loading"}
+        />
+      </ForceState>
+    )
+  }
   return (
     <ForceState states={state === "Pressed" ? ["active"] : []}>
       <Button
@@ -178,7 +285,7 @@ export function ButtonAllVariants() {
   return (
     <VariantGrid
       set="button"
-      sections={["Icon Position", "Size"]}
+      sections={["Icon Only", "Icon Position", "Size"]}
       rows={["Color", "Style"]}
       columns={["State"]}
       order={{

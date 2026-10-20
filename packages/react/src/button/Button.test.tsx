@@ -136,4 +136,64 @@ describe("Button", () => {
       "true",
     )
   })
+
+  describe("아이콘 전용", () => {
+    it("icon만 넘기면 라벨 없이 아이콘을 그리고 aria-label을 이름으로 쓴다", () => {
+      render(
+        <Button
+          icon={<svg data-testid="icon" />}
+          aria-label="추가"
+          color="neutral"
+          size="sm"
+        />,
+      )
+      const button = screen.getByRole("button", { name: "추가" })
+      expect(button).toHaveAttribute("data-icon-only")
+      expect(button.querySelector(".umc-button__label")).toBeNull()
+      expect(screen.getByTestId("icon").parentElement).toHaveClass(
+        "umc-button__icon",
+      )
+      expect(screen.getByTestId("icon").parentElement).toHaveAttribute(
+        "aria-hidden",
+        "true",
+      )
+    })
+
+    it("aria-labelledby로 이름을 붙일 수 있다", () => {
+      render(
+        <>
+          <span id="add-label">항목 추가</span>
+          <Button icon={<svg />} aria-labelledby="add-label" />
+        </>,
+      )
+      expect(screen.getByRole("button", { name: "항목 추가" })).toHaveAttribute(
+        "data-icon-only",
+      )
+    })
+
+    it("아이콘 위치 속성은 달지 않는다", () => {
+      render(<Button icon={<svg />} aria-label="추가" />)
+      const button = screen.getByRole("button", { name: "추가" })
+      expect(button).not.toHaveAttribute("data-leading-icon")
+      expect(button).not.toHaveAttribute("data-trailing-icon")
+    })
+
+    it("라벨 버튼에는 data-icon-only를 달지 않는다", () => {
+      render(<Button leadingIcon={<svg />}>추가</Button>)
+      expect(screen.getByRole("button", { name: "추가" })).not.toHaveAttribute(
+        "data-icon-only",
+      )
+    })
+
+    it("로딩 중에도 이름을 유지하고 클릭을 막는다", async () => {
+      const onClick = vi.fn()
+      render(
+        <Button icon={<svg />} aria-label="추가" isLoading onClick={onClick} />,
+      )
+      const button = screen.getByRole("button", { name: "추가" })
+      expect(button).toHaveAttribute("aria-busy", "true")
+      await userEvent.click(button)
+      expect(onClick).not.toHaveBeenCalled()
+    })
+  })
 })

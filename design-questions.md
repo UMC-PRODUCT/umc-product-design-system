@@ -62,7 +62,11 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 6. 로딩 점 3개의 움직임 정의가 없습니다. 1초 주기 투명도 변화를 넣었습니다.
 7. Weak 비활성의 흰색 70% 덧칠이 내보낸 컬렉션 밖의 변수(`Static/White/Opacity-70`)를 참조합니다. 눌림 덧칠 색은 변수에 연결되지 않았습니다.
 8. Red Weak 글자색(`red-600`)에 맞는 semantic 토큰이 없어 primitive를 바로 씁니다.
-9. Neutral Weak Default 배경이 아이콘 없는 변형은 `#eff0f0`(`action-primary-default`), 아이콘 있는 변형은 `#f7f8f8`(`TealGrey-75`)입니다. 코드는 아이콘 없는 변형 값(`fill-neutral-medium-100`)으로 통일했습니다. Neutral Fill처럼 하나로 맞춰 주세요.
+9. Neutral Weak Default 배경은 아이콘 없는 변형이 `#eff0f0`(`action-primary-default`), 아이콘 있는 변형과 아이콘만 있는 변형이 `#f7f8f8`(`TealGrey-75`)입니다. 코드는 아이콘 없는 변형 값(`fill-neutral-medium-100`)으로 통일했습니다. Neutral Fill처럼 하나로 맞춰 주세요.
+10. (해결 2026-10-20) 아이콘만 있는 버튼은 Sm 40×40, XS 36×36으로 정사각형인데 Md만 54×48입니다. 의도한 크기로 확인했고 코드도 54×48입니다.
+11. 아이콘만 있는 변형에도 `Icon Position=Right`가 붙어 있습니다. 코드는 이 값을 쓰지 않습니다. 문서 라벨의 Weak 아이콘 전용 첫 줄은 Default 줄인데 Pressed로 적혀 있습니다.
+12. 아이콘만 있는 변형은 Neutral과 White, Md·Sm·XS, Default·Pressed·Disabled뿐입니다. 코드는 Lg를 받지 않고, Primary·Red와 로딩은 라벨 버튼 규칙으로 그립니다. 필요한 조합을 알려 주세요.
+13. White 버튼만 아이콘이 글자(#606262)보다 옅은 #7E7F7F(`icon-subtle`)이고, 다른 색은 아이콘과 글자가 같습니다. 코드는 피그마대로 White 아이콘만 따로 칠합니다.
 
 ## Text Button
 
@@ -72,6 +76,31 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 2. Brand 비활성과 아이콘 Hover 색이 semantic이 아닌 primitive(`Teal-300`, `Teal-700`)에 연결되어 있습니다. 글자 비활성은 같은 값의 `text-brand-disabled-300`로 옮겼고, 아이콘은 primitive를 그대로 씁니다.
 3. Underline 변형은 Brand 기본을 빼고 글자색이 변수에 연결되어 있지 않습니다. Plain과 값이 같아 같은 토큰을 씁니다.
 4. `Type` 하나에 아이콘 자리(Leading Acc, Tailling Acc)와 글자 모양(Plain, Underline)이 섞여 있습니다. 코드는 아이콘 props와 `variant`로 나눴습니다. `Tailling`은 `Trailing`의 오타로 보입니다.
+
+## Icon Button
+
+노드 4626:81117. 코드가 쓰는 값은 [IconButton figma-spec](packages/react/src/icon-button/figma-spec.json)에 있습니다.
+
+1. 비활성 상태가 없어 코드는 투명도 40%로 흐리게 합니다. 비활성 모양을 알려 주세요.
+2. Error Fill만 Hover&Pressed 배경이 Default와 같은 #DC3D3D이고, 다른 색은 배경이 바뀝니다. 의도인지 알려 주세요.
+3. Focus 상태가 없어 다른 버튼처럼 2px `border-primary-strong-500` 외곽선을 씁니다.
+4. Md 모서리 8px은 변수에 연결되어 있지 않습니다(Lg는 `R Button 10`). 코드는 `radius-8`을 씁니다.
+5. Primary Weak 아이콘은 Neutral Weak와 같은 #3F4141입니다. 청록 아이콘을 쓰지 않은 것이 의도인지 알려 주세요.
+6. 색 이름이 Button은 `Red`, Icon Button은 `Error`입니다. 코드는 피그마대로 `error`를 씁니다.
+7. Md(26px)는 터치 화면 권장 크기(44px)보다 작은데, 코드는 누르는 영역을 넓히지 않았습니다. 터치 화면에서 쓸 때의 기준을 알려 주세요.
+8. 섹션 설명 "일반 Button 컴포넌트의 Icon Only 버튼보다 작고 CTA 성격이 약한 성격의 버튼이에요"가 Pagination 섹션에도 똑같이 들어가 있습니다.
+
+## Pagination
+
+노드 4649:83804. 코드가 쓰는 값은 [Pagination figma-spec](packages/react/src/pagination/figma-spec.json)에 있습니다.
+
+1. (해결 2026-10-20) 페이지가 4개보다 많을 때의 번호 규칙이 없어 웹 파트에서 정했습니다. 현재 페이지를 둘째 칸에 두고 4칸을 한 칸씩 밀어서, 20페이지 중 1페이지면 1~4, 5페이지면 4~7, 20페이지면 17~20을 보여 줍니다. 폭이 그대로라 새 항목이 필요 없습니다. 끝 페이지로 바로 가는 말줄임(…)이 필요해지면 그 항목을 그려 주세요.
+2. 1페이지뿐일 때와 페이지가 없을 때의 모양이 없습니다. 코드는 1페이지면 번호 하나만 그리고, 0이면 아무것도 그리지 않습니다.
+3. `primitive/Pagination Item`은 Arrow-Left, Arrow-Right에도 Selected 상태가 있지만 화살표는 현재 페이지가 될 수 없어 코드는 그리지 않습니다. 어디에 쓰는지 알려 주세요.
+4. 번호 글자색 #161919는 3기 토큰에 없는 2기 `teal-gray-900` 값입니다. 코드는 피그마 값을 그대로 씁니다.
+5. 번호 칸은 30px 고정에 좌우 여백 8px이라 두 자리 번호면 칸을 넘습니다. 코드는 최소 폭 30px에 좌우 4px을 두어 세 자리 번호부터 칸이 넓어집니다. 폭 규칙을 알려 주세요.
+6. Focus 상태가 없어 다른 버튼처럼 2px 외곽선을 씁니다. 화살표로 끝 페이지에 닿으면 그 화살표가 사라지므로 코드는 포커스를 현재 번호로 옮깁니다.
+7. 섹션 설명이 Icon Button과 같습니다("일반 Button 컴포넌트의 Icon Only 버튼보다 작고 CTA 성격이 약한 성격의 버튼이에요"). Pagination 설명으로 바꿔 주세요.
 
 ## 선택
 
