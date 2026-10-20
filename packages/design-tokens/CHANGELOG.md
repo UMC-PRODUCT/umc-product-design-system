@@ -1,5 +1,9 @@
 # @umc-product/design-tokens
 
+## 0.6.0 (2026-10-20)
+
+No changes in this release.
+
 ## 0.5.0 (2026-10-18)
 
 No changes in this release.
