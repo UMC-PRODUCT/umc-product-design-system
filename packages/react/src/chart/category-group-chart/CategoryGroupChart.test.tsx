@@ -305,6 +305,25 @@ describe("CategoryGroupChart", () => {
       expect(groupButton("한국대 ERICA")).toHaveFocus()
     })
 
+    it("Alt, Ctrl, Cmd와 함께 누른 화살표 키는 브라우저 단축키로 남긴다", async () => {
+      const user = userEvent.setup()
+      render(<CategoryGroupChart series={PARTS} groups={SCHOOLS} />)
+      await user.tab()
+      for (const modifier of ["Alt", "Control", "Meta"]) {
+        const keydown = fireEvent.keyDown(
+          document.activeElement ?? document.body,
+          {
+            key: "ArrowRight",
+            altKey: modifier === "Alt",
+            ctrlKey: modifier === "Control",
+            metaKey: modifier === "Meta",
+          },
+        )
+        expect(keydown).toBe(true)
+        expect(groupButton("한국대 ERICA")).toHaveFocus()
+      }
+    })
+
     it("옮긴 묶음이 다음 Tab 진입점이 된다", async () => {
       const user = userEvent.setup()
       render(<CategoryGroupChart series={PARTS} groups={SCHOOLS} />)

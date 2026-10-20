@@ -31,6 +31,8 @@ export function useRovingFocus(count: number) {
     tabIndex: index === tabbableIndex ? 0 : -1,
     onFocus: () => setActiveIndex(index),
     onKeyDown: (event) => {
+      const hasShortcutModifier = event.altKey || event.ctrlKey || event.metaKey
+      if (hasShortcutModifier) return
       const next = stepOf(event.key, index, last)
       if (next === undefined) return
       event.preventDefault()
