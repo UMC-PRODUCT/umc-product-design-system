@@ -310,6 +310,37 @@
         "State=Default, Color=Error, Style=Weak, Size=Lg"
       ]
     },
+    "pagination": {
+      "node": "4649:83604",
+      "name": "Pagination",
+      "axes": {
+        "Current Page": ["First (첫 페이지)", "Middle", "Last (마지막 페이지)"]
+      },
+      "variants": [
+        "Current Page=First (첫 페이지)",
+        "Current Page=Middle",
+        "Current Page=Last (마지막 페이지)"
+      ]
+    },
+    "pagination-item": {
+      "node": "4642:83125",
+      "name": "primitive/Pagination Item",
+      "axes": {
+        "State": ["Selected", "Hover&Pressed", "Unselected"],
+        "Type": ["Number", "Arrow-Left", "Arrow-Right"]
+      },
+      "variants": [
+        "State=Selected, Type=Number",
+        "State=Selected, Type=Arrow-Left",
+        "State=Selected, Type=Arrow-Right",
+        "State=Hover&Pressed, Type=Number",
+        "State=Hover&Pressed, Type=Arrow-Left",
+        "State=Hover&Pressed, Type=Arrow-Right",
+        "State=Unselected, Type=Number",
+        "State=Unselected, Type=Arrow-Left",
+        "State=Unselected, Type=Arrow-Right"
+      ]
+    },
     "text-button": {
       "node": "3573:95925",
       "name": "Text Button",
