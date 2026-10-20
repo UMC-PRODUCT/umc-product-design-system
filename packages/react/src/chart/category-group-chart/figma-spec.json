@@ -1,0 +1,148 @@
+{
+  "component": "CategoryGroupChart",
+  "figmaSection": "3032:92195",
+  "page": "/components/chart/category-group-chart/",
+  "figmaDiffers": {
+    "flex-wrap": "피그마는 한 줄에 학교 15곳까지 두고 넘치면 아래 줄로 늘린다고만 적혀 있다. 코드는 부모 폭에 들어가는 만큼 한 줄에 두고 줄 사이를 24px 띄운다",
+    "related-series": "Related Series 변형은 라벨이 Label/5-Medium(#282a2a), 기준선이 #eff0f0, 묶음 간격이 10px로 다른 변형과 다르다. 코드는 Category Group 변형(Body/2-Medium #161919, #f6f7f7, 6px)으로 맞춘다",
+    "min-height": "피그마는 0명일 때만 2px이다. 코드는 0보다 큰 값도 2px보다 낮아지지 않게 한다"
+  },
+  "nodes": [
+    {
+      "specId": "category-group-chart",
+      "node": "3032:91867",
+      "variant": "Bar Chart/Category Group 예시",
+      "target": ".umc-category-group-chart",
+      "expected": {
+        "column-gap": "6px",
+        "background-image~": "#f6f7f7 0px, #f6f7f7 0.5px"
+      }
+    },
+    {
+      "specId": "category-group-chart",
+      "node": "2678:50644",
+      "variant": "Data State=Default",
+      "target": ".umc-category-group-chart__group",
+      "expected": {
+        "width": "60px",
+        "row-gap": "5px"
+      }
+    },
+    {
+      "specId": "category-group-chart",
+      "node": "2678:50645",
+      "variant": "Data State=Default",
+      "target": ".umc-category-group-chart__plot",
+      "expected": {
+        "height": "100px",
+        "column-gap": "5px",
+        "align-items": "flex-end"
+      }
+    },
+    {
+      "specId": "category-group-chart",
+      "node": "2678:50646",
+      "variant": "Data State=Default",
+      "target": ".umc-category-group-chart__bar[data-color=\"pm\"]",
+      "expected": {
+        "width": "10px",
+        "border-top-left-radius": "4px",
+        "border-top-right-radius": "4px",
+        "background-color": "#e8d8fc",
+        "background-image~": "#a76cdeb3 47.596%, #a76cde80 75%, #a76cde40 100%"
+      }
+    },
+    {
+      "specId": "category-group-chart",
+      "node": "2678:50647",
+      "variant": "Data State=Default",
+      "target": ".umc-category-group-chart__bar[data-color=\"design\"]",
+      "expected": {
+        "background-color": "#ffe0f1",
+        "background-image~": "#e26ba799 47.596%, #e26ba780 75%, #e26ba740 100%"
+      }
+    },
+    {
+      "specId": "category-group-chart",
+      "node": "2678:50648",
+      "variant": "Data State=Default",
+      "target": ".umc-category-group-chart__bar[data-color=\"web-pe\"]",
+      "expected": {
+        "background-color": "#fef3da",
+        "background-image~": "#fbd465 47.596%, #fed97199 75%, #fed97140 100%"
+      }
+    },
+    {
+      "specId": "category-group-chart",
+      "node": "2678:50649",
+      "variant": "Data State=Default",
+      "target": ".umc-category-group-chart__bar[data-color=\"mobile-pe\"]",
+      "expected": {
+        "background-color": "#e5ebff",
+        "background-image~": "#6e8ff580 47.596%, #6e8ff566 75%, #6e8ff540 100%"
+      }
+    },
+    {
+      "specId": "category-group-chart",
+      "node": "2678:50650",
+      "variant": "Data State=Default",
+      "target": ".umc-category-group-chart__label",
+      "expected": {
+        "height": "42px",
+        "color": "#161919",
+        "font-size": "14px",
+        "font-weight": "500",
+        "line-height": "21px",
+        "letter-spacing": "-0.14px",
+        "text-align": "center"
+      }
+    },
+    {
+      "specId": "category-group-chart",
+      "node": "2678:50653",
+      "variant": "Data State=None",
+      "target": ".umc-category-group-chart__item:last-child .umc-category-group-chart__bar",
+      "expected": {
+        "height": "2px"
+      }
+    },
+    {
+      "specId": "category-group-chart-reference",
+      "node": "4360:44030",
+      "variant": "Bar Chart/Category Group/Reference Bar, Data State=Default",
+      "target": ".umc-category-group-chart__reference",
+      "expected": {
+        "width": "10px",
+        "border-top-left-radius": "4px",
+        "background-color": "#eff0f0"
+      }
+    },
+    {
+      "specId": "category-group-chart-rounds",
+      "node": "4360:44157",
+      "variant": "Bar Chart/Category Group/Related Series, Data State=Default",
+      "target": ".umc-category-group-chart__bar[data-color=\"teal-500\"]",
+      "expected": {
+        "background-image~": "#0e8179 47.596%, #0e8179cc 75%, #0e817980 100%"
+      }
+    },
+    {
+      "specId": "category-group-chart-rounds",
+      "node": "4360:44158",
+      "variant": "Bar Chart/Category Group/Related Series, Data State=Default",
+      "target": ".umc-category-group-chart__bar[data-color=\"teal-400\"]",
+      "expected": {
+        "background-image~": "#63c4b8 47.596%, #63c4b8cc 75%, #63c4b880 100%"
+      }
+    },
+    {
+      "specId": "category-group-chart-rounds",
+      "node": "4360:44159",
+      "variant": "Bar Chart/Category Group/Related Series, Data State=Default",
+      "target": ".umc-category-group-chart__bar[data-color=\"teal-300\"]",
+      "expected": {
+        "background-image~": "#c7ebe6 47.596%, #c7ebe6cc 75%, #c7ebe6b3 100%"
+      }
+    }
+  ]
+}

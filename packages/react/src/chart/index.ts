@@ -16,3 +16,10 @@ export {
   DateNavigator,
   type DateNavigatorProps,
 } from "./date-navigator/index.ts"
+export {
+  CategoryGroupChart,
+  type CategoryGroupChartColor,
+  type CategoryGroupChartGroup,
+  type CategoryGroupChartProps,
+  type CategoryGroupChartSeries,
+} from "./category-group-chart/index.ts"

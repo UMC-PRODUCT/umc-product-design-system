@@ -1996,6 +1996,38 @@
         "Appearance=Primary Weak",
         "Appearance=Primary Strong"
       ]
+    },
+    "bar-chart-category-group": {
+      "node": "2678:50643",
+      "name": "Bar Chart/Category Group",
+      "axes": {
+        "Data State": ["Default", "None"]
+      },
+      "variants": ["Data State=Default", "Data State=None"]
+    },
+    "bar-chart-category-group-reference-bar": {
+      "node": "4360:44014",
+      "name": "Bar Chart/Category Group/Reference Bar",
+      "axes": {
+        "Data State": ["Default", "None"]
+      },
+      "variants": ["Data State=Default", "Data State=None"]
+    },
+    "bar-chart-category-group-related-series": {
+      "node": "4360:44154",
+      "name": "Bar Chart/Category Group/Related Series",
+      "axes": {
+        "Data State": ["Default", "None"]
+      },
+      "variants": ["Data State=Default", "Data State=None"]
+    },
+    "bar-chart-category-group-related-series-reference-bar": {
+      "node": "4394:49011",
+      "name": "Bar Chart/Category Group/Related Series/Reference Bar",
+      "axes": {
+        "Data State": ["Default", "None"]
+      },
+      "variants": ["Data State=Default", "Data State=None"]
     }
   }
 }

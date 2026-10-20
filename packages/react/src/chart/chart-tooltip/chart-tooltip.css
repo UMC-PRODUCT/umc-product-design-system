@@ -23,6 +23,35 @@
     rotate: 180deg;
   }
 
+  .umc-chart-tooltip__positioner {
+    z-index: var(--umc-z-tooltip);
+  }
+
+  .umc-chart-tooltip__popup {
+    position: relative;
+    opacity: 1;
+    transition: opacity var(--umc-motion-duration);
+  }
+
+  .umc-chart-tooltip__popup[data-starting-style],
+  .umc-chart-tooltip__popup[data-ending-style] {
+    opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .umc-chart-tooltip__popup {
+      transition: none;
+    }
+  }
+
+  .umc-chart-tooltip__popup > .umc-chart-tooltip__arrow[data-side="bottom"] {
+    top: -8px;
+  }
+
+  .umc-chart-tooltip__popup > .umc-chart-tooltip__arrow[data-side="top"] {
+    bottom: -8px;
+  }
+
   .umc-chart-tooltip__body {
     --umc-chart-tooltip-muted: #9ca3a3;
     --umc-chart-tooltip-text: #404443;
