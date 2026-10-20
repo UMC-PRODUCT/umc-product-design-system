@@ -62,7 +62,11 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 6. 로딩 점 3개의 움직임 정의가 없습니다. 1초 주기 투명도 변화를 넣었습니다.
 7. Weak 비활성의 흰색 70% 덧칠이 내보낸 컬렉션 밖의 변수(`Static/White/Opacity-70`)를 참조합니다. 눌림 덧칠 색은 변수에 연결되지 않았습니다.
 8. Red Weak 글자색(`red-600`)에 맞는 semantic 토큰이 없어 primitive를 바로 씁니다.
-9. Neutral Weak Default 배경이 아이콘 없는 변형은 `#eff0f0`(`action-primary-default`), 아이콘 있는 변형은 `#f7f8f8`(`TealGrey-75`)입니다. 코드는 아이콘 없는 변형 값(`fill-neutral-medium-100`)으로 통일했습니다. Neutral Fill처럼 하나로 맞춰 주세요.
+9. Neutral Weak Default 배경은 아이콘 없는 변형이 `#eff0f0`(`action-primary-default`), 아이콘 있는 변형과 아이콘만 있는 변형이 `#f7f8f8`(`TealGrey-75`)입니다. 코드는 아이콘 없는 변형 값(`fill-neutral-medium-100`)으로 통일했습니다. Neutral Fill처럼 하나로 맞춰 주세요.
+10. 아이콘만 있는 버튼은 Sm 40×40, XS 36×36으로 정사각형인데 Md만 54×48입니다. 의도한 크기인지 알려 주세요.
+11. 아이콘만 있는 변형에도 `Icon Position=Right`가 붙어 있습니다. 코드는 이 값을 쓰지 않습니다. 문서 라벨의 Weak 아이콘 전용 첫 줄은 Default 줄인데 Pressed로 적혀 있습니다.
+12. 아이콘만 있는 변형은 Neutral과 White, Md·Sm·XS, Default·Pressed·Disabled뿐입니다. 코드는 Lg를 받지 않고, Primary·Red와 로딩은 라벨 버튼 규칙으로 그립니다. 필요한 조합을 알려 주세요.
+13. White 버튼만 아이콘이 글자(#606262)보다 옅은 #7E7F7F(`icon-subtle`)이고, 다른 색은 아이콘과 글자가 같습니다. 코드는 피그마대로 White 아이콘만 따로 칠합니다.
 
 ## Text Button
 

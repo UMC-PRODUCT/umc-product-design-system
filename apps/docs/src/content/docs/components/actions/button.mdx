@@ -1,16 +1,18 @@
 ---
 title: Button
-description: 피그마 Button 컴포넌트(변형 206개)를 옮긴 버튼입니다.
+description: 피그마 Button 컴포넌트(변형 248개)를 옮긴 버튼입니다.
 ---
 
 import Aside from "../../../../components/Aside.astro"
 import {
   ButtonAllVariants,
+  ButtonIconOnly,
   ButtonIcons,
   ButtonLoadingWidth,
   ButtonMatrix,
   ButtonOverride,
   ButtonSizes,
+  ButtonWhiteIcons,
 } from "../../../../components/react/ButtonExamples.tsx"
 
 피그마 `Button`의 색 4종, 스타일 2종, 크기 4종, 상태 4종을 하나의 컴포넌트로 옮겼습니다. 렌더되는 요소는 항상 `<button>`이고, 네이티브 `button` 속성을 모두 타입 검사와 함께 받습니다.
@@ -52,6 +54,28 @@ import { Button } from "@umc-product/react"
 
 <ButtonIcons />
 
+`white` 버튼만 아이콘을 글자보다 옅은 `icon-neutral-medium-500`(#7e7f7f)으로 칠합니다.
+
+<ButtonWhiteIcons />
+
+## 아이콘만 있는 버튼
+
+`icon`에 아이콘을 넘기고 라벨을 비우면 아이콘만 있는 버튼이 됩니다. 글자가 없으니 `aria-label`이나 `aria-labelledby`로 이름을 붙여야 하고, 빠뜨리면 타입 검사에서 걸립니다. `leadingIcon`, `trailingIcon`, 라벨과는 함께 쓰지 않습니다.
+
+```tsx
+<Button icon={<AddIcon weight="fill" />} aria-label="항목 추가" color="neutral" size="sm" />
+```
+
+| size | 크기  | 좌우 여백 | 아이콘 |
+| ---- | ----- | --------- | ------ |
+| `md` | 54×48 | 12px      | 30px   |
+| `sm` | 40×40 | 8px       | 24px   |
+| `xs` | 36×36 | 8px       | 20px   |
+
+아이콘 버튼은 `md`, `sm`, `xs`만 있고 `lg`는 타입에서 받지 않습니다. 색과 상태는 라벨 버튼과 같은 규칙을 씁니다.
+
+<ButtonIconOnly />
+
 ## 로딩
 
 라벨을 투명하게 남겨 두므로 로딩이 시작되어도 버튼 폭이 그대로입니다. 포커스를 잃지 않도록 `disabled` 대신 `aria-disabled`, `aria-busy`를 달고 클릭과 form 제출을 막습니다. 화면 낭독기는 "지원서 제출하기 로딩 중"으로 읽습니다.
@@ -71,7 +95,7 @@ import { Button } from "@umc-product/react"
 
 ## 모든 변형
 
-피그마 `Button`의 변형 206개를 실제 컴포넌트로 그렸습니다. 칸에 마우스를 올리면 코드가 보이고, Pressed 칸은 눌림 상태를 켜 둔 모습입니다. 아이콘 변형에는 `AddIcon` Fill을 넣었습니다. 피그마에 없는 조합은 —로 비워 둡니다.
+피그마 `Button`의 변형 248개를 실제 컴포넌트로 그렸습니다. 칸에 마우스를 올리면 코드가 보이고, Pressed 칸은 눌림 상태를 켜 둔 모습입니다. 아이콘 변형에는 `AddIcon` Fill을 넣었습니다. 피그마에 없는 조합은 —로 비워 둡니다.
 
 <ButtonAllVariants />
 
@@ -84,6 +108,7 @@ import { Button } from "@umc-product/react"
 | `size`                        | `"lg" \| "md" \| "sm" \| "xs"`               | `"md"`          | 피그마 Size                              |
 | `isLoading`                   | `boolean`                                    | `false`         | 피그마 State=Loading                     |
 | `leadingIcon`, `trailingIcon` | `ReactNode`                                  | 없음            | 피그마 Icon Position                     |
+| `icon`                        | `ReactNode`                                  | 없음            | 피그마 Icon Only. 넘기면 라벨 없이 그림  |
 | 나머지                        | `ComponentPropsWithRef<"button">`            | `type="button"` | `ref`, `aria-*`, `data-*`, 이벤트 핸들러 |
 
 ## 알아 둘 점
