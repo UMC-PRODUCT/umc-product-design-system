@@ -1,5 +1,7 @@
 @import "./chart-legend/chart-legend.css";
 @import "./chart-tooltip/chart-tooltip.css";
+@import "./column-chart/column-chart.css";
+@import "./date-navigator/date-navigator.css";
 
 @layer components {
   .umc-chart-color[data-color="pm"] {

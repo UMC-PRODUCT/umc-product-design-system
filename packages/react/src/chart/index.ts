@@ -6,3 +6,13 @@ export {
   type ChartTooltipItem,
   type ChartTooltipProps,
 } from "./chart-tooltip/index.ts"
+export {
+  ColumnChart,
+  type ColumnChartItem,
+  type ColumnChartMode,
+  type ColumnChartProps,
+} from "./column-chart/index.ts"
+export {
+  DateNavigator,
+  type DateNavigatorProps,
+} from "./date-navigator/index.ts"

@@ -18,3 +18,19 @@ export const APPLICANT_SERIES: ChartSeries = {
   label: "지원자 수",
   color: "reference",
 }
+
+const BASE_DATE = new Date(2026, 9, 20)
+const WEEKDAYS = ["일", "월", "화", "수", "목", "금", "토"] as const
+
+export const dayAt = (offset: number) =>
+  new Date(
+    BASE_DATE.getFullYear(),
+    BASE_DATE.getMonth(),
+    BASE_DATE.getDate() + offset,
+  )
+
+export const dateLabelOf = (date: Date) =>
+  `${date.getFullYear()}년 ${date.getMonth() + 1}월 ${date.getDate()}일`
+
+export const dayLabelOf = (date: Date) =>
+  `${String(date.getDate()).padStart(2, "0")}(${WEEKDAYS[date.getDay()] ?? ""})`

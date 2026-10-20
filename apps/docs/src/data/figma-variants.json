@@ -1984,6 +1984,18 @@
         "Show Caption=False, Value Display=Comparison",
         "Show Caption=True, Value Display=Comparison"
       ]
+    },
+    "bar-chart-column": {
+      "node": "2929:81105",
+      "name": "Bar Chart/Column",
+      "axes": {
+        "Appearance": ["Neutral", "Primary Weak", "Primary Strong"]
+      },
+      "variants": [
+        "Appearance=Neutral",
+        "Appearance=Primary Weak",
+        "Appearance=Primary Strong"
+      ]
     }
   }
 }
