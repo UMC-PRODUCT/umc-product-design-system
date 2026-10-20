@@ -28,7 +28,7 @@ export function PaginationPositions() {
   )
 }
 
-export function PaginationManyPages() {
+export function PaginationGroups() {
   return (
     <div className="umc-example">
       <Pagination totalPages={10} defaultPage={4} />

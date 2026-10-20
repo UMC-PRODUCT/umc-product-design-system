@@ -56,18 +56,18 @@ describe("Pagination", () => {
     expect(onPageChange).not.toHaveBeenCalled()
   })
 
-  it("화살표는 한 페이지씩 옮기고 번호 창을 한 칸씩 민다", async () => {
+  it("화살표는 한 페이지씩 옮기고, 묶음 끝을 넘으면 다음 묶음을 보여 준다", async () => {
     render(<Pagination totalPages={10} defaultPage={4} />)
-    expect(visiblePages()).toEqual(["3", "4", "5", "6"])
+    expect(visiblePages()).toEqual(["1", "2", "3", "4"])
     const next = nextButton()
     if (next === null) throw new Error("다음 화살표가 없다")
     await userEvent.click(next)
-    expect(visiblePages()).toEqual(["4", "5", "6", "7"])
+    expect(visiblePages()).toEqual(["5", "6", "7", "8"])
     expect(pageButton(5)).toHaveAttribute("aria-current", "page")
     const previous = previousButton()
     if (previous === null) throw new Error("이전 화살표가 없다")
     await userEvent.click(previous)
-    expect(visiblePages()).toEqual(["3", "4", "5", "6"])
+    expect(visiblePages()).toEqual(["1", "2", "3", "4"])
     expect(pageButton(4)).toHaveAttribute("aria-current", "page")
   })
 
@@ -112,7 +112,7 @@ describe("Pagination", () => {
 
   it("visibleCount로 한 번에 보이는 번호 수를 바꾼다", () => {
     render(<Pagination totalPages={10} defaultPage={6} visibleCount={5} />)
-    expect(visiblePages()).toEqual(["5", "6", "7", "8", "9"])
+    expect(visiblePages()).toEqual(["6", "7", "8", "9", "10"])
   })
 
   it("접근성 이름을 바꿀 수 있다", () => {
