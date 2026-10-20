@@ -9,7 +9,7 @@
       "variant": "State=Default",
       "target": ".umc-text-area",
       "expected": {
-        "min-height": "120px",
+        "row-gap": "4px",
         "padding-top": "14px",
         "padding-bottom": "14px",
         "padding-left": "16px",
@@ -19,6 +19,9 @@
         "border-top-left-radius": "12px",
         "background-color": "#ffffff",
         "box-shadow~": "#d3d8d826 1px 1px 2px 0px inset, #ffffff40 -1px -1px 1px 0px inset"
+      },
+      "figmaDiffers": {
+        "height": "피그마는 1px 테두리를 상자 안쪽에 그려 한 줄일 때 높이가 77px이다. 코드는 다른 입력 칸처럼 테두리를 여백 바깥에 더해 78.9px이다"
       }
     },
     {
@@ -110,6 +113,17 @@
       "target": ".umc-text-area__input",
       "expected": {
         "color": "#cccccc"
+      }
+    },
+    {
+      "specId": "text-area-disabled-counter",
+      "node": "4456:46010",
+      "variant": "State=Disabled",
+      "target": ".umc-text-area__counter",
+      "expected": {
+        "color": "#adadad",
+        "font-size": "15px",
+        "line-height": "22.5px"
       }
     }
   ]

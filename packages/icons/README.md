@@ -1,6 +1,6 @@
 # @umc-product/icons
 
-UMC 디자인 시스템의 아이콘 65종, 픽토그램 12종, UMC 로고 React 컴포넌트입니다. 전체 목록과 이름 찾기는 [문서의 아이콘 페이지](https://umc-product.github.io/umc-product-design-system/foundations/icons/)에 있습니다.
+UMC 디자인 시스템의 아이콘 66종, 픽토그램 12종, UMC 로고 React 컴포넌트입니다. 전체 목록과 이름 찾기는 [문서의 아이콘 페이지](https://umc-product.github.io/umc-product-design-system/foundations/icons/)에 있습니다.
 
 ## 설치
 

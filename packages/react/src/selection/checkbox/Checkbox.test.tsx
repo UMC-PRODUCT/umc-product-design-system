@@ -90,6 +90,21 @@ describe("Checkbox", () => {
     expect(checkbox).toHaveAttribute("data-invalid", "")
   })
 
+  it("readOnly이면 눌러도 바뀌지 않고 읽기 전용으로 알린다", async () => {
+    const user = userEvent.setup()
+    const onCheckedChange = vi.fn()
+    render(
+      <Checkbox defaultChecked readOnly onCheckedChange={onCheckedChange}>
+        지원 파트 PM
+      </Checkbox>,
+    )
+    const checkbox = screen.getByRole("checkbox", { name: "지원 파트 PM" })
+    await user.click(checkbox)
+    expect(checkbox).toHaveAttribute("aria-checked", "true")
+    expect(checkbox).toHaveAttribute("aria-readonly", "true")
+    expect(onCheckedChange).not.toHaveBeenCalled()
+  })
+
   it("라벨이 없으면 바깥 label의 htmlFor로 이름을 받는다", () => {
     render(
       <>

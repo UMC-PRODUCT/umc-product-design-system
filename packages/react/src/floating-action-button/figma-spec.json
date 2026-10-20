@@ -1,0 +1,46 @@
+{
+  "component": "FloatingActionButton",
+  "figmaSection": "4469:58260",
+  "page": "/components/actions/floating-action-button/",
+  "figmaDiffers": {
+    "box-shadow": "피그마 Shadow/Drop/Neutral_2(#EFF0F080, 0 4 16)와 3기 토큰 정의(#eceeee85)가 다르다. 이름 있는 스타일은 토큰을 쓰는 규칙에 따라 토큰 정의를 썼다"
+  },
+  "nodes": [
+    {
+      "specId": "floating-action-button-default",
+      "node": "4437:76915",
+      "variant": "State=Default",
+      "target": ".umc-floating-action-button",
+      "expected": {
+        "width": "54px",
+        "height": "54px",
+        "border-top-width": "1px",
+        "border-top-color": "#eff0f0",
+        "border-top-left-radius": "999px",
+        "background-color": "#f7f8f8",
+        "color": "#7e7f7f"
+      }
+    },
+    {
+      "specId": "floating-action-button-hover",
+      "node": "4437:76917",
+      "variant": "State=Hover",
+      "target": ".umc-floating-action-button",
+      "expected": {
+        "border-top-color": "#b3e5e1",
+        "background-color": "#e9f7f5",
+        "color": "#02746c"
+      }
+    },
+    {
+      "specId": "floating-action-button-icon",
+      "node": "4437:76918",
+      "variant": "State=Hover",
+      "target": ".umc-floating-action-button__icon",
+      "expected": {
+        "width": "30px",
+        "height": "30px"
+      }
+    }
+  ]
+}

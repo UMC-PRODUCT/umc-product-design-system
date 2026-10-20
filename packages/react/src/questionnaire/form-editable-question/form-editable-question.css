@@ -1,0 +1,151 @@
+@layer components {
+  .umc-form-editable-question {
+    --umc-form-editable-question-number: var(
+      --umc-color-text-brand-default-600
+    );
+    --umc-form-editable-question-title: var(
+      --umc-color-text-neutral-default-900
+    );
+    --umc-form-editable-question-description: var(
+      --umc-color-text-neutral-medium-600
+    );
+    --umc-form-editable-question-placeholder: var(--umc-color-text-placeholder);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--umc-spacing-gap-12);
+    box-sizing: border-box;
+    margin: 0;
+    padding-block: 0;
+    padding-inline: var(--umc-spacing-padding-6);
+  }
+
+  .umc-form-editable-question:has(
+    .umc-form-editable-question__title:placeholder-shown
+  ) {
+    --umc-form-editable-question-number: var(
+      --umc-color-text-brand-disabled-300
+    );
+  }
+
+  .umc-form-editable-question:has(
+    > .umc-form-editable-question__answer > .umc-form-choice-list-editor
+  ) {
+    gap: var(--umc-spacing-gap-16);
+  }
+
+  .umc-form-editable-question[data-disabled] {
+    --umc-form-editable-question-title: var(--umc-color-text-neutral-weak-500);
+    --umc-form-editable-question-description: var(
+      --umc-color-text-neutral-weak-500
+    );
+    --umc-form-editable-question-placeholder: var(
+      --umc-color-text-neutral-weak-500
+    );
+  }
+
+  .umc-form-editable-question__header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--umc-spacing-gap-4);
+    padding-inline: var(--umc-spacing-padding-6);
+  }
+
+  .umc-form-editable-question__number {
+    flex: 0 0 28px;
+    color: var(--umc-form-editable-question-number);
+    font-family: var(--umc-font-family-brand);
+    font-size: var(--umc-font-size-18);
+    font-weight: var(--umc-font-weight-semibold);
+    line-height: 1.4;
+  }
+
+  .umc-form-editable-question__fields {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    gap: var(--umc-spacing-gap-4);
+    min-width: 0;
+  }
+
+  .umc-form-editable-question__title-row {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  .umc-form-editable-question__title,
+  .umc-form-editable-question__description {
+    box-sizing: border-box;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: var(--umc-radius-6);
+    background: transparent;
+    font-family: var(--umc-font-family-brand);
+    outline: none;
+    appearance: none;
+  }
+
+  .umc-form-editable-question__title {
+    flex: 0 1 auto;
+    width: 100%;
+    color: var(--umc-form-editable-question-title);
+    font-size: var(--umc-font-size-18);
+    font-weight: var(--umc-font-weight-semibold);
+    line-height: 1.4;
+    letter-spacing: 0;
+    field-sizing: content;
+  }
+
+  @supports (field-sizing: content) {
+    .umc-form-editable-question__title {
+      width: auto;
+      max-width: 100%;
+    }
+  }
+
+  .umc-form-editable-question__description {
+    width: 100%;
+    color: var(--umc-form-editable-question-description);
+    font-size: var(--umc-typography-body-2-regular-font-size);
+    font-weight: var(--umc-typography-body-2-regular-font-weight);
+    line-height: var(--umc-typography-body-2-regular-line-height);
+    letter-spacing: var(--umc-typography-body-2-regular-letter-spacing);
+  }
+
+  .umc-form-editable-question__title::placeholder,
+  .umc-form-editable-question__description::placeholder {
+    color: var(--umc-form-editable-question-placeholder);
+    opacity: 1;
+  }
+
+  .umc-form-editable-question__title:disabled,
+  .umc-form-editable-question__description:disabled {
+    -webkit-text-fill-color: currentColor;
+  }
+
+  .umc-form-editable-question__title:focus-visible,
+  .umc-form-editable-question__description:focus-visible {
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
+    outline-offset: 2px;
+  }
+
+  .umc-form-editable-question__required {
+    flex: 0 0 auto;
+    color: var(--umc-color-text-error);
+    font-family: var(--umc-font-family-brand);
+    font-size: var(--umc-font-size-18);
+    font-weight: var(--umc-font-weight-semibold);
+    line-height: 1.4;
+  }
+
+  .umc-form-editable-question__answer {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding-inline-start: var(--umc-spacing-padding-20);
+  }
+}

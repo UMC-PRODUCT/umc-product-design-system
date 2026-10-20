@@ -1,0 +1,132 @@
+{
+  "component": "FormAttachmentField",
+  "figmaSection": "4469:58260",
+  "page": "/components/questionnaire/form-attachment-field/",
+  "figmaDiffers": {
+    "button": "피그마는 빈 칸에 포커스만 해도 버튼이 삭제로 바뀐다. 코드는 글자를 입력했거나 첨부가 있을 때만 삭제로 바꾸고, 빈 칸에서는 파일 업로드를 그대로 둔다",
+    "placeholder": "입력 칸 안내 문구에는 온점을 쓰지 않는 규칙에 맞춰 피그마 문구의 마지막 온점을 뺐다"
+  },
+  "nodes": [
+    {
+      "specId": "form-attachment-field-root",
+      "node": "4456:32605",
+      "variant": "Mode=Form Respond (입력 중), State=Default",
+      "target": ".umc-form-attachment-field",
+      "expected": {
+        "column-gap": "10px"
+      }
+    },
+    {
+      "specId": "form-attachment-field-box",
+      "node": "4456:32548",
+      "variant": "Mode=Form Respond (입력 중), State=Default",
+      "target": ".umc-form-attachment-field__box",
+      "expected": {
+        "min-height": "48px",
+        "padding-top": "8px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "border-top-color": "#cccccc",
+        "border-top-left-radius": "14px",
+        "background-color": "#ffffff"
+      }
+    },
+    {
+      "specId": "form-attachment-field-input",
+      "node": "4456:32551",
+      "variant": "Mode=Form Respond (입력 중), State=Default",
+      "target": ".umc-input-box__input",
+      "expected": {
+        "font-size": "17px",
+        "font-weight": "500",
+        "line-height": "23.8px",
+        "letter-spacing": "-0.34px"
+      }
+    },
+    {
+      "specId": "form-attachment-field-upload",
+      "node": "4456:32549",
+      "variant": "Mode=Form Respond (입력 중), State=Default",
+      "target": ".umc-button",
+      "expected": {
+        "height": "48px",
+        "min-width": "80px",
+        "border-top-left-radius": "14px",
+        "background-color": "#ddf4f1",
+        "color": "#02746c",
+        "font-size": "17px"
+      }
+    },
+    {
+      "specId": "form-attachment-field-hover",
+      "node": "4456:32556",
+      "variant": "Mode=Form Respond (입력 중), State=Hover",
+      "target": ".umc-form-attachment-field__box",
+      "expected": {
+        "border-top-color": "#008a80"
+      }
+    },
+    {
+      "specId": "form-attachment-field-typing",
+      "node": "4456:32574",
+      "variant": "Mode=Form Respond (입력 중), State=Typing",
+      "target": ".umc-form-attachment-field__box",
+      "expected": {
+        "border-top-color": "#008a80",
+        "background-color": "#f4fbfa99"
+      }
+    },
+    {
+      "specId": "form-attachment-field-remove",
+      "node": "4456:32575",
+      "variant": "Mode=Form Respond (입력 중), State=Typing",
+      "target": ".umc-button",
+      "expected": {
+        "background-color": "#eff0f0",
+        "color": "#606262"
+      }
+    },
+    {
+      "specId": "form-attachment-field-clip",
+      "node": "4456:32587",
+      "variant": "Mode=Form Respond (입력 중), State=Filled",
+      "target": ".umc-form-attachment-field__clip",
+      "expected": {
+        "width": "18px",
+        "height": "18px",
+        "color": "#3f4141"
+      }
+    },
+    {
+      "specId": "form-attachment-field-name",
+      "node": "4456:32588",
+      "variant": "Mode=Form Respond (입력 중), State=Filled",
+      "target": ".umc-form-attachment-field__name",
+      "expected": {
+        "color": "#02746c",
+        "font-size": "17px",
+        "font-weight": "500"
+      }
+    },
+    {
+      "specId": "form-attachment-field-preview",
+      "node": "4469:58178",
+      "variant": "Mode=Form Create (생성 중), State=Default",
+      "target": ".umc-button",
+      "expected": {
+        "height": "48px",
+        "background-color": "#ddf4f1",
+        "color": "#7ac7c1"
+      }
+    },
+    {
+      "specId": "form-attachment-field-preview-hover",
+      "node": "4469:58175",
+      "variant": "Mode=Form Create (생성 중), State=Hover",
+      "target": ".umc-form-attachment-field__box",
+      "expected": {
+        "border-top-color": "#008a80"
+      }
+    }
+  ]
+}

@@ -56,6 +56,7 @@ import { StrikethroughIcon } from "./icons/StrikethroughIcon.tsx"
 import { SubtractCircleIcon } from "./icons/SubtractCircleIcon.tsx"
 import { SubtractionIcon } from "./icons/SubtractionIcon.tsx"
 import { TextIcon } from "./icons/TextIcon.tsx"
+import { TextLineIcon } from "./icons/TextLineIcon.tsx"
 import { ThumbsUpIcon } from "./icons/ThumbsUpIcon.tsx"
 import { TimeIcon } from "./icons/TimeIcon.tsx"
 import { TrashIcon } from "./icons/TrashIcon.tsx"
@@ -136,6 +137,7 @@ export {
   SubtractCircleIcon,
   SubtractionIcon,
   TextIcon,
+  TextLineIcon,
   ThumbsUpIcon,
   TimeIcon,
   TrashIcon,
@@ -217,6 +219,7 @@ export const iconCatalog = [
   { name: "SubtractCircleIcon", figmaName: "Icon/Subtract_Circle", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: SubtractCircleIcon },
   { name: "SubtractionIcon", figmaName: "Icon/Subtraction", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: SubtractionIcon },
   { name: "TextIcon", figmaName: "Icon/Text", defaultWeight: "fill", weights: ["fill"], component: TextIcon },
+  { name: "TextLineIcon", figmaName: "Icon/Text_Line", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: TextLineIcon },
   { name: "ThumbsUpIcon", figmaName: "Icon/ThumbsUp", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: ThumbsUpIcon },
   { name: "TimeIcon", figmaName: "Icon/Time", defaultWeight: "regular", weights: ["thin", "regular", "fill"], component: TimeIcon },
   { name: "TrashIcon", figmaName: "Icon/Trash", defaultWeight: "regular", weights: ["thin", "regular"], component: TrashIcon },

@@ -5,7 +5,7 @@
 ## 입력
 
 - 피그마 파일 `U3pRZp6BjQBW5aMljCBwo9`, get_design_context asset download, 받은 날 2026-10-10
-- 노드 160개, 컴포넌트 78개(아이콘 65, 픽토그램 12, 로고 1)
+- 노드 163개, 컴포넌트 79개(아이콘 66, 픽토그램 12, 로고 1)
 
 ## 디자인 팀 확인 요청
 
@@ -128,6 +128,7 @@
 | `Icon/Subtract_Circle` | `SubtractCircleIcon` | thin(3060:96406), regular(3060:96412), fill(3060:96418) |
 | `Icon/Subtraction` | `SubtractionIcon` | thin(3060:94325), regular(2505:16987), fill(2505:16990) |
 | `Icon/Text` | `TextIcon` | fill(3095:97362) |
+| `Icon/Text_Line` | `TextLineIcon` | thin(4437:76988), regular(4437:76992), fill(4437:76996) |
 | `Icon/ThumbsUp` | `ThumbsUpIcon` | thin(3095:97517), regular(3095:97510), fill(3095:97511) |
 | `Icon/Time` | `TimeIcon` | thin(3060:96154), regular(3060:96068), fill(3060:96072) |
 | `Icon/Trash` | `TrashIcon` | thin(3060:95505), regular(3060:95495) |

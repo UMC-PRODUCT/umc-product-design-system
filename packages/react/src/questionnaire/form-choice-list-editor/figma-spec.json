@@ -1,0 +1,125 @@
+{
+  "component": "FormChoiceListEditor",
+  "figmaSection": "4469:58260",
+  "page": "/components/questionnaire/form-choice-list-editor/",
+  "figmaDiffers": {
+    "remove": "피그마는 Hover 줄에만 닫기 아이콘을 그린다. 코드는 키보드로도 지울 수 있게 줄 안에 포커스가 있을 때도 삭제 버튼을 보여 준다"
+  },
+  "nodes": [
+    {
+      "specId": "form-choice-list-editor-box",
+      "node": "4437:82455",
+      "variant": "Mode=Edit",
+      "target": ".umc-form-choice-list-editor",
+      "expected": {
+        "padding-top": "4px",
+        "padding-left": "4px",
+        "row-gap": "2px",
+        "border-top-color": "#e2e3e3",
+        "border-top-left-radius": "12px",
+        "background-color": "#ffffff"
+      }
+    },
+    {
+      "specId": "form-choice-list-editor-option",
+      "node": "4437:80989",
+      "variant": "Mode=Edit, State=Filled, Disabled=False",
+      "target": ".umc-form-choice-list-editor__option",
+      "expected": {
+        "padding-top": "8px",
+        "padding-left": "6px",
+        "padding-right": "10px",
+        "column-gap": "12px",
+        "border-top-left-radius": "8px"
+      }
+    },
+    {
+      "specId": "form-choice-list-editor-input",
+      "node": "4437:80992",
+      "variant": "Mode=Edit, State=Filled, Disabled=False",
+      "target": ".umc-form-choice-list-editor__input",
+      "expected": {
+        "color": "#0f1010",
+        "font-size": "16px",
+        "font-weight": "400",
+        "line-height": "23.2px",
+        "letter-spacing": "-0.16px"
+      }
+    },
+    {
+      "specId": "form-choice-list-editor-checkbox",
+      "node": "3696:100397",
+      "variant": "Mode=Edit, State=Filled, Disabled=False",
+      "target": ".umc-form-choice-list-editor__indicator",
+      "expected": {
+        "width": "20px",
+        "height": "20px",
+        "border-top-width": "1.5px",
+        "border-top-color": "#adadad",
+        "border-top-left-radius": "5px"
+      }
+    },
+    {
+      "specId": "form-choice-list-editor-radio",
+      "node": "3600:97106",
+      "variant": "Mode=Edit, State=Hover, Disabled=False",
+      "target": ".umc-form-choice-list-editor__indicator",
+      "expected": {
+        "border-top-color": "#adadad",
+        "border-top-left-radius": "999px"
+      }
+    },
+    {
+      "specId": "form-choice-list-editor-hover",
+      "node": "4437:81000",
+      "variant": "Mode=Edit, State=Hover, Disabled=False",
+      "target": ".umc-form-choice-list-editor__option",
+      "expected": {
+        "background-color": "#fbfcfc"
+      }
+    },
+    {
+      "specId": "form-choice-list-editor-remove",
+      "node": "4437:81004",
+      "variant": "Mode=Edit, State=Hover, Disabled=False",
+      "target": ".umc-form-choice-list-editor__remove",
+      "expected": {
+        "color": "#adadad",
+        "opacity": "1"
+      }
+    },
+    {
+      "specId": "form-choice-list-editor-add",
+      "node": "4437:81008",
+      "variant": "Mode=Edit, State=Add, Disabled=False",
+      "target": ".umc-form-choice-list-editor__add",
+      "expected": {
+        "padding-top": "8px",
+        "padding-left": "6px",
+        "padding-right": "8px",
+        "column-gap": "8px"
+      }
+    },
+    {
+      "specId": "form-choice-list-editor-add-label",
+      "node": "4437:81010",
+      "variant": "Mode=Edit, State=Add, Disabled=False",
+      "target": ".umc-form-choice-list-editor__add-label",
+      "expected": {
+        "column-gap": "4px",
+        "color": "#adadad",
+        "font-size": "16px",
+        "letter-spacing": "-0.16px"
+      }
+    },
+    {
+      "specId": "form-choice-list-editor-add-checkbox",
+      "node": "I4437:81009;3696:100397",
+      "variant": "Mode=Edit, State=Add, Disabled=False",
+      "target": ".umc-form-choice-list-editor__indicator",
+      "expected": {
+        "border-top-color": "#e2e3e3"
+      }
+    }
+  ]
+}

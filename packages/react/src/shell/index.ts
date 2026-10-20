@@ -37,6 +37,12 @@ export {
   type PageHeaderProps,
 } from "./page-header/PageHeader.tsx"
 export {
+  SectionHeader,
+  type SectionHeaderLevel,
+  type SectionHeaderProps,
+  type SectionHeaderSize,
+} from "./section-header/SectionHeader.tsx"
+export {
   TopNavigation,
   TopNavigationButton,
   type TopNavigationBackProps,

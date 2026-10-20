@@ -1,0 +1,70 @@
+---
+title: FormSection
+description: 질문지 편집 화면에서 질문을 공통 문항, 파트 문항 같은 묶음으로 나눕니다.
+---
+
+import {
+  FormQuestionSectionAllVariants,
+  FormSectionControlAllVariants,
+  FormSectionDefault,
+} from "../../../../components/react/questionnaire/FormSectionExamples.tsx"
+
+피그마 `Form/Question Section`과 `.primitive/Form/Section Control`을 구현했습니다. `variant="static"`은 늘 쓰는 묶음이라 탭 모양 제목만 있습니다. `variant="toggle"`은 "섹션 사용" 스위치로 묶음을 켜고 끕니다. 묶음 안에는 [FormQuestionEditor](../form-question-editor/)와 [FormQuestionToolbar](../form-question-toolbar/)를 넣습니다.
+
+```tsx
+import { FormSection } from "@umc-product/react"
+
+<FormSection title="공통 문항">{commonQuestions}</FormSection>
+<FormSection
+  variant="toggle"
+  title="PM"
+  optionalLabel="(선택 사항)"
+  enabled={pmSection.enabled}
+  onEnabledChange={setPmSectionEnabled}
+>
+  {pmQuestions}
+</FormSection>
+```
+
+<FormSectionDefault client:visible />
+
+## 섹션 켜고 끄기
+
+- 스위치를 끄면 본문이 숨고 머리만 남습니다. 본문을 지우지 않고 `hidden`으로 숨기므로, 다시 켜면 쓰던 내용이 그대로 있습니다.
+- 끈 섹션의 질문을 저장할지, 응답 화면에서 뺄지는 앱이 정합니다.
+- 스위치는 섹션 제목을 설명으로 읽습니다. 섹션이 여럿이어도 어느 섹션의 스위치인지 들을 수 있습니다.
+
+## 제목 단계
+
+제목은 기본 `h3`입니다. 페이지 구획 제목 아래에 섹션이 놓이는 구조를 가정했고, 다르면 `level`로 바꿉니다.
+
+## 모든 변형
+
+피그마 `.primitive/Form/Section Control` 변형 3개와 `Form/Question Section` 변형 9개를 그렸습니다. 머리만 그리는 컴포넌트가 따로 없어서, Section Control 칸은 본문이 빈 섹션으로 그렸습니다.
+
+<FormSectionControlAllVariants />
+
+<FormQuestionSectionAllVariants />
+
+## props
+
+나머지 `section` 속성과 `ref`는 루트 요소에 붙습니다.
+
+| prop              | 타입                         | 기본값        | 설명                                   |
+| ----------------- | ---------------------------- | ------------- | -------------------------------------- |
+| `variant`         | `"static" \| "toggle"`       | `"static"`    | 탭 머리, 스위치 머리                   |
+| `title`           | `ReactNode`                  | 필수          | 섹션 제목                              |
+| `optionalLabel`   | `ReactNode`                  | 없음          | 제목 뒤 작은 글자. `toggle`에서만 보임 |
+| `enabled`         | `boolean`                    | 없음          | 섹션을 쓸지(제어). `toggle`에서만 씀   |
+| `defaultEnabled`  | `boolean`                    | `true`        | 처음에 섹션을 쓸지(비제어)             |
+| `onEnabledChange` | `(enabled: boolean) => void` | 없음          | 스위치를 누를 때                       |
+| `enabledLabel`    | `ReactNode`                  | `"섹션 사용"` | 스위치 글자                            |
+| `level`           | `2 \| 3 \| 4 \| 5 \| 6`      | `3`           | 제목 단계                              |
+| `children`        | `ReactNode`                  | 필수          | 본문                                   |
+
+## 알아 둘 점
+
+- 제목이 길면 줄을 바꿉니다. 탭 머리는 곡선을 아래에 맞춘 채 위로 늘어납니다.
+- 탭 오른쪽 곡선은 피그마 벡터를 그대로 옮긴 SVG입니다.
+- "섹션 사용" 글자는 피그마 변수 이름이 15px인데 값이 14px입니다. 값을 따라 `body-3-regular`(14px)를 썼습니다.
+- `static` 섹션은 끌 수 없습니다. 피그마에 끈 공통 문항 변형이 없습니다.

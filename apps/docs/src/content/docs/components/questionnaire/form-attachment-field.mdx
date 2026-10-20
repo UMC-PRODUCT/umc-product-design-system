@@ -1,0 +1,88 @@
+---
+title: FormAttachmentField
+description: 질문지에서 링크를 입력하거나 파일을 첨부하는 칸입니다.
+---
+
+import {
+  FormAttachmentFieldAllVariants,
+  FormAttachmentFieldDefault,
+  FormAttachmentFieldReadOnly,
+} from "../../../../components/react/questionnaire/FormAttachmentFieldExamples.tsx"
+
+피그마 `Form/Attachment Field`의 응답 모드를 구현했습니다. 비어 있을 때는 링크 입력 칸과 "파일 업로드" 버튼이 보이고, 첨부가 생기면 클립 아이콘과 링크, "삭제" 버튼으로 바뀝니다. 파일을 고르면 형식과 용량을 검사해 `onFileSelect`로 넘기는 데까지 맡고, 업로드와 링크 처리는 앱이 합니다.
+
+```tsx
+import { FormAttachmentField, FormQuestion } from "@umc-product/react"
+
+<FormQuestion number="05" title="포트폴리오를 첨부해 주세요">
+  <FormAttachmentField
+    attachment={attachment}
+    onFileSelect={uploadPortfolio}
+    onReject={showRejection}
+    onAttachmentRemove={() => setAttachment(null)}
+    onKeyDown={attachLinkOnEnter}
+  />
+</FormQuestion>
+```
+
+<FormAttachmentFieldDefault client:visible />
+
+## 첨부 흐름
+
+| 상태                 | 칸                 | 버튼                                                           |
+| -------------------- | ------------------ | -------------------------------------------------------------- |
+| 비어 있음            | 링크 입력          | 파일 업로드. 파일 창을 열고 형식과 용량을 검사함               |
+| 글자를 입력함        | 입력한 글자        | 삭제. 입력을 비우고 `onChange`를 부름                          |
+| 첨부됨(`attachment`) | 클립 아이콘과 링크 | 삭제. `onAttachmentRemove`를 부르고, 없으면 버튼을 그리지 않음 |
+
+- 입력한 글자만으로는 첨부가 되지 않습니다. 링크를 언제 첨부로 확정할지는 앱이 정합니다. 위 예시는 Enter를 누르면 http(s) 주소를 첨부로 바꿉니다.
+- 파일은 기본으로 200MB 이하의 PDF만 받습니다. `accept`(MIME 형식 배열)와 `maxSize`(바이트)로 바꿉니다. 맞지 않는 파일은 `onReject`가 이유(`type`, `size`)와 함께 받습니다.
+- 업로드 중이나 실패 표시는 앱이 맡습니다. 업로드가 끝나면 `attachment`에 파일 이름과 주소를 넘깁니다.
+
+## 읽기 전용
+
+버튼 없이 첨부만 보여 줍니다. 링크는 새 탭에서 열립니다.
+
+<FormAttachmentFieldReadOnly client:visible />
+
+## 질문지 편집 화면의 미리보기
+
+질문지를 만드는 화면에서는 `preview`를 줍니다. 응답자가 보게 될 입력 칸과 "파일 업로드" 버튼을 그대로 그리되, 글자를 받지 않고 버튼도 누를 수 없습니다. [FormEditableQuestion](../form-question-editor/#편집-모드-질문)의 답 칸 미리보기로 씁니다. 비활성 편집기(`FormQuestionEditor`의 `disabled`) 안에서는 미리보기도 비활성으로 그립니다.
+
+```tsx
+<FormEditableQuestion number="03" titleProps={titleProps}>
+  <FormAttachmentField preview aria-label="03번 첨부 칸" />
+</FormEditableQuestion>
+```
+
+## 모든 변형
+
+피그마 `Form/Attachment Field` 변형 9개를 그렸습니다. 생성 중(Form Create) 칸은 `preview`를 준 모습입니다.
+
+<FormAttachmentFieldAllVariants />
+
+## props
+
+나머지 네이티브 `input` 속성과 `ref`는 링크 입력 칸에 붙습니다.
+
+| prop                   | 타입                     | 기본값                | 설명                                                     |
+| ---------------------- | ------------------------ | --------------------- | -------------------------------------------------------- |
+| `attachment`           | `FormAttachment \| null` | 없음                  | 첨부된 링크나 파일. 있으면 입력 대신 보임                |
+| `onAttachmentRemove`   | `() => void`             | 없음                  | 첨부 옆 삭제를 눌렀을 때. 없으면 삭제 버튼을 그리지 않음 |
+| `onFileSelect`         | `(file: File) => void`   | 없음                  | 형식과 용량 검사를 통과한 파일                           |
+| `onReject`             | `(rejection) => void`    | 없음                  | 받지 않은 파일과 이유                                    |
+| `accept`               | `string[]`               | `["application/pdf"]` | 받을 MIME 형식                                           |
+| `maxSize`              | `number`                 | 200MB                 | 최대 용량(바이트)                                        |
+| `placeholder`          | `string`                 | 링크와 파일 안내      | 입력 칸 안내 문구                                        |
+| `uploadLabel`          | `ReactNode`              | `"파일 업로드"`       | 업로드 버튼 글자                                         |
+| `removeLabel`          | `ReactNode`              | `"삭제"`              | 삭제 버튼 글자                                           |
+| `readOnly`, `disabled` | `boolean`                | 질문 값               | 읽기 전용, 비활성. 편집기가 비활성이면 늘 비활성         |
+| `preview`              | `boolean`                | `false`               | 질문지 편집 화면의 미리보기로 그림                       |
+| `className`            | `string`                 | 없음                  | 루트 요소에 붙일 클래스                                  |
+
+```ts
+import type { ReactNode } from "react"
+
+type FormAttachment = { label: ReactNode; href?: string }
+type FormAttachmentRejection = { file: File; reason: "type" | "size" }
+```

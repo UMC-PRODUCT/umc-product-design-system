@@ -1,0 +1,246 @@
+{
+  "component": "FormQuestionEditor",
+  "figmaSection": "4469:58260",
+  "page": "/components/questionnaire/form-question-editor/",
+  "figmaDiffers": {
+    "padding-top": "피그마 Default와 Disabled는 이동 손잡이 없이 위 여백 32px이다. 코드는 모든 상태에서 손잡이 자리(위 12px, 높이 10px, 간격 10px)를 비워 두어 상태가 바뀌어도 질문이 같은 자리에 있다",
+    "handle": "이동 손잡이 색 #D9D9D9(Hover)와 #BFBFBF(Focus)는 3기 변수에 없어 역할 변수에 피그마 값을 그대로 담았다"
+  },
+  "nodes": [
+    {
+      "specId": "form-question-editor-default",
+      "node": "4437:84128",
+      "variant": "State=Default",
+      "target": ".umc-form-question-editor__frame",
+      "expected": {
+        "padding-top": "12px",
+        "padding-bottom": "38px",
+        "row-gap": "10px"
+      }
+    },
+    {
+      "specId": "form-question-editor-card",
+      "node": "4437:84229",
+      "variant": "State=Hover&Pressed",
+      "target": ".umc-form-question-editor__card",
+      "expected": {
+        "padding-right": "24px",
+        "column-gap": "4px",
+        "background-color": "#f7f8f8",
+        "box-shadow~": "#d3d8d826 1px 1px 2px 0px inset"
+      }
+    },
+    {
+      "specId": "form-question-editor-hover-bar",
+      "node": "4437:84232",
+      "variant": "State=Hover&Pressed",
+      "target": ".umc-form-question-editor__bar",
+      "expected": {
+        "width": "16px",
+        "border-left-width": "8px",
+        "border-left-color": "#adadad"
+      }
+    },
+    {
+      "specId": "form-question-editor-hover-handle",
+      "node": "4437:84235",
+      "variant": "State=Hover&Pressed",
+      "target": ".umc-form-question-editor__handle",
+      "expected": {
+        "color": "#d9d9d9"
+      }
+    },
+    {
+      "specId": "form-question-editor-focus",
+      "node": "4430:50894",
+      "variant": "State=Focus",
+      "target": ".umc-form-question-editor__frame",
+      "expected": {
+        "padding-bottom": "20px"
+      }
+    },
+    {
+      "specId": "form-question-editor-focus-bar",
+      "node": "4430:50911",
+      "variant": "State=Focus",
+      "target": ".umc-form-question-editor__bar",
+      "expected": {
+        "border-left-color": "#008a80"
+      }
+    },
+    {
+      "specId": "form-question-editor-focus-handle",
+      "node": "4430:50896",
+      "variant": "State=Focus",
+      "target": ".umc-form-question-editor__handle",
+      "expected": {
+        "color": "#bfbfbf"
+      }
+    },
+    {
+      "specId": "form-question-editor-root",
+      "node": "4430:50892",
+      "variant": "State=Focus",
+      "target": ".umc-form-question-editor",
+      "expected": {
+        "row-gap": "16px"
+      }
+    },
+    {
+      "specId": "form-question-editor-actions",
+      "node": "4430:50905",
+      "variant": "State=Focus",
+      "target": ".umc-form-question-editor__actions",
+      "expected": {
+        "column-gap": "16px",
+        "padding-left": "6px",
+        "padding-right": "6px"
+      }
+    },
+    {
+      "specId": "form-question-editor-required",
+      "node": "I4437:82935;3696:100463",
+      "variant": "State=Focus",
+      "target": ".umc-form-question-editor__required",
+      "expected": {
+        "color": "#606262",
+        "font-size": "16px",
+        "font-weight": "500",
+        "letter-spacing": "-0.48px"
+      }
+    },
+    {
+      "specId": "form-question-editor-delete",
+      "node": "4430:50909",
+      "variant": "State=Focus",
+      "target": ".umc-form-question-editor__delete",
+      "expected": {
+        "width": "24px",
+        "height": "24px",
+        "color": "#7e7f7f"
+      }
+    },
+    {
+      "specId": "form-question-editor-disabled-title",
+      "node": "I4456:35077;4437:78060;4437:78042",
+      "variant": "State=Disabled",
+      "target": ".umc-form-editable-question__title",
+      "expected": {
+        "color": "#7e7f7f"
+      }
+    },
+    {
+      "specId": "form-editable-question-root",
+      "node": "4430:50830",
+      "variant": "Type=Short Text (주관식), Mode=Edit (폼 생성), Question State=Empty",
+      "target": ".umc-form-editable-question",
+      "expected": {
+        "row-gap": "12px",
+        "padding-left": "6px",
+        "padding-right": "6px"
+      }
+    },
+    {
+      "specId": "form-editable-question-header",
+      "node": "4437:78060",
+      "variant": "Type=Short Text (주관식), Mode=Edit (폼 생성), Question State=Empty",
+      "target": ".umc-form-editable-question__header",
+      "expected": {
+        "column-gap": "4px",
+        "padding-left": "6px",
+        "padding-right": "6px"
+      }
+    },
+    {
+      "specId": "form-editable-question-number-empty",
+      "node": "I4437:78060;4437:78039",
+      "variant": "Type=Short Text (주관식), Mode=Edit (폼 생성), Question State=Empty",
+      "target": ".umc-form-editable-question__number",
+      "expected": {
+        "width": "28px",
+        "color": "#7ac7c1",
+        "font-size": "18px",
+        "font-weight": "600",
+        "line-height": "25.2px"
+      }
+    },
+    {
+      "specId": "form-editable-question-title",
+      "node": "I4437:78060;4437:78042",
+      "variant": "Type=Short Text (주관식), Mode=Edit (폼 생성), Question State=Empty",
+      "target": ".umc-form-editable-question__title",
+      "expected": {
+        "font-size": "18px",
+        "font-weight": "600",
+        "line-height": "25.2px"
+      }
+    },
+    {
+      "specId": "form-editable-question-required",
+      "node": "I4437:78060;4437:86187",
+      "variant": "Type=Short Text (주관식), Mode=Edit (폼 생성), Question State=Empty",
+      "target": ".umc-form-editable-question__required",
+      "expected": {
+        "color": "#dc3d3d",
+        "font-size": "18px"
+      }
+    },
+    {
+      "specId": "form-editable-question-description",
+      "node": "I4437:78060;4437:78044",
+      "variant": "Type=Short Text (주관식), Mode=Edit (폼 생성), Question State=Empty",
+      "target": ".umc-form-editable-question__description",
+      "expected": {
+        "font-size": "15px",
+        "font-weight": "400",
+        "line-height": "22.5px",
+        "letter-spacing": "-0.15px"
+      }
+    },
+    {
+      "specId": "form-editable-question-answer",
+      "node": "4430:50832",
+      "variant": "Type=Short Text (주관식), Mode=Edit (폼 생성), Question State=Empty",
+      "target": ".umc-form-editable-question__answer",
+      "expected": {
+        "padding-left": "20px"
+      }
+    },
+    {
+      "specId": "form-editable-question-filled",
+      "node": "4437:79123",
+      "variant": "Type=Multi Select (복수 선택), Mode=Edit (폼 생성), Question State=Filled",
+      "target": ".umc-form-editable-question",
+      "expected": {
+        "row-gap": "16px"
+      }
+    },
+    {
+      "specId": "form-editable-question-number-filled",
+      "node": "I4437:79124;4437:78039",
+      "variant": "Type=Multi Select (복수 선택), Mode=Edit (폼 생성), Question State=Filled",
+      "target": ".umc-form-editable-question__number",
+      "expected": {
+        "color": "#02746c"
+      }
+    },
+    {
+      "specId": "form-editable-question-title-filled",
+      "node": "I4437:79124;4437:78042",
+      "variant": "Type=Multi Select (복수 선택), Mode=Edit (폼 생성), Question State=Filled",
+      "target": ".umc-form-editable-question__title",
+      "expected": {
+        "color": "#0f1010"
+      }
+    },
+    {
+      "specId": "form-editable-question-description-filled",
+      "node": "I4437:79124;4437:78044",
+      "variant": "Type=Multi Select (복수 선택), Mode=Edit (폼 생성), Question State=Filled",
+      "target": ".umc-form-editable-question__description",
+      "expected": {
+        "color": "#606262"
+      }
+    }
+  ]
+}

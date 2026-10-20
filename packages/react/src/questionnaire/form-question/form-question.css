@@ -1,0 +1,22 @@
+@layer components {
+  .umc-form-question {
+    display: flex;
+    flex-direction: column;
+    gap: var(--umc-spacing-gap-12);
+    box-sizing: border-box;
+    margin: 0;
+    padding-block: 0;
+    padding-inline: var(--umc-spacing-padding-6);
+  }
+
+  .umc-form-question:has(> .umc-form-question__answer > .umc-form-choice-list) {
+    gap: var(--umc-spacing-gap-16);
+  }
+
+  .umc-form-question__answer {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding-inline-start: var(--umc-spacing-padding-20);
+  }
+}

@@ -13,6 +13,7 @@ const STORY_GROUPS = [
   "표시",
   "오버레이와 피드백",
   "앱 셸",
+  "질문지",
 ]
 const COMPONENTS_WITHOUT_STORY = new Set(["LinkProvider"])
 

@@ -1,0 +1,36 @@
+{
+  "component": "FormQuestion",
+  "figmaSection": "4469:58260",
+  "page": "/components/questionnaire/form-question/",
+  "nodes": [
+    {
+      "specId": "form-question-text-root",
+      "node": "4437:86814",
+      "variant": "Type=Short Text (주관식), Mode=Respond (폼 응답), Question State=Filled",
+      "target": ".umc-form-question",
+      "expected": {
+        "padding-left": "6px",
+        "padding-right": "6px",
+        "row-gap": "12px"
+      }
+    },
+    {
+      "specId": "form-question-answer",
+      "node": "4437:86816",
+      "variant": "Type=Short Text (주관식), Mode=Respond (폼 응답), Question State=Filled",
+      "target": ".umc-form-question__answer",
+      "expected": {
+        "padding-left": "20px"
+      }
+    },
+    {
+      "specId": "form-question-choice-root",
+      "node": "4437:82555",
+      "variant": "Type=Single Select (단일 선택), Mode=Respond (폼 응답), Question State=Filled",
+      "target": ".umc-form-question",
+      "expected": {
+        "row-gap": "16px"
+      }
+    }
+  ]
+}

@@ -5,6 +5,7 @@
 @import "./side-navigation/side-navigation.css";
 @import "./context-switcher/context-switcher.css";
 @import "./page-header/page-header.css";
+@import "./section-header/section-header.css";
 @import "./top-navigation/top-navigation.css";
 @import "./bottom-navigation/bottom-navigation.css";
 

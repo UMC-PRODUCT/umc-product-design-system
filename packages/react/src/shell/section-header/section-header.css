@@ -1,0 +1,145 @@
+@layer components {
+  .umc-section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--umc-spacing-gap-4);
+    box-sizing: border-box;
+    margin: 0;
+    padding-block: 0;
+    padding-inline: var(--umc-spacing-padding-6);
+    font-family: var(--umc-font-family-brand);
+  }
+
+  .umc-section-header[data-size="lg"] {
+    --umc-section-header-number-width: 30px;
+    --umc-section-header-number-font-size: var(
+      --umc-typography-title-2-semibold-font-size
+    );
+    --umc-section-header-number-line-height: var(
+      --umc-typography-title-2-semibold-line-height
+    );
+    --umc-section-header-number-letter-spacing: var(
+      --umc-typography-title-2-semibold-letter-spacing
+    );
+    --umc-section-header-title-font-size: var(
+      --umc-typography-title-2-semibold-font-size
+    );
+    --umc-section-header-title-line-height: var(
+      --umc-typography-title-2-semibold-line-height
+    );
+    --umc-section-header-title-letter-spacing: var(
+      --umc-typography-title-2-semibold-letter-spacing
+    );
+    --umc-section-header-body-gap: var(--umc-spacing-gap-6);
+    --umc-section-header-description-font-size: var(
+      --umc-typography-body-2-regular-font-size
+    );
+    --umc-section-header-description-line-height: var(
+      --umc-typography-body-2-regular-line-height
+    );
+    --umc-section-header-description-letter-spacing: var(
+      --umc-typography-body-2-regular-letter-spacing
+    );
+  }
+
+  .umc-section-header[data-size="md"] {
+    --umc-section-header-number-width: 28px;
+    --umc-section-header-number-font-size: var(--umc-font-size-18);
+    --umc-section-header-number-line-height: 1.4;
+    --umc-section-header-number-letter-spacing: 0em;
+    --umc-section-header-title-font-size: var(--umc-font-size-18);
+    --umc-section-header-title-line-height: 1.4;
+    --umc-section-header-title-letter-spacing: 0em;
+    --umc-section-header-body-gap: var(--umc-spacing-gap-4);
+    --umc-section-header-description-font-size: var(
+      --umc-typography-body-2-regular-font-size
+    );
+    --umc-section-header-description-line-height: var(
+      --umc-typography-body-2-regular-line-height
+    );
+    --umc-section-header-description-letter-spacing: var(
+      --umc-typography-body-2-regular-letter-spacing
+    );
+  }
+
+  .umc-section-header[data-size="sm"] {
+    --umc-section-header-number-width: 26px;
+    --umc-section-header-number-font-size: var(--umc-font-size-18);
+    --umc-section-header-number-line-height: 1.4;
+    --umc-section-header-number-letter-spacing: 0em;
+    --umc-section-header-title-font-size: var(
+      --umc-typography-title-4-semibold-font-size
+    );
+    --umc-section-header-title-line-height: var(
+      --umc-typography-title-4-semibold-line-height
+    );
+    --umc-section-header-title-letter-spacing: var(
+      --umc-typography-title-4-semibold-letter-spacing
+    );
+    --umc-section-header-body-gap: var(--umc-spacing-gap-4);
+    --umc-section-header-description-font-size: var(--umc-font-size-13);
+    --umc-section-header-description-line-height: 1.5;
+    --umc-section-header-description-letter-spacing: 0em;
+  }
+
+  .umc-section-header__number {
+    flex: 0 0 var(--umc-section-header-number-width);
+    color: var(--umc-color-text-brand-default-600);
+    font-size: var(--umc-section-header-number-font-size);
+    font-weight: var(--umc-font-weight-semibold);
+    line-height: var(--umc-section-header-number-line-height);
+    letter-spacing: var(--umc-section-header-number-letter-spacing);
+  }
+
+  .umc-section-header__body {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    gap: var(--umc-section-header-body-gap);
+    min-width: 0;
+  }
+
+  .umc-section-header__title-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--umc-spacing-gap-8);
+  }
+
+  .umc-section-header__title {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    color: var(--umc-color-text-neutral-default-900);
+    font-size: var(--umc-section-header-title-font-size);
+    font-weight: var(--umc-font-weight-semibold);
+    line-height: var(--umc-section-header-title-line-height);
+    letter-spacing: var(--umc-section-header-title-letter-spacing);
+    overflow-wrap: break-word;
+  }
+
+  .umc-section-header__required {
+    margin-inline-start: 2px;
+    color: var(--umc-color-text-error);
+  }
+
+  .umc-section-header__slot {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    min-height: calc(
+      var(--umc-section-header-title-font-size) *
+        var(--umc-section-header-title-line-height)
+    );
+  }
+
+  .umc-section-header__description {
+    margin: 0;
+    color: var(--umc-color-text-neutral-medium-600);
+    font-size: var(--umc-section-header-description-font-size);
+    font-weight: var(--umc-font-weight-regular);
+    line-height: var(--umc-section-header-description-line-height);
+    letter-spacing: var(--umc-section-header-description-letter-spacing);
+    overflow-wrap: break-word;
+  }
+}

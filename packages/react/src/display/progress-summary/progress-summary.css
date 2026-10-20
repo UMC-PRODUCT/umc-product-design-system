@@ -1,0 +1,104 @@
+@layer components {
+  .umc-progress-summary {
+    --umc-progress-summary-gap: 5px;
+    --umc-progress-summary-fill: #0e8179;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--umc-progress-summary-gap);
+    box-sizing: border-box;
+    width: 100%;
+    padding-bottom: var(--umc-spacing-padding-8);
+  }
+
+  .umc-progress-summary__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--umc-spacing-gap-8);
+    white-space: nowrap;
+  }
+
+  .umc-progress-summary__title {
+    display: flex;
+    align-items: center;
+    gap: var(--umc-spacing-gap-4);
+    min-width: 0;
+  }
+
+  .umc-progress-summary__label {
+    min-width: 0;
+    overflow: hidden;
+    color: var(--umc-color-text-neutral-strong-800);
+    font-family: var(--umc-typography-body-1-regular-font-family);
+    font-size: var(--umc-typography-body-1-regular-font-size);
+    font-weight: var(--umc-typography-body-1-regular-font-weight);
+    line-height: var(--umc-typography-body-1-regular-line-height);
+    letter-spacing: var(--umc-typography-body-1-regular-letter-spacing);
+    text-overflow: ellipsis;
+  }
+
+  .umc-progress-summary__count {
+    flex: 0 0 auto;
+    color: var(--umc-color-text-neutral-weak-500);
+    font-family: var(--umc-typography-caption-1-regular-font-family);
+    font-size: var(--umc-typography-caption-1-regular-font-size);
+    font-weight: var(--umc-typography-caption-1-regular-font-weight);
+    line-height: var(--umc-typography-caption-1-regular-line-height);
+    letter-spacing: var(--umc-typography-caption-1-regular-letter-spacing);
+  }
+
+  .umc-progress-summary__percent {
+    flex: 0 0 auto;
+    color: var(--umc-color-text-brand-default-600);
+    font-family: var(--umc-typography-label-3-semibold-font-family);
+    font-size: var(--umc-typography-label-3-semibold-font-size);
+    font-weight: var(--umc-typography-label-3-semibold-font-weight);
+    line-height: var(--umc-typography-label-3-semibold-line-height);
+    letter-spacing: var(--umc-typography-label-3-semibold-letter-spacing);
+    text-align: right;
+  }
+
+  .umc-progress-summary__track {
+    position: relative;
+    height: 8px;
+    overflow: hidden;
+    border-radius: var(--umc-radius-full);
+    background-color: var(--umc-color-teal-grey-100);
+  }
+
+  .umc-progress-summary__indicator {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    border-radius: inherit;
+    background-image: linear-gradient(
+      to right,
+      var(--umc-progress-summary-fill),
+      color-mix(in srgb, var(--umc-progress-summary-fill) 97%, transparent) 25%,
+      color-mix(in srgb, var(--umc-progress-summary-fill) 87%, transparent) 50%,
+      color-mix(in srgb, var(--umc-progress-summary-fill) 72%, transparent) 75%,
+      color-mix(in srgb, var(--umc-progress-summary-fill) 50%, transparent)
+    );
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .umc-progress-summary__indicator {
+      transition: width var(--umc-motion-duration) ease;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .umc-progress-summary__track {
+      forced-color-adjust: none;
+      background-color: ButtonFace;
+      outline: 1px solid ButtonText;
+    }
+
+    .umc-progress-summary__indicator {
+      forced-color-adjust: none;
+      background-color: Highlight;
+      background-image: none;
+    }
+  }
+}
