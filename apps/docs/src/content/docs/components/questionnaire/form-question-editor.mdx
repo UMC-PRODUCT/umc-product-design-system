@@ -8,6 +8,8 @@ import {
   FormQuestionEditorAllVariants,
   FormQuestionEditorDefault,
   FormQuestionEditorDisabled,
+  FormQuestionEditorDragging,
+  FormQuestionEditorDragPlaceholder,
   FormQuestionEditorQuestionEnabled,
 } from "../../../../components/react/questionnaire/FormQuestionEditorExamples.tsx"
 
@@ -53,12 +55,14 @@ import {
 
 ## 상태
 
-| 상태               | 언제                                      | 모습                                     |
-| ------------------ | ----------------------------------------- | ---------------------------------------- |
-| 기본               | 질문에 아무 상호작용이 없을 때            | 배경 없음                                |
-| Hover              | 마우스를 올렸거나 안쪽에 포커스가 있을 때 | 회색 배경, 회색 강조선, 손잡이           |
-| 활성(`active`)     | 앱이 편집 중인 질문으로 정했을 때         | 청록 강조선, 필수 항목과 삭제, `toolbar` |
-| 비활성(`disabled`) | 기간이나 권한 때문에 고칠 수 없을 때      | 회색 글자, 도구와 손잡이 없음, 입력 막힘 |
+| 상태                         | 언제                                      | 모습                                           |
+| ---------------------------- | ----------------------------------------- | ---------------------------------------------- |
+| 기본                         | 질문에 아무 상호작용이 없을 때            | 배경 없음                                      |
+| Hover                        | 마우스를 올렸거나 안쪽에 포커스가 있을 때 | 회색 배경, 회색 강조선, 손잡이                 |
+| 활성(`active`)               | 앱이 편집 중인 질문으로 정했을 때         | 청록 강조선, 필수 항목과 삭제, `toolbar`       |
+| 끄는 중(`dragging`)          | 손잡이를 잡고 순서를 옮기는 동안          | 회색 강조선과 떠 있는 그림자, 도구와 툴바 숨김 |
+| 자리 표시(`dragPlaceholder`) | 끄는 동안 목록에 남은 원래 질문           | 내용을 숨긴 같은 높이의 점선 상자              |
+| 비활성(`disabled`)           | 기간이나 권한 때문에 고칠 수 없을 때      | 회색 글자, 도구와 손잡이 없음, 입력 막힘       |
 
 - 어느 질문이 활성인지는 앱이 정합니다. 질문을 누르거나 키보드 포커스가 들어오면 활성으로 바꾸고, 질문 밖을 누르면 풀어 주세요.
 - 활성이 바뀌면 도구와 툴바가 생기거나 사라져 아래 내용이 움직입니다. 마우스를 누른 채 화면이 움직이면 클릭이 엉뚱한 곳에 떨어지니, 마우스로 바꿀 때는 `pointerdown`이나 포커스가 아니라 `click`에서 바꿔 주세요.
@@ -78,7 +82,10 @@ import {
 
 이동 손잡이는 `dragHandleProps`를 넘길 때만 버튼으로 그립니다. 끌어서 옮기는 기능은 디자인 시스템에 없으니, @dnd-kit 같은 라이브러리가 주는 속성을 손잡이에 그대로 넘깁니다. 루트 요소에는 `ref`와 `style`을 넘길 수 있습니다.
 
+끄는 동안 질문은 두 모습으로 그립니다. 손을 따라다니는 카드에는 `dragging`을 켜고, 목록에 남은 원래 질문에는 `dragPlaceholder`를 켭니다. 원래 질문은 같은 높이의 점선 상자가 되어, 다른 질문이 비켜 주는 동안 놓일 자리로 따라 움직입니다.
+
 ```tsx
+import { DragOverlay } from "@dnd-kit/core"
 import { useSortable } from "@dnd-kit/sortable"
 import { CSS } from "@dnd-kit/utilities"
 
@@ -87,8 +94,9 @@ function SortableQuestion({ question }: { question: Question }) {
   return (
     <FormQuestionEditor
       ref={sortable.setNodeRef}
+      dragPlaceholder={sortable.isDragging}
       style={{
-        transform: CSS.Transform.toString(sortable.transform),
+        transform: CSS.Translate.toString(sortable.transform),
         transition: sortable.transition,
       }}
       dragHandleProps={{
@@ -103,9 +111,27 @@ function SortableQuestion({ question }: { question: Question }) {
     </FormQuestionEditor>
   )
 }
+
+<DragOverlay>
+  {activeQuestion && (
+    <FormQuestionEditor dragging>
+      <FormEditableQuestion>
+        <TextArea placeholder="작성하세요" readOnly />
+      </FormEditableQuestion>
+    </FormQuestionEditor>
+  )}
+</DragOverlay>
 ```
 
-손잡이의 기본 이름은 "질문 순서 바꾸기"입니다. 질문이 여럿이면 `dragHandleProps`에 번호를 넣은 `aria-label`을 넘겨 이름을 바꿉니다. 마우스가 없는 사용자도 옮길 수 있게 라이브러리의 키보드 센서를 켜거나, 위 예시처럼 화살표 키를 직접 받아 주세요.
+`dragging`을 켜면 회색 강조선과 떠 있는 그림자가 생기고, 활성 질문이어도 필수 항목, 삭제, 툴바가 숨겨집니다. `DragOverlay` 없이 한 목록 안에서만 옮긴다면 원래 질문에 `dragging`만 켜도 됩니다.
+
+<FormQuestionEditorDragging />
+
+`dragPlaceholder`를 켜면 내용을 숨기고, 질문이 차지하던 자리에 점선 상자만 그립니다. 도구와 툴바는 활성 질문이어도 숨기므로 손을 따라다니는 카드와 높이가 같습니다. 그래서 활성 질문을 잡으면 도구와 툴바만큼 상자가 낮아집니다. 손잡이 자리는 남겨 두어서, 키보드로 끄는 동안 포커스가 그 자리에 머뭅니다.
+
+<FormQuestionEditorDragPlaceholder />
+
+손잡이의 기본 이름은 "질문 순서 바꾸기"입니다. 질문이 여럿이면 `dragHandleProps`에 번호를 넣은 `aria-label`을 넘겨 이름을 바꿉니다. 마우스가 없는 사용자도 옮길 수 있게 라이브러리의 키보드 센서를 켜거나, 이 페이지 첫 예시처럼 화살표 키를 직접 받아 주세요.
 
 ## 비활성
 
@@ -137,6 +163,8 @@ function SortableQuestion({ question }: { question: Question }) {
 | prop                      | 타입                                   | 기본값        | 설명                                                |
 | ------------------------- | -------------------------------------- | ------------- | --------------------------------------------------- |
 | `active`                  | `boolean`                              | `false`       | 편집 중인 질문인지                                  |
+| `dragging`                | `boolean`                              | `false`       | 손을 따라다니는 끄는 중 모습                        |
+| `dragPlaceholder`         | `boolean`                              | `false`       | 끄는 동안 목록에 남은 원래 자리의 점선 상자         |
 | `disabled`                | `boolean`                              | `false`       | 고칠 수 없게 막음                                   |
 | `required`                | `boolean`                              | `false`       | 필수 항목 체크와 제목 뒤 `*`                        |
 | `onRequiredChange`        | `(required: boolean) => void`          | 없음          | 필수 항목을 누를 때. 없으면 체크박스가 읽기 전용    |

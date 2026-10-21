@@ -79,6 +79,68 @@ export function FormQuestionEditorQuestionEnabled() {
   )
 }
 
+export function FormQuestionEditorDragging() {
+  return (
+    <div className="umc-example">
+      <div className="w-full max-w-[900px]">
+        <FormQuestionEditor
+          dragging
+          dragHandleProps={{ "aria-label": "01번 질문 순서 바꾸기" }}
+        >
+          <FormEditableQuestion
+            number="01"
+            titleProps={{ defaultValue: "자기소개를 적어 주세요" }}
+          >
+            <TextArea
+              placeholder="작성하세요"
+              maxLength={500}
+              readOnly
+              aria-label="01번 답 칸"
+            />
+          </FormEditableQuestion>
+        </FormQuestionEditor>
+      </div>
+    </div>
+  )
+}
+
+export function FormQuestionEditorDragPlaceholder() {
+  return (
+    <div className="umc-example">
+      <div className="flex w-full max-w-[900px] flex-col">
+        <FormQuestionEditor
+          dragHandleProps={{ "aria-label": "01번 질문 순서 바꾸기" }}
+        >
+          <FormEditableQuestion
+            number="01"
+            titleProps={{ defaultValue: "자기소개를 적어 주세요" }}
+          >
+            <TextArea
+              placeholder="작성하세요"
+              maxLength={500}
+              readOnly
+              aria-label="01번 답 칸"
+            />
+          </FormEditableQuestion>
+        </FormQuestionEditor>
+        <FormQuestionEditor dragPlaceholder>
+          <FormEditableQuestion
+            number="02"
+            titleProps={{ defaultValue: "지원 동기를 적어 주세요" }}
+          >
+            <TextArea
+              placeholder="작성하세요"
+              maxLength={500}
+              readOnly
+              aria-label="02번 답 칸"
+            />
+          </FormEditableQuestion>
+        </FormQuestionEditor>
+      </div>
+    </div>
+  )
+}
+
 export function FormQuestionEditorDisabled() {
   return (
     <div className="umc-example">
