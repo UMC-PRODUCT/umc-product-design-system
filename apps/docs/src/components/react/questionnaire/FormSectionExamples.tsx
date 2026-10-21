@@ -19,6 +19,7 @@ import {
   QuestionListEditor,
   type DraftQuestion,
 } from "./QuestionListEditor.tsx"
+import { SortableQuestionSections } from "./SortableQuestionSections.tsx"
 
 const COMMON_QUESTIONS: readonly DraftQuestion[] = [
   {
@@ -64,6 +65,16 @@ export function FormSectionDefault() {
         <FormSection variant="toggle" title="PM" optionalLabel="(선택 사항)">
           <QuestionListEditor initialQuestions={PM_QUESTIONS} />
         </FormSection>
+      </div>
+    </div>
+  )
+}
+
+export function FormSectionSortable() {
+  return (
+    <div className="umc-example">
+      <div className="w-full max-w-[900px]">
+        <SortableQuestionSections />
       </div>
     </div>
   )
