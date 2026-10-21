@@ -6,6 +6,7 @@ import {
   FormQuestionToolbar,
   FormQuestionTypeList,
   FormSection,
+  FormSectionEmpty,
   TextArea,
   type FormSectionVariant,
 } from "@umc-product/react"
@@ -62,6 +63,25 @@ export function FormSectionDefault() {
         </FormSection>
         <FormSection variant="toggle" title="PM" optionalLabel="(선택 사항)">
           <QuestionListEditor initialQuestions={PM_QUESTIONS} />
+        </FormSection>
+      </div>
+    </div>
+  )
+}
+
+export function FormSectionEmptyStates() {
+  return (
+    <div className="umc-example">
+      <div className="flex w-full max-w-[900px] flex-col gap-10">
+        <FormSection
+          variant="toggle"
+          title="Design"
+          optionalLabel="(선택 사항)"
+        >
+          <FormSectionEmpty />
+        </FormSection>
+        <FormSection variant="toggle" title="Web" optionalLabel="(선택 사항)">
+          <FormSectionEmpty dropTarget />
         </FormSection>
       </div>
     </div>

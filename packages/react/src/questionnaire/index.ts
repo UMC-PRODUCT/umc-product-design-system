@@ -44,3 +44,7 @@ export {
   type FormSectionProps,
   type FormSectionVariant,
 } from "./form-section/index.ts"
+export {
+  FormSectionEmpty,
+  type FormSectionEmptyProps,
+} from "./form-section-empty/index.ts"

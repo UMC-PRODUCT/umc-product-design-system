@@ -7,6 +7,7 @@ import {
   FormQuestionSectionAllVariants,
   FormSectionControlAllVariants,
   FormSectionDefault,
+  FormSectionEmptyStates,
 } from "../../../../components/react/questionnaire/FormSectionExamples.tsx"
 
 피그마 `Form/Question Section`과 `.primitive/Form/Section Control`을 구현했습니다. `variant="static"`은 늘 쓰는 묶음이라 탭 모양 제목만 있습니다. `variant="toggle"`은 "섹션 사용" 스위치로 묶음을 켜고 끕니다. 묶음 안에는 [FormQuestionEditor](../form-question-editor/)와 [FormQuestionToolbar](../form-question-toolbar/)를 넣습니다.
@@ -34,6 +35,12 @@ import { FormSection } from "@umc-product/react"
 - 끈 섹션의 질문을 저장할지, 응답 화면에서 뺄지는 앱이 정합니다.
 - 스위치는 섹션 제목을 설명으로 읽습니다. 섹션이 여럿이어도 어느 섹션의 스위치인지 들을 수 있습니다.
 
+## 빈 섹션
+
+질문이 하나도 없는 섹션의 본문에는 `FormSectionEmpty`를 넣습니다. 놓을 자리 역할을 하도록 높이를 120px 이상 확보합니다. 질문을 끄는 동안에만, 그리고 이 섹션에 놓을 수 있을 때만 `dropTarget`을 켜서 점선으로 강조합니다. 질문의 자리 표시와 같은 점선이라, 점선이 보이는 곳이 놓을 수 있는 자리입니다.
+
+<FormSectionEmptyStates />
+
 ## 제목 단계
 
 제목은 기본 `h3`입니다. 페이지 구획 제목 아래에 섹션이 놓이는 구조를 가정했고, 다르면 `level`로 바꿉니다.
@@ -48,6 +55,8 @@ import { FormSection } from "@umc-product/react"
 
 ## props
 
+### FormSection
+
 나머지 `section` 속성과 `ref`는 루트 요소에 붙습니다.
 
 | prop              | 타입                         | 기본값        | 설명                                   |
@@ -61,6 +70,15 @@ import { FormSection } from "@umc-product/react"
 | `enabledLabel`    | `ReactNode`                  | `"섹션 사용"` | 스위치 글자                            |
 | `level`           | `2 \| 3 \| 4 \| 5 \| 6`      | `3`           | 제목 단계                              |
 | `children`        | `ReactNode`                  | 필수          | 본문                                   |
+
+### FormSectionEmpty
+
+나머지 `div` 속성과 `ref`는 루트 요소에 붙습니다. 놓을 자리로 등록할 때 `ref`를 씁니다.
+
+| prop         | 타입        | 기본값                                          | 설명                                              |
+| ------------ | ----------- | ----------------------------------------------- | ------------------------------------------------- |
+| `dropTarget` | `boolean`   | `false`                                         | 끄는 동안 이 섹션에 놓을 수 있을 때 점선으로 강조 |
+| `children`   | `ReactNode` | `"질문을 추가하거나 다른 섹션에서 옮겨 오세요"` | 안내 문구                                         |
 
 ## 알아 둘 점
 
