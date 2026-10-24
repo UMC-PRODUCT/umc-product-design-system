@@ -2282,6 +2282,63 @@
         "Rank=5th",
         "Rank=None"
       ]
+    },
+    "calendar": {
+      "node": "4763:63641",
+      "name": "Calendar",
+      "axes": {
+        "Header Layout": ["Centered", "Left Aligned"],
+        "*피그마용": ["False", "True"]
+      },
+      "variants": [
+        "Header Layout=Centered, *피그마용=False",
+        "Header Layout=Centered, *피그마용=True",
+        "Header Layout=Left Aligned, *피그마용=False",
+        "Header Layout=Left Aligned, *피그마용=True"
+      ]
+    },
+    "calendar-schedule-card": {
+      "node": "4763:62191",
+      "name": "Calendar/Schedule Card",
+      "axes": {
+        "State": ["예정 일정", "진행 중인 일정", "지난 일정"]
+      },
+      "variants": ["State=예정 일정", "State=진행 중인 일정", "State=지난 일정"]
+    },
+    "calendar-day": {
+      "node": "4763:63552",
+      "name": ".primitive/Calendar/Day",
+      "axes": {
+        "State": [
+          "Default",
+          "Hover",
+          "Range Middle",
+          "Range Start",
+          "Range End"
+        ],
+        "Selected": ["False", "True"],
+        "Disabled": ["True", "False"],
+        "Hightlight": ["False", "True"],
+        "Show Task Dot": ["False", "True"]
+      },
+      "variants": [
+        "State=Default, Selected=False, Disabled=True, Hightlight=False, Show Task Dot=False",
+        "State=Default, Selected=False, Disabled=True, Hightlight=False, Show Task Dot=True",
+        "State=Hover, Selected=False, Disabled=False, Hightlight=False, Show Task Dot=False",
+        "State=Hover, Selected=False, Disabled=False, Hightlight=False, Show Task Dot=True",
+        "State=Hover, Selected=False, Disabled=True, Hightlight=False, Show Task Dot=False",
+        "State=Hover, Selected=False, Disabled=True, Hightlight=False, Show Task Dot=True",
+        "State=Default, Selected=False, Disabled=False, Hightlight=False, Show Task Dot=False",
+        "State=Default, Selected=False, Disabled=False, Hightlight=False, Show Task Dot=True",
+        "State=Range Middle, Selected=True, Disabled=False, Hightlight=True, Show Task Dot=False",
+        "State=Range Middle, Selected=True, Disabled=False, Hightlight=True, Show Task Dot=True",
+        "State=Range Start, Selected=True, Disabled=False, Hightlight=True, Show Task Dot=False",
+        "State=Range Start, Selected=True, Disabled=False, Hightlight=True, Show Task Dot=True",
+        "State=Range End, Selected=True, Disabled=False, Hightlight=True, Show Task Dot=False",
+        "State=Range End, Selected=True, Disabled=False, Hightlight=True, Show Task Dot=True",
+        "State=Default, Selected=True, Disabled=False, Hightlight=False, Show Task Dot=False",
+        "State=Default, Selected=True, Disabled=False, Hightlight=False, Show Task Dot=True"
+      ]
     }
   }
 }

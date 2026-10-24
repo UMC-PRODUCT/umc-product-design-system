@@ -1,0 +1,67 @@
+---
+title: CalendarScheduleCard
+description: 캘린더와 함께 놓는 일정 한 건을 회차, 이름, 기간으로 보여 줍니다.
+---
+
+import {
+  CalendarScheduleCardAllVariants,
+  CalendarScheduleCardLongPeriod,
+  CalendarScheduleCardStates,
+} from "../../../../components/react/calendar/CalendarScheduleCardExamples.tsx"
+
+피그마 `Calendar/Schedule Card`를 옮긴 일정 카드입니다. 회차("1차"), 일정 이름, 시작과 끝을 한 장에 담고, 일정이 지났는지에 따라 모양이 바뀝니다. [Calendar](../calendar/)와 함께 쓰지만 서로 이어지지 않은 컴포넌트라, 어떤 일정을 어떤 순서로 보여 줄지는 앱이 정합니다.
+
+```tsx
+import { CalendarScheduleCard } from "@umc-product/react"
+
+<CalendarScheduleCard
+  status="ongoing"
+  label="2차"
+  title="Plan-Design 매칭"
+  start="10월 26일 00:00"
+  end="10월 28일 23:59"
+/>
+```
+
+<CalendarScheduleCardStates />
+
+## 상태
+
+| `status`     | 피그마         | 모양                           |
+| ------------ | -------------- | ------------------------------ |
+| `"upcoming"` | 예정 일정      | 회색 바탕, 청록 회차           |
+| `"ongoing"`  | 진행 중인 일정 | 연한 청록 바탕, 굵은 청록 글자 |
+| `"past"`     | 지난 일정      | 회색 글자와 체크 표시          |
+
+상태가 색으로만 드러나지 않도록, 카드 안에 "진행 중인 일정" 같은 글자를 화면 낭독기용으로 담습니다. 체크 표시는 꾸밈이라 누를 수 없습니다.
+
+## 기간 쓰기
+
+`start`와 `end`는 앱이 쓴 글자를 그대로 보여 주고, 둘 사이에 물결표(~)를 넣습니다. `end`를 넘기지 않으면 시작만 보입니다. 연도가 바뀌는 기간은 연도까지 써서 넘깁니다.
+
+<CalendarScheduleCardLongPeriod />
+
+일정 이름이 길면 한 줄에서 말줄임으로 자르고, 기간은 좁은 화면에서 줄을 바꿉니다.
+
+## 모든 변형
+
+피그마 `Calendar/Schedule Card` 변형 3개를 그렸습니다.
+
+<CalendarScheduleCardAllVariants />
+
+## props
+
+나머지 `div` 속성과 `ref`는 루트에 붙습니다. 네이티브 `title` 속성 대신 일정 이름을 받습니다.
+
+| prop     | 타입                                | 기본값       | 설명      |
+| -------- | ----------------------------------- | ------------ | --------- |
+| `status` | `"upcoming" \| "ongoing" \| "past"` | `"upcoming"` | 일정 상태 |
+| `label`  | `ReactNode`                         | 필수         | 회차      |
+| `title`  | `ReactNode`                         | 필수         | 일정 이름 |
+| `start`  | `ReactNode`                         | 필수         | 시작      |
+| `end`    | `ReactNode`                         | 없음         | 끝        |
+
+## 알아 둘 점
+
+- 카드는 부모 폭을 채웁니다. 목록으로 쌓을 때는 `ul`과 `li`로 감쌉니다.
+- 회차 칸은 28px보다 좁아지지 않고, 회차가 길면 글자만큼 넓어집니다.

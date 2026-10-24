@@ -1,0 +1,180 @@
+{
+  "component": "CalendarScheduleCard",
+  "figmaSection": "4793:74994",
+  "page": "/components/calendar/calendar-schedule-card/",
+  "nodes": [
+    {
+      "specId": "calendar-schedule-card-upcoming",
+      "node": "4763:62192",
+      "variant": "State=예정 일정",
+      "target": ".umc-calendar-schedule-card",
+      "expected": {
+        "padding-left": "8px",
+        "border-left-width": "8px",
+        "border-left-color": "#008a80",
+        "border-top-left-radius": "8px",
+        "background-color": "#fbfcfc"
+      }
+    },
+    {
+      "specId": "calendar-schedule-card-upcoming",
+      "node": "4763:62193",
+      "variant": "State=예정 일정",
+      "target": ".umc-calendar-schedule-card__body",
+      "expected": {
+        "padding-top": "9px",
+        "padding-right": "14px",
+        "padding-bottom": "9px",
+        "padding-left": "14px",
+        "border-top-width": "1px",
+        "border-top-color": "#eff0f0",
+        "border-top-right-radius": "8px"
+      }
+    },
+    {
+      "specId": "calendar-schedule-card-upcoming",
+      "node": "4763:62193",
+      "variant": "State=예정 일정",
+      "target": ".umc-calendar-schedule-card__text",
+      "expected": {
+        "row-gap": "4px"
+      }
+    },
+    {
+      "specId": "calendar-schedule-card-upcoming",
+      "node": "4763:62194",
+      "variant": "State=예정 일정",
+      "target": ".umc-calendar-schedule-card__title",
+      "expected": {
+        "column-gap": "6px",
+        "font-size": "16px",
+        "font-weight": "500",
+        "line-height": "22.4px",
+        "letter-spacing": "-0.48px"
+      }
+    },
+    {
+      "specId": "calendar-schedule-card-upcoming",
+      "node": "4763:62195",
+      "variant": "State=예정 일정",
+      "target": ".umc-calendar-schedule-card__label",
+      "expected": {
+        "min-width": "28px",
+        "color": "#02746c"
+      },
+      "figmaDiffers": {
+        "width": "피그마는 회차 칸을 28px로 고정해 \"10차\"처럼 긴 회차가 잘리고, 코드는 최소 폭으로 두어 글자 수만큼 늘어난다"
+      }
+    },
+    {
+      "specId": "calendar-schedule-card-upcoming",
+      "node": "4763:62196",
+      "variant": "State=예정 일정",
+      "target": ".umc-calendar-schedule-card__name",
+      "expected": {
+        "color": "#0f1010"
+      }
+    },
+    {
+      "specId": "calendar-schedule-card-upcoming",
+      "node": "4793:80385",
+      "variant": "State=예정 일정",
+      "target": ".umc-calendar-schedule-card__period",
+      "expected": {
+        "column-gap": "4px",
+        "color": "#606262",
+        "font-size": "13px",
+        "font-weight": "400",
+        "line-height": "18.85px",
+        "opacity": "0.8"
+      }
+    },
+    {
+      "specId": "calendar-schedule-card-ongoing",
+      "node": "4763:62198",
+      "variant": "State=진행 중인 일정",
+      "target": ".umc-calendar-schedule-card",
+      "expected": {
+        "background-color": "#e9f7f5"
+      }
+    },
+    {
+      "specId": "calendar-schedule-card-ongoing",
+      "node": "4763:62199",
+      "variant": "State=진행 중인 일정",
+      "target": ".umc-calendar-schedule-card__body",
+      "expected": {
+        "border-top-color": "#ddf4f1"
+      }
+    },
+    {
+      "specId": "calendar-schedule-card-ongoing",
+      "node": "4763:62200",
+      "variant": "State=진행 중인 일정",
+      "target": ".umc-calendar-schedule-card__title",
+      "expected": {
+        "font-weight": "600",
+        "letter-spacing": "-0.32px"
+      }
+    },
+    {
+      "specId": "calendar-schedule-card-ongoing",
+      "node": "4763:62202",
+      "variant": "State=진행 중인 일정",
+      "target": ".umc-calendar-schedule-card__name",
+      "expected": {
+        "color": "#02746c"
+      }
+    },
+    {
+      "specId": "calendar-schedule-card-past",
+      "node": "4763:62205",
+      "variant": "State=지난 일정",
+      "target": ".umc-calendar-schedule-card__body",
+      "expected": {
+        "column-gap": "10px",
+        "border-top-color": "#eff0f0"
+      }
+    },
+    {
+      "specId": "calendar-schedule-card-past",
+      "node": "4763:62208",
+      "variant": "State=지난 일정",
+      "target": ".umc-calendar-schedule-card__label",
+      "expected": {
+        "color": "#7e7f7f"
+      }
+    },
+    {
+      "specId": "calendar-schedule-card-past",
+      "node": "4763:62209",
+      "variant": "State=지난 일정",
+      "target": ".umc-calendar-schedule-card__name",
+      "expected": {
+        "color": "#7e7f7f"
+      }
+    },
+    {
+      "specId": "calendar-schedule-card-past",
+      "node": "4793:80427",
+      "variant": "State=지난 일정",
+      "target": ".umc-calendar-schedule-card__period",
+      "expected": {
+        "color": "#adadad"
+      }
+    },
+    {
+      "specId": "calendar-schedule-card-past",
+      "node": "3696:100376",
+      "variant": "State=지난 일정",
+      "target": ".umc-calendar-schedule-card__check",
+      "expected": {
+        "width": "24px",
+        "height": "24px",
+        "border-top-left-radius": "6px",
+        "background-color": "#e2e3e3",
+        "color": "#fbfcfc"
+      }
+    }
+  ]
+}

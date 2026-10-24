@@ -1,0 +1,218 @@
+@layer components {
+  .umc-calendar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--umc-spacing-gap-20);
+    box-sizing: border-box;
+    inline-size: fit-content;
+    max-inline-size: 100%;
+    padding: var(--umc-spacing-padding-20);
+    border: 1px solid var(--umc-color-border-neutral-weaker-100);
+    border-radius: var(--umc-radius-12);
+    background-color: var(--umc-color-fill-neutral-default);
+  }
+
+  .umc-calendar__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .umc-calendar__header[data-layout="start"] {
+    padding-inline-start: 2px;
+  }
+
+  .umc-calendar__title {
+    display: flex;
+    gap: var(--umc-spacing-gap-6);
+    margin: 0;
+    color: var(--umc-color-text-neutral-default-900);
+    font-family: var(--umc-typography-title-2-semibold-font-family);
+    font-size: var(--umc-typography-title-2-semibold-font-size);
+    font-weight: var(--umc-typography-title-2-semibold-font-weight);
+    line-height: var(--umc-typography-title-2-semibold-line-height);
+    letter-spacing: var(--umc-typography-title-2-semibold-letter-spacing);
+    white-space: nowrap;
+  }
+
+  .umc-calendar__nav {
+    display: flex;
+    gap: var(--umc-spacing-gap-8);
+  }
+
+  .umc-calendar__grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--umc-spacing-gap-12);
+  }
+
+  .umc-calendar__weekdays,
+  .umc-calendar__week {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(36px, 48px));
+  }
+
+  .umc-calendar__weekday {
+    block-size: 24px;
+    color: var(--umc-color-text-neutral-weak-500);
+    font-family: var(--umc-typography-title-3-medium-font-family);
+    font-size: var(--umc-typography-title-3-medium-font-size);
+    font-weight: var(--umc-typography-title-3-medium-font-weight);
+    line-height: var(--umc-typography-title-3-medium-line-height);
+    letter-spacing: var(--umc-typography-title-3-medium-letter-spacing);
+    text-align: center;
+  }
+
+  .umc-calendar__weekday[data-tone="saturday"] {
+    color: var(--umc-color-blue-500);
+  }
+
+  .umc-calendar__weekday[data-tone="sunday"] {
+    --umc-calendar-sunday: #f64c4c;
+
+    color: var(--umc-calendar-sunday);
+  }
+
+  .umc-calendar__cell {
+    --umc-calendar-range-bg: var(--umc-color-fill-primary-weak-75);
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .umc-calendar__cell[data-range="middle"] {
+    background-color: var(--umc-calendar-range-bg);
+  }
+
+  .umc-calendar__cell:is([data-range="start"], [data-range="end"])::before {
+    position: absolute;
+    inset-block: 0;
+    content: "";
+    background-color: var(--umc-calendar-range-bg);
+  }
+
+  .umc-calendar__cell[data-range="start"]::before {
+    inset-inline: 50% 0;
+  }
+
+  .umc-calendar__cell[data-range="end"]::before {
+    inset-inline: 0 50%;
+  }
+
+  .umc-calendar__day {
+    --umc-calendar-day-bg: transparent;
+    --umc-calendar-day-fg: var(--umc-color-text-neutral-default-900);
+    --umc-calendar-day-dot: var(--umc-color-icon-brand-medium-500);
+    --umc-calendar-day-hover-bg: #f6f7f7;
+    --umc-calendar-day-hover-dot: var(--umc-color-icon-brand-medium-500);
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    box-sizing: border-box;
+    inline-size: 36px;
+    block-size: 36px;
+    margin: 0;
+    padding: 9px 0 4px;
+    border: 0;
+    border-radius: var(--umc-radius-full);
+    background-color: var(--umc-calendar-day-bg);
+    color: var(--umc-calendar-day-fg);
+    font-family: var(--umc-font-family-brand);
+    font-size: var(--umc-font-size-18);
+    font-weight: var(--umc-font-weight-medium);
+    line-height: 1;
+    cursor: pointer;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .umc-calendar__day:is([data-outside], [aria-disabled="true"]) {
+    --umc-calendar-day-fg: var(--umc-color-text-disabled);
+    --umc-calendar-day-dot: #e2e4e3;
+    --umc-calendar-day-hover-bg: var(--umc-color-fill-neutral-weaker-50);
+    --umc-calendar-day-hover-dot: var(--umc-color-icon-disabled);
+  }
+
+  .umc-calendar__day[aria-disabled="true"] {
+    cursor: default;
+  }
+
+  .umc-calendar__day[data-selected],
+  .umc-calendar__cell:is(
+      [data-range="start"],
+      [data-range="end"],
+      [data-range="single"]
+    )
+    > .umc-calendar__day {
+    --umc-calendar-day-bg: var(--umc-color-fill-primary-inverse-medium-500);
+    --umc-calendar-day-fg: var(--umc-color-text-inverse);
+    --umc-calendar-day-dot: var(--umc-color-icon-inverse);
+  }
+
+  .umc-calendar__dot {
+    flex: none;
+    inline-size: 4px;
+    block-size: 4px;
+    border-radius: var(--umc-radius-full);
+    background-color: var(--umc-calendar-day-dot);
+  }
+
+  @media (hover: hover) {
+    .umc-calendar__cell:not([data-range])
+      > .umc-calendar__day:not([data-selected]):hover {
+      background-color: var(--umc-calendar-day-hover-bg);
+    }
+
+    .umc-calendar__cell:not([data-range])
+      > .umc-calendar__day:not([data-selected]):hover
+      > .umc-calendar__dot {
+      background-color: var(--umc-calendar-day-hover-dot);
+    }
+  }
+
+  .umc-calendar__day:focus-visible {
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
+    outline-offset: 2px;
+  }
+
+  @media (forced-colors: active) {
+    .umc-calendar {
+      border-color: CanvasText;
+    }
+
+    .umc-calendar__day:is([data-outside], [aria-disabled="true"]) {
+      color: GrayText;
+    }
+
+    .umc-calendar__cell[data-range="middle"],
+    .umc-calendar__cell:is([data-range="start"], [data-range="end"])::before {
+      outline: 1px solid Highlight;
+      outline-offset: -1px;
+    }
+
+    .umc-calendar__day[data-selected],
+    .umc-calendar__cell:is(
+        [data-range="start"],
+        [data-range="end"],
+        [data-range="single"]
+      )
+      > .umc-calendar__day {
+      forced-color-adjust: none;
+      background-color: Highlight;
+      color: HighlightText;
+    }
+
+    .umc-calendar__dot {
+      forced-color-adjust: none;
+      background-color: currentColor;
+    }
+
+    .umc-calendar__day:focus-visible {
+      outline-color: CanvasText;
+    }
+  }
+}

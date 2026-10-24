@@ -1,0 +1,144 @@
+@layer components {
+  .umc-calendar-schedule-card {
+    --umc-calendar-schedule-card-bg: var(--umc-color-fill-neutral-weaker-50);
+    --umc-calendar-schedule-card-border: var(
+      --umc-color-border-neutral-weaker-100
+    );
+    --umc-calendar-schedule-card-label: var(--umc-color-text-brand-default-600);
+    --umc-calendar-schedule-card-name: var(
+      --umc-color-text-neutral-default-900
+    );
+    --umc-calendar-schedule-card-period: var(
+      --umc-color-text-neutral-medium-600
+    );
+    --umc-calendar-schedule-card-font-weight: var(
+      --umc-typography-label-3-medium-font-weight
+    );
+    --umc-calendar-schedule-card-letter-spacing: var(
+      --umc-typography-label-3-medium-letter-spacing
+    );
+
+    display: flex;
+    box-sizing: border-box;
+    min-inline-size: 0;
+    padding-inline-start: var(--umc-spacing-padding-8);
+    border-inline-start: 8px solid var(--umc-color-border-primary-strong-500);
+    border-radius: var(--umc-radius-8);
+    background-color: var(--umc-calendar-schedule-card-bg);
+  }
+
+  .umc-calendar-schedule-card[data-status="ongoing"] {
+    --umc-calendar-schedule-card-bg: var(--umc-color-fill-primary-weak-75);
+    --umc-calendar-schedule-card-border: var(
+      --umc-color-border-primary-weaker-100
+    );
+    --umc-calendar-schedule-card-name: var(--umc-color-text-brand-default-600);
+    --umc-calendar-schedule-card-font-weight: var(
+      --umc-typography-label-3-semibold-font-weight
+    );
+    --umc-calendar-schedule-card-letter-spacing: var(
+      --umc-typography-label-3-semibold-letter-spacing
+    );
+  }
+
+  .umc-calendar-schedule-card[data-status="past"] {
+    --umc-calendar-schedule-card-label: var(--umc-color-text-neutral-weak-500);
+    --umc-calendar-schedule-card-name: var(--umc-color-text-neutral-weak-500);
+    --umc-calendar-schedule-card-period: var(--umc-color-teal-grey-400);
+  }
+
+  .umc-calendar-schedule-card__body {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    gap: var(--umc-spacing-gap-10);
+    box-sizing: border-box;
+    min-inline-size: 0;
+    padding: 9px 14px;
+    border: 1px solid var(--umc-calendar-schedule-card-border);
+    border-inline-start: 0;
+    border-start-end-radius: var(--umc-radius-8);
+    border-end-end-radius: var(--umc-radius-8);
+  }
+
+  .umc-calendar-schedule-card__text {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: var(--umc-spacing-gap-4);
+    min-inline-size: 0;
+  }
+
+  .umc-calendar-schedule-card__title {
+    display: flex;
+    gap: var(--umc-spacing-gap-6);
+    margin: 0;
+    font-family: var(--umc-typography-label-3-medium-font-family);
+    font-size: var(--umc-typography-label-3-medium-font-size);
+    font-weight: var(--umc-calendar-schedule-card-font-weight);
+    line-height: var(--umc-typography-label-3-medium-line-height);
+    letter-spacing: var(--umc-calendar-schedule-card-letter-spacing);
+  }
+
+  .umc-calendar-schedule-card__label {
+    flex: none;
+    min-inline-size: 28px;
+    color: var(--umc-calendar-schedule-card-label);
+    white-space: nowrap;
+  }
+
+  .umc-calendar-schedule-card__name {
+    flex: 1 1 auto;
+    min-inline-size: 0;
+    overflow: hidden;
+    color: var(--umc-calendar-schedule-card-name);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .umc-calendar-schedule-card__period {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--umc-spacing-gap-4);
+    margin: 0;
+    color: var(--umc-calendar-schedule-card-period);
+    font-family: var(--umc-typography-caption-1-regular-font-family);
+    font-size: var(--umc-typography-caption-1-regular-font-size);
+    font-weight: var(--umc-typography-caption-1-regular-font-weight);
+    line-height: var(--umc-typography-caption-1-regular-line-height);
+    letter-spacing: var(--umc-typography-caption-1-regular-letter-spacing);
+    white-space: nowrap;
+    opacity: 0.8;
+  }
+
+  .umc-calendar-schedule-card__check {
+    display: inline-flex;
+    flex: none;
+    inline-size: 24px;
+    block-size: 24px;
+    border-radius: var(--umc-radius-6);
+    background-color: var(--umc-color-fill-neutral-strong-200);
+    color: var(--umc-color-teal-grey-50);
+  }
+
+  .umc-calendar-schedule-card__check > svg {
+    inline-size: 100%;
+    block-size: 100%;
+  }
+
+  @media (forced-colors: active) {
+    .umc-calendar-schedule-card {
+      border-inline-start-color: CanvasText;
+    }
+
+    .umc-calendar-schedule-card[data-status="ongoing"]
+      .umc-calendar-schedule-card__body {
+      border-color: Highlight;
+    }
+
+    .umc-calendar-schedule-card__check {
+      border: 1px solid GrayText;
+      color: GrayText;
+    }
+  }
+}

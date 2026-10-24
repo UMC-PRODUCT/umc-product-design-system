@@ -1,0 +1,236 @@
+{
+  "component": "Calendar",
+  "figmaSection": "4793:74994",
+  "page": "/components/calendar/calendar/",
+  "nodes": [
+    {
+      "specId": "calendar-root",
+      "node": "4763:63642",
+      "variant": "Header Layout=Centered, *피그마용=False",
+      "target": ".umc-calendar",
+      "expected": {
+        "padding-top": "20px",
+        "padding-right": "20px",
+        "padding-bottom": "20px",
+        "padding-left": "20px",
+        "row-gap": "20px",
+        "border-top-width": "1px",
+        "border-top-color": "#eff0f0",
+        "border-top-left-radius": "12px",
+        "background-color": "#ffffff"
+      },
+      "figmaDiffers": {
+        "width": "피그마 테두리는 레이아웃에 들어가지 않아 376px이고, 코드는 1px 테두리가 바깥에 더해져 378px이다",
+        "height": "피그마는 날짜 열 높이를 272px로 고정해 5주인 달에 아래 8px이 비고, 코드는 그달의 주 수만큼 높이가 정해진다"
+      }
+    },
+    {
+      "specId": "calendar-root",
+      "node": "4763:63644",
+      "variant": "Header Layout=Centered, *피그마용=False",
+      "target": ".umc-calendar__title",
+      "expected": {
+        "column-gap": "6px",
+        "color": "#0f1010",
+        "font-size": "20px",
+        "font-weight": "600",
+        "line-height": "28px",
+        "letter-spacing": "-0.2px"
+      }
+    },
+    {
+      "specId": "calendar-root",
+      "node": "4787:69278",
+      "variant": "Header Layout=Centered, *피그마용=False",
+      "target": ".umc-icon-button",
+      "expected": {
+        "width": "24px",
+        "height": "24px",
+        "border-top-left-radius": "6px",
+        "background-color": "#ffffff"
+      }
+    },
+    {
+      "specId": "calendar-root",
+      "node": "4763:63543",
+      "variant": "Header Layout=Centered, *피그마용=False",
+      "target": ".umc-calendar__grid",
+      "expected": {
+        "row-gap": "12px"
+      }
+    },
+    {
+      "specId": "calendar-root",
+      "node": "4763:63544",
+      "variant": "Header Layout=Centered, *피그마용=False",
+      "target": ".umc-calendar__weekday",
+      "expected": {
+        "width": "48px",
+        "height": "24px",
+        "color": "#7e7f7f",
+        "font-size": "18px",
+        "font-weight": "500",
+        "line-height": "25.2px"
+      }
+    },
+    {
+      "specId": "calendar-root",
+      "node": "I4763:63541;4763:63544",
+      "variant": "Header Layout=Centered, *피그마용=False",
+      "target": ".umc-calendar__weekday[data-tone=\"saturday\"]",
+      "expected": {
+        "color": "#2e8fff"
+      }
+    },
+    {
+      "specId": "calendar-root",
+      "node": "I4763:63542;4763:63544",
+      "variant": "Header Layout=Centered, *피그마용=False",
+      "target": ".umc-calendar__weekday[data-tone=\"sunday\"]",
+      "expected": {
+        "color": "#f64c4c"
+      }
+    },
+    {
+      "specId": "calendar-start-layout",
+      "node": "4763:63652",
+      "variant": "Header Layout=Left Aligned, *피그마용=False",
+      "target": ".umc-calendar__header",
+      "expected": {
+        "padding-left": "2px"
+      }
+    },
+    {
+      "specId": "calendar-start-layout",
+      "node": "4763:63656",
+      "variant": "Header Layout=Left Aligned, *피그마용=False",
+      "target": ".umc-calendar__nav",
+      "expected": {
+        "column-gap": "8px"
+      }
+    },
+    {
+      "specId": "calendar-day-default",
+      "node": "4763:63569",
+      "variant": "State=Default, Selected=False, Disabled=False, Hightlight=False, Show Task Dot=False",
+      "target": ".umc-calendar__day",
+      "expected": {
+        "width": "36px",
+        "height": "36px",
+        "padding-top": "9px",
+        "padding-bottom": "4px",
+        "color": "#0f1010",
+        "font-size": "18px",
+        "font-weight": "500",
+        "line-height": "18px"
+      }
+    },
+    {
+      "specId": "calendar-day-hover",
+      "node": "4763:63557",
+      "variant": "State=Hover, Selected=False, Disabled=False, Hightlight=False, Show Task Dot=False",
+      "target": ".umc-calendar__day",
+      "expected": {
+        "background-color": "#f6f7f7",
+        "border-top-left-radius": "999px"
+      }
+    },
+    {
+      "specId": "calendar-day-disabled",
+      "node": "4763:63553",
+      "variant": "State=Default, Selected=False, Disabled=True, Hightlight=False, Show Task Dot=False",
+      "target": ".umc-calendar__day",
+      "expected": {
+        "color": "#cccccc"
+      }
+    },
+    {
+      "specId": "calendar-day-disabled-hover",
+      "node": "4763:63561",
+      "variant": "State=Hover, Selected=False, Disabled=True, Hightlight=False, Show Task Dot=False",
+      "target": ".umc-calendar__day",
+      "expected": {
+        "background-color": "#fbfcfc",
+        "color": "#cccccc"
+      }
+    },
+    {
+      "specId": "calendar-day-selected",
+      "node": "4763:63599",
+      "variant": "State=Default, Selected=True, Disabled=False, Hightlight=False, Show Task Dot=False",
+      "target": ".umc-calendar__day",
+      "expected": {
+        "background-color": "#008a80",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "calendar-day-range-start",
+      "node": "4763:63581",
+      "variant": "State=Range Start, Selected=True, Disabled=False, Hightlight=True, Show Task Dot=False",
+      "target": ".umc-calendar__day",
+      "expected": {
+        "background-color": "#008a80",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "calendar-day-range-middle",
+      "node": "4763:63577",
+      "variant": "State=Range Middle, Selected=True, Disabled=False, Hightlight=True, Show Task Dot=False",
+      "target": ".umc-calendar__cell",
+      "expected": {
+        "width": "48px",
+        "height": "36px",
+        "background-color": "#e9f7f5"
+      }
+    },
+    {
+      "specId": "calendar-day-dot",
+      "node": "4793:77117",
+      "variant": "State=Default, Selected=False, Disabled=False, Hightlight=False, Show Task Dot=True",
+      "target": ".umc-calendar__day",
+      "expected": {
+        "row-gap": "1px"
+      }
+    },
+    {
+      "specId": "calendar-day-dot",
+      "node": "4763:63638",
+      "variant": "State=Default, Selected=False, Disabled=False, Hightlight=False, Show Task Dot=True",
+      "target": ".umc-calendar__dot",
+      "expected": {
+        "width": "4px",
+        "height": "4px",
+        "background-color": "#008a80"
+      }
+    },
+    {
+      "specId": "calendar-day-selected-dot",
+      "node": "4793:77133",
+      "variant": "State=Default, Selected=True, Disabled=False, Hightlight=False, Show Task Dot=True",
+      "target": ".umc-calendar__dot",
+      "expected": {
+        "background-color": "#ffffff"
+      }
+    },
+    {
+      "specId": "calendar-day-disabled-dot",
+      "node": "4793:77107",
+      "variant": "State=Default, Selected=False, Disabled=True, Hightlight=False, Show Task Dot=True",
+      "target": ".umc-calendar__dot",
+      "expected": {
+        "background-color": "#e2e4e3"
+      }
+    },
+    {
+      "specId": "calendar-day-disabled-hover-dot",
+      "node": "4793:77115",
+      "variant": "State=Hover, Selected=False, Disabled=True, Hightlight=False, Show Task Dot=True",
+      "target": ".umc-calendar__dot",
+      "expected": {
+        "background-color": "#cccccc"
+      }
+    }
+  ]
+}
