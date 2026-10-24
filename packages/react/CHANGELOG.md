@@ -1,5 +1,93 @@
 # @umc-product/react
 
+## 0.7.0 (2026-10-24)
+
+### Minor Changes
+
+- 69f4a29: `Calendar`와 `CalendarScheduleCard`를 추가합니다. 피그마 `Calendar`와 `Calendar/Schedule Card`를 옮겼고, 두 컴포넌트는 서로 이어지지 않아 앱이 함께 놓고 연결합니다.
+
+  - `Calendar`: 월요일에 시작하는 한 달 격자와 이전·다음 달 버튼을 그립니다. 날짜 하나를 고르고(`value`, `onValueChange`), 기간을 띠로(`ranges`), 일정이 있는 날을 점으로(`markedDates`) 보여 줍니다. 앞뒤 달 날짜는 흐리게 채우고, 누르면 그 달로 옮깁니다. 화살표, Home, End, PageUp, PageDown으로 날짜를 옮길 수 있습니다.
+  - `CalendarScheduleCard`: 회차, 일정 이름, 기간을 한 장에 담는 카드입니다. `status`로 예정, 진행 중, 지난 일정을 나눕니다.
+
+- b2edf62: `Chip`에 `size="lg"`를 추가합니다. 피그마 `Chip`의 `Size=Lg`로, 높이는 42px이고 글자는 `Title/2-Medium`(20px), 아이콘은 20px입니다. 좌우 여백은 아이콘이 없으면 16px씩이고, 앞 아이콘이면 12px·18px, 뒤 아이콘이면 18px·12px입니다. 색과 상태는 다른 크기와 같습니다.
+- c969f3a: `Field`에 도움말 크기 `captionSize`(`"md"`, `"lg"`)를 더합니다. 피그마 `Help Text`에 새로 생긴 `Size=14px`가 `lg`(14px, `caption-1-regular`)이고, 기본값 `md`는 지금까지와 같은 13px입니다. 오류 메시지도 같은 크기를 따릅니다. `TextField`, `TextFieldArea`, `TextArea`, `Select`, `CodeField`, `VerificationCodeField`, `NumericStepper`도 같은 prop을 받아 `Field`에 넘깁니다.
+- a29250b: **깨지는 변경** 피그마 `Help Text`의 `Type=Primary`가 `Type=Success`가 되어 `Field`의 `captionColor="primary"`도 `captionColor="success"`로 바꿉니다. 초록 글자색(#06844c, `text-success`)은 그대로이고 `StatusTag`와 `GuidanceMessage`가 쓰는 `success`와 이름이 같아집니다. `Field`를 감싼 `TextField`, `TextFieldArea`, `TextArea`, `Select`, `CodeField`, `VerificationCodeField`, `NumericStepper`도 같은 이름을 받습니다.
+
+  | 전                                         | 후                                         |
+  | ------------------------------------------ | ------------------------------------------ |
+  | `captionColor="primary"`                   | `captionColor="success"`                   |
+  | `.umc-field__caption[data-tone="primary"]` | `.umc-field__caption[data-tone="success"]` |
+
+- ce9b9ee: `FormAttachmentField`에 `invalid`와 `errorMessage`를 추가합니다. 피그마 `Form/Question`에 생긴 Help Text에 맞춰, 오류이면 칸 테두리를 Red-300으로 바꾸고 칸 아래에 빨간 도움말을 보여 줍니다. 도움말은 링크 입력의 설명으로 이어집니다. 글 답변(`FormTextAnswer`)은 전처럼 `TextArea`의 `invalid`와 `errorMessage`를 씁니다.
+
+  칸과 버튼은 루트 안의 새 요소(`.umc-form-attachment-field__row`)로 묶였습니다. 루트에 `className`으로 칸과 버튼 사이 간격을 주던 앱은 확인해 주세요.
+
+- aa1a2a6: `FormQuestionEditor`에 `dragPlaceholder`를 더합니다. 켜면 끄는 동안 목록에 남은 원래 질문이 점선 상자가 되어 놓일 자리로 따라 움직이고, 손을 따라다니는 카드는 `dragging`으로 그립니다. @dnd-kit은 패키지에 들어 있지 않으니 앱에서 설치합니다.
+- aa1a2a6: `FormQuestionEditor`에 `dragging`을 더합니다. 손잡이를 잡고 순서를 옮기는 동안 켜면 회색 강조선과 떠 있는 그림자가 생기고 활성 질문이어도 필수 항목, 삭제, 툴바가 숨겨집니다. 끌어서 옮기는 기능은 앱이 붙이며 @dnd-kit을 쓴다면 `useSortable`의 `isDragging`을 그대로 넘기면 됩니다.
+- 7c50f8a: 질문지 그룹에 `FormSectionEmpty`를 더합니다. 질문이 없는 섹션 본문에 넣는 안내이며, 질문을 끄는 동안 이 섹션에 놓을 수 있으면 `dropTarget`으로 `dragPlaceholder`와 같은 점선을 그립니다.
+- f65c4a6: `IconButton`에 `size="sm"`을 추가합니다. 피그마 `Icon Button`의 `Size=Sm`으로, 칸은 24×24px, 모서리는 `radius-6`, 아이콘은 20px입니다. 색과 눌림 모양은 다른 크기와 같습니다.
+- f946d1a: `Panel`에 머리 슬롯 `headSlot`과 닫기 버튼 `PanelCloseButton`을 더합니다. 피그마 `Web/Panel`에 생긴 `Head Slot` 자리로 제목 오른쪽 위(패널 위 20px, 오른쪽 16px)에 놓입니다. `PanelCloseButton`은 Head Slot의 기본 내용인 24px 닫기 아이콘 버튼이고 누르면 패널을 닫으며 `onOpenChange(false)`를 부릅니다. `headSlot`을 넘기지 않으면 머리 모양과 구조는 그대로입니다.
+- 1cb3569: `StatusTag`에 `color="success"`를 더합니다. 피그마 `Tag/Status`의 `Color=Green`이고, 점과 글자가 `text-success`(#06844c)입니다.
+
+### Patch Changes
+
+- 2076ef8: **화면 변화** 피그마 `Chart/Tooltip`이 3기 색과 글자 스타일로 바뀐 것에 맞춰 `ChartTooltip`이 바뀝니다. `CategoryGroupChart`와 `RankedBarChart`가 띄우는 툴팁도 같이 바뀝니다. 그림자는 그대로입니다.
+
+  | 항목                          | 전                               | 후                                                                    |
+  | ----------------------------- | -------------------------------- | --------------------------------------------------------------------- |
+  | 제목                          | #9ca3a3, 600, 행간 150%          | #7e7f7f(TealGrey-500), 700, 행간 130%                                 |
+  | 합계                          | 11px, 행간 160%, 자간 0          | 12px, 행간 150%, 자간 -2%(`caption-3-bold`)                           |
+  | 합계 비교값                   | #9ca3a3, 11px, 행간 160%         | #adadad(TealGrey-400), 12px, 행간 150%(`caption-3-medium`)            |
+  | 항목                          | #404443, 11px, 행간 160%, 자간 0 | #282a2a(TealGrey-800), 12px, 행간 150%, 자간 -2%(`caption-3-regular`) |
+  | 항목 비교값                   | #9ca3a3                          | #adadad                                                               |
+  | 보조 설명                     | #9ca3a3, 행간 160%, 자간 -2%     | #adadad, 행간 150%, 자간 0(`caption-4-medium`)                        |
+  | 위 여백                       | 8px                              | 10px                                                                  |
+  | 제목과 합계 사이              | 0(비교 모양 1px)                 | 3px                                                                   |
+  | 제목 묶음·항목·보조 설명 사이 | 2px(비교 모양 8px)               | 8px                                                                   |
+  | 항목 사이                     | 2px                              | 4px                                                                   |
+
+- f32a63a: **화면 변화** 피그마 `Check Box Option Item`의 편집 모드가 보기 글과 닫기 아이콘을 줄 양 끝으로 벌린 것에 맞춰 `FormChoiceListEditor`의 삭제 버튼이 줄 오른쪽 끝으로 옮겨 갑니다. 라디오 보기도 같은 모양이라 단일 선택과 복수 선택이 모두 바뀝니다.
+
+  | 항목           | 전                         | 후                           |
+  | -------------- | -------------------------- | ---------------------------- |
+  | 삭제 버튼 위치 | 보기 글 바로 뒤(간격 12px) | 줄 오른쪽 끝(안쪽 여백 10px) |
+
+- f6712ab: **화면 변화** 피그마 `Help Text`가 텍스트 스타일 `Caption/2-Regular`에 연결된 것에 맞춰 도움말과 오류 메시지의 행간이 바뀝니다. `Field`를 쓰는 `TextField`, `TextFieldArea`, `TextArea`, `Select`, `CodeField`, `VerificationCodeField`, `NumericStepper`와 `FormAttachmentField`의 오류 메시지가 같이 바뀝니다. 도움말 한 줄이 1.85px 높아집니다.
+
+  | 항목 | 전         | 후                                 |
+  | ---- | ---------- | ---------------------------------- |
+  | 행간 | 17px(고정) | 145%(18.85px, `caption-2-regular`) |
+  | 크기 | 13px       | 13px(그대로)                       |
+
+- 89b686f: **화면 변화** 피그마 `Tag/Status`가 점과 간격을 줄인 것에 맞춰 `StatusTag`가 바뀝니다. 모든 색에 같이 적용됩니다.
+
+  | 항목           | 전   | 후   |
+  | -------------- | ---- | ---- |
+  | 점 지름        | 12px | 10px |
+  | 점과 글자 사이 | 6px  | 4px  |
+
+- efd52af: **화면 변화** 피그마 `Text Area`에 생긴 오류 변형(`Error=True`)에 맞춰 `TextArea`의 오류 모양이 바뀝니다. 오류이면 상태와 관계없이 테두리만 빨간색이고 배경은 그대로입니다. 오류를 켜고 끄는 흐름은 그대로 앱이 `invalid`로 정합니다.
+
+  | 항목                       | 전                            | 후                                          |
+  | -------------------------- | ----------------------------- | ------------------------------------------- |
+  | 오류 배경                  | #fef2f1(`fill-error-weak-50`) | 오류가 아닐 때와 같음(흰색, 비활성 #fbfcfc) |
+  | 오류 + hover·포커스 테두리 | #ed6464(Red-400)              | #f88c8c(Red-300)                            |
+  | 오류 + 비활성 테두리       | #f88c8c                       | #f88c8c(그대로)                             |
+
+- 9b2c216: **화면 변화** 피그마 `Text Info Button`의 글자가 커지고 굵어진 것에 맞춰 `TextInfoButton`도 바뀝니다. 아이콘 크기와 색, 아이콘과 글자 사이 간격은 그대로입니다.
+
+  | 항목 | 전           | 후            |
+  | ---- | ------------ | ------------- |
+  | 크기 | 12px         | 13px          |
+  | 굵기 | 400(Regular) | 500(Medium)   |
+  | 행간 | 150%(18px)   | 145%(18.85px) |
+  | 자간 | -2%          | -2%(그대로)   |
+
+- Updated dependencies [c5001c6]
+- Updated dependencies [b0b4317]
+  - @umc-product/design-tokens@0.7.0
+  - @umc-product/icons@0.7.0
+
 ## 0.6.0 (2026-10-20)
 
 ### Minor Changes
