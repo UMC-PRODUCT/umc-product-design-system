@@ -235,7 +235,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 11. `Meue List`에는 Sm과 Md만 있고, 항목 `.primitve/Meue Item/Text Only`에는 Xs가 남아 있습니다. 코드 Menu는 `xs`를 유지하고, Xs 목록은 Sm과 같은 모양(최소 폭 100px, 타이틀 좌우 여백 12px)으로 가정했습니다. Xs 목록을 계속 쓸지 알려 주세요.
 12. Select 목록도 `Meue List` 모양(여백 4px, 모서리 12px, 테두리 없음, 항목 간격 0)을 따르는지 알려 주세요. 예시의 Select 목록은 아직 `Dropdown_List`(여백 2px, 모서리 8px, 테두리 1px, 항목 간격 2px)라 코드는 Menu만 바꿨습니다.
 13. 2026-10-17에 새로 올라온 `Text Area`(장문형)를 `TextArea`로 옮기고, 기존 `Text Field/ Input Box`의 `Type=Text Area`(단문형)는 `TextFieldArea`로 이름을 바꿨습니다. 피그마 이름도 장문형은 `Text Area`, 단문형은 Text Field의 한 타입으로 계속 나뉘어 있으면 좋겠습니다.
-14. `Text Area`에 오류 상태가 없습니다. 코드는 `TextField`처럼 빨간 테두리와 배경으로 그립니다. 장문형 오류 모양을 따로 정할지 알려 주세요.
+14. (해결 2026-10-24) `Text Area`에 `Error=True` 변형이 생겨 코드도 따랐습니다. 오류이면 상태와 관계없이 테두리만 Red-300(`#f88c8c`)이고 배경은 그대로입니다. 전에는 `TextField`처럼 분홍 배경을 깔고 hover와 포커스에서 Red-400으로 진하게 했는데 둘 다 뺐습니다. 비활성이면서 오류일 때도 빨간 테두리가 남습니다.
 15. `Text Area`의 hover와 포커스 테두리는 Teal-300(`#7ac7c1`)이고, Input Box는 Teal-500입니다. Input Box의 Typing은 옅은 청록 배경이지만 `Text Area`는 흰색 그대로입니다. 의도한 차이인지 알려 주세요.
 16. `Text Area`의 글자 수는 모든 변형에 `0/0`으로 그려져 있습니다. 코드는 최대 글자 수(`maxLength`)를 정한 칸에만 "현재/최대"로 보여 줍니다. 2026-10-19에 Disabled 변형에도 글자 수가 생겨, 비활성 상태에서도 보여 줍니다. 최대 글자 수에 닿았을 때 모양이 따로 필요한지 알려 주세요.
 17. `Text Area` 설명의 `Place Hoder`는 `Placeholder`의 오타입니다.

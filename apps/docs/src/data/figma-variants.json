@@ -550,15 +550,29 @@
       "node": "4359:31609",
       "name": "Text Area",
       "axes": {
-        "State": ["Default", "Hover", "Focused", "Typing", "Filled", "Disabled"]
+        "State": [
+          "Default",
+          "Hover",
+          "Focused",
+          "Typing",
+          "Filled",
+          "Disabled"
+        ],
+        "Error": ["False", "True"]
       },
       "variants": [
-        "State=Default",
-        "State=Hover",
-        "State=Focused",
-        "State=Typing",
-        "State=Filled",
-        "State=Disabled"
+        "State=Default, Error=False",
+        "State=Default, Error=True",
+        "State=Hover, Error=False",
+        "State=Hover, Error=True",
+        "State=Focused, Error=False",
+        "State=Focused, Error=True",
+        "State=Typing, Error=False",
+        "State=Typing, Error=True",
+        "State=Filled, Error=False",
+        "State=Filled, Error=True",
+        "State=Disabled, Error=False",
+        "State=Disabled, Error=True"
       ]
     },
     "help-text": {
