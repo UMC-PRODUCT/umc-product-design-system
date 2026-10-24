@@ -13,7 +13,7 @@ import {
   resolveWeight,
   toComponentName,
 } from "./generate.ts"
-import { mapIconColor, mapPictogramColor } from "./rules.ts"
+import { mapIconColor, mapLogoColor, mapPictogramColor } from "./rules.ts"
 
 const icon = (nodeId: string) => ({ nodeId, kind: "icon" as const })
 const pictogram = (nodeId: string) => ({ nodeId, kind: "pictogram" as const })
@@ -102,8 +102,15 @@ describe("색 규칙", () => {
   })
 
   it("로고에 주색이 없으면 실패한다", () => {
-    expect(() => assertLogoPrimaryColor(["#3f4141"])).not.toThrow()
-    expect(() => assertLogoPrimaryColor([])).toThrow("로고 주색")
+    expect(() => assertLogoPrimaryColor(["#3f4141"], ["#3f4141"])).not.toThrow()
+    expect(() => assertLogoPrimaryColor([], ["#3f4141"])).toThrow("로고 주색")
+  })
+
+  it("로고 색은 그 로고의 주색만 currentColor로 바꾼다", () => {
+    expect(mapLogoColor(["#7e7f7f"])("#7e7f7f")).toEqual({
+      attribute: "currentColor",
+    })
+    expect(() => mapLogoColor(["#7e7f7f"])("#3f4141")).toThrow("#3f4141")
   })
 
   it("프레임은 0 0에서 시작하고 너비와 높이가 양수여야 한다", () => {
@@ -201,14 +208,28 @@ describe("buildComponents", () => {
     ).toEqual(["0 0 24 24", "0 0 24 24", "0 0 24 24"])
   })
 
-  it("Logo/UMC를 currentColor로 그리는 UmcLogo로 만든다", () => {
+  it("Logo의 Type=워터마크를 currentColor로 그리는 UmcLogo로 만든다", () => {
     const logo = byName("UmcLogo")
     expect(logo.kind).toBe("logo")
-    expect(logo.figmaName).toBe("Logo/UMC")
+    expect(logo.figmaName).toBe("Logo (Type=워터마크)")
     expect(logo.variants.map((variant) => variant.viewBox)).toEqual([
       "0 0 148 44",
     ])
     expect(logo.variants[0]?.jsx).toContain('fill="currentColor"')
+    expect(logo.variants[0]?.jsx).not.toMatch(/#[0-9a-f]{6}/i)
+  })
+
+  it("Logo의 Type=도형 마크를 currentColor로 그리는 UmcSymbolLogo로 만든다", () => {
+    const logo = byName("UmcSymbolLogo")
+    expect(logo.kind).toBe("logo")
+    expect(logo.figmaName).toBe("Logo (Type=도형 마크)")
+    expect(logo.variants.map((variant) => variant.viewBox)).toEqual([
+      "0 0 140.001 44",
+    ])
+    expect(logo.variants[0]?.jsx).toContain('fill="currentColor"')
+    expect(logo.variants[0]?.jsx).toContain(
+      'xlinkHref="#umc-symbol-stroke0_0_8"',
+    )
     expect(logo.variants[0]?.jsx).not.toMatch(/#[0-9a-f]{6}/i)
   })
 

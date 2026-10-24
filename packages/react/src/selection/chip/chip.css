@@ -59,6 +59,32 @@
     --umc-chip-padding-end: var(--umc-spacing-padding-10);
   }
 
+  .umc-chip[data-size="lg"] {
+    --umc-chip-height: 42px;
+    --umc-chip-padding-start: var(--umc-spacing-padding-16);
+    --umc-chip-padding-end: var(--umc-spacing-padding-16);
+
+    font-family: var(--umc-typography-title-2-medium-font-family);
+    font-size: var(--umc-typography-title-2-medium-font-size);
+    font-weight: var(--umc-typography-title-2-medium-font-weight);
+    line-height: var(--umc-typography-title-2-medium-line-height);
+    letter-spacing: var(--umc-typography-title-2-medium-letter-spacing);
+  }
+
+  .umc-chip[data-size="lg"][data-leading-icon]:not([data-trailing-icon]) {
+    --umc-chip-padding-start: var(--umc-spacing-padding-12);
+    --umc-chip-padding-end: 18px;
+  }
+
+  .umc-chip[data-size="lg"][data-trailing-icon]:not([data-leading-icon]) {
+    --umc-chip-padding-start: 18px;
+    --umc-chip-padding-end: var(--umc-spacing-padding-12);
+  }
+
+  .umc-chip[data-size="lg"] .umc-chip__icon {
+    --umc-chip-icon-size: 20px;
+  }
+
   .umc-chip:hover:not(:disabled) {
     background-color: var(--umc-chip-bg-hover);
   }

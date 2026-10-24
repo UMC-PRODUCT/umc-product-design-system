@@ -11,7 +11,9 @@ describe("ChipProps", () => {
     expectTypeOf<ChipProps["color"]>().toEqualTypeOf<
       "brand" | "neutral" | undefined
     >()
-    expectTypeOf<ChipProps["size"]>().toEqualTypeOf<"sm" | "md" | undefined>()
+    expectTypeOf<ChipProps["size"]>().toEqualTypeOf<
+      "sm" | "md" | "lg" | undefined
+    >()
   })
 
   it("color가 문자열 타입이 아니라 ChipColor 유니언 타입이다", () => {

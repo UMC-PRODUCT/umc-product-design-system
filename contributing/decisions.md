@@ -1,10 +1,10 @@
 # 결정 기록
 
-디자인 시스템을 만들며 되돌리기 어려운 결정 9개를 ADR 형식으로 남깁니다.
+디자인 시스템을 만들며 되돌리기 어려운 결정 11개를 ADR 형식으로 남깁니다.
 
 - 독자: 디자인 시스템을 고치거나 쓰는 개발자
 - 소유자: UMC PRODUCT Design Chapter
-- 기준일: 2026-10-18
+- 기준일: 2026-10-24
 
 결정마다 결정, 문제, 대안, 포기한 것, 성공 기준, 재검토 조건을 적습니다. 재검토 조건에 해당하는 일이 생기면 이 문서부터 고칩니다.
 
@@ -97,7 +97,7 @@ codeSyntax 이름은 변수마다 유일해지면 더 낫습니다. Dev Mode 코
 ## 9. Storybook은 별도 앱으로 두고 컴포넌트 소스를 직접 읽는다
 
 - **결정**
-  - Storybook을 비공개 워크스페이스 앱 `apps/storybook`에 둡니다. 배포는 문서 사이트와 같은 AWS Amplify 앱이 맡아, 문서 기준 경로 아래 `storybook/`(`/design-system/storybook/`)에 함께 올립니다.
+  - Storybook을 비공개 워크스페이스 앱 `apps/storybook`에 둡니다. 배포는 문서 사이트와 같은 AWS Amplify 앱이 맡아, 문서 사이트 아래 `storybook/`(`https://design.university.neordinary.com/storybook/`)에 함께 올립니다.
   - Vite alias로 `@umc-product/react`를 `packages/react/src`에 연결해 props 타입에서 Controls를 만듭니다. 토큰과 아이콘은 빌드한 `dist`를 씁니다.
   - 컴포넌트마다 Playground 스토리를 기본으로 둡니다. 피그마 변형 그리드는 Storybook에 다시 만들지 않고 문서 페이지로 연결하며, 문서 앱의 코드는 가져다 쓰지 않습니다.
   - 공개 사이트에 피그마 링크를 노출하지 않도록 피그마 패널(addon-designs)은 넣지 않습니다.
@@ -106,12 +106,12 @@ codeSyntax 이름은 변수마다 유일해지면 더 낫습니다. Dev Mode 코
 - **포기한 것**
   - 컴포넌트 옆에 스토리를 두는 응집: 패키지 안에 두면 tsc 빌드가 스토리를 `dist`에 넣고, use-client 계약 테스트에도 걸립니다.
   - Storybook 안에서 모든 변형 보기: 문서 그리드를 재사용하면 두 앱이 문서의 CSS, 코드 툴팁 플러그인, 상태 강제 스크립트를 함께 써야 합니다. 그러면 한쪽을 고칠 때 다른 쪽이 깨집니다.
-  - 배포 전 미리보기: 기본은 main 브랜치만 배포하므로 병합한 뒤에야 바뀐 모습을 봅니다.
+  - PR마다 미리보기: 바뀐 모습은 develop에 병합한 뒤 main에 배포하기 전에 비밀번호를 건 develop 주소에서 봅니다.
   - Storybook만 따로 배포하기: 문서와 한 빌드로 묶여서 Storybook 빌드가 깨지면 문서도 배포하지 않습니다. 빌드 시간도 Storybook 빌드만큼 늘어납니다.
-- **성공 기준**: export한 모든 컴포넌트와 `figma-spec.json`이 있는 모든 컴포넌트에 스토리가 있고 jsdom에서 렌더됩니다(`apps/storybook/src/stories.test.tsx`). 배포할 패키지에 스토리 파일이 들어가지 않습니다. 문서와 Storybook이 한 도메인의 `/design-system/`과 `/design-system/storybook/`에서 열립니다.
-- **재검토 조건**: 디자이너가 배포 전 검토를 원할 때, 스토리와 문서 예시를 함께 고치는 일이 잦아질 때, Storybook을 거의 쓰지 않을 때, Storybook을 문서와 다른 주소나 다른 주기로 배포해야 할 때
+- **성공 기준**: export한 모든 컴포넌트와 `figma-spec.json`이 있는 모든 컴포넌트에 스토리가 있고 jsdom에서 렌더됩니다(`apps/storybook/src/stories.test.tsx`). 배포할 패키지에 스토리 파일이 들어가지 않습니다. 문서와 Storybook이 `design.university.neordinary.com`의 `/`와 `/storybook/`에서 열립니다.
+- **재검토 조건**: 디자이너가 PR마다 미리보기를 원할 때, 스토리와 문서 예시를 함께 고치는 일이 잦아질 때, Storybook을 거의 쓰지 않을 때, Storybook을 문서와 다른 주소나 다른 주기로 배포해야 할 때
 
-배포 전 검토가 필요해지면 Amplify에 develop 브랜치나 PR 미리보기를 연결합니다. 화면 변화를 승인하는 흐름까지 필요하면 Chromatic이 더 낫습니다.
+PR마다 미리보기가 필요해지면 Amplify에 PR 미리보기를 연결합니다. 화면 변화를 승인하는 흐름까지 필요하면 Chromatic이 더 낫습니다.
 
 Storybook을 별도 Amplify 앱으로 두는 쪽은 Storybook을 서브도메인처럼 문서와 다른 주소에 둘 때 더 낫습니다. Amplify의 사용자 지정 도메인은 앱 하나에만 붙고 Amplify 앱 사이의 rewrite도 기대기 어려워서, 한 도메인의 두 경로로 나누려면 앞단에 CloudFront 같은 프록시가 필요합니다.
 
@@ -131,3 +131,18 @@ Storybook을 별도 Amplify 앱으로 두는 쪽은 Storybook을 서브도메인
 - **재검토 조건**: 두 화면의 조립 코드가 거의 같아질 때, 서버 질문 모델이 확정되어 잘 바뀌지 않을 때, 세 번째 질문지 화면이 생길 때
 
 두 화면이 같은 순서로 같은 부품을 조립하게 되면 그 조립을 빌더로 묶는 쪽이 낫습니다. 그때는 빌더를 부품 위에 얹어, 부품을 직접 쓰는 화면도 계속 지원합니다.
+
+## 11. 웹 앱마다 Amplify 앱과 서브도메인을 따로 둔다
+
+- **결정**
+  - 폴리레포로 나뉜 웹 저장소마다 Amplify 앱을 하나씩 두고 공용 도메인 `university.neordinary.com` 아래 자기 서브도메인을 씁니다. 앱 사이에 리버스 프록시는 두지 않습니다.
+  - 이 저장소는 `design.university.neordinary.com`(main, 공개)과 `dev.design.university.neordinary.com`(develop, 비밀번호)에 배포합니다. 문서와 Storybook은 `/`와 `/storybook/`에 함께 올립니다.
+  - 도메인 루트와 www는 서비스 앱이 씁니다. 다른 앱은 자기 서브도메인만 따로 연결해서 두 앱이 루트 도메인 연결 하나를 나눠 쓰지 않게 합니다.
+- **문제**: 3기부터 웹은 저장소마다 따로 배포합니다. 그런데 이 앱이 `www.university.neordinary.com`을 혼자 쓰며 `/design-system/` 아래에 문서를 두고 있어서 서비스 앱이 도메인 루트를 쓰게 되면 한 도메인을 경로로 나눠야 합니다. Amplify 앱 사이의 rewrite는 기대기 어려워서 경로로 나누려면 앞단에 CloudFront를 따로 운영해야 합니다.
+- **대안**: 앞단 CloudFront로 한 도메인을 경로로 나누기(리버스 프록시), Amplify 기본 주소(`amplifyapp.com`)만 쓰기
+- **포기한 것**
+  - 한 도메인 아래 경로로 이어지는 주소: 앱 사이를 오가면 도메인이 바뀝니다.
+  - 예전 주소의 직접 연결: `/design-system/…` 링크는 리디렉션을 한 번 거칩니다.
+  - 한곳에 모인 설정: 앱마다 인증서, DNS 레코드, 리디렉션 규칙을 따로 관리합니다.
+- **성공 기준**: main 병합 한 번으로 `design.university.neordinary.com`의 문서와 Storybook이 함께 바뀝니다. develop 주소는 비밀번호 없이 열리지 않습니다. 예전 `/design-system/…` 주소는 새 도메인의 같은 페이지로 이동합니다. 다른 앱이 도메인을 더해도 이 앱의 도메인 연결은 그대로입니다.
+- **재검토 조건**: 여러 앱을 한 주소 아래 경로로 이어 보여 줘야 할 때, 서브도메인이 늘어 인증서와 DNS 관리가 부담될 때, PR마다 미리보기가 필요할 때

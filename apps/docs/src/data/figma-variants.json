@@ -1,7 +1,7 @@
 {
   "fileKey": "U3pRZp6BjQBW5aMljCBwo9",
   "page": "3434:72558",
-  "fetchedAt": "2026-10-08",
+  "fetchedAt": "2026-10-24",
   "tool": "get_metadata",
   "sets": {
     "button": {
@@ -273,40 +273,56 @@
         "State": ["Hover&Pressed", "Default"],
         "Color": ["White", "Neutral", "Error", "Primary"],
         "Style": ["Weak", "Fill"],
-        "Size": ["Md", "Lg"]
+        "Size": ["Md", "Sm", "Lg"]
       },
       "variants": [
         "State=Hover&Pressed, Color=White, Style=Weak, Size=Md",
+        "State=Hover&Pressed, Color=White, Style=Weak, Size=Sm",
         "State=Hover&Pressed, Color=White, Style=Weak, Size=Lg",
         "State=Hover&Pressed, Color=Neutral, Style=Weak, Size=Md",
+        "State=Hover&Pressed, Color=Neutral, Style=Weak, Size=Sm",
         "State=Hover&Pressed, Color=Neutral, Style=Weak, Size=Lg",
         "State=Hover&Pressed, Color=Error, Style=Weak, Size=Md",
+        "State=Hover&Pressed, Color=Error, Style=Weak, Size=Sm",
         "State=Hover&Pressed, Color=Error, Style=Weak, Size=Lg",
         "State=Default, Color=Neutral, Style=Fill, Size=Md",
+        "State=Default, Color=Neutral, Style=Fill, Size=Sm",
         "State=Default, Color=Neutral, Style=Fill, Size=Lg",
         "State=Default, Color=Error, Style=Fill, Size=Md",
+        "State=Default, Color=Error, Style=Fill, Size=Sm",
         "State=Default, Color=Error, Style=Fill, Size=Lg",
         "State=Hover&Pressed, Color=Neutral, Style=Fill, Size=Md",
+        "State=Hover&Pressed, Color=Neutral, Style=Fill, Size=Sm",
         "State=Hover&Pressed, Color=Neutral, Style=Fill, Size=Lg",
         "State=Hover&Pressed, Color=Error, Style=Fill, Size=Md",
+        "State=Hover&Pressed, Color=Error, Style=Fill, Size=Sm",
         "State=Hover&Pressed, Color=Error, Style=Fill, Size=Lg",
         "State=Default, Color=White, Style=Fill, Size=Md",
+        "State=Default, Color=White, Style=Fill, Size=Sm",
         "State=Default, Color=White, Style=Fill, Size=Lg",
         "State=Default, Color=Primary, Style=Weak, Size=Md",
+        "State=Default, Color=Primary, Style=Weak, Size=Sm",
         "State=Default, Color=Primary, Style=Weak, Size=Lg",
         "State=Default, Color=Primary, Style=Fill, Size=Md",
+        "State=Default, Color=Primary, Style=Fill, Size=Sm",
         "State=Default, Color=Primary, Style=Fill, Size=Lg",
         "State=Hover&Pressed, Color=Primary, Style=Weak, Size=Md",
+        "State=Hover&Pressed, Color=Primary, Style=Weak, Size=Sm",
         "State=Hover&Pressed, Color=Primary, Style=Weak, Size=Lg",
         "State=Hover&Pressed, Color=Primary, Style=Fill, Size=Md",
+        "State=Hover&Pressed, Color=Primary, Style=Fill, Size=Sm",
         "State=Hover&Pressed, Color=Primary, Style=Fill, Size=Lg",
         "State=Hover&Pressed, Color=White, Style=Fill, Size=Md",
+        "State=Hover&Pressed, Color=White, Style=Fill, Size=Sm",
         "State=Hover&Pressed, Color=White, Style=Fill, Size=Lg",
         "State=Default, Color=White, Style=Weak, Size=Md",
+        "State=Default, Color=White, Style=Weak, Size=Sm",
         "State=Default, Color=White, Style=Weak, Size=Lg",
         "State=Default, Color=Neutral, Style=Weak, Size=Md",
+        "State=Default, Color=Neutral, Style=Weak, Size=Sm",
         "State=Default, Color=Neutral, Style=Weak, Size=Lg",
         "State=Default, Color=Error, Style=Weak, Size=Md",
+        "State=Default, Color=Error, Style=Weak, Size=Sm",
         "State=Default, Color=Error, Style=Weak, Size=Lg"
       ]
     },
@@ -534,28 +550,47 @@
       "node": "4359:31609",
       "name": "Text Area",
       "axes": {
-        "State": ["Default", "Hover", "Focused", "Typing", "Filled", "Disabled"]
+        "State": [
+          "Default",
+          "Hover",
+          "Focused",
+          "Typing",
+          "Filled",
+          "Disabled"
+        ],
+        "Error": ["False", "True"]
       },
       "variants": [
-        "State=Default",
-        "State=Hover",
-        "State=Focused",
-        "State=Typing",
-        "State=Filled",
-        "State=Disabled"
+        "State=Default, Error=False",
+        "State=Default, Error=True",
+        "State=Hover, Error=False",
+        "State=Hover, Error=True",
+        "State=Focused, Error=False",
+        "State=Focused, Error=True",
+        "State=Typing, Error=False",
+        "State=Typing, Error=True",
+        "State=Filled, Error=False",
+        "State=Filled, Error=True",
+        "State=Disabled, Error=False",
+        "State=Disabled, Error=True"
       ]
     },
     "help-text": {
       "node": "2621:33341",
       "name": "Help Text",
       "axes": {
-        "Type": ["Default", "Primary", "Error", "Disabled"]
+        "Type": ["Default", "Success", "Error", "Disabled"],
+        "Size": ["13px", "14px"]
       },
       "variants": [
-        "Type=Default",
-        "Type=Primary",
-        "Type=Error",
-        "Type=Disabled"
+        "Type=Default, Size=13px",
+        "Type=Default, Size=14px",
+        "Type=Success, Size=13px",
+        "Type=Success, Size=14px",
+        "Type=Error, Size=13px",
+        "Type=Error, Size=14px",
+        "Type=Disabled, Size=13px",
+        "Type=Disabled, Size=14px"
       ]
     },
     "input-accessory": {
@@ -938,7 +973,7 @@
       "node": "3155:23013",
       "name": "Chip",
       "axes": {
-        "Size": ["Sm", "Md"],
+        "Size": ["Sm", "Md", "Lg"],
         "Color": ["Brand", "Neutral"],
         "Style": ["Weak", "Fill"],
         "Selected": ["False", "True"],
@@ -995,53 +1030,101 @@
         "Size=Sm, Color=Neutral, Style=Fill, Selected=True, Pressed·Hover=True, Icon Position=Left",
         "Size=Sm, Color=Neutral, Style=Fill, Selected=True, Pressed·Hover=True, Icon Position=None",
         "Size=Md, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=Right",
+        "Size=Lg, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=Right",
         "Size=Md, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=Left",
+        "Size=Lg, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=Left",
         "Size=Md, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=None",
+        "Size=Lg, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=None",
         "Size=Md, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=True, Icon Position=Right",
+        "Size=Lg, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=True, Icon Position=Right",
         "Size=Md, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=True, Icon Position=Left",
+        "Size=Lg, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=True, Icon Position=Left",
         "Size=Md, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=True, Icon Position=None",
+        "Size=Lg, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=True, Icon Position=None",
         "Size=Md, Color=Brand, Style=Weak, Selected=True, Pressed·Hover=False, Icon Position=Right",
+        "Size=Lg, Color=Brand, Style=Weak, Selected=True, Pressed·Hover=False, Icon Position=Right",
         "Size=Md, Color=Brand, Style=Weak, Selected=True, Pressed·Hover=False, Icon Position=Left",
+        "Size=Lg, Color=Brand, Style=Weak, Selected=True, Pressed·Hover=False, Icon Position=Left",
         "Size=Md, Color=Brand, Style=Weak, Selected=True, Pressed·Hover=False, Icon Position=None",
+        "Size=Lg, Color=Brand, Style=Weak, Selected=True, Pressed·Hover=False, Icon Position=None",
         "Size=Md, Color=Brand, Style=Weak, Selected=True, Pressed·Hover=True, Icon Position=Right",
+        "Size=Lg, Color=Brand, Style=Weak, Selected=True, Pressed·Hover=True, Icon Position=Right",
         "Size=Md, Color=Brand, Style=Weak, Selected=True, Pressed·Hover=True, Icon Position=Left",
+        "Size=Lg, Color=Brand, Style=Weak, Selected=True, Pressed·Hover=True, Icon Position=Left",
         "Size=Md, Color=Brand, Style=Weak, Selected=True, Pressed·Hover=True, Icon Position=None",
+        "Size=Lg, Color=Brand, Style=Weak, Selected=True, Pressed·Hover=True, Icon Position=None",
         "Size=Md, Color=Brand, Style=Fill, Selected=False, Pressed·Hover=False, Icon Position=Right",
+        "Size=Lg, Color=Brand, Style=Fill, Selected=False, Pressed·Hover=False, Icon Position=Right",
         "Size=Md, Color=Brand, Style=Fill, Selected=False, Pressed·Hover=False, Icon Position=Left",
+        "Size=Lg, Color=Brand, Style=Fill, Selected=False, Pressed·Hover=False, Icon Position=Left",
         "Size=Md, Color=Brand, Style=Fill, Selected=False, Pressed·Hover=False, Icon Position=None",
+        "Size=Lg, Color=Brand, Style=Fill, Selected=False, Pressed·Hover=False, Icon Position=None",
         "Size=Md, Color=Brand, Style=Fill, Selected=False, Pressed·Hover=True, Icon Position=Right",
+        "Size=Lg, Color=Brand, Style=Fill, Selected=False, Pressed·Hover=True, Icon Position=Right",
         "Size=Md, Color=Brand, Style=Fill, Selected=False, Pressed·Hover=True, Icon Position=Left",
+        "Size=Lg, Color=Brand, Style=Fill, Selected=False, Pressed·Hover=True, Icon Position=Left",
         "Size=Md, Color=Brand, Style=Fill, Selected=False, Pressed·Hover=True, Icon Position=None",
+        "Size=Lg, Color=Brand, Style=Fill, Selected=False, Pressed·Hover=True, Icon Position=None",
         "Size=Md, Color=Brand, Style=Fill, Selected=True, Pressed·Hover=False, Icon Position=Right",
+        "Size=Lg, Color=Brand, Style=Fill, Selected=True, Pressed·Hover=False, Icon Position=Right",
         "Size=Md, Color=Brand, Style=Fill, Selected=True, Pressed·Hover=False, Icon Position=Left",
+        "Size=Lg, Color=Brand, Style=Fill, Selected=True, Pressed·Hover=False, Icon Position=Left",
         "Size=Md, Color=Brand, Style=Fill, Selected=True, Pressed·Hover=False, Icon Position=None",
+        "Size=Lg, Color=Brand, Style=Fill, Selected=True, Pressed·Hover=False, Icon Position=None",
         "Size=Md, Color=Brand, Style=Fill, Selected=True, Pressed·Hover=True, Icon Position=Right",
+        "Size=Lg, Color=Brand, Style=Fill, Selected=True, Pressed·Hover=True, Icon Position=Right",
         "Size=Md, Color=Brand, Style=Fill, Selected=True, Pressed·Hover=True, Icon Position=Left",
+        "Size=Lg, Color=Brand, Style=Fill, Selected=True, Pressed·Hover=True, Icon Position=Left",
         "Size=Md, Color=Brand, Style=Fill, Selected=True, Pressed·Hover=True, Icon Position=None",
+        "Size=Lg, Color=Brand, Style=Fill, Selected=True, Pressed·Hover=True, Icon Position=None",
         "Size=Md, Color=Neutral, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=Right",
+        "Size=Lg, Color=Neutral, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=Right",
         "Size=Md, Color=Neutral, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=Left",
+        "Size=Lg, Color=Neutral, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=Left",
         "Size=Md, Color=Neutral, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=None",
+        "Size=Lg, Color=Neutral, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=None",
         "Size=Md, Color=Neutral, Style=Weak, Selected=False, Pressed·Hover=True, Icon Position=Right",
+        "Size=Lg, Color=Neutral, Style=Weak, Selected=False, Pressed·Hover=True, Icon Position=Right",
         "Size=Md, Color=Neutral, Style=Weak, Selected=False, Pressed·Hover=True, Icon Position=Left",
+        "Size=Lg, Color=Neutral, Style=Weak, Selected=False, Pressed·Hover=True, Icon Position=Left",
         "Size=Md, Color=Neutral, Style=Weak, Selected=False, Pressed·Hover=True, Icon Position=None",
+        "Size=Lg, Color=Neutral, Style=Weak, Selected=False, Pressed·Hover=True, Icon Position=None",
         "Size=Md, Color=Neutral, Style=Weak, Selected=True, Pressed·Hover=False, Icon Position=Right",
+        "Size=Lg, Color=Neutral, Style=Weak, Selected=True, Pressed·Hover=False, Icon Position=Right",
         "Size=Md, Color=Neutral, Style=Weak, Selected=True, Pressed·Hover=False, Icon Position=Left",
+        "Size=Lg, Color=Neutral, Style=Weak, Selected=True, Pressed·Hover=False, Icon Position=Left",
         "Size=Md, Color=Neutral, Style=Weak, Selected=True, Pressed·Hover=False, Icon Position=None",
+        "Size=Lg, Color=Neutral, Style=Weak, Selected=True, Pressed·Hover=False, Icon Position=None",
         "Size=Md, Color=Neutral, Style=Weak, Selected=True, Pressed·Hover=True, Icon Position=Right",
+        "Size=Lg, Color=Neutral, Style=Weak, Selected=True, Pressed·Hover=True, Icon Position=Right",
         "Size=Md, Color=Neutral, Style=Weak, Selected=True, Pressed·Hover=True, Icon Position=Left",
+        "Size=Lg, Color=Neutral, Style=Weak, Selected=True, Pressed·Hover=True, Icon Position=Left",
         "Size=Md, Color=Neutral, Style=Weak, Selected=True, Pressed·Hover=True, Icon Position=None",
+        "Size=Lg, Color=Neutral, Style=Weak, Selected=True, Pressed·Hover=True, Icon Position=None",
         "Size=Md, Color=Neutral, Style=Fill, Selected=False, Pressed·Hover=False, Icon Position=Right",
+        "Size=Lg, Color=Neutral, Style=Fill, Selected=False, Pressed·Hover=False, Icon Position=Right",
         "Size=Md, Color=Neutral, Style=Fill, Selected=False, Pressed·Hover=False, Icon Position=Left",
+        "Size=Lg, Color=Neutral, Style=Fill, Selected=False, Pressed·Hover=False, Icon Position=Left",
         "Size=Md, Color=Neutral, Style=Fill, Selected=False, Pressed·Hover=False, Icon Position=None",
+        "Size=Lg, Color=Neutral, Style=Fill, Selected=False, Pressed·Hover=False, Icon Position=None",
         "Size=Md, Color=Neutral, Style=Fill, Selected=False, Pressed·Hover=True, Icon Position=Right",
+        "Size=Lg, Color=Neutral, Style=Fill, Selected=False, Pressed·Hover=True, Icon Position=Right",
         "Size=Md, Color=Neutral, Style=Fill, Selected=False, Pressed·Hover=True, Icon Position=Left",
+        "Size=Lg, Color=Neutral, Style=Fill, Selected=False, Pressed·Hover=True, Icon Position=Left",
         "Size=Md, Color=Neutral, Style=Fill, Selected=False, Pressed·Hover=True, Icon Position=None",
+        "Size=Lg, Color=Neutral, Style=Fill, Selected=False, Pressed·Hover=True, Icon Position=None",
         "Size=Md, Color=Neutral, Style=Fill, Selected=True, Pressed·Hover=False, Icon Position=Right",
+        "Size=Lg, Color=Neutral, Style=Fill, Selected=True, Pressed·Hover=False, Icon Position=Right",
         "Size=Md, Color=Neutral, Style=Fill, Selected=True, Pressed·Hover=False, Icon Position=Left",
+        "Size=Lg, Color=Neutral, Style=Fill, Selected=True, Pressed·Hover=False, Icon Position=Left",
         "Size=Md, Color=Neutral, Style=Fill, Selected=True, Pressed·Hover=False, Icon Position=None",
+        "Size=Lg, Color=Neutral, Style=Fill, Selected=True, Pressed·Hover=False, Icon Position=None",
         "Size=Md, Color=Neutral, Style=Fill, Selected=True, Pressed·Hover=True, Icon Position=Right",
+        "Size=Lg, Color=Neutral, Style=Fill, Selected=True, Pressed·Hover=True, Icon Position=Right",
         "Size=Md, Color=Neutral, Style=Fill, Selected=True, Pressed·Hover=True, Icon Position=Left",
-        "Size=Md, Color=Neutral, Style=Fill, Selected=True, Pressed·Hover=True, Icon Position=None"
+        "Size=Lg, Color=Neutral, Style=Fill, Selected=True, Pressed·Hover=True, Icon Position=Left",
+        "Size=Md, Color=Neutral, Style=Fill, Selected=True, Pressed·Hover=True, Icon Position=None",
+        "Size=Lg, Color=Neutral, Style=Fill, Selected=True, Pressed·Hover=True, Icon Position=None"
       ]
     },
     "chip-draggable": {
@@ -1320,12 +1403,13 @@
       "node": "2621:35643",
       "name": "Tag/Status",
       "axes": {
-        "Color": ["Default", "Neutral", "Yellow", "Red"]
+        "Color": ["Default", "Neutral", "Yellow", "Green", "Red"]
       },
       "variants": [
         "Color=Default",
         "Color=Neutral",
         "Color=Yellow",
+        "Color=Green",
         "Color=Red"
       ]
     },
@@ -2202,6 +2286,63 @@
         "Rank=4th",
         "Rank=5th",
         "Rank=None"
+      ]
+    },
+    "calendar": {
+      "node": "4763:63641",
+      "name": "Calendar",
+      "axes": {
+        "Header Layout": ["Centered", "Left Aligned"],
+        "*피그마용": ["False", "True"]
+      },
+      "variants": [
+        "Header Layout=Centered, *피그마용=False",
+        "Header Layout=Centered, *피그마용=True",
+        "Header Layout=Left Aligned, *피그마용=False",
+        "Header Layout=Left Aligned, *피그마용=True"
+      ]
+    },
+    "calendar-schedule-card": {
+      "node": "4763:62191",
+      "name": "Calendar/Schedule Card",
+      "axes": {
+        "State": ["예정 일정", "진행 중인 일정", "지난 일정"]
+      },
+      "variants": ["State=예정 일정", "State=진행 중인 일정", "State=지난 일정"]
+    },
+    "calendar-day": {
+      "node": "4763:63552",
+      "name": ".primitive/Calendar/Day",
+      "axes": {
+        "State": [
+          "Default",
+          "Hover",
+          "Range Middle",
+          "Range Start",
+          "Range End"
+        ],
+        "Selected": ["False", "True"],
+        "Disabled": ["True", "False"],
+        "Hightlight": ["False", "True"],
+        "Show Task Dot": ["False", "True"]
+      },
+      "variants": [
+        "State=Default, Selected=False, Disabled=True, Hightlight=False, Show Task Dot=False",
+        "State=Default, Selected=False, Disabled=True, Hightlight=False, Show Task Dot=True",
+        "State=Hover, Selected=False, Disabled=False, Hightlight=False, Show Task Dot=False",
+        "State=Hover, Selected=False, Disabled=False, Hightlight=False, Show Task Dot=True",
+        "State=Hover, Selected=False, Disabled=True, Hightlight=False, Show Task Dot=False",
+        "State=Hover, Selected=False, Disabled=True, Hightlight=False, Show Task Dot=True",
+        "State=Default, Selected=False, Disabled=False, Hightlight=False, Show Task Dot=False",
+        "State=Default, Selected=False, Disabled=False, Hightlight=False, Show Task Dot=True",
+        "State=Range Middle, Selected=True, Disabled=False, Hightlight=True, Show Task Dot=False",
+        "State=Range Middle, Selected=True, Disabled=False, Hightlight=True, Show Task Dot=True",
+        "State=Range Start, Selected=True, Disabled=False, Hightlight=True, Show Task Dot=False",
+        "State=Range Start, Selected=True, Disabled=False, Hightlight=True, Show Task Dot=True",
+        "State=Range End, Selected=True, Disabled=False, Hightlight=True, Show Task Dot=False",
+        "State=Range End, Selected=True, Disabled=False, Hightlight=True, Show Task Dot=True",
+        "State=Default, Selected=True, Disabled=False, Hightlight=False, Show Task Dot=False",
+        "State=Default, Selected=True, Disabled=False, Hightlight=False, Show Task Dot=True"
       ]
     }
   }

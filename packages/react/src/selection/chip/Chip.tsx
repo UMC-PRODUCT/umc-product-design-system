@@ -6,7 +6,7 @@ export type ChipVariant = "weak" | "fill"
 
 export type ChipColor = "brand" | "neutral"
 
-export type ChipSize = "sm" | "md"
+export type ChipSize = "sm" | "md" | "lg"
 
 export type ChipProps = Omit<ComponentPropsWithRef<"button">, "color"> & {
   variant?: ChipVariant

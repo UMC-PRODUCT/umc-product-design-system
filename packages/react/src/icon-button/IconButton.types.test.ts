@@ -12,7 +12,7 @@ describe("IconButtonProps", () => {
       "fill" | "weak" | undefined
     >()
     expectTypeOf<IconButtonProps["size"]>().toEqualTypeOf<
-      "md" | "lg" | undefined
+      "sm" | "md" | "lg" | undefined
     >()
   })
 

@@ -747,29 +747,11 @@
         }
       }
     },
-    "caption-1-medium": {
-      "$type": "typography",
-      "$value": {
-        "fontFamily": "{font-family.brand}",
-        "fontSize": "{font-size.13}",
-        "fontWeight": "{font-weight.medium}",
-        "lineHeight": 1.45,
-        "letterSpacing": {
-          "value": 0,
-          "unit": "em"
-        }
-      },
-      "$extensions": {
-        "umc.figma": {
-          "style": "Caption/1-Medium"
-        }
-      }
-    },
     "caption-1-regular": {
       "$type": "typography",
       "$value": {
         "fontFamily": "{font-family.brand}",
-        "fontSize": "{font-size.13}",
+        "fontSize": "{font-size.14}",
         "fontWeight": "{font-weight.regular}",
         "lineHeight": 1.45,
         "letterSpacing": {
@@ -783,7 +765,43 @@
         }
       }
     },
-    "caption-2-bold": {
+    "caption-2-medium": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font-family.brand}",
+        "fontSize": "{font-size.13}",
+        "fontWeight": "{font-weight.medium}",
+        "lineHeight": 1.45,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "em"
+        }
+      },
+      "$extensions": {
+        "umc.figma": {
+          "style": "Caption/2-Medium"
+        }
+      }
+    },
+    "caption-2-regular": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font-family.brand}",
+        "fontSize": "{font-size.13}",
+        "fontWeight": "{font-weight.regular}",
+        "lineHeight": 1.45,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "em"
+        }
+      },
+      "$extensions": {
+        "umc.figma": {
+          "style": "Caption/2-Regular"
+        }
+      }
+    },
+    "caption-3-bold": {
       "$type": "typography",
       "$value": {
         "fontFamily": "{font-family.brand}",
@@ -800,43 +818,7 @@
       },
       "$extensions": {
         "umc.figma": {
-          "style": "Caption/2-Bold"
-        }
-      }
-    },
-    "caption-2-medium": {
-      "$type": "typography",
-      "$value": {
-        "fontFamily": "{font-family.brand}",
-        "fontSize": "{font-size.12}",
-        "fontWeight": "{font-weight.medium}",
-        "lineHeight": 1.5,
-        "letterSpacing": {
-          "value": -0.02,
-          "unit": "em"
-        }
-      },
-      "$extensions": {
-        "umc.figma": {
-          "style": "Caption/2-Medium"
-        }
-      }
-    },
-    "caption-2-regular": {
-      "$type": "typography",
-      "$value": {
-        "fontFamily": "{font-family.brand}",
-        "fontSize": "{font-size.12}",
-        "fontWeight": "{font-weight.regular}",
-        "lineHeight": 1.5,
-        "letterSpacing": {
-          "value": -0.02,
-          "unit": "em"
-        }
-      },
-      "$extensions": {
-        "umc.figma": {
-          "style": "Caption/2-Regular"
+          "style": "Caption/3-Bold"
         }
       }
     },
@@ -844,14 +826,11 @@
       "$type": "typography",
       "$value": {
         "fontFamily": "{font-family.brand}",
-        "fontSize": {
-          "value": 11,
-          "unit": "px"
-        },
+        "fontSize": "{font-size.12}",
         "fontWeight": "{font-weight.medium}",
         "lineHeight": 1.5,
         "letterSpacing": {
-          "value": 0,
+          "value": -0.02,
           "unit": "em"
         }
       },
@@ -865,6 +844,45 @@
       "$type": "typography",
       "$value": {
         "fontFamily": "{font-family.brand}",
+        "fontSize": "{font-size.12}",
+        "fontWeight": "{font-weight.regular}",
+        "lineHeight": 1.5,
+        "letterSpacing": {
+          "value": -0.02,
+          "unit": "em"
+        }
+      },
+      "$extensions": {
+        "umc.figma": {
+          "style": "Caption/3-Regular"
+        }
+      }
+    },
+    "caption-4-medium": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font-family.brand}",
+        "fontSize": {
+          "value": 11,
+          "unit": "px"
+        },
+        "fontWeight": "{font-weight.medium}",
+        "lineHeight": 1.5,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "em"
+        }
+      },
+      "$extensions": {
+        "umc.figma": {
+          "style": "Caption/4-Medium"
+        }
+      }
+    },
+    "caption-4-regular": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font-family.brand}",
         "fontSize": {
           "value": 11,
           "unit": "px"
@@ -878,7 +896,7 @@
       },
       "$extensions": {
         "umc.figma": {
-          "style": "Caption/3-Regular"
+          "style": "Caption/4-Regular"
         }
       }
     }

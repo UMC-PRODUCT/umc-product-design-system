@@ -1,0 +1,103 @@
+---
+title: Calendar
+description: 한 달을 날짜 칸으로 보여 주고, 날짜 하나를 고르거나 기간과 일정이 있는 날을 표시합니다.
+---
+
+import {
+  CalendarAllVariants,
+  CalendarDayAllVariants,
+  CalendarDefault,
+  CalendarRanges,
+  CalendarStartLayout,
+  CalendarWithScheduleCards,
+} from "../../../../components/react/calendar/CalendarExamples.tsx"
+
+피그마 `Calendar`를 옮긴 달력입니다. 월요일부터 한 주를 그리고, 앞뒤 달 날짜는 흐리게 채웁니다. 날짜를 누르거나 키보드로 고르면 `onValueChange`가 그 날짜를 받습니다. 기간(`ranges`)과 일정이 있는 날(`markedDates`)은 보여 주기만 하고, 무엇을 넘길지는 앱이 정합니다. 일정 목록은 [CalendarScheduleCard](../calendar-schedule-card/)로 따로 그립니다.
+
+```tsx
+import { Calendar } from "@umc-product/react"
+
+<Calendar value={date} onValueChange={setDate} markedDates={scheduleDates} />
+```
+
+<CalendarDefault client:visible />
+
+## 기간과 일정 표시
+
+`ranges`에 시작과 끝 날짜를 넘기면 그 사이를 띠로 칠하고 양 끝을 원으로 표시합니다. 기간은 여러 개를 넘길 수 있고, 주가 바뀌면 띠도 다음 줄에서 이어집니다. `markedDates`의 날짜에는 숫자 아래에 점을 찍습니다. 기간과 점은 날짜 이름에도 담겨, 화면 낭독기가 "기간 시작", "일정 있음"처럼 읽습니다.
+
+<CalendarRanges client:visible />
+
+## 고르기와 달 옮기기
+
+- 날짜를 누르면 `onValueChange`를 부릅니다. 앞뒤 달 날짜를 누르면 그 달로 옮기면서 고릅니다.
+- `isDateDisabled`가 `true`를 돌려준 날짜는 흐리게 그리고, 눌러도 고르지 않습니다.
+- 화살표 버튼이나 키보드로 달을 옮기면 `onMonthChange`가 그달 1일을 받습니다. 보이는 달을 앱이 정하려면 `month`를 넘깁니다.
+- 고른 날짜와 보이는 달은 `value`, `month`로 제어하고, 처음 값만 정하려면 `defaultValue`, `defaultMonth`를 씁니다. 둘 다 없으면 오늘이 있는 달을 보여 줍니다.
+
+## 키보드
+
+격자에는 날짜 하나만 Tab으로 들어갑니다. 고른 날짜가 보이는 달에 있으면 그 날짜입니다.
+
+| 키                       | 동작                 |
+| ------------------------ | -------------------- |
+| 왼쪽, 오른쪽 화살표      | 하루 앞뒤            |
+| 위, 아래 화살표          | 한 주 앞뒤           |
+| Home, End                | 그 주 월요일, 일요일 |
+| PageUp, PageDown         | 한 달 앞뒤           |
+| Shift + PageUp, PageDown | 한 해 앞뒤           |
+| Enter, Space             | 고르기               |
+
+달 경계를 넘으면 보이는 달도 따라 바뀝니다. 달 제목이 바뀔 때마다 화면 낭독기가 새 제목을 읽습니다.
+
+## 머리 배치
+
+`headerLayout="start"`이면 달 제목을 왼쪽에 두고 두 화살표를 오른쪽에 모읍니다. 기본은 제목을 가운데에 둔 `"centered"`입니다.
+
+<CalendarStartLayout />
+
+## 일정 카드와 함께 쓰기
+
+캘린더와 일정 카드는 따로 쓰는 컴포넌트입니다. 아래는 매칭 일정 화면처럼 전체 기간을 띠로, 회차마다 시작일을 점으로 보여 주고 그 아래에 회차 카드를 쌓은 예입니다. 날짜를 고를 때 카드를 어떻게 바꿀지는 앱이 정합니다.
+
+<CalendarWithScheduleCards />
+
+## 모든 변형
+
+피그마 `Calendar` 변형 4개를 그렸습니다. `*피그마용`은 피그마 안에서 예시 날짜를 채운 견본이라 코드에서는 같은 캘린더입니다.
+
+<CalendarAllVariants />
+
+### 날짜 칸
+
+피그마 `.primitive/Calendar/Day` 변형 16개를 캘린더의 날짜 칸 모양으로 그렸습니다. Hover 칸은 마우스를 올린 상태를 켜 둔 모습입니다. Disabled 칸은 앞뒤 달 날짜와 고를 수 없는 날짜에 쓰는 모양입니다.
+
+<CalendarDayAllVariants />
+
+## props
+
+나머지 `div` 속성과 `ref`는 루트에 붙습니다.
+
+| prop                                   | 타입                      | 기본값                   | 설명                                |
+| -------------------------------------- | ------------------------- | ------------------------ | ----------------------------------- |
+| `value`                                | `Date \| null`            | 없음                     | 고른 날짜(제어형)                   |
+| `defaultValue`                         | `Date \| null`            | `null`                   | 처음 고른 날짜                      |
+| `onValueChange`                        | `(date: Date) => void`    | 없음                     | 날짜를 골랐을 때                    |
+| `month`                                | `Date`                    | 없음                     | 보이는 달(제어형). 그달의 아무 날짜 |
+| `defaultMonth`                         | `Date`                    | 고른 날짜나 오늘의 달    | 처음 보이는 달                      |
+| `onMonthChange`                        | `(month: Date) => void`   | 없음                     | 달을 옮길 때. 그달 1일을 받음       |
+| `ranges`                               | `CalendarRange[]`         | `[]`                     | 띠로 칠할 기간                      |
+| `markedDates`                          | `Date[]`                  | `[]`                     | 점을 찍을 날짜                      |
+| `isDateDisabled`                       | `(date: Date) => boolean` | 없음                     | 고를 수 없는 날짜                   |
+| `headerLayout`                         | `"centered" \| "start"`   | `"centered"`             | 머리 배치                           |
+| `previousMonthLabel`, `nextMonthLabel` | `string`                  | `"이전 달"`, `"다음 달"` | 화살표 버튼 이름                    |
+
+```ts
+type CalendarRange = { start: Date; end: Date }
+```
+
+## 알아 둘 점
+
+- 날짜는 시각을 보지 않고 연, 월, 일만 비교합니다.
+- 달 제목은 "2026년 03월"처럼 두 자리 달로 씁니다.
+- 날짜 칸은 48px 폭이고, 화면이 좁으면 36px까지 줄어듭니다.

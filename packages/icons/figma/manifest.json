@@ -2112,12 +2112,25 @@
     {
       "nodeId": "2678:52296",
       "kind": "logo",
-      "componentName": "Logo/UMC",
-      "variantName": "",
+      "componentName": "Logo",
+      "variantName": "Type=워터마크",
       "files": [
         {
           "file": "svg/2678-52296.svg",
           "sha256": "bc1f082c4d82a4ff99136b4233fab4be7a2813b9bd9e4433f24c6c451c5c1a39"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "nodeId": "4904:82488",
+      "kind": "logo",
+      "componentName": "Logo",
+      "variantName": "Type=도형 마크",
+      "files": [
+        {
+          "file": "svg/4904-82488.svg",
+          "sha256": "b98b4620a71fa6a5d9421b114041ae9b2681b744085dc5a8c14ea76d26f3bb9c"
         }
       ],
       "status": "ok"

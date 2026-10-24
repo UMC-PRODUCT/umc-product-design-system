@@ -15,6 +15,7 @@ const STORY_GROUPS = [
   "앱 셸",
   "질문지",
   "차트",
+  "캘린더",
 ]
 const COMPONENTS_WITHOUT_STORY = new Set(["LinkProvider"])
 

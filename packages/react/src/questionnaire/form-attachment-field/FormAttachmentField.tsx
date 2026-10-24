@@ -2,6 +2,7 @@
 
 import { PaperclipIcon } from "@umc-product/icons"
 import {
+  useId,
   useRef,
   type ChangeEvent,
   type ComponentPropsWithRef,
@@ -44,6 +45,8 @@ export type FormAttachmentFieldProps = NativeInputProps & {
   uploadLabel?: ReactNode
   removeLabel?: ReactNode
   preview?: boolean
+  invalid?: boolean
+  errorMessage?: ReactNode
 }
 
 const MEGABYTE = 1024 * 1024
@@ -237,6 +240,8 @@ export function FormAttachmentField({
   removeLabel = DEFAULT_REMOVE_LABEL,
   placeholder = DEFAULT_PLACEHOLDER,
   preview = false,
+  invalid,
+  errorMessage,
   readOnly,
   disabled,
   required,
@@ -244,14 +249,24 @@ export function FormAttachmentField({
   style,
   "aria-labelledby": labelledBy,
   "aria-describedby": describedBy,
+  "aria-invalid": ariaInvalid,
   ...inputProps
 }: FormAttachmentFieldProps) {
   const question = useFormQuestion()
   const fileInputRef = useRef<HTMLInputElement>(null)
+  const errorId = useId()
   const isReadOnly = readOnly ?? question?.readOnly ?? false
   const editor = useFormQuestionEditor()
   const lockedByEditor = editor?.disabled ?? false
   const isDisabled = lockedByEditor || (disabled ?? question?.disabled ?? false)
+  const showError = Boolean(invalid && errorMessage)
+  const linkInputAriaProps = {
+    "aria-labelledby": labelledBy ?? question?.titleId,
+    "aria-describedby":
+      cx(question?.descriptionId, describedBy, showError && errorId) ||
+      undefined,
+    "aria-invalid": invalid || ariaInvalid,
+  }
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
@@ -271,42 +286,46 @@ export function FormAttachmentField({
       style={style}
       data-attached={attachment ? "" : undefined}
       data-preview={preview ? "" : undefined}
+      data-invalid={invalid ? "" : undefined}
     >
-      {preview ? (
-        <AttachmentPreview
-          inputProps={{
-            ...inputProps,
-            placeholder,
-            "aria-labelledby": labelledBy ?? question?.titleId,
-            "aria-describedby":
-              cx(question?.descriptionId, describedBy) || undefined,
-          }}
-          disabled={isDisabled}
-          uploadLabel={uploadLabel}
-        />
-      ) : attachment ? (
-        <AttachedFile
-          attachment={attachment}
-          disabled={isDisabled}
-          removeLabel={removeLabel}
-          onRemove={isReadOnly ? undefined : onAttachmentRemove}
-        />
-      ) : (
-        <LinkInput
-          inputProps={{
-            ...inputProps,
-            placeholder,
-            required: required ?? question?.required,
-            "aria-labelledby": labelledBy ?? question?.titleId,
-            "aria-describedby":
-              cx(question?.descriptionId, describedBy) || undefined,
-          }}
-          readOnly={isReadOnly}
-          disabled={isDisabled}
-          uploadLabel={uploadLabel}
-          removeLabel={removeLabel}
-          onUploadClick={() => fileInputRef.current?.click()}
-        />
+      <div className="umc-form-attachment-field__row">
+        {preview ? (
+          <AttachmentPreview
+            inputProps={{
+              ...inputProps,
+              ...linkInputAriaProps,
+              placeholder,
+            }}
+            disabled={isDisabled}
+            uploadLabel={uploadLabel}
+          />
+        ) : attachment ? (
+          <AttachedFile
+            attachment={attachment}
+            disabled={isDisabled}
+            removeLabel={removeLabel}
+            onRemove={isReadOnly ? undefined : onAttachmentRemove}
+          />
+        ) : (
+          <LinkInput
+            inputProps={{
+              ...inputProps,
+              ...linkInputAriaProps,
+              placeholder,
+              required: required ?? question?.required,
+            }}
+            readOnly={isReadOnly}
+            disabled={isDisabled}
+            uploadLabel={uploadLabel}
+            removeLabel={removeLabel}
+            onUploadClick={() => fileInputRef.current?.click()}
+          />
+        )}
+      </div>
+      {showError && (
+        <p id={errorId} className="umc-form-attachment-field__error">
+          {errorMessage}
+        </p>
       )}
       {!isReadOnly && !preview && (
         <input

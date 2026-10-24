@@ -219,7 +219,7 @@ export const MCP_STYLE_SOURCES: readonly StyleSourceRule[] = [
   {
     file: "get-variable-defs.2621-36220.json",
     nodeName: "Tooltip",
-    reason: "Caption/2-Bold",
+    reason: "Caption/3-Bold",
   },
   {
     file: "get-variable-defs.3155-19976.json",
@@ -235,6 +235,11 @@ export const MCP_STYLE_SOURCES: readonly StyleSourceRule[] = [
     file: "get-variable-defs.2621-32882.json",
     nodeName: "Option Button",
     reason: "Title/2-Medium, Drop/Neutral_2",
+  },
+  {
+    file: "get-variable-defs.2621-33341.json",
+    nodeName: "Help Text",
+    reason: "Caption/1-Regular",
   },
 ]
 
@@ -253,7 +258,7 @@ export const OPEN_QUESTIONS: readonly string[] = [
   "`Display/3-Bold`가 Token 컬렉션에 없는 `Typography/Base/Fontfamily/Brand`, `Fontweight/Bold`를 참조합니다(다른 라이브러리 변수로 보입니다). `FontFamily`, `FontWeight`로 다시 연결해 주세요.",
   "Primitive 컬러 문서 프레임에 쓰인 `primitives/orange/*`, `Base/Grey/Grey 900`, `Grey 800`, `Medium/H1`(PingFang SC)은 Color 컬렉션 export에 없습니다. 다른 라이브러리 것인지, 정리 대상인지 알려 주세요.",
   "Violet, Purple, Pink, Cobalt, Blue, Brown 팔레트에는 50, 100, 500, 600 단계만 있습니다. 의도인가요?",
-  "`Body/4-Semibold`(13px), `Label/2`(17px), `Caption/3`(11px)의 크기가 변수에 연결되어 있지 않습니다. 17px은 `FontSize` 변수가 없으니 추가가 필요합니다. 반대로 `FontSize/22px`, `32px`은 어떤 텍스트 스타일에도 쓰이지 않습니다.",
+  "`Body/4-Semibold`(13px), `Label/2`(17px), `Caption/4`(11px)의 크기가 변수에 연결되어 있지 않습니다. 17px은 `FontSize` 변수가 없으니 추가가 필요합니다. 반대로 `FontSize/22px`, `32px`은 어떤 텍스트 스타일에도 쓰이지 않습니다.",
   "`Heading/Heading3-Semibold`(22px), `Mobile Web/Body/4-Regular`(행간 20px)는 폐기 대상인가요? 노드 2268:1706에 쓰인 텍스트 스타일이 전체 목록인지도 알려 주세요.",
   "Display 3 문서 표에는 자간이 -2%로 적혀 있지만 실제 스타일 `Display/3-Bold`는 -1.5%입니다. 어느 쪽이 맞나요?",
   "`Tag/Role/Challenger&Super-Admin`과 `Tag/Role/Product`는 Weak와 Medium이 같은 색입니다(Teal-100, TealGrey-100). 의도인가요?",

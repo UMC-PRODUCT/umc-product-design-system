@@ -5,7 +5,7 @@
 ## 입력
 
 - 피그마 파일 `U3pRZp6BjQBW5aMljCBwo9`, get_design_context asset download, 받은 날 2026-10-10
-- 노드 163개, 컴포넌트 79개(아이콘 66, 픽토그램 12, 로고 1)
+- 노드 164개, 컴포넌트 80개(아이콘 66, 픽토그램 12, 로고 2)
 
 ## 디자인 팀 확인 요청
 
@@ -20,6 +20,7 @@
 9. `Pictogram/Under-construction`의 변형 이름이 `Varient`입니다. Dark 변형의 `#b3e6e1`은 Teal-200(`#b3e5e1`)과 1만큼 달라 피그마 값 그대로 두었습니다.
 10. `Icon/Checkbox`의 Thin(3060:96785)에 1.6px, Regular(3060:96734)에 1.2px 그림이 들어 있어 섹션 설명(Thin 1.2px, Regular 1.6px)과 반대입니다. 2026-10-07에 받은 그림은 설명과 같았습니다. 코드는 설명대로 Thin 1.2px, Regular 1.6px을 그대로 둡니다. 두 변형을 바로잡아 주세요.
 11. `Icon/home`, `Icon/warning`, `Icon/warning-Triangle`, `Icon/remove_circle`은 소문자로 시작합니다. 단어 구분도 `_`, `-`, 대문자가 섞여 있습니다. 이름 규칙을 맞춰 주실 수 있나요?
+12. `Logo`의 `Type=도형 마크`는 도형마다 `#7e7f7f` 위에 `#9ca3a3` 40%가 한 겹 더 칠해져 있어 실제로는 `#8a8d8d`로 보입니다. 코드는 두 겹을 모두 `currentColor`로 그려 글자색 한 가지로 보이게 했습니다. 위 겹이 의도한 것인지 알려 주세요.
 
 ## 확인 대기 굵기 대응
 
@@ -54,7 +55,9 @@
 | 대상 | 피그마 색 | 코드 |
 | --- | --- | --- |
 | 아이콘 주색 | #3f4141 | `currentColor`(글자색을 따른다) |
-| 로고 주색 | #3f4141 | `currentColor`(글자색을 따른다) |
+| 로고 주색(Type=워터마크) | #3f4141 | `currentColor`(글자색을 따른다) |
+| 로고 주색(Type=도형 마크) | #7e7f7f | `currentColor`(글자색을 따른다) |
+| 로고 주색(Type=도형 마크) | #9ca3a3 | `currentColor`(글자색을 따른다) |
 | 아이콘 고정색 | #dc3d3d | style `var(--umc-color-red-500)` |
 | 아이콘 고정색 | #ffffff | style `var(--umc-color-white)` |
 | 픽토그램 주색 | #02746c | `currentColor`, 기본 `color`는 `var(--umc-color-icon-brand-strong-600)` |
@@ -136,7 +139,8 @@
 | `Icon/Users` | `UsersIcon` | fill(3095:97361) |
 | `Icon/warning` | `WarningIcon` | thin(3060:96160), regular(3060:96165), fill(3060:96170) |
 | `Icon/warning-Triangle` | `WarningTriangleIcon` | thin(3928:61423), regular(3928:61412), fill(3928:61411) |
-| `Logo/UMC` | `UmcLogo` | default(2678:52296) |
+| `Logo (Type=워터마크)` | `UmcLogo` | default(2678:52296) |
+| `Logo (Type=도형 마크)` | `UmcSymbolLogo` | default(4904:82488) |
 | `Pictogram/Blank Document` | `BlankDocumentPictogram` | light(4394:48997) |
 | `Pictogram/Check` | `CheckPictogram` | light(3928:61741) |
 | `Pictogram/Document` | `DocumentPictogram` | light(3095:99530) |

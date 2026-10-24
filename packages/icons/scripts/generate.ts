@@ -12,7 +12,7 @@ import {
   ICON_PRIMARY_COLOR,
   ICON_VIEWBOX,
   ICON_WEIGHT_ORDER,
-  LOGO_PRIMARY_COLOR,
+  LOGO_TYPES,
   mapIconColor,
   mapLogoColor,
   mapPictogramColor,
@@ -30,6 +30,7 @@ import {
   WEIGHT_PROPERTY_NAMES,
   WEIGHT_RULES,
   type IconWeight,
+  type LogoType,
   type Offset,
   type PictogramMode,
   type WeightRule,
@@ -258,10 +259,13 @@ export const assertIconPrimaryColor = (colors: readonly string[]): void => {
   }
 }
 
-export const assertLogoPrimaryColor = (colors: readonly string[]): void => {
-  if (!colors.includes(LOGO_PRIMARY_COLOR)) {
+export const assertLogoPrimaryColor = (
+  colors: readonly string[],
+  primaryColors: readonly string[],
+): void => {
+  if (!primaryColors.some((color) => colors.includes(color))) {
     throw new Error(
-      `로고 주색 ${LOGO_PRIMARY_COLOR}이 없습니다(${colors.join(", ") || "색 없음"})`,
+      `로고 주색 ${primaryColors.join(", ")}이 없습니다(${colors.join(", ") || "색 없음"})`,
     )
   }
 }
@@ -308,12 +312,17 @@ const exportSource = (
   }
 }
 
+const componentKeyOf = (source: ManifestSource): string =>
+  source.kind === "logo"
+    ? `${source.kind}:${source.componentName}:${source.variantName}`
+    : `${source.kind}:${source.componentName}`
+
 const groupByComponent = (
   sources: readonly ManifestSource[],
 ): Map<string, ManifestSource[]> => {
   const groups = new Map<string, ManifestSource[]>()
   for (const source of sources) {
-    const key = `${source.kind}:${source.componentName}`
+    const key = componentKeyOf(source)
     groups.set(key, [...(groups.get(key) ?? []), source])
   }
   return groups
@@ -421,18 +430,29 @@ const buildPictogram = (sources: ManifestSource[]): GeneratedComponent => {
   }
 }
 
+const logoTypeOf = (source: ManifestSource): LogoType => {
+  const type = LOGO_TYPES[source.variantName]
+  if (!type) {
+    throw new Error(
+      `로고 변형 ${source.variantName}에 대응하는 규칙이 없습니다`,
+    )
+  }
+  return type
+}
+
 const buildLogo = (sources: ManifestSource[]): GeneratedComponent => {
   const [source, ...rest] = sources
   if (!source || rest.length > 0) {
     throw new Error("로고는 변형이 하나여야 합니다")
   }
+  const type = inSource(source, () => logoTypeOf(source))
   const variant = inSource(source, () => {
     const exported = exportSource(
       source,
-      toKebab(source.componentName),
-      mapLogoColor,
+      toKebab(type.name),
+      mapLogoColor(type.primaryColors),
     )
-    assertLogoPrimaryColor(exported.colors)
+    assertLogoPrimaryColor(exported.colors, type.primaryColors)
     frameSize(exported.viewBox)
     return {
       key: "default",
@@ -443,8 +463,8 @@ const buildLogo = (sources: ManifestSource[]): GeneratedComponent => {
   })
   return {
     kind: "logo",
-    name: toComponentName(source.componentName, "Logo"),
-    figmaName: source.componentName,
+    name: toComponentName(type.name, "Logo"),
+    figmaName: `${source.componentName} (${source.variantName})`,
     variants: [variant],
     weightNotes: [],
   }
@@ -488,6 +508,17 @@ export const buildComponents = (
     throw new Error(
       `원문에 없는 변형 이름 규칙입니다: ${staleFixes.join(", ")}`,
     )
+  }
+  const presentLogoVariantNames = new Set(
+    manifest.sources
+      .filter((source) => source.kind === "logo")
+      .map((source) => source.variantName),
+  )
+  const staleLogoTypes = Object.keys(LOGO_TYPES).filter(
+    (variantName) => !presentLogoVariantNames.has(variantName),
+  )
+  if (staleLogoTypes.length > 0) {
+    throw new Error(`원문에 없는 로고 규칙입니다: ${staleLogoTypes.join(", ")}`)
   }
   const ruleNodeIds = [...PLACEMENTS, ...VIEWBOX_EXCEPTIONS].flatMap(
     (rule) => rule.nodeIds,
@@ -731,7 +762,13 @@ const renderReport = (
       ["대상", "피그마 색", "코드"],
       [
         ["아이콘 주색", ICON_PRIMARY_COLOR, "`currentColor`(글자색을 따른다)"],
-        ["로고 주색", LOGO_PRIMARY_COLOR, "`currentColor`(글자색을 따른다)"],
+        ...Object.entries(LOGO_TYPES).flatMap(([variantName, type]) =>
+          type.primaryColors.map((color) => [
+            `로고 주색(${variantName})`,
+            color,
+            "`currentColor`(글자색을 따른다)",
+          ]),
+        ),
         ...Object.entries(ICON_FIXED_COLORS).map(([color, replacement]) => [
           "아이콘 고정색",
           color,

@@ -65,6 +65,7 @@ import { UsersIcon } from "./icons/UsersIcon.tsx"
 import { WarningIcon } from "./icons/WarningIcon.tsx"
 import { WarningTriangleIcon } from "./icons/WarningTriangleIcon.tsx"
 import { UmcLogo } from "./logos/UmcLogo.tsx"
+import { UmcSymbolLogo } from "./logos/UmcSymbolLogo.tsx"
 import { BlankDocumentPictogram } from "./pictograms/BlankDocumentPictogram.tsx"
 import { CheckPictogram } from "./pictograms/CheckPictogram.tsx"
 import { DocumentPictogram } from "./pictograms/DocumentPictogram.tsx"
@@ -146,6 +147,7 @@ export {
   WarningIcon,
   WarningTriangleIcon,
   UmcLogo,
+  UmcSymbolLogo,
   BlankDocumentPictogram,
   CheckPictogram,
   DocumentPictogram,
@@ -245,5 +247,6 @@ export const pictogramCatalog = [
 ] as const
 
 export const logoCatalog = [
-  { name: "UmcLogo", figmaName: "Logo/UMC", component: UmcLogo },
+  { name: "UmcLogo", figmaName: "Logo (Type=워터마크)", component: UmcLogo },
+  { name: "UmcSymbolLogo", figmaName: "Logo (Type=도형 마크)", component: UmcSymbolLogo },
 ] as const

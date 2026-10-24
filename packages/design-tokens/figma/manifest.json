@@ -6,8 +6,8 @@
       "tool": "get_variable_defs",
       "nodeId": "2268:1706",
       "nodeName": "Mobile.Web Typography",
-      "fetchedAt": "2026-10-08",
-      "sha256": "0598471d277365e206d0d993ff46827b5d5facdde75b5f36c9bb220a2b99d5ba"
+      "fetchedAt": "2026-10-24",
+      "sha256": "ca7e78a6a0247ca53b9b226ad997b2ae17865f8ddc21948e3d51311471f2448c"
     },
     {
       "file": "mcp/get-variable-defs.2858-65987.json",
@@ -30,8 +30,8 @@
       "tool": "get_variable_defs",
       "nodeId": "2621:36220",
       "nodeName": "Tooltip",
-      "fetchedAt": "2026-10-07",
-      "sha256": "0d8854e7a0788244343a17d88e29a880e41bf6a27a9e1f31db0167a7b8c0bca6"
+      "fetchedAt": "2026-10-24",
+      "sha256": "0a73246fdee1c6476a77f020b3d7f461351b2ccea51081f5d1def13c2de7d4af"
     },
     {
       "file": "mcp/get-variable-defs.3155-19976.json",
@@ -56,6 +56,14 @@
       "nodeName": "Option Button",
       "fetchedAt": "2026-10-07",
       "sha256": "fdc9592d0fca3a1d994c71528a1bceabee66ad8135a14aad10f83448916021f3"
+    },
+    {
+      "file": "mcp/get-variable-defs.2621-33341.json",
+      "tool": "get_variable_defs",
+      "nodeId": "2621:33341",
+      "nodeName": "Help Text",
+      "fetchedAt": "2026-10-24",
+      "sha256": "6baf65365554d3b8a2e19f106bbbe21950ee5f32e2bf0e5daca5f41d03745a15"
     },
     {
       "file": "export/color.mode-1.tokens.json",

@@ -6,7 +6,7 @@
     {
       "specId": "text-area-default",
       "node": "4359:31610",
-      "variant": "State=Default",
+      "variant": "State=Default, Error=False",
       "target": ".umc-text-area",
       "expected": {
         "row-gap": "4px",
@@ -27,7 +27,7 @@
     {
       "specId": "text-area-placeholder",
       "node": "4359:31612",
-      "variant": "State=Default",
+      "variant": "State=Default, Error=False",
       "target": ".umc-text-area__input",
       "expected": {
         "font-size": "16px",
@@ -39,7 +39,7 @@
     {
       "specId": "text-area-counter",
       "node": "4317:58823",
-      "variant": "State=Default",
+      "variant": "State=Default, Error=False",
       "target": ".umc-text-area__counter",
       "expected": {
         "color": "#adadad",
@@ -52,7 +52,7 @@
     {
       "specId": "text-area-hover",
       "node": "4359:31613",
-      "variant": "State=Hover",
+      "variant": "State=Hover, Error=False",
       "target": ".umc-text-area",
       "expected": {
         "border-top-color": "#7ac7c1"
@@ -61,7 +61,7 @@
     {
       "specId": "text-area-focused",
       "node": "4360:32499",
-      "variant": "State=Focused",
+      "variant": "State=Focused, Error=False",
       "target": ".umc-text-area",
       "expected": {
         "border-top-color": "#7ac7c1"
@@ -70,7 +70,7 @@
     {
       "specId": "text-area-typing",
       "node": "4359:31616",
-      "variant": "State=Typing",
+      "variant": "State=Typing, Error=False",
       "target": ".umc-text-area",
       "expected": {
         "border-top-color": "#7ac7c1",
@@ -80,7 +80,7 @@
     {
       "specId": "text-area-typing-value",
       "node": "4360:32424",
-      "variant": "State=Typing",
+      "variant": "State=Typing, Error=False",
       "target": ".umc-text-area__input",
       "expected": {
         "color": "#0f1010"
@@ -89,7 +89,7 @@
     {
       "specId": "text-area-filled",
       "node": "4359:31620",
-      "variant": "State=Filled",
+      "variant": "State=Filled, Error=False",
       "target": ".umc-text-area",
       "expected": {
         "border-top-color": "#e2e3e3",
@@ -99,7 +99,7 @@
     {
       "specId": "text-area-disabled",
       "node": "4359:31623",
-      "variant": "State=Disabled",
+      "variant": "State=Disabled, Error=False",
       "target": ".umc-text-area",
       "expected": {
         "border-top-color": "#e2e3e3",
@@ -109,7 +109,7 @@
     {
       "specId": "text-area-disabled-value",
       "node": "4360:32430",
-      "variant": "State=Disabled",
+      "variant": "State=Disabled, Error=False",
       "target": ".umc-text-area__input",
       "expected": {
         "color": "#cccccc"
@@ -118,12 +118,69 @@
     {
       "specId": "text-area-disabled-counter",
       "node": "4456:46010",
-      "variant": "State=Disabled",
+      "variant": "State=Disabled, Error=False",
       "target": ".umc-text-area__counter",
       "expected": {
         "color": "#adadad",
         "font-size": "15px",
         "line-height": "22.5px"
+      }
+    },
+    {
+      "specId": "text-area-error-default",
+      "node": "4712:87487",
+      "variant": "State=Default, Error=True",
+      "target": ".umc-text-area",
+      "expected": {
+        "border-top-color": "#f88c8c",
+        "background-color": "#ffffff"
+      }
+    },
+    {
+      "specId": "text-area-error-hover",
+      "node": "4712:87470",
+      "variant": "State=Hover, Error=True",
+      "target": ".umc-text-area",
+      "expected": {
+        "border-top-color": "#f88c8c"
+      }
+    },
+    {
+      "specId": "text-area-error-focused",
+      "node": "4712:87491",
+      "variant": "State=Focused, Error=True",
+      "target": ".umc-text-area",
+      "expected": {
+        "border-top-color": "#f88c8c"
+      }
+    },
+    {
+      "specId": "text-area-error-typing",
+      "node": "4712:87474",
+      "variant": "State=Typing, Error=True",
+      "target": ".umc-text-area",
+      "expected": {
+        "border-top-color": "#f88c8c"
+      }
+    },
+    {
+      "specId": "text-area-error-filled",
+      "node": "4712:87479",
+      "variant": "State=Filled, Error=True",
+      "target": ".umc-text-area",
+      "expected": {
+        "border-top-color": "#f88c8c",
+        "background-color": "#ffffff"
+      }
+    },
+    {
+      "specId": "text-area-error-disabled",
+      "node": "4712:87483",
+      "variant": "State=Disabled, Error=True",
+      "target": ".umc-text-area",
+      "expected": {
+        "border-top-color": "#f88c8c",
+        "background-color": "#fbfcfc"
       }
     }
   ]

@@ -32,6 +32,15 @@ describe("FormAttachmentFieldProps 타입", () => {
     expectTypeOf<FormAttachmentFieldProps>().not.toHaveProperty("type")
   })
 
+  it("오류 상태와 오류 문구를 받는다", () => {
+    expectTypeOf<FormAttachmentFieldProps["invalid"]>().toEqualTypeOf<
+      boolean | undefined
+    >()
+    expectTypeOf<
+      FormAttachmentFieldProps["errorMessage"]
+    >().toEqualTypeOf<ReactNode>()
+  })
+
   it("ref는 링크 입력을 가리킨다", () => {
     expectTypeOf<FormAttachmentFieldProps["ref"]>().toEqualTypeOf<
       Ref<HTMLInputElement> | undefined

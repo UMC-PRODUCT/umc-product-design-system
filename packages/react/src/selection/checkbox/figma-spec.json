@@ -111,9 +111,6 @@
       "expected": {
         "background-color": "#e2e3e3",
         "color": "#fbfcfc"
-      },
-      "figmaDiffers": {
-        "color": "피그마 체크 선은 2기 변수 WarmGray-50(#fcfbfa)이다. 3기에 같은 단계가 없어 teal-grey-50(#fbfcfc)을 썼다"
       }
     },
     {

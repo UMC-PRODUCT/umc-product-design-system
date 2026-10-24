@@ -2,6 +2,7 @@ export { CodeField, type CodeFieldProps } from "./code-field/index.ts"
 export {
   Field,
   FieldControl,
+  type FieldCaptionSize,
   type FieldControlProps,
   type FieldOwnProps,
   type FieldProps,

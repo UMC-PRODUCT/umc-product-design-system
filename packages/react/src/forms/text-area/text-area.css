@@ -43,21 +43,14 @@
     --umc-text-area-border-color: var(--umc-color-border-primary-medium-300);
   }
 
-  .umc-text-area[data-invalid] {
+  .umc-text-area[data-invalid],
+  .umc-text-area[data-invalid]:hover,
+  .umc-text-area[data-invalid]:focus-within {
     --umc-text-area-border-color: var(--umc-color-border-error-medium-300);
-    --umc-text-area-bg: var(--umc-color-fill-error-weak-50);
+  }
 
+  .umc-text-area[data-invalid] {
     animation: umc-error-shake 400ms ease-in-out;
-  }
-
-  @media (hover: hover) {
-    .umc-text-area[data-invalid]:not([data-disabled], [data-readonly]):hover {
-      --umc-text-area-border-color: var(--umc-color-red-400);
-    }
-  }
-
-  .umc-text-area[data-invalid]:not([data-disabled]):focus-within {
-    --umc-text-area-border-color: var(--umc-color-red-400);
   }
 
   .umc-text-area[data-disabled] {

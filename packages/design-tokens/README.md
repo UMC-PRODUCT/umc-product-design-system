@@ -3,7 +3,7 @@
 UMC PRODUCT 피그마 파운데이션을 코드로 옮긴 디자인 토큰 패키지입니다. 피그마 값은 `tokens/`의 JSON 하나에만 있고, CSS 변수와 Tailwind 산출물은 모두 그 JSON에서 생성합니다.
 
 - 기준일: 2026-10-09
-- 상태: 컬러(primitive 78, semantic 152), 타이포그래피(기본 변수 20, 텍스트 스타일 48), spacing 44, radius 17, 그림자 5, 그리드와 레이아웃을 옮겼습니다. 브레이크포인트만 디자인 팀 합의를 기다립니다
+- 상태: 컬러(primitive 78, semantic 152), 타이포그래피(기본 변수 20, 텍스트 스타일 49), spacing 44, radius 17, 그림자 5, 그리드와 레이아웃을 옮겼습니다. 브레이크포인트만 디자인 팀 합의를 기다립니다
 - 배포: GitHub Packages(비공개). 설치와 토큰 설정은 [문서](https://umc-product.github.io/umc-product-design-system/getting-started/installation/)에 있습니다
 
 ## 사용법
@@ -38,7 +38,7 @@ UMC PRODUCT 피그마 파운데이션을 코드로 옮긴 디자인 토큰 패�
 | `bg-fill-…`, `bg-background-…`, `bg-surface-…`, `bg-dimmed-…` | 같은 이름의 semantic 그룹                         |
 | `bg-tag-…`, `text-tag-…`, `border-tag-…`                      | `Semantic/Tag`                                    |
 | `bg-teal-300`, `text-teal-grey-900` 등                        | primitive 78개(피그마 값)                         |
-| `text-<스타일>` (48개, 예: `text-body-1-regular`)             | 텍스트 스타일 한 벌(서체, 크기, 굵기, 행간, 자간) |
+| `text-<스타일>` (49개, 예: `text-body-1-regular`)             | 텍스트 스타일 한 벌(서체, 크기, 굵기, 행간, 자간) |
 | `shadow-drop-neutral-1` 등 5개                                | 피그마 effect 스타일 그림자                       |
 | `gap-x-grid-gutter`                                           | 거터 16px                                         |
 | `px-grid-margin-desktop`, `px-grid-margin-mobile`             | 좌우 마진 32px, 16px                              |

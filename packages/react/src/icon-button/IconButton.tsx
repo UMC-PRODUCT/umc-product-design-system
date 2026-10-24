@@ -7,7 +7,7 @@ export type IconButtonColor = "primary" | "white" | "neutral" | "error"
 
 export type IconButtonVariant = "fill" | "weak"
 
-export type IconButtonSize = "md" | "lg"
+export type IconButtonSize = "sm" | "md" | "lg"
 
 export type IconButtonProps = Omit<
   ComponentPropsWithRef<"button">,

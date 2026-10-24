@@ -8,17 +8,17 @@
     --umc-tooltip-max-width: 240px;
     --umc-tooltip-white-space: normal;
     --umc-tooltip-font-family: var(
-      --umc-typography-caption-2-regular-font-family
+      --umc-typography-caption-3-regular-font-family
     );
-    --umc-tooltip-font-size: var(--umc-typography-caption-2-regular-font-size);
+    --umc-tooltip-font-size: var(--umc-typography-caption-3-regular-font-size);
     --umc-tooltip-font-weight: var(
-      --umc-typography-caption-2-regular-font-weight
+      --umc-typography-caption-3-regular-font-weight
     );
     --umc-tooltip-line-height: var(
-      --umc-typography-caption-2-regular-line-height
+      --umc-typography-caption-3-regular-line-height
     );
     --umc-tooltip-letter-spacing: var(
-      --umc-typography-caption-2-regular-letter-spacing
+      --umc-typography-caption-3-regular-letter-spacing
     );
 
     z-index: var(--umc-z-tooltip);
@@ -110,11 +110,11 @@
 
   .umc-tooltip__label {
     color: var(--umc-tooltip-title-color);
-    font-family: var(--umc-typography-caption-2-bold-font-family);
-    font-size: var(--umc-typography-caption-2-bold-font-size);
-    font-weight: var(--umc-typography-caption-2-bold-font-weight);
-    line-height: var(--umc-typography-caption-2-bold-line-height);
-    letter-spacing: var(--umc-typography-caption-2-bold-letter-spacing);
+    font-family: var(--umc-typography-caption-3-bold-font-family);
+    font-size: var(--umc-typography-caption-3-bold-font-size);
+    font-weight: var(--umc-typography-caption-3-bold-font-weight);
+    line-height: var(--umc-typography-caption-3-bold-line-height);
+    letter-spacing: var(--umc-typography-caption-3-bold-letter-spacing);
   }
 
   .umc-tooltip__text {

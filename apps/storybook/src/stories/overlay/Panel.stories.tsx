@@ -4,6 +4,7 @@ import {
   Button,
   Checkbox,
   Panel,
+  PanelCloseButton,
   type PanelProps,
 } from "@umc-product/react"
 import { useArgs } from "storybook/preview-api"
@@ -42,12 +43,14 @@ const meta = {
   title: "오버레이와 피드백/Panel",
   id: "panel",
   component: Panel,
+  subcomponents: { PanelCloseButton },
   parameters: componentParameters(
     "Panel",
     "웹 화면 가운데에 띄워 목록이나 선택처럼 긴 내용을 다루는 패널입니다. 짧은 확인은 Dialog를 씁니다.",
   ),
   argTypes: {
     trigger: hiddenControl,
+    headSlot: hiddenControl,
     children: hiddenControl,
     control: hiddenControl,
     actions: hiddenControl,
@@ -77,6 +80,7 @@ const meta = {
       <Panel
         {...panelProps}
         trigger={<Button>열기</Button>}
+        headSlot={<PanelCloseButton />}
         actions={
           <BottomSheetActions
             layout="emphasis"
@@ -123,6 +127,7 @@ export const ContentOnly: Story = {
       <Panel
         {...args}
         trigger={<Button>열기</Button>}
+        headSlot={<PanelCloseButton />}
         onOpenChange={(open) => {
           args.onOpenChange?.(open)
           updateArgs({ open })

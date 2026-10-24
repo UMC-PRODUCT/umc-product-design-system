@@ -2,17 +2,17 @@
 
 UMC PRODUCT Design Chapter의 디자인 토큰, 아이콘, React 컴포넌트입니다. 피그마 디자인 시스템을 코드로 옮겼고, 다른 저장소에서 패키지로 설치해 씁니다.
 
-- 문서: https://www.university.neordinary.com/design-system/
-- Storybook: https://www.university.neordinary.com/design-system/storybook/
-- 변경 기록: 이 문서의 [릴리스](#릴리스), 문서 사이트의 [변경 기록](https://www.university.neordinary.com/design-system/releases/changelog/)
+- 문서: https://design.university.neordinary.com/
+- Storybook: https://design.university.neordinary.com/storybook/
+- 변경 기록: 이 문서의 [릴리스](#릴리스), 문서 사이트의 [변경 기록](https://design.university.neordinary.com/releases/changelog/)
 
 ## 패키지
 
 | 패키지                       | 내용                                                            |
 | ---------------------------- | --------------------------------------------------------------- |
 | `@umc-product/design-tokens` | 컬러, 텍스트 스타일, 그림자, 그리드 토큰. CSS 변수, Tailwind v4 |
-| `@umc-product/icons`         | 아이콘 66종, 픽토그램 12종, UMC 로고 React 컴포넌트             |
-| `@umc-product/react`         | Base UI 기반 컴포넌트 75종과 미리 빌드한 CSS                    |
+| `@umc-product/icons`         | 아이콘 66종, 픽토그램 12종, UMC 로고 2종 React 컴포넌트         |
+| `@umc-product/react`         | Base UI 기반 컴포넌트 78종과 미리 빌드한 CSS                    |
 
 세 패키지는 항상 같은 버전으로 함께 배포합니다.
 
@@ -58,7 +58,7 @@ pnpm add @umc-product/react @umc-product/icons @umc-product/design-tokens
 @import "@umc-product/design-tokens/tailwind.css";
 ```
 
-`styles.css`가 글꼴과 토큰 CSS를 함께 불러옵니다. 토큰만 쓰는 앱의 불러오기 순서는 문서의 [CSS 불러오기](https://www.university.neordinary.com/design-system/getting-started/installation/#css-불러오기)를 따르세요.
+`styles.css`가 글꼴과 토큰 CSS를 함께 불러옵니다. 토큰만 쓰는 앱의 불러오기 순서는 문서의 [CSS 불러오기](https://design.university.neordinary.com/getting-started/installation/#css-불러오기)를 따르세요.
 
 ### 5. 컴포넌트 쓰기
 
@@ -76,7 +76,7 @@ export function SearchForm() {
 }
 ```
 
-컴포넌트별 쓰임과 모든 변형은 [문서](https://www.university.neordinary.com/design-system/)에서 보고, props를 바꿔 보려면 [Storybook](https://www.university.neordinary.com/design-system/storybook/)을 엽니다.
+컴포넌트별 쓰임과 모든 변형은 [문서](https://design.university.neordinary.com/)에서 보고, props를 바꿔 보려면 [Storybook](https://design.university.neordinary.com/storybook/)을 엽니다.
 
 ### 6. 설치 확인하기
 
@@ -88,7 +88,7 @@ pnpm view @umc-product/react version
 
 ### CI와 배포 환경
 
-CI와 배포 서버도 설치할 때 토큰이 필요합니다. 전체 설정은 문서의 [앱의 CI와 배포 환경](https://www.university.neordinary.com/design-system/getting-started/installation/#앱의-ci와-배포-환경)에 있습니다.
+CI와 배포 서버도 설치할 때 토큰이 필요합니다. 전체 설정은 문서의 [앱의 CI와 배포 환경](https://design.university.neordinary.com/getting-started/installation/#앱의-ci와-배포-환경)에 있습니다.
 
 - **GitHub Actions**: 디자인 시스템 저장소 관리자에게 앱 저장소를 세 패키지의 **Manage Actions access**에 더해 달라고 요청하세요. 앱 워크플로에는 `packages: read` 권한을 주고, job의 `NODE_AUTH_TOKEN`에 `secrets.GITHUB_TOKEN`을 넣습니다.
 - **AWS Amplify**: 조직 공용 계정에서 만든 `read:packages` classic 토큰을 환경 변수(예: `UMC_PACKAGES_TOKEN`)에 넣고, 설치 전에 `.npmrc`에 적습니다. 토큰 주인이 조직을 떠나거나 기수가 바뀌면 모든 빌드가 멈추므로 개인 토큰은 쓰지 않습니다.
@@ -110,7 +110,7 @@ frontend:
 | `401 Unauthorized` | `~/.npmrc`에 토큰이 없거나 만료됐습니다. CI라면 `NODE_AUTH_TOKEN`이 설치 단계까지 전달되지 않았습니다                                  |
 | `403 Forbidden`    | 토큰에 `read:packages`가 없거나, fine-grained 토큰이거나, 토큰 주인이 조직 멤버가 아닙니다. Actions라면 Manage Actions access를 봅니다 |
 
-그 밖의 문제는 문서의 [문제 해결](https://www.university.neordinary.com/design-system/getting-started/troubleshooting/)에 있습니다.
+그 밖의 문제는 문서의 [문제 해결](https://design.university.neordinary.com/getting-started/troubleshooting/)에 있습니다.
 
 ## 버전 올리기
 
@@ -121,7 +121,7 @@ pnpm up "@umc-product/*"
 pnpm up "@umc-product/*" --latest
 ```
 
-첫 줄은 범위 안의 최신 patch로 올립니다. 둘째 줄은 범위를 넘어 최신 minor까지 올리니, 먼저 [릴리스](#릴리스)에서 **깨지는 변경**과 **화면 변화**를 확인하세요. 새 컴포넌트가 필요할 때도 둘째 줄로 올립니다. 세 패키지는 같은 버전으로 맞춥니다. 자세한 기준은 문서의 [버전 정책](https://www.university.neordinary.com/design-system/releases/versioning/)에 있습니다.
+첫 줄은 범위 안의 최신 patch로 올립니다. 둘째 줄은 범위를 넘어 최신 minor까지 올리니, 먼저 [릴리스](#릴리스)에서 **깨지는 변경**과 **화면 변화**를 확인하세요. 새 컴포넌트가 필요할 때도 둘째 줄로 올립니다. 세 패키지는 같은 버전으로 맞춥니다. 자세한 기준은 문서의 [버전 정책](https://design.university.neordinary.com/releases/versioning/)에 있습니다.
 
 ## 릴리스
 
@@ -130,6 +130,106 @@ pnpm up "@umc-product/*" --latest
 <!-- releases:start -->
 
 <details open>
+<summary><b>0.7.0</b> · 2026-10-24 · 깨지는 변경 2 · 새 기능 11 · 화면 변화 6</summary>
+
+**깨지는 변경**
+
+- **react** 피그마 `Help Text`의 `Type=Primary`가 `Type=Success`가 되어 `Field`의 `captionColor="primary"`도 `captionColor="success"`로 바꿉니다. 초록 글자색(#06844c, `text-success`)은 그대로이고 `StatusTag`와 `GuidanceMessage`가 쓰는 `success`와 이름이 같아집니다. `Field`를 감싼 `TextField`, `TextFieldArea`, `TextArea`, `Select`, `CodeField`, `VerificationCodeField`, `NumericStepper`도 같은 이름을 받습니다.
+
+  | 전                                         | 후                                         |
+  | ------------------------------------------ | ------------------------------------------ |
+  | `captionColor="primary"`                   | `captionColor="success"`                   |
+  | `.umc-field__caption[data-tone="primary"]` | `.umc-field__caption[data-tone="success"]` |
+
+- **design-tokens** 피그마에 14px 캡션 `Caption/1-Regular`가 생기면서 기존 캡션 스타일의 번호가 한 칸씩 밀렸고, 토큰 이름도 피그마 이름을 따릅니다. 같은 이름이 다른 크기를 가리키게 되어 빌드 오류 없이 글자 크기만 달라지니, 올리기 전에 앱에서 `caption-` 이름을 찾아 바꿔 주세요. 3→4, 2→3, 1→2 순서로 바꿔야 한 이름을 두 번 고치지 않습니다.
+
+  | 스타일                                        | 전                                                        | 후                                                        |
+  | --------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+  | 14px Regular, 행간 145%                       | 없음                                                      | `caption-1-regular`                                       |
+  | 13px Medium·Regular, 행간 145%                | `caption-1-medium`, `caption-1-regular`                   | `caption-2-medium`, `caption-2-regular`                   |
+  | 12px Bold·Medium·Regular, 행간 150%, 자간 -2% | `caption-2-bold`, `caption-2-medium`, `caption-2-regular` | `caption-3-bold`, `caption-3-medium`, `caption-3-regular` |
+  | 11px Medium·Regular, 행간 150%                | `caption-3-medium`, `caption-3-regular`                   | `caption-4-medium`, `caption-4-regular`                   |
+
+  CSS 변수(`--umc-typography-caption-…`), Tailwind 유틸리티(`text-caption-…`), vanilla-extract 키가 모두 같은 규칙으로 바뀝니다. 텍스트 스타일은 48개에서 49개가 됩니다. `@umc-product/react` 컴포넌트는 새 이름을 쓰도록 고쳐서 글자 모양이 그대로입니다.
+
+**새 기능**
+
+- **react** `Calendar`와 `CalendarScheduleCard`를 추가합니다. 피그마 `Calendar`와 `Calendar/Schedule Card`를 옮겼고, 두 컴포넌트는 서로 이어지지 않아 앱이 함께 놓고 연결합니다.
+
+  - `Calendar`: 월요일에 시작하는 한 달 격자와 이전·다음 달 버튼을 그립니다. 날짜 하나를 고르고(`value`, `onValueChange`), 기간을 띠로(`ranges`), 일정이 있는 날을 점으로(`markedDates`) 보여 줍니다. 앞뒤 달 날짜는 흐리게 채우고, 누르면 그 달로 옮깁니다. 화살표, Home, End, PageUp, PageDown으로 날짜를 옮길 수 있습니다.
+  - `CalendarScheduleCard`: 회차, 일정 이름, 기간을 한 장에 담는 카드입니다. `status`로 예정, 진행 중, 지난 일정을 나눕니다.
+
+- **react** `Chip`에 `size="lg"`를 추가합니다. 피그마 `Chip`의 `Size=Lg`로, 높이는 42px이고 글자는 `Title/2-Medium`(20px), 아이콘은 20px입니다. 좌우 여백은 아이콘이 없으면 16px씩이고, 앞 아이콘이면 12px·18px, 뒤 아이콘이면 18px·12px입니다. 색과 상태는 다른 크기와 같습니다.
+- **react** `Field`에 도움말 크기 `captionSize`(`"md"`, `"lg"`)를 더합니다. 피그마 `Help Text`에 새로 생긴 `Size=14px`가 `lg`(14px, `caption-1-regular`)이고, 기본값 `md`는 지금까지와 같은 13px입니다. 오류 메시지도 같은 크기를 따릅니다. `TextField`, `TextFieldArea`, `TextArea`, `Select`, `CodeField`, `VerificationCodeField`, `NumericStepper`도 같은 prop을 받아 `Field`에 넘깁니다.
+- **react** `FormAttachmentField`에 `invalid`와 `errorMessage`를 추가합니다. 피그마 `Form/Question`에 생긴 Help Text에 맞춰, 오류이면 칸 테두리를 Red-300으로 바꾸고 칸 아래에 빨간 도움말을 보여 줍니다. 도움말은 링크 입력의 설명으로 이어집니다. 글 답변(`FormTextAnswer`)은 전처럼 `TextArea`의 `invalid`와 `errorMessage`를 씁니다.
+
+  칸과 버튼은 루트 안의 새 요소(`.umc-form-attachment-field__row`)로 묶였습니다. 루트에 `className`으로 칸과 버튼 사이 간격을 주던 앱은 확인해 주세요.
+
+- **react** `FormQuestionEditor`에 `dragPlaceholder`를 더합니다. 켜면 끄는 동안 목록에 남은 원래 질문이 점선 상자가 되어 놓일 자리로 따라 움직이고, 손을 따라다니는 카드는 `dragging`으로 그립니다. @dnd-kit은 패키지에 들어 있지 않으니 앱에서 설치합니다.
+- **react** `FormQuestionEditor`에 `dragging`을 더합니다. 손잡이를 잡고 순서를 옮기는 동안 켜면 회색 강조선과 떠 있는 그림자가 생기고 활성 질문이어도 필수 항목, 삭제, 툴바가 숨겨집니다. 끌어서 옮기는 기능은 앱이 붙이며 @dnd-kit을 쓴다면 `useSortable`의 `isDragging`을 그대로 넘기면 됩니다.
+- **react** 질문지 그룹에 `FormSectionEmpty`를 더합니다. 질문이 없는 섹션 본문에 넣는 안내이며, 질문을 끄는 동안 이 섹션에 놓을 수 있으면 `dropTarget`으로 `dragPlaceholder`와 같은 점선을 그립니다.
+- **react** `IconButton`에 `size="sm"`을 추가합니다. 피그마 `Icon Button`의 `Size=Sm`으로, 칸은 24×24px, 모서리는 `radius-6`, 아이콘은 20px입니다. 색과 눌림 모양은 다른 크기와 같습니다.
+- **react** `Panel`에 머리 슬롯 `headSlot`과 닫기 버튼 `PanelCloseButton`을 더합니다. 피그마 `Web/Panel`에 생긴 `Head Slot` 자리로 제목 오른쪽 위(패널 위 20px, 오른쪽 16px)에 놓입니다. `PanelCloseButton`은 Head Slot의 기본 내용인 24px 닫기 아이콘 버튼이고 누르면 패널을 닫으며 `onOpenChange(false)`를 부릅니다. `headSlot`을 넘기지 않으면 머리 모양과 구조는 그대로입니다.
+- **react** `StatusTag`에 `color="success"`를 더합니다. 피그마 `Tag/Status`의 `Color=Green`이고, 점과 글자가 `text-success`(#06844c)입니다.
+- **icons** `UmcSymbolLogo`를 추가합니다. 피그마 `Logo`의 `Type=도형 마크`(140:44)로, `UmcLogo`처럼 `height`를 받고 `currentColor`로 칠합니다. 피그마가 두 로고를 `Logo` 한 세트로 묶어서 `logoCatalog`의 `UmcLogo` 피그마 이름이 `Logo (Type=워터마크)`로 바뀌었습니다. 그림과 컴포넌트 이름은 그대로입니다.
+
+**화면 변화**
+
+- **react** 피그마 `Chart/Tooltip`이 3기 색과 글자 스타일로 바뀐 것에 맞춰 `ChartTooltip`이 바뀝니다. `CategoryGroupChart`와 `RankedBarChart`가 띄우는 툴팁도 같이 바뀝니다. 그림자는 그대로입니다.
+
+  | 항목                          | 전                               | 후                                                                    |
+  | ----------------------------- | -------------------------------- | --------------------------------------------------------------------- |
+  | 제목                          | #9ca3a3, 600, 행간 150%          | #7e7f7f(TealGrey-500), 700, 행간 130%                                 |
+  | 합계                          | 11px, 행간 160%, 자간 0          | 12px, 행간 150%, 자간 -2%(`caption-3-bold`)                           |
+  | 합계 비교값                   | #9ca3a3, 11px, 행간 160%         | #adadad(TealGrey-400), 12px, 행간 150%(`caption-3-medium`)            |
+  | 항목                          | #404443, 11px, 행간 160%, 자간 0 | #282a2a(TealGrey-800), 12px, 행간 150%, 자간 -2%(`caption-3-regular`) |
+  | 항목 비교값                   | #9ca3a3                          | #adadad                                                               |
+  | 보조 설명                     | #9ca3a3, 행간 160%, 자간 -2%     | #adadad, 행간 150%, 자간 0(`caption-4-medium`)                        |
+  | 위 여백                       | 8px                              | 10px                                                                  |
+  | 제목과 합계 사이              | 0(비교 모양 1px)                 | 3px                                                                   |
+  | 제목 묶음·항목·보조 설명 사이 | 2px(비교 모양 8px)               | 8px                                                                   |
+  | 항목 사이                     | 2px                              | 4px                                                                   |
+
+- **react** 피그마 `Check Box Option Item`의 편집 모드가 보기 글과 닫기 아이콘을 줄 양 끝으로 벌린 것에 맞춰 `FormChoiceListEditor`의 삭제 버튼이 줄 오른쪽 끝으로 옮겨 갑니다. 라디오 보기도 같은 모양이라 단일 선택과 복수 선택이 모두 바뀝니다.
+
+  | 항목           | 전                         | 후                           |
+  | -------------- | -------------------------- | ---------------------------- |
+  | 삭제 버튼 위치 | 보기 글 바로 뒤(간격 12px) | 줄 오른쪽 끝(안쪽 여백 10px) |
+
+- **react** 피그마 `Help Text`가 텍스트 스타일 `Caption/2-Regular`에 연결된 것에 맞춰 도움말과 오류 메시지의 행간이 바뀝니다. `Field`를 쓰는 `TextField`, `TextFieldArea`, `TextArea`, `Select`, `CodeField`, `VerificationCodeField`, `NumericStepper`와 `FormAttachmentField`의 오류 메시지가 같이 바뀝니다. 도움말 한 줄이 1.85px 높아집니다.
+
+  | 항목 | 전         | 후                                 |
+  | ---- | ---------- | ---------------------------------- |
+  | 행간 | 17px(고정) | 145%(18.85px, `caption-2-regular`) |
+  | 크기 | 13px       | 13px(그대로)                       |
+
+- **react** 피그마 `Tag/Status`가 점과 간격을 줄인 것에 맞춰 `StatusTag`가 바뀝니다. 모든 색에 같이 적용됩니다.
+
+  | 항목           | 전   | 후   |
+  | -------------- | ---- | ---- |
+  | 점 지름        | 12px | 10px |
+  | 점과 글자 사이 | 6px  | 4px  |
+
+- **react** 피그마 `Text Area`에 생긴 오류 변형(`Error=True`)에 맞춰 `TextArea`의 오류 모양이 바뀝니다. 오류이면 상태와 관계없이 테두리만 빨간색이고 배경은 그대로입니다. 오류를 켜고 끄는 흐름은 그대로 앱이 `invalid`로 정합니다.
+
+  | 항목                       | 전                            | 후                                          |
+  | -------------------------- | ----------------------------- | ------------------------------------------- |
+  | 오류 배경                  | #fef2f1(`fill-error-weak-50`) | 오류가 아닐 때와 같음(흰색, 비활성 #fbfcfc) |
+  | 오류 + hover·포커스 테두리 | #ed6464(Red-400)              | #f88c8c(Red-300)                            |
+  | 오류 + 비활성 테두리       | #f88c8c                       | #f88c8c(그대로)                             |
+
+- **react** 피그마 `Text Info Button`의 글자가 커지고 굵어진 것에 맞춰 `TextInfoButton`도 바뀝니다. 아이콘 크기와 색, 아이콘과 글자 사이 간격은 그대로입니다.
+
+  | 항목 | 전           | 후            |
+  | ---- | ------------ | ------------- |
+  | 크기 | 12px         | 13px          |
+  | 굵기 | 400(Regular) | 500(Medium)   |
+  | 행간 | 150%(18px)   | 145%(18.85px) |
+  | 자간 | -2%          | -2%(그대로)   |
+
+</details>
+
+<details>
 <summary><b>0.6.0</b> · 2026-10-20 · 깨지는 변경 1 · 새 기능 23 · 화면 변화 2 · 수정 1</summary>
 
 **깨지는 변경**
