@@ -68,9 +68,9 @@
       }
     },
     {
-      "specId": "field-caption-primary",
+      "specId": "field-caption-success",
       "node": "2621:33345",
-      "variant": "Help Text, Type=Primary, Size=13px",
+      "variant": "Help Text, Type=Success, Size=13px",
       "target": ".umc-field__caption",
       "expected": {
         "color": "#06844c"

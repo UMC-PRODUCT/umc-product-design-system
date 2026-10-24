@@ -50,12 +50,12 @@ export function FieldCaptionTones() {
     <div className="umc-example umc-example-stack">
       <div
         className="w-full max-w-[326px]"
-        data-spec-id="field-caption-primary"
+        data-spec-id="field-caption-success"
       >
         <Field
           label="닉네임"
           caption="사용할 수 있는 닉네임입니다"
-          captionColor="primary"
+          captionColor="success"
         >
           {renderControl({ defaultValue: "umc" })}
         </Field>
@@ -149,7 +149,7 @@ function FieldCaptionCell({ variant }: { variant: FigmaVariant }) {
   return (
     <Field
       caption="도움말을 적어 주세요"
-      captionColor={type === "Primary" ? "primary" : "neutral"}
+      captionColor={type === "Success" ? "success" : "neutral"}
       captionSize={lookup(FIGMA_CAPTION_SIZES, variant, "Size")}
       invalid={type === "Error"}
       errorMessage={type === "Error" ? "오류 메시지를 적어 주세요" : undefined}

@@ -11,7 +11,7 @@ export type FieldOwnProps = {
   label?: ReactNode
   required?: boolean
   caption?: ReactNode
-  captionColor?: "neutral" | "primary"
+  captionColor?: "neutral" | "success"
   captionSize?: FieldCaptionSize
   invalid?: boolean
   errorMessage?: ReactNode

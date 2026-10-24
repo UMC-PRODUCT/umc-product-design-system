@@ -63,7 +63,7 @@
     letter-spacing: var(--umc-typography-caption-1-regular-letter-spacing);
   }
 
-  .umc-field__caption[data-tone="primary"] {
+  .umc-field__caption[data-tone="success"] {
     --umc-field-caption-color: var(--umc-color-text-success);
   }
 
