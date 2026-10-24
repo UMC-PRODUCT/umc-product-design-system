@@ -2,7 +2,7 @@
   .umc-status-tag {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: var(--umc-spacing-gap-4);
     height: 24px;
     font-family: var(--umc-typography-label-5-medium-font-family);
     font-size: var(--umc-typography-label-5-medium-font-size);
@@ -25,6 +25,10 @@
     --umc-status-tag-fg: var(--umc-color-text-warning);
   }
 
+  .umc-status-tag[data-color="success"] {
+    --umc-status-tag-fg: var(--umc-color-text-success);
+  }
+
   .umc-status-tag[data-color="error"] {
     --umc-status-tag-fg: var(--umc-color-text-error);
   }
@@ -32,8 +36,8 @@
   .umc-status-tag__dot {
     display: inline-block;
     flex: 0 0 auto;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background-color: var(--umc-status-tag-fg);
   }

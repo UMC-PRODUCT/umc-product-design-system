@@ -3,11 +3,10 @@
 import {
   FormAttachmentField,
   FormQuestion,
-  GuidanceMessage,
   type FormAttachment,
   type FormAttachmentRejection,
 } from "@umc-product/react"
-import { useId, useState, type KeyboardEvent } from "react"
+import { useState, type KeyboardEvent } from "react"
 
 import { ForceState, type ForcedState } from "../variants/VariantCells.tsx"
 import type { FigmaVariant } from "../variants/figma-variants.ts"
@@ -25,7 +24,6 @@ const LINK_PATTERN = /^https?:\/\/\S+$/
 export function FormAttachmentFieldDefault() {
   const [attachment, setAttachment] = useState<FormAttachment | null>(null)
   const [rejection, setRejection] = useState<FormAttachmentRejection>()
-  const messageId = useId()
 
   const attachLink = (event: KeyboardEvent<HTMLInputElement>) => {
     const link = event.currentTarget.value.trim()
@@ -35,7 +33,7 @@ export function FormAttachmentFieldDefault() {
 
   return (
     <div className="umc-example">
-      <div className="flex w-full max-w-[840px] flex-col gap-3">
+      <div className="w-full max-w-[840px]">
         <FormQuestion
           number="05"
           title="포트폴리오를 첨부해 주세요"
@@ -43,6 +41,7 @@ export function FormAttachmentFieldDefault() {
         >
           <FormAttachmentField
             attachment={attachment}
+            onChange={() => setRejection(undefined)}
             onKeyDown={attachLink}
             onFileSelect={(file) => {
               setRejection(undefined)
@@ -50,14 +49,25 @@ export function FormAttachmentFieldDefault() {
             }}
             onReject={setRejection}
             onAttachmentRemove={() => setAttachment(null)}
-            aria-describedby={rejection === undefined ? undefined : messageId}
+            invalid={rejection !== undefined}
+            errorMessage={rejection && REJECTION_MESSAGES[rejection.reason]}
           />
         </FormQuestion>
-        {rejection !== undefined && (
-          <GuidanceMessage id={messageId} color="error" role="status">
-            {REJECTION_MESSAGES[rejection.reason]}
-          </GuidanceMessage>
-        )}
+      </div>
+    </div>
+  )
+}
+
+export function FormAttachmentFieldInvalid() {
+  return (
+    <div className="umc-example">
+      <div
+        className="w-full max-w-[840px]"
+        data-spec-id="form-attachment-field-error"
+      >
+        <FormQuestion number="05" title="포트폴리오를 첨부해 주세요">
+          <FormAttachmentField invalid errorMessage={REJECTION_MESSAGES.type} />
+        </FormQuestion>
       </div>
     </div>
   )

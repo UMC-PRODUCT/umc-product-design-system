@@ -6,6 +6,7 @@ description: 지원서 같은 질문지에서 질문 하나를 번호, 제목, �
 import {
   FormQuestionAllVariants,
   FormQuestionDefault,
+  FormQuestionHelpText,
   FormQuestionReadOnly,
 } from "../../../../components/react/questionnaire/FormQuestionExamples.tsx"
 
@@ -35,6 +36,14 @@ import { FormQuestion, FormTextAnswer } from "@umc-product/react"
 ## 글로 답하기
 
 `FormTextAnswer`는 [TextArea](../../forms/text-area/)에 질문 연결만 더한 컴포넌트라 props가 같습니다. 주관식과 장문형은 같은 칸을 쓰고, 길이는 `maxLength`로 다르게 줍니다.
+
+## 도움말
+
+글 칸과 첨부 칸 아래에는 빨간 도움말을 둘 수 있습니다. `FormTextAnswer`와 `FormAttachmentField`에 `invalid`와 `errorMessage`를 함께 넘기면 칸 바로 아래에 보이고, 답 칸의 설명으로 이어집니다. 선택 목록에는 도움말 자리가 없습니다.
+
+도움말은 기본으로 꺼져 있고, 앱이 검증 결과로 켜고 끕니다. 응답자가 답을 고쳐 조건을 맞추면 `invalid`를 끄고 `errorMessage`도 비웁니다.
+
+<FormQuestionHelpText />
 
 ## 읽기 전용
 

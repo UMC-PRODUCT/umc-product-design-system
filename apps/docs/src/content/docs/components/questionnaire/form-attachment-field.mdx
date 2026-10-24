@@ -6,6 +6,7 @@ description: 질문지에서 링크를 입력하거나 파일을 첨부하는 �
 import {
   FormAttachmentFieldAllVariants,
   FormAttachmentFieldDefault,
+  FormAttachmentFieldInvalid,
   FormAttachmentFieldReadOnly,
 } from "../../../../components/react/questionnaire/FormAttachmentFieldExamples.tsx"
 
@@ -38,6 +39,14 @@ import { FormAttachmentField, FormQuestion } from "@umc-product/react"
 - 입력한 글자만으로는 첨부가 되지 않습니다. 링크를 언제 첨부로 확정할지는 앱이 정합니다. 위 예시는 Enter를 누르면 http(s) 주소를 첨부로 바꿉니다.
 - 파일은 기본으로 200MB 이하의 PDF만 받습니다. `accept`(MIME 형식 배열)와 `maxSize`(바이트)로 바꿉니다. 맞지 않는 파일은 `onReject`가 이유(`type`, `size`)와 함께 받습니다.
 - 업로드 중이나 실패 표시는 앱이 맡습니다. 업로드가 끝나면 `attachment`에 파일 이름과 주소를 넘깁니다.
+
+## 오류
+
+`invalid`를 켜면 칸 테두리가 Red-300(`border-error-medium-300`)으로 바뀌고 배경은 그대로입니다. `errorMessage`를 함께 넘기면 칸 아래에 빨간 도움말이 나오고, 링크 입력 칸의 설명으로 이어져 화면 낭독기가 함께 읽습니다. 첨부가 있을 때도 같은 자리에 보입니다.
+
+`invalid`는 앱이 검증 결과로 켜고 끕니다. 맨 위 예시는 받지 않은 파일이 오면 이유를 보여 주고, 맞는 파일을 고르거나 칸에 글자를 입력하면 오류를 끕니다.
+
+<FormAttachmentFieldInvalid />
 
 ## 읽기 전용
 
@@ -78,6 +87,8 @@ import { FormAttachmentField, FormQuestion } from "@umc-product/react"
 | `removeLabel`          | `ReactNode`              | `"삭제"`              | 삭제 버튼 글자                                           |
 | `readOnly`, `disabled` | `boolean`                | 질문 값               | 읽기 전용, 비활성. 편집기가 비활성이면 늘 비활성         |
 | `preview`              | `boolean`                | `false`               | 질문지 편집 화면의 미리보기로 그림                       |
+| `invalid`              | `boolean`                | 없음                  | 오류 상태. 테두리를 빨갛게 바꿈                          |
+| `errorMessage`         | `ReactNode`              | 없음                  | 칸 아래 오류 문구. `invalid`일 때만 보임                 |
 | `className`            | `string`                 | 없음                  | 루트 요소에 붙일 클래스                                  |
 
 ```ts

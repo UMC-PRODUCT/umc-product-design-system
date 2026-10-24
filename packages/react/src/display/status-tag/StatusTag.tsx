@@ -2,7 +2,8 @@ import type { ComponentPropsWithRef } from "react"
 
 import { cx } from "../../internal/cx.ts"
 
-export type StatusTagColor = "brand" | "neutral" | "warning" | "error"
+export type StatusTagColor =
+  "brand" | "neutral" | "warning" | "success" | "error"
 
 export type StatusTagProps = Omit<ComponentPropsWithRef<"span">, "color"> & {
   color?: StatusTagColor

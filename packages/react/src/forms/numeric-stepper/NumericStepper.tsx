@@ -28,6 +28,7 @@ export function NumericStepper({
   required,
   caption,
   captionColor,
+  captionSize,
   invalid,
   errorMessage,
   value,
@@ -48,6 +49,7 @@ export function NumericStepper({
       required={required}
       caption={caption}
       captionColor={captionColor}
+      captionSize={captionSize}
       invalid={invalid}
       errorMessage={errorMessage}
       disabled={disabled}

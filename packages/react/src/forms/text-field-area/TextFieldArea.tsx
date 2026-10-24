@@ -23,6 +23,7 @@ export function TextFieldArea({
   required,
   caption,
   captionColor,
+  captionSize,
   invalid,
   errorMessage,
   size = "lg",
@@ -40,6 +41,7 @@ export function TextFieldArea({
       required={required}
       caption={caption}
       captionColor={captionColor}
+      captionSize={captionSize}
       invalid={invalid}
       errorMessage={errorMessage}
       disabled={disabled}

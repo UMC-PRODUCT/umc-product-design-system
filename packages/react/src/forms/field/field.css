@@ -4,7 +4,6 @@
     --umc-field-label-line-height: 23px;
     --umc-field-label-letter-spacing: -0.03em;
     --umc-field-caption-color: var(--umc-color-text-neutral-weak-500);
-    --umc-field-caption-line-height: 17px;
 
     display: flex;
     flex-direction: column;
@@ -49,11 +48,19 @@
     padding-block: 0;
     padding-inline: var(--umc-spacing-padding-4);
     color: var(--umc-field-caption-color);
-    font-family: var(--umc-font-family-brand);
-    font-size: var(--umc-font-size-13);
-    font-weight: var(--umc-font-weight-regular);
-    line-height: var(--umc-field-caption-line-height);
-    letter-spacing: 0;
+    font-family: var(--umc-typography-caption-2-regular-font-family);
+    font-size: var(--umc-typography-caption-2-regular-font-size);
+    font-weight: var(--umc-typography-caption-2-regular-font-weight);
+    line-height: var(--umc-typography-caption-2-regular-line-height);
+    letter-spacing: var(--umc-typography-caption-2-regular-letter-spacing);
+  }
+
+  .umc-field__caption[data-size="lg"] {
+    font-family: var(--umc-typography-caption-1-regular-font-family);
+    font-size: var(--umc-typography-caption-1-regular-font-size);
+    font-weight: var(--umc-typography-caption-1-regular-font-weight);
+    line-height: var(--umc-typography-caption-1-regular-line-height);
+    letter-spacing: var(--umc-typography-caption-1-regular-letter-spacing);
   }
 
   .umc-field__caption[data-tone="primary"] {

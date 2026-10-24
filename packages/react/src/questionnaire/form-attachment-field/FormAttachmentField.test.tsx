@@ -192,4 +192,46 @@ describe("FormAttachmentField", () => {
       document.querySelector(".umc-form-attachment-field__file"),
     ).toBeNull()
   })
+
+  it("invalid와 errorMessage를 주면 칸 아래에 오류 문구를 그리고 링크 입력의 설명으로 잇는다", () => {
+    render(
+      <FormQuestion title="포트폴리오" description="PDF 한 개">
+        <FormAttachmentField invalid errorMessage="파일을 다시 올려 주세요" />
+      </FormQuestion>,
+    )
+    const input = screen.getByRole("textbox", { name: "포트폴리오" })
+    expect(input).toHaveAttribute("aria-invalid", "true")
+    expect(input).toHaveAccessibleDescription(
+      "PDF 한 개 파일을 다시 올려 주세요",
+    )
+    expect(
+      document.querySelector(".umc-form-attachment-field"),
+    ).toHaveAttribute("data-invalid", "")
+  })
+
+  it("첨부가 있어도 invalid이면 오류 문구를 그린다", () => {
+    render(
+      <FormAttachmentField
+        attachment={{ label: "portfolio.pdf" }}
+        invalid
+        errorMessage="200MB 이하 파일만 올릴 수 있어요"
+      />,
+    )
+    expect(
+      screen.getByText("200MB 이하 파일만 올릴 수 있어요"),
+    ).toBeInTheDocument()
+  })
+
+  it("invalid가 없으면 errorMessage를 그리지 않고 링크 입력도 오류로 표시하지 않는다", () => {
+    render(
+      <FormAttachmentField
+        aria-label="첨부 칸"
+        errorMessage="파일을 다시 올려 주세요"
+      />,
+    )
+    expect(screen.queryByText("파일을 다시 올려 주세요")).toBeNull()
+    expect(
+      screen.getByRole("textbox", { name: "첨부 칸" }),
+    ).not.toHaveAttribute("aria-invalid")
+  })
 })

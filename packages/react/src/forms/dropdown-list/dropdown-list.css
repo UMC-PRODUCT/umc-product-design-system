@@ -97,10 +97,10 @@
 
   .umc-dropdown-item__caption {
     color: var(--umc-color-text-placeholder);
-    font-size: var(--umc-typography-caption-2-regular-font-size);
-    font-weight: var(--umc-typography-caption-2-regular-font-weight);
-    line-height: var(--umc-typography-caption-2-regular-line-height);
-    letter-spacing: var(--umc-typography-caption-2-regular-letter-spacing);
+    font-size: var(--umc-typography-caption-3-regular-font-size);
+    font-weight: var(--umc-typography-caption-3-regular-font-weight);
+    line-height: var(--umc-typography-caption-3-regular-line-height);
+    letter-spacing: var(--umc-typography-caption-3-regular-letter-spacing);
   }
 
   .umc-dropdown-item[data-disabled] .umc-dropdown-item__caption {

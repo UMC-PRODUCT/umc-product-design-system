@@ -14,7 +14,7 @@
         "font-size": "14px",
         "font-weight": "500",
         "line-height": "18.9px",
-        "column-gap": "6px"
+        "column-gap": "4px"
       }
     },
     {
@@ -23,8 +23,8 @@
       "variant": "Color=Default",
       "target": ".umc-status-tag__dot",
       "expected": {
-        "width": "12px",
-        "height": "12px",
+        "width": "10px",
+        "height": "10px",
         "background-color": "#02746c"
       }
     },
@@ -44,6 +44,26 @@
       "target": ".umc-status-tag",
       "expected": {
         "color": "#ed8002"
+      }
+    },
+    {
+      "specId": "status-tag-success",
+      "node": "4721:88032",
+      "variant": "Color=Green",
+      "target": ".umc-status-tag",
+      "expected": {
+        "color": "#06844c"
+      }
+    },
+    {
+      "specId": "status-tag-success-dot",
+      "node": "4721:88032",
+      "variant": "Color=Green",
+      "target": ".umc-status-tag__dot",
+      "expected": {
+        "width": "10px",
+        "height": "10px",
+        "background-color": "#06844c"
       }
     },
     {

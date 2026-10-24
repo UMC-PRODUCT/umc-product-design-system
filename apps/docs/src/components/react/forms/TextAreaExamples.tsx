@@ -3,7 +3,7 @@
 import { TextArea } from "@umc-product/react"
 
 import { ForceState, type ForcedState } from "../variants/VariantCells.tsx"
-import type { FigmaVariant } from "../variants/figma-variants.ts"
+import { lookup, type FigmaVariant } from "../variants/figma-variants.ts"
 import { VariantGrid } from "../variants/VariantGrid.tsx"
 
 const NOTICE_MAX_LENGTH = 1000
@@ -105,13 +105,29 @@ const TEXT_AREA_STATES: Readonly<Record<string, TextAreaState>> = {
   },
 }
 
+const ERROR_SPEC_IDS: Readonly<Record<string, string>> = {
+  Default: "text-area-error-default",
+  Hover: "text-area-error-hover",
+  Focused: "text-area-error-focused",
+  Typing: "text-area-error-typing",
+  Filled: "text-area-error-filled",
+  Disabled: "text-area-error-disabled",
+}
+
+const ERROR_FLAGS = { False: false, True: true } as const
+
 function TextAreaVariantCell({ variant }: { variant: FigmaVariant }) {
-  const state = TEXT_AREA_STATES[variant.props["State"] ?? ""]
+  const stateName = variant.props["State"] ?? ""
+  const state = TEXT_AREA_STATES[stateName]
   if (state === undefined) {
     throw new Error(`${variant.name}: 대응하는 상태가 없습니다`)
   }
+  const invalid = lookup(ERROR_FLAGS, variant, "Error")
   return (
-    <div className="w-[480px]" data-spec-id={state.specId}>
+    <div
+      className="w-[480px]"
+      data-spec-id={invalid ? ERROR_SPEC_IDS[stateName] : state.specId}
+    >
       <ForceState states={state.forced}>
         <TextArea
           aria-label="예시 입력"
@@ -119,6 +135,7 @@ function TextAreaVariantCell({ variant }: { variant: FigmaVariant }) {
           maxLength={VARIANT_MAX_LENGTH}
           defaultValue={state.value}
           disabled={state.disabled}
+          invalid={invalid}
         />
       </ForceState>
     </div>
@@ -130,9 +147,10 @@ export function TextAreaAllVariants() {
     <VariantGrid
       set="text-area"
       rows={["State"]}
-      columns={[]}
+      columns={["Error"]}
       order={{
         State: ["Default", "Hover", "Focused", "Typing", "Filled", "Disabled"],
+        Error: ["False", "True"],
       }}
       render={(variant) => <TextAreaVariantCell variant={variant} />}
     />

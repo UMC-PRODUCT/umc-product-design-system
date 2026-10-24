@@ -39,10 +39,10 @@
       "target": ".umc-text-info-button",
       "expected": {
         "color": "#adadad",
-        "font-size": "12px",
-        "font-weight": "400",
-        "line-height": "18px",
-        "letter-spacing": "-0.24px",
+        "font-size": "13px",
+        "font-weight": "500",
+        "line-height": "18.85px",
+        "letter-spacing": "-0.26px",
         "column-gap": "4px"
       }
     },

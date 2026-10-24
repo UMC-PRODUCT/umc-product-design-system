@@ -19,6 +19,7 @@ const COMPONENT_GROUPS = [
   { label: "앱 셸", directory: "components/shell" },
   { label: "질문지", directory: "components/questionnaire" },
   { label: "차트", directory: "components/chart" },
+  { label: "캘린더", directory: "components/calendar" },
 ]
 
 const MOVED_PAGES = {

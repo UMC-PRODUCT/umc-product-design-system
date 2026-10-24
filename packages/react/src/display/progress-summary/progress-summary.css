@@ -41,11 +41,11 @@
   .umc-progress-summary__count {
     flex: 0 0 auto;
     color: var(--umc-color-text-neutral-weak-500);
-    font-family: var(--umc-typography-caption-1-regular-font-family);
-    font-size: var(--umc-typography-caption-1-regular-font-size);
-    font-weight: var(--umc-typography-caption-1-regular-font-weight);
-    line-height: var(--umc-typography-caption-1-regular-line-height);
-    letter-spacing: var(--umc-typography-caption-1-regular-letter-spacing);
+    font-family: var(--umc-typography-caption-2-regular-font-family);
+    font-size: var(--umc-typography-caption-2-regular-font-size);
+    font-weight: var(--umc-typography-caption-2-regular-font-weight);
+    line-height: var(--umc-typography-caption-2-regular-line-height);
+    letter-spacing: var(--umc-typography-caption-2-regular-letter-spacing);
   }
 
   .umc-progress-summary__percent {

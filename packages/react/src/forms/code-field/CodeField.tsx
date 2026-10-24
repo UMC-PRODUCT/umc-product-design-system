@@ -28,6 +28,7 @@ export function CodeField({
   required,
   caption,
   captionColor,
+  captionSize,
   invalid,
   errorMessage,
   length = DEFAULT_LENGTH,
@@ -64,6 +65,7 @@ export function CodeField({
       required={required}
       caption={caption}
       captionColor={captionColor}
+      captionSize={captionSize}
       invalid={invalid}
       errorMessage={errorMessage}
       info={info}

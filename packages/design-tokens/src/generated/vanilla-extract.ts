@@ -532,26 +532,12 @@ export const typography = {
     lineHeight: "var(--umc-typography-label-7-medium-line-height)",
     letterSpacing: "var(--umc-typography-label-7-medium-letter-spacing)",
   },
-  caption1Medium: {
-    fontFamily: "var(--umc-typography-caption-1-medium-font-family)",
-    fontSize: "var(--umc-typography-caption-1-medium-font-size)",
-    fontWeight: "var(--umc-typography-caption-1-medium-font-weight)",
-    lineHeight: "var(--umc-typography-caption-1-medium-line-height)",
-    letterSpacing: "var(--umc-typography-caption-1-medium-letter-spacing)",
-  },
   caption1Regular: {
     fontFamily: "var(--umc-typography-caption-1-regular-font-family)",
     fontSize: "var(--umc-typography-caption-1-regular-font-size)",
     fontWeight: "var(--umc-typography-caption-1-regular-font-weight)",
     lineHeight: "var(--umc-typography-caption-1-regular-line-height)",
     letterSpacing: "var(--umc-typography-caption-1-regular-letter-spacing)",
-  },
-  caption2Bold: {
-    fontFamily: "var(--umc-typography-caption-2-bold-font-family)",
-    fontSize: "var(--umc-typography-caption-2-bold-font-size)",
-    fontWeight: "var(--umc-typography-caption-2-bold-font-weight)",
-    lineHeight: "var(--umc-typography-caption-2-bold-line-height)",
-    letterSpacing: "var(--umc-typography-caption-2-bold-letter-spacing)",
   },
   caption2Medium: {
     fontFamily: "var(--umc-typography-caption-2-medium-font-family)",
@@ -567,6 +553,13 @@ export const typography = {
     lineHeight: "var(--umc-typography-caption-2-regular-line-height)",
     letterSpacing: "var(--umc-typography-caption-2-regular-letter-spacing)",
   },
+  caption3Bold: {
+    fontFamily: "var(--umc-typography-caption-3-bold-font-family)",
+    fontSize: "var(--umc-typography-caption-3-bold-font-size)",
+    fontWeight: "var(--umc-typography-caption-3-bold-font-weight)",
+    lineHeight: "var(--umc-typography-caption-3-bold-line-height)",
+    letterSpacing: "var(--umc-typography-caption-3-bold-letter-spacing)",
+  },
   caption3Medium: {
     fontFamily: "var(--umc-typography-caption-3-medium-font-family)",
     fontSize: "var(--umc-typography-caption-3-medium-font-size)",
@@ -580,5 +573,19 @@ export const typography = {
     fontWeight: "var(--umc-typography-caption-3-regular-font-weight)",
     lineHeight: "var(--umc-typography-caption-3-regular-line-height)",
     letterSpacing: "var(--umc-typography-caption-3-regular-letter-spacing)",
+  },
+  caption4Medium: {
+    fontFamily: "var(--umc-typography-caption-4-medium-font-family)",
+    fontSize: "var(--umc-typography-caption-4-medium-font-size)",
+    fontWeight: "var(--umc-typography-caption-4-medium-font-weight)",
+    lineHeight: "var(--umc-typography-caption-4-medium-line-height)",
+    letterSpacing: "var(--umc-typography-caption-4-medium-letter-spacing)",
+  },
+  caption4Regular: {
+    fontFamily: "var(--umc-typography-caption-4-regular-font-family)",
+    fontSize: "var(--umc-typography-caption-4-regular-font-size)",
+    fontWeight: "var(--umc-typography-caption-4-regular-font-weight)",
+    lineHeight: "var(--umc-typography-caption-4-regular-line-height)",
+    letterSpacing: "var(--umc-typography-caption-4-regular-letter-spacing)",
   },
 } as const

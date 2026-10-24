@@ -6,13 +6,14 @@
 
 | 파일 | 출처 | 노드 또는 원래 이름 | 받은 날 |
 | --- | --- | --- | --- |
-| `mcp/get-variable-defs.2268-1706.json` | get_variable_defs | 2268:1706 | 2026-10-08 |
+| `mcp/get-variable-defs.2268-1706.json` | get_variable_defs | 2268:1706 | 2026-10-24 |
 | `mcp/get-variable-defs.2858-65987.json` | get_variable_defs | 2858:65987 | 2026-10-07 |
 | `mcp/get-variable-defs.2621-33487.json` | get_variable_defs | 2621:33487 | 2026-10-07 |
-| `mcp/get-variable-defs.2621-36220.json` | get_variable_defs | 2621:36220 | 2026-10-07 |
+| `mcp/get-variable-defs.2621-36220.json` | get_variable_defs | 2621:36220 | 2026-10-24 |
 | `mcp/get-variable-defs.3155-19976.json` | get_variable_defs | 3155:19976 | 2026-10-07 |
 | `mcp/get-variable-defs.3155-19501.json` | get_variable_defs | 3155:19501 | 2026-10-07 |
 | `mcp/get-variable-defs.2621-32882.json` | get_variable_defs | 2621:32882 | 2026-10-07 |
+| `mcp/get-variable-defs.2621-33341.json` | get_variable_defs | 2621:33341 | 2026-10-24 |
 | `export/color.mode-1.tokens.json` | Figma Variables Export modes (Color 컬렉션) | Mode 1.tokens.json | 2026-10-08 |
 | `export/token.mode-1.tokens.json` | Figma Variables Export modes (Token 컬렉션) | Mode 1.tokens 2.json | 2026-10-08 |
 
@@ -31,7 +32,7 @@
 4. `Display/3-Bold`가 Token 컬렉션에 없는 `Typography/Base/Fontfamily/Brand`, `Fontweight/Bold`를 참조합니다(다른 라이브러리 변수로 보입니다). `FontFamily`, `FontWeight`로 다시 연결해 주세요.
 5. Primitive 컬러 문서 프레임에 쓰인 `primitives/orange/*`, `Base/Grey/Grey 900`, `Grey 800`, `Medium/H1`(PingFang SC)은 Color 컬렉션 export에 없습니다. 다른 라이브러리 것인지, 정리 대상인지 알려 주세요.
 6. Violet, Purple, Pink, Cobalt, Blue, Brown 팔레트에는 50, 100, 500, 600 단계만 있습니다. 의도인가요?
-7. `Body/4-Semibold`(13px), `Label/2`(17px), `Caption/3`(11px)의 크기가 변수에 연결되어 있지 않습니다. 17px은 `FontSize` 변수가 없으니 추가가 필요합니다. 반대로 `FontSize/22px`, `32px`은 어떤 텍스트 스타일에도 쓰이지 않습니다.
+7. `Body/4-Semibold`(13px), `Label/2`(17px), `Caption/4`(11px)의 크기가 변수에 연결되어 있지 않습니다. 17px은 `FontSize` 변수가 없으니 추가가 필요합니다. 반대로 `FontSize/22px`, `32px`은 어떤 텍스트 스타일에도 쓰이지 않습니다.
 8. `Heading/Heading3-Semibold`(22px), `Mobile Web/Body/4-Regular`(행간 20px)는 폐기 대상인가요? 노드 2268:1706에 쓰인 텍스트 스타일이 전체 목록인지도 알려 주세요.
 9. Display 3 문서 표에는 자간이 -2%로 적혀 있지만 실제 스타일 `Display/3-Bold`는 -1.5%입니다. 어느 쪽이 맞나요?
 10. `Tag/Role/Challenger&Super-Admin`과 `Tag/Role/Product`는 Weak와 Medium이 같은 색입니다(Teal-100, TealGrey-100). 의도인가요?
@@ -138,9 +139,9 @@ primitive를 참조하지 않고 값을 직접 가진 semantic이다. 투명도�
 | `Body/4-Semibold` | 크기 13px가 변수에 연결되지 않았습니다 |
 | `Label/2-Semibold` | 크기 17px가 변수에 연결되지 않았습니다 |
 | `Label/2-Medium` | 크기 17px가 변수에 연결되지 않았습니다 |
-| `Caption/3-Medium` | 크기 11px가 변수에 연결되지 않았습니다 |
-| `Caption/3-Regular` | 크기 11px가 변수에 연결되지 않았습니다 |
-| `Caption/2-Bold` | 크기 12px가 변수에 연결되지 않았습니다 |
+| `Caption/4-Medium` | 크기 11px가 변수에 연결되지 않았습니다 |
+| `Caption/4-Regular` | 크기 11px가 변수에 연결되지 않았습니다 |
+| `Caption/3-Bold` | 크기 12px가 변수에 연결되지 않았습니다 |
 
 ## 스타일 원문 우선순위
 
@@ -149,10 +150,11 @@ primitive를 참조하지 않고 값을 직접 가진 semantic이다. 투명도�
 | 1 | `get-variable-defs.2268-1706.json` | Mobile.Web Typography | 텍스트 스타일 기준 원문. 같은 이름이면 이 정의가 이긴다 |
 | 2 | `get-variable-defs.2858-65987.json` | Web/Header | Drop/Neutral_3, Inner/Neutral_2, Title/3-Medium |
 | 3 | `get-variable-defs.2621-33487.json` | Toast | Drop/Neutral_1, Inner/Neutral_1 |
-| 4 | `get-variable-defs.2621-36220.json` | Tooltip | Caption/2-Bold |
+| 4 | `get-variable-defs.2621-36220.json` | Tooltip | Caption/3-Bold |
 | 5 | `get-variable-defs.3155-19976.json` | Dialog | Title/2-Semibold |
 | 6 | `get-variable-defs.3155-19501.json` | App/Top Navigation | Title/1-Semibold |
 | 7 | `get-variable-defs.2621-32882.json` | Option Button | Title/2-Medium, Drop/Neutral_2 |
+| 8 | `get-variable-defs.2621-33341.json` | Help Text | Caption/1-Regular |
 
 ## 그림자 effect 스타일
 

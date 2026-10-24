@@ -116,10 +116,10 @@ describe("index.ts", () => {
     expect(listed).toEqual(declarationNames)
   })
 
-  it("텍스트 스타일 유틸리티 48개를 내보낸다", () => {
+  it("텍스트 스타일 유틸리티 49개를 내보낸다", () => {
     expect([
       ...blockOf("textStyleUtilities").matchAll(/"(text-[a-z0-9-]+)"/g),
-    ]).toHaveLength(48)
+    ]).toHaveLength(49)
   })
 
   it("그림자 유틸리티 5개를 tailwind-merge 등록용으로 내보낸다", () => {
@@ -325,7 +325,7 @@ describe("Tailwind 어댑터", () => {
       return generated !== body
     })
 
-    expect(declared).toHaveLength(268)
+    expect(declared).toHaveLength(269)
     expect(mismatched.map(({ name }) => name)).toEqual([])
   })
 

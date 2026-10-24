@@ -5,11 +5,14 @@ import type { ComponentPropsWithRef, ReactNode } from "react"
 
 import { cx } from "../../internal/cx.ts"
 
+export type FieldCaptionSize = "md" | "lg"
+
 export type FieldOwnProps = {
   label?: ReactNode
   required?: boolean
   caption?: ReactNode
   captionColor?: "neutral" | "primary"
+  captionSize?: FieldCaptionSize
   invalid?: boolean
   errorMessage?: ReactNode
 }
@@ -31,6 +34,7 @@ export function Field({
   required,
   caption,
   captionColor = "neutral",
+  captionSize = "md",
   invalid,
   errorMessage,
   info,
@@ -67,6 +71,7 @@ export function Field({
           match={true}
           className="umc-field__caption"
           data-tone="error"
+          data-size={captionSize}
         >
           {errorMessage}
         </BaseUIField.Error>
@@ -74,6 +79,7 @@ export function Field({
         <BaseUIField.Description
           className="umc-field__caption"
           data-tone={invalid ? "error" : captionColor}
+          data-size={captionSize}
         >
           {caption}
         </BaseUIField.Description>

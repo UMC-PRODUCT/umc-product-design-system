@@ -2,9 +2,6 @@
   "component": "ChartTooltip",
   "figmaSection": "3032:92291",
   "page": "/components/chart/chart-tooltip/",
-  "figmaDiffers": {
-    "font-family": "피그마 항목 글자는 정적 Pretendard지만 같은 글꼴의 가변 버전인 브랜드 글꼴을 쓴다"
-  },
   "nodes": [
     {
       "specId": "chart-tooltip-single",
@@ -23,8 +20,8 @@
       "variant": "Show Caption=False, Value Display=Single",
       "target": ".umc-chart-tooltip__body",
       "expected": {
-        "row-gap": "2px",
-        "padding-top": "8px",
+        "row-gap": "8px",
+        "padding-top": "10px",
         "padding-right": "12px",
         "padding-bottom": "8px",
         "padding-left": "12px",
@@ -34,14 +31,23 @@
     },
     {
       "specId": "chart-tooltip-single",
+      "node": "2678:50663",
+      "variant": "Show Caption=False, Value Display=Single",
+      "target": ".umc-chart-tooltip__header",
+      "expected": {
+        "row-gap": "3px"
+      }
+    },
+    {
+      "specId": "chart-tooltip-single",
       "node": "2678:50664",
       "variant": "Show Caption=False, Value Display=Single",
       "target": ".umc-chart-tooltip__title",
       "expected": {
-        "color": "#9ca3a3",
+        "color": "#7e7f7f",
         "font-size": "11px",
-        "font-weight": "600",
-        "line-height": "16.5px"
+        "font-weight": "700",
+        "line-height": "14.3px"
       }
     },
     {
@@ -51,9 +57,10 @@
       "target": ".umc-chart-tooltip__summary-value",
       "expected": {
         "color": "#02746c",
-        "font-size": "11px",
+        "font-size": "12px",
         "font-weight": "700",
-        "line-height": "17.6px"
+        "line-height": "18px",
+        "letter-spacing": "-0.24px"
       }
     },
     {
@@ -63,10 +70,11 @@
       "target": ".umc-chart-tooltip__item",
       "expected": {
         "column-gap": "4px",
-        "color": "#404443",
-        "font-size": "11px",
+        "color": "#282a2a",
+        "font-size": "12px",
         "font-weight": "400",
-        "line-height": "17.6px"
+        "line-height": "18px",
+        "letter-spacing": "-0.24px"
       }
     },
     {
@@ -75,7 +83,7 @@
       "variant": "Show Caption=False, Value Display=Single",
       "target": ".umc-chart-tooltip__items",
       "expected": {
-        "row-gap": "2px"
+        "row-gap": "4px"
       }
     },
     {
@@ -104,7 +112,7 @@
       "variant": "Show Caption=False, Value Display=Comparison",
       "target": ".umc-chart-tooltip__header",
       "expected": {
-        "row-gap": "1px"
+        "row-gap": "3px"
       }
     },
     {
@@ -113,9 +121,11 @@
       "variant": "Show Caption=False, Value Display=Comparison",
       "target": ".umc-chart-tooltip__summary-reference",
       "expected": {
-        "color": "#9ca3a3",
+        "color": "#adadad",
+        "font-size": "12px",
         "font-weight": "500",
-        "letter-spacing": "-0.22px"
+        "line-height": "18px",
+        "letter-spacing": "-0.24px"
       }
     },
     {
@@ -151,7 +161,7 @@
       "variant": "Show Caption=False, Value Display=Comparison",
       "target": ".umc-chart-tooltip__reference",
       "expected": {
-        "color": "#9ca3a3"
+        "color": "#adadad"
       }
     },
     {
@@ -160,11 +170,11 @@
       "variant": "Show Caption=True, Value Display=Single",
       "target": ".umc-chart-tooltip__caption",
       "expected": {
-        "color": "#9ca3a3",
+        "color": "#adadad",
         "font-size": "11px",
         "font-weight": "500",
-        "line-height": "17.6px",
-        "letter-spacing": "-0.22px"
+        "line-height": "16.5px",
+        "letter-spacing": "0px"
       }
     }
   ]

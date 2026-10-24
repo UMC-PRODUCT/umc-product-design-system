@@ -78,6 +78,9 @@ export function TagStaticPreview() {
       <div data-spec-id="status-tag-warning">
         <StatusTag color="warning">경고</StatusTag>
       </div>
+      <div data-spec-id="status-tag-success status-tag-success-dot">
+        <StatusTag color="success">완료</StatusTag>
+      </div>
       <div data-spec-id="status-tag-error">
         <StatusTag color="error">오류</StatusTag>
       </div>
@@ -165,6 +168,7 @@ export function StatusTagAllVariants() {
             Default: "brand",
             Neutral: "neutral",
             Yellow: "warning",
+            Green: "success",
             Red: "error",
           } as const,
           variant,
