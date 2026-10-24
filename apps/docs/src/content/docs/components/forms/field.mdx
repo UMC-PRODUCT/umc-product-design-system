@@ -5,6 +5,7 @@ description: 레이블, 컨트롤, 도움말, 오류 메시지를 묶는 틀입�
 
 import {
   FieldAllVariants,
+  FieldCaptionSizes,
   FieldCaptionTones,
   FieldDefault,
   FieldWithInfo,
@@ -30,6 +31,12 @@ import { Field, FieldControl, InputBox } from "@umc-product/react"
 
 <FieldCaptionTones client:visible />
 
+## 도움말 크기
+
+도움말은 13px(`caption-2-regular`)이 기본입니다. `captionSize="lg"`는 피그마 `Help Text`의 `Size=14px`로 14px(`caption-1-regular`)입니다. 오류 메시지도 같은 크기를 따르고, `Field`를 쓰는 입력 컴포넌트도 모두 같은 prop을 받습니다.
+
+<FieldCaptionSizes client:visible />
+
 ## 정보 버튼
 
 `info`는 도움말 아래에 놓입니다. 피그마 인증번호 필드와 코드 입력 필드의 `Text Info Button` 자리입니다.
@@ -42,20 +49,21 @@ import { Field, FieldControl, InputBox } from "@umc-product/react"
 
 ## 모든 변형
 
-피그마 `Text Field/ Label` 6개와 `Help Text` 4개를 그렸습니다. 칸에 마우스를 올리면 코드가 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
+피그마 `Text Field/ Label` 6개와 `Help Text` 8개를 그렸습니다. 칸에 마우스를 올리면 코드가 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
 
 <FieldAllVariants client:visible />
 
 ## props
 
-| prop           | 타입                     | 기본값      | 설명                              |
-| -------------- | ------------------------ | ----------- | --------------------------------- |
-| `label`        | `ReactNode`              | 없음        | 레이블                            |
-| `required`     | `boolean`                | 없음        | 필수 표시 `*`                     |
-| `caption`      | `ReactNode`              | 없음        | 도움말                            |
-| `captionColor` | `"neutral" \| "primary"` | `"neutral"` | 도움말 색                         |
-| `invalid`      | `boolean`                | 없음        | 오류 상태                         |
-| `errorMessage` | `ReactNode`              | 없음        | 오류일 때 도움말 대신 보일 메시지 |
-| `info`         | `ReactNode`              | 없음        | 아래쪽 정보 버튼 자리             |
-| `disabled`     | `boolean`                | 없음        | 비활성 상태                       |
-| `nativeLabel`  | `boolean`                | `true`      | 버튼형 컨트롤이면 `false`         |
+| prop           | 타입                     | 기본값      | 설명                                  |
+| -------------- | ------------------------ | ----------- | ------------------------------------- |
+| `label`        | `ReactNode`              | 없음        | 레이블                                |
+| `required`     | `boolean`                | 없음        | 필수 표시 `*`                         |
+| `caption`      | `ReactNode`              | 없음        | 도움말                                |
+| `captionColor` | `"neutral" \| "primary"` | `"neutral"` | 도움말 색                             |
+| `captionSize`  | `"md" \| "lg"`           | `"md"`      | 도움말과 오류 메시지 크기(13px, 14px) |
+| `invalid`      | `boolean`                | 없음        | 오류 상태                             |
+| `errorMessage` | `ReactNode`              | 없음        | 오류일 때 도움말 대신 보일 메시지     |
+| `info`         | `ReactNode`              | 없음        | 아래쪽 정보 버튼 자리                 |
+| `disabled`     | `boolean`                | 없음        | 비활성 상태                           |
+| `nativeLabel`  | `boolean`                | `true`      | 버튼형 컨트롤이면 `false`             |

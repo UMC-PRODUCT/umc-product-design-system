@@ -27,6 +27,7 @@ export function VerificationCodeField({
   required,
   caption,
   captionColor,
+  captionSize,
   invalid,
   errorMessage,
   size = "lg",
@@ -53,6 +54,7 @@ export function VerificationCodeField({
       required={required}
       caption={caption}
       captionColor={captionColor}
+      captionSize={captionSize}
       invalid={invalid}
       errorMessage={errorMessage}
       info={info}

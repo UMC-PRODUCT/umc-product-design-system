@@ -55,6 +55,14 @@
     letter-spacing: var(--umc-typography-caption-2-regular-letter-spacing);
   }
 
+  .umc-field__caption[data-size="lg"] {
+    font-family: var(--umc-typography-caption-1-regular-font-family);
+    font-size: var(--umc-typography-caption-1-regular-font-size);
+    font-weight: var(--umc-typography-caption-1-regular-font-weight);
+    line-height: var(--umc-typography-caption-1-regular-line-height);
+    letter-spacing: var(--umc-typography-caption-1-regular-letter-spacing);
+  }
+
   .umc-field__caption[data-tone="primary"] {
     --umc-field-caption-color: var(--umc-color-text-success);
   }

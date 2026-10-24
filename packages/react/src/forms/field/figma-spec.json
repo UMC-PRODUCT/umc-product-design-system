@@ -42,7 +42,7 @@
     {
       "specId": "field-caption",
       "node": "2621:33343",
-      "variant": "Help Text, Type=Default",
+      "variant": "Help Text, Type=Default, Size=13px",
       "target": ".umc-field__caption",
       "expected": {
         "color": "#7e7f7f",
@@ -54,9 +54,23 @@
       }
     },
     {
+      "specId": "field-caption-lg",
+      "node": "5008:89956",
+      "variant": "Help Text, Type=Default, Size=14px",
+      "target": ".umc-field__caption",
+      "expected": {
+        "color": "#7e7f7f",
+        "font-size": "14px",
+        "font-weight": "400",
+        "line-height": "20.3px",
+        "letter-spacing": "0px",
+        "padding-left": "4px"
+      }
+    },
+    {
       "specId": "field-caption-primary",
       "node": "2621:33345",
-      "variant": "Help Text, Type=Primary",
+      "variant": "Help Text, Type=Primary, Size=13px",
       "target": ".umc-field__caption",
       "expected": {
         "color": "#06844c"
@@ -65,7 +79,7 @@
     {
       "specId": "field-caption-error",
       "node": "2621:33347",
-      "variant": "Help Text, Type=Error",
+      "variant": "Help Text, Type=Error, Size=13px",
       "target": ".umc-field__caption",
       "expected": {
         "color": "#dc3d3d"
@@ -83,7 +97,7 @@
     {
       "specId": "field-caption-disabled",
       "node": "2621:33349",
-      "variant": "Help Text, Type=Disabled",
+      "variant": "Help Text, Type=Disabled, Size=13px",
       "target": ".umc-field__caption",
       "expected": {
         "color": "#adadad"

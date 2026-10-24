@@ -9,6 +9,12 @@ describe("FieldProps 타입", () => {
     >()
   })
 
+  it("captionSize는 md 또는 lg만 받는다", () => {
+    expectTypeOf<FieldOwnProps["captionSize"]>().toEqualTypeOf<
+      "md" | "lg" | undefined
+    >()
+  })
+
   it("FieldProps는 disabled, className, children을 가진다", () => {
     expectTypeOf<FieldProps>().toHaveProperty("disabled")
     expectTypeOf<FieldProps>().toHaveProperty("className")

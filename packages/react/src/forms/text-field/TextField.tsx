@@ -34,6 +34,7 @@ export function TextField({
   required,
   caption,
   captionColor,
+  captionSize,
   invalid,
   errorMessage,
   size = "lg",
@@ -62,6 +63,7 @@ export function TextField({
       required={required}
       caption={caption}
       captionColor={captionColor}
+      captionSize={captionSize}
       invalid={invalid}
       errorMessage={errorMessage}
       disabled={disabled}

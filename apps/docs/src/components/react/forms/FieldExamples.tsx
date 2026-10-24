@@ -5,10 +5,11 @@ import {
   FieldControl,
   InputBox,
   TextInfoButton,
+  type FieldCaptionSize,
 } from "@umc-product/react"
 
 import { NotImplemented } from "../variants/VariantCells.tsx"
-import type { FigmaVariant } from "../variants/figma-variants.ts"
+import { lookup, type FigmaVariant } from "../variants/figma-variants.ts"
 import { VariantGrid } from "../variants/VariantGrid.tsx"
 
 function renderControl({
@@ -83,6 +84,27 @@ export function FieldCaptionTones() {
   )
 }
 
+export function FieldCaptionSizes() {
+  return (
+    <div className="umc-example umc-example-stack">
+      <div className="w-full max-w-[326px]">
+        <Field label="학교 이메일" caption="학교 도메인만 받습니다">
+          {renderControl({ placeholder: "umc@school.ac.kr" })}
+        </Field>
+      </div>
+      <div className="w-full max-w-[326px]" data-spec-id="field-caption-lg">
+        <Field
+          label="학교 이메일"
+          caption="학교 도메인만 받습니다"
+          captionSize="lg"
+        >
+          {renderControl({ placeholder: "umc@school.ac.kr" })}
+        </Field>
+      </div>
+    </div>
+  )
+}
+
 export function FieldWithInfo() {
   return (
     <div className="umc-example umc-example-stack">
@@ -117,12 +139,18 @@ function FieldLabelCell({ variant }: { variant: FigmaVariant }) {
   )
 }
 
+const FIGMA_CAPTION_SIZES: Readonly<Record<string, FieldCaptionSize>> = {
+  "13px": "md",
+  "14px": "lg",
+}
+
 function FieldCaptionCell({ variant }: { variant: FigmaVariant }) {
   const type = variant.props["Type"]
   return (
     <Field
       caption="도움말을 적어 주세요"
       captionColor={type === "Primary" ? "primary" : "neutral"}
+      captionSize={lookup(FIGMA_CAPTION_SIZES, variant, "Size")}
       invalid={type === "Error"}
       errorMessage={type === "Error" ? "오류 메시지를 적어 주세요" : undefined}
       disabled={type === "Disabled"}
@@ -145,7 +173,8 @@ export function FieldAllVariants() {
       <VariantGrid
         set="help-text"
         rows={["Type"]}
-        columns={[]}
+        columns={["Size"]}
+        order={{ Size: ["13px", "14px"] }}
         render={(variant) => <FieldCaptionCell variant={variant} />}
       />
     </>

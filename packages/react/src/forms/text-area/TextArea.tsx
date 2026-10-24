@@ -20,6 +20,7 @@ export function TextArea({
   required,
   caption,
   captionColor,
+  captionSize,
   invalid,
   errorMessage,
   disabled,
@@ -48,6 +49,7 @@ export function TextArea({
       required={required}
       caption={caption}
       captionColor={captionColor}
+      captionSize={captionSize}
       invalid={invalid}
       errorMessage={errorMessage}
       disabled={disabled}

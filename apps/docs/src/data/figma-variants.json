@@ -579,13 +579,18 @@
       "node": "2621:33341",
       "name": "Help Text",
       "axes": {
-        "Type": ["Default", "Primary", "Error", "Disabled"]
+        "Type": ["Default", "Primary", "Error", "Disabled"],
+        "Size": ["13px", "14px"]
       },
       "variants": [
-        "Type=Default",
-        "Type=Primary",
-        "Type=Error",
-        "Type=Disabled"
+        "Type=Default, Size=13px",
+        "Type=Default, Size=14px",
+        "Type=Primary, Size=13px",
+        "Type=Primary, Size=14px",
+        "Type=Error, Size=13px",
+        "Type=Error, Size=14px",
+        "Type=Disabled, Size=13px",
+        "Type=Disabled, Size=14px"
       ]
     },
     "input-accessory": {

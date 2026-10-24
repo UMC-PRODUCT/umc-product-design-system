@@ -42,6 +42,7 @@ export function Select<V extends string = string>({
   required,
   caption,
   captionColor,
+  captionSize,
   invalid,
   errorMessage,
   options,
@@ -73,6 +74,7 @@ export function Select<V extends string = string>({
       required={required}
       caption={caption}
       captionColor={captionColor}
+      captionSize={captionSize}
       invalid={invalid}
       errorMessage={errorMessage}
       disabled={disabled}

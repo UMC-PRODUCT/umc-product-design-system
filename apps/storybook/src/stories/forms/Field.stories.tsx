@@ -24,6 +24,7 @@ const meta = {
     label: "기수",
     caption: "현재 활동 중인 기수를 입력하세요",
     captionColor: "neutral",
+    captionSize: "md",
     required: false,
     invalid: false,
     disabled: false,
