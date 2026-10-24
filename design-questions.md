@@ -115,7 +115,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 9. Check Box의 Error 변형 일부가 이름은 `Disabled=True`인데 그림은 활성 오류 상태입니다(`Check Box` 네 개, `Control`의 `Color=Error, Size=Lg, Selected=True`). 코드는 그림을 따랐습니다. 이름을 `Disabled=False`로 고칠 수 있나요?
 10. Check Box 비활성은 Lg가 `Color=Brand`, Md가 `Color=Neutral` 이름으로만 있고 모양은 같습니다. 비활성에는 색 구분이 없다고 보고 `disabled`가 색과 오류보다 앞서게 했습니다.
 11. Check Box 오류 선택 채움은 `Red-400`(`#ed6464`), 오류 테두리는 `Red-500`(`#dc3d3d`)입니다. 단계가 다른 것이 의도인지 알려 주세요. `Red-400`에 맞는 semantic 토큰이 없어 primitive를 씁니다.
-12. Check Box 비활성 체크 선이 2기 변수 `WarmGray-50`(`#fcfbfa`)입니다. 3기 `teal-grey-50`(`#fbfcfc`)으로 옮겼습니다.
+12. (해결 2026-10-24) Check Box 비활성 체크 선을 피그마도 3기 `TealGrey-50`(`#fbfcfc`)으로 바꿨습니다. 코드와 같은 값이고 Md와 Lg 모두 같습니다.
 13. 체크 그림이 세 가지입니다. Check Box는 Md 20px(선 1.8)과 Lg 24px(선 2)을 따로 그렸고, Check Button은 옛 16px 체크를 24px로 키운 그림(선 2.4)입니다. 셋 다 라이브러리 `Icon/Check`와 다릅니다. 한 아이콘으로 맞출지 알려 주세요.
 14. Check Button에 비활성과 Hover 모양이 없습니다. 지금은 비활성이어도 색이 그대로라 활성과 구분되지 않습니다(커서만 바뀜). 비활성 색을 알려 주세요.
 15. Switch 트랙 색 두 개가 변수에 연결되어 있지 않습니다. 꺼짐은 내보낸 값이 `#e2e4e3`이고 켜짐은 `#39a9a1`입니다. 코드는 꺼짐에 가장 가까운 `fill-neutral-strong-200`(`#e2e3e3`), 켜짐에 값이 같은 `fill-primary-inverse-weak-400`(`#39a9a1`)을 씁니다.
