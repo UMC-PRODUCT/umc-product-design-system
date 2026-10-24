@@ -110,27 +110,27 @@ develop → main PR을 열고 병합합니다. 병합하면 GitHub Actions 워�
 
 문서 사이트와 Storybook을 AWS Amplify로 옮기는 중입니다. Amplify 빌드가 안정적으로 도는 것을 확인할 때까지 GitHub Pages 배포는 그대로 둡니다.
 
-Amplify 앱 하나가 문서와 Storybook을 함께 배포합니다.
+폴리레포로 나뉜 웹 저장소마다 Amplify 앱을 하나씩 두고 공용 도메인 `university.neordinary.com` 아래 자기 서브도메인을 씁니다. 앱 사이에 리버스 프록시는 두지 않습니다([결정 11](./decisions.md#11-웹-앱마다-amplify-앱과-서브도메인을-따로-둔다)). 이 저장소의 앱은 문서와 Storybook을 함께 배포하고 주소는 브랜치마다 다릅니다.
 
-| 사이트    | 주소                                                             |
-| --------- | ---------------------------------------------------------------- |
-| 문서      | `https://www.university.neordinary.com/design-system/`           |
-| Storybook | `https://www.university.neordinary.com/design-system/storybook/` |
+| 브랜치    | 문서                                            | Storybook                                                 | 접근     |
+| --------- | ----------------------------------------------- | --------------------------------------------------------- | -------- |
+| `main`    | `https://design.university.neordinary.com/`     | `https://design.university.neordinary.com/storybook/`     | 공개     |
+| `develop` | `https://dev.design.university.neordinary.com/` | `https://dev.design.university.neordinary.com/storybook/` | 비밀번호 |
 
-Amplify의 사용자 지정 도메인은 앱 하나에만 붙습니다. 앱 두 개를 한 도메인의 두 경로로 나누려면 앱 사이에 프록시가 필요한데, AWS re:Post에는 Amplify 앱 사이의 rewrite를 지원하지 않는다는 답변이 있습니다. 그래서 Storybook을 별도 앱으로 두지 않고 문서 앱이 함께 빌드합니다.
+Storybook은 별도 앱으로 두지 않고 문서 앱이 함께 빌드합니다. 그래야 두 사이트가 서로를 가리키는 주소를 한 빌드에서 정하고 Storybook 빌드가 깨졌을 때 문서 배포도 멈출 수 있습니다.
 
-저장소 루트의 `amplify.yml`은 Node 22에 pnpm 10.28.0을 설치하고 `pnpm install --frozen-lockfile` 뒤 문서 앱의 `build:amplify`(`apps/docs/scripts/build-amplify.mjs`)를 돌립니다. 루트 `package.json`의 `packageManager`를 올리면 `amplify.yml`의 pnpm 버전도 같이 올립니다.
+저장소 루트의 `amplify.yml`은 Node 22에 pnpm 10.28.0을 설치하고 `pnpm install --frozen-lockfile` 뒤 문서 앱의 `build:amplify`(`apps/docs/scripts/build-amplify.mjs`)를 돌립니다. 두 브랜치 모두 같은 `amplify.yml`로 빌드합니다. 루트 `package.json`의 `packageManager`를 올리면 `amplify.yml`의 pnpm 버전도 같이 올립니다.
 
 `build:amplify`는 아래 순서로 결과물을 만듭니다.
 
 1. 문서를 빌드하고 내부 링크를 검사합니다. 깨진 링크가 있으면 여기서 멈춥니다.
 2. Storybook을 빌드합니다. Storybook 빌드가 깨지면 문서도 배포하지 않습니다.
-3. 문서 결과물은 `apps/docs/amplify-dist/<기준 경로>/`에, Storybook 결과물은 `apps/docs/amplify-dist/<기준 경로>/storybook/`에 모읍니다. Amplify는 `amplify-dist`를 그대로 올립니다.
+3. 문서 결과물은 `apps/docs/amplify-dist/<기준 경로>/`에, Storybook 결과물은 그 아래 `storybook/`에 모읍니다. 기준 경로가 `/`이면 `amplify-dist/` 바로 아래입니다. Amplify는 `amplify-dist`를 그대로 올립니다.
 
-두 사이트가 서로를 가리키는 주소(`PUBLIC_STORYBOOK_URL`, `STORYBOOK_DOCS_URL`)는 `build:amplify`가 `DOCS_SITE_URL`과 `DOCS_BASE_PATH`로 만듭니다. 로컬에서 같은 결과물을 만들려면 두 변수를 넣고 돌립니다.
+두 사이트가 서로를 가리키는 주소(`PUBLIC_STORYBOOK_URL`, `STORYBOOK_DOCS_URL`)는 `build:amplify`가 `DOCS_SITE_URL`과 `DOCS_BASE_PATH`로 만듭니다. canonical과 사이트맵 주소도 같은 두 변수에서 나옵니다. 로컬에서 같은 결과물을 만들려면 두 변수를 넣고 돌립니다.
 
 ```bash
-DOCS_SITE_URL=https://www.university.neordinary.com DOCS_BASE_PATH=/design-system pnpm --filter @umc-product/docs build:amplify
+DOCS_SITE_URL=https://design.university.neordinary.com DOCS_BASE_PATH=/ pnpm --filter @umc-product/docs build:amplify
 ```
 
 ### 콘솔 설정
@@ -138,36 +138,74 @@ DOCS_SITE_URL=https://www.university.neordinary.com DOCS_BASE_PATH=/design-syste
 1. Amplify 콘솔에서 새 앱을 만들고 GitHub의 `UMC-PRODUCT/umc-product-design-system` 저장소와 `main` 브랜치를 고릅니다. 처음 연결할 때 조직에 AWS Amplify GitHub 앱을 설치하고 이 저장소 접근을 허락해야 합니다.
 2. "My app is a monorepo"를 켜고 앱 루트에 `apps/docs`를 적습니다. 콘솔이 `AMPLIFY_MONOREPO_APP_ROOT` 환경 변수를 같은 값으로 넣습니다. 이 값은 `amplify.yml`의 `appRoot`와 같아야 합니다.
 3. 빌드 설정은 저장소의 `amplify.yml`을 그대로 씁니다. 저장소에 `amplify.yml`이 있으면 콘솔의 빌드 설정보다 우선합니다.
-4. 환경 변수 두 개를 넣고 배포합니다. 하나라도 없으면 `build:amplify`가 처음에 멈춥니다.
+4. Hosting → Environment variables에 변수 두 개를 넣습니다. 하나라도 없으면 `build:amplify`가 처음에 멈춥니다. `develop`은 `DOCS_SITE_URL`만 다르니 그 변수의 Actions → Add variable override에서 `develop` 값을 따로 정합니다.
 
-   | 변수             | 값                                      |
-   | ---------------- | --------------------------------------- |
-   | `DOCS_BASE_PATH` | `/design-system`                        |
-   | `DOCS_SITE_URL`  | `https://www.university.neordinary.com` |
+   | 변수             | 모든 브랜치                                | `develop` 재정의                               |
+   | ---------------- | ------------------------------------------ | ---------------------------------------------- |
+   | `DOCS_BASE_PATH` | `/`                                        | 없음                                           |
+   | `DOCS_SITE_URL`  | `https://design.university.neordinary.com` | `https://dev.design.university.neordinary.com` |
 
-5. Hosting → Custom domains에서 `www.university.neordinary.com`을 연결합니다.
-6. Hosting → Rewrites and redirects → Manage redirects의 JSON 편집기를 아래 규칙으로 바꿉니다. 이 규칙은 `amplify.yml`로 정할 수 없습니다.
+5. `main`에 이어 `develop` 브랜치도 연결합니다. 앱 루트는 `apps/docs` 그대로이며 push할 때마다 자동으로 빌드합니다.
+6. Hosting → Custom domains → Add domain에 `design.university.neordinary.com`을 적고 서브도메인은 아래 둘만 남깁니다. 콘솔이 기본으로 넣는 `www`는 지웁니다.
+
+   | 주소                                   | 브랜치    |
+   | -------------------------------------- | --------- |
+   | `design.university.neordinary.com`     | `main`    |
+   | `dev.design.university.neordinary.com` | `develop` |
+
+   `university.neordinary.com`은 Route 53 호스팅 영역입니다(2026-10-24 확인). 영역이 같은 AWS 계정에 있으면 Amplify가 인증서 검증 레코드와 서브도메인 레코드를 알아서 만듭니다. 콘솔이 영역을 찾지 못하면 화면에 나온 레코드(검증용 CNAME 하나, 서브도메인 CNAME 둘)를 그 영역에 손으로 넣습니다. 인증서 상태가 Available이 되면 연결이 끝납니다.
+
+7. Hosting → Access control → Manage access에서 "Manage access for all branches"를 끄고 `develop`만 Restricted로 바꿔 사용자 이름과 비밀번호를 정합니다. `main`은 공개로 둡니다. 비밀번호는 develop의 문서와 Storybook에 함께 걸립니다.
+8. Hosting → Rewrites and redirects → Manage redirects의 JSON 편집기를 아래 규칙으로 바꿉니다. 이 규칙은 `amplify.yml`로 정할 수 없고 모든 브랜치에 똑같이 적용됩니다.
 
    ```json
    [
      {
-       "source": "/",
-       "status": "302",
-       "target": "/design-system/",
+       "source": "/design-system/<*>",
+       "status": "301",
+       "target": "https://design.university.neordinary.com/<*>",
        "condition": null
      },
      {
        "source": "/<*>",
        "status": "404-200",
-       "target": "/design-system/404.html",
+       "target": "/404.html",
        "condition": null
      }
    ]
    ```
 
-   - 첫 규칙은 도메인 루트를 문서로 보냅니다. 나중에 도메인 루트를 다른 서비스가 쓰면 브라우저에 남은 영구 이동(301)이 방해하므로 임시 이동(302)으로 둡니다.
-   - 둘째 규칙은 없는 주소에서 주소를 바꾸지 않고 문서의 404 페이지를 404 상태로 보여 줍니다. `"404-200"`은 Amplify API의 404 rewrite이고, 이름과 달리 응답 상태는 404입니다(2026-10-18 확인). AWS 가이드 예시의 `"404"`는 404 redirect라서, 없는 주소를 `/design-system/404.html`로 302 이동시킵니다.
+   - 첫 규칙은 예전 주소(`/design-system/…`)를 새 도메인의 같은 페이지로 영구 이동시킵니다. 도메인으로 시작하는 출발지(`https://www…`)에는 경로를 붙일 수 없어서 출발지를 경로만으로 적습니다. 도메인 뒤에 경로를 붙이면 Amplify가 오류 없이 그 규칙을 무시합니다.
+   - 둘째 규칙은 없는 주소에서 주소를 바꾸지 않고 문서의 404 페이지를 404 상태로 보여 줍니다. `"404-200"`은 Amplify API의 404 rewrite이고, 이름과 달리 응답 상태는 404입니다(2026-10-18 확인). AWS 가이드 예시의 `"404"`는 404 redirect라서 없는 주소를 `/404.html`로 302 이동시킵니다.
 
-기준 경로를 바꿀 때는 `DOCS_BASE_PATH`와 위 JSON의 `/design-system`을 함께 고칩니다. 환경 변수 없이 빌드하는 `pnpm docs:build`와 `docs.yml`은 GitHub Pages 경로(`/umc-product-design-system`)를 그대로 씁니다.
+기준 경로를 바꿀 때는 `DOCS_BASE_PATH`와 위 JSON의 404 대상을 함께 고칩니다. 환경 변수 없이 빌드하는 `pnpm docs:build`와 `docs.yml`은 GitHub Pages 경로(`/umc-product-design-system`)를 그대로 씁니다.
 
-도메인 루트를 다른 서비스가 쓰게 되면 앱 두 개가 한 도메인을 경로로 나눠 써야 합니다. 이 경우 앞단에 CloudFront를 두고 `/design-system/*`만 이 앱의 기본 주소(`https://main.<앱 ID>.amplifyapp.com`)로 보냅니다. 이 앱은 기본 주소에서도 `/design-system/` 아래로 서빙하므로 경로를 바꾸지 않고 넘깁니다.
+### www에서 옮기기
+
+이 앱은 지금까지 문서와 Storybook을 `www.university.neordinary.com`의 `/design-system/` 아래에 올렸습니다. 서비스 앱이 도메인 루트와 www를 넘겨받기 전에 아래 순서로 옮깁니다.
+
+1. 콘솔 설정 6번대로 새 도메인을 더합니다. www 연결은 아직 남겨 둡니다.
+2. 4번 환경 변수와 8번 리디렉션을 함께 바꾸고 `main`을 다시 배포합니다. 변수만 바꾸고 예전 규칙(`/` → `/design-system/`)을 남기면 루트로 들어온 요청이 이제 없는 경로로 이동해 404가 납니다. 이 기간에는 www를 새 도메인으로 보내는 임시 규칙을 8번의 첫 규칙 바로 뒤에 둡니다. 서비스 앱이 www를 넘겨받은 뒤에도 브라우저에 영구 이동이 남지 않도록 상태는 302로 합니다.
+
+   ```json
+   {
+     "source": "https://www.university.neordinary.com",
+     "status": "302",
+     "target": "https://design.university.neordinary.com",
+     "condition": null
+   }
+   ```
+
+3. 5번과 7번대로 `develop`을 연결해 배포한 뒤 비밀번호 창이 뜨는지 봅니다.
+4. 아래 명령으로 확인합니다. 차례로 200, 200, `https://design.university.neordinary.com/getting-started/installation/`, 401이 나와야 합니다.
+
+   ```bash
+   curl -sI https://design.university.neordinary.com/ | head -1
+   curl -sI https://design.university.neordinary.com/storybook/ | head -1
+   curl -sI https://www.university.neordinary.com/design-system/getting-started/installation/ | grep -i location
+   curl -sI https://dev.design.university.neordinary.com/ | head -1
+   ```
+
+5. 서비스 앱이 도메인 루트와 www를 쓸 준비가 되면 이 앱의 Custom domains에서 `university.neordinary.com` 연결을 지우고 2번의 임시 규칙을 뺍니다. 그다음 서비스 앱이 `university.neordinary.com`을 연결합니다. 예전 `/design-system/` 링크를 살리려면 서비스 앱에도 8번의 첫 규칙과 같은 `/design-system/<*>` 301 규칙을 둡니다.
+
+re:Post에는 두 앱이 루트 도메인 하나를 같은 이름의 도메인 연결로 나눠 가지려 하자 콘솔이 도메인 전체를 한 앱에 묶으려 해서 AWS CLI로만 나눌 수 있었던 사례가 있습니다. 그래서 루트 도메인은 서비스 앱만 연결합니다. 다른 앱은 이 앱처럼 자기 서브도메인만 Add domain으로 따로 연결합니다.
