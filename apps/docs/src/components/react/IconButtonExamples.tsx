@@ -83,7 +83,7 @@ export function IconButtonColors() {
   )
 }
 
-const SIZES: readonly IconButtonSize[] = ["md", "lg"]
+const SIZES: readonly IconButtonSize[] = ["sm", "md", "lg"]
 
 export function IconButtonSizes() {
   return (
@@ -134,6 +134,7 @@ const FIGMA_STYLES: Readonly<Record<string, IconButtonVariant>> = {
 }
 
 const FIGMA_SIZES: Readonly<Record<string, IconButtonSize>> = {
+  Sm: "sm",
   Md: "md",
   Lg: "lg",
 }
@@ -161,7 +162,7 @@ export function IconButtonAllVariants() {
       rows={["Color"]}
       columns={["Style", "State"]}
       order={{
-        Size: ["Md", "Lg"],
+        Size: ["Sm", "Md", "Lg"],
         Color: ["Primary", "White", "Neutral", "Error"],
         Style: ["Weak", "Fill"],
         State: ["Default", "Hover&Pressed"],

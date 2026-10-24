@@ -24,6 +24,12 @@
     -webkit-tap-highlight-color: transparent;
   }
 
+  .umc-icon-button[data-size="sm"] {
+    --umc-icon-button-size: 24px;
+    --umc-icon-button-radius: var(--umc-radius-6);
+    --umc-icon-button-icon-size: 20px;
+  }
+
   .umc-icon-button[data-size="md"] {
     --umc-icon-button-size: 26px;
     --umc-icon-button-radius: var(--umc-radius-8);

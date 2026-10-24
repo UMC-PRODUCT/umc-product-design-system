@@ -4,6 +4,29 @@
   "page": "/components/actions/icon-button/",
   "nodes": [
     {
+      "specId": "icon-button-size-sm",
+      "node": "4787:69406",
+      "variant": "State=Default, Color=Primary, Style=Weak, Size=Sm",
+      "expected": {
+        "width": "24px",
+        "height": "24px",
+        "border-top-left-radius": "6px"
+      },
+      "figmaDiffers": {
+        "padding-left": "피그마는 좌우 여백 8px을 두지만 여백과 아이콘(20px)을 더한 폭이 칸(24px)보다 넓어 여백이 보이지 않는다. 코드는 여백 없이 아이콘을 가운데에 둔다"
+      }
+    },
+    {
+      "specId": "icon-button-size-sm",
+      "node": "4787:69406",
+      "variant": "State=Default, Color=Primary, Style=Weak, Size=Sm",
+      "target": ".umc-icon-button__icon",
+      "expected": {
+        "width": "20px",
+        "height": "20px"
+      }
+    },
+    {
       "specId": "icon-button-size-md",
       "node": "4626:80550",
       "variant": "State=Default, Color=Primary, Style=Weak, Size=Md",

@@ -87,7 +87,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 4. Md 모서리 8px은 변수에 연결되어 있지 않습니다(Lg는 `R Button 10`). 코드는 `radius-8`을 씁니다.
 5. Primary Weak 아이콘은 Neutral Weak와 같은 #3F4141입니다. 청록 아이콘을 쓰지 않은 것이 의도인지 알려 주세요.
 6. 색 이름이 Button은 `Red`, Icon Button은 `Error`입니다. 코드는 피그마대로 `error`를 씁니다.
-7. Md(26px)는 터치 화면 권장 크기(44px)보다 작은데, 코드는 누르는 영역을 넓히지 않았습니다. 터치 화면에서 쓸 때의 기준을 알려 주세요.
+7. Sm(24px)과 Md(26px)는 터치 화면 권장 크기(44px)보다 작은데, 코드는 누르는 영역을 넓히지 않았습니다. 터치 화면에서 쓸 때의 기준을 알려 주세요.
 8. 섹션 설명 "일반 Button 컴포넌트의 Icon Only 버튼보다 작고 CTA 성격이 약한 성격의 버튼이에요"가 Pagination 섹션에도 똑같이 들어가 있습니다.
 
 ## Pagination
