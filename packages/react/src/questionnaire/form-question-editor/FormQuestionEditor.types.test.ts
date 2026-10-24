@@ -22,6 +22,18 @@ describe("FormQuestionEditorProps 타입", () => {
     >().toEqualTypeOf<((enabled: boolean) => void) | undefined>()
   })
 
+  it("끄는 중 여부는 boolean으로 받는다", () => {
+    expectTypeOf<FormQuestionEditorProps["dragging"]>().toEqualTypeOf<
+      boolean | undefined
+    >()
+  })
+
+  it("끄는 동안 남는 자리 표시 여부는 boolean으로 받는다", () => {
+    expectTypeOf<FormQuestionEditorProps["dragPlaceholder"]>().toEqualTypeOf<
+      boolean | undefined
+    >()
+  })
+
   it("질문 본문은 꼭 받는다", () => {
     expectTypeOf<
       FormQuestionEditorProps["children"]

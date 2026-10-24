@@ -18,6 +18,8 @@ export type FormQuestionEditorProps = Omit<
   "children"
 > & {
   active?: boolean
+  dragging?: boolean
+  dragPlaceholder?: boolean
   disabled?: boolean
   required?: boolean
   onRequiredChange?: (required: boolean) => void
@@ -59,6 +61,8 @@ function DragHandleGlyph() {
 
 export function FormQuestionEditor({
   active = false,
+  dragging = false,
+  dragPlaceholder = false,
   disabled = false,
   required = false,
   onRequiredChange,
@@ -74,7 +78,7 @@ export function FormQuestionEditor({
   children,
   ...props
 }: FormQuestionEditorProps) {
-  const showsTools = active && !disabled
+  const showsTools = active && !disabled && !dragging && !dragPlaceholder
   const draggable = dragHandleProps !== undefined && !disabled
 
   return (
@@ -82,6 +86,8 @@ export function FormQuestionEditor({
       {...props}
       className={cx("umc-form-question-editor", className)}
       data-active={showsTools ? "" : undefined}
+      data-dragging={dragging ? "" : undefined}
+      data-drag-placeholder={dragPlaceholder ? "" : undefined}
       data-disabled={disabled ? "" : undefined}
     >
       <div className="umc-form-question-editor__card">

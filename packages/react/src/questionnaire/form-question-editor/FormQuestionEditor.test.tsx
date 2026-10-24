@@ -50,6 +50,66 @@ describe("FormQuestionEditor", () => {
     expect(editorOf()).toHaveAttribute("data-active", "")
   })
 
+  it("끄는 중이면 활성이어도 필수 항목, 삭제, 툴바를 숨기고 data-dragging을 단다", () => {
+    render(
+      <FormQuestionEditor
+        active
+        dragging
+        onRequiredChange={vi.fn()}
+        onDelete={vi.fn()}
+        toolbar={<div>툴바</div>}
+        dragHandleProps={{}}
+      >
+        <FormEditableQuestion>
+          <span>답 미리보기</span>
+        </FormEditableQuestion>
+      </FormQuestionEditor>,
+    )
+    expect(screen.queryByRole("checkbox")).toBeNull()
+    expect(screen.queryByRole("button", { name: "질문 삭제" })).toBeNull()
+    expect(screen.queryByText("툴바")).toBeNull()
+    expect(
+      screen.getByRole("button", { name: "질문 순서 바꾸기" }),
+    ).toBeVisible()
+    expect(editorOf()).toHaveAttribute("data-dragging", "")
+    expect(editorOf()).not.toHaveAttribute("data-active")
+  })
+
+  it("자리 표시이면 활성이어도 필수 항목, 삭제, 툴바를 숨기고 data-drag-placeholder를 단다", () => {
+    render(
+      <FormQuestionEditor
+        active
+        dragPlaceholder
+        onRequiredChange={vi.fn()}
+        onDelete={vi.fn()}
+        toolbar={<div>툴바</div>}
+        dragHandleProps={{}}
+      >
+        <FormEditableQuestion>
+          <span>답 미리보기</span>
+        </FormEditableQuestion>
+      </FormQuestionEditor>,
+    )
+    expect(screen.queryByRole("checkbox")).toBeNull()
+    expect(screen.queryByRole("button", { name: "질문 삭제" })).toBeNull()
+    expect(screen.queryByText("툴바")).toBeNull()
+    expect(editorOf()).toHaveAttribute("data-drag-placeholder", "")
+    expect(editorOf()).not.toHaveAttribute("data-active")
+  })
+
+  it("자리 표시여도 키보드로 끄는 동안 포커스가 머물 손잡이를 남긴다", () => {
+    render(
+      <FormQuestionEditor dragPlaceholder dragHandleProps={{}}>
+        <FormEditableQuestion>
+          <span>답 미리보기</span>
+        </FormEditableQuestion>
+      </FormQuestionEditor>,
+    )
+    expect(
+      screen.getByRole("button", { name: "질문 순서 바꾸기" }),
+    ).toBeInTheDocument()
+  })
+
   it("필수 항목 체크와 제목의 * 표시가 같은 값을 따른다", async () => {
     const user = userEvent.setup()
     const onRequiredChange = vi.fn()

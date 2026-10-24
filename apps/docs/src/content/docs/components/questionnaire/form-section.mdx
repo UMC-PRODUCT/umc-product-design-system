@@ -7,6 +7,8 @@ import {
   FormQuestionSectionAllVariants,
   FormSectionControlAllVariants,
   FormSectionDefault,
+  FormSectionEmptyStates,
+  FormSectionSortable,
 } from "../../../../components/react/questionnaire/FormSectionExamples.tsx"
 
 피그마 `Form/Question Section`과 `.primitive/Form/Section Control`을 구현했습니다. `variant="static"`은 늘 쓰는 묶음이라 탭 모양 제목만 있습니다. `variant="toggle"`은 "섹션 사용" 스위치로 묶음을 켜고 끕니다. 묶음 안에는 [FormQuestionEditor](../form-question-editor/)와 [FormQuestionToolbar](../form-question-toolbar/)를 넣습니다.
@@ -34,6 +36,83 @@ import { FormSection } from "@umc-product/react"
 - 끈 섹션의 질문을 저장할지, 응답 화면에서 뺄지는 앱이 정합니다.
 - 스위치는 섹션 제목을 설명으로 읽습니다. 섹션이 여럿이어도 어느 섹션의 스위치인지 들을 수 있습니다.
 
+## 질문 옮기기
+
+질문은 손잡이를 잡아 한 섹션 안에서 순서를 바꾸거나 다른 섹션으로 옮깁니다. 아래 예시는 @dnd-kit으로 붙였습니다. @dnd-kit은 디자인 시스템 패키지에 들어 있지 않으니 앱에서 설치합니다. Web 섹션은 꺼져 있어 질문을 넣을 수 없고, Design 섹션은 비어 있습니다.
+
+<FormSectionSortable client:visible />
+
+- 끄는 동안 목록에 남은 원래 질문은 [`dragPlaceholder`](../form-question-editor/#순서-바꾸기)로 점선 상자가 되고, 놓일 자리로 따라 움직입니다. 손을 따라다니는 카드는 `DragOverlay` 안에 `dragging`으로 그립니다.
+- 다른 섹션 위로 가면 `onDragOver`에서 질문을 그 섹션 목록으로 옮깁니다. 그러면 점선 상자도 그 섹션 안에 나타납니다. 섹션 전체가 아니라 질문과 빈 섹션 안내만 놓을 자리로 등록해야 섹션 머리 근처에서 엉뚱한 자리로 가지 않습니다.
+- 놓을 자리는 포인터 아래에서 먼저 고르고(`pointerWithin`), 포인터 아래에 자리가 없거나 키보드로 옮길 때는 `closestCorners`로 고릅니다. 손잡이가 카드 위쪽에 있어 카드가 포인터 아래로 길게 늘어지기 때문에, 카드 모서리로만 고르면 포인터보다 한 칸 아래 자리가 골립니다.
+- 섹션 사이로 옮기면 섹션 높이가 바뀌므로 `measuring`을 `MeasuringStrategy.Always`로 두어 놓을 자리의 위치를 매번 다시 잽니다.
+- 꺼진 섹션으로는 옮길 수 없습니다. 꺼진 섹션의 질문과 빈 섹션 안내를 `disabled`로 등록해 놓을 자리에서 빼고, 그 섹션의 질문은 끌 수도 없게 합니다. 꺼진 섹션 위에서 놓으면 점선 상자가 보이던 가장 가까운 자리로 갑니다.
+- 번호는 끄는 동안의 화면 순서로 매깁니다. 카드는 `useSortable`의 `newIndex`, 손을 따라다니는 카드는 가리키는 자리의 순서를 씁니다.
+- 키보드로는 손잡이에서 스페이스바나 엔터 키로 들고, 위아래 화살표 키로 옮긴 뒤 다시 눌러 놓습니다. 질문이 다른 섹션으로 넘어가면 카드가 새로 그려져 포커스가 풀리니, 끄는 중에 새로 그려진 카드는 손잡이에 포커스를 다시 줍니다.
+- Esc 키를 누르면 처음 자리로 돌아가야 합니다. `onDragOver`에서 목록을 바꾸므로, `onDragStart`에서 목록을 저장해 두었다가 `onDragCancel`에서 되돌립니다.
+- 화면 낭독기 안내는 `DndContext`의 `accessibility`에 한국어로 넘깁니다. 넘기지 않으면 영어로 읽습니다. 섹션을 넘는 순간에는 몇 번째 자리인지 아직 정해지지 않았으니 섹션 이름만 읽습니다.
+- 사용자가 움직임 줄이기를 켰으면 `DragOverlay`의 `dropAnimation`과 `useSortable`의 `transition`을 `null`로 둡니다.
+
+```tsx
+import {
+  DndContext,
+  DragOverlay,
+  MeasuringStrategy,
+  closestCorners,
+  pointerWithin,
+  useDroppable,
+  type CollisionDetection,
+} from "@dnd-kit/core"
+import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable"
+import { FormSection, FormSectionEmpty } from "@umc-product/react"
+
+const detectCollision: CollisionDetection = (args) => {
+  const underPointer = pointerWithin(args)
+  return underPointer.length > 0 ? underPointer : closestCorners(args)
+}
+
+function EmptyDropZone({ sectionId, enabled, dragging }: EmptyDropZoneProps) {
+  const droppable = useDroppable({ id: sectionId, disabled: !enabled })
+  return (
+    <FormSectionEmpty
+      ref={droppable.setNodeRef}
+      dropTarget={dragging && enabled}
+    />
+  )
+}
+
+<DndContext
+  collisionDetection={detectCollision}
+  measuring={{ droppable: { strategy: MeasuringStrategy.Always } }}
+  accessibility={{ announcements, screenReaderInstructions }}
+  onDragStart={saveQuestions}
+  onDragOver={moveToOtherSection}
+  onDragEnd={reorderInSection}
+  onDragCancel={restoreQuestions}
+>
+  {sections.map((section) => (
+    <FormSection key={section.id} variant="toggle" title={section.title} enabled={section.enabled}>
+      <SortableContext id={section.id} items={section.questionIds} strategy={verticalListSortingStrategy}>
+        {section.questions.length === 0 ? (
+          <EmptyDropZone sectionId={section.id} enabled={section.enabled} dragging={activeId !== null} />
+        ) : (
+          section.questions.map((question) => (
+            <SortableQuestion key={question.id} question={question} disabled={!section.enabled} />
+          ))
+        )}
+      </SortableContext>
+    </FormSection>
+  ))}
+  <DragOverlay>{activeQuestion && <FormQuestionEditor dragging>…</FormQuestionEditor>}</DragOverlay>
+</DndContext>
+```
+
+## 빈 섹션
+
+질문이 하나도 없는 섹션의 본문에는 `FormSectionEmpty`를 넣습니다. 놓을 자리 역할을 하도록 높이를 120px 이상 확보합니다. 질문을 끄는 동안에만, 그리고 이 섹션에 놓을 수 있을 때만 `dropTarget`을 켜서 점선으로 강조합니다. 질문의 자리 표시와 같은 점선이라, 점선이 보이는 곳이 놓을 수 있는 자리입니다.
+
+<FormSectionEmptyStates />
+
 ## 제목 단계
 
 제목은 기본 `h3`입니다. 페이지 구획 제목 아래에 섹션이 놓이는 구조를 가정했고, 다르면 `level`로 바꿉니다.
@@ -48,6 +127,8 @@ import { FormSection } from "@umc-product/react"
 
 ## props
 
+### FormSection
+
 나머지 `section` 속성과 `ref`는 루트 요소에 붙습니다.
 
 | prop              | 타입                         | 기본값        | 설명                                   |
@@ -61,6 +142,15 @@ import { FormSection } from "@umc-product/react"
 | `enabledLabel`    | `ReactNode`                  | `"섹션 사용"` | 스위치 글자                            |
 | `level`           | `2 \| 3 \| 4 \| 5 \| 6`      | `3`           | 제목 단계                              |
 | `children`        | `ReactNode`                  | 필수          | 본문                                   |
+
+### FormSectionEmpty
+
+나머지 `div` 속성과 `ref`는 루트 요소에 붙습니다. 놓을 자리로 등록할 때 `ref`를 씁니다.
+
+| prop         | 타입        | 기본값                                          | 설명                                              |
+| ------------ | ----------- | ----------------------------------------------- | ------------------------------------------------- |
+| `dropTarget` | `boolean`   | `false`                                         | 끄는 동안 이 섹션에 놓을 수 있을 때 점선으로 강조 |
+| `children`   | `ReactNode` | `"질문을 추가하거나 다른 섹션에서 옮겨 오세요"` | 안내 문구                                         |
 
 ## 알아 둘 점
 

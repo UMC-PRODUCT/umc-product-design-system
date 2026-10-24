@@ -1,0 +1,35 @@
+@layer components {
+  .umc-form-section-empty {
+    --umc-form-section-empty-min-height: 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-height: var(--umc-form-section-empty-min-height);
+    margin: var(--umc-spacing-padding-12) var(--umc-spacing-padding-24) 0;
+    padding: var(--umc-spacing-padding-16) var(--umc-spacing-padding-20);
+    border-radius: var(--umc-radius-12);
+    color: var(--umc-color-text-neutral-weak-500);
+    font-family: var(--umc-typography-body-3-regular-font-family);
+    font-size: var(--umc-typography-body-3-regular-font-size);
+    font-weight: var(--umc-typography-body-3-regular-font-weight);
+    line-height: var(--umc-typography-body-3-regular-line-height);
+    letter-spacing: var(--umc-typography-body-3-regular-letter-spacing);
+    text-align: center;
+    overflow-wrap: anywhere;
+    transition: background-color var(--umc-motion-duration) ease;
+  }
+
+  .umc-form-section-empty[data-drop-target] {
+    outline: 2px dashed var(--umc-color-border-primary-medium-300);
+    outline-offset: -2px;
+    background-color: var(--umc-color-fill-primary-weak-75);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .umc-form-section-empty {
+      transition: none;
+    }
+  }
+}
