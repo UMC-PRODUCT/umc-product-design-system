@@ -147,7 +147,18 @@ export const VIEWBOX_EXCEPTIONS: readonly ViewBoxException[] = [
 
 export const ICON_PRIMARY_COLOR = "#3f4141"
 
-export const LOGO_PRIMARY_COLOR = "#3f4141"
+export type LogoType = {
+  name: string
+  primaryColors: readonly string[]
+}
+
+export const LOGO_TYPES: Readonly<Record<string, LogoType>> = {
+  "Type=워터마크": { name: "UMC", primaryColors: ["#3f4141"] },
+  "Type=도형 마크": {
+    name: "UMC Symbol",
+    primaryColors: ["#7e7f7f", "#9ca3a3"],
+  },
+}
 
 export const ICON_FIXED_COLORS: Readonly<Record<string, ColorReplacement>> = {
   "#dc3d3d": { style: "var(--umc-color-red-500)" },
@@ -183,12 +194,14 @@ export const mapIconColor = (color: string): ColorReplacement => {
   return fixed
 }
 
-export const mapLogoColor = (color: string): ColorReplacement => {
-  if (color === LOGO_PRIMARY_COLOR) {
-    return CURRENT_COLOR
+export const mapLogoColor =
+  (primaryColors: readonly string[]) =>
+  (color: string): ColorReplacement => {
+    if (primaryColors.includes(color)) {
+      return CURRENT_COLOR
+    }
+    throw new Error(`로고 색 ${color}에 대응하는 규칙이 없습니다`)
   }
-  throw new Error(`로고 색 ${color}에 대응하는 규칙이 없습니다`)
-}
 
 export const mapPictogramColor = (color: string): ColorReplacement => {
   if (PICTOGRAM_PRIMARY_COLORS[color] !== undefined) {
@@ -213,4 +226,5 @@ export const OPEN_QUESTIONS: readonly string[] = [
   "`Pictogram/Under-construction`의 변형 이름이 `Varient`입니다. Dark 변형의 `#b3e6e1`은 Teal-200(`#b3e5e1`)과 1만큼 달라 피그마 값 그대로 두었습니다.",
   "`Icon/Checkbox`의 Thin(3060:96785)에 1.6px, Regular(3060:96734)에 1.2px 그림이 들어 있어 섹션 설명(Thin 1.2px, Regular 1.6px)과 반대입니다. 2026-10-07에 받은 그림은 설명과 같았습니다. 코드는 설명대로 Thin 1.2px, Regular 1.6px을 그대로 둡니다. 두 변형을 바로잡아 주세요.",
   "`Icon/home`, `Icon/warning`, `Icon/warning-Triangle`, `Icon/remove_circle`은 소문자로 시작합니다. 단어 구분도 `_`, `-`, 대문자가 섞여 있습니다. 이름 규칙을 맞춰 주실 수 있나요?",
+  "`Logo`의 `Type=도형 마크`는 도형마다 `#7e7f7f` 위에 `#9ca3a3` 40%가 한 겹 더 칠해져 있어 실제로는 `#8a8d8d`로 보입니다. 코드는 두 겹을 모두 `currentColor`로 그려 글자색 한 가지로 보이게 했습니다. 위 겹이 의도한 것인지 알려 주세요.",
 ]

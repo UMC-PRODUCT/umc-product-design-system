@@ -44,11 +44,13 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 
 ## 아이콘
 
-정사각형이 아닌 프레임, 고정된 흰 부분, 토큰에 없는 픽토그램 색 등 11개 항목은 [아이콘 정규화 리포트](packages/icons/reports/icon-normalization.md)에 있습니다.
+정사각형이 아닌 프레임, 고정된 흰 부분, 토큰에 없는 픽토그램 색 등 12개 항목은 [아이콘 정규화 리포트](packages/icons/reports/icon-normalization.md)에 있습니다.
 
 2026-10-10에 고쳐 주신 내용을 반영했습니다. `Icon/warning` Fill 프레임이 24×24가 되어 비율 보정을 뺐고, 새 `Icon/warning-Triangle`(Thin, Regular, Fill)은 `WarningTriangleIcon`으로 더했습니다. Search 변형 이름이 `Weight=Regular`로 바로잡혀 코드의 변형 이름 보정 규칙을 지웠습니다. `_`로 나눴던 이름 5개(`Icon/warning`, `Icon/Location` 등)도 `/`로 바뀌어 원문 이름을 맞췄고, 코드의 컴포넌트 이름은 그대로입니다. 새 `Pictogram/Check`는 `CheckPictogram`으로 더했습니다. 같은 날 아이콘 전체를 다시 받아 대조했는데, `Icon/Checkbox`의 Thin과 Regular 그림이 서로 바뀌어 있어 코드는 섹션 설명(Thin 1.2px, Regular 1.6px)대로 두었습니다.
 
 2026-10-15에 고쳐 주신 내용을 반영했습니다. `Icon/Reset` 세 굵기를 시계 반대 방향 그림으로 바꿨고, `Icon/Location` Fill 프레임이 24×24가 되어 비율 보정을 뺐습니다. 아직 24×24가 아닌 프레임은 Bold, Italic, Strikethrough, Underline, Time의 Fill과 ThumbsUp 전체(23.85×25), Link 전체(24×25), Person Regular와 Fill(22×24)입니다. 같은 방식으로 맞춰 주시면 코드의 보정 규칙을 지우겠습니다.
+
+2026-10-24에 새로 생긴 `Logo`의 `Type=도형 마크`를 `UmcSymbolLogo`로 더했습니다. 원래 로고도 같은 세트의 `Type=워터마크`가 되어 원문 이름을 맞췄고, 그림과 코드의 `UmcLogo`는 그대로입니다. 겹친 색은 리포트의 12번에 적었습니다. 도형 마크를 어디에 쓰는지(예: 푸터, `UmcLogoLockup`)는 정의가 없어 아이콘 패키지에만 넣었으니 쓰임을 알려 주세요.
 
 ## Button
 
