@@ -66,11 +66,11 @@
     padding-block: 0;
     padding-inline: var(--umc-spacing-padding-4);
     color: var(--umc-color-text-error);
-    font-family: var(--umc-font-family-brand);
-    font-size: var(--umc-font-size-13);
-    font-weight: var(--umc-font-weight-regular);
-    line-height: 17px;
-    letter-spacing: 0;
+    font-family: var(--umc-typography-caption-2-regular-font-family);
+    font-size: var(--umc-typography-caption-2-regular-font-size);
+    font-weight: var(--umc-typography-caption-2-regular-font-weight);
+    line-height: var(--umc-typography-caption-2-regular-line-height);
+    letter-spacing: var(--umc-typography-caption-2-regular-letter-spacing);
   }
 
   .umc-form-attachment-field__file {

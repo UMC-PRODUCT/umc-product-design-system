@@ -17,7 +17,7 @@
    - `Shadow/Inner/Neutral_2`: Segmented Control 컨테이너만 `#E4E4E433`(-1, 2.5, 4)입니다.
 3. 스타일 이름과 실제 값이 다른 곳이 있습니다. Code Input 칸 `Heading/4-Semibold`가 26px, Numeric Stepper `Label/1-Semibold`가 16px입니다. Numeric Stepper는 값이 같은 다른 토큰을 쓰고, Code Input은 피그마 값을 씁니다.
    - 2026-10-16에 Toast 본문은 `Label/3-Medium`(16px, 자간 -3%)으로 바뀌어 코드도 토큰을 씁니다. 그런데 Toast의 텍스트 버튼(2621:33510)은 아직 2기 `Label/1-Medium`(16px, 자간 -2%)입니다. 코드는 텍스트 버튼만 피그마 값(-2%)을 씁니다. 텍스트 버튼도 `Label/3-Medium`으로 바꿀지 알려 주세요.
-4. 3기 파운데이션에 없는 `Mobile Web/*` 텍스트 스타일이 Text Field 레이블(15px/23px, -3%), 도움말(13px/17px), 단위(18px/24px, -3%)에 남아 있습니다. 3기 스타일로 바꿀지 알려 주세요. 지금은 피그마 값을 그대로 씁니다.
+4. (일부 해결 2026-10-24) 도움말은 `Caption/2-Regular`(13px, 행간 145%)로 바뀌어 코드도 토큰을 씁니다. 3기 파운데이션에 없는 `Mobile Web/*` 텍스트 스타일은 Text Field 레이블(15px/23px, -3%)과 단위(18px/24px, -3%)에 아직 남아 있습니다. 3기 스타일로 바꿀지 알려 주세요. 지금은 피그마 값을 그대로 씁니다.
 5. 16px 아이콘 세트는 따로 없고, 최근 컴포넌트는 24px 아이콘을 줄여 씁니다(`Icon/Expand_more`·`Icon/Add`·`Icon/Subtraction`은 Fill, `Icon/Info`는 Regular). 코드도 같은 아이콘과 굵기를 따릅니다. 원본 컴포넌트가 파일에서 지워진 인스턴스 세 개는 피그마 그림을 그대로 그렸습니다. 라이브러리 아이콘으로 바꿀지, 바꾼다면 어떤 굵기로 바꿀지 알려 주세요.
    - Dropdown/Item 선택 체크: `16 icon`
    - Context Switcher 체크와 화살표: `icon/Check/16 icon/Regular`, `icon/Expand_more/16 icon/Regular`
