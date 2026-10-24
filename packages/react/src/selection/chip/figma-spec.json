@@ -92,6 +92,57 @@
       }
     },
     {
+      "specId": "chip-weak-brand-lg",
+      "node": "4895:82260",
+      "variant": "Size=Lg, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=None",
+      "target": ".umc-chip",
+      "expected": {
+        "height": "42px",
+        "background-color": "#ffffff",
+        "border-top-color": "#e2e3e3",
+        "border-top-width": "1px",
+        "padding-inline-start": "16px",
+        "padding-inline-end": "16px",
+        "color": "#606262",
+        "font-size": "20px",
+        "font-weight": "500",
+        "line-height": "28px",
+        "letter-spacing": "-0.4px"
+      }
+    },
+    {
+      "specId": "chip-weak-brand-lg-leading-icon",
+      "node": "4895:82257",
+      "variant": "Size=Lg, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=Left",
+      "target": ".umc-chip",
+      "expected": {
+        "height": "42px",
+        "padding-inline-start": "12px",
+        "padding-inline-end": "18px",
+        "column-gap": "6px"
+      }
+    },
+    {
+      "specId": "chip-weak-brand-lg-leading-icon-glyph",
+      "node": "4895:82258",
+      "variant": "Size=Lg, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=Left",
+      "target": ".umc-chip__icon",
+      "expected": {
+        "width": "20px",
+        "height": "20px"
+      }
+    },
+    {
+      "specId": "chip-weak-brand-lg-trailing-icon",
+      "node": "4895:82254",
+      "variant": "Size=Lg, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=Right",
+      "target": ".umc-chip",
+      "expected": {
+        "padding-inline-start": "18px",
+        "padding-inline-end": "12px"
+      }
+    },
+    {
       "specId": "chip-weak-brand-sm-trailing-icon",
       "node": "3155:23414",
       "variant": "Size=Sm, Color=Brand, Style=Weak, Selected=False, Pressed·Hover=False, Icon Position=Right",

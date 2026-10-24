@@ -85,6 +85,19 @@ export function ChipStates() {
       <span data-spec-id="chip-weak-brand-md">
         <Chip size="md">md 크기</Chip>
       </span>
+      <span data-spec-id="chip-weak-brand-lg">
+        <Chip size="lg">lg 크기</Chip>
+      </span>
+      <span data-spec-id="chip-weak-brand-lg-leading-icon chip-weak-brand-lg-leading-icon-glyph">
+        <Chip size="lg" leadingIcon={<ExpandMoreIcon weight="fill" />}>
+          lg 앞 아이콘
+        </Chip>
+      </span>
+      <span data-spec-id="chip-weak-brand-lg-trailing-icon">
+        <Chip size="lg" trailingIcon={<ExpandMoreIcon weight="fill" />}>
+          lg 뒤 아이콘
+        </Chip>
+      </span>
     </div>
   )
 }
@@ -118,6 +131,7 @@ const FIGMA_COLORS: Readonly<Record<string, ChipColor>> = {
 const FIGMA_SIZES: Readonly<Record<string, ChipSize>> = {
   Sm: "sm",
   Md: "md",
+  Lg: "lg",
 }
 
 function ChipVariantCell({ variant }: { variant: FigmaVariant }) {
@@ -155,7 +169,7 @@ export function ChipAllVariants() {
       rows={["Color", "Selected"]}
       columns={["Pressed·Hover", "Icon Position"]}
       order={{
-        Size: ["Sm", "Md"],
+        Size: ["Sm", "Md", "Lg"],
         Style: ["Weak", "Fill"],
         Color: ["Brand", "Neutral"],
         Selected: ["False", "True"],
