@@ -11,7 +11,7 @@
       "specId": "form-attachment-field-root",
       "node": "4456:32605",
       "variant": "Mode=Form Respond (입력 중), State=Default",
-      "target": ".umc-form-attachment-field",
+      "target": ".umc-form-attachment-field__row",
       "expected": {
         "column-gap": "10px"
       }
@@ -126,6 +126,44 @@
       "target": ".umc-form-attachment-field__box",
       "expected": {
         "border-top-color": "#008a80"
+      }
+    },
+    {
+      "specId": "form-attachment-field-error",
+      "node": "4712:87948",
+      "variant": "Type=File Upload (파일 업로드&포트폴리오 업로드), Mode=Respond (폼 응답), Question State=Filled",
+      "target": ".umc-form-attachment-field",
+      "expected": {
+        "row-gap": "4px"
+      }
+    },
+    {
+      "specId": "form-attachment-field-error",
+      "node": "4712:87858",
+      "variant": "Type=File Upload (파일 업로드&포트폴리오 업로드), Mode=Respond (폼 응답), Question State=Filled",
+      "target": ".umc-form-attachment-field__error",
+      "expected": {
+        "color": "#dc3d3d",
+        "font-size": "13px",
+        "font-weight": "400",
+        "line-height": "17px",
+        "padding-right": "4px"
+      },
+      "figmaDiffers": {
+        "padding-left": "피그마 파일 업로드의 Help Text는 왼쪽 여백 20px로 칸 왼쪽 끝에서 시작하지만, 코드는 글 답변의 Help Text와 같게 칸보다 4px 안쪽에서 시작한다"
+      }
+    },
+    {
+      "specId": "form-attachment-field-error",
+      "node": "4712:87487",
+      "variant": "State=Default, Error=True",
+      "target": ".umc-form-attachment-field__box",
+      "expected": {
+        "border-top-color": "#f88c8c",
+        "background-color": "#ffffff"
+      },
+      "figmaDiffers": {
+        "border-top-color": "피그마 첨부 칸에는 오류 변형이 없어 Text Area의 Error=True처럼 테두리만 Red-300으로 바꾼다"
       }
     }
   ]

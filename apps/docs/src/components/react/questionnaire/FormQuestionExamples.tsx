@@ -38,6 +38,31 @@ export function FormQuestionDefault() {
   )
 }
 
+export function FormQuestionHelpText() {
+  return (
+    <div className="umc-example">
+      <div className="flex w-full max-w-[840px] flex-col gap-10">
+        <div data-spec-id="form-question-help-text">
+          <FormQuestion number="01" title="자기소개를 적어 주세요" required>
+            <FormTextAnswer
+              placeholder="작성하세요"
+              maxLength={500}
+              invalid
+              errorMessage="답을 적어 주세요"
+            />
+          </FormQuestion>
+        </div>
+        <FormQuestion number="02" title="포트폴리오를 첨부해 주세요">
+          <FormAttachmentField
+            invalid
+            errorMessage="PDF 파일만 올릴 수 있어요"
+          />
+        </FormQuestion>
+      </div>
+    </div>
+  )
+}
+
 export function FormQuestionReadOnly() {
   return (
     <div className="umc-example">
