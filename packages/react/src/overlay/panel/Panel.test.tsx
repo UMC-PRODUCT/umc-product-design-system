@@ -1,9 +1,9 @@
-import { render, screen } from "@testing-library/react"
+import { render, screen, waitFor } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import { beforeAll, describe, expect, it, vi } from "vitest"
 
 import { BottomSheetActions } from "../bottom-sheet/BottomSheet.tsx"
-import { Panel } from "./Panel.tsx"
+import { Panel, PanelCloseButton } from "./Panel.tsx"
 
 beforeAll(() => {
   if (!Element.prototype.getAnimations) {
@@ -131,6 +131,71 @@ describe("Panel", () => {
     expect(backdrop).not.toBeNull()
     await userEvent.click(backdrop as HTMLElement)
     expect(onOpenChange).toHaveBeenCalledWith(false, expect.anything())
+  })
+
+  it("headSlot이 없으면 머리 칸 없이 제목 묶음만 그린다", () => {
+    render(
+      <Panel open title="제목">
+        <p>본문</p>
+      </Panel>,
+    )
+    expect(document.querySelector(".umc-panel__head")).toBeNull()
+    expect(document.querySelector(".umc-panel__head-slot")).toBeNull()
+  })
+
+  it("headSlot은 제목 묶음 오른쪽 머리 칸에 그린다", () => {
+    render(
+      <Panel open title="제목" headSlot={<span>슬롯</span>}>
+        <p>본문</p>
+      </Panel>,
+    )
+    const head = document.querySelector(".umc-panel__head")
+    expect(head?.firstElementChild).toHaveClass("umc-panel__header")
+    const slot = head?.lastElementChild
+    expect(slot).toHaveClass("umc-panel__head-slot")
+    expect(slot).toHaveTextContent("슬롯")
+    expect(head?.nextElementSibling).toHaveClass("umc-panel__content")
+  })
+
+  it("PanelCloseButton을 누르면 닫힘을 알린다", async () => {
+    const onOpenChange = vi.fn()
+    render(
+      <Panel
+        open
+        onOpenChange={onOpenChange}
+        title="제목"
+        headSlot={<PanelCloseButton />}
+      >
+        <p>본문</p>
+      </Panel>,
+    )
+    await userEvent.click(screen.getByRole("button", { name: "닫기" }))
+    expect(onOpenChange).toHaveBeenCalledWith(false, expect.anything())
+  })
+
+  it("비제어 패널도 PanelCloseButton으로 닫힌다", async () => {
+    render(
+      <Panel defaultOpen title="제목" headSlot={<PanelCloseButton />}>
+        <p>본문</p>
+      </Panel>,
+    )
+    await userEvent.click(screen.getByRole("button", { name: "닫기" }))
+    await waitFor(() => expect(screen.queryByRole("dialog")).toBeNull())
+  })
+
+  it("PanelCloseButton의 이름은 label로 바꾼다", () => {
+    render(
+      <Panel
+        open
+        title="제목"
+        headSlot={<PanelCloseButton label="복제 패널 닫기" />}
+      >
+        <p>본문</p>
+      </Panel>,
+    )
+    expect(
+      screen.getByRole("button", { name: "복제 패널 닫기" }),
+    ).toBeInTheDocument()
   })
 
   it("className을 팝업에 붙인다", () => {

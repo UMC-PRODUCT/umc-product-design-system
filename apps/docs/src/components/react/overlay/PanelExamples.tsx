@@ -5,7 +5,9 @@ import {
   BottomSheetActions,
   Button,
   Checkbox,
+  IconButton,
   Panel,
+  PanelCloseButton,
   TextButton,
 } from "@umc-product/react"
 import { useState, type ReactNode } from "react"
@@ -176,6 +178,7 @@ function PanelPreview({
     open: true,
     title: PANEL_TITLE,
     description,
+    headSlot: <PanelCloseButton />,
     control: control === undefined ? undefined : CODE_PLACEHOLDER,
     actions: actions === undefined ? undefined : CODE_PLACEHOLDER,
     children: CODE_PLACEHOLDER,
@@ -188,18 +191,31 @@ function PanelPreview({
       {...codeAttributeOf(code)}
     >
       <div className="umc-panel__main" data-spec-id="panel-main">
-        <div className="umc-panel__header" data-spec-id="panel-header">
-          <h2 className="umc-panel__title" data-spec-id="panel-title">
-            {PANEL_TITLE}
-          </h2>
-          {description !== undefined && (
-            <p
-              className="umc-panel__description"
-              data-spec-id="panel-description"
-            >
-              {description}
-            </p>
-          )}
+        <div className="umc-panel__head" data-spec-id="panel-head">
+          <div className="umc-panel__header" data-spec-id="panel-header">
+            <h2 className="umc-panel__title" data-spec-id="panel-title">
+              {PANEL_TITLE}
+            </h2>
+            {description !== undefined && (
+              <p
+                className="umc-panel__description"
+                data-spec-id="panel-description"
+              >
+                {description}
+              </p>
+            )}
+          </div>
+          <div
+            className="umc-panel__head-slot"
+            data-spec-id="panel-head-slot panel-close"
+          >
+            <IconButton
+              size="sm"
+              color="white"
+              icon={<CloseIcon />}
+              aria-label="닫기"
+            />
+          </div>
         </div>
         <div className="umc-panel__content">{children}</div>
       </div>
@@ -281,6 +297,7 @@ export function PanelExample() {
         className="w-[733px]"
         title={PANEL_TITLE}
         description={PANEL_DESCRIPTION}
+        headSlot={<PanelCloseButton />}
         control={
           <SelectionControl
             selected={selection.selected}
@@ -325,6 +342,7 @@ export function PanelContentOnlyExample() {
         onOpenChange={setOpen}
         className="w-[799px]"
         title="OT 안내"
+        headSlot={<PanelCloseButton />}
       >
         <div className="flex flex-col gap-4 text-body-1-regular text-neutral-medium-600">
           {[...INTRODUCTION, ...INTRODUCTION].map((sentence, index) => (

@@ -43,6 +43,51 @@
       }
     },
     {
+      "specId": "panel-head",
+      "node": "5074:95948",
+      "variant": "Web/Panel",
+      "target": ".umc-panel__head",
+      "expected": {
+        "column-gap": "16px",
+        "align-items": "flex-start"
+      }
+    },
+    {
+      "specId": "panel-head-slot",
+      "node": "5074:96425",
+      "variant": "Web/Panel",
+      "target": ".umc-panel__head-slot",
+      "expected": {
+        "padding-top": "20px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "justify-content": "flex-end"
+      }
+    },
+    {
+      "specId": "panel-close",
+      "node": "5074:95999",
+      "variant": "Web/Panel",
+      "target": ".umc-icon-button",
+      "expected": {
+        "width": "24px",
+        "height": "24px",
+        "border-top-left-radius": "6px",
+        "background-color": "#ffffff"
+      }
+    },
+    {
+      "specId": "panel-close",
+      "node": "5074:95999",
+      "variant": "Web/Panel",
+      "target": ".umc-icon-button__icon",
+      "expected": {
+        "width": "20px",
+        "height": "20px",
+        "color": "#606262"
+      }
+    },
+    {
       "specId": "panel-title",
       "node": "4139:70871",
       "variant": "Web/Panel",

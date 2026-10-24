@@ -3,9 +3,9 @@ import { describe, expectTypeOf, it } from "vitest"
 import type { FieldOwnProps, FieldProps } from "./Field.tsx"
 
 describe("FieldProps 타입", () => {
-  it("captionColor는 neutral 또는 primary만 받는다", () => {
+  it("captionColor는 neutral 또는 success만 받는다", () => {
     expectTypeOf<FieldOwnProps["captionColor"]>().toEqualTypeOf<
-      "neutral" | "primary" | undefined
+      "neutral" | "success" | undefined
     >()
   })
 
