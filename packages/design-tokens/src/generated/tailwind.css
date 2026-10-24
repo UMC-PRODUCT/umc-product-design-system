@@ -1418,28 +1418,12 @@
   letter-spacing: var(--umc-typography-label-7-medium-letter-spacing);
 }
 
-@utility text-caption-1-medium {
-  font-family: var(--umc-typography-caption-1-medium-font-family);
-  font-size: var(--umc-typography-caption-1-medium-font-size);
-  font-weight: var(--umc-typography-caption-1-medium-font-weight);
-  line-height: var(--umc-typography-caption-1-medium-line-height);
-  letter-spacing: var(--umc-typography-caption-1-medium-letter-spacing);
-}
-
 @utility text-caption-1-regular {
   font-family: var(--umc-typography-caption-1-regular-font-family);
   font-size: var(--umc-typography-caption-1-regular-font-size);
   font-weight: var(--umc-typography-caption-1-regular-font-weight);
   line-height: var(--umc-typography-caption-1-regular-line-height);
   letter-spacing: var(--umc-typography-caption-1-regular-letter-spacing);
-}
-
-@utility text-caption-2-bold {
-  font-family: var(--umc-typography-caption-2-bold-font-family);
-  font-size: var(--umc-typography-caption-2-bold-font-size);
-  font-weight: var(--umc-typography-caption-2-bold-font-weight);
-  line-height: var(--umc-typography-caption-2-bold-line-height);
-  letter-spacing: var(--umc-typography-caption-2-bold-letter-spacing);
 }
 
 @utility text-caption-2-medium {
@@ -1458,6 +1442,14 @@
   letter-spacing: var(--umc-typography-caption-2-regular-letter-spacing);
 }
 
+@utility text-caption-3-bold {
+  font-family: var(--umc-typography-caption-3-bold-font-family);
+  font-size: var(--umc-typography-caption-3-bold-font-size);
+  font-weight: var(--umc-typography-caption-3-bold-font-weight);
+  line-height: var(--umc-typography-caption-3-bold-line-height);
+  letter-spacing: var(--umc-typography-caption-3-bold-letter-spacing);
+}
+
 @utility text-caption-3-medium {
   font-family: var(--umc-typography-caption-3-medium-font-family);
   font-size: var(--umc-typography-caption-3-medium-font-size);
@@ -1472,4 +1464,20 @@
   font-weight: var(--umc-typography-caption-3-regular-font-weight);
   line-height: var(--umc-typography-caption-3-regular-line-height);
   letter-spacing: var(--umc-typography-caption-3-regular-letter-spacing);
+}
+
+@utility text-caption-4-medium {
+  font-family: var(--umc-typography-caption-4-medium-font-family);
+  font-size: var(--umc-typography-caption-4-medium-font-size);
+  font-weight: var(--umc-typography-caption-4-medium-font-weight);
+  line-height: var(--umc-typography-caption-4-medium-line-height);
+  letter-spacing: var(--umc-typography-caption-4-medium-letter-spacing);
+}
+
+@utility text-caption-4-regular {
+  font-family: var(--umc-typography-caption-4-regular-font-family);
+  font-size: var(--umc-typography-caption-4-regular-font-size);
+  font-weight: var(--umc-typography-caption-4-regular-font-weight);
+  line-height: var(--umc-typography-caption-4-regular-line-height);
+  letter-spacing: var(--umc-typography-caption-4-regular-letter-spacing);
 }

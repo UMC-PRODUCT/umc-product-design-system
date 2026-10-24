@@ -102,11 +102,11 @@
     gap: var(--umc-spacing-gap-4);
     margin: 0;
     color: var(--umc-calendar-schedule-card-period);
-    font-family: var(--umc-typography-caption-1-regular-font-family);
-    font-size: var(--umc-typography-caption-1-regular-font-size);
-    font-weight: var(--umc-typography-caption-1-regular-font-weight);
-    line-height: var(--umc-typography-caption-1-regular-line-height);
-    letter-spacing: var(--umc-typography-caption-1-regular-letter-spacing);
+    font-family: var(--umc-typography-caption-2-regular-font-family);
+    font-size: var(--umc-typography-caption-2-regular-font-size);
+    font-weight: var(--umc-typography-caption-2-regular-font-weight);
+    line-height: var(--umc-typography-caption-2-regular-line-height);
+    letter-spacing: var(--umc-typography-caption-2-regular-letter-spacing);
     white-space: nowrap;
     opacity: 0.8;
   }

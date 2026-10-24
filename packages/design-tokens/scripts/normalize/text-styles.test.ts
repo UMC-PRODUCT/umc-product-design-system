@@ -61,7 +61,7 @@ describe("parseTextStyles: 피그마 원문 전체", () => {
       "heading-1-semibold",
       "heading-2-bold",
     ])
-    expect(Object.keys(typography).at(-1)).toBe("caption-3-regular")
+    expect(Object.keys(typography).at(-1)).toBe("caption-4-regular")
   })
 
   it("Display/1-Bold를 변수 참조와 em 자간으로 옮긴다", () => {
@@ -90,8 +90,8 @@ describe("parseTextStyles: 피그마 원문 전체", () => {
       "Body/4-Semibold",
       "Label/2-Semibold",
       "Label/2-Medium",
-      "Caption/3-Medium",
-      "Caption/3-Regular",
+      "Caption/4-Medium",
+      "Caption/4-Regular",
     ])
   })
 

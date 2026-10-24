@@ -79,11 +79,11 @@
   }
 
   .umc-image-thumbnail-editor__description {
-    font-family: var(--umc-typography-caption-3-regular-font-family);
-    font-size: var(--umc-typography-caption-3-regular-font-size);
-    font-weight: var(--umc-typography-caption-3-regular-font-weight);
-    line-height: var(--umc-typography-caption-3-regular-line-height);
-    letter-spacing: var(--umc-typography-caption-3-regular-letter-spacing);
+    font-family: var(--umc-typography-caption-4-regular-font-family);
+    font-size: var(--umc-typography-caption-4-regular-font-size);
+    font-weight: var(--umc-typography-caption-4-regular-font-weight);
+    line-height: var(--umc-typography-caption-4-regular-line-height);
+    letter-spacing: var(--umc-typography-caption-4-regular-letter-spacing);
   }
 
   .umc-image-thumbnail-editor__input {

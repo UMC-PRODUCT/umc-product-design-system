@@ -90,20 +90,20 @@
 
   .umc-chart-tooltip__summary-value {
     color: var(--umc-color-text-brand-default-600);
-    font-family: var(--umc-typography-caption-2-bold-font-family);
-    font-size: var(--umc-typography-caption-2-bold-font-size);
-    font-weight: var(--umc-typography-caption-2-bold-font-weight);
-    line-height: var(--umc-typography-caption-2-bold-line-height);
-    letter-spacing: var(--umc-typography-caption-2-bold-letter-spacing);
+    font-family: var(--umc-typography-caption-3-bold-font-family);
+    font-size: var(--umc-typography-caption-3-bold-font-size);
+    font-weight: var(--umc-typography-caption-3-bold-font-weight);
+    line-height: var(--umc-typography-caption-3-bold-line-height);
+    letter-spacing: var(--umc-typography-caption-3-bold-letter-spacing);
   }
 
   .umc-chart-tooltip__summary-reference {
     color: var(--umc-chart-tooltip-muted);
-    font-family: var(--umc-typography-caption-2-medium-font-family);
-    font-size: var(--umc-typography-caption-2-medium-font-size);
-    font-weight: var(--umc-typography-caption-2-medium-font-weight);
-    line-height: var(--umc-typography-caption-2-medium-line-height);
-    letter-spacing: var(--umc-typography-caption-2-medium-letter-spacing);
+    font-family: var(--umc-typography-caption-3-medium-font-family);
+    font-size: var(--umc-typography-caption-3-medium-font-size);
+    font-weight: var(--umc-typography-caption-3-medium-font-weight);
+    line-height: var(--umc-typography-caption-3-medium-line-height);
+    letter-spacing: var(--umc-typography-caption-3-medium-letter-spacing);
     white-space: pre;
   }
 
@@ -121,11 +121,11 @@
     align-items: center;
     gap: var(--umc-spacing-gap-4);
     color: var(--umc-chart-tooltip-text);
-    font-family: var(--umc-typography-caption-2-regular-font-family);
-    font-size: var(--umc-typography-caption-2-regular-font-size);
-    font-weight: var(--umc-typography-caption-2-regular-font-weight);
-    line-height: var(--umc-typography-caption-2-regular-line-height);
-    letter-spacing: var(--umc-typography-caption-2-regular-letter-spacing);
+    font-family: var(--umc-typography-caption-3-regular-font-family);
+    font-size: var(--umc-typography-caption-3-regular-font-size);
+    font-weight: var(--umc-typography-caption-3-regular-font-weight);
+    line-height: var(--umc-typography-caption-3-regular-line-height);
+    letter-spacing: var(--umc-typography-caption-3-regular-letter-spacing);
   }
 
   .umc-chart-tooltip__body[data-comparison] .umc-chart-tooltip__item {
@@ -164,11 +164,11 @@
   .umc-chart-tooltip__caption {
     margin: 0;
     color: var(--umc-chart-tooltip-muted);
-    font-family: var(--umc-typography-caption-3-medium-font-family);
-    font-size: var(--umc-typography-caption-3-medium-font-size);
-    font-weight: var(--umc-typography-caption-3-medium-font-weight);
-    line-height: var(--umc-typography-caption-3-medium-line-height);
-    letter-spacing: var(--umc-typography-caption-3-medium-letter-spacing);
+    font-family: var(--umc-typography-caption-4-medium-font-family);
+    font-size: var(--umc-typography-caption-4-medium-font-size);
+    font-weight: var(--umc-typography-caption-4-medium-font-weight);
+    line-height: var(--umc-typography-caption-4-medium-line-height);
+    letter-spacing: var(--umc-typography-caption-4-medium-letter-spacing);
   }
 
   @media (forced-colors: active) {
