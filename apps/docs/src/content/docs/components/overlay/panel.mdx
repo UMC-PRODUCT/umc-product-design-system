@@ -12,12 +12,13 @@ import {
 피그마 `Web/Panel`을 옮긴 컴포넌트로, 모바일의 [BottomSheet](../bottom-sheet/)가 하는 일을 웹 화면에서 맡습니다. 확인 한 번으로 끝나는 짧은 질문은 [Dialog](../dialog/)로 묻고, 여러 항목을 고르거나 긴 글을 보여 줄 때 Panel을 씁니다. 내부에서는 Base UI Dialog를 씁니다.
 
 ```tsx
-import { BottomSheetActions, Panel } from "@umc-product/react"
+import { BottomSheetActions, Panel, PanelCloseButton } from "@umc-product/react"
 
 <Panel
   trigger={<button>열기</button>}
   title="모집 공고 복제하기"
   description="선택한 학교의 공유 보관함에 추가돼요"
+  headSlot={<PanelCloseButton />}
   control={<SelectionSummary />}
   actions={
     <BottomSheetActions
@@ -44,9 +45,12 @@ Panel은 위에서부터 머리, 본문, 아래쪽 영역으로 나뉩니다.
 | 영역      | prop                   | 스크롤 | 설명                                                  |
 | --------- | ---------------------- | ------ | ----------------------------------------------------- |
 | 머리      | `title`, `description` | 고정   | 제목(Heading/2 24px)과 설명                           |
+| 머리 슬롯 | `headSlot`             | 고정   | 제목 오른쪽 위 자리. 닫기 버튼을 둡니다               |
 | 본문      | `children`             | 스크롤 | 내용이 화면보다 길면 이 영역만 스크롤됩니다           |
 | 조작 영역 | `control`              | 고정   | 고른 항목 요약이나 초기화처럼 본문과 함께 바뀌는 조작 |
 | 버튼 영역 | `actions`              | 고정   | `BottomSheetActions`를 넘깁니다                       |
+
+`headSlot`은 패널 위에서 20px, 오른쪽에서 16px 안쪽에 놓이고 제목과는 16px 간격을 둡니다. 닫기 버튼으로 `PanelCloseButton`(피그마 Head Slot의 기본 내용인 24px 닫기 아이콘 버튼)을 넘기면 누를 때 패널이 닫히고 `onOpenChange(false)`가 불립니다. `headSlot`을 생략하면 머리에는 제목과 설명만 그립니다.
 
 `control`과 `actions`를 둘 다 생략하면 아래쪽 영역을 그리지 않습니다. 버튼 영역은 BottomSheet와 같은 `BottomSheetActions`라서 레이아웃 다섯 가지를 그대로 고를 수 있습니다.
 
@@ -65,21 +69,31 @@ Panel은 위에서부터 머리, 본문, 아래쪽 영역으로 나뉩니다.
 ## 동작
 
 - 화면 가운데에 뜨고, 열려 있는 동안 뒤 화면은 스크롤되지 않습니다.
-- Esc를 누르거나 바깥을 누르면 닫힙니다. 고르던 내용을 지켜야 하면 `onOpenChange`에서 닫기 전에 확인합니다.
+- Esc를 누르거나 바깥을 누르면 닫힙니다. 머리 슬롯에 `PanelCloseButton`을 두면 그 버튼으로도 닫을 수 있습니다. 고르던 내용을 지켜야 하면 `onOpenChange`에서 닫기 전에 확인합니다.
 - 열리면 포커스가 패널 안으로 옮겨 갑니다. 닫히면 연 요소로 돌아옵니다.
 - 버튼 영역의 버튼은 패널을 스스로 닫지 않습니다. `onClick`에서 할 일을 마친 뒤 `open`을 `false`로 바꿉니다.
 
 ## props
 
-| prop           | 타입                      | 기본값 | 설명                                        |
-| -------------- | ------------------------- | ------ | ------------------------------------------- |
-| `title`        | `ReactNode`               | 필수   | 패널 제목. 패널의 접근 가능한 이름          |
-| `children`     | `ReactNode`               | 필수   | 스크롤되는 본문                             |
-| `description`  | `ReactNode`               | -      | 제목 아래 설명 문구                         |
-| `control`      | `ReactNode`               | -      | 본문 아래, 버튼 영역 위의 조작 영역         |
-| `actions`      | `ReactNode`               | -      | 버튼 영역. `BottomSheetActions`를 넘깁니다  |
-| `trigger`      | `ReactElement`            | -      | 패널을 여는 트리거 요소                     |
-| `open`         | `boolean`                 | -      | 제어 모드의 열림 상태                       |
-| `defaultOpen`  | `boolean`                 | -      | 비제어 모드의 처음 열림 상태                |
-| `onOpenChange` | `(open: boolean) => void` | -      | 열림 상태가 바뀌면 호출                     |
-| `className`    | `string`                  | -      | 팝업에 더할 CSS 클래스. 폭을 바꿀 때 씁니다 |
+### Panel
+
+| prop           | 타입                      | 기본값 | 설명                                               |
+| -------------- | ------------------------- | ------ | -------------------------------------------------- |
+| `title`        | `ReactNode`               | 필수   | 패널 제목. 패널의 접근 가능한 이름                 |
+| `children`     | `ReactNode`               | 필수   | 스크롤되는 본문                                    |
+| `description`  | `ReactNode`               | -      | 제목 아래 설명 문구                                |
+| `headSlot`     | `ReactNode`               | -      | 제목 오른쪽 위 자리. `PanelCloseButton`을 넘깁니다 |
+| `control`      | `ReactNode`               | -      | 본문 아래, 버튼 영역 위의 조작 영역                |
+| `actions`      | `ReactNode`               | -      | 버튼 영역. `BottomSheetActions`를 넘깁니다         |
+| `trigger`      | `ReactElement`            | -      | 패널을 여는 트리거 요소                            |
+| `open`         | `boolean`                 | -      | 제어 모드의 열림 상태                              |
+| `defaultOpen`  | `boolean`                 | -      | 비제어 모드의 처음 열림 상태                       |
+| `onOpenChange` | `(open: boolean) => void` | -      | 열림 상태가 바뀌면 호출                            |
+| `className`    | `string`                  | -      | 팝업에 더할 CSS 클래스. 폭을 바꿀 때 씁니다        |
+
+### PanelCloseButton
+
+| prop        | 타입     | 기본값   | 설명                    |
+| ----------- | -------- | -------- | ----------------------- |
+| `label`     | `string` | `"닫기"` | 버튼의 접근 가능한 이름 |
+| `className` | `string` | -        | 버튼에 더할 CSS 클래스  |

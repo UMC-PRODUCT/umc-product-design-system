@@ -1,7 +1,7 @@
 import type { ReactNode } from "react"
 import { describe, expectTypeOf, it } from "vitest"
 
-import type { PanelProps } from "./Panel.tsx"
+import type { PanelCloseButtonProps, PanelProps } from "./Panel.tsx"
 
 type RequiredKeys<T> = {
   [K in keyof T]-?: object extends Pick<T, K> ? never : K
@@ -14,9 +14,17 @@ describe("PanelProps", () => {
     >()
   })
 
-  it("control과 actions는 ReactNode다", () => {
+  it("headSlot, control, actions는 ReactNode다", () => {
+    expectTypeOf<PanelProps["headSlot"]>().toEqualTypeOf<ReactNode>()
     expectTypeOf<PanelProps["control"]>().toEqualTypeOf<ReactNode>()
     expectTypeOf<PanelProps["actions"]>().toEqualTypeOf<ReactNode>()
+  })
+
+  it("PanelCloseButton은 반드시 넘길 값이 없고 label은 문자열이다", () => {
+    expectTypeOf<RequiredKeys<PanelCloseButtonProps>>().toEqualTypeOf<never>()
+    expectTypeOf<PanelCloseButtonProps["label"]>().toEqualTypeOf<
+      string | undefined
+    >()
   })
 
   it("onOpenChange는 boolean을 받는다", () => {

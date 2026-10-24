@@ -67,6 +67,29 @@
     padding-inline: var(--umc-spacing-padding-4);
   }
 
+  .umc-panel__head {
+    display: flex;
+    flex: none;
+    align-items: flex-start;
+    gap: var(--umc-spacing-gap-16);
+  }
+
+  .umc-panel__head > .umc-panel__header {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .umc-panel__head-slot {
+    display: flex;
+    flex: none;
+    align-self: stretch;
+    justify-content: flex-end;
+    margin-block-start: calc(var(--umc-spacing-padding-32) * -1);
+    margin-inline-end: calc(var(--umc-spacing-padding-32) * -1);
+    padding-block-start: var(--umc-spacing-padding-20);
+    padding-inline: var(--umc-spacing-padding-16);
+  }
+
   .umc-panel__title {
     margin: 0;
     color: var(--umc-panel-title-fg);
