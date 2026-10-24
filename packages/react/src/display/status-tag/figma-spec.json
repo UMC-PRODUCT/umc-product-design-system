@@ -47,6 +47,26 @@
       }
     },
     {
+      "specId": "status-tag-success",
+      "node": "4721:88032",
+      "variant": "Color=Green",
+      "target": ".umc-status-tag",
+      "expected": {
+        "color": "#06844c"
+      }
+    },
+    {
+      "specId": "status-tag-success-dot",
+      "node": "4721:88032",
+      "variant": "Color=Green",
+      "target": ".umc-status-tag__dot",
+      "expected": {
+        "width": "10px",
+        "height": "10px",
+        "background-color": "#06844c"
+      }
+    },
+    {
       "specId": "status-tag-error",
       "node": "2621:35653",
       "variant": "Color=Red",

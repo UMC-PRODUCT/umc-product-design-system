@@ -66,6 +66,7 @@ function Example() {
 | Default     | `"brand"`    |
 | Neutral     | `"neutral"`  |
 | Yellow      | `"warning"`  |
+| Green       | `"success"`  |
 | Red         | `"error"`    |
 
 ### 모든 변형
@@ -78,11 +79,11 @@ function Example() {
 
 ### props
 
-| prop       | 타입                                           | 기본값    | 설명          |
-| ---------- | ---------------------------------------------- | --------- | ------------- |
-| `color`    | `"brand" \| "neutral" \| "warning" \| "error"` | `"brand"` | 색상 의미     |
-| `children` | `ReactNode`                                    | 필수      | 상태 텍스트   |
-| `ref`      | `Ref<HTMLSpanElement>`                         |           | 루트 요소 ref |
+| prop       | 타입                                                        | 기본값    | 설명          |
+| ---------- | ----------------------------------------------------------- | --------- | ------------- |
+| `color`    | `"brand" \| "neutral" \| "warning" \| "success" \| "error"` | `"brand"` | 색상 의미     |
+| `children` | `ReactNode`                                                 | 필수      | 상태 텍스트   |
+| `ref`      | `Ref<HTMLSpanElement>`                                      |           | 루트 요소 ref |
 
 나머지 `span` 속성은 루트 요소에 전달됩니다. 네이티브 `color`는 제외됩니다.
 

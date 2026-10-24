@@ -1,7 +1,7 @@
 {
   "fileKey": "U3pRZp6BjQBW5aMljCBwo9",
   "page": "3434:72558",
-  "fetchedAt": "2026-10-08",
+  "fetchedAt": "2026-10-24",
   "tool": "get_metadata",
   "sets": {
     "button": {
@@ -1320,12 +1320,13 @@
       "node": "2621:35643",
       "name": "Tag/Status",
       "axes": {
-        "Color": ["Default", "Neutral", "Yellow", "Red"]
+        "Color": ["Default", "Neutral", "Yellow", "Green", "Red"]
       },
       "variants": [
         "Color=Default",
         "Color=Neutral",
         "Color=Yellow",
+        "Color=Green",
         "Color=Red"
       ]
     },

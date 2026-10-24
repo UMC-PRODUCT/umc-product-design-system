@@ -2,7 +2,7 @@
 
 - 독자: 3기 디자인 팀, 웹 파트
 - 소유자: UMC PRODUCT Design Chapter
-- 기준일: 2026-10-20
+- 기준일: 2026-10-24
 
 문서 사이트에는 싣지 않는 작업 목록입니다.
 
@@ -138,7 +138,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 1. Tag/Basic Md 글자가 2기 `Label/2-Medium`(14px, 줄 높이 1.45)입니다. 3기의 같은 이름은 17px이라 코드는 피그마 값을 컴포넌트 변수로 씁니다.
 2. Tag/Basic 반지름이 변수에 연결되지 않았고, Neutral 글자가 primitive에 바로 연결되어 있습니다.
 3. Tag/Number Neutral Tertiary 글자가 2기 `teal-gray-600`(`#656b6b`)이고, 반지름 4px에 맞는 토큰이 없습니다. 둘 다 피그마 값을 컴포넌트 변수로 씁니다.
-4. Tag/Status 색 이름(Default, Neutral, Yellow, Red)이 Tag/Basic(Brand, Neutral, Warning, Error)과 다릅니다. 코드는 `brand`, `neutral`, `warning`, `error`로 맞췄습니다.
+4. Tag/Status 색 이름(Default, Neutral, Yellow, Red)이 Tag/Basic(Brand, Neutral, Warning, Error)과 다릅니다. 코드는 `brand`, `neutral`, `warning`, `error`로 맞췄습니다. 2026-10-24에 생긴 Green은 `success`로 옮겼습니다.
 5. Tag/Part의 PM, Sm, Outlined 변형 이름이 `Part=Tag, Size=Part, Style=PM`으로 깨져 있습니다(3385:25514). 문서는 이 변형을 PM, Sm, Outlined 칸에 그립니다.
 6. Tag/Part Design Lg Outlined 테두리가 태그 변수 대신 `Pink-100`에 연결되어 있습니다. 값은 같아서 코드는 태그 변수를 씁니다.
 7. Tag/Part와 Tag/Role의 `Shadow/Drop/Neutral_2`가 `#EFF0F080`으로 정의되어 파운데이션 토큰(`#eceeee85`)과 다릅니다. 이름 있는 스타일은 토큰을 따르는 규칙대로 토큰을 씁니다.

@@ -6,7 +6,7 @@ import { StatusTag, type StatusTagProps } from "./StatusTag.tsx"
 describe("StatusTagProps", () => {
   it("color는 피그마 값만 받는다", () => {
     expectTypeOf<StatusTagProps["color"]>().toEqualTypeOf<
-      "brand" | "neutral" | "warning" | "error" | undefined
+      "brand" | "neutral" | "warning" | "success" | "error" | undefined
     >()
   })
 

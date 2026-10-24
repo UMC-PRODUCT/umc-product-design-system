@@ -25,6 +25,10 @@
     --umc-status-tag-fg: var(--umc-color-text-warning);
   }
 
+  .umc-status-tag[data-color="success"] {
+    --umc-status-tag-fg: var(--umc-color-text-success);
+  }
+
   .umc-status-tag[data-color="error"] {
     --umc-status-tag-fg: var(--umc-color-text-error);
   }
