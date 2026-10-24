@@ -2,9 +2,9 @@
 
 UMC PRODUCT Design Chapter의 디자인 토큰, 아이콘, React 컴포넌트입니다. 피그마 디자인 시스템을 코드로 옮겼고, 다른 저장소에서 패키지로 설치해 씁니다.
 
-- 문서: https://www.university.neordinary.com/design-system/
-- Storybook: https://www.university.neordinary.com/design-system/storybook/
-- 변경 기록: 이 문서의 [릴리스](#릴리스), 문서 사이트의 [변경 기록](https://www.university.neordinary.com/design-system/releases/changelog/)
+- 문서: https://design.university.neordinary.com/
+- Storybook: https://design.university.neordinary.com/storybook/
+- 변경 기록: 이 문서의 [릴리스](#릴리스), 문서 사이트의 [변경 기록](https://design.university.neordinary.com/releases/changelog/)
 
 ## 패키지
 
@@ -58,7 +58,7 @@ pnpm add @umc-product/react @umc-product/icons @umc-product/design-tokens
 @import "@umc-product/design-tokens/tailwind.css";
 ```
 
-`styles.css`가 글꼴과 토큰 CSS를 함께 불러옵니다. 토큰만 쓰는 앱의 불러오기 순서는 문서의 [CSS 불러오기](https://www.university.neordinary.com/design-system/getting-started/installation/#css-불러오기)를 따르세요.
+`styles.css`가 글꼴과 토큰 CSS를 함께 불러옵니다. 토큰만 쓰는 앱의 불러오기 순서는 문서의 [CSS 불러오기](https://design.university.neordinary.com/getting-started/installation/#css-불러오기)를 따르세요.
 
 ### 5. 컴포넌트 쓰기
 
@@ -76,7 +76,7 @@ export function SearchForm() {
 }
 ```
 
-컴포넌트별 쓰임과 모든 변형은 [문서](https://www.university.neordinary.com/design-system/)에서 보고, props를 바꿔 보려면 [Storybook](https://www.university.neordinary.com/design-system/storybook/)을 엽니다.
+컴포넌트별 쓰임과 모든 변형은 [문서](https://design.university.neordinary.com/)에서 보고, props를 바꿔 보려면 [Storybook](https://design.university.neordinary.com/storybook/)을 엽니다.
 
 ### 6. 설치 확인하기
 
@@ -88,7 +88,7 @@ pnpm view @umc-product/react version
 
 ### CI와 배포 환경
 
-CI와 배포 서버도 설치할 때 토큰이 필요합니다. 전체 설정은 문서의 [앱의 CI와 배포 환경](https://www.university.neordinary.com/design-system/getting-started/installation/#앱의-ci와-배포-환경)에 있습니다.
+CI와 배포 서버도 설치할 때 토큰이 필요합니다. 전체 설정은 문서의 [앱의 CI와 배포 환경](https://design.university.neordinary.com/getting-started/installation/#앱의-ci와-배포-환경)에 있습니다.
 
 - **GitHub Actions**: 디자인 시스템 저장소 관리자에게 앱 저장소를 세 패키지의 **Manage Actions access**에 더해 달라고 요청하세요. 앱 워크플로에는 `packages: read` 권한을 주고, job의 `NODE_AUTH_TOKEN`에 `secrets.GITHUB_TOKEN`을 넣습니다.
 - **AWS Amplify**: 조직 공용 계정에서 만든 `read:packages` classic 토큰을 환경 변수(예: `UMC_PACKAGES_TOKEN`)에 넣고, 설치 전에 `.npmrc`에 적습니다. 토큰 주인이 조직을 떠나거나 기수가 바뀌면 모든 빌드가 멈추므로 개인 토큰은 쓰지 않습니다.
@@ -110,7 +110,7 @@ frontend:
 | `401 Unauthorized` | `~/.npmrc`에 토큰이 없거나 만료됐습니다. CI라면 `NODE_AUTH_TOKEN`이 설치 단계까지 전달되지 않았습니다                                  |
 | `403 Forbidden`    | 토큰에 `read:packages`가 없거나, fine-grained 토큰이거나, 토큰 주인이 조직 멤버가 아닙니다. Actions라면 Manage Actions access를 봅니다 |
 
-그 밖의 문제는 문서의 [문제 해결](https://www.university.neordinary.com/design-system/getting-started/troubleshooting/)에 있습니다.
+그 밖의 문제는 문서의 [문제 해결](https://design.university.neordinary.com/getting-started/troubleshooting/)에 있습니다.
 
 ## 버전 올리기
 
@@ -121,7 +121,7 @@ pnpm up "@umc-product/*"
 pnpm up "@umc-product/*" --latest
 ```
 
-첫 줄은 범위 안의 최신 patch로 올립니다. 둘째 줄은 범위를 넘어 최신 minor까지 올리니, 먼저 [릴리스](#릴리스)에서 **깨지는 변경**과 **화면 변화**를 확인하세요. 새 컴포넌트가 필요할 때도 둘째 줄로 올립니다. 세 패키지는 같은 버전으로 맞춥니다. 자세한 기준은 문서의 [버전 정책](https://www.university.neordinary.com/design-system/releases/versioning/)에 있습니다.
+첫 줄은 범위 안의 최신 patch로 올립니다. 둘째 줄은 범위를 넘어 최신 minor까지 올리니, 먼저 [릴리스](#릴리스)에서 **깨지는 변경**과 **화면 변화**를 확인하세요. 새 컴포넌트가 필요할 때도 둘째 줄로 올립니다. 세 패키지는 같은 버전으로 맞춥니다. 자세한 기준은 문서의 [버전 정책](https://design.university.neordinary.com/releases/versioning/)에 있습니다.
 
 ## 릴리스
 
