@@ -5,16 +5,16 @@ import userEvent from "@testing-library/user-event"
 import { createRef } from "react"
 import { describe, expect, it, vi } from "vitest"
 
-import { TextField } from "./TextField.tsx"
+import { TextFieldBox } from "./TextFieldBox.tsx"
 
-describe("TextField", () => {
+describe("TextFieldBox", () => {
   it("label과 input이 연결된다", () => {
-    render(<TextField label="이름" />)
+    render(<TextFieldBox label="이름" />)
     expect(screen.getByLabelText("이름")).toBeInTheDocument()
   })
 
   it("value가 없으면 지우기 버튼이 없다", () => {
-    render(<TextField label="이름" clearable />)
+    render(<TextFieldBox label="이름" clearable />)
     expect(
       screen.queryByRole("button", { name: "입력 내용 지우기" }),
     ).not.toBeInTheDocument()
@@ -22,7 +22,7 @@ describe("TextField", () => {
 
   it("clearable={false}이면 value가 있어도 지우기 버튼이 없다", () => {
     render(
-      <TextField
+      <TextFieldBox
         label="이름"
         clearable={false}
         value="내용"
@@ -38,7 +38,7 @@ describe("TextField", () => {
     const onChange = vi.fn()
     const ref = createRef<HTMLInputElement>()
     render(
-      <TextField
+      <TextFieldBox
         label="이름"
         defaultValue="초기값"
         onChange={onChange}
@@ -52,7 +52,7 @@ describe("TextField", () => {
   })
 
   it("password type이면 비밀번호 보기 토글이 렌더된다", async () => {
-    render(<TextField label="비밀번호" type="password" />)
+    render(<TextFieldBox label="비밀번호" type="password" />)
     const toggle = screen.getByRole("button", { name: "비밀번호 표시" })
     expect(toggle).toBeInTheDocument()
     await userEvent.click(toggle)
@@ -70,12 +70,12 @@ describe("TextField", () => {
   })
 
   it("unit을 렌더한다", () => {
-    render(<TextField label="금액" unit="원" />)
+    render(<TextFieldBox label="금액" unit="원" />)
     expect(screen.getByText("원")).toBeInTheDocument()
   })
 
   it("invalid이면 aria-invalid를 단다", () => {
-    render(<TextField label="이름" invalid errorMessage="필수 입력" />)
+    render(<TextFieldBox label="이름" invalid errorMessage="필수 입력" />)
     expect(screen.getByLabelText("이름")).toHaveAttribute(
       "aria-invalid",
       "true",
@@ -84,7 +84,7 @@ describe("TextField", () => {
 
   it("invalid이고 errorMessage가 있으면 errorMessage가 표시되고 aria-describedby로 연결된다", () => {
     render(
-      <TextField label="이름" invalid errorMessage="필수 입력 항목입니다" />,
+      <TextFieldBox label="이름" invalid errorMessage="필수 입력 항목입니다" />,
     )
     const error = screen.getByText("필수 입력 항목입니다")
     expect(error).toBeInTheDocument()
@@ -94,7 +94,7 @@ describe("TextField", () => {
 
   it("비제어 입력에서 글자를 입력하면 지우기 버튼이 나타나고 지우면 사라진다", async () => {
     const user = userEvent.setup()
-    render(<TextField label="이름" />)
+    render(<TextFieldBox label="이름" />)
     const input = screen.getByLabelText("이름")
     expect(
       screen.queryByRole("button", { name: "입력 내용 지우기" }),
@@ -109,8 +109,10 @@ describe("TextField", () => {
   })
 
   it("입력 박스에 size와 invalid 상태를 data 속성으로 단다", () => {
-    render(<TextField label="이름" size="md" invalid />)
-    const box = screen.getByLabelText("이름").closest(".umc-input-box")
+    render(<TextFieldBox label="이름" size="md" invalid />)
+    const box = screen
+      .getByLabelText("이름")
+      .closest(".umc-text-field-box-field")
     expect(box).toHaveAttribute("data-size", "md")
     expect(box).toHaveAttribute("data-invalid")
   })

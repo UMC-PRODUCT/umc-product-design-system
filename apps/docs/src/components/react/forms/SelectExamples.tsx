@@ -163,7 +163,7 @@ function SelectVariantCell({ variant }: { variant: FigmaVariant }) {
 export function SelectAllVariants() {
   return (
     <VariantGrid
-      set="input-box"
+      set="text-field-box-field"
       only={{ Type: ["Select"] }}
       rows={["State"]}
       columns={["Size"]}

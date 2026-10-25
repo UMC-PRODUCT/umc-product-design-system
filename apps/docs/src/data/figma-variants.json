@@ -1,7 +1,7 @@
 {
   "fileKey": "U3pRZp6BjQBW5aMljCBwo9",
   "page": "3434:72558",
-  "fetchedAt": "2026-10-24",
+  "fetchedAt": "2026-10-25",
   "tool": "get_metadata",
   "sets": {
     "button": {
@@ -441,9 +441,9 @@
         "Color=Brand, State=Default, Size=Xs, Type=Leading Acc"
       ]
     },
-    "input-box": {
+    "text-field-box-field": {
       "node": "2621:33115",
-      "name": "Text Field/ Input Box",
+      "name": "Text Field/Box/Field",
       "axes": {
         "State": [
           "Default",
@@ -512,7 +512,7 @@
     },
     "text-field-box": {
       "node": "2621:33350",
-      "name": "Text Field/ Box",
+      "name": "Text Field/Box",
       "axes": {
         "State": ["Default", "Focused & Hover", "Typing", "Filled", "Disabled"],
         "Error": ["False", "True"]

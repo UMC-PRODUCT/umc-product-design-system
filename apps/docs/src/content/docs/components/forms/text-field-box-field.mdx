@@ -1,27 +1,27 @@
 ---
-title: InputBox
+title: TextFieldBoxField
 description: 입력 필드들이 공유하는 테두리 상자입니다.
 ---
 
 import {
-  InputBoxAllVariants,
-  InputBoxCustom,
-  InputBoxStates,
-} from "../../../../components/react/forms/InputBoxExamples.tsx"
+  TextFieldBoxFieldAllVariants,
+  TextFieldBoxFieldCustom,
+  TextFieldBoxFieldStates,
+} from "../../../../components/react/forms/TextFieldBoxFieldExamples.tsx"
 
-피그마 `Text Field/ Input Box`의 상자입니다. `TextField`, `TextFieldArea`, `VerificationCodeField`가 이 상자를 씁니다. 직접 쓰는 경우는 피그마 `Type=Custom`처럼 안쪽을 자유롭게 채울 때입니다.
+피그마 `Text Field/Box/Field`의 상자입니다(0.7.0까지는 `InputBox`). `TextFieldBox`, `TextFieldArea`, `VerificationCodeField`가 이 상자를 씁니다. 직접 쓰는 경우는 피그마 `Type=Custom`처럼 안쪽을 자유롭게 채울 때입니다.
 
 ```tsx
-import { InputBox } from "@umc-product/react"
+import { TextFieldBoxField } from "@umc-product/react"
 
-<InputBox size="md">
-  <input className="umc-input-box__input" aria-label="앞자리" />
+<TextFieldBoxField size="md">
+  <input className="umc-text-field-box-field__input" aria-label="앞자리" />
   <span aria-hidden="true">-</span>
-  <input className="umc-input-box__input" aria-label="뒷자리" />
-</InputBox>
+  <input className="umc-text-field-box-field__input" aria-label="뒷자리" />
+</TextFieldBoxField>
 ```
 
-<InputBoxCustom client:visible />
+<TextFieldBoxFieldCustom client:visible />
 
 ## 상태
 
@@ -37,13 +37,13 @@ import { InputBox } from "@umc-product/react"
 
 `invalid`가 켜지는 순간 상자가 좌우로 흔들립니다. 동작 줄이기 설정에서는 흔들지 않습니다.
 
-<InputBoxStates client:visible />
+<TextFieldBoxFieldStates client:visible />
 
 ## 모든 변형
 
-피그마 `Text Field/ Input Box`의 Custom 변형 10개와 `.primitive/ Text Field/ Accessory` 6개를 그렸습니다. 부속 요소는 그 요소가 나타나는 필드 안에 그렸습니다. 칸에 마우스를 올리면 코드가 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
+피그마 `Text Field/Box/Field`의 Custom 변형 10개와 `.primitive/ Text Field/ Accessory` 6개를 그렸습니다. 부속 요소는 그 요소가 나타나는 필드 안에 그렸습니다. 칸에 마우스를 올리면 코드가 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
 
-<InputBoxAllVariants client:visible />
+<TextFieldBoxFieldAllVariants client:visible />
 
 ## props
 
@@ -54,3 +54,7 @@ import { InputBox } from "@umc-product/react"
 | `disabled` | `boolean`      | 없음   | 비활성 상태         |
 
 나머지 `div` 속성은 그대로 전달합니다. 값이 있는지는 안쪽 컨트롤의 `data-filled`로 판단하므로 `FieldControl`을 쓰면 입력 중 배경이 자동으로 적용됩니다.
+
+## 알아 둘 점
+
+- 0.8.0에서 `InputBox`가 `TextFieldBoxField`로 바뀌었습니다. 안쪽 요소의 클래스도 `umc-input-box__input`에서 `umc-text-field-box-field__input`으로 바뀌었습니다.

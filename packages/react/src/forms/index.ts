@@ -12,7 +12,10 @@ export {
   type ImageThumbnailEditorProps,
   type ImageThumbnailEditorRejection,
 } from "./image-thumbnail-editor/index.ts"
-export { InputBox, type InputBoxProps } from "./input-box/index.ts"
+export {
+  TextFieldBoxField,
+  type TextFieldBoxFieldProps,
+} from "./text-field-box-field/index.ts"
 export { Menu, type MenuItemDef, type MenuProps } from "./menu/index.ts"
 export {
   NumericStepper,
@@ -25,7 +28,7 @@ export {
   TextFieldArea,
   type TextFieldAreaProps,
 } from "./text-field-area/index.ts"
-export { TextField, type TextFieldProps } from "./text-field/index.ts"
+export { TextFieldBox, type TextFieldBoxProps } from "./text-field-box/index.ts"
 export {
   TextInfoButton,
   type TextInfoButtonProps,

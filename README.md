@@ -64,12 +64,12 @@ pnpm add @umc-product/react @umc-product/icons @umc-product/design-tokens
 
 ```tsx
 import { SearchIcon } from "@umc-product/icons"
-import { Button, TextField } from "@umc-product/react"
+import { Button, TextFieldBox } from "@umc-product/react"
 
 export function SearchForm() {
   return (
     <form>
-      <TextField label="이름" placeholder="이름을 입력하세요" />
+      <TextFieldBox label="이름" placeholder="이름을 입력하세요" />
       <Button leadingIcon={<SearchIcon />}>검색</Button>
     </form>
   )

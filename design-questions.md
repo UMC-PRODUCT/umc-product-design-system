@@ -252,6 +252,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 23. 2026-10-19에 `Text Area`의 최소 높이를 빼면서, Disabled 변형만 입력과 글자 수 사이 간격 4px이 없어 높이가 73px입니다(다른 상태는 77px). 코드는 모든 상태에 4px을 둡니다.
 24. `Help Text`에 14px 크기(`Size=14px`)가 생겨 `Field`의 `captionSize="lg"`로 옮겼습니다. 기본값은 13px이고, 14px을 쓰는 화면은 아직 찾지 못했습니다. 어느 입력에서 14px 도움말을 쓰는지 알려 주세요.
 25. `Text Info Button` 글자가 12px에서 13px로 커지면서 굵기도 Regular에서 Medium으로 바뀌었습니다. 코드는 피그마대로 Medium을 씁니다. 텍스트 스타일에는 연결되어 있지 않고, 크기·굵기·행간이 같은 `Caption/2-Medium`과는 자간(-2%와 0)만 다릅니다. 굵기가 의도인지, 스타일에 연결할지 알려 주세요.
+26. 2026-10-25에 `Text Field/Line`과 `Text Field/Line/Field`가 생겨 `TextFieldLine`, `TextFieldLineField`로 옮겼습니다. 이름을 맞추느라 `Text Field/Box`는 `TextFieldBox`(옛 `TextField`), `Text Field/Box/Field`는 `TextFieldBoxField`(옛 `InputBox`)가 되었습니다(깨지는 변경).
 
 ## 질문지
 
@@ -348,7 +349,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 - 레이블 색: `Text Field/ Label` 원본은 2기 변수 `warmgray-600`(#544f4b)이고, `Text Field/ Box` 안에서는 `TealGrey-600`(#606262)으로 덮어씁니다. 3기 토큰인 #606262(`--umc-color-text-neutral-medium-600`)를 씁니다.
 - 레이블(15px/23px, -3%)과 도움말(13px/17px)은 3기 파운데이션에 없는 `Mobile Web/*` 텍스트 스타일입니다. 토큰에 없는 값이라 피그마 값을 그대로 썼습니다.
 
-### input-box
+### text-field-box-field
 
 - 비활성 테두리: `Input Box`는 2기 변수 `warmgray-150`(#efedeb), `Text Field/ Box`는 `TealGrey-100`(#eff0f0)을 씁니다. 3기 토큰 `--umc-color-border-neutral-weaker-100`로 통일했습니다.
 - Lg 기본 상태의 placeholder만 16px이고 나머지 상태는 18px입니다. 상태가 바뀔 때 글자 크기가 튀지 않도록 Lg는 모두 18px(`Label/1-Medium`)로 맞췄습니다.
@@ -371,7 +372,7 @@ placeholder(#9ca3a3)와 입력 글자(#161919)는 2기 변수 `teal-gray-400`, `
 - 목록이 열리면 아래 화살표를 180도 돌립니다. 피그마는 `Up Chevron` 아이콘을 따로 둡니다.
 - 버튼 hover 배경 #fbfcfc는 피그마 `State=Hover`와 같습니다. 피그마에 열린 상태가 따로 없어 열려 있는 동안 hover 배경을 유지합니다.
 
-### text-field
+### text-field-box
 
 - Md 비밀번호 필드의 오른쪽 패딩: 피그마는 4px, 일반 Md 필드는 8px입니다. 같은 크기 안에서 오른쪽 여백이 달라지지 않도록 8px로 맞췄습니다.
 - 지우기 아이콘 색 #e2e4e3은 토큰에 없어 컴포넌트 변수로 썼습니다. 오류 상태에서는 피그마대로 #cccccc입니다.

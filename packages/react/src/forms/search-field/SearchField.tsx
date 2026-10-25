@@ -5,7 +5,10 @@ import { type ComponentPropsWithRef, useRef } from "react"
 
 import { cx } from "../../internal/cx.ts"
 import { mergeRefs } from "../../internal/merge-refs.ts"
-import { clearInputValue, useInputFilled } from "../input-box/input-value.ts"
+import {
+  clearInputValue,
+  useInputFilled,
+} from "../text-field-box-field/input-value.ts"
 
 export type SearchFieldProps = Omit<
   ComponentPropsWithRef<"input">,

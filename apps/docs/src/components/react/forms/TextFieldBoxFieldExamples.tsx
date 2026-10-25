@@ -1,6 +1,6 @@
 "use client"
 
-import { InputBox, Select, TextField } from "@umc-product/react"
+import { TextFieldBoxField, Select, TextFieldBox } from "@umc-product/react"
 import { useEffect, useRef, type ReactNode } from "react"
 
 import { ForceState } from "../variants/VariantCells.tsx"
@@ -23,7 +23,7 @@ function renderPhoneSlot() {
         <span key={part} className="flex min-w-0 flex-1 items-center gap-1">
           {index > 0 && <span aria-hidden="true">-</span>}
           <input
-            className="umc-input-box__input text-center"
+            className="umc-text-field-box-field__input text-center"
             aria-label={`전화번호 ${index + 1}번째 칸`}
             defaultValue={part}
             inputMode="numeric"
@@ -34,30 +34,39 @@ function renderPhoneSlot() {
   )
 }
 
-export function InputBoxCustom() {
+export function TextFieldBoxFieldCustom() {
   return (
     <div className="umc-example umc-example-stack">
       <div
         className="w-full max-w-[350px]"
-        data-spec-id="input-box-lg input-box-hover"
+        data-spec-id="text-field-box-field-lg text-field-box-field-hover"
       >
-        <InputBox>{renderPhoneSlot()}</InputBox>
+        <TextFieldBoxField>{renderPhoneSlot()}</TextFieldBoxField>
       </div>
-      <div className="w-full max-w-[350px]" data-spec-id="input-box-md">
-        <InputBox size="md">{renderPhoneSlot()}</InputBox>
+      <div
+        className="w-full max-w-[350px]"
+        data-spec-id="text-field-box-field-md"
+      >
+        <TextFieldBoxField size="md">{renderPhoneSlot()}</TextFieldBoxField>
       </div>
     </div>
   )
 }
 
-export function InputBoxStates() {
+export function TextFieldBoxFieldStates() {
   return (
     <div className="umc-example umc-example-stack">
-      <div className="w-full max-w-[350px]" data-spec-id="input-box-invalid">
-        <InputBox invalid>{renderPhoneSlot()}</InputBox>
+      <div
+        className="w-full max-w-[350px]"
+        data-spec-id="text-field-box-field-invalid"
+      >
+        <TextFieldBoxField invalid>{renderPhoneSlot()}</TextFieldBoxField>
       </div>
-      <div className="w-full max-w-[350px]" data-spec-id="input-box-disabled">
-        <InputBox disabled>{renderPhoneSlot()}</InputBox>
+      <div
+        className="w-full max-w-[350px]"
+        data-spec-id="text-field-box-field-disabled"
+      >
+        <TextFieldBoxField disabled>{renderPhoneSlot()}</TextFieldBoxField>
       </div>
     </div>
   )
@@ -70,7 +79,7 @@ function renderEmptyPhoneSlot() {
         <span key={part} className="flex min-w-0 flex-1 items-center gap-1">
           {index > 0 && <span aria-hidden="true">-</span>}
           <input
-            className="umc-input-box__input text-center"
+            className="umc-text-field-box-field__input text-center"
             aria-label={`전화번호 ${index + 1}번째 칸`}
             placeholder={"0".repeat(part.length)}
             inputMode="numeric"
@@ -81,16 +90,16 @@ function renderEmptyPhoneSlot() {
   )
 }
 
-function InputBoxVariantCell({ variant }: { variant: FigmaVariant }) {
+function TextFieldBoxFieldVariantCell({ variant }: { variant: FigmaVariant }) {
   return (
     <div className="w-[260px]">
       <ForceState states={forcedInputStates(variant)}>
-        <InputBox
+        <TextFieldBoxField
           size={lookup(INPUT_SIZES, variant, "Size")}
           disabled={isDisabledState(variant)}
         >
           {hasInputValue(variant) ? renderPhoneSlot() : renderEmptyPhoneSlot()}
-        </InputBox>
+        </TextFieldBoxField>
       </ForceState>
     </div>
   )
@@ -100,7 +109,9 @@ function RevealPassword({ children }: { children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     ref.current
-      ?.querySelector<HTMLButtonElement>(".umc-input-box__password-toggle")
+      ?.querySelector<HTMLButtonElement>(
+        ".umc-text-field-box-field__password-toggle",
+      )
       ?.click()
   }, [])
   return <div ref={ref}>{children}</div>
@@ -128,7 +139,11 @@ function AccessoryCell({ variant }: { variant: FigmaVariant }) {
   }
   if (type === "visibility" || type === "Hidden") {
     const field = (
-      <TextField aria-label="비밀번호" type="password" defaultValue="umc1234" />
+      <TextFieldBox
+        aria-label="비밀번호"
+        type="password"
+        defaultValue="umc1234"
+      />
     )
     return (
       <div className="w-[260px]">
@@ -138,7 +153,7 @@ function AccessoryCell({ variant }: { variant: FigmaVariant }) {
   }
   return (
     <div className="w-[260px]">
-      <TextField
+      <TextFieldBox
         aria-label="예시 입력"
         defaultValue="UMC"
         invalid={type === "Error"}
@@ -147,16 +162,16 @@ function AccessoryCell({ variant }: { variant: FigmaVariant }) {
   )
 }
 
-export function InputBoxAllVariants() {
+export function TextFieldBoxFieldAllVariants() {
   return (
     <>
       <VariantGrid
-        set="input-box"
+        set="text-field-box-field"
         only={{ Type: ["Custom"] }}
         rows={["State"]}
         columns={["Size"]}
         order={{ State: INPUT_STATE_ORDER }}
-        render={(variant) => <InputBoxVariantCell variant={variant} />}
+        render={(variant) => <TextFieldBoxFieldVariantCell variant={variant} />}
       />
       <VariantGrid
         set="input-accessory"

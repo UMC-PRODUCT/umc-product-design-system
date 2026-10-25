@@ -10,11 +10,11 @@ import {
 } from "react"
 
 import { Button } from "../../button/Button.tsx"
-import { InputBox } from "../../forms/input-box/InputBox.tsx"
+import { TextFieldBoxField } from "../../forms/text-field-box-field/TextFieldBoxField.tsx"
 import {
   clearInputValue,
   useInputFilled,
-} from "../../forms/input-box/input-value.ts"
+} from "../../forms/text-field-box-field/input-value.ts"
 import { cx } from "../../internal/cx.ts"
 import { mergeRefs } from "../../internal/merge-refs.ts"
 import { useFormQuestionEditor } from "../form-question-editor/form-question-editor-context.ts"
@@ -82,7 +82,7 @@ function AttachedFile({
 }: AttachedFileProps) {
   return (
     <>
-      <InputBox
+      <TextFieldBoxField
         size="lg"
         disabled={disabled}
         className="umc-form-attachment-field__box"
@@ -106,7 +106,7 @@ function AttachedFile({
             {attachment.label}
           </a>
         )}
-      </InputBox>
+      </TextFieldBoxField>
       {onRemove !== undefined && (
         <Button
           type="button"
@@ -148,7 +148,7 @@ function LinkInput({
 
   return (
     <>
-      <InputBox
+      <TextFieldBoxField
         size="lg"
         disabled={disabled}
         className="umc-form-attachment-field__box"
@@ -158,7 +158,7 @@ function LinkInput({
           ref={mergeRefs(inputRef, ref)}
           type="text"
           inputMode="url"
-          className="umc-input-box__input"
+          className="umc-text-field-box-field__input"
           readOnly={readOnly}
           disabled={disabled}
           data-filled={filled ? "" : undefined}
@@ -167,7 +167,7 @@ function LinkInput({
             onChange?.(event)
           }}
         />
-      </InputBox>
+      </TextFieldBoxField>
       {!readOnly &&
         (filled ? (
           <Button
@@ -209,7 +209,7 @@ function AttachmentPreview({
 }: AttachmentPreviewProps) {
   return (
     <>
-      <InputBox
+      <TextFieldBoxField
         size="lg"
         disabled={disabled}
         className="umc-form-attachment-field__box"
@@ -217,11 +217,11 @@ function AttachmentPreview({
         <input
           {...inputProps}
           type="text"
-          className="umc-input-box__input"
+          className="umc-text-field-box-field__input"
           readOnly
           disabled={disabled}
         />
-      </InputBox>
+      </TextFieldBoxField>
       <Button type="button" variant="weak" color="primary" size="md" disabled>
         {uploadLabel}
       </Button>

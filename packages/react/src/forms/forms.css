@@ -1,6 +1,6 @@
-@import "./input-box/input-box.css";
+@import "./text-field-box-field/text-field-box-field.css";
 @import "./field/field.css";
-@import "./text-field/text-field.css";
+@import "./text-field-box/text-field-box.css";
 @import "./text-area/text-area.css";
 @import "./text-field-area/text-field-area.css";
 @import "./search-field/search-field.css";

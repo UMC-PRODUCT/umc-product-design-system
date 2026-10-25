@@ -15,10 +15,13 @@ import {
 
 import { mergeRefs } from "../../internal/merge-refs.ts"
 import { Field, type FieldOwnProps } from "../field/Field.tsx"
-import { InputBox } from "../input-box/InputBox.tsx"
-import { clearInputValue, useInputFilled } from "../input-box/input-value.ts"
+import { TextFieldBoxField } from "../text-field-box-field/TextFieldBoxField.tsx"
+import {
+  clearInputValue,
+  useInputFilled,
+} from "../text-field-box-field/input-value.ts"
 
-export type TextFieldProps = Omit<ComponentPropsWithRef<"input">, "size"> &
+export type TextFieldBoxProps = Omit<ComponentPropsWithRef<"input">, "size"> &
   FieldOwnProps & {
     size?: "lg" | "md"
     unit?: ReactNode
@@ -29,7 +32,7 @@ const SHOW_PASSWORD_LABEL = "비밀번호 표시"
 const HIDE_PASSWORD_LABEL = "비밀번호 숨기기"
 const CLEAR_LABEL = "입력 내용 지우기"
 
-export function TextField({
+export function TextFieldBox({
   label,
   required,
   caption,
@@ -47,7 +50,7 @@ export function TextField({
   onChange,
   ref,
   ...inputProps
-}: TextFieldProps) {
+}: TextFieldBoxProps) {
   const inputRef = useRef<HTMLInputElement>(null)
   const [passwordVisible, setPasswordVisible] = useState(false)
   const [filled, trackFilled] = useInputFilled(
@@ -69,7 +72,7 @@ export function TextField({
       disabled={disabled}
       className={className}
     >
-      <InputBox
+      <TextFieldBoxField
         size={size}
         invalid={invalid}
         disabled={disabled}
@@ -82,7 +85,7 @@ export function TextField({
           disabled={disabled}
           readOnly={readOnly}
           required={required}
-          className="umc-input-box__input"
+          className="umc-text-field-box-field__input"
           onChange={(event) => {
             trackFilled(event)
             onChange?.(event)
@@ -91,7 +94,7 @@ export function TextField({
         {showClear && (
           <button
             type="button"
-            className="umc-input-box__clear"
+            className="umc-text-field-box-field__clear"
             aria-label={CLEAR_LABEL}
             tabIndex={-1}
             onClick={() => clearInputValue(inputRef.current)}
@@ -102,7 +105,7 @@ export function TextField({
         {isPassword && (
           <button
             type="button"
-            className="umc-input-box__password-toggle"
+            className="umc-text-field-box-field__password-toggle"
             aria-label={
               passwordVisible ? HIDE_PASSWORD_LABEL : SHOW_PASSWORD_LABEL
             }
@@ -116,8 +119,8 @@ export function TextField({
             )}
           </button>
         )}
-        {unit && <span className="umc-input-box__unit">{unit}</span>}
-      </InputBox>
+        {unit && <span className="umc-text-field-box-field__unit">{unit}</span>}
+      </TextFieldBoxField>
     </Field>
   )
 }

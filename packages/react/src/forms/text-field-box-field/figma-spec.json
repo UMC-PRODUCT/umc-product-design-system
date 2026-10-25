@@ -1,13 +1,13 @@
 {
-  "component": "InputBox",
+  "component": "TextFieldBoxField",
   "figmaSection": "2621:33115",
-  "page": "/components/forms/input-box/",
+  "page": "/components/forms/text-field-box-field/",
   "nodes": [
     {
-      "specId": "input-box-lg",
+      "specId": "text-field-box-field-lg",
       "node": "2621:33296",
       "variant": "State=Default, Type=Custom, Size=Lg",
-      "target": ".umc-input-box",
+      "target": ".umc-text-field-box-field",
       "expected": {
         "height": "48px",
         "border-top-width": "1px",
@@ -22,40 +22,40 @@
       }
     },
     {
-      "specId": "input-box-hover",
+      "specId": "text-field-box-field-hover",
       "interaction": "hover",
       "node": "2621:33306",
       "variant": "State=Focused & Hover, Type=Custom, Size=Lg",
-      "target": ".umc-input-box",
+      "target": ".umc-text-field-box-field",
       "expected": {
         "border-top-color": "#008a80",
         "background-color": "#ffffff"
       }
     },
     {
-      "specId": "input-box-md",
+      "specId": "text-field-box-field-md",
       "node": "2621:33301",
       "variant": "State=Default, Type=Custom, Size=Md",
-      "target": ".umc-input-box",
+      "target": ".umc-text-field-box-field",
       "expected": {
         "height": "44px"
       }
     },
     {
-      "specId": "input-box-invalid",
+      "specId": "text-field-box-field-invalid",
       "node": "2621:33357",
       "variant": "Text Field/ Box, State=Default, Error=True",
-      "target": ".umc-input-box",
+      "target": ".umc-text-field-box-field",
       "expected": {
         "border-top-color": "#f88c8c",
         "background-color": "#fef2f1"
       }
     },
     {
-      "specId": "input-box-disabled",
+      "specId": "text-field-box-field-disabled",
       "node": "2621:33323",
       "variant": "State=Disabled, Type=Custom, Size=Lg",
-      "target": ".umc-input-box",
+      "target": ".umc-text-field-box-field",
       "expected": {
         "border-top-color": "#eff0f0",
         "background-color": "#fbfcfc"

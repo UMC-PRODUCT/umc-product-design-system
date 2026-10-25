@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import { TextField } from "@umc-product/react"
+import { TextFieldBox } from "@umc-product/react"
 import { fn } from "storybook/test"
 
 import { textControl } from "../../arg-types.tsx"
@@ -7,11 +7,11 @@ import { componentParameters } from "../../docs-links.ts"
 import { withWidth } from "../../decorators.tsx"
 
 const meta = {
-  title: "폼 입력/TextField",
-  id: "text-field",
-  component: TextField,
+  title: "폼 입력/TextFieldBox",
+  id: "text-field-box",
+  component: TextFieldBox,
   decorators: [withWidth(360)],
-  parameters: componentParameters("TextField"),
+  parameters: componentParameters("TextFieldBox"),
   argTypes: {
     label: textControl,
     caption: textControl,
@@ -32,7 +32,7 @@ const meta = {
     readOnly: false,
     onChange: fn(),
   },
-} satisfies Meta<typeof TextField>
+} satisfies Meta<typeof TextFieldBox>
 
 export default meta
 
@@ -40,6 +40,6 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: function Render(args) {
-    return <TextField {...args} key={String(args.defaultValue)} />
+    return <TextFieldBox {...args} key={String(args.defaultValue)} />
   },
 }

@@ -86,7 +86,7 @@ function TextFieldAreaVariantCell({ variant }: { variant: FigmaVariant }) {
 export function TextFieldAreaAllVariants() {
   return (
     <VariantGrid
-      set="input-box"
+      set="text-field-box-field"
       only={{ Type: ["Text Area"] }}
       rows={["State"]}
       columns={["Size"]}

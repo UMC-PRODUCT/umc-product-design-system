@@ -1,6 +1,6 @@
 "use client"
 
-import { TextField } from "@umc-product/react"
+import { TextFieldBox } from "@umc-product/react"
 
 import { ForceState } from "../variants/VariantCells.tsx"
 import { lookup, type FigmaVariant } from "../variants/figma-variants.ts"
@@ -13,14 +13,14 @@ import {
 } from "../variants/input-states.ts"
 import { VariantGrid } from "../variants/VariantGrid.tsx"
 
-export function TextFieldDefault() {
+export function TextFieldBoxDefault() {
   return (
     <div className="umc-example umc-example-stack">
       <div
         className="w-full max-w-[326px]"
         data-spec-id="text-field-label text-field-box text-field-box-hover text-field-box-focus text-field-placeholder text-field-caption"
       >
-        <TextField
+        <TextFieldBox
           label="이름"
           placeholder="이름을 입력하세요"
           caption="실명으로 입력해 주세요"
@@ -31,56 +31,56 @@ export function TextFieldDefault() {
   )
 }
 
-export function TextFieldFilled() {
+export function TextFieldBoxFilled() {
   return (
     <div className="umc-example umc-example-stack">
       <div
         className="w-full max-w-[326px]"
         data-spec-id="text-field-value text-field-typing text-field-clear text-field-unit"
       >
-        <TextField label="금액" defaultValue="30000" unit="원" />
+        <TextFieldBox label="금액" defaultValue="30000" unit="원" />
       </div>
     </div>
   )
 }
 
-export function TextFieldSizes() {
+export function TextFieldBoxSizes() {
   return (
     <div className="umc-example umc-example-stack">
       <div className="w-full max-w-[350px]">
-        <TextField label="Lg" placeholder="48px" />
+        <TextFieldBox label="Lg" placeholder="48px" />
       </div>
       <div
         className="w-full max-w-[350px]"
         data-spec-id="text-field-md text-field-md-input"
       >
-        <TextField label="Md" size="md" placeholder="44px" unit="개" />
+        <TextFieldBox label="Md" size="md" placeholder="44px" unit="개" />
       </div>
     </div>
   )
 }
 
-export function TextFieldPassword() {
+export function TextFieldBoxPassword() {
   return (
     <div className="umc-example umc-example-stack">
       <div
         className="w-full max-w-[326px]"
         data-spec-id="text-field-password-toggle"
       >
-        <TextField label="비밀번호" type="password" placeholder="비밀번호" />
+        <TextFieldBox label="비밀번호" type="password" placeholder="비밀번호" />
       </div>
     </div>
   )
 }
 
-export function TextFieldInvalid() {
+export function TextFieldBoxInvalid() {
   return (
     <div className="umc-example umc-example-stack">
       <div
         className="w-full max-w-[326px]"
         data-spec-id="text-field-invalid text-field-invalid-label text-field-invalid-caption"
       >
-        <TextField
+        <TextFieldBox
           label="이메일"
           required
           placeholder="이메일을 입력하세요"
@@ -92,7 +92,7 @@ export function TextFieldInvalid() {
         className="w-full max-w-[326px]"
         data-spec-id="text-field-invalid-filled"
       >
-        <TextField
+        <TextFieldBox
           label="이메일"
           defaultValue="umc@"
           invalid
@@ -103,14 +103,14 @@ export function TextFieldInvalid() {
   )
 }
 
-export function TextFieldDisabled() {
+export function TextFieldBoxDisabled() {
   return (
     <div className="umc-example umc-example-stack">
       <div
         className="w-full max-w-[326px]"
         data-spec-id="text-field-disabled text-field-disabled-label text-field-disabled-unit"
       >
-        <TextField
+        <TextFieldBox
           label="이름"
           placeholder="입력할 수 없습니다"
           caption="수정 권한이 없습니다"
@@ -122,7 +122,7 @@ export function TextFieldDisabled() {
         className="w-full max-w-[326px]"
         data-spec-id="text-field-disabled-invalid"
       >
-        <TextField
+        <TextFieldBox
           label="이름"
           placeholder="입력할 수 없습니다"
           invalid
@@ -139,7 +139,7 @@ function TextFieldBoxCell({ variant }: { variant: FigmaVariant }) {
   return (
     <div className="w-[260px]">
       <ForceState states={forcedInputStates(variant)}>
-        <TextField
+        <TextFieldBox
           aria-label="예시 입력"
           size={lookup(INPUT_SIZES, variant, "Size")}
           type={isPassword ? "password" : "text"}
@@ -160,12 +160,12 @@ function TextFieldBoxCell({ variant }: { variant: FigmaVariant }) {
   )
 }
 
-function TextFieldComposedCell({ variant }: { variant: FigmaVariant }) {
+function TextFieldBoxComposedCell({ variant }: { variant: FigmaVariant }) {
   const invalid = variant.props["Error"] === "True"
   return (
     <div className="w-[260px]">
       <ForceState states={forcedInputStates(variant)}>
-        <TextField
+        <TextFieldBox
           label="레이블"
           caption="도움말을 적어 주세요"
           invalid={invalid}
@@ -179,11 +179,11 @@ function TextFieldComposedCell({ variant }: { variant: FigmaVariant }) {
   )
 }
 
-export function TextFieldAllVariants() {
+export function TextFieldBoxAllVariants() {
   return (
     <>
       <VariantGrid
-        set="input-box"
+        set="text-field-box-field"
         only={{ Type: ["Text", "Password"] }}
         sections={["Type"]}
         rows={["State"]}
@@ -196,7 +196,7 @@ export function TextFieldAllVariants() {
         rows={["State"]}
         columns={["Error"]}
         order={{ State: INPUT_STATE_ORDER, Error: ["False", "True"] }}
-        render={(variant) => <TextFieldComposedCell variant={variant} />}
+        render={(variant) => <TextFieldBoxComposedCell variant={variant} />}
       />
     </>
   )

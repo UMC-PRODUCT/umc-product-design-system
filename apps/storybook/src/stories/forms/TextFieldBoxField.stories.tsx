@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import { InputBox } from "@umc-product/react"
+import { TextFieldBoxField } from "@umc-product/react"
 
 import { hiddenControl } from "../../arg-types.tsx"
 import { componentParameters } from "../../docs-links.ts"
 import { withWidth } from "../../decorators.tsx"
 
 const meta = {
-  title: "폼 입력/InputBox",
-  id: "input-box",
-  component: InputBox,
+  title: "폼 입력/TextFieldBoxField",
+  id: "text-field-box-field",
+  component: TextFieldBoxField,
   decorators: [withWidth(360)],
-  parameters: componentParameters("InputBox"),
+  parameters: componentParameters("TextFieldBoxField"),
   argTypes: {
     children: hiddenControl,
   },
@@ -19,7 +19,7 @@ const meta = {
     invalid: false,
     disabled: false,
   },
-} satisfies Meta<typeof InputBox>
+} satisfies Meta<typeof TextFieldBoxField>
 
 export default meta
 
@@ -28,12 +28,12 @@ type Story = StoryObj<typeof meta>
 export const Playground: Story = {
   render: function Render(args) {
     return (
-      <InputBox {...args}>
+      <TextFieldBoxField {...args}>
         <input
-          className="umc-input-box__input"
+          className="umc-text-field-box-field__input"
           placeholder="텍스트를 입력하세요"
         />
-      </InputBox>
+      </TextFieldBoxField>
     )
   },
 }
