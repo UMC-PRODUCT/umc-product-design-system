@@ -1,0 +1,59 @@
+---
+title: TextFieldLineField
+description: 밑줄 모양 입력 필드들이 공유하는 칸입니다.
+---
+
+import {
+  TextFieldLineFieldAccessories,
+  TextFieldLineFieldAllVariants,
+  TextFieldLineFieldCustom,
+  TextFieldLineFieldStates,
+} from "../../../../components/react/forms/TextFieldLineFieldExamples.tsx"
+
+피그마 `Text Field/Line/Field`의 칸입니다. `TextFieldLine`과 `Select`의 `shape="line"`이 이 모양을 씁니다. 직접 쓰는 경우는 안쪽을 자유롭게 채울 때입니다. 상자 모양은 [TextFieldBoxField](../text-field-box-field/)입니다.
+
+```tsx
+import { TextFieldLineField } from "@umc-product/react"
+
+<TextFieldLineField>
+  <input className="umc-text-field-line-field__input" aria-label="앞자리" />
+  <span aria-hidden="true">-</span>
+  <input className="umc-text-field-line-field__input" aria-label="뒷자리" />
+</TextFieldLineField>
+```
+
+<TextFieldLineFieldCustom client:visible />
+
+## 상태
+
+상태는 칸 하나가 CSS로 정합니다. 배경은 늘 투명하고 밑줄 색만 바뀝니다.
+
+| 상태          | 밑줄                                                       | 글자                       |
+| ------------- | ---------------------------------------------------------- | -------------------------- |
+| 기본          | `--umc-color-border-neutral-weak-200`                      | `text-neutral-default-900` |
+| hover, 포커스 | `--umc-color-border-primary-strong-500`                    | 기본과 같음                |
+| 오류          | 평소 기본과 같음, hover와 포커스 `border-error-strong-500` | 기본과 같음                |
+| 비활성        | `--umc-color-border-neutral-weak-200`                      | `text-disabled`            |
+
+<TextFieldLineFieldStates client:visible />
+
+## 부속 요소
+
+지우기 버튼은 좌우 6px, 비밀번호 보기 버튼은 왼쪽 4px·오른쪽 8px, 선택 화살표는 왼쪽 6px·오른쪽 10px 여백을 둡니다. 칸과 부속 요소 사이는 6px입니다.
+
+<TextFieldLineFieldAccessories client:visible />
+
+## 모든 변형
+
+피그마 `Text Field/Line/Field` 변형 13개를 그렸습니다. Text와 Password는 `TextFieldLine`으로, Selector는 `Select`의 `shape="line"`으로 그렸습니다. 칸에 마우스를 올리면 코드가 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
+
+<TextFieldLineFieldAllVariants client:visible />
+
+## props
+
+| prop       | 타입      | 기본값 | 설명        |
+| ---------- | --------- | ------ | ----------- |
+| `invalid`  | `boolean` | 없음   | 오류 상태   |
+| `disabled` | `boolean` | 없음   | 비활성 상태 |
+
+나머지 `div` 속성은 그대로 전달합니다. 상자 모양과 달리 크기(`size`)가 없습니다.

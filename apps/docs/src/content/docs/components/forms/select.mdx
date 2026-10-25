@@ -7,6 +7,7 @@ import {
   SelectAllVariants,
   SelectDefault,
   SelectFilter,
+  SelectLine,
   SelectSearchable,
   SelectStates,
 } from "../../../../components/react/forms/SelectExamples.tsx"
@@ -41,6 +42,12 @@ const [part, setPart] = useState<Part | null>(null)
 
 <SelectFilter client:visible />
 
+## 밑줄 모양
+
+`shape="line"`은 피그마 `Text Field/Line/Field`의 `Type=Selector`입니다. 테두리 상자 대신 2px 밑줄과 22px Semibold 글자를 쓰고, 크기(`size`)는 쓰지 않습니다. 칸 모양은 [TextFieldLineField](../text-field-line-field/)와 같습니다.
+
+<SelectLine client:visible />
+
 ## 검색
 
 `searchable`이면 목록 위에 `SearchField`(`variant="dropdown"`)를 둡니다. 레이블이 문자열인 항목은 레이블로, 아니면 `value`로 거릅니다. `itemSize="md"`는 항목에 `caption`을 함께 보여 줍니다.
@@ -71,6 +78,7 @@ const [part, setPart] = useState<Part | null>(null)
 | `size`              | `"lg" \| "md"`               | `"lg"`      | 버튼 높이 48px 또는 44px                       |
 | `itemSize`          | `"xs" \| "sm" \| "md"`       | `"sm"`      | 목록 항목 `.primitve/Meue Item/Text Only` 크기 |
 | `variant`           | `"default" \| "filter"`      | `"default"` | 필터용 표시                                    |
+| `shape`             | `"box" \| "line"`            | `"box"`     | 테두리 상자 또는 밑줄(피그마 `Type=Selector`)  |
 | `searchable`        | `boolean`                    | 없음        | 목록 위 검색                                   |
 | `searchPlaceholder` | `string`                     | `"검색"`    | `searchable`일 때 검색 입력의 placeholder      |
 | `name`              | `string`                     | 없음        | 폼 제출 이름                                   |

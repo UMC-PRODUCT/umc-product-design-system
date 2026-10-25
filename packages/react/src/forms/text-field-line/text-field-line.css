@@ -1,0 +1,9 @@
+@import "../text-field-line-field/text-field-line-field.css";
+@import "../field/field.css";
+
+@layer components {
+  .umc-field.umc-text-field-line {
+    gap: var(--umc-spacing-gap-6);
+    padding-block: var(--umc-spacing-padding-16);
+  }
+}

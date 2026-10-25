@@ -530,6 +530,49 @@
         "State=Disabled, Error=True"
       ]
     },
+    "text-field-line": {
+      "node": "4987:32189",
+      "name": "Text Field/Line",
+      "axes": {
+        "State": ["Default", "Focused & Hover", "Typing", "Typed", "Disabled"],
+        "Error": ["False", "True"]
+      },
+      "variants": [
+        "State=Default, Error=False",
+        "State=Default, Error=True",
+        "State=Focused & Hover, Error=False",
+        "State=Focused & Hover, Error=True",
+        "State=Typing, Error=False",
+        "State=Typing, Error=True",
+        "State=Typed, Error=False",
+        "State=Typed, Error=True",
+        "State=Disabled, Error=False",
+        "State=Disabled, Error=True"
+      ]
+    },
+    "text-field-line-field": {
+      "node": "4997:32240",
+      "name": "Text Field/Line/Field",
+      "axes": {
+        "State": ["Default", "Focused & Hover", "Typing", "Typed", "Disabled"],
+        "Type": ["Text", "Password", "Selector"]
+      },
+      "variants": [
+        "State=Default, Type=Text",
+        "State=Disabled, Type=Text",
+        "State=Focused & Hover, Type=Text",
+        "State=Typing, Type=Text",
+        "State=Typing, Type=Password",
+        "State=Typed, Type=Text",
+        "State=Typed, Type=Password",
+        "State=Default, Type=Selector",
+        "State=Default, Type=Password",
+        "State=Focused & Hover, Type=Password",
+        "State=Typed, Type=Selector",
+        "State=Disabled, Type=Selector",
+        "State=Disabled, Type=Password"
+      ]
+    },
     "text-field-label": {
       "node": "2621:33393",
       "name": "Text Field/ Label",

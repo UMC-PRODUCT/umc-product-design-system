@@ -1,0 +1,127 @@
+{
+  "component": "TextFieldLineField",
+  "figmaSection": "4997:32240",
+  "page": "/components/forms/text-field-line-field/",
+  "figmaDiffers": {
+    "typed-color": "피그마 Typed 글자색은 다른 파일의 변수(semantic/text/primary, rgba(0,12,30,0.8))를 가리킨다. Password 변형과 같은 text-neutral-default-900(#0f1010)을 썼다"
+  },
+  "nodes": [
+    {
+      "specId": "text-field-line-field",
+      "node": "4997:32239",
+      "variant": "State=Default, Type=Text",
+      "target": ".umc-text-field-line-field",
+      "expected": {
+        "border-bottom-width": "2px",
+        "border-bottom-color": "#e2e3e3",
+        "padding-top": "4px",
+        "padding-bottom": "4px",
+        "padding-left": "0px",
+        "column-gap": "6px",
+        "font-size": "22px",
+        "font-weight": "600",
+        "line-height": "30.8px",
+        "letter-spacing": "-0.22px"
+      }
+    },
+    {
+      "specId": "text-field-line-field-hover",
+      "interaction": "hover",
+      "node": "4997:32241",
+      "variant": "State=Focused & Hover, Type=Text",
+      "target": ".umc-text-field-line-field",
+      "expected": {
+        "border-bottom-color": "#008a80"
+      }
+    },
+    {
+      "specId": "text-field-line-field-focus",
+      "interaction": "focus",
+      "node": "4997:32255",
+      "variant": "State=Typing, Type=Text",
+      "target": ".umc-text-field-line-field",
+      "expected": {
+        "border-bottom-color": "#008a80"
+      }
+    },
+    {
+      "specId": "text-field-line-field-caret",
+      "node": "4997:32255",
+      "variant": "State=Typing, Type=Text",
+      "target": ".umc-text-field-line-field__input",
+      "expected": {
+        "caret-color": "#39a9a1",
+        "color": "#0f1010"
+      }
+    },
+    {
+      "specId": "text-field-line-field-clear",
+      "node": "4997:32266",
+      "variant": "State=Typed, Type=Text",
+      "target": ".umc-text-field-line-field__clear",
+      "expected": {
+        "padding-left": "6px",
+        "padding-right": "6px",
+        "color": "#e2e4e3"
+      }
+    },
+    {
+      "specId": "text-field-line-field-password-toggle",
+      "node": "5014:32370",
+      "variant": "State=Default, Type=Password",
+      "target": ".umc-text-field-line-field__password-toggle",
+      "expected": {
+        "padding-left": "4px",
+        "padding-right": "8px",
+        "color": "#7e7f7f"
+      }
+    },
+    {
+      "specId": "text-field-line-field-disabled",
+      "node": "4997:32267",
+      "variant": "State=Disabled, Type=Text",
+      "target": ".umc-text-field-line-field",
+      "expected": {
+        "border-bottom-color": "#e2e3e3"
+      }
+    },
+    {
+      "specId": "text-field-line-field-disabled-input",
+      "node": "4997:32267",
+      "variant": "State=Disabled, Type=Text",
+      "target": ".umc-text-field-line-field__input",
+      "expected": {
+        "color": "#cccccc"
+      }
+    },
+    {
+      "specId": "text-field-line-field-selector",
+      "node": "4997:32275",
+      "variant": "State=Default, Type=Selector",
+      "target": ".umc-select__trigger",
+      "expected": {
+        "border-bottom-width": "2px",
+        "border-bottom-color": "#e2e3e3",
+        "border-top-width": "0px",
+        "border-top-left-radius": "0px",
+        "padding-top": "4px",
+        "padding-bottom": "4px",
+        "padding-left": "0px",
+        "column-gap": "6px",
+        "font-size": "22px",
+        "font-weight": "600"
+      }
+    },
+    {
+      "specId": "text-field-line-field-selector-icon",
+      "node": "4997:32275",
+      "variant": "State=Default, Type=Selector",
+      "target": ".umc-select__icon",
+      "expected": {
+        "padding-left": "6px",
+        "padding-right": "10px",
+        "color": "#7e7f7f"
+      }
+    }
+  ]
+}

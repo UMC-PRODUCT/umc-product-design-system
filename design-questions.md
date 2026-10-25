@@ -253,6 +253,9 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 24. `Help Text`에 14px 크기(`Size=14px`)가 생겨 `Field`의 `captionSize="lg"`로 옮겼습니다. 기본값은 13px이고, 14px을 쓰는 화면은 아직 찾지 못했습니다. 어느 입력에서 14px 도움말을 쓰는지 알려 주세요.
 25. `Text Info Button` 글자가 12px에서 13px로 커지면서 굵기도 Regular에서 Medium으로 바뀌었습니다. 코드는 피그마대로 Medium을 씁니다. 텍스트 스타일에는 연결되어 있지 않고, 크기·굵기·행간이 같은 `Caption/2-Medium`과는 자간(-2%와 0)만 다릅니다. 굵기가 의도인지, 스타일에 연결할지 알려 주세요.
 26. 2026-10-25에 `Text Field/Line`과 `Text Field/Line/Field`가 생겨 `TextFieldLine`, `TextFieldLineField`로 옮겼습니다. 이름을 맞추느라 `Text Field/Box`는 `TextFieldBox`(옛 `TextField`), `Text Field/Box/Field`는 `TextFieldBoxField`(옛 `InputBox`)가 되었습니다(깨지는 변경).
+27. `Text Field/Line`의 `Error=True` 변형은 레이블과 Help Text가 Default 색이고, 밑줄만 Focused & Hover와 Typing에서 Red-500입니다. Default, Typed, Disabled의 밑줄은 Error=False와 같은 회색입니다. 코드는 밑줄은 피그마대로 두고 레이블과 도움말은 `Field` 규칙대로 빨갛게 바꿉니다. 오류를 포커스 전에도 밑줄로 보여 줄지 알려 주세요.
+28. `Text Field/Line/Field`의 Typed 글자색은 다른 파일 변수(`semantic/text/primary`, rgba(0,12,30,0.8))를 가리키고, Password의 Typed는 `text-default`(#0f1010)입니다. 코드는 #0f1010을 썼습니다. 캐럿은 Box가 Teal-500, Line이 Teal-400이라 코드도 다르게 두었습니다.
+29. 같은 상태를 `Text Field/Line/Field`는 `Typed`, `Text Field/Box/Field`는 `Filled`로 부르고, 같은 종류를 `Selector`와 `Select`로 부릅니다. 코드는 Selector를 `Select`의 `shape="line"`으로 옮겼습니다. 이름을 한쪽으로 맞출지 알려 주세요. Line의 Disabled 레이블은 Default 색(#544f4b)인데 Box는 비활성 색이라, 코드는 Box와 같게 두었습니다.
 
 ## 질문지
 
