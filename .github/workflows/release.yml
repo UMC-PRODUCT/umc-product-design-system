@@ -52,3 +52,17 @@ jobs:
       - name: 배포 태그 push
         if: ${{ !cancelled() }}
         run: git push origin --tags
+
+      - name: GitHub Release 만들기
+        if: ${{ !cancelled() }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          version=$(node -p "require('./packages/react/package.json').version")
+          tag="@umc-product/react@${version}"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            echo "Release ${version}은 이미 있습니다"
+            exit 0
+          fi
+          node scripts/release-notes.mjs "$version" > "$RUNNER_TEMP/release-notes.md"
+          gh release create "$tag" --title "$version" --notes-file "$RUNNER_TEMP/release-notes.md"
