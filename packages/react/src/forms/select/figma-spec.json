@@ -160,7 +160,7 @@
       "target": ".umc-select__trigger",
       "expected": {
         "border-top-color": "#f88c8c",
-        "background-color": "#fef2f1"
+        "background-color": "#fef2f14d"
       }
     },
     {

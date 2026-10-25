@@ -1,4 +1,8 @@
-export { CodeField, type CodeFieldProps } from "./code-field/index.ts"
+export {
+  CodeField,
+  type CodeFieldProps,
+  type CodeFieldSize,
+} from "./code-field/index.ts"
 export {
   Field,
   FieldControl,

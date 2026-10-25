@@ -10,7 +10,7 @@
       "target": ".umc-panel__popup",
       "expected": {
         "width": "512px",
-        "padding-bottom": "24px",
+        "padding-bottom": "20px",
         "border-top-left-radius": "16px",
         "background-color": "#ffffff",
         "box-shadow~": "#eceeee85 0px 4px 16px 0px"
@@ -130,10 +130,11 @@
       "variant": "Web/Panel",
       "target": ".umc-bottom-sheet-actions",
       "expected": {
-        "height": "80px",
-        "padding-top": "32px",
-        "padding-left": "20px",
-        "padding-right": "20px",
+        "height": "64px",
+        "padding-top": "16px",
+        "padding-bottom": "0px",
+        "padding-left": "16px",
+        "padding-right": "16px",
         "column-gap": "8px"
       }
     }

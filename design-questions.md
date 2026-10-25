@@ -190,9 +190,10 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 8. (해결 2026-10-24) Web/Panel 머리에 Head Slot이 생기고 기본 내용이 닫기 아이콘 버튼이라 코드도 `headSlot`과 `PanelCloseButton`을 더했습니다. Esc와 바깥 누르기로 닫히는 동작은 그대로입니다.
 9. Control Slot은 컴포넌트에서 높이 64px 고정인데, 예시 인스턴스에서는 내용에 맞춰 42px과 74px로 바뀝니다. 코드는 위 여백 20px에 내용 높이를 따릅니다.
 10. 560px 예시 인스턴스(4152:74197)는 아래쪽 영역만 560px로 늘고, 제목과 본문 영역은 512px에 머물러 있습니다. 코드는 폭을 바꾸면 모든 영역이 함께 늘어납니다.
-11. 버튼 영역의 좌우 여백은 20px이고 본문과 Control Slot은 32px이라, 버튼이 본문보다 양쪽으로 12px씩 넓습니다. 의도한 정렬인지 알려 주세요.
+11. 버튼 영역의 좌우 여백은 16px(2026-10-25 전에는 20px)이고 본문과 Control Slot은 32px이라, 버튼이 본문보다 양쪽으로 16px씩 넓습니다. 의도한 정렬인지 알려 주세요.
 12. Web/Panel 예시의 왼쪽 지부 목록(`Side Meue`)은 라이브러리 컴포넌트가 아니고 2기 색(`#e5f5f2`, `#0b6b64`, `#656b6b`)을 씁니다. 문서 예시는 3기 토큰으로 비슷하게 그렸습니다. 컴포넌트로 만들 계획인지 알려 주세요.
 13. Head Slot을 끈 예시가 없습니다. 슬롯을 끄면 제목 오른쪽 여백이 제목 칸 여백 16px만 남는지 지금처럼 32px인지 알려 주세요. 코드는 `headSlot`을 넘기지 않으면 32px을 유지합니다.
+14. 2026-10-25에 `Button Area` 다섯 변형의 여백이 위 32px·아래 0·좌우 20px(PrimaryTop은 위 16px·아래 4px)에서 모두 위 16px·아래 10px·좌우 16px로 바뀌었고, Web/Panel 안의 Button Area는 아래 여백 0에 Panel 아래 여백 20px(전 24px)을 둡니다. 코드는 `BottomSheetActions` 기본값을 컴포넌트대로 두고, Panel 안에서는 좌우 16px·아래 0으로 맞췄습니다.
 
 ## 모바일 앱 컴포넌트
 
@@ -203,6 +204,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 3. App/Bottom navigation과 App/Bottom Sheet의 iOS, Android 차이는 홈 인디케이터 영역입니다. 웹에서는 운영체제가 주는 안전 영역(`safe-area-inset-bottom`)으로 처리하고 인디케이터는 그리지 않습니다.
 4. 2026-10-15에 App/Bottom navigation의 iOS 변형이 Apple `Tab Bar - iPhone`(리퀴드 글래스) 인스턴스로 바뀌었습니다. iOS 앱은 시스템 탭 바를 쓰는 것으로 보고, 문서의 iOS 칸은 미구현으로 두고 Android 칸만 그립니다. iPhone 브라우저로 여는 모바일 웹 화면에서는 이 컴포넌트를 써도 되는지 알려 주세요.
 5. 2026-10-17에 App/Dialog Confirm 타입의 확인 버튼에 좌우 8px, 상하 4px 여백을 더했습니다. 피그마 `area` 프레임(3928:63088)은 높이가 44px 고정이라 버튼 영역(62px)의 위아래 여백으로 7px씩 넘칩니다. 코드는 요청한 여백대로 버튼 높이를 30px로 두었고, 버튼 영역 높이 62px은 피그마와 같습니다. 눌리는 영역을 44px로 키워야 하면 알려 주세요.
+6. 2026-10-25에 `Button Area` 컴포넌트 여백이 위 16px·아래 10px·좌우 16px로 바뀌었는데, App/Bottom Sheet 안의 Button Area 인스턴스는 Keyboard=Off(2536:12118, 3253:48866)가 위 16px·아래 0·좌우 20px, Keyboard=On(2536:12135)이 위 16px·아래 10px·좌우 20px에 시트 아래 8px입니다. 코드는 시트 안에서 좌우 20px·아래 0을 쓰고(아래는 안전 영역이 대신함) 키보드 상태는 나누지 않습니다. 시트 안 좌우 20px이 의도인지(컴포넌트는 16px), 키보드가 올라왔을 때 아래 18px이 필요한지 알려 주세요.
 
 ## 앱 셸
 
@@ -254,9 +256,11 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 24. `Help Text`에 14px 크기(`Size=14px`)가 생겨 `Field`의 `captionSize="lg"`로 옮겼습니다. 기본값은 13px이고, 14px을 쓰는 화면은 아직 찾지 못했습니다. 어느 입력에서 14px 도움말을 쓰는지 알려 주세요.
 25. `Text Info Button` 글자가 12px에서 13px로 커지면서 굵기도 Regular에서 Medium으로 바뀌었습니다. 코드는 피그마대로 Medium을 씁니다. 텍스트 스타일에는 연결되어 있지 않고, 크기·굵기·행간이 같은 `Caption/2-Medium`과는 자간(-2%와 0)만 다릅니다. 굵기가 의도인지, 스타일에 연결할지 알려 주세요.
 26. 2026-10-25에 `Text Field/Line`과 `Text Field/Line/Field`가 생겨 `TextFieldLine`, `TextFieldLineField`로 옮겼습니다. 이름을 맞추느라 `Text Field/Box`는 `TextFieldBox`(옛 `TextField`), `Text Field/Box/Field`는 `TextFieldBoxField`(옛 `InputBox`)가 되었습니다(깨지는 변경).
-27. `Text Field/Line`의 `Error=True` 변형은 레이블과 Help Text가 Default 색이고, 밑줄만 Focused & Hover와 Typing에서 Red-500입니다. Default, Typed, Disabled의 밑줄은 Error=False와 같은 회색입니다. 코드는 밑줄은 피그마대로 두고 레이블과 도움말은 `Field` 규칙대로 빨갛게 바꿉니다. 오류를 포커스 전에도 밑줄로 보여 줄지 알려 주세요.
+27. `Text Field/Line`의 `Error=True` 변형은 레이블과 Help Text가 Default 색이고, 밑줄만 Focused & Hover와 Typing에서 Red-500입니다. Default, Typed, Disabled의 밑줄은 Error=False와 같은 회색입니다. 코드는 밑줄은 피그마대로 두고 레이블과 도움말은 `Field` 규칙대로 빨갛게 바꿉니다. 오류를 포커스 전에도 밑줄로 보여 줄지 알려 주세요. (2026-10-25) 레이블과 Help Text가 `text/error`(#dc3d3d)로 바뀌어 코드와 같아졌습니다. 밑줄 질문은 남아 있습니다.
 28. `Text Field/Line/Field`의 Typed 글자색은 다른 파일 변수(`semantic/text/primary`, rgba(0,12,30,0.8))를 가리키고, Password의 Typed는 `text-default`(#0f1010)입니다. 코드는 #0f1010을 썼습니다. 캐럿은 Box가 Teal-500, Line이 Teal-400이라 코드도 다르게 두었습니다.
 29. 같은 상태를 `Text Field/Line/Field`는 `Typed`, `Text Field/Box/Field`는 `Filled`로 부르고, 같은 종류를 `Selector`와 `Select`로 부릅니다. 코드는 Selector를 `Select`의 `shape="line"`으로 옮겼습니다. 이름을 한쪽으로 맞출지 알려 주세요. Line의 Disabled 레이블은 Default 색(#544f4b)인데 Box는 비활성 색이라, 코드는 Box와 같게 두었습니다.
+30. 2026-10-25에 `Text Field/Box/Field`의 오류 배경이 Red-50 100%에서 30%(`rgba(254, 242, 241, 0.3)`)로 바뀌었습니다. 투명도 색 체계가 아직 없어 코드는 `#fef2f14d`를 컴포넌트 변수(`--umc-text-field-box-field-error-bg`, `--umc-select-error-bg`)로 둡니다. Opacity Color System이 정해지면 토큰으로 바꾸겠습니다. `Select`, `TextFieldArea`, `VerificationCodeField`는 같은 상자라 함께 바뀌었고, `Input Box/Code Input/ Cell`의 오류 배경(60%)과 Icon Button Weak Error 배경(100%)은 그대로입니다.
+31. 2026-10-25에 `Text Field/ Code Input`에 `Size=Md`(칸 42px, 모서리 12px, 글자 `Title/1-Semibold` 22px, 칸 간격 6px)가 생겨 `CodeField`에 `size="md"`를 더했습니다. 칸 컴포넌트 `Input Box/Code Input/ Cell`에는 아직 Lg만 있고, Md 칸은 인스턴스에서 크기를 덮어쓴 것입니다. 칸 컴포넌트에도 Md 변형을 둘지 알려 주세요.
 
 ## 질문지
 
@@ -349,7 +353,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 
 ### code-field
 
-칸 글자는 피그마 스타일 이름이 `Heading/4-Semibold`지만 크기가 26px로 파운데이션 정의(18px)와 다릅니다. 피그마 값(26px, 행간 1.3)을 컴포넌트 변수로 썼습니다.
+칸 글자는 피그마 스타일 이름이 `Heading/4-Semibold`지만 크기가 26px로 파운데이션 정의(18px)와 다릅니다. 피그마 값(26px, 행간 1.3)을 컴포넌트 변수로 썼습니다. Md 칸은 `Title/1-Semibold`(22px, 행간 1.4) 토큰을 씁니다.
 
 ### field
 

@@ -36,6 +36,18 @@
       }
     },
     {
+      "specId": "bottom-sheet-sheet-actions",
+      "node": "2536:12118",
+      "variant": "Type=Title, Keyboard=Off 안의 Button Area",
+      "target": ".umc-bottom-sheet__popup .umc-bottom-sheet-actions",
+      "expected": {
+        "padding-top": "16px",
+        "padding-bottom": "0px",
+        "padding-left": "20px",
+        "padding-right": "20px"
+      }
+    },
+    {
       "specId": "bottom-sheet-actions-full",
       "node": "2535:8814",
       "variant": "Number of Buttons=1, Type=Full",
@@ -43,10 +55,10 @@
       "expected": {
         "display": "flex",
         "flex-direction": "row",
-        "padding-top": "32px",
-        "padding-bottom": "0px",
-        "padding-left": "20px",
-        "padding-right": "20px",
+        "padding-top": "16px",
+        "padding-bottom": "10px",
+        "padding-left": "16px",
+        "padding-right": "16px",
         "column-gap": "10px"
       }
     },
@@ -74,8 +86,8 @@
       "target": ".umc-bottom-sheet-actions",
       "expected": {
         "flex-direction": "column",
-        "padding-top": "32px",
-        "padding-bottom": "0px",
+        "padding-top": "16px",
+        "padding-bottom": "10px",
         "row-gap": "10px"
       }
     },
@@ -86,8 +98,8 @@
       "target": ".umc-bottom-sheet-actions",
       "expected": {
         "flex-direction": "row",
-        "padding-top": "32px",
-        "padding-bottom": "0px",
+        "padding-top": "16px",
+        "padding-bottom": "10px",
         "column-gap": "10px"
       }
     },
@@ -98,10 +110,10 @@
       "target": ".umc-bottom-sheet-actions",
       "expected": {
         "display": "grid",
-        "padding-top": "32px",
-        "padding-bottom": "0px",
-        "padding-left": "20px",
-        "padding-right": "20px",
+        "padding-top": "16px",
+        "padding-bottom": "10px",
+        "padding-left": "16px",
+        "padding-right": "16px",
         "column-gap": "8px"
       }
     },
@@ -124,7 +136,7 @@
         "flex-direction": "column",
         "align-items": "center",
         "padding-top": "16px",
-        "padding-bottom": "4px",
+        "padding-bottom": "10px",
         "row-gap": "8px"
       }
     },

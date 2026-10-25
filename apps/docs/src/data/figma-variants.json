@@ -694,9 +694,15 @@
       "node": "2621:36596",
       "name": "Text Field/ Code Input",
       "axes": {
-        "Error": ["False", "True"]
+        "Error": ["False", "True"],
+        "Size": ["Lg", "Md"]
       },
-      "variants": ["Error=False", "Error=True"]
+      "variants": [
+        "Error=False, Size=Lg",
+        "Error=False, Size=Md",
+        "Error=True, Size=Lg",
+        "Error=True, Size=Md"
+      ]
     },
     "verification-code": {
       "node": "2621:36619",

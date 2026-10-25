@@ -1,6 +1,7 @@
 @layer components {
   .umc-text-field-box-field {
     --umc-text-field-box-field-typing-bg: #f4fbfa99;
+    --umc-text-field-box-field-error-bg: #fef2f14d;
     --umc-text-field-box-field-clear-color: #e2e4e3;
     --umc-text-field-box-field-border-color: var(
       --umc-color-border-neutral-medium-300
@@ -108,7 +109,7 @@
     --umc-text-field-box-field-border-color: var(
       --umc-color-border-error-medium-300
     );
-    --umc-text-field-box-field-bg: var(--umc-color-fill-error-weak-50);
+    --umc-text-field-box-field-bg: var(--umc-text-field-box-field-error-bg);
     --umc-text-field-box-field-fg: var(--umc-color-text-error);
     --umc-text-field-box-field-placeholder-color: var(--umc-color-red-200);
     --umc-text-field-box-field-clear-color: var(--umc-color-teal-grey-300);
@@ -130,7 +131,7 @@
 
   .umc-text-field-box-field[data-invalid]:not([data-disabled]):focus-within {
     --umc-text-field-box-field-border-color: var(--umc-color-red-400);
-    --umc-text-field-box-field-bg: var(--umc-color-fill-error-weak-50);
+    --umc-text-field-box-field-bg: var(--umc-text-field-box-field-error-bg);
     --umc-text-field-box-field-fg: var(--umc-color-text-neutral-default-900);
   }
 
@@ -152,7 +153,7 @@
     --umc-text-field-box-field-border-color: var(
       --umc-color-border-error-weak-200
     );
-    --umc-text-field-box-field-bg: var(--umc-color-fill-error-weak-50);
+    --umc-text-field-box-field-bg: var(--umc-text-field-box-field-error-bg);
     --umc-text-field-box-field-unit-color: var(--umc-color-text-disabled);
   }
 

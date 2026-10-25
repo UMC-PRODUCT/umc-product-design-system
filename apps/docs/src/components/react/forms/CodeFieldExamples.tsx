@@ -47,6 +47,30 @@ export function CodeFieldVerify() {
   )
 }
 
+export function CodeFieldSizes() {
+  return (
+    <div className="umc-example umc-example-stack">
+      <div data-spec-id="code-field-cells-md code-field-cell-md">
+        <CodeField
+          label="개별 지원 코드"
+          required
+          size="md"
+          info={<TextInfoButton>개별 지원 코드란?</TextInfoButton>}
+        />
+      </div>
+      <div data-spec-id="code-field-cell-md-invalid">
+        <CodeField
+          label="개별 지원 코드"
+          size="md"
+          defaultValue="000000"
+          invalid
+          errorMessage="코드가 일치하지 않습니다"
+        />
+      </div>
+    </div>
+  )
+}
+
 export function CodeFieldStates() {
   return (
     <div className="umc-example umc-example-stack">
@@ -88,10 +112,12 @@ function CodeCellVariantCell({ variant }: { variant: FigmaVariant }) {
 
 function CodeInputVariantCell({ variant }: { variant: FigmaVariant }) {
   const invalid = variant.props["Error"] === "True"
+  const size = variant.props["Size"] === "Md" ? "md" : "lg"
   return (
     <CodeField
       label="개별 지원 코드"
       required
+      size={size}
       info={<TextInfoButton>개별 지원 코드란?</TextInfoButton>}
       defaultValue={invalid ? "000000" : undefined}
       invalid={invalid}
@@ -115,8 +141,8 @@ export function CodeFieldAllVariants() {
       <VariantGrid
         set="code-input"
         rows={["Error"]}
-        columns={[]}
-        order={{ Error: ["False", "True"] }}
+        columns={["Size"]}
+        order={{ Error: ["False", "True"], Size: ["Lg", "Md"] }}
         render={(variant) => <CodeInputVariantCell variant={variant} />}
       />
     </>

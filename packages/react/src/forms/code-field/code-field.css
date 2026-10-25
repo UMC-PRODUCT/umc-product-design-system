@@ -47,6 +47,24 @@
       background-color var(--umc-motion-duration) ease;
   }
 
+  .umc-code-field__cells[data-size="md"] {
+    gap: var(--umc-spacing-gap-6);
+  }
+
+  .umc-code-field__cells[data-size="md"] .umc-code-field__cell {
+    --umc-code-field-font-size: var(
+      --umc-typography-title-1-semibold-font-size
+    );
+    --umc-code-field-line-height: var(
+      --umc-typography-title-1-semibold-line-height
+    );
+
+    width: 42px;
+    height: 42px;
+    border-radius: var(--umc-radius-12);
+    letter-spacing: var(--umc-typography-title-1-semibold-letter-spacing);
+  }
+
   @media (hover: hover) {
     .umc-code-field__cell:not(:disabled):hover {
       --umc-code-field-border-color: var(--umc-color-border-primary-medium-300);

@@ -6,8 +6,11 @@ import { type ReactNode, useRef, useState } from "react"
 import { cx } from "../../internal/cx.ts"
 import { Field, type FieldOwnProps } from "../field/Field.tsx"
 
+export type CodeFieldSize = "lg" | "md"
+
 export type CodeFieldProps = FieldOwnProps & {
   length?: number
+  size?: CodeFieldSize
   value?: string
   defaultValue?: string
   onValueChange?: (value: string) => void
@@ -32,6 +35,7 @@ export function CodeField({
   invalid,
   errorMessage,
   length = DEFAULT_LENGTH,
+  size = "lg",
   value,
   defaultValue = "",
   onValueChange,
@@ -86,6 +90,7 @@ export function CodeField({
         disabled={disabled}
         required={required}
         className="umc-code-field__cells"
+        data-size={size}
       >
         {Array.from({ length }, (_, index) => (
           <OTPField.Input key={index} className="umc-code-field__cell" />

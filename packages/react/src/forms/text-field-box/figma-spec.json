@@ -173,7 +173,7 @@
       "target": ".umc-text-field-box-field",
       "expected": {
         "border-top-color": "#f88c8c",
-        "background-color": "#fef2f1"
+        "background-color": "#fef2f14d"
       }
     },
     {
@@ -201,7 +201,7 @@
       "target": ".umc-text-field-box-field",
       "expected": {
         "border-top-color": "#dc3d3d",
-        "background-color": "#fef2f1",
+        "background-color": "#fef2f14d",
         "color": "#dc3d3d"
       }
     },
@@ -244,7 +244,7 @@
       "target": ".umc-text-field-box-field",
       "expected": {
         "border-top-color": "#fdb4b4",
-        "background-color": "#fef2f1"
+        "background-color": "#fef2f14d"
       }
     }
   ]
