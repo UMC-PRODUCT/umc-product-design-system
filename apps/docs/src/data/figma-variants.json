@@ -2167,6 +2167,15 @@
         "Type=Toggle(파트 문항), Enabled=False"
       ]
     },
+    "form-header": {
+      "node": "4456:58024",
+      "name": "Form/Header",
+      "axes": {
+        "Caption": ["False", "True"],
+        "Size": ["Lg"]
+      },
+      "variants": ["Caption=False, Size=Lg", "Caption=True, Size=Lg"]
+    },
     "form-question-section": {
       "node": "4529:69541",
       "name": "Form/Question Section",

@@ -1,0 +1,61 @@
+@import "../form-header/form-header.css";
+
+@layer components {
+  .umc-form-sheet {
+    --umc-form-sheet-shadow: 0 4px 8px rgb(239 240 240 / 0.3);
+
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    filter: drop-shadow(var(--umc-form-sheet-shadow));
+  }
+
+  .umc-form-sheet__body {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-block: var(--umc-spacing-padding-8) var(--umc-spacing-padding-32);
+    border-end-start-radius: var(--umc-radius-12);
+    border-end-end-radius: var(--umc-radius-12);
+    background-color: var(--umc-color-fill-neutral-default);
+  }
+
+  .umc-form-sheet__actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    min-height: 24px;
+    padding-inline: var(--umc-spacing-padding-8);
+  }
+
+  .umc-form-sheet__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--umc-spacing-gap-32);
+    box-sizing: border-box;
+    padding-inline: var(--umc-spacing-padding-32);
+  }
+
+  .umc-form-sheet__description,
+  .umc-form-sheet__form {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .umc-form-sheet__control {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--umc-spacing-gap-8);
+  }
+
+  @media (forced-colors: active) {
+    .umc-form-sheet__body {
+      outline: 1px solid CanvasText;
+    }
+  }
+}
