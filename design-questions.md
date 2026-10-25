@@ -243,7 +243,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 13. 2026-10-17에 새로 올라온 `Text Area`(장문형)를 `TextArea`로 옮기고, 기존 `Text Field/ Input Box`의 `Type=Text Area`(단문형)는 `TextFieldArea`로 이름을 바꿨습니다. 피그마 이름도 장문형은 `Text Area`, 단문형은 Text Field의 한 타입으로 계속 나뉘어 있으면 좋겠습니다.
 14. (해결 2026-10-24) `Text Area`에 `Error=True` 변형이 생겨 코드도 따랐습니다. 오류이면 상태와 관계없이 테두리만 Red-300(`#f88c8c`)이고 배경은 그대로입니다. 전에는 `TextField`처럼 분홍 배경을 깔고 hover와 포커스에서 Red-400으로 진하게 했는데 둘 다 뺐습니다. 비활성이면서 오류일 때도 빨간 테두리가 남습니다.
 15. `Text Area`의 hover와 포커스 테두리는 Teal-300(`#7ac7c1`)이고, Input Box는 Teal-500입니다. Input Box의 Typing은 옅은 청록 배경이지만 `Text Area`는 흰색 그대로입니다. 의도한 차이인지 알려 주세요.
-16. `Text Area`의 글자 수는 모든 변형에 `0/0`으로 그려져 있습니다. 코드는 최대 글자 수(`maxLength`)를 정한 칸에만 "현재/최대"로 보여 줍니다. 2026-10-19에 Disabled 변형에도 글자 수가 생겨, 비활성 상태에서도 보여 줍니다. 최대 글자 수에 닿았을 때 모양이 따로 필요한지 알려 주세요.
+16. `Text Area`의 글자 수는 모든 변형에 `0/0`으로 그려져 있습니다. 코드는 최대 글자 수(`maxLength`)를 정한 칸에만 "현재/최대"로 보여 줍니다. 2026-10-19에 Disabled 변형에도 글자 수가 생겨, 비활성 상태에서도 보여 줍니다. 최대 글자 수에 닿았을 때 모양이 따로 필요한지 알려 주세요. (2026-10-25) `Form/Question`의 Read Only에서 글자 수가 빠져, 코드도 `readOnly`이면 글자 수를 숨깁니다.
 17. `Text Area` 설명의 `Place Hoder`는 `Placeholder`의 오타입니다.
 18. Image Thumbnail Editor의 배경(`#9ca3a3`, Default는 투명도 70%)은 3기 변수에 없는 값입니다. 이름 있는 색으로 연결할지 알려 주세요.
 19. Image Thumbnail Editor 안의 간격이 4.8px(아이콘과 문구)과 2.4px(두 문구 사이)입니다. 150px 칸을 0.8배로 줄인 값으로 보입니다. 정수 값으로 맞출지 알려 주세요.
