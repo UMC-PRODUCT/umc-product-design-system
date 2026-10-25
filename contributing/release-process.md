@@ -31,7 +31,8 @@ pnpm changeset
 
 - 실제로 바뀐 패키지를 고릅니다. 세 패키지는 어차피 같은 버전으로 함께 올라갑니다.
 - bump는 [버전 정책](https://umc-product.github.io/umc-product-design-system/releases/versioning/)을 따릅니다. 0.x에서는 깨지는 변경과 추가(컴포넌트, prop, 토큰, 아이콘)가 minor, 수정과 피그마 값 동기화가 patch입니다.
-- 요약은 앱 개발자가 읽는 문장으로 씁니다. 무엇이 바뀌었고 앱이 무엇을 해야 하는지 적습니다. 요약은 `CHANGELOG.md`, README의 릴리스 절, 문서의 변경 기록에 그대로 실립니다.
+- 요약의 첫 문장은 화면을 쓰는 사람(디자이너, 운영진)이 읽을 말로 씁니다. 무엇이 어떻게 달라지는지만 적고, prop·토큰·클래스 이름은 둘째 문장부터 씁니다. README의 릴리스 절과 GitHub Release의 "이번 배포 한눈에"에는 첫 문장만 실리고, `CHANGELOG.md`와 문서의 변경 기록에는 전문이 실립니다.
+- 둘째 문장부터는 앱 개발자가 할 일을 적습니다. 바뀐 이름, 전후 값, 올릴 때 고칠 코드입니다.
 - 깨지는 변경은 요약을 **깨지는 변경**으로 시작하고 옛 이름과 새 이름의 대응표를 넣습니다. 값만 바뀌는 변경은 **화면 변화**로 시작하고 전후 값을 적습니다. README의 릴리스 절이 이 표시로 항목을 나누고, 표시가 없으면 minor는 새 기능, patch는 수정으로 묶습니다.
 
 명령이 `.changeset/` 아래에 파일을 만듭니다. 이 파일을 PR에 함께 커밋합니다. 값만 바뀌는 patch라면 예를 들어 이렇게 씁니다.
@@ -41,14 +42,14 @@ pnpm changeset
 "@umc-product/react": patch
 ---
 
-**화면 변화** Checkbox 테두리 색을 피그마 값으로 맞췄습니다(`#c4c8c8` → `#b1b6b6`).
+**화면 변화** 체크박스 테두리가 조금 더 진한 회색이 됩니다. 피그마 값에 맞춰 `#c4c8c8`를 `#b1b6b6`으로 바꿨습니다.
 ```
 
 ## 2. 버전 PR 병합하기
 
 develop에 changeset이 쌓이면 Version 워크플로가 "chore: 패키지 버전 올리기" PR을 열고, 다음 push마다 갱신합니다. 이 PR은 changeset 파일을 지우고, 버전 번호를 올리고, `CHANGELOG.md`에 내용을 옮깁니다. 배포할 때가 되면 이 PR을 develop에 병합합니다.
 
-`pnpm version-packages`는 새 버전 제목에 그날 날짜(한국 시간)를 붙입니다(`## 0.6.0 (2026-10-20)`). PR이 다음 push로 갱신되면 날짜도 그날로 바뀝니다. 같은 명령이 README의 릴리스 절도 CHANGELOG에서 다시 만듭니다(`pnpm readme:build`). README의 릴리스 절은 직접 고치지 않습니다. CHANGELOG와 다르면 CI의 `pnpm readme:check`가 실패합니다.
+`pnpm version-packages`는 새 버전 제목에 그날 날짜(한국 시간)를 붙입니다(`## 0.6.0 (2026-10-20)`). PR이 다음 push로 갱신되면 날짜도 그날로 바뀝니다. 같은 명령이 README의 릴리스 절도 CHANGELOG에서 다시 만듭니다(`pnpm readme:build`, 항목마다 첫 문장만). README의 릴리스 절은 직접 고치지 않습니다. CHANGELOG와 다르면 CI의 `pnpm readme:check`가 실패합니다.
 
 - 이 PR은 GitHub Actions 토큰으로 만들어져 CI가 돌지 않습니다. 검사 결과가 필요하면 PR을 닫았다가 다시 열어 CI를 돌립니다.
 - 저장소 설정에서 Actions의 PR 생성이 꺼져 있으면 Version 워크플로가 실패합니다. 그때는 로컬에서 같은 일을 하고 PR을 직접 엽니다.
@@ -65,7 +66,7 @@ git commit -m "chore: 패키지 버전 올리기"
 
 develop → main PR을 열고 병합합니다. 병합하면 GitHub Actions 워크플로 두 개와 Amplify 빌드가 돌아갑니다.
 
-- **Release**: 패키지를 빌드하고 배포물을 검사한 뒤, 레지스트리에 없는 버전만 GitHub Packages에 올립니다. `@umc-product/react@0.1.1` 같은 git 태그를 만들어 push합니다.
+- **Release**: 패키지를 빌드하고 배포물을 검사한 뒤, 레지스트리에 없는 버전만 GitHub Packages에 올립니다. `@umc-product/react@0.1.1` 같은 git 태그를 만들어 push하고, react 태그에 GitHub Release를 만듭니다. Release 본문은 `scripts/release-notes.mjs`가 CHANGELOG에서 만듭니다. 위에는 항목마다 첫 문장만 모은 "이번 배포 한눈에", 아래에는 올리는 명령과 깨지는 변경·화면 변화의 전문을 담은 "개발자가 올릴 때 할 일"이 있습니다. 비개발자에게 배포 내용을 알릴 때 이 Release 링크를 씁니다.
 - **Docs**: 문서를 빌드하고 링크를 검사한 뒤 GitHub Pages에 올립니다.
 - **Amplify**: GitHub Actions와 따로 Amplify가 main push를 받아 문서와 Storybook을 빌드하고 배포합니다. 설정은 [AWS Amplify 배포](#aws-amplify-배포전환-중)에 있습니다.
 
@@ -77,6 +78,7 @@ develop → main PR을 열고 병합합니다. 병합하면 GitHub Actions 워�
 - Amplify 콘솔에서 main 빌드가 성공했는지 봅니다.
 - 조직의 Packages 탭에서 세 패키지에 새 버전이 있는지 봅니다.
 - 토큰을 설정한 컴퓨터에서 `pnpm view @umc-product/react version`으로 새 버전이 나오는지 확인합니다.
+- Releases 탭에 새 버전의 Release가 생겼는지 봅니다. 본문을 미리 보려면 `pnpm release:notes 0.8.0`처럼 버전을 넘겨 돌립니다.
 
 ## 되돌리기
 
@@ -86,6 +88,7 @@ develop → main PR을 열고 병합합니다. 병합하면 GitHub Actions 워�
 | 세 패키지 중 일부만 올라갔다 | 위와 같이 다시 실행합니다. 이미 올라간 버전은 건너뛰고 남은 패키지만 올라갑니다. 먼저 올라간 패키지의 태그는 실패한 실행에서도 push됩니다                                                                      |
 | 잘못된 버전이 올라갔다       | 고친 내용을 다음 patch로 배포합니다. 앱이 이미 받았을 수 있으니 같은 번호를 다시 쓰지 않습니다                                                                                                                 |
 | 잘못된 버전을 막아야 한다    | 고친 버전을 먼저 배포한 뒤, 패키지 페이지의 버전 목록에서 그 버전을 지웁니다. 지운 버전은 30일 안에 되살릴 수 있습니다                                                                                         |
+| Release가 만들어지지 않았다  | Actions 탭에서 Release 워크플로를 수동 실행합니다. 이미 올라간 패키지는 건너뛰고 Release만 만듭니다                                                                                                            |
 | Docs가 실패했다              | Re-run하거나 Actions 탭에서 Docs 워크플로를 수동으로 실행합니다. 패키지 배포와는 상관없습니다                                                                                                                  |
 | Amplify 빌드가 실패했다      | 콘솔에서 실패한 단계의 로그를 봅니다. 환경 변수가 빠졌다면 넣은 뒤 Redeploy this version을 누릅니다. 빌드가 실패해도 사이트는 이전 배포를 그대로 보여 줍니다                                                   |
 
