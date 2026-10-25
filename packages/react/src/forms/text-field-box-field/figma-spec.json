@@ -1,0 +1,68 @@
+{
+  "component": "TextFieldBoxField",
+  "figmaSection": "2621:33115",
+  "page": "/components/forms/text-field-box-field/",
+  "nodes": [
+    {
+      "specId": "text-field-box-field-lg",
+      "node": "2621:33296",
+      "variant": "State=Default, Type=Custom, Size=Lg",
+      "target": ".umc-text-field-box-field",
+      "expected": {
+        "height": "48px",
+        "border-top-width": "1px",
+        "border-top-color": "#cccccc",
+        "border-top-left-radius": "14px",
+        "background-color": "#ffffff",
+        "padding-top": "8px",
+        "padding-bottom": "8px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "box-shadow~": "#d3d8d826 1px 1px 2px 0px inset, #ffffff40 -1px -1px 1px 0px inset"
+      }
+    },
+    {
+      "specId": "text-field-box-field-hover",
+      "interaction": "hover",
+      "node": "2621:33306",
+      "variant": "State=Focused & Hover, Type=Custom, Size=Lg",
+      "target": ".umc-text-field-box-field",
+      "expected": {
+        "border-top-color": "#008a80",
+        "background-color": "#ffffff"
+      }
+    },
+    {
+      "specId": "text-field-box-field-md",
+      "node": "2621:33301",
+      "variant": "State=Default, Type=Custom, Size=Md",
+      "target": ".umc-text-field-box-field",
+      "expected": {
+        "height": "44px"
+      }
+    },
+    {
+      "specId": "text-field-box-field-invalid",
+      "node": "2621:33357",
+      "variant": "Text Field/ Box, State=Default, Error=True",
+      "target": ".umc-text-field-box-field",
+      "expected": {
+        "border-top-color": "#f88c8c",
+        "background-color": "#fef2f1"
+      }
+    },
+    {
+      "specId": "text-field-box-field-disabled",
+      "node": "2621:33323",
+      "variant": "State=Disabled, Type=Custom, Size=Lg",
+      "target": ".umc-text-field-box-field",
+      "expected": {
+        "border-top-color": "#eff0f0",
+        "background-color": "#fbfcfc"
+      },
+      "figmaDiffers": {
+        "border-top-color": "Input Box는 2기 변수 warmgray-150(#efedeb), Text Field/ Box는 TealGrey-100(#eff0f0)을 쓴다. 3기 토큰인 #eff0f0로 통일했다"
+      }
+    }
+  ]
+}

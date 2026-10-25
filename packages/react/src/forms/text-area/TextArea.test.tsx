@@ -51,6 +51,18 @@ describe("TextArea", () => {
     )
   })
 
+  it("readOnly이면 maxLength가 있어도 글자 수를 그리지 않는다", () => {
+    render(
+      <TextArea
+        aria-label="내용"
+        maxLength={300}
+        defaultValue="제출한 답변"
+        readOnly
+      />,
+    )
+    expect(counterOf()).toBeNull()
+  })
+
   it("disabled여도 글자 수를 보여 준다", () => {
     render(<TextArea aria-label="내용" maxLength={300} disabled />)
     expect(counterOf()).toHaveTextContent("0/300")

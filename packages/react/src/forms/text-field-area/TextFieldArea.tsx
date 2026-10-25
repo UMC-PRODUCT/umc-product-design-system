@@ -6,7 +6,7 @@ import type { ComponentPropsWithRef } from "react"
 
 import { mergeRefs } from "../../internal/merge-refs.ts"
 import { Field, type FieldOwnProps } from "../field/Field.tsx"
-import { InputBox } from "../input-box/InputBox.tsx"
+import { TextFieldBoxField } from "../text-field-box-field/TextFieldBoxField.tsx"
 
 export type TextFieldAreaProps = Omit<
   ComponentPropsWithRef<"textarea">,
@@ -47,7 +47,7 @@ export function TextFieldArea({
       disabled={disabled}
       className={className}
     >
-      <InputBox
+      <TextFieldBoxField
         size={size}
         invalid={invalid}
         disabled={disabled}
@@ -63,13 +63,14 @@ export function TextFieldArea({
               {...mergeProps<"textarea">(controlProps, {
                 ...textareaProps,
                 rows,
-                className: "umc-input-box__input umc-text-field-area__input",
+                className:
+                  "umc-text-field-box-field__input umc-text-field-area__input",
               })}
               ref={mergeRefs(controlProps.ref, ref)}
             />
           )}
         />
-      </InputBox>
+      </TextFieldBoxField>
     </Field>
   )
 }

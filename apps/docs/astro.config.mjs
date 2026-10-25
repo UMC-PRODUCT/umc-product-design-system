@@ -24,6 +24,8 @@ const COMPONENT_GROUPS = [
 
 const MOVED_PAGES = {
   "/components/forms/text-info-button": `${BASE_PATH}/components/actions/text-info-button/`,
+  "/components/forms/text-field": `${BASE_PATH}/components/forms/text-field-box/`,
+  "/components/forms/input-box": `${BASE_PATH}/components/forms/text-field-box-field/`,
 }
 
 export default defineConfig({

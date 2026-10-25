@@ -53,7 +53,7 @@ if (!html.includes("umc-button")) {
 
 const MAIN_TSX = `import { textStyleUtilities } from "@umc-product/design-tokens"
 import { SearchIcon } from "@umc-product/icons"
-import { Button, Checkbox, TextField } from "@umc-product/react"
+import { Button, Checkbox, TextFieldBox } from "@umc-product/react"
 import { createRoot } from "react-dom/client"
 
 import "./app.css"
@@ -66,7 +66,7 @@ function App() {
       <h1 className="text-heading-2-bold text-neutral-default-900">
         텍스트 스타일 {styleCount}개
       </h1>
-      <TextField label="이름" placeholder="이름을 입력하세요" />
+      <TextFieldBox label="이름" placeholder="이름을 입력하세요" />
       <Checkbox defaultChecked>개인정보 수집 동의</Checkbox>
       <Button leadingIcon={<SearchIcon />}>검색</Button>
       <p className="bg-teal-500 bg-indigo-500">기본 팔레트 초기화</p>

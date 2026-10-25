@@ -7,7 +7,7 @@
       "specId": "text-field-area-box",
       "node": "2621:33262",
       "variant": "State=Default, Type=Text Area, Size=Lg",
-      "target": ".umc-input-box",
+      "target": ".umc-text-field-box-field",
       "expected": {
         "padding-top": "12px",
         "padding-bottom": "12px",
@@ -22,7 +22,7 @@
       "specId": "text-field-area-input",
       "node": "2621:33264",
       "variant": "Text Area 글자, Size=Lg",
-      "target": ".umc-input-box__input",
+      "target": ".umc-text-field-box-field__input",
       "expected": {
         "font-size": "18px",
         "font-weight": "500",
@@ -34,7 +34,7 @@
       "specId": "text-field-area-md",
       "node": "2621:33267",
       "variant": "Text Area 글자, Size=Md",
-      "target": ".umc-input-box__input",
+      "target": ".umc-text-field-box-field__input",
       "expected": {
         "font-size": "16px",
         "font-weight": "500",
@@ -46,7 +46,7 @@
       "specId": "text-field-area-invalid",
       "node": "2621:33383",
       "variant": "Text Field/ Box, State=Filled, Error=True",
-      "target": ".umc-input-box",
+      "target": ".umc-text-field-box-field",
       "expected": {
         "border-top-color": "#dc3d3d",
         "background-color": "#fef2f1"
@@ -56,7 +56,7 @@
       "specId": "text-field-area-disabled",
       "node": "2621:33290",
       "variant": "State=Disabled, Type=Text Area, Size=Lg",
-      "target": ".umc-input-box",
+      "target": ".umc-text-field-box-field",
       "expected": {
         "border-top-color": "#eff0f0",
         "background-color": "#fbfcfc"

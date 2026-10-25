@@ -7,7 +7,7 @@ import { cx } from "../internal/cx.ts"
 
 export type ButtonVariant = "fill" | "weak"
 
-export type ButtonColor = "primary" | "neutral" | "red" | "white"
+export type ButtonColor = "brand" | "neutral" | "red" | "white"
 
 export type ButtonSize = "lg" | "md" | "sm" | "xs"
 
@@ -49,7 +49,7 @@ const presence = (condition: unknown): "" | undefined =>
 
 export function Button({
   variant = "fill",
-  color = "primary",
+  color = "brand",
   size = "md",
   isLoading = false,
   icon,

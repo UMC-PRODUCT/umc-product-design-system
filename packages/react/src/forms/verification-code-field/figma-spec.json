@@ -7,7 +7,7 @@
       "specId": "verification-code-box",
       "node": "2621:36673",
       "variant": "Type=Default, State=Default, Size=Lg",
-      "target": ".umc-input-box",
+      "target": ".umc-text-field-box-field",
       "expected": {
         "height": "48px",
         "border-top-color": "#cccccc",
@@ -22,7 +22,7 @@
       "specId": "verification-code-timer",
       "node": "2621:36676",
       "variant": "타이머 00:00 (Label/1-Medium)",
-      "target": ".umc-input-box__timer",
+      "target": ".umc-text-field-box-field__timer",
       "expected": {
         "font-size": "18px",
         "font-weight": "500",
@@ -50,7 +50,7 @@
       "specId": "verification-code-filled",
       "node": "2621:36710",
       "variant": "Type=Default, State=Filled, Size=Lg",
-      "target": ".umc-input-box__input",
+      "target": ".umc-text-field-box-field__input",
       "expected": {
         "font-size": "18px",
         "font-weight": "500",
@@ -63,7 +63,7 @@
       "specId": "verification-code-invalid",
       "node": "2621:33383",
       "variant": "Text Field/ Box, State=Filled, Error=True",
-      "target": ".umc-input-box",
+      "target": ".umc-text-field-box-field",
       "expected": {
         "border-top-color": "#dc3d3d",
         "background-color": "#fef2f1"
@@ -73,7 +73,7 @@
       "specId": "verification-code-disabled",
       "node": "2621:36722",
       "variant": "Type=Default, State=Disabled, Size=Lg 타이머",
-      "target": ".umc-input-box__timer",
+      "target": ".umc-text-field-box-field__timer",
       "expected": {
         "color": "#cccccc"
       }

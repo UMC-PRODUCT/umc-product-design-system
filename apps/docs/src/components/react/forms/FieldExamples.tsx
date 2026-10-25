@@ -3,7 +3,7 @@
 import {
   Field,
   FieldControl,
-  InputBox,
+  TextFieldBoxField,
   TextInfoButton,
   type FieldCaptionSize,
 } from "@umc-product/react"
@@ -20,13 +20,13 @@ function renderControl({
   defaultValue?: string
 }) {
   return (
-    <InputBox>
+    <TextFieldBoxField>
       <FieldControl
-        className="umc-input-box__input"
+        className="umc-text-field-box-field__input"
         placeholder={placeholder}
         defaultValue={defaultValue}
       />
-    </InputBox>
+    </TextFieldBoxField>
   )
 }
 

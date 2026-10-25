@@ -39,7 +39,7 @@ function BottomSheetPreviewItem({
   const title = isCentered ? "학습 일정" : "시트 제목"
   const description = isCentered ? undefined : "설명 문구가 들어갑니다."
   const headerAction = isCentered ? (
-    <Button variant="weak" color="primary" size="xs">
+    <Button variant="weak" color="brand" size="xs">
       편집
     </Button>
   ) : undefined

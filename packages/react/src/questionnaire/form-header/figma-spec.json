@@ -1,0 +1,86 @@
+{
+  "component": "FormHeader",
+  "figmaSection": "4456:58024",
+  "page": "/components/questionnaire/form-sheet/",
+  "figmaDiffers": {
+    "subtitle-color": "피그마 부제목 색 #656b6b는 토큰에 없다. 가장 가까운 text-neutral-medium-600(#606262)을 썼다",
+    "bar-height": "피그마 띠 높이 9.917px을 10px으로 올림했다"
+  },
+  "nodes": [
+    {
+      "specId": "form-header-tab",
+      "node": "4456:58043",
+      "variant": "Caption=False, Size=Lg",
+      "target": ".umc-form-header__tab",
+      "expected": {
+        "height": "85px",
+        "padding-top": "16px",
+        "padding-left": "16px",
+        "border-top-left-radius": "12px",
+        "background-color": "#e9f7f5"
+      }
+    },
+    {
+      "specId": "form-header-thumbnail",
+      "node": "4456:58043",
+      "variant": "Caption=False, Size=Lg",
+      "target": ".umc-form-header__thumbnail",
+      "expected": {
+        "width": "50px",
+        "height": "50px",
+        "border-top-left-radius": "8px",
+        "background-color": "#e2e3e3"
+      }
+    },
+    {
+      "specId": "form-header-title",
+      "node": "4456:58043",
+      "variant": "Caption=False, Size=Lg",
+      "target": ".umc-form-header__title",
+      "expected": {
+        "color": "#0f1010",
+        "font-size": "20px",
+        "font-weight": "600",
+        "line-height": "28px"
+      }
+    },
+    {
+      "specId": "form-header-subtitle",
+      "node": "4456:58043",
+      "variant": "Caption=False, Size=Lg",
+      "target": ".umc-form-header__subtitle",
+      "expected": {
+        "color": "#606262",
+        "font-size": "15px",
+        "font-weight": "500",
+        "line-height": "22.5px"
+      }
+    },
+    {
+      "specId": "form-header-bar",
+      "node": "4456:58043",
+      "variant": "Caption=False, Size=Lg",
+      "target": ".umc-form-header__bar",
+      "expected": {
+        "height": "10px",
+        "border-top-right-radius": "17px",
+        "background-color": "#e9f7f5"
+      }
+    },
+    {
+      "specId": "form-header-caption",
+      "node": "5103:71612",
+      "variant": "Caption=True, Size=Lg",
+      "target": ".umc-form-header__caption",
+      "expected": {
+        "min-height": "24px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "column-gap": "12px",
+        "color": "#606262",
+        "font-size": "14px",
+        "font-weight": "500"
+      }
+    }
+  ]
+}

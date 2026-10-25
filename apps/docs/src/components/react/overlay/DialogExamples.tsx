@@ -32,7 +32,7 @@ type ButtonStyle = "fill" | "weak"
 type PreviewState = { color: DialogColor; content: boolean }
 
 const CONFIRM_BUTTONS = {
-  primary: { variant: "fill", color: "primary" },
+  primary: { variant: "fill", color: "brand" },
   neutral: { variant: "fill", color: "neutral" },
   error: { variant: "weak", color: "red" },
 } as const

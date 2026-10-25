@@ -1,0 +1,73 @@
+{
+  "component": "TextFieldLine",
+  "figmaSection": "4987:32189",
+  "page": "/components/forms/text-field-line/",
+  "figmaDiffers": {
+    "error-label": "피그마 Error=True 변형은 레이블과 Help Text가 Default 색 그대로이고 밑줄만 포커스에서 빨갛다. 코드는 Field를 따라 레이블과 도움말도 빨갛게 바꾼다",
+    "disabled-label": "피그마 Disabled 변형의 레이블은 Default 색(#544f4b)이다. 코드는 Box와 같이 비활성 레이블 색(teal-grey-400)을 쓴다"
+  },
+  "nodes": [
+    {
+      "specId": "text-field-line",
+      "node": "4987:32172",
+      "variant": "State=Default, Error=False",
+      "target": ".umc-text-field-line",
+      "expected": {
+        "padding-top": "16px",
+        "padding-bottom": "16px",
+        "row-gap": "6px"
+      }
+    },
+    {
+      "specId": "text-field-line-label",
+      "node": "4987:32172",
+      "variant": "State=Default, Error=False",
+      "target": ".umc-field__label",
+      "expected": {
+        "font-size": "15px",
+        "font-weight": "500",
+        "line-height": "23px",
+        "padding-left": "4px"
+      }
+    },
+    {
+      "specId": "text-field-line-caption",
+      "node": "4987:32172",
+      "variant": "State=Default, Error=False",
+      "target": ".umc-field__caption",
+      "expected": {
+        "color": "#7e7f7f",
+        "font-size": "13px",
+        "padding-left": "4px"
+      }
+    },
+    {
+      "specId": "text-field-line-invalid",
+      "node": "5050:12372",
+      "variant": "State=Default, Error=True",
+      "target": ".umc-text-field-line-field",
+      "expected": {
+        "border-bottom-color": "#e2e3e3"
+      }
+    },
+    {
+      "specId": "text-field-line-invalid-hover",
+      "interaction": "hover",
+      "node": "5050:12377",
+      "variant": "State=Focused & Hover, Error=True",
+      "target": ".umc-text-field-line-field",
+      "expected": {
+        "border-bottom-color": "#dc3d3d"
+      }
+    },
+    {
+      "specId": "text-field-line-disabled",
+      "node": "5050:12250",
+      "variant": "State=Disabled, Error=False",
+      "target": ".umc-text-field-line-field",
+      "expected": {
+        "border-bottom-color": "#e2e3e3"
+      }
+    }
+  ]
+}

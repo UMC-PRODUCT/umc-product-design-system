@@ -35,7 +35,7 @@
       "specId": "form-attachment-field-input",
       "node": "4456:32551",
       "variant": "Mode=Form Respond (입력 중), State=Default",
-      "target": ".umc-input-box__input",
+      "target": ".umc-text-field-box-field__input",
       "expected": {
         "font-size": "17px",
         "font-weight": "500",

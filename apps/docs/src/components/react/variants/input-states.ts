@@ -8,6 +8,7 @@ export const INPUT_STATE_ORDER = [
   "Hover",
   "Focused & Hover",
   "Typing",
+  "Typed",
   "Filled",
   "Filtered",
   "Disabled",
@@ -19,7 +20,7 @@ const FORCED_INPUT_STATES: Readonly<Record<string, readonly ForcedState[]>> = {
   Typing: ["focus-within"],
 }
 
-const STATES_WITH_VALUE = new Set(["Typing", "Filled", "Filtered"])
+const STATES_WITH_VALUE = new Set(["Typing", "Typed", "Filled", "Filtered"])
 
 export const stateOf = (variant: FigmaVariant) => variant.props["State"] ?? ""
 

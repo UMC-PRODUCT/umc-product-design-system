@@ -1,0 +1,251 @@
+{
+  "component": "TextFieldBox",
+  "figmaSection": "2621:33350",
+  "page": "/components/forms/text-field-box/",
+  "nodes": [
+    {
+      "specId": "text-field-label",
+      "node": "2621:33352",
+      "variant": "Text Field/ Label (Box 안)",
+      "target": ".umc-field__label",
+      "expected": {
+        "color": "#606262",
+        "font-size": "15px",
+        "font-weight": "500",
+        "line-height": "23px",
+        "letter-spacing": "-0.45px",
+        "padding-left": "4px"
+      }
+    },
+    {
+      "specId": "text-field-box",
+      "node": "2621:33116",
+      "variant": "State=Default, Type=Text, Size=Lg",
+      "target": ".umc-text-field-box-field",
+      "expected": {
+        "height": "48px",
+        "border-top-width": "1px",
+        "border-top-color": "#cccccc",
+        "border-top-left-radius": "14px",
+        "background-color": "#ffffff",
+        "padding-left": "16px",
+        "padding-right": "8px",
+        "box-shadow~": "#d3d8d826 1px 1px 2px 0px inset, #ffffff40 -1px -1px 1px 0px inset"
+      }
+    },
+    {
+      "specId": "text-field-box-hover",
+      "interaction": "hover",
+      "node": "2621:33126",
+      "variant": "State=Focused & Hover, Type=Text, Size=Lg",
+      "target": ".umc-text-field-box-field",
+      "expected": {
+        "border-top-color": "#008a80",
+        "background-color": "#ffffff"
+      }
+    },
+    {
+      "specId": "text-field-box-focus",
+      "interaction": "focus",
+      "node": "2621:33126",
+      "variant": "State=Focused & Hover, Type=Text, Size=Lg (빈 값 포커스)",
+      "target": ".umc-text-field-box-field",
+      "expected": {
+        "border-top-color": "#008a80",
+        "background-color": "#ffffff"
+      }
+    },
+    {
+      "specId": "text-field-placeholder",
+      "node": "2621:33130",
+      "variant": "Focused & Hover placeholder",
+      "target": ".umc-text-field-box-field__input",
+      "expected": {
+        "font-size": "18px",
+        "font-weight": "500",
+        "line-height": "25.2px",
+        "letter-spacing": "-0.36px"
+      },
+      "figmaDiffers": {
+        "font-size": "Lg 기본 상태 placeholder만 16px이고 나머지 상태는 18px이다. 상태 전환 때 크기가 튀지 않도록 18px로 맞췄다"
+      }
+    },
+    {
+      "specId": "text-field-caption",
+      "node": "2621:33343",
+      "variant": "Help Text, Type=Default",
+      "target": ".umc-field__caption",
+      "expected": {
+        "color": "#7e7f7f",
+        "font-size": "13px",
+        "font-weight": "400",
+        "line-height": "18.85px",
+        "letter-spacing": "0px",
+        "padding-left": "4px"
+      }
+    },
+    {
+      "specId": "text-field-value",
+      "node": "2621:33156",
+      "variant": "State=Filled, Type=Text, Size=Lg",
+      "target": ".umc-text-field-box-field__input",
+      "expected": {
+        "font-size": "18px",
+        "font-weight": "500",
+        "line-height": "25.2px",
+        "letter-spacing": "-0.36px",
+        "color": "#0f1010"
+      }
+    },
+    {
+      "specId": "text-field-typing",
+      "interaction": "focus",
+      "node": "2621:33140",
+      "variant": "State=Typing, Type=Text, Size=Lg",
+      "target": ".umc-text-field-box-field",
+      "expected": {
+        "border-top-color": "#008a80",
+        "background-color": "#f4fbfa99"
+      }
+    },
+    {
+      "specId": "text-field-clear",
+      "node": "2621:33329",
+      "variant": ".primitive/ Text Field/ Accessory, Type=Clear",
+      "target": ".umc-text-field-box-field__clear",
+      "expected": {
+        "color": "#e2e4e3",
+        "padding-left": "6px",
+        "padding-right": "6px"
+      }
+    },
+    {
+      "specId": "text-field-unit",
+      "node": "2621:33158",
+      "variant": "단위 (Mobile Web/Label/1-Medium)",
+      "target": ".umc-text-field-box-field__unit",
+      "expected": {
+        "color": "#0f1010",
+        "font-size": "18px",
+        "font-weight": "500",
+        "line-height": "24px",
+        "letter-spacing": "-0.54px",
+        "padding-right": "8px"
+      }
+    },
+    {
+      "specId": "text-field-md",
+      "node": "2621:33121",
+      "variant": "State=Default, Type=Text, Size=Md",
+      "target": ".umc-text-field-box-field",
+      "expected": {
+        "height": "44px",
+        "padding-right": "8px"
+      }
+    },
+    {
+      "specId": "text-field-md-input",
+      "node": "2621:33123",
+      "variant": "Size=Md 입력 글자",
+      "target": ".umc-text-field-box-field__input",
+      "expected": {
+        "font-size": "16px",
+        "font-weight": "500",
+        "line-height": "22.4px",
+        "letter-spacing": "-0.48px"
+      }
+    },
+    {
+      "specId": "text-field-password-toggle",
+      "node": "2621:33337",
+      "variant": ".primitive/ Text Field/ Accessory, Usage=Password",
+      "target": ".umc-text-field-box-field__password-toggle",
+      "expected": {
+        "color": "#7e7f7f",
+        "padding-left": "4px",
+        "padding-right": "8px"
+      }
+    },
+    {
+      "specId": "text-field-invalid",
+      "node": "2621:33357",
+      "variant": "Text Field/ Box, State=Default, Error=True",
+      "target": ".umc-text-field-box-field",
+      "expected": {
+        "border-top-color": "#f88c8c",
+        "background-color": "#fef2f1"
+      }
+    },
+    {
+      "specId": "text-field-invalid-label",
+      "node": "2621:33410",
+      "variant": "Text Field/ Label, State=Error",
+      "target": ".umc-field__label",
+      "expected": {
+        "color": "#dc3d3d"
+      }
+    },
+    {
+      "specId": "text-field-invalid-caption",
+      "node": "2621:33347",
+      "variant": "Help Text, Type=Error",
+      "target": ".umc-field__caption",
+      "expected": {
+        "color": "#dc3d3d"
+      }
+    },
+    {
+      "specId": "text-field-invalid-filled",
+      "node": "2621:33383",
+      "variant": "Text Field/ Box, State=Filled, Error=True",
+      "target": ".umc-text-field-box-field",
+      "expected": {
+        "border-top-color": "#dc3d3d",
+        "background-color": "#fef2f1",
+        "color": "#dc3d3d"
+      }
+    },
+    {
+      "specId": "text-field-disabled",
+      "node": "2621:33387",
+      "variant": "Text Field/ Box, State=Disabled, Error=False",
+      "target": ".umc-text-field-box-field",
+      "expected": {
+        "border-top-color": "#eff0f0",
+        "background-color": "#fbfcfc",
+        "color": "#cccccc"
+      },
+      "figmaDiffers": {
+        "border-top-color": "Input Box는 2기 변수 warmgray-150(#efedeb), Text Field/ Box는 TealGrey-100(#eff0f0)을 쓴다. 3기 토큰인 #eff0f0로 통일했다"
+      }
+    },
+    {
+      "specId": "text-field-disabled-label",
+      "node": "2621:33403",
+      "variant": "Text Field/ Label, State=Disabled",
+      "target": ".umc-field__label",
+      "expected": {
+        "color": "#adadad"
+      }
+    },
+    {
+      "specId": "text-field-disabled-unit",
+      "node": "2621:33170",
+      "variant": "Disabled 단위",
+      "target": ".umc-text-field-box-field__unit",
+      "expected": {
+        "color": "#adadad"
+      }
+    },
+    {
+      "specId": "text-field-disabled-invalid",
+      "node": "2621:33391",
+      "variant": "Text Field/ Box, State=Disabled, Error=True",
+      "target": ".umc-text-field-box-field",
+      "expected": {
+        "border-top-color": "#fdb4b4",
+        "background-color": "#fef2f1"
+      }
+    }
+  ]
+}

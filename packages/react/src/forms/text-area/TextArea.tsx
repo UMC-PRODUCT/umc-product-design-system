@@ -36,7 +36,7 @@ export function TextArea({
   const [typedLength, setTypedLength] = useState(() => lengthOf(defaultValue))
   const isControlled = value !== undefined
   const currentLength = isControlled ? lengthOf(value) : typedLength
-  const showCounter = maxLength !== undefined
+  const showCounter = maxLength !== undefined && !readOnly
 
   const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     if (!isControlled) setTypedLength(event.target.value.length)
