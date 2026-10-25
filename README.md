@@ -130,6 +130,22 @@ pnpm up "@umc-product/*" --latest
 <!-- releases:start -->
 
 <details open>
+<summary><b>0.9.0</b> · 2026-10-25 · 새 기능 1 · 화면 변화 2</summary>
+
+**새 기능**
+
+- **react** 코드 입력 칸에 작은 크기 `size="md"`가 생깁니다.
+
+**화면 변화**
+
+- **react** 바텀 시트와 패널의 버튼 영역 위 여백이 32px에서 16px로 줄고, 패널의 버튼이 양옆으로 4px씩 넓어집니다.
+- **react** 입력 상자의 오류 배경이 더 옅은 분홍이 됩니다.
+
+전문과 대응표: [react](packages/react/CHANGELOG.md#090-2026-10-25)
+
+</details>
+
+<details>
 <summary><b>0.8.0</b> · 2026-10-25 · 깨지는 변경 2 · 새 기능 2 · 화면 변화 2</summary>
 
 **깨지는 변경**

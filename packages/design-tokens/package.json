@@ -1,6 +1,6 @@
 {
   "name": "@umc-product/design-tokens",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "UMC 디자인 시스템 토큰. CSS 변수, Tailwind v4 유틸리티, vanilla-extract 객체",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://umc-product.github.io/umc-product-design-system/",

@@ -1,5 +1,9 @@
 # @umc-product/icons
 
+## 0.9.0 (2026-10-25)
+
+No changes in this release.
+
 ## 0.8.0 (2026-10-25)
 
 No changes in this release.
