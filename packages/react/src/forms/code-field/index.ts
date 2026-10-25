@@ -1,1 +1,5 @@
-export { CodeField, type CodeFieldProps } from "./CodeField.tsx"
+export {
+  CodeField,
+  type CodeFieldProps,
+  type CodeFieldSize,
+} from "./CodeField.tsx"

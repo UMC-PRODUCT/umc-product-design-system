@@ -139,8 +139,8 @@
   .umc-bottom-sheet-actions {
     display: flex;
     gap: var(--umc-spacing-gap-10);
-    padding-block: var(--umc-spacing-padding-32) var(--umc-spacing-padding-0);
-    padding-inline: var(--umc-spacing-padding-20);
+    padding-block: var(--umc-spacing-padding-16) var(--umc-spacing-padding-10);
+    padding-inline: var(--umc-spacing-padding-16);
   }
 
   .umc-bottom-sheet-actions[data-layout="stacked"] {
@@ -166,10 +166,14 @@
     flex-direction: column;
     align-items: center;
     gap: var(--umc-spacing-gap-8);
-    padding-block: var(--umc-spacing-padding-16) var(--umc-spacing-padding-4);
   }
 
   .umc-bottom-sheet-actions[data-layout="primary-top"] .umc-button:first-child {
     align-self: stretch;
+  }
+
+  .umc-bottom-sheet__popup .umc-bottom-sheet-actions {
+    padding-block-end: var(--umc-spacing-padding-0);
+    padding-inline: var(--umc-spacing-padding-20);
   }
 }

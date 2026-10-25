@@ -6,11 +6,12 @@ description: 한 칸에 한 글자씩 받는 코드 입력 필드입니다.
 import {
   CodeFieldAllVariants,
   CodeFieldDefault,
+  CodeFieldSizes,
   CodeFieldStates,
   CodeFieldVerify,
 } from "../../../../components/react/forms/CodeFieldExamples.tsx"
 
-피그마 `Text Field/ Code Input`과 `Input Box/Code Input/ Cell`을 구현했습니다. 칸은 52px 정사각형이고 칸 사이는 10px입니다. 붙여넣기, 방향키 이동, 지우기는 Base UI `OTPField`가 맡습니다.
+피그마 `Text Field/ Code Input`과 `Input Box/Code Input/ Cell`을 구현했습니다. 칸은 52px 정사각형이고 칸 사이는 10px이며, `size="md"`면 42px 칸에 6px 간격입니다. 붙여넣기, 방향키 이동, 지우기는 Base UI `OTPField`가 맡습니다.
 
 ```tsx
 import { CodeField } from "@umc-product/react"
@@ -46,13 +47,19 @@ import { CodeField } from "@umc-product/react"
 />
 ```
 
+## 크기
+
+기본 `lg`는 52px 칸에 26px 글자, `md`는 42px 칸에 22px 글자(`Title/1-Semibold`)이고 모서리도 16px에서 12px로 줄어듭니다. 레이블, 도움말, 정보 버튼은 두 크기가 같습니다.
+
+<CodeFieldSizes client:visible />
+
 ## 상태
 
 <CodeFieldStates client:visible />
 
 ## 모든 변형
 
-피그마 `Input Box/Code Input/ Cell` 6개는 한 칸짜리(`length={1}`)로, `Text Field/ Code Input` 2개는 여섯 칸으로 그렸습니다. 칸에 마우스를 올리면 코드가 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
+피그마 `Input Box/Code Input/ Cell` 6개는 한 칸짜리(`length={1}`)로, `Text Field/ Code Input` 4개(오류 여부와 크기)는 여섯 칸으로 그렸습니다. 칸에 마우스를 올리면 코드가 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
 
 <CodeFieldAllVariants client:visible />
 
@@ -63,6 +70,7 @@ import { CodeField } from "@umc-product/react"
 | prop              | 타입                                     | 기본값      | 설명                                  |
 | ----------------- | ---------------------------------------- | ----------- | ------------------------------------- |
 | `length`          | `number`                                 | `6`         | 칸 수                                 |
+| `size`            | `"lg" \| "md"`                           | `"lg"`      | 칸 크기(52px, 42px)                   |
 | `value`           | `string`                                 | 없음        | 제어 값                               |
 | `defaultValue`    | `string`                                 | `""`        | 비제어 초기값                         |
 | `onValueChange`   | `(value: string) => void`                | 없음        | 값이 바뀔 때                          |

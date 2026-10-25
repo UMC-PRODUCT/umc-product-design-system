@@ -35,6 +35,14 @@ describe("CodeField", () => {
     expect(cells).toHaveAttribute("data-invalid")
   })
 
+  it("기본 크기는 lg이고 size=md이면 칸 묶음에 data-size를 단다", () => {
+    const { container, rerender } = render(<CodeField length={4} />)
+    const cells = container.querySelector(".umc-code-field__cells")
+    expect(cells).toHaveAttribute("data-size", "lg")
+    rerender(<CodeField length={4} size="md" />)
+    expect(cells).toHaveAttribute("data-size", "md")
+  })
+
   it("onValueComplete가 완성 시 호출된다", async () => {
     const onValueComplete = vi.fn()
     const user = userEvent.setup()
