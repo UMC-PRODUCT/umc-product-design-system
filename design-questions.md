@@ -260,6 +260,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 28. `Text Field/Line/Field`의 Typed 글자색은 다른 파일 변수(`semantic/text/primary`, rgba(0,12,30,0.8))를 가리키고, Password의 Typed는 `text-default`(#0f1010)입니다. 코드는 #0f1010을 썼습니다. 캐럿은 Box가 Teal-500, Line이 Teal-400이라 코드도 다르게 두었습니다.
 29. 같은 상태를 `Text Field/Line/Field`는 `Typed`, `Text Field/Box/Field`는 `Filled`로 부르고, 같은 종류를 `Selector`와 `Select`로 부릅니다. 코드는 Selector를 `Select`의 `shape="line"`으로 옮겼습니다. 이름을 한쪽으로 맞출지 알려 주세요. Line의 Disabled 레이블은 Default 색(#544f4b)인데 Box는 비활성 색이라, 코드는 Box와 같게 두었습니다.
 30. 2026-10-25에 `Text Field/Box/Field`의 오류 배경이 Red-50 100%에서 30%(`rgba(254, 242, 241, 0.3)`)로 바뀌었습니다. 투명도 색 체계가 아직 없어 코드는 `#fef2f14d`를 컴포넌트 변수(`--umc-text-field-box-field-error-bg`, `--umc-select-error-bg`)로 둡니다. Opacity Color System이 정해지면 토큰으로 바꾸겠습니다. `Select`, `TextFieldArea`, `VerificationCodeField`는 같은 상자라 함께 바뀌었고, `Input Box/Code Input/ Cell`의 오류 배경(60%)과 Icon Button Weak Error 배경(100%)은 그대로입니다.
+31. 2026-10-25에 `Text Field/ Code Input`에 `Size=Md`(칸 42px, 모서리 12px, 글자 `Title/1-Semibold` 22px, 칸 간격 6px)가 생겨 `CodeField`에 `size="md"`를 더했습니다. 칸 컴포넌트 `Input Box/Code Input/ Cell`에는 아직 Lg만 있고, Md 칸은 인스턴스에서 크기를 덮어쓴 것입니다. 칸 컴포넌트에도 Md 변형을 둘지 알려 주세요.
 
 ## 질문지
 
@@ -352,7 +353,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 
 ### code-field
 
-칸 글자는 피그마 스타일 이름이 `Heading/4-Semibold`지만 크기가 26px로 파운데이션 정의(18px)와 다릅니다. 피그마 값(26px, 행간 1.3)을 컴포넌트 변수로 썼습니다.
+칸 글자는 피그마 스타일 이름이 `Heading/4-Semibold`지만 크기가 26px로 파운데이션 정의(18px)와 다릅니다. 피그마 값(26px, 행간 1.3)을 컴포넌트 변수로 썼습니다. Md 칸은 `Title/1-Semibold`(22px, 행간 1.4) 토큰을 씁니다.
 
 ### field
 

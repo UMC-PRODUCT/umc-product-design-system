@@ -24,6 +24,7 @@ const meta = {
     caption: "초대 코드 6자리를 입력하세요",
     defaultValue: "",
     length: 6,
+    size: "lg",
     validationType: "alphanumeric",
     mask: false,
     required: false,

@@ -6,7 +6,7 @@
     {
       "specId": "code-field-root",
       "node": "2621:36597",
-      "variant": "Text Field/ Code Input, Error=False",
+      "variant": "Text Field/ Code Input, Error=False, Size=Lg",
       "target": ".umc-field",
       "expected": {
         "row-gap": "10px"
@@ -15,7 +15,7 @@
     {
       "specId": "code-field-cells",
       "node": "2621:36599",
-      "variant": "Cell 묶음",
+      "variant": "Cell 묶음, Size=Lg",
       "target": ".umc-code-field__cells",
       "expected": {
         "column-gap": "10px"
@@ -24,7 +24,7 @@
     {
       "specId": "code-field-cell",
       "node": "2621:36575",
-      "variant": "Input Box/Code Input/ Cell, State=Default",
+      "variant": "Input Box/Code Input/ Cell, State=Default, Size=Lg",
       "target": ".umc-code-field__cell",
       "expected": {
         "width": "52px",
@@ -97,6 +97,46 @@
         "border-top-color": "#cccccc",
         "background-color": "#fbfcfc",
         "color": "#cccccc"
+      }
+    },
+    {
+      "specId": "code-field-cells-md",
+      "node": "5364:95864",
+      "variant": "Text Field/ Code Input, Error=False, Size=Md의 Cell 묶음",
+      "target": ".umc-code-field__cells",
+      "expected": {
+        "column-gap": "6px"
+      }
+    },
+    {
+      "specId": "code-field-cell-md",
+      "node": "5364:95865",
+      "variant": "Text Field/ Code Input, Error=False, Size=Md의 Cell",
+      "target": ".umc-code-field__cell",
+      "expected": {
+        "width": "42px",
+        "height": "42px",
+        "border-top-width": "1px",
+        "border-top-color": "#cccccc",
+        "border-top-left-radius": "12px",
+        "background-color": "#ffffff",
+        "padding-left": "10px",
+        "padding-right": "10px",
+        "font-size": "22px",
+        "font-weight": "600",
+        "line-height": "30.8px",
+        "letter-spacing": "-0.22px"
+      }
+    },
+    {
+      "specId": "code-field-cell-md-invalid",
+      "node": "5364:95876",
+      "variant": "Text Field/ Code Input, Error=True, Size=Md의 Cell",
+      "target": ".umc-code-field__cell",
+      "expected": {
+        "border-top-color": "#f88c8c",
+        "color": "#dc3d3d",
+        "background-image~": "#fef2f199"
       }
     }
   ]
