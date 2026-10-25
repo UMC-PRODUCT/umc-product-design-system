@@ -11,7 +11,7 @@ import { ForceState } from "./variants/VariantCells.tsx"
 import { lookup, type FigmaVariant } from "./variants/figma-variants.ts"
 import { VariantGrid } from "./variants/VariantGrid.tsx"
 
-const COLORS: readonly ButtonColor[] = ["primary", "neutral", "red", "white"]
+const COLORS: readonly ButtonColor[] = ["brand", "neutral", "red", "white"]
 const VARIANTS: readonly ButtonVariant[] = ["fill", "weak"]
 const SIZES: readonly ButtonSize[] = ["lg", "md", "sm", "xs"]
 const STATES = [
@@ -76,7 +76,7 @@ export function ButtonSizes() {
         <Button
           key={size}
           size={size}
-          data-spec-id={`button-fill-primary-${size}-default`}
+          data-spec-id={`button-fill-brand-${size}-default`}
         >
           버튼 {size}
         </Button>
@@ -99,7 +99,7 @@ export function ButtonIcons() {
       <Button
         size="sm"
         trailingIcon={<ChevronRightIcon weight="fill" />}
-        data-spec-id="button-fill-primary-sm-trailing-icon"
+        data-spec-id="button-fill-brand-sm-trailing-icon"
       >
         다음
       </Button>
@@ -233,7 +233,7 @@ const FIGMA_ICON_ONLY_SIZES: Readonly<Record<string, ButtonIconOnlySize>> = {
 }
 
 const FIGMA_COLORS: Readonly<Record<string, ButtonColor>> = {
-  Primary: "primary",
+  Brand: "brand",
   Neutral: "neutral",
   White: "white",
   Red: "red",

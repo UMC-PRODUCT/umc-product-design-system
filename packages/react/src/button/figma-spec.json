@@ -4,9 +4,9 @@
   "page": "/components/actions/button/",
   "nodes": [
     {
-      "specId": "button-fill-primary-lg-default",
+      "specId": "button-fill-brand-lg-default",
       "node": "2621:33607",
-      "variant": "Size=Lg, Color=Primary, Style=Fill, State=Default",
+      "variant": "Size=Lg, Color=Brand, Style=Fill, State=Default",
       "expected": {
         "background-color": "#008a80",
         "color": "#ffffff",
@@ -22,37 +22,37 @@
       }
     },
     {
-      "specId": "button-fill-primary-lg-default",
+      "specId": "button-fill-brand-lg-default",
       "interaction": "hover",
       "node": "2621:33754",
-      "variant": "Size=Lg, Color=Primary, Style=Fill, State=Pressed",
+      "variant": "Size=Lg, Color=Brand, Style=Fill, State=Pressed",
       "expected": {
         "background-color": "#015a54",
         "color": "#ffffff"
       }
     },
     {
-      "specId": "button-fill-primary-lg-disabled",
+      "specId": "button-fill-brand-lg-disabled",
       "node": "2621:33828",
-      "variant": "Size=Lg, Color=Primary, Style=Fill, State=Disabled",
+      "variant": "Size=Lg, Color=Brand, Style=Fill, State=Disabled",
       "expected": {
         "background-color": "#7ac7c1",
         "color": "#ddf4f1"
       }
     },
     {
-      "specId": "button-fill-primary-lg-loading",
+      "specId": "button-fill-brand-lg-loading",
       "node": "2621:33697",
-      "variant": "Size=Lg, Color=Primary, Style=Fill, State=Loading",
+      "variant": "Size=Lg, Color=Brand, Style=Fill, State=Loading",
       "expected": {
         "background-color": "#015a54",
         "color": "#ffffff"
       }
     },
     {
-      "specId": "button-weak-primary-lg-default",
+      "specId": "button-weak-brand-lg-default",
       "node": "2621:33918",
-      "variant": "Size=Lg, Color=Primary, Style=Weak, State=Default",
+      "variant": "Size=Lg, Color=Brand, Style=Weak, State=Default",
       "expected": {
         "background-color": "#ddf4f1",
         "color": "#02746c",
@@ -68,10 +68,10 @@
       }
     },
     {
-      "specId": "button-weak-primary-lg-default",
+      "specId": "button-weak-brand-lg-default",
       "interaction": "hover",
       "node": "2621:34033",
-      "variant": "Size=Lg, Color=Primary, Style=Weak, State=Pressed",
+      "variant": "Size=Lg, Color=Brand, Style=Weak, State=Pressed",
       "expected": {
         "background-color": "#ddf4f1",
         "color": "#02746c",
@@ -79,18 +79,18 @@
       }
     },
     {
-      "specId": "button-weak-primary-lg-disabled",
+      "specId": "button-weak-brand-lg-disabled",
       "node": "2621:34098",
-      "variant": "Size=Lg, Color=Primary, Style=Weak, State=Disabled",
+      "variant": "Size=Lg, Color=Brand, Style=Weak, State=Disabled",
       "expected": {
         "background-color": "#ddf4f1",
         "color": "#7ac7c1"
       }
     },
     {
-      "specId": "button-weak-primary-lg-loading",
+      "specId": "button-weak-brand-lg-loading",
       "node": "2621:33981",
-      "variant": "Size=Lg, Color=Primary, Style=Weak, State=Loading",
+      "variant": "Size=Lg, Color=Brand, Style=Weak, State=Loading",
       "expected": {
         "background-color": "#ddf4f1",
         "color": "#02746c",
@@ -381,9 +381,9 @@
       }
     },
     {
-      "specId": "button-fill-primary-md-default",
+      "specId": "button-fill-brand-md-default",
       "node": "2621:33595",
-      "variant": "Size=Md, Color=Primary, Style=Fill, State=Default",
+      "variant": "Size=Md, Color=Brand, Style=Fill, State=Default",
       "expected": {
         "background-color": "#008a80",
         "color": "#ffffff",
@@ -399,9 +399,9 @@
       }
     },
     {
-      "specId": "button-fill-primary-sm-default",
+      "specId": "button-fill-brand-sm-default",
       "node": "2621:33636",
-      "variant": "Size=Sm, Color=Primary, Style=Fill, State=Default",
+      "variant": "Size=Sm, Color=Brand, Style=Fill, State=Default",
       "expected": {
         "background-color": "#008a80",
         "color": "#ffffff",
@@ -417,9 +417,9 @@
       }
     },
     {
-      "specId": "button-fill-primary-xs-default",
+      "specId": "button-fill-brand-xs-default",
       "node": "2621:34152",
-      "variant": "Size=XS, Color=Primary, Style=Fill, State=Default",
+      "variant": "Size=XS, Color=Brand, Style=Fill, State=Default",
       "expected": {
         "background-color": "#008a80",
         "color": "#ffffff",
@@ -446,9 +446,9 @@
       }
     },
     {
-      "specId": "button-fill-primary-sm-trailing-icon",
+      "specId": "button-fill-brand-sm-trailing-icon",
       "node": "2621:33649",
-      "variant": "Size=Sm, Color=Primary, Style=Fill, Icon Position=Right",
+      "variant": "Size=Sm, Color=Brand, Style=Fill, Icon Position=Right",
       "expected": {
         "padding-left": "16px",
         "padding-right": "10px"

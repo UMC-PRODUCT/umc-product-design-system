@@ -22,7 +22,7 @@ import { Button } from "@umc-product/react"
 
 <Button
   variant="fill"
-  color="primary"
+  color="brand"
   size="md"
   isLoading={isPending}
   onClick={save}
@@ -33,7 +33,7 @@ import { Button } from "@umc-product/react"
 
 ## 색과 스타일
 
-마우스를 올리거나 누르면 피그마의 Pressed 모양이 됩니다. 로딩 모양은 비활성보다 우선합니다.
+마우스를 올리거나 누르면 피그마의 Pressed 모양이 됩니다. 로딩 모양은 비활성보다 우선합니다. 피그마가 `Color=Primary`를 `Color=Brand`로 바꿔 코드도 `color="brand"`입니다.
 
 <ButtonMatrix />
 
@@ -101,15 +101,15 @@ import { Button } from "@umc-product/react"
 
 ## props
 
-| prop                          | 타입                                         | 기본값          | 설명                                     |
-| ----------------------------- | -------------------------------------------- | --------------- | ---------------------------------------- |
-| `variant`                     | `"fill" \| "weak"`                           | `"fill"`        | 피그마 Style                             |
-| `color`                       | `"primary" \| "neutral" \| "red" \| "white"` | `"primary"`     | 피그마 Color                             |
-| `size`                        | `"lg" \| "md" \| "sm" \| "xs"`               | `"md"`          | 피그마 Size                              |
-| `isLoading`                   | `boolean`                                    | `false`         | 피그마 State=Loading                     |
-| `leadingIcon`, `trailingIcon` | `ReactNode`                                  | 없음            | 피그마 Icon Position                     |
-| `icon`                        | `ReactNode`                                  | 없음            | 피그마 Icon Only. 넘기면 라벨 없이 그림  |
-| 나머지                        | `ComponentPropsWithRef<"button">`            | `type="button"` | `ref`, `aria-*`, `data-*`, 이벤트 핸들러 |
+| prop                          | 타입                                       | 기본값          | 설명                                     |
+| ----------------------------- | ------------------------------------------ | --------------- | ---------------------------------------- |
+| `variant`                     | `"fill" \| "weak"`                         | `"fill"`        | 피그마 Style                             |
+| `color`                       | `"brand" \| "neutral" \| "red" \| "white"` | `"brand"`       | 피그마 Color                             |
+| `size`                        | `"lg" \| "md" \| "sm" \| "xs"`             | `"md"`          | 피그마 Size                              |
+| `isLoading`                   | `boolean`                                  | `false`         | 피그마 State=Loading                     |
+| `leadingIcon`, `trailingIcon` | `ReactNode`                                | 없음            | 피그마 Icon Position                     |
+| `icon`                        | `ReactNode`                                | 없음            | 피그마 Icon Only. 넘기면 라벨 없이 그림  |
+| 나머지                        | `ComponentPropsWithRef<"button">`          | `type="button"` | `ref`, `aria-*`, `data-*`, 이벤트 핸들러 |
 
 ## 알아 둘 점
 

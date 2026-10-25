@@ -36,7 +36,7 @@ export type DialogProps = {
 const CONFIRM_BUTTONS: Readonly<
   Record<DialogColor, { variant: ButtonVariant; color: ButtonColor }>
 > = {
-  primary: { variant: "fill", color: "primary" },
+  primary: { variant: "fill", color: "brand" },
   neutral: { variant: "fill", color: "neutral" },
   error: { variant: "weak", color: "red" },
 }

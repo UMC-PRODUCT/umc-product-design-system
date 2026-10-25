@@ -9,7 +9,7 @@ describe("ButtonProps", () => {
       "fill" | "weak" | undefined
     >()
     expectTypeOf<ButtonProps["color"]>().toEqualTypeOf<
-      "primary" | "neutral" | "red" | "white" | undefined
+      "brand" | "neutral" | "red" | "white" | undefined
     >()
     expectTypeOf<ButtonProps["size"]>().toEqualTypeOf<
       "lg" | "md" | "sm" | "xs" | undefined

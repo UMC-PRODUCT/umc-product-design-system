@@ -20,7 +20,7 @@ const meta = {
   args: {
     children: "확인",
     variant: "fill",
-    color: "primary",
+    color: "brand",
     size: "md",
     isLoading: false,
     disabled: false,

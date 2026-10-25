@@ -184,7 +184,7 @@ function LinkInput({
           <Button
             type="button"
             variant="weak"
-            color="primary"
+            color="brand"
             size="md"
             disabled={disabled}
             onClick={onUploadClick}
@@ -222,7 +222,7 @@ function AttachmentPreview({
           disabled={disabled}
         />
       </TextFieldBoxField>
-      <Button type="button" variant="weak" color="primary" size="md" disabled>
+      <Button type="button" variant="weak" color="brand" size="md" disabled>
         {uploadLabel}
       </Button>
     </>

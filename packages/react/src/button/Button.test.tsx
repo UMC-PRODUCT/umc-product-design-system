@@ -11,7 +11,7 @@ describe("Button", () => {
     const button = screen.getByRole("button", { name: "저장" })
     expect(button).toHaveAttribute("type", "button")
     expect(button).toHaveAttribute("data-variant", "fill")
-    expect(button).toHaveAttribute("data-color", "primary")
+    expect(button).toHaveAttribute("data-color", "brand")
     expect(button).toHaveAttribute("data-size", "md")
     expect(button).toHaveClass("umc-button")
   })

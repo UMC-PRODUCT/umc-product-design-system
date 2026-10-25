@@ -81,7 +81,7 @@ export function AppDialog({
                 render={
                   <Button
                     variant="fill"
-                    color="primary"
+                    color="brand"
                     size="md"
                     onClick={onConfirm}
                   >

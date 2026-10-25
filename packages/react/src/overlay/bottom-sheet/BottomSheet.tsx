@@ -47,7 +47,7 @@ export function BottomSheetActions(props: BottomSheetActionsProps) {
       <div className="umc-bottom-sheet-actions" data-layout="full">
         <Button
           variant="fill"
-          color="primary"
+          color="brand"
           size="md"
           onClick={primary.onClick}
         >
@@ -64,7 +64,7 @@ export function BottomSheetActions(props: BottomSheetActionsProps) {
       <div className="umc-bottom-sheet-actions" data-layout="primary-top">
         <Button
           variant="fill"
-          color="primary"
+          color="brand"
           size="md"
           onClick={primary.onClick}
         >
@@ -88,7 +88,7 @@ export function BottomSheetActions(props: BottomSheetActionsProps) {
         <>
           <Button
             variant="fill"
-            color="primary"
+            color="brand"
             size="md"
             onClick={primary.onClick}
           >
@@ -115,7 +115,7 @@ export function BottomSheetActions(props: BottomSheetActionsProps) {
           </Button>
           <Button
             variant="fill"
-            color="primary"
+            color="brand"
             size="md"
             onClick={primary.onClick}
           >

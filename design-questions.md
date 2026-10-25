@@ -71,6 +71,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 11. 아이콘만 있는 변형에도 `Icon Position=Right`가 붙어 있습니다. 코드는 이 값을 쓰지 않습니다. 문서 라벨의 Weak 아이콘 전용 첫 줄은 Default 줄인데 Pressed로 적혀 있습니다.
 12. 아이콘만 있는 변형은 Neutral과 White, Md·Sm·XS, Default·Pressed·Disabled뿐입니다. 코드는 Lg를 받지 않고, Primary·Red와 로딩은 라벨 버튼 규칙으로 그립니다. 필요한 조합을 알려 주세요.
 13. White 버튼만 아이콘이 글자(#606262)보다 옅은 #7E7F7F(`icon-subtle`)이고, 다른 색은 아이콘과 글자가 같습니다. 코드는 피그마대로 White 아이콘만 따로 칠합니다.
+14. 2026-10-25에 `Color=Primary`가 `Color=Brand`로 바뀌어 코드도 `color="brand"`로 바꿨습니다(깨지는 변경). `Icon Button`의 `Color=Primary`, `Toast`의 `Type=Primary`, `Web/Dialog`의 `Color=Primary`는 그대로라 코드도 `primary`로 남겼습니다. 함께 바꿀지 알려 주세요. Fill 비활성 색도 따라 바꿨습니다(Brand 배경 Teal-300→Teal-200, 글자 Teal-100→Teal-50, Red 배경 Red-300→Red-200, 글자 Red-200→Red-100). Weak 비활성은 그대로입니다.
 
 ## Text Button
 
