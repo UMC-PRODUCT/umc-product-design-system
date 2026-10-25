@@ -130,6 +130,41 @@ pnpm up "@umc-product/*" --latest
 <!-- releases:start -->
 
 <details open>
+<summary><b>0.8.0</b> · 2026-10-25 · 깨지는 변경 2 · 새 기능 2 · 화면 변화 2</summary>
+
+**깨지는 변경**
+
+- **react** 피그마 `Button`의 `Color=Primary`가 `Color=Brand`가 되어 `Button`의 `color="primary"`를 `color="brand"`로 바꿉니다. 기본값도 `brand`입니다. 색 값은 그대로이고, 피그마가 바뀌지 않은 `IconButton`, `Toast`, `Dialog`의 `primary`는 그대로 둡니다.
+
+  | 전                          | 후                       |
+  | --------------------------- | ------------------------ |
+  | `<Button color="primary">`  | `<Button color="brand">` |
+  | `ButtonColor`의 `"primary"` | `"brand"`                |
+  | `[data-color="primary"]`    | `[data-color="brand"]`   |
+
+- **react** 피그마가 `Text Field/ Input Box`를 `Text Field/Box/Field`로, 완성형을 `Text Field/Box`로 바꾸면서 코드 이름도 따라갑니다. `TextField`는 `TextFieldBox`, `InputBox`는 `TextFieldBoxField`가 되고, CSS 클래스 `umc-input-box*`와 변수 `--umc-input-box-*`도 `umc-text-field-box-field*`, `--umc-text-field-box-field-*`로 바뀝니다. props와 동작은 그대로입니다. `TextFieldArea`, `Select`, `VerificationCodeField`, `CodeField`의 이름은 바뀌지 않습니다.
+
+  | 전                                                  | 후                                                                       |
+  | --------------------------------------------------- | ------------------------------------------------------------------------ |
+  | `TextField`, `TextFieldProps`                       | `TextFieldBox`, `TextFieldBoxProps`                                      |
+  | `InputBox`, `InputBoxProps`                         | `TextFieldBoxField`, `TextFieldBoxFieldProps`                            |
+  | `.umc-input-box`, `.umc-input-box__input` 등        | `.umc-text-field-box-field`, `.umc-text-field-box-field__input` 등       |
+  | `--umc-input-box-*`                                 | `--umc-text-field-box-field-*`                                           |
+  | 문서 `/components/forms/text-field/`, `/input-box/` | `/components/forms/text-field-box/`, `/text-field-box-field/`(자동 이동) |
+
+**새 기능**
+
+- **react** 질문지 그룹에 `FormSheet`와 `FormHeader`를 추가합니다. 피그마 `Web/Form/Sheet`와 `Form/Header`를 옮긴 것으로, `FormHeader`는 썸네일, 제목, 부제목을 탭 모양 머리로 보여 주고 오른쪽에 `caption`(제출 시각, 상태 태그)을 둘 수 있습니다. `FormSheet`는 `header`, `action`(오른쪽 위 아이콘 버튼), `description`, 본문(`children`), `control`(아래 버튼)을 순서대로 놓는 틀입니다. 작성 화면과 조회 화면 모두 같은 틀을 쓰고, 안에 넣는 질문의 모드만 다릅니다.
+- **react** `TextFieldLine`과 `TextFieldLineField`를 추가합니다. 피그마 `Text Field/Line`(레이블, 밑줄 입력, 도움말)과 `Text Field/Line/Field`(Text, Password, Selector)를 옮겼습니다. 테두리 상자 대신 2px 밑줄과 22px Semibold 글자를 쓰고, 위아래 16px 여백이 컴포넌트에 들어 있습니다. 크기가 한 가지라 `size`와 `unit`이 없습니다. `Select`에는 `shape="line"`을 더해 `Type=Selector`를 같은 모양으로 그립니다.
+
+**화면 변화**
+
+- **react** 피그마 `Button`의 Fill 스타일 비활성 색이 바뀐 것에 맞춰 `variant="fill"`의 비활성 색이 바뀝니다. Brand는 배경 Teal-300(#7ac7c1)에서 Teal-200(#b3e5e1)으로, 글자 Teal-100(#ddf4f1)에서 Teal-50(#f4fbfa)으로 바뀝니다. Red는 배경 Red-300(#f88c8c)에서 Red-200(#fdb4b4)으로, 글자 Red-200(#fdb4b4)에서 Red-100(#ffe7e5)으로 바뀝니다. Weak 스타일과 Neutral, White는 그대로입니다.
+- **react** 피그마 `Form/Question`의 Read Only 모드에서 글자 수가 빠진 것에 맞춰 `TextArea`가 `readOnly`이면 `maxLength`가 있어도 글자 수를 그리지 않습니다. 높이도 글자 수 한 줄만큼(77px에서 50px로) 줄어듭니다. `FormTextAnswer`와 읽기 전용 `FormQuestion` 안의 답 칸도 같습니다. 비활성(`disabled`)에서는 전처럼 글자 수를 보여 줍니다.
+
+</details>
+
+<details>
 <summary><b>0.7.0</b> · 2026-10-24 · 깨지는 변경 2 · 새 기능 11 · 화면 변화 6</summary>
 
 **깨지는 변경**
