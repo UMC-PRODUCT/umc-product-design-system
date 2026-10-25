@@ -92,6 +92,24 @@ export function SelectFilter() {
   )
 }
 
+export function SelectLine() {
+  return (
+    <div className="umc-example umc-example-stack">
+      <div className="w-full max-w-[358px]">
+        <Select
+          shape="line"
+          label="파트"
+          options={PARTS}
+          placeholder="파트를 선택하세요"
+        />
+      </div>
+      <div className="w-full max-w-[358px]">
+        <Select shape="line" label="파트" options={PARTS} defaultValue="web" />
+      </div>
+    </div>
+  )
+}
+
 export function SelectSearchable() {
   return (
     <div className="umc-example umc-example-stack">
@@ -163,7 +181,7 @@ function SelectVariantCell({ variant }: { variant: FigmaVariant }) {
 export function SelectAllVariants() {
   return (
     <VariantGrid
-      set="input-box"
+      set="text-field-box-field"
       only={{ Type: ["Select"] }}
       rows={["State"]}
       columns={["Size"]}

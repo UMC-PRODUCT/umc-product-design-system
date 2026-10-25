@@ -6,8 +6,11 @@ import { type ComponentPropsWithRef, type ReactNode, useRef } from "react"
 
 import { mergeRefs } from "../../internal/merge-refs.ts"
 import { Field, type FieldOwnProps } from "../field/Field.tsx"
-import { InputBox } from "../input-box/InputBox.tsx"
-import { clearInputValue, useInputFilled } from "../input-box/input-value.ts"
+import { TextFieldBoxField } from "../text-field-box-field/TextFieldBoxField.tsx"
+import {
+  clearInputValue,
+  useInputFilled,
+} from "../text-field-box-field/input-value.ts"
 
 export type VerificationCodeFieldProps = Omit<
   ComponentPropsWithRef<"input">,
@@ -61,7 +64,7 @@ export function VerificationCodeField({
       disabled={disabled}
       className={className}
     >
-      <InputBox
+      <TextFieldBoxField
         size={size}
         invalid={invalid}
         disabled={disabled}
@@ -75,7 +78,7 @@ export function VerificationCodeField({
           disabled={disabled}
           readOnly={readOnly}
           required={required}
-          className="umc-input-box__input"
+          className="umc-text-field-box-field__input"
           onChange={(event) => {
             trackFilled(event)
             onChange?.(event)
@@ -84,7 +87,7 @@ export function VerificationCodeField({
         {showClear && (
           <button
             type="button"
-            className="umc-input-box__clear"
+            className="umc-text-field-box-field__clear"
             aria-label={CLEAR_LABEL}
             tabIndex={-1}
             onClick={() => clearInputValue(inputRef.current)}
@@ -92,8 +95,10 @@ export function VerificationCodeField({
             <RemoveCircleIcon weight="fill" size={24} />
           </button>
         )}
-        {timer && <span className="umc-input-box__timer">{timer}</span>}
-      </InputBox>
+        {timer && (
+          <span className="umc-text-field-box-field__timer">{timer}</span>
+        )}
+      </TextFieldBoxField>
     </Field>
   )
 }

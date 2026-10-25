@@ -7,7 +7,7 @@ import { NumericStepper } from "../numeric-stepper/NumericStepper.tsx"
 import { Select } from "../select/Select.tsx"
 import { TextArea } from "../text-area/TextArea.tsx"
 import { TextFieldArea } from "../text-field-area/TextFieldArea.tsx"
-import { TextField } from "../text-field/TextField.tsx"
+import { TextFieldBox } from "../text-field-box/TextFieldBox.tsx"
 import { VerificationCodeField } from "../verification-code-field/VerificationCodeField.tsx"
 import { Field, FieldControl } from "./Field.tsx"
 
@@ -112,7 +112,7 @@ describe("Field", () => {
 const CAPTION = "도움말"
 
 const FIELD_WRAPPERS: ReadonlyArray<readonly [string, () => ReactElement]> = [
-  ["TextField", () => <TextField caption={CAPTION} captionSize="lg" />],
+  ["TextFieldBox", () => <TextFieldBox caption={CAPTION} captionSize="lg" />],
   ["TextFieldArea", () => <TextFieldArea caption={CAPTION} captionSize="lg" />],
   ["TextArea", () => <TextArea caption={CAPTION} captionSize="lg" />],
   [

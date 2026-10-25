@@ -71,6 +71,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 11. 아이콘만 있는 변형에도 `Icon Position=Right`가 붙어 있습니다. 코드는 이 값을 쓰지 않습니다. 문서 라벨의 Weak 아이콘 전용 첫 줄은 Default 줄인데 Pressed로 적혀 있습니다.
 12. 아이콘만 있는 변형은 Neutral과 White, Md·Sm·XS, Default·Pressed·Disabled뿐입니다. 코드는 Lg를 받지 않고, Primary·Red와 로딩은 라벨 버튼 규칙으로 그립니다. 필요한 조합을 알려 주세요.
 13. White 버튼만 아이콘이 글자(#606262)보다 옅은 #7E7F7F(`icon-subtle`)이고, 다른 색은 아이콘과 글자가 같습니다. 코드는 피그마대로 White 아이콘만 따로 칠합니다.
+14. 2026-10-25에 `Color=Primary`가 `Color=Brand`로 바뀌어 코드도 `color="brand"`로 바꿨습니다(깨지는 변경). `Icon Button`의 `Color=Primary`, `Toast`의 `Type=Primary`, `Web/Dialog`의 `Color=Primary`는 그대로라 코드도 `primary`로 남겼습니다. 함께 바꿀지 알려 주세요. Fill 비활성 색도 따라 바꿨습니다(Brand 배경 Teal-300→Teal-200, 글자 Teal-100→Teal-50, Red 배경 Red-300→Red-200, 글자 Red-200→Red-100). Weak 비활성은 그대로입니다.
 
 ## Text Button
 
@@ -242,7 +243,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 13. 2026-10-17에 새로 올라온 `Text Area`(장문형)를 `TextArea`로 옮기고, 기존 `Text Field/ Input Box`의 `Type=Text Area`(단문형)는 `TextFieldArea`로 이름을 바꿨습니다. 피그마 이름도 장문형은 `Text Area`, 단문형은 Text Field의 한 타입으로 계속 나뉘어 있으면 좋겠습니다.
 14. (해결 2026-10-24) `Text Area`에 `Error=True` 변형이 생겨 코드도 따랐습니다. 오류이면 상태와 관계없이 테두리만 Red-300(`#f88c8c`)이고 배경은 그대로입니다. 전에는 `TextField`처럼 분홍 배경을 깔고 hover와 포커스에서 Red-400으로 진하게 했는데 둘 다 뺐습니다. 비활성이면서 오류일 때도 빨간 테두리가 남습니다.
 15. `Text Area`의 hover와 포커스 테두리는 Teal-300(`#7ac7c1`)이고, Input Box는 Teal-500입니다. Input Box의 Typing은 옅은 청록 배경이지만 `Text Area`는 흰색 그대로입니다. 의도한 차이인지 알려 주세요.
-16. `Text Area`의 글자 수는 모든 변형에 `0/0`으로 그려져 있습니다. 코드는 최대 글자 수(`maxLength`)를 정한 칸에만 "현재/최대"로 보여 줍니다. 2026-10-19에 Disabled 변형에도 글자 수가 생겨, 비활성 상태에서도 보여 줍니다. 최대 글자 수에 닿았을 때 모양이 따로 필요한지 알려 주세요.
+16. `Text Area`의 글자 수는 모든 변형에 `0/0`으로 그려져 있습니다. 코드는 최대 글자 수(`maxLength`)를 정한 칸에만 "현재/최대"로 보여 줍니다. 2026-10-19에 Disabled 변형에도 글자 수가 생겨, 비활성 상태에서도 보여 줍니다. 최대 글자 수에 닿았을 때 모양이 따로 필요한지 알려 주세요. (2026-10-25) `Form/Question`의 Read Only에서 글자 수가 빠져, 코드도 `readOnly`이면 글자 수를 숨깁니다.
 17. `Text Area` 설명의 `Place Hoder`는 `Placeholder`의 오타입니다.
 18. Image Thumbnail Editor의 배경(`#9ca3a3`, Default는 투명도 70%)은 3기 변수에 없는 값입니다. 이름 있는 색으로 연결할지 알려 주세요.
 19. Image Thumbnail Editor 안의 간격이 4.8px(아이콘과 문구)과 2.4px(두 문구 사이)입니다. 150px 칸을 0.8배로 줄인 값으로 보입니다. 정수 값으로 맞출지 알려 주세요.
@@ -252,6 +253,10 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 23. 2026-10-19에 `Text Area`의 최소 높이를 빼면서, Disabled 변형만 입력과 글자 수 사이 간격 4px이 없어 높이가 73px입니다(다른 상태는 77px). 코드는 모든 상태에 4px을 둡니다.
 24. `Help Text`에 14px 크기(`Size=14px`)가 생겨 `Field`의 `captionSize="lg"`로 옮겼습니다. 기본값은 13px이고, 14px을 쓰는 화면은 아직 찾지 못했습니다. 어느 입력에서 14px 도움말을 쓰는지 알려 주세요.
 25. `Text Info Button` 글자가 12px에서 13px로 커지면서 굵기도 Regular에서 Medium으로 바뀌었습니다. 코드는 피그마대로 Medium을 씁니다. 텍스트 스타일에는 연결되어 있지 않고, 크기·굵기·행간이 같은 `Caption/2-Medium`과는 자간(-2%와 0)만 다릅니다. 굵기가 의도인지, 스타일에 연결할지 알려 주세요.
+26. 2026-10-25에 `Text Field/Line`과 `Text Field/Line/Field`가 생겨 `TextFieldLine`, `TextFieldLineField`로 옮겼습니다. 이름을 맞추느라 `Text Field/Box`는 `TextFieldBox`(옛 `TextField`), `Text Field/Box/Field`는 `TextFieldBoxField`(옛 `InputBox`)가 되었습니다(깨지는 변경).
+27. `Text Field/Line`의 `Error=True` 변형은 레이블과 Help Text가 Default 색이고, 밑줄만 Focused & Hover와 Typing에서 Red-500입니다. Default, Typed, Disabled의 밑줄은 Error=False와 같은 회색입니다. 코드는 밑줄은 피그마대로 두고 레이블과 도움말은 `Field` 규칙대로 빨갛게 바꿉니다. 오류를 포커스 전에도 밑줄로 보여 줄지 알려 주세요.
+28. `Text Field/Line/Field`의 Typed 글자색은 다른 파일 변수(`semantic/text/primary`, rgba(0,12,30,0.8))를 가리키고, Password의 Typed는 `text-default`(#0f1010)입니다. 코드는 #0f1010을 썼습니다. 캐럿은 Box가 Teal-500, Line이 Teal-400이라 코드도 다르게 두었습니다.
+29. 같은 상태를 `Text Field/Line/Field`는 `Typed`, `Text Field/Box/Field`는 `Filled`로 부르고, 같은 종류를 `Selector`와 `Select`로 부릅니다. 코드는 Selector를 `Select`의 `shape="line"`으로 옮겼습니다. 이름을 한쪽으로 맞출지 알려 주세요. Line의 Disabled 레이블은 Default 색(#544f4b)인데 Box는 비활성 색이라, 코드는 Box와 같게 두었습니다.
 
 ## 질문지
 
@@ -285,6 +290,9 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 26. 질문이 없는 섹션의 모양이 없어 `FormSectionEmpty`를 먼저 만들었습니다. 평소에는 높이 120px 이상의 칸 가운데에 안내 문구("질문을 추가하거나 다른 섹션에서 옮겨 오세요", `body-3-regular`, #7E7F7F)만 둡니다. 질문을 끄는 동안 놓을 수 있으면 25번과 같은 점선과 배경을 더합니다. 문구와 두 모습을 정해 주세요.
 27. 마지막 질문을 다른 섹션으로 옮겨 섹션을 비울 수 있게 할지 알려 주세요. 문서 예시는 비울 수 있게 했습니다. 꺼진 섹션으로는 옮길 수 없게 막았습니다.
 28. 파일 업로드의 Help Text만 왼쪽 여백이 20px이라 칸 왼쪽 끝에서 시작하고, 글 답변의 Help Text는 칸보다 4px 안쪽에서 시작합니다. 코드는 두 곳 모두 칸보다 4px 안쪽에 둡니다. 첨부 칸에는 오류 모양이 없어, Help Text를 켤 때 Text Area 오류처럼 테두리만 Red-300으로 바꿨습니다. 둘 다 맞는지 알려 주세요.
+29. 2026-10-25에 `Web/Form/Sheet`와 `Form/Header`가 생겨 `FormSheet`, `FormHeader`로 옮겼습니다. 부제목 색 #656b6b는 토큰에 없어 `text-neutral-medium-600`(#606262)을 썼고, 아래 띠 높이 9.917px은 10px으로 올렸습니다.
+30. `Web/Form/Sheet`의 오른쪽 위 아이콘 버튼 줄(24px)은 항상 있습니다. 코드는 `action`을 넘길 때만 그립니다. 버튼이 없는 화면에서도 24px을 비워 둘지 알려 주세요.
+31. `Form/Header`의 썸네일(50px) 자리는 회색 상자뿐입니다. 코드는 `thumbnail`을 넘기지 않으면 회색 상자를 그립니다. 이미지가 없을 때 어떤 모양인지(로고, 이니셜 등) 알려 주세요.
 
 ## 차트
 
@@ -348,7 +356,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 - 레이블 색: `Text Field/ Label` 원본은 2기 변수 `warmgray-600`(#544f4b)이고, `Text Field/ Box` 안에서는 `TealGrey-600`(#606262)으로 덮어씁니다. 3기 토큰인 #606262(`--umc-color-text-neutral-medium-600`)를 씁니다.
 - 레이블(15px/23px, -3%)과 도움말(13px/17px)은 3기 파운데이션에 없는 `Mobile Web/*` 텍스트 스타일입니다. 토큰에 없는 값이라 피그마 값을 그대로 썼습니다.
 
-### input-box
+### text-field-box-field
 
 - 비활성 테두리: `Input Box`는 2기 변수 `warmgray-150`(#efedeb), `Text Field/ Box`는 `TealGrey-100`(#eff0f0)을 씁니다. 3기 토큰 `--umc-color-border-neutral-weaker-100`로 통일했습니다.
 - Lg 기본 상태의 placeholder만 16px이고 나머지 상태는 18px입니다. 상태가 바뀔 때 글자 크기가 튀지 않도록 Lg는 모두 18px(`Label/1-Medium`)로 맞췄습니다.
@@ -371,7 +379,7 @@ placeholder(#9ca3a3)와 입력 글자(#161919)는 2기 변수 `teal-gray-400`, `
 - 목록이 열리면 아래 화살표를 180도 돌립니다. 피그마는 `Up Chevron` 아이콘을 따로 둡니다.
 - 버튼 hover 배경 #fbfcfc는 피그마 `State=Hover`와 같습니다. 피그마에 열린 상태가 따로 없어 열려 있는 동안 hover 배경을 유지합니다.
 
-### text-field
+### text-field-box
 
 - Md 비밀번호 필드의 오른쪽 패딩: 피그마는 4px, 일반 Md 필드는 8px입니다. 같은 크기 안에서 오른쪽 여백이 달라지지 않도록 8px로 맞췄습니다.
 - 지우기 아이콘 색 #e2e4e3은 토큰에 없어 컴포넌트 변수로 썼습니다. 오류 상태에서는 피그마대로 #cccccc입니다.

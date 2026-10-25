@@ -12,7 +12,7 @@ export function GuidanceMessageDefault() {
     <div className="umc-example">
       <div className="flex w-full max-w-[400px] flex-col items-center gap-4">
         <div className="flex w-full gap-2.5">
-          <Button variant="weak" color="primary" className="flex-1">
+          <Button variant="weak" color="brand" className="flex-1">
             기획보기
           </Button>
           <Button disabled className="flex-1">

@@ -1,0 +1,55 @@
+{
+  "component": "FormSheet",
+  "figmaSection": "5157:91295",
+  "page": "/components/questionnaire/form-sheet/",
+  "figmaDiffers": {
+    "actions-row": "피그마는 오른쪽 위 아이콘 버튼 줄(24px)이 늘 있다. 코드는 action을 넘길 때만 그린다"
+  },
+  "nodes": [
+    {
+      "specId": "form-sheet-body",
+      "node": "5157:91127",
+      "variant": "Web/Form/Sheet",
+      "target": ".umc-form-sheet__body",
+      "expected": {
+        "padding-top": "8px",
+        "padding-bottom": "32px",
+        "border-bottom-left-radius": "12px",
+        "border-bottom-right-radius": "12px",
+        "background-color": "#ffffff"
+      }
+    },
+    {
+      "specId": "form-sheet-actions",
+      "node": "5157:91128",
+      "variant": "Web/Form/Sheet",
+      "target": ".umc-form-sheet__actions",
+      "expected": {
+        "min-height": "24px",
+        "padding-left": "8px",
+        "padding-right": "8px",
+        "justify-content": "flex-end"
+      }
+    },
+    {
+      "specId": "form-sheet-content",
+      "node": "5157:91130",
+      "variant": "Web/Form/Sheet",
+      "target": ".umc-form-sheet__content",
+      "expected": {
+        "padding-left": "32px",
+        "padding-right": "32px",
+        "row-gap": "32px"
+      }
+    },
+    {
+      "specId": "form-sheet-control",
+      "node": "5157:91160",
+      "variant": "Web/Form/Sheet",
+      "target": ".umc-form-sheet__control",
+      "expected": {
+        "justify-content": "flex-end"
+      }
+    }
+  ]
+}

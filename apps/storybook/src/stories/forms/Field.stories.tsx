@@ -43,7 +43,7 @@ export const Playground: Story = {
         <FieldControl
           render={
             <input
-              className="umc-input-box__input"
+              className="umc-text-field-box-field__input"
               placeholder="기수를 입력하세요"
             />
           }

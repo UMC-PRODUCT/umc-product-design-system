@@ -136,6 +136,69 @@
     rotate: 180deg;
   }
 
+  .umc-select__trigger[data-shape="line"] {
+    --umc-select-border-color: var(--umc-color-border-neutral-weak-200);
+    --umc-select-bg: transparent;
+    --umc-select-gap: var(--umc-spacing-gap-6);
+    --umc-select-font-size: var(--umc-typography-title-1-semibold-font-size);
+    --umc-select-line-height: var(
+      --umc-typography-title-1-semibold-line-height
+    );
+    --umc-select-letter-spacing: var(
+      --umc-typography-title-1-semibold-letter-spacing
+    );
+
+    min-height: 0;
+    padding-block: var(--umc-spacing-padding-4);
+    padding-inline: 0;
+    border-width: 0 0 2px;
+    border-radius: 0;
+    box-shadow: none;
+    font-weight: var(--umc-typography-title-1-semibold-font-weight);
+  }
+
+  @media (hover: hover) {
+    .umc-select__trigger[data-shape="line"]:not([data-disabled]):hover {
+      --umc-select-border-color: var(--umc-color-border-primary-strong-500);
+      --umc-select-bg: transparent;
+    }
+  }
+
+  .umc-select__trigger[data-shape="line"][data-popup-open],
+  .umc-select__trigger[data-shape="line"]:focus-visible {
+    --umc-select-border-color: var(--umc-color-border-primary-strong-500);
+    --umc-select-bg: transparent;
+  }
+
+  .umc-select__trigger[data-shape="line"]:focus-visible {
+    outline: none;
+  }
+
+  .umc-select__trigger[data-shape="line"][data-invalid] {
+    --umc-select-border-color: var(--umc-color-border-neutral-weak-200);
+    --umc-select-bg: transparent;
+    --umc-select-fg: var(--umc-color-text-neutral-default-900);
+    --umc-select-placeholder-color: var(--umc-color-text-placeholder);
+  }
+
+  @media (hover: hover) {
+    .umc-select__trigger[data-shape="line"][data-invalid]:not(
+        [data-disabled]
+      ):hover {
+      --umc-select-border-color: var(--umc-color-border-error-strong-500);
+    }
+  }
+
+  .umc-select__trigger[data-shape="line"][data-invalid][data-popup-open],
+  .umc-select__trigger[data-shape="line"][data-invalid]:focus-visible {
+    --umc-select-border-color: var(--umc-color-border-error-strong-500);
+  }
+
+  .umc-select__trigger[data-shape="line"][data-disabled] {
+    --umc-select-border-color: var(--umc-color-border-neutral-weak-200);
+    --umc-select-bg: transparent;
+  }
+
   .umc-dropdown-list.umc-select__popup {
     overflow: hidden;
   }

@@ -24,6 +24,7 @@ export type SelectProps<V extends string = string> = FieldOwnProps & {
   size?: "lg" | "md"
   itemSize?: "xs" | "sm" | "md"
   variant?: "default" | "filter"
+  shape?: "box" | "line"
   searchable?: boolean
   searchPlaceholder?: string
   disabled?: boolean
@@ -53,6 +54,7 @@ export function Select<V extends string = string>({
   size = "lg",
   itemSize = "sm",
   variant = "default",
+  shape = "box",
   searchable,
   searchPlaceholder = "검색",
   disabled,
@@ -98,6 +100,7 @@ export function Select<V extends string = string>({
           aria-label={ariaLabel}
           data-size={size}
           data-variant={variant}
+          data-shape={shape}
         >
           <BaseUISelect.Value
             className="umc-select__value"

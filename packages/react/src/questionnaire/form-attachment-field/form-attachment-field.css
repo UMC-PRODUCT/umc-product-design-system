@@ -15,11 +15,13 @@
   }
 
   .umc-form-attachment-field__row > .umc-form-attachment-field__box[data-size] {
-    --umc-input-box-font-size: var(--umc-typography-label-2-medium-font-size);
-    --umc-input-box-line-height: var(
+    --umc-text-field-box-field-font-size: var(
+      --umc-typography-label-2-medium-font-size
+    );
+    --umc-text-field-box-field-line-height: var(
       --umc-typography-label-2-medium-line-height
     );
-    --umc-input-box-letter-spacing: var(
+    --umc-text-field-box-field-letter-spacing: var(
       --umc-typography-label-2-medium-letter-spacing
     );
 
@@ -56,7 +58,9 @@
 
   .umc-form-attachment-field[data-invalid]
     .umc-form-attachment-field__box[data-size] {
-    --umc-input-box-border-color: var(--umc-color-border-error-medium-300);
+    --umc-text-field-box-field-border-color: var(
+      --umc-color-border-error-medium-300
+    );
 
     animation: umc-error-shake 400ms ease-in-out;
   }

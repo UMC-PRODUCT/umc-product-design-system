@@ -1,8 +1,8 @@
-@import "../input-box/input-box.css";
+@import "../text-field-box-field/text-field-box-field.css";
 @import "../field/field.css";
 
 @layer components {
-  .umc-input-box.umc-text-field-area {
+  .umc-text-field-box-field.umc-text-field-area {
     align-items: flex-start;
     padding-block: var(--umc-spacing-padding-12);
   }

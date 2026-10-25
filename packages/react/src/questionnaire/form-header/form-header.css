@@ -1,0 +1,142 @@
+@layer components {
+  .umc-form-header {
+    --umc-form-header-accent: var(--umc-color-fill-primary-weak-75);
+    --umc-form-header-curve-width: 77px;
+    --umc-form-header-overlap: 57px;
+
+    display: flex;
+    align-items: flex-end;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+  }
+
+  .umc-form-header__tab {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: flex-start;
+    box-sizing: border-box;
+    min-width: min(392px, calc(100% - var(--umc-form-header-curve-width)));
+    height: 85px;
+    padding-block-start: var(--umc-spacing-padding-16);
+    padding-inline-start: var(--umc-spacing-padding-16);
+    border-start-start-radius: var(--umc-radius-12);
+    background-color: var(--umc-form-header-accent);
+  }
+
+  .umc-form-header__contents {
+    display: flex;
+    align-items: center;
+    gap: var(--umc-spacing-gap-20);
+    min-width: 0;
+  }
+
+  .umc-form-header__thumbnail {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    border-radius: var(--umc-radius-8);
+    background-color: var(--umc-color-teal-grey-200);
+    color: var(--umc-color-icon-brand-medium-500);
+    overflow: hidden;
+  }
+
+  .umc-form-header__thumbnail > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .umc-form-header__titles {
+    display: flex;
+    flex-direction: column;
+    gap: var(--umc-spacing-gap-4);
+    min-width: 0;
+  }
+
+  .umc-form-header__title {
+    margin: 0;
+    color: var(--umc-color-text-neutral-default-900);
+    font-family: var(--umc-typography-title-2-semibold-font-family);
+    font-size: var(--umc-typography-title-2-semibold-font-size);
+    font-weight: var(--umc-typography-title-2-semibold-font-weight);
+    line-height: var(--umc-typography-title-2-semibold-line-height);
+    letter-spacing: var(--umc-typography-title-2-semibold-letter-spacing);
+    overflow-wrap: anywhere;
+  }
+
+  .umc-form-header__subtitle {
+    margin: 0;
+    color: var(--umc-color-text-neutral-medium-600);
+    font-family: var(--umc-typography-body-2-medium-font-family);
+    font-size: var(--umc-typography-body-2-medium-font-size);
+    font-weight: var(--umc-typography-body-2-medium-font-weight);
+    line-height: var(--umc-typography-body-2-medium-line-height);
+    letter-spacing: var(--umc-typography-body-2-medium-letter-spacing);
+    overflow-wrap: anywhere;
+  }
+
+  .umc-form-header__curve {
+    display: block;
+    flex: 0 0 auto;
+    width: var(--umc-form-header-curve-width);
+    height: 85px;
+    color: var(--umc-form-header-accent);
+  }
+
+  .umc-form-header__rest {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: var(--umc-spacing-gap-4);
+    min-width: 0;
+    margin-inline-start: calc(var(--umc-form-header-overlap) * -1);
+  }
+
+  .umc-form-header__caption {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--umc-spacing-gap-12);
+    box-sizing: border-box;
+    min-height: 24px;
+    padding-inline: var(--umc-spacing-padding-16);
+    color: var(--umc-color-text-neutral-medium-600);
+    font-family: var(--umc-typography-body-3-medium-font-family);
+    font-size: var(--umc-typography-body-3-medium-font-size);
+    font-weight: var(--umc-typography-body-3-medium-font-weight);
+    line-height: var(--umc-typography-body-3-medium-line-height);
+    letter-spacing: var(--umc-typography-body-3-medium-letter-spacing);
+  }
+
+  .umc-form-header__bar {
+    height: 10px;
+    border-start-end-radius: 17px;
+    background-color: var(--umc-form-header-accent);
+  }
+
+  @media (forced-colors: active) {
+    .umc-form-header__tab,
+    .umc-form-header__curve,
+    .umc-form-header__bar {
+      forced-color-adjust: none;
+    }
+
+    .umc-form-header__tab {
+      background-color: Canvas;
+      outline: 1px solid CanvasText;
+    }
+
+    .umc-form-header__curve {
+      color: Canvas;
+    }
+
+    .umc-form-header__bar {
+      background-color: CanvasText;
+    }
+  }
+}
