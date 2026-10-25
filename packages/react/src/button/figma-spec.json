@@ -36,8 +36,8 @@
       "node": "2621:33828",
       "variant": "Size=Lg, Color=Brand, Style=Fill, State=Disabled",
       "expected": {
-        "background-color": "#7ac7c1",
-        "color": "#ddf4f1"
+        "background-color": "#b3e5e1",
+        "color": "#f4fbfa"
       }
     },
     {
@@ -225,8 +225,8 @@
       "node": "2621:33834",
       "variant": "Size=Lg, Color=Red, Style=Fill, State=Disabled",
       "expected": {
-        "background-color": "#f88c8c",
-        "color": "#fdb4b4"
+        "background-color": "#fdb4b4",
+        "color": "#ffe7e5"
       }
     },
     {
