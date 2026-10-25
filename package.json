@@ -22,6 +22,7 @@
     "docs:links": "pnpm --filter @umc-product/docs links:check",
     "readme:build": "node scripts/readme-releases.mjs",
     "readme:check": "node scripts/readme-releases.mjs --check",
+    "release:notes": "node scripts/release-notes.mjs",
     "storybook:dev": "pnpm --filter @umc-product/storybook dev",
     "storybook:build": "pnpm --filter @umc-product/storybook build",
     "test": "pnpm -r test",
