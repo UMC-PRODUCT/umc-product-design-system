@@ -3,7 +3,6 @@
   "figmaSection": "4987:32189",
   "page": "/components/forms/text-field-line/",
   "figmaDiffers": {
-    "error-label": "피그마 Error=True 변형은 레이블과 Help Text가 Default 색 그대로이고 밑줄만 포커스에서 빨갛다. 코드는 Field를 따라 레이블과 도움말도 빨갛게 바꾼다",
     "disabled-label": "피그마 Disabled 변형의 레이블은 Default 색(#544f4b)이다. 코드는 Box와 같이 비활성 레이블 색(teal-grey-400)을 쓴다"
   },
   "nodes": [

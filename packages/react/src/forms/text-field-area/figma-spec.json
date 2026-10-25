@@ -49,7 +49,7 @@
       "target": ".umc-text-field-box-field",
       "expected": {
         "border-top-color": "#dc3d3d",
-        "background-color": "#fef2f1"
+        "background-color": "#fef2f14d"
       }
     },
     {
