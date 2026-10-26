@@ -1,5 +1,25 @@
 # @umc-product/react
 
+## 0.10.0 (2026-10-26)
+
+### Minor Changes
+
+- 924c5a0: **깨지는 변경** 아이콘 버튼, 토스트, 대화상자(Icon Button, Toast, Web/Dialog): 기본 색 이름이 Button과 같은 Brand가 됩니다 (`primary` → `brand`). 디자인 팀이 Button에 이어 세 컴포넌트의 Primary도 Brand로 부르기로 해, `IconButton`과 `Dialog`의 `color="primary"`, `Toast`의 `color: "primary"`를 `brand`로 바꿉니다. 기본값도 `brand`이고 색 값은 그대로입니다. `Radio`와 `TopNavigationButton`의 `color="primary"`는 그대로입니다.
+
+  | 전                                                                                                                       | 후                               |
+  | ------------------------------------------------------------------------------------------------------------------------ | -------------------------------- |
+  | `<IconButton color="primary">`                                                                                           | `<IconButton color="brand">`     |
+  | `<Dialog color="primary">`                                                                                               | `<Dialog color="brand">`         |
+  | `toast.show({ color: "primary" })`                                                                                       | `toast.show({ color: "brand" })` |
+  | `IconButtonColor`, `DialogColor`, `ToastOptions["color"]`의 `"primary"`                                                  | `"brand"`                        |
+  | `.umc-icon-button[data-color="primary"]`, `.umc-toast[data-color="primary"]`, `.umc-dialog__popup[data-color="primary"]` | `[data-color="brand"]`           |
+
+### Patch Changes
+
+- 3aea012: **화면 변화** 밑줄 입력의 레이블과 도움말(Text Field/Line): 왼쪽 여백이 사라져 밑줄 왼쪽 끝에 맞춰집니다 (4px → 0). 피그마 `Text Field/Line`에서 `Text Field/ Label`과 `Help Text`의 왼쪽 패딩을 0으로 바꾼 것을 따라 `TextFieldLine` 안의 `.umc-field__label`, `.umc-field__caption`만 `padding-inline: 0`을 씁니다. `TextFieldBox`를 비롯한 다른 필드는 그대로 4px입니다.
+- @umc-product/design-tokens@0.10.0
+  - @umc-product/icons@0.10.0
+
 ## 0.9.0 (2026-10-25)
 
 ### Minor Changes
