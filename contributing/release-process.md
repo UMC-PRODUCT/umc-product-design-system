@@ -31,7 +31,7 @@ pnpm changeset
 
 - 실제로 바뀐 패키지를 고릅니다. 세 패키지는 어차피 같은 버전으로 함께 올라갑니다.
 - bump는 [버전 정책](https://umc-product.github.io/umc-product-design-system/releases/versioning/)을 따릅니다. 0.x에서는 깨지는 변경과 추가(컴포넌트, prop, 토큰, 아이콘)가 minor, 수정과 피그마 값 동기화가 patch입니다.
-- 요약의 첫 문장은 화면을 쓰는 사람(디자이너, 운영진)이 읽을 말로 씁니다. 무엇이 어떻게 달라지는지만 적고, prop·토큰·클래스 이름은 둘째 문장부터 씁니다. README의 릴리스 절과 GitHub Release의 "이번 배포 한눈에"에는 첫 문장만 실리고, `CHANGELOG.md`와 문서의 변경 기록에는 전문이 실립니다.
+- 요약의 첫 문장은 `대상: 변경사항 (변경 전 → 변경 후).` 꼴로, 화면을 쓰는 사람(디자이너, 운영진)이 읽을 말로 씁니다. '대상'은 화면에서 부르는 이름 뒤에 피그마 이름을 괄호로 붙이고(`입력 상자의 오류 상태(Text Field/Box)`), '변경사항'은 눈에 보이는 변화만 적고, 괄호 안 '변경 전 → 변경 후'는 값이 바뀔 때만 적습니다. prop·토큰·클래스 이름은 둘째 문장부터 씁니다. README의 릴리스 절과 GitHub Release는 이 첫 문장을 표(대상, 변경사항, 변경 전 → 변경 후, 보기)로 그리고, 전문에 백틱으로 적은 컴포넌트 이름(`CodeField` 등)은 '보기' 칸의 문서 링크가 됩니다. `CHANGELOG.md`와 문서의 변경 기록에는 전문이 실립니다.
 - 둘째 문장부터는 앱 개발자가 할 일을 적습니다. 바뀐 이름, 전후 값, 올릴 때 고칠 코드입니다.
 - 깨지는 변경은 요약을 **깨지는 변경**으로 시작하고 옛 이름과 새 이름의 대응표를 넣습니다. 값만 바뀌는 변경은 **화면 변화**로 시작하고 전후 값을 적습니다. README의 릴리스 절이 이 표시로 항목을 나누고, 표시가 없으면 minor는 새 기능, patch는 수정으로 묶습니다.
 
@@ -42,7 +42,7 @@ pnpm changeset
 "@umc-product/react": patch
 ---
 
-**화면 변화** 체크박스 테두리가 조금 더 진한 회색이 됩니다. 피그마 값에 맞춰 `#c4c8c8`를 `#b1b6b6`으로 바꿨습니다.
+**화면 변화** 체크박스(Checkbox): 테두리가 조금 더 진한 회색이 됩니다 (`#c4c8c8` → `#b1b6b6`). 피그마 값에 맞춰 `Checkbox`의 테두리 색을 바꿨습니다.
 ```
 
 ## 2. 버전 PR 병합하기
@@ -66,7 +66,7 @@ git commit -m "chore: 패키지 버전 올리기"
 
 develop → main PR을 열고 병합합니다. 병합하면 GitHub Actions 워크플로 두 개와 Amplify 빌드가 돌아갑니다.
 
-- **Release**: 패키지를 빌드하고 배포물을 검사한 뒤, 레지스트리에 없는 버전만 GitHub Packages에 올립니다. `@umc-product/react@0.1.1` 같은 git 태그를 만들어 push하고, react 태그에 GitHub Release를 만듭니다. Release 본문은 `scripts/release-notes.mjs`가 CHANGELOG에서 만듭니다. 위에는 항목마다 첫 문장만 모은 "이번 배포 한눈에", 아래에는 올리는 명령과 깨지는 변경·화면 변화의 전문을 담은 "개발자가 올릴 때 할 일"이 있습니다. 비개발자에게 배포 내용을 알릴 때 이 Release 링크를 씁니다.
+- **Release**: 패키지를 빌드하고 배포물을 검사한 뒤, 레지스트리에 없는 버전만 GitHub Packages에 올립니다. `@umc-product/react@0.1.1` 같은 git 태그를 만들어 push하고, react 태그에 GitHub Release를 만듭니다. Release 본문은 `scripts/release-notes.mjs`가 CHANGELOG에서 만듭니다. 위에는 종류별 표(대상, 변경사항, 변경 전 → 변경 후, 보기)를 담은 "이번 배포에서 달라지는 것", 깨지는 변경이 있으면 대응표 전문을 담은 "올릴 때 반드시 확인", 아래에는 올리는 명령을 담은 "개발자"가 있습니다. 비개발자에게 배포 내용을 알릴 때 이 Release 링크를 씁니다.
 - **Docs**: 문서를 빌드하고 링크를 검사한 뒤 GitHub Pages에 올립니다.
 - **Amplify**: GitHub Actions와 따로 Amplify가 main push를 받아 문서와 Storybook을 빌드하고 배포합니다. 설정은 [AWS Amplify 배포](#aws-amplify-배포전환-중)에 있습니다.
 
@@ -79,6 +79,7 @@ develop → main PR을 열고 병합합니다. 병합하면 GitHub Actions 워�
 - 조직의 Packages 탭에서 세 패키지에 새 버전이 있는지 봅니다.
 - 토큰을 설정한 컴퓨터에서 `pnpm view @umc-product/react version`으로 새 버전이 나오는지 확인합니다.
 - Releases 탭에 새 버전의 Release가 생겼는지 봅니다. 본문을 미리 보려면 `pnpm release:notes 0.8.0`처럼 버전을 넘겨 돌립니다.
+- 화면 변화가 있으면 전후 캡처를 Release에 붙입니다. 문서 사이트나 로컬 프리뷰에서 바뀐 컴포넌트를 전과 후로 찍어 `gh release upload @umc-product/react@0.9.0 before.png after.png`로 올리고, `gh release view @umc-product/react@0.9.0 --json assets`가 알려 주는 주소로 캡처를 넣은 마크다운 파일을 만든 뒤 `pnpm release:notes 0.9.0 screens.md | gh release edit @umc-product/react@0.9.0 --notes-file -`로 본문을 다시 씁니다. 캡처는 "전후 화면" 절로 표와 개발자 절 사이에 들어갑니다.
 
 ## 되돌리기
 
