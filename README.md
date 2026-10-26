@@ -130,6 +130,25 @@ pnpm up "@umc-product/*" --latest
 <!-- releases:start -->
 
 <details open>
+<summary><b>0.10.0</b> · 2026-10-26 · 깨지는 변경 1 · 화면 변화 1</summary>
+
+**깨지는 변경**
+
+| 대상                                                          | 변경사항                                    | 변경&nbsp;전&nbsp;→&nbsp;변경&nbsp;후 | 보기                                                                                                                                                                                                                                                 |
+| ------------------------------------------------------------- | ------------------------------------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 아이콘 버튼, 토스트, 대화상자(Icon Button, Toast, Web/Dialog) | 기본 색 이름이 Button과 같은 Brand가 됩니다 | `primary` → `brand`                   | [IconButton](https://design.university.neordinary.com/components/actions/icon-button/) · [Dialog](https://design.university.neordinary.com/components/overlay/dialog/) · [Toast](https://design.university.neordinary.com/components/overlay/toast/) |
+
+**화면 변화**
+
+| 대상                                         | 변경사항                                     | 변경&nbsp;전&nbsp;→&nbsp;변경&nbsp;후 | 보기                                                                                        |
+| -------------------------------------------- | -------------------------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------- |
+| 밑줄 입력의 레이블과 도움말(Text Field/Line) | 왼쪽 여백이 사라져 밑줄 왼쪽 끝에 맞춰집니다 | 4px → 0                               | [TextFieldLine](https://design.university.neordinary.com/components/forms/text-field-line/) |
+
+전문과 대응표: [react](packages/react/CHANGELOG.md#0100-2026-10-26)
+
+</details>
+
+<details>
 <summary><b>0.9.0</b> · 2026-10-25 · 새 기능 1 · 화면 변화 2</summary>
 
 **새 기능**
