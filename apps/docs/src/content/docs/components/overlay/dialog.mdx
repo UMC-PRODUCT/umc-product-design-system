@@ -47,11 +47,11 @@ import { Dialog } from "@umc-product/react"
 
 ## 색
 
-`color`는 확인 버튼과 제목의 색을 함께 정합니다. 기본값은 `primary`입니다.
+`color`는 확인 버튼과 제목의 색을 함께 정합니다. 기본값은 `brand`입니다.
 
 | `color`   | 확인 버튼(Fill)  | 확인 텍스트 버튼(Weak) | 제목·아이콘 |
 | --------- | ---------------- | ---------------------- | ----------- |
-| `primary` | `fill` `primary` | `brand`                | 기본 색     |
+| `brand`   | `fill` `brand`   | `brand`                | 기본 색     |
 | `neutral` | `fill` `neutral` | `neutral`              | 기본 색     |
 | `error`   | `weak` `red`     | 빨강                   | 빨강        |
 
@@ -100,19 +100,19 @@ import { Dialog } from "@umc-product/react"
 
 ## props
 
-| prop           | 타입                                | 기본값      | 설명                                           |
-| -------------- | ----------------------------------- | ----------- | ---------------------------------------------- |
-| `title`        | `ReactNode`                         | 필수        | 다이얼로그 제목. 다이얼로그의 접근 가능한 이름 |
-| `confirmLabel` | `ReactNode`                         | 필수        | 확인 버튼 레이블                               |
-| `cancelLabel`  | `ReactNode`                         | -           | 넘기면 Fill, 생략하면 Weak 버튼 스타일         |
-| `color`        | `"primary" \| "neutral" \| "error"` | `"primary"` | 확인 버튼과 제목·아이콘 색                     |
-| `icon`         | `ReactNode`                         | -           | 제목 앞 24px 그래픽                            |
-| `description`  | `ReactNode`                         | -           | 제목 아래 설명 문구                            |
-| `children`     | `ReactNode`                         | -           | 설명과 버튼 사이 콘텐츠                        |
-| `onConfirm`    | `() => void`                        | -           | 확인 버튼을 누르면 호출                        |
-| `onCancel`     | `() => void`                        | -           | 취소 버튼을 누르면 호출                        |
-| `trigger`      | `ReactElement`                      | -           | 다이얼로그를 여는 트리거 요소                  |
-| `open`         | `boolean`                           | -           | 제어 모드의 열림 상태                          |
-| `defaultOpen`  | `boolean`                           | -           | 비제어 모드의 처음 열림 상태                   |
-| `onOpenChange` | `(open: boolean) => void`           | -           | 열림 상태가 바뀌면 호출                        |
-| `className`    | `string`                            | -           | 팝업에 더할 CSS 클래스                         |
+| prop           | 타입                              | 기본값    | 설명                                           |
+| -------------- | --------------------------------- | --------- | ---------------------------------------------- |
+| `title`        | `ReactNode`                       | 필수      | 다이얼로그 제목. 다이얼로그의 접근 가능한 이름 |
+| `confirmLabel` | `ReactNode`                       | 필수      | 확인 버튼 레이블                               |
+| `cancelLabel`  | `ReactNode`                       | -         | 넘기면 Fill, 생략하면 Weak 버튼 스타일         |
+| `color`        | `"brand" \| "neutral" \| "error"` | `"brand"` | 확인 버튼과 제목·아이콘 색                     |
+| `icon`         | `ReactNode`                       | -         | 제목 앞 24px 그래픽                            |
+| `description`  | `ReactNode`                       | -         | 제목 아래 설명 문구                            |
+| `children`     | `ReactNode`                       | -         | 설명과 버튼 사이 콘텐츠                        |
+| `onConfirm`    | `() => void`                      | -         | 확인 버튼을 누르면 호출                        |
+| `onCancel`     | `() => void`                      | -         | 취소 버튼을 누르면 호출                        |
+| `trigger`      | `ReactElement`                    | -         | 다이얼로그를 여는 트리거 요소                  |
+| `open`         | `boolean`                         | -         | 제어 모드의 열림 상태                          |
+| `defaultOpen`  | `boolean`                         | -         | 비제어 모드의 처음 열림 상태                   |
+| `onOpenChange` | `(open: boolean) => void`         | -         | 열림 상태가 바뀌면 호출                        |
+| `className`    | `string`                          | -         | 팝업에 더할 CSS 클래스                         |

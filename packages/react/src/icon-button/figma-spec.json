@@ -50,7 +50,7 @@
       }
     },
     {
-      "specId": "icon-button-weak-primary",
+      "specId": "icon-button-weak-brand",
       "node": "4626:80550",
       "variant": "State=Default, Color=Primary, Style=Weak, Size=Md",
       "expected": {
@@ -58,7 +58,7 @@
       }
     },
     {
-      "specId": "icon-button-weak-primary-icon",
+      "specId": "icon-button-weak-brand-icon",
       "node": "4626:80550",
       "variant": "State=Default, Color=Primary, Style=Weak, Size=Md",
       "target": ".umc-icon-button__icon",
@@ -69,7 +69,7 @@
       }
     },
     {
-      "specId": "icon-button-fill-primary",
+      "specId": "icon-button-fill-brand",
       "node": "4626:80720",
       "variant": "State=Default, Color=Primary, Style=Fill, Size=Md",
       "expected": {
@@ -77,7 +77,7 @@
       }
     },
     {
-      "specId": "icon-button-fill-primary-icon",
+      "specId": "icon-button-fill-brand-icon",
       "node": "4626:80720",
       "variant": "State=Default, Color=Primary, Style=Fill, Size=Md",
       "target": ".umc-icon-button__icon",
@@ -202,7 +202,7 @@
       }
     },
     {
-      "specId": "icon-button-weak-primary",
+      "specId": "icon-button-weak-brand",
       "interaction": "hover",
       "node": "4626:80591",
       "variant": "State=Hover&Pressed, Color=Primary, Style=Weak, Size=Md",
@@ -212,7 +212,7 @@
       }
     },
     {
-      "specId": "icon-button-fill-primary",
+      "specId": "icon-button-fill-brand",
       "interaction": "hover",
       "node": "4626:80722",
       "variant": "State=Hover&Pressed, Color=Primary, Style=Fill, Size=Md",

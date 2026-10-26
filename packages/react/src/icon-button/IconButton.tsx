@@ -3,7 +3,7 @@ import type { ComponentPropsWithRef, ReactNode } from "react"
 import type { AccessibleName } from "../internal/accessible-name.ts"
 import { cx } from "../internal/cx.ts"
 
-export type IconButtonColor = "primary" | "white" | "neutral" | "error"
+export type IconButtonColor = "brand" | "white" | "neutral" | "error"
 
 export type IconButtonVariant = "fill" | "weak"
 
@@ -22,7 +22,7 @@ export type IconButtonProps = Omit<
 
 export function IconButton({
   icon,
-  color = "primary",
+  color = "brand",
   variant = "weak",
   size = "md",
   className,

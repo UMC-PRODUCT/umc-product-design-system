@@ -8,7 +8,7 @@ import { hiddenControl, textControl } from "../../arg-types.tsx"
 import { componentParameters } from "../../docs-links.ts"
 
 const DIALOG_COLORS: NonNullable<DialogProps["color"]>[] = [
-  "primary",
+  "brand",
   "neutral",
   "error",
 ]
@@ -38,7 +38,7 @@ const meta = {
   },
   args: {
     open: true,
-    color: "primary",
+    color: "brand",
     title: "지원서를 제출할까요?",
     description: "제출한 지원서는 수정할 수 없어요.",
     confirmLabel: "제출",

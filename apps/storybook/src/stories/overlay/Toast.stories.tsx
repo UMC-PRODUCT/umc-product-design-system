@@ -55,14 +55,14 @@ const meta = {
     icon: iconArgType,
     color: {
       control: { type: "select" },
-      options: ["primary", "neutral", "warning", "error"],
+      options: ["brand", "neutral", "warning", "error"],
     },
   },
   args: {
     placement: "bottom",
     children: null,
     message: "저장되었습니다.",
-    color: "primary",
+    color: "brand",
     actionLabel: "",
     duration: 0,
     onAction: fn(),

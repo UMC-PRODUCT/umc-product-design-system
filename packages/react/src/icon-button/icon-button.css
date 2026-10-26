@@ -40,7 +40,7 @@
     --umc-icon-button-radius: var(--umc-radius-button-10);
   }
 
-  .umc-icon-button[data-variant="weak"][data-color="primary"] {
+  .umc-icon-button[data-variant="weak"][data-color="brand"] {
     --umc-icon-button-bg: var(--umc-color-fill-primary-medium-100);
     --umc-icon-button-bg-pressed: var(
       --umc-color-fill-primary-medium-hover-pressed
@@ -49,7 +49,7 @@
     --umc-icon-button-fg: var(--umc-color-icon-neutral-stronger-700);
   }
 
-  .umc-icon-button[data-variant="fill"][data-color="primary"] {
+  .umc-icon-button[data-variant="fill"][data-color="brand"] {
     --umc-icon-button-bg: var(--umc-color-fill-primary-inverse-medium-500);
     --umc-icon-button-bg-pressed: var(
       --umc-color-fill-primary-inverse-medium-hover-pressed

@@ -82,7 +82,7 @@
     opacity: 0;
   }
 
-  .umc-toast[data-color="primary"] {
+  .umc-toast[data-color="brand"] {
     --umc-toast-bg: var(--umc-color-fill-primary-strong-200);
     --umc-toast-fg: var(--umc-color-teal-700);
     --umc-toast-icon: var(--umc-color-icon-brand-medium-500);
