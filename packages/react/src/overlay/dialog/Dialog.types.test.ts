@@ -9,7 +9,7 @@ type RequiredKeys<T> = {
 
 describe("DialogProps", () => {
   it("color는 primary, neutral, error 세 가지다", () => {
-    expectTypeOf<DialogColor>().toEqualTypeOf<"primary" | "neutral" | "error">()
+    expectTypeOf<DialogColor>().toEqualTypeOf<"brand" | "neutral" | "error">()
     expectTypeOf<DialogProps["color"]>().toEqualTypeOf<
       DialogColor | undefined
     >()

@@ -35,7 +35,7 @@ function ShowApp({
 }: {
   message: string
   action?: { label: string; onClick: () => void }
-  color?: "primary" | "neutral" | "warning" | "error"
+  color?: "brand" | "neutral" | "warning" | "error"
 }) {
   const toast = useToast()
   return (
@@ -200,14 +200,14 @@ describe("ToastProvider & useToast", () => {
   it("DOM 구조: .umc-toast[data-color] > .umc-toast__main > .umc-toast__message", () => {
     render(
       <ToastProvider>
-        <ShowApp message="구조 테스트" color="primary" />
+        <ShowApp message="구조 테스트" color="brand" />
       </ToastProvider>,
     )
     act(() => {
       fireEvent.click(screen.getByRole("button", { name: "보여줘" }))
     })
     const toast = document.querySelector(".umc-toast")
-    expect(toast).toHaveAttribute("data-color", "primary")
+    expect(toast).toHaveAttribute("data-color", "brand")
     const main = toast?.querySelector(".umc-toast__main")
     expect(main).not.toBeNull()
     const message = main?.querySelector(".umc-toast__message")

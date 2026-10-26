@@ -17,7 +17,7 @@ const meta = {
   args: {
     icon: <CloseIcon />,
     "aria-label": "닫기",
-    color: "primary",
+    color: "brand",
     variant: "weak",
     size: "md",
     disabled: false,

@@ -14,7 +14,7 @@ import { NotImplemented } from "../variants/VariantCells.tsx"
 import { lookup, type FigmaVariant } from "../variants/figma-variants.ts"
 import { VariantGrid } from "../variants/VariantGrid.tsx"
 
-type ToastColor = "primary" | "neutral" | "warning" | "error"
+type ToastColor = "brand" | "neutral" | "warning" | "error"
 
 type ToastPlacement = "top" | "bottom"
 
@@ -111,14 +111,14 @@ export function ToastStaticPreview() {
   return (
     <div className="umc-example umc-example-stack docs-toast-preview">
       <ToastPreviewItem
-        specId="toast-primary-icon toast-primary-icon-glyph toast-close"
-        color="primary"
+        specId="toast-brand-icon toast-brand-icon-glyph toast-close"
+        color="brand"
         message="토스트 알림이에요"
         withIcon
       />
       <ToastPreviewItem
-        specId="toast-primary-action toast-primary-action-button"
-        color="primary"
+        specId="toast-brand-action toast-brand-action-button"
+        color="brand"
         message="토스트 알림이에요"
         actionLabel="버튼"
       />
@@ -155,15 +155,15 @@ export function ToastStaticPreview() {
         actionLabel="버튼"
       />
       <ToastPreviewItem
-        specId="toast-top-primary-icon"
-        color="primary"
+        specId="toast-top-brand-icon"
+        color="brand"
         placement="top"
         message="토스트 알림이에요"
         withIcon
       />
       <ToastPreviewItem
-        specId="toast-top-primary-action"
-        color="primary"
+        specId="toast-top-brand-action"
+        color="brand"
         placement="top"
         message="토스트 알림이에요"
         actionLabel="버튼"
@@ -208,11 +208,7 @@ export function ToastColors() {
   return (
     <ToastProvider>
       <div className="umc-example" style={{ gap: "8px" }}>
-        <ToastTrigger
-          label="primary"
-          color="primary"
-          message="저장되었습니다."
-        />
+        <ToastTrigger label="brand" color="brand" message="저장되었습니다." />
         <ToastTrigger
           label="neutral"
           color="neutral"
@@ -254,7 +250,7 @@ export function ToastPlacementTop() {
       <div className="umc-example">
         <ToastTrigger
           label="상단 토스트"
-          color="primary"
+          color="brand"
           message="상단에 표시됩니다."
         />
       </div>
@@ -263,7 +259,7 @@ export function ToastPlacementTop() {
 }
 
 const TOAST_COLORS = {
-  Primary: "primary",
+  Primary: "brand",
   Neutral: "neutral",
   Warning: "warning",
   Error: "error",

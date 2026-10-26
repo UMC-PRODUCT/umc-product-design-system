@@ -56,7 +56,7 @@ describe("Dialog", () => {
   })
 
   it.each([
-    ["primary", "fill", "brand"],
+    ["brand", "fill", "brand"],
     ["neutral", "fill", "neutral"],
     ["error", "weak", "red"],
   ] as const)(

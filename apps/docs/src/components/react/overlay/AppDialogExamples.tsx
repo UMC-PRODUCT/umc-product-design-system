@@ -55,7 +55,7 @@ function AppDialogPreviewItem({
           <button
             className="umc-button"
             data-variant="fill"
-            data-color="primary"
+            data-color="brand"
             data-size="md"
             type="button"
           >

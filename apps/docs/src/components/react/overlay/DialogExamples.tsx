@@ -32,13 +32,13 @@ type ButtonStyle = "fill" | "weak"
 type PreviewState = { color: DialogColor; content: boolean }
 
 const CONFIRM_BUTTONS = {
-  primary: { variant: "fill", color: "brand" },
+  brand: { variant: "fill", color: "brand" },
   neutral: { variant: "fill", color: "neutral" },
   error: { variant: "weak", color: "red" },
 } as const
 
 const STATUS_ICONS: Readonly<Record<DialogColor, ReactNode>> = {
-  primary: <CheckPictogram />,
+  brand: <CheckPictogram />,
   neutral: <CheckPictogram />,
   error: <WarningTriangleIcon weight="fill" />,
 }
@@ -69,7 +69,7 @@ function DialogPreview({
   const confirmButton = CONFIRM_BUTTONS[color]
   const code = componentCodeOf(Dialog, {
     open: true,
-    color: color === "primary" ? undefined : color,
+    color: color === "brand" ? undefined : color,
     icon: icon ? STATUS_ICONS[color] : undefined,
     title: TITLE,
     description: DESCRIPTION,
@@ -136,7 +136,7 @@ export function DialogStaticPreview() {
   return (
     <div className="umc-example umc-example-stack umc-example-muted">
       <DialogPreview
-        color="primary"
+        color="brand"
         buttonStyle="fill"
         icon={false}
         content={false}
@@ -245,9 +245,9 @@ export function DialogContentExample() {
 }
 
 const STATES: Readonly<Record<string, PreviewState>> = {
-  Default: { color: "primary", content: false },
+  Default: { color: "brand", content: false },
   Warning: { color: "error", content: false },
-  "Slot Content": { color: "primary", content: true },
+  "Slot Content": { color: "brand", content: true },
 }
 
 const BUTTON_STYLES: Readonly<Record<string, ButtonStyle>> = {
@@ -303,7 +303,7 @@ export function DialogAllVariants() {
 }
 
 const ACTION_COLORS: Readonly<Record<string, DialogColor>> = {
-  Default: "primary",
+  Default: "brand",
   Neutral: "neutral",
   Waring: "error",
 }

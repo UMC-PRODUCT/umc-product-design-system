@@ -1,15 +1,35 @@
 # @umc-product/react
 
+## 0.10.0 (2026-10-26)
+
+### Minor Changes
+
+- 924c5a0: **깨지는 변경** 아이콘 버튼, 토스트, 대화상자(Icon Button, Toast, Web/Dialog): 기본 색 이름이 Button과 같은 Brand가 됩니다 (`primary` → `brand`). 디자인 팀이 Button에 이어 세 컴포넌트의 Primary도 Brand로 부르기로 해, `IconButton`과 `Dialog`의 `color="primary"`, `Toast`의 `color: "primary"`를 `brand`로 바꿉니다. 기본값도 `brand`이고 색 값은 그대로입니다. `Radio`와 `TopNavigationButton`의 `color="primary"`는 그대로입니다.
+
+  | 전                                                                                                                       | 후                               |
+  | ------------------------------------------------------------------------------------------------------------------------ | -------------------------------- |
+  | `<IconButton color="primary">`                                                                                           | `<IconButton color="brand">`     |
+  | `<Dialog color="primary">`                                                                                               | `<Dialog color="brand">`         |
+  | `toast.show({ color: "primary" })`                                                                                       | `toast.show({ color: "brand" })` |
+  | `IconButtonColor`, `DialogColor`, `ToastOptions["color"]`의 `"primary"`                                                  | `"brand"`                        |
+  | `.umc-icon-button[data-color="primary"]`, `.umc-toast[data-color="primary"]`, `.umc-dialog__popup[data-color="primary"]` | `[data-color="brand"]`           |
+
+### Patch Changes
+
+- 3aea012: **화면 변화** 밑줄 입력의 레이블과 도움말(Text Field/Line): 왼쪽 여백이 사라져 밑줄 왼쪽 끝에 맞춰집니다 (4px → 0). 피그마 `Text Field/Line`에서 `Text Field/ Label`과 `Help Text`의 왼쪽 패딩을 0으로 바꾼 것을 따라 `TextFieldLine` 안의 `.umc-field__label`, `.umc-field__caption`만 `padding-inline: 0`을 씁니다. `TextFieldBox`를 비롯한 다른 필드는 그대로 4px입니다.
+- @umc-product/design-tokens@0.10.0
+  - @umc-product/icons@0.10.0
+
 ## 0.9.0 (2026-10-25)
 
 ### Minor Changes
 
-- 9049532: 코드 입력 칸에 작은 크기 `size="md"`가 생깁니다. 피그마 `Text Field/ Code Input`에 `Size=Md`가 더해진 것을 옮긴 것으로, `CodeField`에 `size="md"`를 넘기면 칸이 52px에서 42px, 모서리가 16px에서 12px, 글자가 26px에서 22px(`Title/1-Semibold`), 칸 사이가 10px에서 6px로 줄어듭니다. 기본값 `lg`는 그대로입니다.
+- 9049532: 코드 입력 칸(Code Input): 작은 크기가 생깁니다 (52px 칸 한 가지 → 42px 칸 추가). 피그마 `Text Field/ Code Input`에 `Size=Md`가 더해진 것을 옮긴 것으로, `CodeField`에 `size="md"`를 넘기면 칸이 52px에서 42px, 모서리가 16px에서 12px, 글자가 26px에서 22px(`Title/1-Semibold`), 칸 사이가 10px에서 6px로 줄어듭니다. 기본값 `lg`는 그대로입니다.
 
 ### Patch Changes
 
-- 7fdf0a8: **화면 변화** 바텀 시트와 패널의 버튼 영역 위 여백이 32px에서 16px로 줄고, 패널의 버튼이 양옆으로 4px씩 넓어집니다. 피그마 `Button Area` 컴포넌트 여백이 위 16px·아래 10px·좌우 16px로 바뀌어 `BottomSheetActions` 다섯 레이아웃이 그 값을 기본으로 쓰고(`primary-top`의 아래 4px도 10px), `BottomSheet` 안에서는 피그마 `App/Bottom Sheet`대로 좌우 20px·아래 0, `Panel` 안에서는 `Web/Panel`대로 좌우 16px·아래 0을 씁니다. 패널 아래 여백은 24px에서 20px로 바뀝니다.
-- 28c0db7: **화면 변화** 입력 상자의 오류 배경이 더 옅은 분홍이 됩니다. 피그마 `Text Field/Box/Field`의 오류 배경이 Red-50 100%에서 Red-50 30%(`rgba(254, 242, 241, 0.3)`)로 바뀐 것을 따라 `TextFieldBoxField`, `TextFieldBox`, `TextFieldArea`, `VerificationCodeField`, `Select`의 `invalid` 배경을 `#fef2f1`에서 `#fef2f14d`로 바꿉니다. 투명도 토큰이 아직 없어 값은 컴포넌트 변수 `--umc-text-field-box-field-error-bg`, `--umc-select-error-bg`에 두었습니다. `CodeField` 칸과 `IconButton`의 오류 배경은 그대로입니다.
+- 7fdf0a8: **화면 변화** 바텀 시트와 패널의 버튼 영역(Button Area): 버튼 위 여백이 줄고 패널에서는 버튼이 양옆으로 조금 넓어집니다 (위 여백 32px → 16px, 패널 좌우 여백 20px → 16px). 피그마 `Button Area` 컴포넌트 여백이 위 16px·아래 10px·좌우 16px로 바뀌어 `BottomSheetActions` 다섯 레이아웃이 그 값을 기본으로 쓰고(`primary-top`의 아래 4px도 10px), `BottomSheet` 안에서는 피그마 `App/Bottom Sheet`대로 좌우 20px·아래 0, `Panel` 안에서는 `Web/Panel`대로 좌우 16px·아래 0을 씁니다. 패널 아래 여백은 24px에서 20px로 바뀝니다.
+- 28c0db7: **화면 변화** 입력 상자의 오류 상태(Text Field/Box): 분홍 배경이 옅어집니다 (Red-50 → Red-50 30%). 피그마 `Text Field/Box/Field`의 오류 배경이 Red-50 100%에서 Red-50 30%(`rgba(254, 242, 241, 0.3)`)로 바뀐 것을 따라 `TextFieldBoxField`, `TextFieldBox`, `TextFieldArea`, `VerificationCodeField`, `Select`의 `invalid` 배경을 `#fef2f1`에서 `#fef2f14d`로 바꿉니다. 투명도 토큰이 아직 없어 값은 컴포넌트 변수 `--umc-text-field-box-field-error-bg`, `--umc-select-error-bg`에 두었습니다. `CodeField` 칸과 `IconButton`의 오류 배경은 그대로입니다.
 - @umc-product/design-tokens@0.9.0
   - @umc-product/icons@0.9.0
 

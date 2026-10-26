@@ -6,12 +6,12 @@ import { describe, expect, it, vi } from "vitest"
 import { IconButton } from "./IconButton.tsx"
 
 describe("IconButton", () => {
-  it("기본은 type=button이고 피그마 기본 변형(Primary, Weak, Md)을 data 속성으로 단다", () => {
+  it("기본은 type=button이고 피그마 기본 변형(Brand, Weak, Md)을 data 속성으로 단다", () => {
     render(<IconButton icon={<svg />} aria-label="닫기" />)
     const button = screen.getByRole("button", { name: "닫기" })
     expect(button).toHaveAttribute("type", "button")
     expect(button).toHaveClass("umc-icon-button")
-    expect(button).toHaveAttribute("data-color", "primary")
+    expect(button).toHaveAttribute("data-color", "brand")
     expect(button).toHaveAttribute("data-variant", "weak")
     expect(button).toHaveAttribute("data-size", "md")
   })
@@ -68,7 +68,7 @@ describe("IconButton", () => {
     )
     const button = screen.getByRole("button", { name: "닫기" })
     expect(button).toHaveAttribute("data-size", "lg")
-    expect(button).toHaveAttribute("data-color", "primary")
+    expect(button).toHaveAttribute("data-color", "brand")
   })
 
   it("누르면 onClick을 부르고, 비활성이면 부르지 않는다", async () => {
