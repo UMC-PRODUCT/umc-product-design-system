@@ -6,7 +6,7 @@ import { createContext, useMemo, type ReactNode } from "react"
 
 export type ToastOptions = {
   message: ReactNode
-  color?: "primary" | "neutral" | "warning" | "error"
+  color?: "brand" | "neutral" | "warning" | "error"
   icon?: ReactNode
   action?: { label: ReactNode; onClick: () => void }
   duration?: number
@@ -42,7 +42,7 @@ function ToastApiProvider({ children }: { children: ReactNode }) {
           timeout,
           priority: options.color === "error" ? "high" : "low",
           data: {
-            color: options.color ?? "primary",
+            color: options.color ?? "brand",
             icon: options.icon,
             action: options.action,
           },
@@ -66,7 +66,7 @@ function ToastViewportPortal({ placement }: { placement: "top" | "bottom" }) {
       <Toast.Viewport className="umc-toast-viewport" data-placement={placement}>
         {toasts.map((toast) => {
           const data = toast.data
-          const color = data?.color ?? "primary"
+          const color = data?.color ?? "brand"
           const action = data?.action
           return (
             <Toast.Root

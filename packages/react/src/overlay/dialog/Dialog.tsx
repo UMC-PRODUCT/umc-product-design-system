@@ -14,7 +14,7 @@ import {
   type TextButtonColor,
 } from "../../text-button/TextButton.tsx"
 
-export type DialogColor = "primary" | "neutral" | "error"
+export type DialogColor = "brand" | "neutral" | "error"
 
 export type DialogProps = {
   open?: boolean
@@ -36,13 +36,13 @@ export type DialogProps = {
 const CONFIRM_BUTTONS: Readonly<
   Record<DialogColor, { variant: ButtonVariant; color: ButtonColor }>
 > = {
-  primary: { variant: "fill", color: "brand" },
+  brand: { variant: "fill", color: "brand" },
   neutral: { variant: "fill", color: "neutral" },
   error: { variant: "weak", color: "red" },
 }
 
 const CONFIRM_TEXT_BUTTONS: Readonly<Record<DialogColor, TextButtonColor>> = {
-  primary: "brand",
+  brand: "brand",
   neutral: "neutral",
   error: "brand",
 }
@@ -55,7 +55,7 @@ export function Dialog({
   defaultOpen,
   onOpenChange,
   trigger,
-  color = "primary",
+  color = "brand",
   icon,
   title,
   description,

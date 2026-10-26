@@ -6,7 +6,7 @@ import { IconButton, type IconButtonProps } from "./IconButton.tsx"
 describe("IconButtonProps", () => {
   it("color, variant, size는 피그마 값만 받는다", () => {
     expectTypeOf<IconButtonProps["color"]>().toEqualTypeOf<
-      "primary" | "white" | "neutral" | "error" | undefined
+      "brand" | "white" | "neutral" | "error" | undefined
     >()
     expectTypeOf<IconButtonProps["variant"]>().toEqualTypeOf<
       "fill" | "weak" | undefined

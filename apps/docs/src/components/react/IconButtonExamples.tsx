@@ -18,7 +18,7 @@ import { lookup, type FigmaVariant } from "./variants/figma-variants.ts"
 import { VariantGrid } from "./variants/VariantGrid.tsx"
 
 const COLORS: readonly IconButtonColor[] = [
-  "primary",
+  "brand",
   "white",
   "neutral",
   "error",
@@ -122,7 +122,7 @@ export function IconButtonWithTooltip() {
 }
 
 const FIGMA_COLORS: Readonly<Record<string, IconButtonColor>> = {
-  Primary: "primary",
+  Primary: "brand",
   White: "white",
   Neutral: "neutral",
   Error: "error",

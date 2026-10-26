@@ -4,7 +4,7 @@
   "page": "/components/overlay/toast/",
   "nodes": [
     {
-      "specId": "toast-primary-icon",
+      "specId": "toast-brand-icon",
       "node": "2621:33489",
       "variant": "Type=Primary, Leading Acc=True, Text Button=False",
       "target": ".umc-toast",
@@ -26,7 +26,7 @@
       }
     },
     {
-      "specId": "toast-primary-icon-glyph",
+      "specId": "toast-brand-icon-glyph",
       "node": "3140:48776",
       "variant": "Icon_Check_circle (Primary)",
       "target": ".umc-toast__icon",
@@ -49,7 +49,7 @@
       }
     },
     {
-      "specId": "toast-primary-action",
+      "specId": "toast-brand-action",
       "node": "2621:33506",
       "variant": "Type=Primary, Leading Acc=False, Text Button=True",
       "target": ".umc-toast",
@@ -59,7 +59,7 @@
       }
     },
     {
-      "specId": "toast-primary-action-button",
+      "specId": "toast-brand-action-button",
       "node": "3913:59165",
       "variant": "Type=Primary 텍스트 버튼",
       "target": ".umc-toast__action",
@@ -142,7 +142,7 @@
       }
     },
     {
-      "specId": "toast-top-primary-icon",
+      "specId": "toast-top-brand-icon",
       "node": "2621:33539",
       "variant": "Toast Top Type=Primary, Leading Acc=True, Text Button=False",
       "target": ".umc-toast",
@@ -155,7 +155,7 @@
       }
     },
     {
-      "specId": "toast-top-primary-action",
+      "specId": "toast-top-brand-action",
       "node": "2621:33554",
       "variant": "Toast Top Type=Primary, Leading Acc=False, Text Button=True",
       "target": ".umc-toast",
