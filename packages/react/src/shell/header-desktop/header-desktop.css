@@ -19,6 +19,7 @@
       --umc-color-text-brand-default-600
     );
     --umc-header-desktop-item-selected-shadow: none;
+    --umc-header-desktop-shadow: var(--umc-shadow-drop-neutral-3);
 
     display: grid;
     grid-template-columns: minmax(max-content, 1fr) auto minmax(
@@ -33,12 +34,15 @@
     padding: 0;
     border: 0;
     background-color: var(--umc-header-desktop-bg);
-    box-shadow: var(--umc-shadow-drop-neutral-3);
+    box-shadow: var(--umc-header-desktop-shadow);
   }
 
   .umc-header-desktop[data-mode="dark"] {
     --umc-header-desktop-dark-nav-bg: #fbfcfc33;
     --umc-header-desktop-dark-item-selected-bg: #ddf4f14d;
+    --umc-header-desktop-dark-shadow-color: #4146454d;
+    --umc-header-desktop-shadow: 0 4px 16px 0
+      var(--umc-header-desktop-dark-shadow-color);
     --umc-header-desktop-bg: transparent;
     --umc-header-desktop-nav-bg: var(--umc-header-desktop-dark-nav-bg);
     --umc-header-desktop-nav-border-color: var(--umc-color-white);
