@@ -8,6 +8,7 @@
 @import "./page-header/page-header.css";
 @import "./section-header/section-header.css";
 @import "./top-navigation/top-navigation.css";
+@import "./app-page-header/app-page-header.css";
 @import "./bottom-navigation/bottom-navigation.css";
 
 @layer components {

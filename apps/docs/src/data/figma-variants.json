@@ -1750,6 +1750,14 @@
         "Type=Text-Neutral"
       ]
     },
+    "app-page-header": {
+      "node": "5481:67100",
+      "name": "App/Page Header",
+      "axes": {
+        "Margin": ["16", "20"]
+      },
+      "variants": ["Margin=16", "Margin=20"]
+    },
     "bottom-navigation": {
       "node": "2472:19950",
       "name": "App/Bottom navigation",

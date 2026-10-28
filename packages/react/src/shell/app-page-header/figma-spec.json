@@ -1,0 +1,74 @@
+{
+  "component": "AppPageHeader",
+  "figmaSection": "5531:60443",
+  "page": "/components/shell/app-page-header/",
+  "nodes": [
+    {
+      "specId": "app-page-header",
+      "node": "5291:63106",
+      "variant": "Margin=16",
+      "target": ".umc-app-page-header",
+      "expected": {
+        "row-gap": "32px"
+      }
+    },
+    {
+      "specId": "app-page-header-navigation",
+      "node": "5291:59694",
+      "variant": "Margin=16 안의 App/Top Navigation",
+      "target": ".umc-top-navigation",
+      "expected": {
+        "padding-left": "8px",
+        "padding-right": "8px"
+      }
+    },
+    {
+      "specId": "app-page-header-text",
+      "node": "5291:59709",
+      "variant": "Margin=16 안의 Text Group",
+      "target": ".umc-app-page-header__text",
+      "expected": {
+        "row-gap": "6px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "color": "#0d121c"
+      }
+    },
+    {
+      "specId": "app-page-header-title",
+      "node": "5291:59707",
+      "variant": "Margin=16 안의 Title",
+      "target": ".umc-app-page-header__title",
+      "expected": {
+        "color": "#0d121c",
+        "font-size": "28px",
+        "font-weight": "600",
+        "line-height": "36.4px",
+        "letter-spacing": "-0.56px"
+      }
+    },
+    {
+      "specId": "app-page-header-subtitle",
+      "node": "5291:61986",
+      "variant": "Margin=16 안의 Subtitle",
+      "target": ".umc-app-page-header__subtitle",
+      "expected": {
+        "color": "#0d121c",
+        "font-size": "16px",
+        "font-weight": "400",
+        "line-height": "23.2px",
+        "letter-spacing": "-0.16px"
+      }
+    },
+    {
+      "specId": "app-page-header-margin-20",
+      "node": "5481:67103",
+      "variant": "Margin=20 안의 Text Group",
+      "target": ".umc-app-page-header__text",
+      "expected": {
+        "padding-left": "20px",
+        "padding-right": "20px"
+      }
+    }
+  ]
+}

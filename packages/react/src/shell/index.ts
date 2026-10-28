@@ -60,6 +60,11 @@ export {
   type TopNavigationProps,
 } from "./top-navigation/TopNavigation.tsx"
 export {
+  AppPageHeader,
+  type AppPageHeaderMargin,
+  type AppPageHeaderProps,
+} from "./app-page-header/AppPageHeader.tsx"
+export {
   BottomNavigation,
   BottomNavigationItem,
   type BottomNavigationItemProps,

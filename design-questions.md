@@ -206,6 +206,8 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 5. 2026-10-17에 App/Dialog Confirm 타입의 확인 버튼에 좌우 8px, 상하 4px 여백을 더했습니다. 피그마 `area` 프레임(3928:63088)은 높이가 44px 고정이라 버튼 영역(62px)의 위아래 여백으로 7px씩 넘칩니다. 코드는 요청한 여백대로 버튼 높이를 30px로 두었고, 버튼 영역 높이 62px은 피그마와 같습니다. 눌리는 영역을 44px로 키워야 하면 알려 주세요.
 6. 2026-10-25에 `Button Area` 컴포넌트 여백이 위 16px·아래 10px·좌우 16px로 바뀌었는데, App/Bottom Sheet 안의 Button Area 인스턴스는 Keyboard=Off(2536:12118, 3253:48866)가 위 16px·아래 0·좌우 20px, Keyboard=On(2536:12135)이 위 16px·아래 10px·좌우 20px에 시트 아래 8px입니다. 코드는 시트 안에서 좌우 20px·아래 0을 쓰고(아래는 안전 영역이 대신함) 키보드 상태는 나누지 않습니다. 시트 안 좌우 20px이 의도인지(컴포넌트는 16px), 키보드가 올라왔을 때 아래 18px이 필요한지 알려 주세요. (해결 2026-10-28) 시트 안 Button Area가 아래 10px로 바뀌었고, 시트에서는 좌우 20px을 그대로 쓴다는 답을 받아 코드도 시트 안 아래 10px·좌우 20px으로 맞췄습니다. 같은 날 시트 `Text Container`의 제목-설명 간격도 6px에서 4px로 바뀌어 함께 맞췄습니다. 남은 것: Type=Center, Keyboard=On의 Button Area(3261:49275)만 좌우 16px입니다. 다른 시트처럼 20px이 맞는지 알려 주세요.
 7. 2026-10-28에 App/Top Navigation에 `Subtitle` 스위치가 생겼고 가운데 제목 색이 `#606262`에서 `#0f1010`으로 바뀌었습니다. 부제는 가운데 정렬 변형에만 있어 코드는 `titleAlign="center"`에서만 `subtitle`을 받습니다. 왼쪽 정렬에서도 부제를 쓰는지 알려 주세요.
+8. App/Page Header의 부제(`Body/1-Regular`)가 제목과 같은 `grey950`(`#0d121c`)입니다. 다른 컴포넌트의 부제와 설명은 `color/text/subtle`(teal-grey-600)을 씁니다. 같은 색이 의도인지 알려 주세요.
+9. App/Page Header의 내비게이션 줄은 App/Top Navigation 인스턴스에서 제목을 끄고 빈 `Btn Group`(88×44)을 둔 모양입니다. 코드는 `back`이나 `actions`를 넘길 때만 줄을 그리고, 둘 다 없으면 피그마 설명대로 줄 없이 제목과 부제만 둡니다.
 
 ## 앱 셸
 
