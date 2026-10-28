@@ -5,6 +5,7 @@ import {
   HeaderDesktop,
   HeaderActionButton,
   HeaderHomeLink,
+  HeaderMobile,
   type HeaderHomeLinkProps,
 } from "@umc-product/react"
 import { ExpandMoreIcon } from "@umc-product/icons"
@@ -25,7 +26,17 @@ const NAV_ITEMS = [
   { label: "지원하기", href: "/apply" },
 ]
 
+const MOBILE_NAV_ITEMS = [
+  { label: "소개", href: "/about" },
+  { label: "팀 매칭", href: "/matching" },
+  { label: "지원하기", href: "/apply" },
+  { label: "공지사항", href: "/notices" },
+]
+
 const DARK_BACKDROP = "linear-gradient(180deg, #56625f 0%, #a9b1af 100%)"
+
+const MOBILE_FRAME = "w-[390px] max-w-full"
+const MOBILE_OPENED_FRAME = `${MOBILE_FRAME} h-[376px]`
 
 const MAIN_HOME_LINK: HeaderHomeLinkProps = {}
 const OPERATION_HOME_LINK: HeaderHomeLinkProps = {
@@ -119,6 +130,60 @@ export function HeaderActions() {
                 </span>
               </>
             }
+          />
+        </div>
+      </PreviewLinks>
+    </div>
+  )
+}
+
+function MobileMenuCta() {
+  return (
+    <Button size="md" variant="weak">
+      지원하기
+    </Button>
+  )
+}
+
+export function HeaderMobileLight() {
+  const [path, setPath] = useState("/about")
+  return (
+    <div className="umc-example umc-example-flush overflow-x-auto">
+      <PreviewLinks onNavigate={setPath}>
+        <div
+          className={MOBILE_OPENED_FRAME}
+          data-spec-id="header-mobile-light header-mobile-logo header-mobile-actions header-mobile-menu-button header-mobile-menu header-mobile-nav-list header-mobile-item header-mobile-item-hover header-mobile-item-selected"
+        >
+          <HeaderMobile
+            navItems={MOBILE_NAV_ITEMS}
+            currentPath={path}
+            actions={<MobileMenuCta />}
+            defaultOpen
+          />
+        </div>
+      </PreviewLinks>
+    </div>
+  )
+}
+
+export function HeaderMobileDark() {
+  const [path, setPath] = useState("/about")
+  return (
+    <div
+      className="umc-example umc-example-flush overflow-x-auto"
+      style={{ background: DARK_BACKDROP }}
+    >
+      <PreviewLinks onNavigate={setPath}>
+        <div
+          className={MOBILE_OPENED_FRAME}
+          data-spec-id="header-mobile-dark header-mobile-dark-menu-button header-mobile-dark-menu header-mobile-dark-item header-mobile-dark-item-hover header-mobile-dark-item-selected"
+        >
+          <HeaderMobile
+            mode="dark"
+            navItems={MOBILE_NAV_ITEMS}
+            currentPath={path}
+            actions={<MobileMenuCta />}
+            defaultOpen
           />
         </div>
       </PreviewLinks>
@@ -231,6 +296,69 @@ function HomeLinkPrimitiveCell({
   )
 }
 
+const MENU_CONTAINER_MODES = { Light: "light", Variant2: "dark" } as const
+
+const menuContainerTone = (variant: FigmaVariant) =>
+  variant.props["Property 1"] === "Variant2" ? "dark" : undefined
+
+function HeaderMobileCell({ variant }: { variant: FigmaVariant }) {
+  const opened = variant.props["Menu State"] === "Opened"
+  return (
+    <div className={opened ? MOBILE_OPENED_FRAME : MOBILE_FRAME}>
+      <HeaderMobile
+        mode={lookup(HEADER_MODES, variant, "Mode")}
+        navItems={MOBILE_NAV_ITEMS}
+        currentPath="/about"
+        actions={<MobileMenuCta />}
+        open={opened}
+      />
+    </div>
+  )
+}
+
+function ActionsMobileCell({ variant }: { variant: FigmaVariant }) {
+  return (
+    <div className="h-20 w-[130px] overflow-hidden">
+      <HeaderMobile
+        mode={lookup(HEADER_MODES, variant, "Mode")}
+        logo={null}
+        navItems={MOBILE_NAV_ITEMS}
+        open={variant.props["Menu State"] === "Opened"}
+      />
+    </div>
+  )
+}
+
+function MenuItemCell({ variant }: { variant: FigmaVariant }) {
+  const state = variant.props["Property 1"]
+  return (
+    <ForceState states={state === "Hover" ? ["hover"] : []}>
+      <div className={`${MOBILE_FRAME} h-[164px]`}>
+        <HeaderMobile
+          mode={lookup(HEADER_MODES, variant, "Mode")}
+          navItems={[{ label: "팀 매칭", href: "/matching" }]}
+          currentPath={state === "Selected" ? "/matching" : "/"}
+          open
+        />
+      </div>
+    </ForceState>
+  )
+}
+
+function MenuContainerCell({ variant }: { variant: FigmaVariant }) {
+  return (
+    <div className={MOBILE_OPENED_FRAME}>
+      <HeaderMobile
+        mode={lookup(MENU_CONTAINER_MODES, variant, "Property 1")}
+        navItems={MOBILE_NAV_ITEMS}
+        currentPath="/about"
+        actions={<MobileMenuCta />}
+        open
+      />
+    </div>
+  )
+}
+
 const MODE_ORDER = { Mode: ["Light", "Dark"] }
 
 export function HeaderAllVariants() {
@@ -248,6 +376,14 @@ export function HeaderAllVariants() {
         }}
         tone={darkTone}
         render={(variant) => <HeaderVariantCell variant={variant} />}
+      />
+      <VariantGrid
+        set="header-mobile"
+        rows={["Menu State"]}
+        columns={["Mode"]}
+        order={{ ...MODE_ORDER, "Menu State": ["Default", "Opened"] }}
+        tone={darkTone}
+        render={(variant) => <HeaderMobileCell variant={variant} />}
       />
       <VariantGrid
         set="header-home-link"
@@ -311,6 +447,32 @@ export function HeaderAllVariants() {
         }}
         tone={darkTone}
         render={(variant) => <HeaderActionsCell variant={variant} />}
+      />
+      <VariantGrid
+        set="header-actions-mobile"
+        rows={["Menu State"]}
+        columns={["Mode"]}
+        order={{ ...MODE_ORDER, "Menu State": ["Default", "Opened"] }}
+        tone={darkTone}
+        render={(variant) => <ActionsMobileCell variant={variant} />}
+      />
+      <VariantGrid
+        set="header-menu-container"
+        rows={["Property 1"]}
+        columns={[]}
+        tone={menuContainerTone}
+        render={(variant) => <MenuContainerCell variant={variant} />}
+      />
+      <VariantGrid
+        set="header-menu-item"
+        rows={["Property 1"]}
+        columns={["Mode"]}
+        order={{
+          ...MODE_ORDER,
+          "Property 1": ["Unselected", "Hover", "Selected"],
+        }}
+        tone={darkTone}
+        render={(variant) => <MenuItemCell variant={variant} />}
       />
       <VariantGrid
         set="header-action-button"

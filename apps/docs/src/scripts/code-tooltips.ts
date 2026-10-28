@@ -214,9 +214,30 @@ const fitCodeHeight = (tip: Tip, space: number) => {
   }
 }
 
+const controlledRegionsOf = (anchor: Element) =>
+  [...anchor.querySelectorAll("[aria-controls]")]
+    .flatMap((control) =>
+      (control.getAttribute("aria-controls") ?? "").split(/\s+/),
+    )
+    .map((id) => (id === "" ? null : document.getElementById(id)))
+    .filter(
+      (region): region is HTMLElement =>
+        region !== null && anchor.contains(region),
+    )
+
+const placementRectOf = (anchor: Element) =>
+  controlledRegionsOf(anchor).reduce((rect, region) => {
+    const regionRect = region.getBoundingClientRect()
+    const left = Math.min(rect.left, regionRect.left)
+    const top = Math.min(rect.top, regionRect.top)
+    const right = Math.max(rect.right, regionRect.right)
+    const bottom = Math.max(rect.bottom, regionRect.bottom)
+    return new DOMRect(left, top, right - left, bottom - top)
+  }, anchor.getBoundingClientRect())
+
 const place = (tip: Tip, anchor: Element) => {
   tip.code.style.maxHeight = ""
-  const rect = anchor.getBoundingClientRect()
+  const rect = placementRectOf(anchor)
   const { clientWidth, clientHeight } = document.documentElement
   const spaceBelow = clientHeight - rect.bottom - GAP_PX - VIEWPORT_MARGIN_PX
   const spaceAbove = rect.top - GAP_PX - VIEWPORT_MARGIN_PX

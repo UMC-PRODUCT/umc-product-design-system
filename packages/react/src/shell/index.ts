@@ -10,6 +10,10 @@ export {
   type HeaderDesktopProps,
 } from "./header-desktop/HeaderDesktop.tsx"
 export {
+  HeaderMobile,
+  type HeaderMobileProps,
+} from "./header-mobile/HeaderMobile.tsx"
+export {
   HeaderHomeLink,
   type HeaderHomeLinkProps,
 } from "./header-home-link/HeaderHomeLink.tsx"

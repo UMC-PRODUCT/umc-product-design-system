@@ -1,4 +1,5 @@
 @import "./header-desktop/header-desktop.css";
+@import "./header-mobile/header-mobile.css";
 @import "./umc-logo-lockup/umc-logo-lockup.css";
 @import "./header-home-link/header-home-link.css";
 @import "./header-action-button/header-action-button.css";

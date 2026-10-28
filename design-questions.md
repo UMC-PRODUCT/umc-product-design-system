@@ -223,11 +223,19 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 12. Home Link 라벨의 Orbitron Bold와 글자 크기 13.487px, 11.689px은 텍스트 스타일에도 변수에도 없습니다. 로고와 함께 비율로 줄인 값으로 보고 그대로 옮겼습니다. Orbitron을 브랜드 글꼴 토큰으로 등록할지 알려 주세요.
 13. Home Link 색 변수의 codeSyntax `--color-action-primary-default` 하나가 `#3f4141`(라이트), `#02746c`(라이트 hover), `#f4fbfa`(다크) 세 값을 가리킵니다. 어느 변수인지 알 수 없어 코드는 값이 같은 `icon-neutral-stronger-700`, `icon-brand-strong-600`, `teal-50`, `teal-200`을 씁니다.
 14. `Web/Header/Home Link`의 왼쪽 여백은 Main이 60px, 라벨 있는 맥락이 34px입니다. 라벨 칸 200px 안에서 내용을 가운데 두므로 로고 시작 위치가 맥락마다 다릅니다(헤더 왼쪽에서 Main 76px, Operation 51.5px, Study 68.5px, Product Tech 57.8px). 맥락이 바뀌어도 로고 위치가 같아야 하는지 알려 주세요.
-15. 좁은 화면용 Header가 없습니다. 라벨 있는 홈 링크는 로고 칸이 250px(여백 34px과 16px, 링크 200px)이라, 375px 화면에서 액션 버튼과 함께 두면 가로로 넘칩니다. 모바일 헤더 규칙과 브레이크포인트를 알려 주세요.
+15. 좁은 화면용 Header가 없습니다. 라벨 있는 홈 링크는 로고 칸이 250px(여백 34px과 16px, 링크 200px)이라, 375px 화면에서 액션 버튼과 함께 두면 가로로 넘칩니다. 모바일 헤더 규칙과 브레이크포인트를 알려 주세요. (일부 해결 2026-10-28) `Web/Header`가 `Web/Header/Desktop`과 `Web/Header/Mobile`로 나뉘어 코드도 `HeaderDesktop`(깨지는 변경, 전 `Header`)과 `HeaderMobile`로 나눴습니다. 남은 것: 둘을 바꾸는 브레이크포인트가 없어 앱이 화면 폭으로 고릅니다. 기준 폭을 알려 주세요.
 16. Section Header Md의 제목(`Title/3-Semibold`, 18px)과 Sm의 설명(`Body/4-Regular`, 13px)은 2026-10-08에 받은 3기 텍스트 스타일에 없습니다. 코드는 피그마 값을 컴포넌트 변수로 둡니다. Export modes를 다시 주시면 토큰으로 바꾸겠습니다.
 17. Section Header Sm은 번호가 18px, 제목이 16px로 크기가 다릅니다. Lg와 Md는 번호와 제목이 같은 크기입니다. 의도한 것인지 알려 주세요.
 18. Section Header 필수 별표 색이 `--color-text-link`(`#dc3d3d`)에 연결되어 있습니다. 이름은 링크인데 값은 빨강이라, 코드는 같은 값의 `text-error`를 씁니다.
 19. Section Header의 Caption Slot은 200px 고정 칸이고 번호는 늘 보입니다. 코드는 슬롯을 내용 폭으로 두고, 번호를 넘기지 않으면 번호 칸을 그리지 않습니다. 번호 없이 쓰는 화면이 있는지, 슬롯에 시간 표기 말고 무엇을 넣는지 알려 주세요.
+20. `.primitive/Web/Header/Menu Container`의 변형 이름이 `Property 1=Light`, `Property 1=Variant2`이고 `Variant2`가 다크 모드입니다. `Menu Item`의 축 이름도 `Property 1`입니다. 코드는 두 헤더와 같이 `mode`(`light`, `dark`)로 부릅니다. 피그마 이름을 `Mode=Light`, `Mode=Dark`로 맞출 수 있는지 알려 주세요.
+21. Web/Header/Mobile 다크 메뉴 배경 `#0d1a19`와 다크 헤더 그림자 `#414645` 30%(`rgba(65,70,69,0.3)`, Desktop과 Mobile 공통)는 토큰에 없어 컴포넌트 변수로 씁니다. 토큰으로 등록할지 알려 주세요.
+22. Menu Item 라이트 모드 Hover만 Semibold라 마우스를 올리면 글자 폭이 조금 늘어납니다. 다크 모드 Hover는 Medium `#7e7f7f`로, Unselected(`#adadad`)보다 어두워집니다. 두 Hover가 의도한 값인지 알려 주세요.
+23. 다크 메뉴의 CTA 버튼은 Button 인스턴스 색을 덮어쓴 모습(반투명 흰 배경, 흰 1px 테두리, 흰 글자)이라 Button 변형에 없습니다. 문서 예시는 `variant="weak"` Brand 버튼을 씁니다. Button 변형으로 더할지 알려 주세요.
+24. Web/Header/Mobile은 헤더 아래로 펼친 모습만 있습니다. 코드는 메뉴를 본문 위에 겹쳐 띄우고(본문이 밀리지 않음), 항목을 누르거나 `Esc`나 바깥을 누르면 닫습니다. 본문을 밀어내야 하는지, 열고 닫을 때 움직임이 필요한지 알려 주세요.
+25. 모바일 메뉴 버튼은 34px 아이콘 그대로라 누르는 영역이 권장 크기 44px보다 작습니다. 넓혀도 되는지 알려 주세요.
+26. 라이트 메뉴를 펼친 모습(5572:81765)은 `Shadow/Drop/Neutral_2`(`#eff0f080`)를 씁니다. 같은 이름의 토큰은 `#eceeee85`라 코드는 토큰 값을 씁니다.
+27. Web/Header/Mobile에는 로그인 상태(프로필, 로그인 버튼)와 홈 링크 맥락(Operation, Study 등) 변형이 없고, 문서의 "권한별 헤더 4종"도 아직 정의되지 않았습니다. 코드는 Desktop처럼 `logo`와 `actions` 슬롯으로 열어 두었습니다.
 
 ## 폼
 
@@ -423,7 +431,7 @@ placeholder(#9ca3a3)와 입력 글자(#161919)는 2기 변수 `teal-gray-400`, `
 
 - 다크 모드 선택 항목: 피그마는 1px 테두리와 좌우 패딩 16px을 씁니다. 선택이 바뀔 때 폭이 흔들리지 않도록 패딩 18px을 유지하고 inset 그림자로 테두리를 그립니다.
 - 내비게이션 알약 radius: 피그마 컨테이너는 9999px 리터럴, 항목은 999px 토큰입니다. 모양이 같으므로 `--umc-radius-full`로 통일했습니다.
-- 홈 링크 모드: 피그마 primitive에는 `Mode` 속성이 있지만 `HeaderHomeLink`에는 `mode` prop을 두지 않았습니다. 홈 링크는 언제나 헤더 안에 있으므로 감싼 `Header`의 `mode`를 따릅니다. 두 곳에 모드를 따로 넘기다 어긋나는 일을 막기 위해서입니다.
+- 홈 링크 모드: 피그마 primitive에는 `Mode` 속성이 있지만 `HeaderHomeLink`에는 `mode` prop을 두지 않았습니다. 홈 링크는 언제나 헤더 안에 있으므로 감싼 헤더(`HeaderDesktop`, `HeaderMobile`)의 `mode`를 따릅니다. 두 곳에 모드를 따로 넘기다 어긋나는 일을 막기 위해서입니다.
 - 홈 링크 포커스: 피그마에 포커스 상태가 없어 다른 헤더 항목과 같은 2px `border-primary-strong-500` 외곽선을 씁니다.
 
 ### page-header
