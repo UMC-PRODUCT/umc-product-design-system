@@ -173,7 +173,6 @@
   }
 
   .umc-bottom-sheet__popup .umc-bottom-sheet-actions {
-    padding-block-end: var(--umc-spacing-padding-0);
     padding-inline: var(--umc-spacing-padding-20);
   }
 }
