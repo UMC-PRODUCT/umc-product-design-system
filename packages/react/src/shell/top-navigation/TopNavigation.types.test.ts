@@ -18,6 +18,27 @@ describe("TopNavigation types", () => {
     >()
   })
 
+  it("accepts subtitle only with center alignment", () => {
+    expectTypeOf<{
+      title: string
+      titleAlign: "center"
+      subtitle: string
+    }>().toMatchTypeOf<TopNavigationProps>()
+    expectTypeOf<{
+      title: string
+      subtitle: string
+    }>().not.toMatchTypeOf<TopNavigationProps>()
+    expectTypeOf<{
+      title: string
+      titleAlign: "start"
+      subtitle: string
+    }>().not.toMatchTypeOf<TopNavigationProps>()
+  })
+
+  it("title is optional", () => {
+    expectTypeOf<{ back: object }>().toMatchTypeOf<TopNavigationProps>()
+  })
+
   it("back is optional", () => {
     expectTypeOf<TopNavigationProps["back"]>().not.toBeNever()
     const full: TopNavigationProps = { title: "홈" }

@@ -3,12 +3,16 @@
 
 @layer components {
   .umc-field.umc-text-field-line {
-    gap: var(--umc-spacing-gap-6);
+    gap: var(--umc-spacing-gap-0);
     padding-block: var(--umc-spacing-padding-16);
   }
 
   .umc-text-field-line .umc-field__label,
   .umc-text-field-line .umc-field__caption {
     padding-inline: var(--umc-spacing-padding-0);
+  }
+
+  .umc-text-field-line .umc-field__caption {
+    margin-block-start: var(--umc-spacing-gap-6);
   }
 }

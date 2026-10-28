@@ -1,4 +1,5 @@
-@import "./header/header.css";
+@import "./header-desktop/header-desktop.css";
+@import "./header-mobile/header-mobile.css";
 @import "./umc-logo-lockup/umc-logo-lockup.css";
 @import "./header-home-link/header-home-link.css";
 @import "./header-action-button/header-action-button.css";
@@ -7,6 +8,7 @@
 @import "./page-header/page-header.css";
 @import "./section-header/section-header.css";
 @import "./top-navigation/top-navigation.css";
+@import "./app-page-header/app-page-header.css";
 @import "./bottom-navigation/bottom-navigation.css";
 
 @layer components {

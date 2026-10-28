@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import {
   Button,
-  Header,
+  HeaderDesktop,
   HeaderActionButton,
   HeaderHomeLink,
-  type HeaderProps,
+  type HeaderDesktopProps,
 } from "@umc-product/react"
 import { ExpandMoreIcon } from "@umc-product/icons"
 import { fn } from "storybook/test"
@@ -19,7 +19,7 @@ const NAV_ITEMS = [
   { label: "스터디", href: "/studies" },
 ]
 
-type StoryArgs = HeaderProps & {
+type StoryArgs = HeaderDesktopProps & {
   loggedIn: boolean
   showCta: boolean
   onLoginClick: () => void
@@ -28,10 +28,13 @@ type StoryArgs = HeaderProps & {
 }
 
 const meta = {
-  title: "앱 셸/Header",
-  id: "header",
-  component: Header,
-  parameters: { ...componentParameters("Header"), layout: "fullscreen" },
+  title: "앱 셸/HeaderDesktop",
+  id: "header-desktop",
+  component: HeaderDesktop,
+  parameters: {
+    ...componentParameters("HeaderDesktop"),
+    layout: "fullscreen",
+  },
   argTypes: {
     currentPath: {
       control: { type: "select" },
@@ -69,7 +72,7 @@ const meta = {
     ...headerProps
   }) {
     return (
-      <Header
+      <HeaderDesktop
         {...headerProps}
         actions={
           loggedIn ? (

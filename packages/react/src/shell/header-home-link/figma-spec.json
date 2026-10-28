@@ -62,7 +62,7 @@
       "specId": "home-link-labeled-slot",
       "node": "2732:60556",
       "variant": "Web/Header/Home Link, Context=Operation",
-      "target": ".umc-header__logo",
+      "target": ".umc-header-desktop__logo",
       "expected": {
         "padding-top": "10px",
         "padding-right": "16px",

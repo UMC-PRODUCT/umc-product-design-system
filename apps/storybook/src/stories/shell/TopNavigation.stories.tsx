@@ -12,6 +12,7 @@ import { componentParameters } from "../../docs-links.ts"
 import { withWidth } from "../../decorators.tsx"
 
 type StoryArgs = TopNavigationProps & {
+  subtitleText: string
   withBack: boolean
   titleMenu: boolean
   actionsType: "none" | "icon" | "text"
@@ -25,7 +26,13 @@ const meta = {
   parameters: { ...componentParameters("TopNavigation"), layout: "fullscreen" },
   argTypes: {
     title: textControl,
-    titleAlign: { control: "inline-radio" },
+    titleAlign: { control: "inline-radio", options: ["start", "center"] },
+    subtitle: hiddenControl,
+    subtitleText: {
+      name: "subtitle",
+      control: "text",
+      if: { arg: "titleAlign", eq: "center" },
+    },
     back: hiddenControl,
     onTitleClick: hiddenControl,
     titleExpanded: hiddenControl,
@@ -38,6 +45,7 @@ const meta = {
   args: {
     title: "홈",
     titleAlign: "start",
+    subtitleText: "",
     withBack: false,
     titleMenu: false,
     actionsType: "icon",
@@ -47,12 +55,22 @@ const meta = {
     withBack,
     titleMenu,
     actionsType,
-    ...navigationProps
+    title,
+    titleAlign,
+    subtitleText,
   }) {
     const [titleExpanded, setTitleExpanded] = useState(false)
+    const alignProps =
+      titleAlign === "center"
+        ? {
+            titleAlign,
+            subtitle: subtitleText === "" ? undefined : subtitleText,
+          }
+        : { titleAlign }
     return (
       <TopNavigation
-        {...navigationProps}
+        title={title}
+        {...alignProps}
         back={withBack ? { href: "/" } : undefined}
         onTitleClick={
           titleMenu ? () => setTitleExpanded((prev) => !prev) : undefined

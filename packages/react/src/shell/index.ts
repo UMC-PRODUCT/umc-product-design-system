@@ -4,7 +4,15 @@ export {
   type LinkComponentProps,
   type LinkProviderProps,
 } from "./link-provider/LinkProvider.tsx"
-export { Header, type HeaderProps, type NavItem } from "./header/Header.tsx"
+export type { NavItem } from "./nav-item/nav-item.ts"
+export {
+  HeaderDesktop,
+  type HeaderDesktopProps,
+} from "./header-desktop/HeaderDesktop.tsx"
+export {
+  HeaderMobile,
+  type HeaderMobileProps,
+} from "./header-mobile/HeaderMobile.tsx"
 export {
   HeaderHomeLink,
   type HeaderHomeLinkProps,
@@ -51,6 +59,11 @@ export {
   type TopNavigationButtonTextProps,
   type TopNavigationProps,
 } from "./top-navigation/TopNavigation.tsx"
+export {
+  AppPageHeader,
+  type AppPageHeaderMargin,
+  type AppPageHeaderProps,
+} from "./app-page-header/AppPageHeader.tsx"
 export {
   BottomNavigation,
   BottomNavigationItem,

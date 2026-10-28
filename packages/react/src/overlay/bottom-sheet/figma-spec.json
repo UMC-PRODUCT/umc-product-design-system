@@ -15,6 +15,17 @@
       }
     },
     {
+      "specId": "bottom-sheet-header",
+      "node": "3261:49301",
+      "variant": "Type=Title, Keyboard=Off 안의 Text Container",
+      "target": ".umc-bottom-sheet__header",
+      "expected": {
+        "padding-top": "20px",
+        "padding-bottom": "4px",
+        "row-gap": "4px"
+      }
+    },
+    {
       "specId": "bottom-sheet-title",
       "node": "2536:12127",
       "variant": "Type=Title, Keyboard=Off",
@@ -42,7 +53,7 @@
       "target": ".umc-bottom-sheet__popup .umc-bottom-sheet-actions",
       "expected": {
         "padding-top": "16px",
-        "padding-bottom": "0px",
+        "padding-bottom": "10px",
         "padding-left": "20px",
         "padding-right": "20px"
       }
