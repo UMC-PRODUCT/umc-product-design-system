@@ -26,6 +26,18 @@
       }
     },
     {
+      "specId": "top-navigation-center-title",
+      "node": "3108:38393",
+      "variant": "Page Type=Sub, Title Alignment=Center, Icon=Left 안의 Title",
+      "target": ".umc-top-navigation__title-text",
+      "expected": {
+        "color": "#0f1010",
+        "font-size": "16px",
+        "font-weight": "500",
+        "line-height": "22.4px"
+      }
+    },
+    {
       "specId": "top-navigation-subtitle",
       "node": "5531:73461",
       "variant": "Page Type=Sub, Title Alignment=Center, Icon=Left 안의 Subtitle",

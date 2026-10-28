@@ -2,9 +2,6 @@
   .umc-top-navigation {
     --umc-top-navigation-bg: var(--umc-color-surface-default);
     --umc-top-navigation-title-color: var(--umc-color-text-neutral-default-900);
-    --umc-top-navigation-sub-title-color: var(
-      --umc-color-text-neutral-medium-600
-    );
     --umc-top-navigation-subtitle-color: var(--umc-color-text-neutral-weak-500);
     --umc-top-navigation-icon-color: var(--umc-color-icon-neutral-stronger-700);
 
@@ -95,7 +92,6 @@
 
   .umc-top-navigation[data-title-align="center"]
     .umc-top-navigation__title-text {
-    color: var(--umc-top-navigation-sub-title-color);
     max-width: 100%;
     font-family: var(--umc-typography-title-4-medium-font-family);
     font-size: var(--umc-typography-title-4-medium-font-size);
