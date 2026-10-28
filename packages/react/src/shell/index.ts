@@ -4,7 +4,11 @@ export {
   type LinkComponentProps,
   type LinkProviderProps,
 } from "./link-provider/LinkProvider.tsx"
-export { Header, type HeaderProps, type NavItem } from "./header/Header.tsx"
+export type { NavItem } from "./nav-item/nav-item.ts"
+export {
+  HeaderDesktop,
+  type HeaderDesktopProps,
+} from "./header-desktop/HeaderDesktop.tsx"
 export {
   HeaderHomeLink,
   type HeaderHomeLinkProps,

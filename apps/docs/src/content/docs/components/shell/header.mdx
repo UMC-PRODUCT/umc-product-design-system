@@ -12,10 +12,10 @@ import {
   HeaderLight,
 } from "../../../../components/react/shell/HeaderExamples.tsx"
 
-피그마 `Web/Header`를 구현했습니다. 로고, 가운데 내비게이션 알약, 오른쪽 액션 영역 세 칸으로 나뉩니다. `logo`를 넘기지 않으면 UMC 홈 링크가 들어갑니다. 높이는 `--umc-layout-header-height`(80px)입니다. 양옆 칸은 내용보다 좁아지지 않고 남는 폭을 같은 비율로 나눠 가집니다. 양옆 내용 폭이 비슷하면 내비게이션이 가운데에 놓이고, 화면이 좁으면 내비게이션이 가로로 스크롤됩니다.
+피그마 `Web/Header/Desktop`을 구현했습니다. 로고, 가운데 내비게이션 알약, 오른쪽 액션 영역 세 칸으로 나뉩니다. `logo`를 넘기지 않으면 UMC 홈 링크가 들어갑니다. 높이는 `--umc-layout-header-height`(80px)입니다. 양옆 칸은 내용보다 좁아지지 않고 남는 폭을 같은 비율로 나눠 가집니다. 양옆 내용 폭이 비슷하면 내비게이션이 가운데에 놓이고, 화면이 좁으면 내비게이션이 가로로 스크롤됩니다.
 
 ```tsx
-import { Header, LinkProvider } from "@umc-product/react"
+import { HeaderDesktop, LinkProvider } from "@umc-product/react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
@@ -29,7 +29,7 @@ export function AppHeader() {
   const pathname = usePathname()
   return (
     <LinkProvider component={Link}>
-      <Header
+      <HeaderDesktop
         navItems={navItems}
         currentPath={pathname}
         actions={<LoginButton />}
@@ -53,15 +53,15 @@ export function AppHeader() {
 
 ## 홈 링크
 
-`HeaderHomeLink`는 피그마 `Web/Header/Home Link`입니다. 로고를 누르면 `href`(기본값 `/`)로 갑니다. `Header`에 `logo`를 넘기지 않으면 맥락 없는 홈 링크가 들어갑니다. 운영진, 스터디, 프로덕트 화면에서는 `context`로 로고 옆에 맥락 이름을 붙입니다. 로고와 맥락 이름은 [UmcLogoLockup](../umc-logo-lockup/)이 그리므로, 링크가 아닌 자리에서는 `UmcLogoLockup`을 바로 씁니다.
+`HeaderHomeLink`는 피그마 `Web/Header/Home Link`입니다. 로고를 누르면 `href`(기본값 `/`)로 갑니다. `HeaderDesktop`에 `logo`를 넘기지 않으면 맥락 없는 홈 링크가 들어갑니다. 운영진, 스터디, 프로덕트 화면에서는 `context`로 로고 옆에 맥락 이름을 붙입니다. 로고와 맥락 이름은 [UmcLogoLockup](../umc-logo-lockup/)이 그리므로, 링크가 아닌 자리에서는 `UmcLogoLockup`을 바로 씁니다.
 
 ```tsx
-import { Header, HeaderHomeLink } from "@umc-product/react"
+import { HeaderDesktop, HeaderHomeLink } from "@umc-product/react"
 
-<Header navItems={navItems} />
-<Header logo={<HeaderHomeLink context="operation" generation={11} />} />
-<Header logo={<HeaderHomeLink context="study" generation={11} href="/study" />} />
-<Header logo={<HeaderHomeLink context="product-tech" />} />
+<HeaderDesktop navItems={navItems} />
+<HeaderDesktop logo={<HeaderHomeLink context="operation" generation={11} />} />
+<HeaderDesktop logo={<HeaderHomeLink context="study" generation={11} href="/study" />} />
+<HeaderDesktop logo={<HeaderHomeLink context="product-tech" />} />
 ```
 
 <HeaderHomeLinks client:visible />
@@ -75,7 +75,7 @@ import { Header, HeaderHomeLink } from "@umc-product/react"
 
 - 기수는 `11th`처럼 영어 서수로 씁니다. `generation={1}`은 `1st`, `generation={22}`는 `22nd`가 됩니다.
 - 맥락 이름 글꼴은 Orbitron Bold입니다. `@umc-product/react/styles.css`가 글꼴 파일을 함께 불러옵니다.
-- 색은 감싼 `Header`의 `mode`를 따릅니다. 마우스를 올리거나 누르면 라이트 모드에서 teal-600, 다크 모드에서 teal-200으로 바뀝니다.
+- 색은 감싼 `HeaderDesktop`의 `mode`를 따릅니다. 마우스를 올리거나 누르면 라이트 모드에서 teal-600, 다크 모드에서 teal-200으로 바뀝니다.
 - 링크 이름은 로고의 `aria-label`("UMC")에 맥락 이름을 이은 것입니다. DOM에는 `Operation 11th`로 들어 있고, 크롬은 대문자 변환을 반영해 `UMC OPERATION 11TH`로 노출합니다.
 - 라벨이 있으면 로고 칸의 왼쪽 여백이 60px에서 34px로 줄어듭니다. 피그마 `Web/Header/Home Link`의 맥락별 여백입니다.
 - 라벨 칸은 최소 200px입니다. 그래서 라벨 있는 로고 칸은 250px이고, Main(182px)보다 넓습니다. 좁은 화면 규칙은 아래 [고정 배치](#고정-배치)를 봅니다.
@@ -90,10 +90,10 @@ import { Header, HeaderHomeLink } from "@umc-product/react"
 `HeaderActionButton`은 피그마 `.primitive/Web/Header/Action Button`입니다. 로그인한 사용자에게 보이는 문의, 계정 메뉴 같은 보조 동작을 `actions`에 놓을 때 씁니다. 높이 40px 알약 모양이고, hover하면 테두리가 사라지고 배경이 짙어집니다. `suffix`에는 펼침 화살표 같은 16px 아이콘을 넣습니다.
 
 ```tsx
-import { Header, HeaderActionButton } from "@umc-product/react"
+import { HeaderActionButton, HeaderDesktop } from "@umc-product/react"
 import { ExpandMoreIcon } from "@umc-product/icons"
 
-<Header
+<HeaderDesktop
   actions={
     <>
       <HeaderActionButton onClick={openInquiry}>문의사항</HeaderActionButton>
@@ -126,7 +126,7 @@ isActivePath("/matching", "/m") // false, 경로 단위로만 비교
 
 ## 모든 변형
 
-피그마 `Web/Header` 8개, `Home Link` 4개와 primitive 16개, `Navigation` 2개, `Navigation Item` 6개, `Actions` 6개, `Action Button` 4개를 그렸습니다. 항목 하나의 변형은 그 항목만 든 헤더로 보여 줍니다. 칸에 마우스를 올리면 코드가 보이고, hover 같은 상태는 켜 둔 모습입니다.
+피그마 `Web/Header/Desktop` 8개, `Home Link` 4개와 primitive 16개, `Navigation` 2개, `Navigation Item` 6개, `Actions-Desktop` 6개, `Action Button` 4개를 그렸습니다. 항목 하나의 변형은 그 항목만 든 헤더로 보여 줍니다. 칸에 마우스를 올리면 코드가 보이고, hover 같은 상태는 켜 둔 모습입니다.
 
 <HeaderAllVariants client:visible />
 
@@ -145,16 +145,16 @@ isActivePath("/matching", "/m") // false, 경로 단위로만 비교
 
 ## 고정 배치
 
-`Header`는 위치를 정하지 않습니다. 스크롤해도 위에 남겨야 하면 레이아웃에서 지정합니다.
+`HeaderDesktop`은 위치를 정하지 않습니다. 스크롤해도 위에 남겨야 하면 레이아웃에서 지정합니다.
 
 ```tsx
-import { Header } from "@umc-product/react"
+import { HeaderDesktop } from "@umc-product/react"
 
-<Header className="sticky top-0 z-50" />
+<HeaderDesktop className="sticky top-0 z-50" />
 ```
 
-피그마에 좁은 화면용 헤더가 없고 브레이크포인트도 정해지지 않아, `Header`는 화면 폭과 관계없이 데스크톱 값을 씁니다. 라벨 있는 홈 링크에 액션 버튼을 함께 두면 375px 화면에서 가로로 넘칩니다. 규칙이 정해지기 전까지는 앱이 좁은 화면에서 로고 칸 여백을 줄입니다. 이 문서 사이트는 800px 미만에서 `.umc-header__logo`의 좌우 여백을 16px로 줄입니다.
+피그마에 좁은 화면용 헤더가 없고 브레이크포인트도 정해지지 않아, `HeaderDesktop`은 화면 폭과 관계없이 데스크톱 값을 씁니다. 라벨 있는 홈 링크에 액션 버튼을 함께 두면 375px 화면에서 가로로 넘칩니다. 규칙이 정해지기 전까지는 앱이 좁은 화면에서 로고 칸 여백을 줄입니다. 이 문서 사이트는 800px 미만에서 `.umc-header-desktop__logo`의 좌우 여백을 16px로 줄입니다.
 
 ## 알아 둘 점
 
-- `HeaderHomeLink`에는 `mode`가 없고, 감싼 `Header`의 `mode`를 따릅니다.
+- `HeaderHomeLink`에는 `mode`가 없고, 감싼 `HeaderDesktop`의 `mode`를 따릅니다.

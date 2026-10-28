@@ -1,13 +1,13 @@
 {
-  "component": "Header",
+  "component": "HeaderDesktop",
   "figmaSection": "2858:65987",
   "page": "/components/shell/header/",
   "nodes": [
     {
       "specId": "header-light",
       "node": "2678:52059",
-      "variant": "Login Status=Logged In, Mode=Light, Show CTA Button=False",
-      "target": ".umc-header",
+      "variant": "Mode=Light, Login Status=Logged In, Show CTA Button=False",
+      "target": ".umc-header-desktop",
       "expected": {
         "height": "80px",
         "background-color": "#fbfcfc",
@@ -18,7 +18,7 @@
       "specId": "header-light-logo",
       "node": "2732:60554",
       "variant": "Web/Header/Home Link, Context=Main",
-      "target": ".umc-header__logo",
+      "target": ".umc-header-desktop__logo",
       "expected": {
         "padding-top": "10px",
         "padding-right": "16px",
@@ -30,7 +30,7 @@
       "specId": "header-light-navigation",
       "node": "2780:61570",
       "variant": "Web/Header/Navigation, Mode=Light",
-      "target": ".umc-header__nav-list",
+      "target": ".umc-header-desktop__nav-list",
       "expected": {
         "padding-top": "6px",
         "padding-right": "6px",
@@ -51,7 +51,7 @@
       "specId": "header-light-item",
       "node": "2678:52269",
       "variant": "State=Default, Mode=Light",
-      "target": ".umc-header__nav-link:not([aria-current])",
+      "target": ".umc-header-desktop__nav-link:not([aria-current])",
       "expected": {
         "height": "36px",
         "min-width": "72px",
@@ -73,7 +73,7 @@
       "interaction": "hover",
       "node": "2678:52273",
       "variant": "State=Hover, Mode=Light",
-      "target": ".umc-header__nav-link:not([aria-current])",
+      "target": ".umc-header-desktop__nav-link:not([aria-current])",
       "expected": {
         "background-color": "#f7f8f8",
         "color": "#606262",
@@ -84,7 +84,7 @@
       "specId": "header-light-item-selected",
       "node": "2678:52277",
       "variant": "State=Selected, Mode=Light",
-      "target": ".umc-header__nav-link[aria-current=\"page\"]",
+      "target": ".umc-header-desktop__nav-link[aria-current=\"page\"]",
       "expected": {
         "height": "36px",
         "background-color": "#e9f7f5",
@@ -98,8 +98,8 @@
     {
       "specId": "header-light-actions",
       "node": "2780:61499",
-      "variant": "Web/Header/Actions",
-      "target": ".umc-header__actions",
+      "variant": ".primitive/Web/Header/Actions-Desktop",
+      "target": ".umc-header-desktop__actions",
       "expected": {
         "column-gap": "16px",
         "padding-right": "34px"
@@ -108,8 +108,8 @@
     {
       "specId": "header-dark",
       "node": "2809:62842",
-      "variant": "Login Status=Logged In, Mode=Dark, Show CTA Button=False",
-      "target": ".umc-header",
+      "variant": "Mode=Dark, Login Status=Logged In, Show CTA Button=False",
+      "target": ".umc-header-desktop",
       "expected": {
         "height": "80px",
         "background-color": "#00000000",
@@ -123,7 +123,7 @@
       "specId": "header-dark-navigation",
       "node": "2809:62275",
       "variant": "Web/Header/Navigation, Mode=Dark",
-      "target": ".umc-header__nav-list",
+      "target": ".umc-header-desktop__nav-list",
       "expected": {
         "border-top-color": "#ffffff",
         "background-color": "#fbfcfc33",
@@ -135,7 +135,7 @@
       "specId": "header-dark-item",
       "node": "2678:52271",
       "variant": "State=Default, Mode=Dark",
-      "target": ".umc-header__nav-link:not([aria-current])",
+      "target": ".umc-header-desktop__nav-link:not([aria-current])",
       "expected": {
         "background-color": "#00000000",
         "color": "#e2e3e3",
@@ -147,7 +147,7 @@
       "interaction": "hover",
       "node": "2678:52275",
       "variant": "State=Hover, Mode=Dark",
-      "target": ".umc-header__nav-link:not([aria-current])",
+      "target": ".umc-header-desktop__nav-link:not([aria-current])",
       "expected": {
         "background-color": "#00000000",
         "color": "#02746c"
@@ -157,7 +157,7 @@
       "specId": "header-dark-item-selected",
       "node": "2678:52279",
       "variant": "State=Selected, Mode=Dark",
-      "target": ".umc-header__nav-link[aria-current=\"page\"]",
+      "target": ".umc-header-desktop__nav-link[aria-current=\"page\"]",
       "expected": {
         "height": "36px",
         "background-color": "#ddf4f14d",

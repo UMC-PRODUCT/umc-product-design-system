@@ -1,7 +1,7 @@
 {
   "fileKey": "U3pRZp6BjQBW5aMljCBwo9",
   "page": "3434:72558",
-  "fetchedAt": "2026-10-25",
+  "fetchedAt": "2026-10-28",
   "tool": "get_metadata",
   "sets": {
     "button": {
@@ -1478,23 +1478,23 @@
         "Color=Neutral, Type=Tertiary"
       ]
     },
-    "header": {
+    "header-desktop": {
       "node": "2678:52045",
-      "name": "Web/Header",
+      "name": "Web/Header/Desktop",
       "axes": {
-        "Login Status": ["Logged In", "Logged Out"],
         "Mode": ["Light", "Dark"],
+        "Login Status": ["Logged In", "Logged Out"],
         "Show CTA Button": ["False", "True"]
       },
       "variants": [
-        "Login Status=Logged In, Mode=Light, Show CTA Button=False",
-        "Login Status=Logged In, Mode=Dark, Show CTA Button=False",
-        "Login Status=Logged Out, Mode=Light, Show CTA Button=True",
-        "Login Status=Logged Out, Mode=Dark, Show CTA Button=True",
-        "Login Status=Logged Out, Mode=Light, Show CTA Button=False",
-        "Login Status=Logged Out, Mode=Dark, Show CTA Button=False",
-        "Login Status=Logged In, Mode=Light, Show CTA Button=True",
-        "Login Status=Logged In, Mode=Dark, Show CTA Button=True"
+        "Mode=Light, Login Status=Logged In, Show CTA Button=False",
+        "Mode=Dark, Login Status=Logged In, Show CTA Button=False",
+        "Mode=Light, Login Status=Logged Out, Show CTA Button=True",
+        "Mode=Dark, Login Status=Logged Out, Show CTA Button=True",
+        "Mode=Light, Login Status=Logged Out, Show CTA Button=False",
+        "Mode=Dark, Login Status=Logged Out, Show CTA Button=False",
+        "Mode=Light, Login Status=Logged In, Show CTA Button=True",
+        "Mode=Dark, Login Status=Logged In, Show CTA Button=True"
       ]
     },
     "header-navigation": {
@@ -1535,21 +1535,21 @@
         "Property 1=Hover, Suffix=False"
       ]
     },
-    "header-actions": {
+    "header-actions-desktop": {
       "node": "2732:61068",
-      "name": "Web/Header/Actions",
+      "name": ".primitive/Web/Header/Actions-Desktop",
       "axes": {
-        "Login Status": ["Logged In", "Logged Out"],
         "Mode": ["Light", "Dark"],
+        "Login Status": ["Logged In", "Logged Out"],
         "Show CTA Button": ["False", "True"]
       },
       "variants": [
-        "Login Status=Logged In, Mode=Light, Show CTA Button=False",
-        "Login Status=Logged In, Mode=Dark, Show CTA Button=False",
-        "Login Status=Logged In, Mode=Light, Show CTA Button=True",
-        "Login Status=Logged In, Mode=Dark, Show CTA Button=True",
-        "Login Status=Logged Out, Mode=Light, Show CTA Button=True",
-        "Login Status=Logged Out, Mode=Dark, Show CTA Button=True"
+        "Mode=Light, Login Status=Logged In, Show CTA Button=False",
+        "Mode=Dark, Login Status=Logged In, Show CTA Button=False",
+        "Mode=Light, Login Status=Logged In, Show CTA Button=True",
+        "Mode=Dark, Login Status=Logged In, Show CTA Button=True",
+        "Mode=Light, Login Status=Logged Out, Show CTA Button=True",
+        "Mode=Dark, Login Status=Logged Out, Show CTA Button=True"
       ]
     },
     "header-home-link": {

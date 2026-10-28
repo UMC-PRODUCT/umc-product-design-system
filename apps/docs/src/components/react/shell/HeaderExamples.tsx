@@ -2,7 +2,7 @@
 
 import {
   Button,
-  Header,
+  HeaderDesktop,
   HeaderActionButton,
   HeaderHomeLink,
   type HeaderHomeLinkProps,
@@ -49,7 +49,7 @@ export function HeaderLight() {
           className="min-w-[720px]"
           data-spec-id="header-light header-light-logo header-light-navigation header-light-item header-light-item-hover header-light-item-selected header-light-actions home-link-main home-link-main-logo home-link-main-hover"
         >
-          <Header
+          <HeaderDesktop
             navItems={NAV_ITEMS}
             currentPath={path}
             actions={<Button size="md">로그인</Button>}
@@ -72,7 +72,7 @@ export function HeaderDark() {
           className="min-w-[720px]"
           data-spec-id="header-dark header-dark-navigation header-dark-item header-dark-item-hover header-dark-item-selected home-link-dark home-link-dark-hover"
         >
-          <Header mode="dark" navItems={NAV_ITEMS} currentPath={path} />
+          <HeaderDesktop mode="dark" navItems={NAV_ITEMS} currentPath={path} />
         </div>
       </PreviewLinks>
     </div>
@@ -84,12 +84,14 @@ export function HeaderHomeLinks() {
     <div className="umc-example umc-example-flush overflow-x-auto">
       <PreviewLinks>
         <div className="grid min-w-[320px]">
-          <Header logo={<HeaderHomeLink {...MAIN_HOME_LINK} />} />
+          <HeaderDesktop logo={<HeaderHomeLink {...MAIN_HOME_LINK} />} />
           <div data-spec-id="home-link-labeled-slot home-link-labeled home-link-labeled-body home-link-labeled-logo home-link-labeled-title home-link-labeled-subtitle">
-            <Header logo={<HeaderHomeLink {...OPERATION_HOME_LINK} />} />
+            <HeaderDesktop logo={<HeaderHomeLink {...OPERATION_HOME_LINK} />} />
           </div>
-          <Header logo={<HeaderHomeLink {...STUDY_HOME_LINK} />} />
-          <Header logo={<HeaderHomeLink {...PRODUCT_TECH_HOME_LINK} />} />
+          <HeaderDesktop logo={<HeaderHomeLink {...STUDY_HOME_LINK} />} />
+          <HeaderDesktop
+            logo={<HeaderHomeLink {...PRODUCT_TECH_HOME_LINK} />}
+          />
         </div>
       </PreviewLinks>
     </div>
@@ -102,7 +104,7 @@ export function HeaderActions() {
     <div className="umc-example umc-example-flush overflow-x-auto">
       <PreviewLinks onNavigate={setPath}>
         <div className="min-w-[720px]">
-          <Header
+          <HeaderDesktop
             navItems={NAV_ITEMS}
             currentPath={path}
             actions={
@@ -167,7 +169,7 @@ function HeaderVariantCell({ variant }: { variant: FigmaVariant }) {
   }
   return (
     <div className="min-w-[720px]">
-      <Header
+      <HeaderDesktop
         mode={lookup(HEADER_MODES, variant, "Mode")}
         navItems={NAV_ITEMS}
         currentPath="/matching"
@@ -184,7 +186,7 @@ function HeaderActionsCell({ variant }: { variant: FigmaVariant }) {
     return <NotImplemented reason={LOGGED_IN_REASON} />
   }
   return (
-    <Header
+    <HeaderDesktop
       mode={lookup(HEADER_MODES, variant, "Mode")}
       logo={null}
       actions={renderLoggedOutActions(
@@ -198,7 +200,7 @@ function NavigationItemCell({ variant }: { variant: FigmaVariant }) {
   const state = variant.props["State"]
   return (
     <ForceState states={state === "Hover" ? ["hover"] : []}>
-      <Header
+      <HeaderDesktop
         mode={lookup(HEADER_MODES, variant, "Mode")}
         logo={null}
         navItems={[{ label: "팀 매칭", href: "/matching" }]}
@@ -221,7 +223,7 @@ function HomeLinkPrimitiveCell({
         variant.props["State"] === "Hover & Pressed" ? ["hover", "active"] : []
       }
     >
-      <Header
+      <HeaderDesktop
         mode={lookup(HEADER_MODES, variant, "Mode")}
         logo={<HeaderHomeLink {...homeLink} />}
       />
@@ -235,7 +237,7 @@ export function HeaderAllVariants() {
   return (
     <PreviewLinks>
       <VariantGrid
-        set="header"
+        set="header-desktop"
         sections={["Mode"]}
         rows={["Login Status", "Show CTA Button"]}
         columns={[]}
@@ -252,7 +254,7 @@ export function HeaderAllVariants() {
         rows={["Context"]}
         columns={[]}
         render={(variant) => (
-          <Header
+          <HeaderDesktop
             logo={
               <HeaderHomeLink
                 {...lookup(HOME_LINK_CONTEXTS, variant, "Context")}
@@ -281,7 +283,7 @@ export function HeaderAllVariants() {
         order={MODE_ORDER}
         tone={darkTone}
         render={(variant) => (
-          <Header
+          <HeaderDesktop
             mode={lookup(HEADER_MODES, variant, "Mode")}
             logo={null}
             navItems={NAV_ITEMS}
@@ -298,7 +300,7 @@ export function HeaderAllVariants() {
         render={(variant) => <NavigationItemCell variant={variant} />}
       />
       <VariantGrid
-        set="header-actions"
+        set="header-actions-desktop"
         sections={["Mode"]}
         rows={["Login Status", "Show CTA Button"]}
         columns={[]}
