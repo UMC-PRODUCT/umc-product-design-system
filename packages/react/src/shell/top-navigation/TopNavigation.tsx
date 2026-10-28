@@ -13,15 +13,27 @@ export type TopNavigationBackProps = {
   href?: string
 }
 
-export type TopNavigationProps = {
-  title: ReactNode
-  titleAlign?: "start" | "center"
+type TopNavigationBaseProps = {
+  title?: ReactNode
   back?: TopNavigationBackProps
   onTitleClick?: () => void
   titleExpanded?: boolean
   actions?: ReactNode
   className?: string
 }
+
+type TopNavigationStartAlignProps = {
+  titleAlign?: "start"
+  subtitle?: never
+}
+
+type TopNavigationCenterAlignProps = {
+  titleAlign: "center"
+  subtitle?: ReactNode
+}
+
+export type TopNavigationProps = TopNavigationBaseProps &
+  (TopNavigationStartAlignProps | TopNavigationCenterAlignProps)
 
 export type TopNavigationButtonIconProps = Omit<
   ComponentPropsWithRef<"button">,
@@ -75,6 +87,7 @@ export function TopNavigationButton({
 export function TopNavigation({
   title,
   titleAlign = "start",
+  subtitle,
   back,
   onTitleClick,
   titleExpanded,
@@ -134,7 +147,12 @@ export function TopNavigation({
       data-has-back={back !== undefined ? "" : undefined}
     >
       <div className="umc-top-navigation__leading">{backElement}</div>
-      <div className="umc-top-navigation__title">{titleContent}</div>
+      <div className="umc-top-navigation__title">
+        {title !== undefined && titleContent}
+        {subtitle !== undefined && (
+          <span className="umc-top-navigation__subtitle">{subtitle}</span>
+        )}
+      </div>
       {actions && <div className="umc-top-navigation__trailing">{actions}</div>}
     </header>
   )

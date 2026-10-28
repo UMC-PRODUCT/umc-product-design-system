@@ -5,6 +5,7 @@
     --umc-top-navigation-sub-title-color: var(
       --umc-color-text-neutral-medium-600
     );
+    --umc-top-navigation-subtitle-color: var(--umc-color-text-neutral-weak-500);
     --umc-top-navigation-icon-color: var(--umc-color-icon-neutral-stronger-700);
 
     display: flex;
@@ -46,6 +47,7 @@
   }
 
   .umc-top-navigation[data-title-align="center"] .umc-top-navigation__title {
+    flex-direction: column;
     justify-content: center;
   }
 
@@ -94,11 +96,25 @@
   .umc-top-navigation[data-title-align="center"]
     .umc-top-navigation__title-text {
     color: var(--umc-top-navigation-sub-title-color);
+    max-width: 100%;
     font-family: var(--umc-typography-title-4-medium-font-family);
     font-size: var(--umc-typography-title-4-medium-font-size);
     font-weight: var(--umc-typography-title-4-medium-font-weight);
     line-height: var(--umc-typography-title-4-medium-line-height);
     letter-spacing: var(--umc-typography-title-4-medium-letter-spacing);
+  }
+
+  .umc-top-navigation__subtitle {
+    max-width: 100%;
+    color: var(--umc-top-navigation-subtitle-color);
+    font-family: var(--umc-typography-caption-3-regular-font-family);
+    font-size: var(--umc-typography-caption-3-regular-font-size);
+    font-weight: var(--umc-typography-caption-3-regular-font-weight);
+    line-height: var(--umc-typography-caption-3-regular-line-height);
+    letter-spacing: var(--umc-typography-caption-3-regular-letter-spacing);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .umc-top-navigation__title-btn {
@@ -111,6 +127,7 @@
     cursor: pointer;
     overflow: hidden;
     min-width: 0;
+    max-width: 100%;
   }
 
   .umc-top-navigation__title-chevron {

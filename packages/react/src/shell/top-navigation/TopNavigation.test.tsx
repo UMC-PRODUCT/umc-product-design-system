@@ -103,6 +103,34 @@ describe("TopNavigation", () => {
     expect(handleClick).toHaveBeenCalledTimes(1)
   })
 
+  it("renders subtitle under the centered title", () => {
+    const { container } = render(
+      <TopNavigation title="학습 일정" titleAlign="center" subtitle="11기" />,
+    )
+    const titleArea = container.querySelector(".umc-top-navigation__title")
+    expect(titleArea?.lastElementChild).toHaveClass(
+      "umc-top-navigation__subtitle",
+    )
+    expect(titleArea?.lastElementChild).toHaveTextContent("11기")
+  })
+
+  it("does not render subtitle when it is absent", () => {
+    const { container } = render(
+      <TopNavigation title="학습 일정" titleAlign="center" />,
+    )
+    expect(
+      container.querySelector(".umc-top-navigation__subtitle"),
+    ).not.toBeInTheDocument()
+  })
+
+  it("leaves the title area empty when title is absent", () => {
+    const { container } = render(<TopNavigation back={{}} />)
+    expect(
+      container.querySelector(".umc-top-navigation__title"),
+    ).toBeEmptyDOMElement()
+    expect(screen.getByLabelText("뒤로 가기")).toBeInTheDocument()
+  })
+
   it("accepts custom className", () => {
     const { container } = render(
       <TopNavigation title="홈" className="custom-class" />,
