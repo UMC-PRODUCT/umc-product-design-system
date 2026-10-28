@@ -2,7 +2,7 @@
 
 import type { ComponentPropsWithRef, ReactNode } from "react"
 
-import { ExpandMoreIcon } from "@umc-product/icons"
+import { ChevronLeftIcon, ExpandMoreIcon } from "@umc-product/icons"
 
 import { cx } from "../../internal/cx.ts"
 import { useLinkComponent } from "../link-provider/LinkProvider.tsx"
@@ -106,7 +106,7 @@ export function TopNavigation({
           aria-label={backLabel}
         >
           <span className="umc-top-navigation__back-icon" aria-hidden="true">
-            <ExpandMoreIcon weight="fill" />
+            <ChevronLeftIcon weight="fill" />
           </span>
         </Link>
       ) : (
@@ -117,7 +117,7 @@ export function TopNavigation({
           onClick={back.onClick}
         >
           <span className="umc-top-navigation__back-icon" aria-hidden="true">
-            <ExpandMoreIcon weight="fill" />
+            <ChevronLeftIcon weight="fill" />
           </span>
         </button>
       )}
