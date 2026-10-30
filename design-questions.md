@@ -36,6 +36,8 @@
 
 2026-10-24에 캡션 스타일 번호가 한 칸씩 밀린 것을 반영해 코드 토큰 이름도 피그마를 따라 바꿨습니다. 14px `Caption/1-Regular`가 새로 생겼고, 13px·12px·11px 스타일은 `Caption/2`·`Caption/3`·`Caption/4`가 되었습니다. `Caption/1-Regular`는 타이포그래피 문서 프레임에 아직 없어 `Help Text`에서 읽었습니다. 문서 프레임 표의 이름표도 예전 번호인 Caption 1·2·3 그대로입니다.
 
+2026-10-30에 `Token` 컬렉션을 다시 받아 새 변수 7개를 토큰으로 넣었습니다. 간격은 `Spacing/Primitive/40`, `Padding 40`, `Padding 48`, `Gap 40`, `Margin 20`, `Margin 40`, 모서리는 `Button/R Button 8`입니다. 값이 바뀌거나 빠진 변수는 없지만 아직 이 변수를 쓰는 컴포넌트도 없습니다. Icon Button의 8px 모서리는 `Radius/Primitive/8`, App/Page Header의 20px 여백은 `Padding 20`에 연결되어 있고 Side Navigation 하위 메뉴의 48px 들여쓰기는 변수에 연결되어 있지 않습니다. 새 변수로 다시 연결할 컴포넌트가 있으면 알려 주세요. 연결되면 코드도 같은 토큰으로 바꾸겠습니다.
+
 상태 글자색 세 개가 작은 글자의 대비 기준(WCAG AA 4.5:1)에 못 미칩니다.
 
 - `--umc-color-text-warning`(`#ed8002`): 흰 배경 2.73:1, `yellow-100` 배경 2.41:1

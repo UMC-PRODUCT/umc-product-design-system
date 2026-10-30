@@ -15,14 +15,14 @@
 | `mcp/get-variable-defs.2621-32882.json` | get_variable_defs | 2621:32882 | 2026-10-07 |
 | `mcp/get-variable-defs.2621-33341.json` | get_variable_defs | 2621:33341 | 2026-10-24 |
 | `export/color.mode-1.tokens.json` | Figma Variables Export modes (Color 컬렉션) | Mode 1.tokens.json | 2026-10-08 |
-| `export/token.mode-1.tokens.json` | Figma Variables Export modes (Token 컬렉션) | Mode 1.tokens 2.json | 2026-10-08 |
+| `export/token.mode-1.tokens.json` | Figma Variables Export modes (Token 컬렉션) | Mode 1.tokens.json | 2026-10-30 |
 
 ## 변수 개수
 
 | export 파일 | 변수 | 이전 스냅샷 |
 | --- | --- | --- |
 | `color.mode-1.tokens.json` | 230 | 229 |
-| `token.mode-1.tokens.json` | 83 | 83 |
+| `token.mode-1.tokens.json` | 90 | 83 |
 
 ## 디자인 팀 확인 요청
 
@@ -456,6 +456,7 @@ codeSyntax(WEB)를 둘째 칸 값으로 바꾸면 Dev Mode 코드 패널과 피�
 | `Spacing/Primitive/24` | `var(--umc-spacing-24)` | 없음 |
 | `Spacing/Primitive/28` | `var(--umc-spacing-28)` | 없음 |
 | `Spacing/Primitive/32` | `var(--umc-spacing-32)` | 없음 |
+| `Spacing/Primitive/40` | `var(--umc-spacing-40)` | 없음 |
 | `Spacing/Primitive/48` | `var(--umc-spacing-48)` | 없음 |
 | `Spacing/Primitive/64` | `var(--umc-spacing-64)` | 없음 |
 | `Spacing/Primitive/80` | `var(--umc-spacing-80)` | 없음 |
@@ -470,6 +471,8 @@ codeSyntax(WEB)를 둘째 칸 값으로 바꾸면 Dev Mode 코드 패널과 피�
 | `Spacing/Semantic/Padding/Padding 24` | `var(--umc-spacing-padding-24)` | 없음 |
 | `Spacing/Semantic/Padding/Padding 28` | `var(--umc-spacing-padding-28)` | 없음 |
 | `Spacing/Semantic/Padding/Padding 32` | `var(--umc-spacing-padding-32)` | 없음 |
+| `Spacing/Semantic/Padding/Padding 40` | `var(--umc-spacing-padding-40)` | 없음 |
+| `Spacing/Semantic/Padding/Padding 48` | `var(--umc-spacing-padding-48)` | 없음 |
 | `Spacing/Semantic/Gap/Gap 0` | `var(--umc-spacing-gap-0)` | 없음 |
 | `Spacing/Semantic/Gap/Gap 4` | `var(--umc-spacing-gap-4)` | 없음 |
 | `Spacing/Semantic/Gap/Gap 6` | `var(--umc-spacing-gap-6)` | 없음 |
@@ -481,10 +484,13 @@ codeSyntax(WEB)를 둘째 칸 값으로 바꾸면 Dev Mode 코드 패널과 피�
 | `Spacing/Semantic/Gap/Gap 24` | `var(--umc-spacing-gap-24)` | 없음 |
 | `Spacing/Semantic/Gap/Gap 28` | `var(--umc-spacing-gap-28)` | 없음 |
 | `Spacing/Semantic/Gap/Gap 32` | `var(--umc-spacing-gap-32)` | 없음 |
+| `Spacing/Semantic/Gap/Gap 40` | `var(--umc-spacing-gap-40)` | 없음 |
 | `Spacing/Semantic/Margin/Margin 0` | `var(--umc-spacing-margin-0)` | 없음 |
 | `Spacing/Semantic/Margin/Margin 16` | `var(--umc-spacing-margin-16)` | 없음 |
+| `Spacing/Semantic/Margin/Margin 20` | `var(--umc-spacing-margin-20)` | 없음 |
 | `Spacing/Semantic/Margin/Margin 24` | `var(--umc-spacing-margin-24)` | 없음 |
 | `Spacing/Semantic/Margin/Margin 32` | `var(--umc-spacing-margin-32)` | 없음 |
+| `Spacing/Semantic/Margin/Margin 40` | `var(--umc-spacing-margin-40)` | 없음 |
 | `Spacing/Semantic/Margin/Margin 48` | `var(--umc-spacing-margin-48)` | 없음 |
 | `Spacing/Semantic/Margin/Margin 64` | `var(--umc-spacing-margin-64)` | 없음 |
 | `Spacing/Semantic/Margin/Margin 80` | `var(--umc-spacing-margin-80)` | 없음 |
@@ -499,6 +505,7 @@ codeSyntax(WEB)를 둘째 칸 값으로 바꾸면 Dev Mode 코드 패널과 피�
 | `Radius/Primitive/24` | `var(--umc-radius-24)` | 없음 |
 | `Radius/Primitive/Full` | `var(--umc-radius-full)` | 없음 |
 | `Radius/Semantic/Text Field/Box` | `var(--umc-radius-text-field-box)` | 없음 |
+| `Radius/Semantic/Button/R Button 8` | `var(--umc-radius-button-8)` | 없음 |
 | `Radius/Semantic/Button/R Button 10` | `var(--umc-radius-button-10)` | 없음 |
 | `Radius/Semantic/Button/R Button 12` | `var(--umc-radius-button-12)` | 없음 |
 | `Radius/Semantic/Button/R Button 14` | `var(--umc-radius-button-14)` | 없음 |
