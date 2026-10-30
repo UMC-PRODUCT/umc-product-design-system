@@ -130,7 +130,7 @@ pnpm up "@umc-product/*" --latest
 <!-- releases:start -->
 
 <details open>
-<summary><b>0.11.0</b> · 2026-10-28 · 깨지는 변경 1 · 새 기능 3 · 화면 변화 6</summary>
+<summary><b>0.11.0</b> · 2026-10-30 · 깨지는 변경 1 · 새 기능 6 · 화면 변화 6</summary>
 
 **깨지는 변경**
 
@@ -140,11 +140,14 @@ pnpm up "@umc-product/*" --latest
 
 **새 기능**
 
-| 대상 | 변경사항                                                            | 변경&nbsp;전&nbsp;→&nbsp;변경&nbsp;후 | 보기                                                                                                                                                                                     |
-| ---- | ------------------------------------------------------------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|      | 모바일 앱 화면의 머리 `AppPageHeader`를 추가합니다                  |                                       | [AppPageHeader](https://design.university.neordinary.com/components/shell/app-page-header/) · [TopNavigation](https://design.university.neordinary.com/components/shell/top-navigation/) |
-|      | 모바일 웹 헤더 `HeaderMobile`을 추가합니다                          |                                       | [HeaderMobile](https://design.university.neordinary.com/components/shell/header/)                                                                                                        |
-|      | 앱 상단 내비게이션(App/Top Navigation)에 부제 `subtitle`이 생깁니다 |                                       | [TopNavigation](https://design.university.neordinary.com/components/shell/top-navigation/)                                                                                               |
+| 대상                                      | 변경사항                                                            | 변경&nbsp;전&nbsp;→&nbsp;변경&nbsp;후 | 보기                                                                                                                                                                                     |
+| ----------------------------------------- | ------------------------------------------------------------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|                                           | 모바일 앱 화면의 머리 `AppPageHeader`를 추가합니다                  |                                       | [AppPageHeader](https://design.university.neordinary.com/components/shell/app-page-header/) · [TopNavigation](https://design.university.neordinary.com/components/shell/top-navigation/) |
+|                                           | 모바일 웹 헤더 `HeaderMobile`을 추가합니다                          |                                       | [HeaderMobile](https://design.university.neordinary.com/components/shell/header/)                                                                                                        |
+|                                           | 앱 상단 내비게이션(App/Top Navigation)에 부제 `subtitle`이 생깁니다 |                                       | [TopNavigation](https://design.university.neordinary.com/components/shell/top-navigation/)                                                                                               |
+| 웹 헤더의 프로필(Web/Header/Profile Menu) | 로그인한 사용자의 아바타와 프로필 메뉴가 생깁니다                   | 없음 → `HeaderProfileMenu`            | [HeaderProfileMenu](https://design.university.neordinary.com/components/shell/header/) · [HeaderDesktop](https://design.university.neordinary.com/components/shell/header/)              |
+| 메뉴와 선택 목록의 Xs 항목(Meue Item)     | 캡션을 레이블과 같은 줄 오른쪽 끝에 두는 배치가 생깁니다            | 캡션은 레이블 아래 → Inline 배치 추가 | [Select](https://design.university.neordinary.com/components/forms/select/) · [Menu](https://design.university.neordinary.com/components/forms/menu/)                                    |
+| 간격과 버튼 모서리 토큰(Spacing, Radius)  | 피그마 Token 컬렉션에 새로 생긴 변수가 CSS 변수로 들어옵니다        | 없음 → 7개 추가                       |                                                                                                                                                                                          |
 
 **화면 변화**
 
@@ -157,7 +160,7 @@ pnpm up "@umc-product/*" --latest
 | 앱 상단 내비게이션의 뒤로 가기 아이콘(App/Top Navigation) | 아래 화살표가 왼쪽 화살표로 바뀝니다                   | `ExpandMoreIcon` → `ChevronLeftIcon`  | [TopNavigation](https://design.university.neordinary.com/components/shell/top-navigation/)  |
 | 앱 상단 내비게이션의 가운데 제목(App/Top Navigation)      | 글자색이 짙어집니다                                    | `#606262` → `#0f1010`                 | [TopNavigation](https://design.university.neordinary.com/components/shell/top-navigation/)  |
 
-전문과 대응표: [react](packages/react/CHANGELOG.md#0110-2026-10-28)
+전문과 대응표: [react](packages/react/CHANGELOG.md#0110-2026-10-30) · [design-tokens](packages/design-tokens/CHANGELOG.md#0110-2026-10-30)
 
 </details>
 
