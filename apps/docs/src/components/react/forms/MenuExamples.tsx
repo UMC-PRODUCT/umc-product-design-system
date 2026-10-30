@@ -1,6 +1,6 @@
 "use client"
 
-import { Button, Menu, Select } from "@umc-product/react"
+import { Button, Menu, Select, type SelectProps } from "@umc-product/react"
 import { useState } from "react"
 
 import { LegacyCheckGlyph } from "../../../../../../packages/react/src/internal/glyphs.tsx"
@@ -79,12 +79,38 @@ export function MenuSizes() {
   )
 }
 
+export function MenuInline() {
+  return (
+    <div
+      className="umc-example"
+      data-spec-id="menu-item-inline menu-item-inline-caption"
+    >
+      <Menu
+        size="xs"
+        layout="inline"
+        trigger={
+          <Button variant="weak" color="neutral" size="sm">
+            내보내기
+          </Button>
+        }
+        items={[
+          { label: "CSV", caption: ".csv" },
+          { label: "엑셀", caption: ".xlsx" },
+          { label: "PDF(준비 중)", caption: ".pdf", disabled: true },
+        ]}
+      />
+    </div>
+  )
+}
+
 const ITEM_SIZES = { Xs: "xs", Sm: "sm", Md: "md" } as const
+const ITEM_LAYOUTS = { Default: "default", Inline: "inline" } as const
 const LIST_SIZES = { Sm: "sm", Md: "md" } as const
 
 type ItemSize = (typeof ITEM_SIZES)[keyof typeof ITEM_SIZES]
 
 const ITEM_LABEL = "항목"
+const ITEM_CAPTION = "캡션"
 const ITEM_VALUE = "item"
 const LIST_TITLE = "타이틀"
 const LIST_ITEMS = [{ label: "메뉴" }, { label: "메뉴" }, { label: "메뉴" }]
@@ -127,11 +153,13 @@ export function MenuListAllVariants() {
   )
 }
 
+const disabledFlag = (disabled: boolean) => (disabled ? true : undefined)
+
 const menuItemCodeOf = (size: ItemSize, disabled: boolean) =>
   componentCodeOf(Menu, {
     size,
     trigger: CODE_PLACEHOLDER,
-    items: [{ label: ITEM_LABEL, disabled: disabled ? true : undefined }],
+    items: [{ label: ITEM_LABEL, disabled: disabledFlag(disabled) }],
   })
 
 const selectedItemCodeOf = (size: ItemSize) =>
@@ -141,9 +169,40 @@ const selectedItemCodeOf = (size: ItemSize) =>
     value: ITEM_VALUE,
   })
 
-function DropdownItemPreview({ variant }: { variant: FigmaVariant }) {
-  const state = variant.props["State"]
-  const size = lookup(ITEM_SIZES, variant, "Size")
+const inlineMenuItemCodeOf = (disabled: boolean) =>
+  componentCodeOf(Menu, {
+    size: "xs",
+    layout: "inline",
+    trigger: CODE_PLACEHOLDER,
+    items: [
+      {
+        label: ITEM_LABEL,
+        caption: ITEM_CAPTION,
+        disabled: disabledFlag(disabled),
+      },
+    ],
+  })
+
+const inlineSelectedItemCodeOf = () =>
+  componentCodeOf<SelectProps>(Select, {
+    itemSize: "xs",
+    itemLayout: "inline",
+    options: [{ value: ITEM_VALUE, label: ITEM_LABEL, caption: ITEM_CAPTION }],
+    value: ITEM_VALUE,
+  })
+
+type ItemPreviewProps = {
+  size: ItemSize
+  state: string | undefined
+}
+
+const itemStateAttributes = (state: string | undefined) => ({
+  "data-highlighted": presence(state === "Hover"),
+  "data-selected": presence(state === "Selected"),
+  "data-disabled": presence(state === "Disabled"),
+})
+
+function DefaultDropdownItemPreview({ size, state }: ItemPreviewProps) {
   const code =
     state === "Selected"
       ? selectedItemCodeOf(size)
@@ -153,9 +212,8 @@ function DropdownItemPreview({ variant }: { variant: FigmaVariant }) {
       <div
         className="umc-dropdown-item"
         data-size={size}
-        data-highlighted={presence(state === "Hover")}
-        data-selected={presence(state === "Selected")}
-        data-disabled={presence(state === "Disabled")}
+        data-layout="default"
+        {...itemStateAttributes(state)}
       >
         <span className="umc-dropdown-item__content">{ITEM_LABEL}</span>
         {state === "Selected" && (
@@ -168,13 +226,54 @@ function DropdownItemPreview({ variant }: { variant: FigmaVariant }) {
   )
 }
 
+function InlineDropdownItemPreview({ size, state }: ItemPreviewProps) {
+  const code =
+    state === "Selected"
+      ? inlineSelectedItemCodeOf()
+      : inlineMenuItemCodeOf(state === "Disabled")
+  return (
+    <div className="umc-dropdown-list w-[160px]" {...codeAttributeOf(code)}>
+      <div
+        className="umc-dropdown-item"
+        data-size={size}
+        data-layout="inline"
+        {...itemStateAttributes(state)}
+      >
+        <span className="umc-dropdown-item__content">
+          {state === "Selected" && (
+            <span className="umc-dropdown-item__indicator">
+              <LegacyCheckGlyph />
+            </span>
+          )}
+          {ITEM_LABEL}
+        </span>
+        <span className="umc-dropdown-item__caption">{ITEM_CAPTION}</span>
+      </div>
+    </div>
+  )
+}
+
+function DropdownItemPreview({ variant }: { variant: FigmaVariant }) {
+  const props: ItemPreviewProps = {
+    size: lookup(ITEM_SIZES, variant, "Size"),
+    state: variant.props["State"],
+  }
+  return lookup(ITEM_LAYOUTS, variant, "Layout") === "inline" ? (
+    <InlineDropdownItemPreview {...props} />
+  ) : (
+    <DefaultDropdownItemPreview {...props} />
+  )
+}
+
 export function DropdownItemAllVariants() {
   return (
     <VariantGrid
       set="dropdown-item"
+      sections={["Layout"]}
       rows={["State"]}
       columns={["Size"]}
       order={{
+        Layout: ["Default", "Inline"],
         State: ["Default", "Hover", "Selected", "Disabled"],
         Size: ["Xs", "Sm", "Md"],
       }}

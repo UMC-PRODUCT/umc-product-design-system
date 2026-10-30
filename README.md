@@ -12,7 +12,7 @@ UMC PRODUCT Design Chapter의 디자인 토큰, 아이콘, React 컴포넌트입
 | ---------------------------- | --------------------------------------------------------------- |
 | `@umc-product/design-tokens` | 컬러, 텍스트 스타일, 그림자, 그리드 토큰. CSS 변수, Tailwind v4 |
 | `@umc-product/icons`         | 아이콘 66종, 픽토그램 12종, UMC 로고 2종 React 컴포넌트         |
-| `@umc-product/react`         | Base UI 기반 컴포넌트 82종과 미리 빌드한 CSS                    |
+| `@umc-product/react`         | Base UI 기반 컴포넌트 85종과 미리 빌드한 CSS                    |
 
 세 패키지는 항상 같은 버전으로 함께 배포합니다.
 
@@ -130,6 +130,41 @@ pnpm up "@umc-product/*" --latest
 <!-- releases:start -->
 
 <details open>
+<summary><b>0.11.0</b> · 2026-10-30 · 깨지는 변경 1 · 새 기능 6 · 화면 변화 6</summary>
+
+**깨지는 변경**
+
+| 대상                        | 변경사항                                      | 변경&nbsp;전&nbsp;→&nbsp;변경&nbsp;후 | 보기                                                                               |
+| --------------------------- | --------------------------------------------- | ------------------------------------- | ---------------------------------------------------------------------------------- |
+| 웹 헤더(Web/Header/Desktop) | 이름이 피그마를 따라 `HeaderDesktop`이 됩니다 | `Header` → `HeaderDesktop`            | [HeaderDesktop](https://design.university.neordinary.com/components/shell/header/) |
+
+**새 기능**
+
+| 대상                                      | 변경사항                                                            | 변경&nbsp;전&nbsp;→&nbsp;변경&nbsp;후 | 보기                                                                                                                                                                                     |
+| ----------------------------------------- | ------------------------------------------------------------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|                                           | 모바일 앱 화면의 머리 `AppPageHeader`를 추가합니다                  |                                       | [AppPageHeader](https://design.university.neordinary.com/components/shell/app-page-header/) · [TopNavigation](https://design.university.neordinary.com/components/shell/top-navigation/) |
+|                                           | 모바일 웹 헤더 `HeaderMobile`을 추가합니다                          |                                       | [HeaderMobile](https://design.university.neordinary.com/components/shell/header/)                                                                                                        |
+|                                           | 앱 상단 내비게이션(App/Top Navigation)에 부제 `subtitle`이 생깁니다 |                                       | [TopNavigation](https://design.university.neordinary.com/components/shell/top-navigation/)                                                                                               |
+| 웹 헤더의 프로필(Web/Header/Profile Menu) | 로그인한 사용자의 아바타와 프로필 메뉴가 생깁니다                   | 없음 → `HeaderProfileMenu`            | [HeaderProfileMenu](https://design.university.neordinary.com/components/shell/header/) · [HeaderDesktop](https://design.university.neordinary.com/components/shell/header/)              |
+| 메뉴와 선택 목록의 Xs 항목(Meue Item)     | 캡션을 레이블과 같은 줄 오른쪽 끝에 두는 배치가 생깁니다            | 캡션은 레이블 아래 → Inline 배치 추가 | [Select](https://design.university.neordinary.com/components/forms/select/) · [Menu](https://design.university.neordinary.com/components/forms/menu/)                                    |
+| 간격과 버튼 모서리 토큰(Spacing, Radius)  | 피그마 Token 컬렉션에 새로 생긴 변수가 CSS 변수로 들어옵니다        | 없음 → 7개 추가                       |                                                                                                                                                                                          |
+
+**화면 변화**
+
+| 대상                                                      | 변경사항                                               | 변경&nbsp;전&nbsp;→&nbsp;변경&nbsp;후 | 보기                                                                                        |
+| --------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------- | ------------------------------------------------------------------------------------------- |
+| 바텀 시트의 버튼 영역(App/Bottom Sheet)                   | 아래 여백이 생깁니다                                   | 0 → 10px                              | [BottomSheet](https://design.university.neordinary.com/components/overlay/bottom-sheet/)    |
+| 바텀 시트의 제목과 설명(App/Bottom Sheet)                 | 둘 사이가 좁아집니다                                   | 6px → 4px                             | [BottomSheet](https://design.university.neordinary.com/components/overlay/bottom-sheet/)    |
+| 웹 헤더 다크 모드의 그림자(Web/Header/Desktop)            | 색이 짙어집니다                                        | `#eff0f0` 30% → `#414645` 30%         | [HeaderDesktop](https://design.university.neordinary.com/components/shell/header/)          |
+| 밑줄 입력의 레이블과 입력 칸(Text Field/Line)             | 둘 사이 간격이 사라져 레이블이 입력 칸에 바로 붙습니다 | 6px → 0                               | [TextFieldLine](https://design.university.neordinary.com/components/forms/text-field-line/) |
+| 앱 상단 내비게이션의 뒤로 가기 아이콘(App/Top Navigation) | 아래 화살표가 왼쪽 화살표로 바뀝니다                   | `ExpandMoreIcon` → `ChevronLeftIcon`  | [TopNavigation](https://design.university.neordinary.com/components/shell/top-navigation/)  |
+| 앱 상단 내비게이션의 가운데 제목(App/Top Navigation)      | 글자색이 짙어집니다                                    | `#606262` → `#0f1010`                 | [TopNavigation](https://design.university.neordinary.com/components/shell/top-navigation/)  |
+
+전문과 대응표: [react](packages/react/CHANGELOG.md#0110-2026-10-30) · [design-tokens](packages/design-tokens/CHANGELOG.md#0110-2026-10-30)
+
+</details>
+
+<details>
 <summary><b>0.10.0</b> · 2026-10-26 · 깨지는 변경 1 · 화면 변화 1</summary>
 
 **깨지는 변경**
@@ -398,9 +433,9 @@ pnpm up "@umc-product/*" --latest
 
 **화면 변화**
 
-| 대상 | 변경사항                                                 | 변경&nbsp;전&nbsp;→&nbsp;변경&nbsp;후 | 보기                                                                        |
-| ---- | -------------------------------------------------------- | ------------------------------------- | --------------------------------------------------------------------------- |
-|      | `BottomNavigationItem`이 하위 경로에서도 탭을 선택합니다 |                                       | [Header](https://design.university.neordinary.com/components/shell/header/) |
+| 대상 | 변경사항                                                 | 변경&nbsp;전&nbsp;→&nbsp;변경&nbsp;후 | 보기 |
+| ---- | -------------------------------------------------------- | ------------------------------------- | ---- |
+|      | `BottomNavigationItem`이 하위 경로에서도 탭을 선택합니다 |                                       |      |
 
 **수정**
 

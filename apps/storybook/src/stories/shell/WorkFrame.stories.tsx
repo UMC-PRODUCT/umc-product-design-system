@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import {
-  Header,
+  HeaderDesktop,
   HeaderHomeLink,
   PageHeader,
   SideNavigation,
@@ -120,7 +120,7 @@ const meta = {
           height: "100vh",
         }}
       >
-        <Header
+        <HeaderDesktop
           logo={<HeaderHomeLink context="operation" generation={11} />}
           navItems={NAV_ITEMS}
           currentPath={currentPath}

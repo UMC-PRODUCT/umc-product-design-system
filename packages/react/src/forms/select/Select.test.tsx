@@ -132,4 +132,47 @@ describe("Select", () => {
     const check = selected.querySelector(".umc-dropdown-item__indicator svg")
     expect(drawingOf(check)).toEqual(drawingOf(svgOf(<LegacyCheckGlyph />)))
   })
+
+  it("itemLayout이 inline이면 체크를 레이블 앞에, 캡션을 같은 줄 끝에 둔다", async () => {
+    const user = userEvent.setup()
+    render(
+      <Select
+        aria-label="기수"
+        itemSize="xs"
+        itemLayout="inline"
+        defaultValue="11"
+        options={[
+          { value: "11", label: "11기", caption: "2026" },
+          { value: "10", label: "10기", caption: "2026" },
+        ]}
+      />,
+    )
+    await user.click(screen.getByRole("combobox", { name: "기수" }))
+    const selected = await screen.findByRole("option", { name: /11기/ })
+    expect(selected).toHaveAttribute("data-layout", "inline")
+    expect(selected).toHaveAttribute("data-size", "xs")
+    const [content, caption] = Array.from(selected.children)
+    expect(content?.firstElementChild).toHaveClass(
+      "umc-dropdown-item__indicator",
+    )
+    expect(caption).toHaveClass("umc-dropdown-item__caption")
+    expect(caption).toHaveTextContent("2026")
+  })
+
+  it("기본 배치는 캡션을 레이블 아래에, 체크를 끝에 둔다", async () => {
+    const user = userEvent.setup()
+    render(
+      <Select
+        aria-label="기수"
+        defaultValue="11"
+        options={[{ value: "11", label: "11기", caption: "2026" }]}
+      />,
+    )
+    await user.click(screen.getByRole("combobox", { name: "기수" }))
+    const selected = await screen.findByRole("option", { name: /11기/ })
+    expect(selected).toHaveAttribute("data-layout", "default")
+    const [content, indicator] = Array.from(selected.children)
+    expect(content?.lastElementChild).toHaveClass("umc-dropdown-item__caption")
+    expect(indicator).toHaveClass("umc-dropdown-item__indicator")
+  })
 })

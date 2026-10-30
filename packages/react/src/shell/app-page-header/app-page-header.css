@@ -1,0 +1,49 @@
+@layer components {
+  .umc-app-page-header {
+    --umc-app-page-header-fg: #0d121c;
+    --umc-app-page-header-margin: var(--umc-spacing-padding-16);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--umc-spacing-gap-32);
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .umc-app-page-header[data-margin="20"] {
+    --umc-app-page-header-margin: var(--umc-spacing-padding-20);
+  }
+
+  .umc-app-page-header__text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--umc-spacing-gap-6);
+    padding-inline: var(--umc-app-page-header-margin);
+    color: var(--umc-app-page-header-fg);
+    overflow-wrap: break-word;
+  }
+
+  .umc-app-page-header__title {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    font-family: var(--umc-typography-heading-1-semibold-font-family);
+    font-size: var(--umc-typography-heading-1-semibold-font-size);
+    font-weight: var(--umc-typography-heading-1-semibold-font-weight);
+    line-height: var(--umc-typography-heading-1-semibold-line-height);
+    letter-spacing: var(--umc-typography-heading-1-semibold-letter-spacing);
+  }
+
+  .umc-app-page-header__subtitle {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    font-family: var(--umc-typography-body-1-regular-font-family);
+    font-size: var(--umc-typography-body-1-regular-font-size);
+    font-weight: var(--umc-typography-body-1-regular-font-weight);
+    line-height: var(--umc-typography-body-1-regular-line-height);
+    letter-spacing: var(--umc-typography-body-1-regular-letter-spacing);
+  }
+}

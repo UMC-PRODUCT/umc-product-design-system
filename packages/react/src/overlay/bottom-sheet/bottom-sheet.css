@@ -78,7 +78,7 @@
     flex-direction: column;
     padding: var(--umc-spacing-padding-20) var(--umc-spacing-padding-20)
       var(--umc-spacing-padding-4);
-    gap: var(--umc-spacing-gap-6);
+    gap: var(--umc-spacing-gap-4);
   }
 
   .umc-bottom-sheet__header[data-align="center"] {
@@ -173,7 +173,6 @@
   }
 
   .umc-bottom-sheet__popup .umc-bottom-sheet-actions {
-    padding-block-end: var(--umc-spacing-padding-0);
     padding-inline: var(--umc-spacing-padding-20);
   }
 }

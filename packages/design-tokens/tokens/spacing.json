@@ -156,6 +156,19 @@
         }
       }
     },
+    "40": {
+      "$type": "dimension",
+      "$value": {
+        "value": 40,
+        "unit": "px"
+      },
+      "$extensions": {
+        "umc.figma": {
+          "name": "Spacing/Primitive/40",
+          "variableId": "VariableID:4898:82449"
+        }
+      }
+    },
     "48": {
       "$type": "dimension",
       "$value": {
@@ -305,6 +318,26 @@
             "variableId": "VariableID:2066:7694"
           }
         }
+      },
+      "40": {
+        "$type": "dimension",
+        "$value": "{spacing.40}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Padding/Padding 40",
+            "variableId": "VariableID:4898:82453"
+          }
+        }
+      },
+      "48": {
+        "$type": "dimension",
+        "$value": "{spacing.48}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Padding/Padding 48",
+            "variableId": "VariableID:4898:82457"
+          }
+        }
       }
     },
     "gap": {
@@ -417,6 +450,16 @@
             "variableId": "VariableID:2066:7691"
           }
         }
+      },
+      "40": {
+        "$type": "dimension",
+        "$value": "{spacing.40}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Gap/Gap 40",
+            "variableId": "VariableID:4898:82461"
+          }
+        }
       }
     },
     "margin": {
@@ -440,6 +483,16 @@
           }
         }
       },
+      "20": {
+        "$type": "dimension",
+        "$value": "{spacing.20}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Margin/Margin 20",
+            "variableId": "VariableID:5481:67629"
+          }
+        }
+      },
       "24": {
         "$type": "dimension",
         "$value": "{spacing.24}",
@@ -457,6 +510,16 @@
           "umc.figma": {
             "name": "Spacing/Semantic/Margin/Margin 32",
             "variableId": "VariableID:2066:7690"
+          }
+        }
+      },
+      "40": {
+        "$type": "dimension",
+        "$value": "{spacing.40}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Spacing/Semantic/Margin/Margin 40",
+            "variableId": "VariableID:4898:82465"
           }
         }
       },

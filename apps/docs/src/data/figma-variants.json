@@ -1,7 +1,7 @@
 {
   "fileKey": "U3pRZp6BjQBW5aMljCBwo9",
   "page": "3434:72558",
-  "fetchedAt": "2026-10-25",
+  "fetchedAt": "2026-10-29",
   "tool": "get_metadata",
   "sets": {
     "button": {
@@ -788,21 +788,26 @@
       "name": ".primitve/Meue Item/Text Only",
       "axes": {
         "Size": ["Md", "Sm", "Xs"],
-        "State": ["Default", "Disabled", "Hover", "Selected"]
+        "State": ["Default", "Disabled", "Hover", "Selected"],
+        "Layout": ["Default", "Inline"]
       },
       "variants": [
-        "Size=Md, State=Default",
-        "Size=Md, State=Disabled",
-        "Size=Sm, State=Default",
-        "Size=Sm, State=Disabled",
-        "Size=Md, State=Hover",
-        "Size=Sm, State=Hover",
-        "Size=Md, State=Selected",
-        "Size=Sm, State=Selected",
-        "Size=Xs, State=Default",
-        "Size=Xs, State=Disabled",
-        "Size=Xs, State=Hover",
-        "Size=Xs, State=Selected"
+        "Size=Md, State=Default, Layout=Default",
+        "Size=Md, State=Disabled, Layout=Default",
+        "Size=Sm, State=Default, Layout=Default",
+        "Size=Sm, State=Disabled, Layout=Default",
+        "Size=Md, State=Hover, Layout=Default",
+        "Size=Sm, State=Hover, Layout=Default",
+        "Size=Md, State=Selected, Layout=Default",
+        "Size=Sm, State=Selected, Layout=Default",
+        "Size=Xs, State=Default, Layout=Default",
+        "Size=Xs, State=Default, Layout=Inline",
+        "Size=Xs, State=Disabled, Layout=Default",
+        "Size=Xs, State=Disabled, Layout=Inline",
+        "Size=Xs, State=Hover, Layout=Default",
+        "Size=Xs, State=Hover, Layout=Inline",
+        "Size=Xs, State=Selected, Layout=Default",
+        "Size=Xs, State=Selected, Layout=Inline"
       ]
     },
     "option-button": {
@@ -1478,23 +1483,37 @@
         "Color=Neutral, Type=Tertiary"
       ]
     },
-    "header": {
+    "header-desktop": {
       "node": "2678:52045",
-      "name": "Web/Header",
+      "name": "Web/Header/Desktop",
       "axes": {
-        "Login Status": ["Logged In", "Logged Out"],
         "Mode": ["Light", "Dark"],
+        "Login Status": ["Logged In", "Logged Out"],
         "Show CTA Button": ["False", "True"]
       },
       "variants": [
-        "Login Status=Logged In, Mode=Light, Show CTA Button=False",
-        "Login Status=Logged In, Mode=Dark, Show CTA Button=False",
-        "Login Status=Logged Out, Mode=Light, Show CTA Button=True",
-        "Login Status=Logged Out, Mode=Dark, Show CTA Button=True",
-        "Login Status=Logged Out, Mode=Light, Show CTA Button=False",
-        "Login Status=Logged Out, Mode=Dark, Show CTA Button=False",
-        "Login Status=Logged In, Mode=Light, Show CTA Button=True",
-        "Login Status=Logged In, Mode=Dark, Show CTA Button=True"
+        "Mode=Light, Login Status=Logged In, Show CTA Button=False",
+        "Mode=Dark, Login Status=Logged In, Show CTA Button=False",
+        "Mode=Light, Login Status=Logged Out, Show CTA Button=True",
+        "Mode=Dark, Login Status=Logged Out, Show CTA Button=True",
+        "Mode=Light, Login Status=Logged Out, Show CTA Button=False",
+        "Mode=Dark, Login Status=Logged Out, Show CTA Button=False",
+        "Mode=Light, Login Status=Logged In, Show CTA Button=True",
+        "Mode=Dark, Login Status=Logged In, Show CTA Button=True"
+      ]
+    },
+    "header-mobile": {
+      "node": "5562:77289",
+      "name": "Web/Header/Mobile",
+      "axes": {
+        "Mode": ["Light", "Dark"],
+        "Menu State": ["Default", "Opened"]
+      },
+      "variants": [
+        "Mode=Light, Menu State=Default",
+        "Mode=Dark, Menu State=Default",
+        "Mode=Dark, Menu State=Opened",
+        "Mode=Light, Menu State=Opened"
       ]
     },
     "header-navigation": {
@@ -1535,22 +1554,60 @@
         "Property 1=Hover, Suffix=False"
       ]
     },
-    "header-actions": {
+    "header-actions-desktop": {
       "node": "2732:61068",
-      "name": "Web/Header/Actions",
+      "name": ".primitive/Web/Header/Actions-Desktop",
       "axes": {
-        "Login Status": ["Logged In", "Logged Out"],
         "Mode": ["Light", "Dark"],
+        "Login Status": ["Logged In", "Logged Out"],
         "Show CTA Button": ["False", "True"]
       },
       "variants": [
-        "Login Status=Logged In, Mode=Light, Show CTA Button=False",
-        "Login Status=Logged In, Mode=Dark, Show CTA Button=False",
-        "Login Status=Logged In, Mode=Light, Show CTA Button=True",
-        "Login Status=Logged In, Mode=Dark, Show CTA Button=True",
-        "Login Status=Logged Out, Mode=Light, Show CTA Button=True",
-        "Login Status=Logged Out, Mode=Dark, Show CTA Button=True"
+        "Mode=Light, Login Status=Logged In, Show CTA Button=False",
+        "Mode=Dark, Login Status=Logged In, Show CTA Button=False",
+        "Mode=Light, Login Status=Logged In, Show CTA Button=True",
+        "Mode=Dark, Login Status=Logged In, Show CTA Button=True",
+        "Mode=Light, Login Status=Logged Out, Show CTA Button=True",
+        "Mode=Dark, Login Status=Logged Out, Show CTA Button=True"
       ]
+    },
+    "header-actions-mobile": {
+      "node": "5562:77368",
+      "name": ".primitive/Web/Header/Actions-Mobile",
+      "axes": {
+        "Mode": ["Dark", "Light"],
+        "Menu State": ["Default", "Opened"]
+      },
+      "variants": [
+        "Mode=Dark, Menu State=Default",
+        "Mode=Dark, Menu State=Opened",
+        "Mode=Light, Menu State=Default",
+        "Mode=Light, Menu State=Opened"
+      ]
+    },
+    "header-menu-item": {
+      "node": "5567:77563",
+      "name": ".primitive/Web/Header/Menu Item",
+      "axes": {
+        "Property 1": ["Selected", "Hover", "Unselected"],
+        "Mode": ["Dark", "Light"]
+      },
+      "variants": [
+        "Property 1=Selected, Mode=Dark",
+        "Property 1=Selected, Mode=Light",
+        "Property 1=Hover, Mode=Dark",
+        "Property 1=Hover, Mode=Light",
+        "Property 1=Unselected, Mode=Dark",
+        "Property 1=Unselected, Mode=Light"
+      ]
+    },
+    "header-menu-container": {
+      "node": "5572:82323",
+      "name": ".primitive/Web/Header/Menu Container",
+      "axes": {
+        "Property 1": ["Light", "Variant2"]
+      },
+      "variants": ["Property 1=Light", "Property 1=Variant2"]
     },
     "header-home-link": {
       "node": "2732:60555",
@@ -1697,6 +1754,14 @@
         "Type=Text-Primary",
         "Type=Text-Neutral"
       ]
+    },
+    "app-page-header": {
+      "node": "5481:67100",
+      "name": "App/Page Header",
+      "axes": {
+        "Margin": ["16", "20"]
+      },
+      "variants": ["Margin=16", "Margin=20"]
     },
     "bottom-navigation": {
       "node": "2472:19950",

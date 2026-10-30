@@ -1,0 +1,75 @@
+---
+title: App Page Header
+description: 모바일 앱 화면 맨 위에 큰 제목과 부제를 놓는 머리입니다.
+---
+
+import {
+  AppPageHeaderAllVariants,
+  AppPageHeaderDefault,
+  AppPageHeaderMargin20,
+  AppPageHeaderWithActions,
+  AppPageHeaderWithoutNavigation,
+} from "../../../../components/react/shell/AppPageHeaderExamples.tsx"
+
+피그마 `App/Page Header`를 구현했습니다. 위에 [Top Navigation](../top-navigation/) 줄을 두고, 32px 아래에 28px 제목(Heading/1-Semibold)과 16px 부제(Body/1-Regular)를 6px 간격으로 쌓습니다. 제목은 `h1`입니다. 웹 화면의 페이지 제목은 [PageHeader](../page-header/)가 맡습니다.
+
+```tsx
+import { AppPageHeader } from "@umc-product/react"
+
+export function StudyScheduleHeader() {
+  return (
+    <AppPageHeader
+      title="학습 일정"
+      subtitle="이번 주에 들을 세션을 확인해요"
+      back={{ href: "/study" }}
+    />
+  )
+}
+```
+
+## 기본
+
+`back`을 넘기면 내비게이션 줄 왼쪽에 뒤로 가기 버튼이 생깁니다. 내비게이션 줄의 제목 자리는 비워 둡니다.
+
+<AppPageHeaderDefault client:visible />
+
+## 내비게이션 줄 없이
+
+피그마 설명대로 내비게이션 줄을 빼고 제목과 부제만 쓸 수 있습니다. `back`과 `actions`를 모두 넘기지 않으면 내비게이션 줄을 그리지 않습니다. 제목과 부제도 각각 넘긴 것만 그립니다.
+
+<AppPageHeaderWithoutNavigation client:visible />
+
+## 오른쪽 버튼
+
+`actions`는 내비게이션 줄 오른쪽에 들어갑니다. `TopNavigationButton`을 넣습니다.
+
+<AppPageHeaderWithActions client:visible />
+
+## 좌우 여백
+
+`margin`은 제목과 부제의 좌우 여백입니다. 기본값은 16px이고, 피그마 `Margin=20`처럼 20px을 고를 수 있습니다. 내비게이션 줄 여백은 Top Navigation 규칙대로 좌우 8px입니다.
+
+<AppPageHeaderMargin20 client:visible />
+
+## 모든 변형
+
+피그마 `App/Page Header` 변형 2개를 그렸습니다.
+
+<AppPageHeaderAllVariants client:visible />
+
+## props
+
+| prop        | 타입                     | 기본값 | 설명                        |
+| ----------- | ------------------------ | ------ | --------------------------- |
+| `title`     | `ReactNode`              | 없음   | 제목. `h1`로 그림           |
+| `subtitle`  | `ReactNode`              | 없음   | 제목 아래 부제              |
+| `back`      | `TopNavigationBackProps` | 없음   | 뒤로 가기 버튼 설정         |
+| `actions`   | `ReactNode`              | 없음   | 내비게이션 줄 오른쪽 슬롯   |
+| `margin`    | `16 \| 20`               | `16`   | 제목과 부제의 좌우 여백(px) |
+| `className` | `string`                 | 없음   | 루트 요소에 붙일 클래스     |
+
+`TopNavigationBackProps`는 [Top Navigation](../top-navigation/#topnavigationbackprops)에 있습니다.
+
+## 알아 둘 점
+
+- 제목과 부제 색은 피그마의 `grey950`(`#0d121c`)입니다. 토큰에 없는 색이라 App Dialog, Bottom Sheet 제목처럼 컴포넌트 변수로 씁니다.

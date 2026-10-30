@@ -176,6 +176,43 @@
       "figmaDiffers": {
         "border-top-color": "Input Box는 2기 변수 warmgray-150(#efedeb), Text Field/ Box는 TealGrey-100(#eff0f0)을 쓴다. 3기 토큰인 #eff0f0로 통일했다"
       }
+    },
+    {
+      "specId": "select-item-inline-selected",
+      "interaction": "open",
+      "node": "5641:85581",
+      "variant": ".primitve/Meue Item/Text Only, Size=Xs, State=Selected, Layout=Inline",
+      "target": ".umc-dropdown-item[data-layout=\"inline\"][data-selected]",
+      "expected": {
+        "padding-left": "8px",
+        "padding-right": "8px",
+        "background-color": "#f4fbfa",
+        "color": "#02746c",
+        "font-weight": "500",
+        "box-shadow~": "#d3d8d81a 1px 1px 2px 0px inset"
+      }
+    },
+    {
+      "specId": "select-item-inline-selected-label",
+      "interaction": "open",
+      "node": "5641:85582",
+      "variant": ".primitve/Meue Item/Text Only, Size=Xs, State=Selected, Layout=Inline 안의 체크와 레이블 묶음",
+      "target": ".umc-dropdown-item[data-layout=\"inline\"][data-selected] .umc-dropdown-item__content",
+      "expected": {
+        "column-gap": "3px"
+      }
+    },
+    {
+      "specId": "select-item-inline-selected-caption",
+      "interaction": "open",
+      "node": "5641:85698",
+      "variant": ".primitve/Meue Item/Text Only, Size=Xs, State=Selected, Layout=Inline 안의 caption",
+      "target": ".umc-dropdown-item[data-layout=\"inline\"][data-selected] .umc-dropdown-item__caption",
+      "expected": {
+        "color": "#008a80",
+        "font-size": "10px",
+        "font-weight": "500"
+      }
     }
   ]
 }

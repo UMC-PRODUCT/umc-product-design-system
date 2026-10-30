@@ -1,0 +1,183 @@
+{
+  "component": "HeaderMobile",
+  "figmaSection": "2858:65987",
+  "page": "/components/shell/header/",
+  "nodes": [
+    {
+      "specId": "header-mobile-light",
+      "node": "5562:77225",
+      "variant": "Mode=Light, Menu State=Default",
+      "target": ".umc-header-mobile",
+      "expected": {
+        "height": "80px",
+        "background-color": "#fbfcfc",
+        "box-shadow~": "#eff0f04d 0px 4px 16px 0px"
+      }
+    },
+    {
+      "specId": "header-mobile-logo",
+      "node": "5572:81810",
+      "variant": "Mode=Light, Menu State=Opened 안의 Web/Header/Home Link",
+      "target": ".umc-header-mobile__logo",
+      "expected": {
+        "padding-top": "10px",
+        "padding-right": "16px",
+        "padding-bottom": "10px",
+        "padding-left": "16px"
+      }
+    },
+    {
+      "specId": "header-mobile-actions",
+      "node": "5562:77393",
+      "variant": ".primitive/Web/Header/Actions-Mobile, Mode=Light, Menu State=Default",
+      "target": ".umc-header-mobile__actions",
+      "expected": {
+        "padding-left": "32px",
+        "padding-right": "32px"
+      }
+    },
+    {
+      "specId": "header-mobile-menu-button",
+      "node": "5562:77394",
+      "variant": ".primitive/Web/Header/Actions-Mobile, Mode=Light, Menu State=Default 안의 Icon/Menu",
+      "target": ".umc-header-mobile__menu-button",
+      "expected": {
+        "width": "34px",
+        "height": "34px",
+        "color": "#3f4141"
+      }
+    },
+    {
+      "specId": "header-mobile-menu",
+      "node": "5567:81408",
+      "variant": ".primitive/Web/Header/Menu Container, Property 1=Light",
+      "target": ".umc-header-mobile__menu",
+      "expected": {
+        "padding-top": "16px",
+        "padding-right": "24px",
+        "padding-bottom": "24px",
+        "padding-left": "24px",
+        "row-gap": "16px",
+        "background-color": "#f7f8f8",
+        "box-shadow~": "#eceeee85 0px 4px 16px 0px"
+      },
+      "figmaDiffers": {
+        "box-shadow~": "피그마 Shadow/Drop/Neutral_2는 #eff0f080이다. 코드는 같은 이름의 토큰(#eceeee85)을 쓴다"
+      }
+    },
+    {
+      "specId": "header-mobile-nav-list",
+      "node": "5567:81397",
+      "variant": ".primitive/Web/Header/Menu Container, Property 1=Light 안의 메뉴 묶음",
+      "target": ".umc-header-mobile__nav-list",
+      "expected": {
+        "row-gap": "8px"
+      }
+    },
+    {
+      "specId": "header-mobile-item",
+      "node": "5572:82305",
+      "variant": ".primitive/Web/Header/Menu Item, Property 1=Unselected, Mode=Light",
+      "target": ".umc-header-mobile__nav-link:not([aria-current])",
+      "expected": {
+        "padding-top": "8px",
+        "padding-right": "10px",
+        "padding-bottom": "8px",
+        "padding-left": "10px",
+        "color": "#606262",
+        "font-size": "20px",
+        "font-weight": "500",
+        "line-height": "28px",
+        "letter-spacing": "-0.4px"
+      }
+    },
+    {
+      "specId": "header-mobile-item-hover",
+      "interaction": "hover",
+      "node": "5572:82303",
+      "variant": ".primitive/Web/Header/Menu Item, Property 1=Hover, Mode=Light",
+      "target": ".umc-header-mobile__nav-link:not([aria-current])",
+      "expected": {
+        "color": "#606262",
+        "font-weight": "600",
+        "letter-spacing": "-0.2px"
+      }
+    },
+    {
+      "specId": "header-mobile-item-selected",
+      "node": "5572:82301",
+      "variant": ".primitive/Web/Header/Menu Item, Property 1=Selected, Mode=Light",
+      "target": ".umc-header-mobile__nav-link[aria-current=\"page\"]",
+      "expected": {
+        "color": "#02746c",
+        "font-weight": "600",
+        "letter-spacing": "-0.2px"
+      }
+    },
+    {
+      "specId": "header-mobile-dark",
+      "node": "5562:76974",
+      "variant": "Mode=Dark, Menu State=Default",
+      "target": ".umc-header-mobile",
+      "expected": {
+        "height": "80px",
+        "background-color": "#00000000",
+        "box-shadow~": "#4146454d 0px 4px 16px 0px"
+      },
+      "figmaDiffers": {
+        "background-color": "피그마 다크 헤더 배경은 랜딩 히어로 이미지다. 헤더는 투명하게 두고 배경은 놓이는 페이지가 그린다"
+      }
+    },
+    {
+      "specId": "header-mobile-dark-menu-button",
+      "node": "5562:77392",
+      "variant": ".primitive/Web/Header/Actions-Mobile, Mode=Dark, Menu State=Opened 안의 Icon/Close",
+      "target": ".umc-header-mobile__menu-button",
+      "expected": {
+        "color": "#ffffff"
+      }
+    },
+    {
+      "specId": "header-mobile-dark-menu",
+      "node": "5572:82324",
+      "variant": ".primitive/Web/Header/Menu Container, Property 1=Variant2",
+      "target": ".umc-header-mobile__menu",
+      "expected": {
+        "background-color": "#0d1a19",
+        "box-shadow~": "#4146454d 0px 4px 16px 0px"
+      }
+    },
+    {
+      "specId": "header-mobile-dark-item",
+      "node": "5567:77568",
+      "variant": ".primitive/Web/Header/Menu Item, Property 1=Unselected, Mode=Dark",
+      "target": ".umc-header-mobile__nav-link:not([aria-current])",
+      "expected": {
+        "color": "#adadad",
+        "font-weight": "500"
+      }
+    },
+    {
+      "specId": "header-mobile-dark-item-hover",
+      "interaction": "hover",
+      "node": "5567:77566",
+      "variant": ".primitive/Web/Header/Menu Item, Property 1=Hover, Mode=Dark",
+      "target": ".umc-header-mobile__nav-link:not([aria-current])",
+      "expected": {
+        "color": "#7e7f7f",
+        "font-weight": "500",
+        "letter-spacing": "-0.4px"
+      }
+    },
+    {
+      "specId": "header-mobile-dark-item-selected",
+      "node": "5567:77564",
+      "variant": ".primitive/Web/Header/Menu Item, Property 1=Selected, Mode=Dark",
+      "target": ".umc-header-mobile__nav-link[aria-current=\"page\"]",
+      "expected": {
+        "color": "#7ac7c1",
+        "font-weight": "600"
+      }
+    }
+  ]
+}

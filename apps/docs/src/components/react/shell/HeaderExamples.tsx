@@ -2,15 +2,18 @@
 
 import {
   Button,
-  Header,
+  HeaderDesktop,
   HeaderActionButton,
   HeaderHomeLink,
+  HeaderMobile,
+  HeaderProfileMenu,
   type HeaderHomeLinkProps,
+  type HeaderProfileMenuProps,
 } from "@umc-product/react"
 import { ExpandMoreIcon } from "@umc-product/icons"
 import { useState } from "react"
 
-import { ForceState, NotImplemented } from "../variants/VariantCells.tsx"
+import { ForceState } from "../variants/VariantCells.tsx"
 import {
   lookup,
   type FigmaVariant,
@@ -25,7 +28,17 @@ const NAV_ITEMS = [
   { label: "지원하기", href: "/apply" },
 ]
 
+const MOBILE_NAV_ITEMS = [
+  { label: "소개", href: "/about" },
+  { label: "팀 매칭", href: "/matching" },
+  { label: "지원하기", href: "/apply" },
+  { label: "공지사항", href: "/notices" },
+]
+
 const DARK_BACKDROP = "linear-gradient(180deg, #56625f 0%, #a9b1af 100%)"
+
+const MOBILE_FRAME = "w-[390px] max-w-full"
+const MOBILE_OPENED_FRAME = `${MOBILE_FRAME} h-[376px]`
 
 const MAIN_HOME_LINK: HeaderHomeLinkProps = {}
 const OPERATION_HOME_LINK: HeaderHomeLinkProps = {
@@ -49,7 +62,7 @@ export function HeaderLight() {
           className="min-w-[720px]"
           data-spec-id="header-light header-light-logo header-light-navigation header-light-item header-light-item-hover header-light-item-selected header-light-actions home-link-main home-link-main-logo home-link-main-hover"
         >
-          <Header
+          <HeaderDesktop
             navItems={NAV_ITEMS}
             currentPath={path}
             actions={<Button size="md">로그인</Button>}
@@ -72,7 +85,7 @@ export function HeaderDark() {
           className="min-w-[720px]"
           data-spec-id="header-dark header-dark-navigation header-dark-item header-dark-item-hover header-dark-item-selected home-link-dark home-link-dark-hover"
         >
-          <Header mode="dark" navItems={NAV_ITEMS} currentPath={path} />
+          <HeaderDesktop mode="dark" navItems={NAV_ITEMS} currentPath={path} />
         </div>
       </PreviewLinks>
     </div>
@@ -84,12 +97,14 @@ export function HeaderHomeLinks() {
     <div className="umc-example umc-example-flush overflow-x-auto">
       <PreviewLinks>
         <div className="grid min-w-[320px]">
-          <Header logo={<HeaderHomeLink {...MAIN_HOME_LINK} />} />
+          <HeaderDesktop logo={<HeaderHomeLink {...MAIN_HOME_LINK} />} />
           <div data-spec-id="home-link-labeled-slot home-link-labeled home-link-labeled-body home-link-labeled-logo home-link-labeled-title home-link-labeled-subtitle">
-            <Header logo={<HeaderHomeLink {...OPERATION_HOME_LINK} />} />
+            <HeaderDesktop logo={<HeaderHomeLink {...OPERATION_HOME_LINK} />} />
           </div>
-          <Header logo={<HeaderHomeLink {...STUDY_HOME_LINK} />} />
-          <Header logo={<HeaderHomeLink {...PRODUCT_TECH_HOME_LINK} />} />
+          <HeaderDesktop logo={<HeaderHomeLink {...STUDY_HOME_LINK} />} />
+          <HeaderDesktop
+            logo={<HeaderHomeLink {...PRODUCT_TECH_HOME_LINK} />}
+          />
         </div>
       </PreviewLinks>
     </div>
@@ -102,7 +117,7 @@ export function HeaderActions() {
     <div className="umc-example umc-example-flush overflow-x-auto">
       <PreviewLinks onNavigate={setPath}>
         <div className="min-w-[720px]">
-          <Header
+          <HeaderDesktop
             navItems={NAV_ITEMS}
             currentPath={path}
             actions={
@@ -117,6 +132,115 @@ export function HeaderActions() {
                 </span>
               </>
             }
+          />
+        </div>
+      </PreviewLinks>
+    </div>
+  )
+}
+
+const PROFILE: HeaderProfileMenuProps["profile"] = {
+  nickname: "닉네임",
+  name: "김유엠",
+  school: "한국대 ERICA",
+  role: { label: "챌린저", color: "challenger-super-admin" },
+}
+
+const GENERATIONS: HeaderProfileMenuProps["generations"] = [
+  { value: "11", label: "11기", caption: "2026" },
+  { value: "10", label: "10기", caption: "2026" },
+  { value: "9", label: "9기", caption: "2025" },
+  { value: "8", label: "8기", caption: "2025" },
+  { value: "5", label: "5기", caption: "2023" },
+]
+
+const CURRENT_GENERATION = "11"
+
+export function HeaderProfileMenuExample() {
+  const [path, setPath] = useState("/matching")
+  const [generation, setGeneration] = useState(CURRENT_GENERATION)
+  const [lastAction, setLastAction] = useState("없음")
+  return (
+    <div className="umc-example umc-example-flush overflow-x-auto">
+      <PreviewLinks onNavigate={setPath}>
+        <div
+          className="min-w-[960px]"
+          data-spec-id="header-profile header-profile-silhouette header-actions-logged-in header-profile-menu header-profile-menu-avatar header-profile-menu-summary header-profile-menu-identity header-profile-menu-name header-profile-menu-school header-profile-menu-role header-profile-menu-divider header-profile-menu-generation-label header-profile-menu-generation-list header-profile-menu-generation-selected header-profile-menu-actions header-profile-menu-account header-profile-menu-logout"
+        >
+          <HeaderDesktop
+            navItems={NAV_ITEMS}
+            currentPath={path}
+            actions={
+              <>
+                <Button size="md">버튼</Button>
+                <HeaderActionButton>문의사항</HeaderActionButton>
+                <HeaderProfileMenu
+                  profile={PROFILE}
+                  generations={GENERATIONS}
+                  generation={generation}
+                  onGenerationChange={setGeneration}
+                  onAccountSettings={() => setLastAction("계정 설정")}
+                  onLogout={() => setLastAction("로그아웃")}
+                />
+              </>
+            }
+          />
+        </div>
+      </PreviewLinks>
+      <p className="m-0 px-4 py-3 text-sm">
+        고른 기수: {generation}기 · 마지막 동작: {lastAction}
+      </p>
+    </div>
+  )
+}
+
+function MobileMenuCta() {
+  return (
+    <Button size="md" variant="weak">
+      지원하기
+    </Button>
+  )
+}
+
+export function HeaderMobileLight() {
+  const [path, setPath] = useState("/about")
+  return (
+    <div className="umc-example umc-example-flush overflow-x-auto">
+      <PreviewLinks onNavigate={setPath}>
+        <div
+          className={MOBILE_OPENED_FRAME}
+          data-spec-id="header-mobile-light header-mobile-logo header-mobile-actions header-mobile-menu-button header-mobile-menu header-mobile-nav-list header-mobile-item header-mobile-item-hover header-mobile-item-selected"
+        >
+          <HeaderMobile
+            navItems={MOBILE_NAV_ITEMS}
+            currentPath={path}
+            actions={<MobileMenuCta />}
+            defaultOpen
+          />
+        </div>
+      </PreviewLinks>
+    </div>
+  )
+}
+
+export function HeaderMobileDark() {
+  const [path, setPath] = useState("/about")
+  return (
+    <div
+      className="umc-example umc-example-flush overflow-x-auto"
+      style={{ background: DARK_BACKDROP }}
+    >
+      <PreviewLinks onNavigate={setPath}>
+        <div
+          className={MOBILE_OPENED_FRAME}
+          data-spec-id="header-mobile-dark header-mobile-dark-menu-button header-mobile-dark-menu header-mobile-dark-item header-mobile-dark-item-hover header-mobile-dark-item-selected"
+        >
+          <HeaderMobile
+            mode="dark"
+            navItems={MOBILE_NAV_ITEMS}
+            currentPath={path}
+            actions={<MobileMenuCta />}
+            defaultOpen
           />
         </div>
       </PreviewLinks>
@@ -143,9 +267,6 @@ const HOME_LINK_PRIMITIVE_SETS: ReadonlyArray<{
   { set: "header-home-link-product-tech", homeLink: PRODUCT_TECH_HOME_LINK },
 ]
 
-const LOGGED_IN_REASON =
-  "로그인 상태의 프로필 아바타 에셋이 정해지지 않아 아직 없습니다"
-
 const darkTone = (variant: FigmaVariant) =>
   variant.props["Mode"] === "Dark" ? "dark" : undefined
 
@@ -161,35 +282,46 @@ function renderLoggedOutActions(withCta: boolean) {
   )
 }
 
+function renderLoggedInActions(withCta: boolean) {
+  return (
+    <>
+      {withCta && <Button size="md">버튼</Button>}
+      <HeaderActionButton>문의사항</HeaderActionButton>
+      <HeaderProfileMenu
+        profile={PROFILE}
+        generations={GENERATIONS}
+        defaultGeneration={CURRENT_GENERATION}
+      />
+    </>
+  )
+}
+
+function actionsOf(variant: FigmaVariant) {
+  const withCta = variant.props["Show CTA Button"] === "True"
+  return variant.props["Login Status"] === "Logged In"
+    ? renderLoggedInActions(withCta)
+    : renderLoggedOutActions(withCta)
+}
+
 function HeaderVariantCell({ variant }: { variant: FigmaVariant }) {
-  if (variant.props["Login Status"] === "Logged In") {
-    return <NotImplemented reason={LOGGED_IN_REASON} />
-  }
   return (
     <div className="min-w-[720px]">
-      <Header
+      <HeaderDesktop
         mode={lookup(HEADER_MODES, variant, "Mode")}
         navItems={NAV_ITEMS}
         currentPath="/matching"
-        actions={renderLoggedOutActions(
-          variant.props["Show CTA Button"] === "True",
-        )}
+        actions={actionsOf(variant)}
       />
     </div>
   )
 }
 
 function HeaderActionsCell({ variant }: { variant: FigmaVariant }) {
-  if (variant.props["Login Status"] === "Logged In") {
-    return <NotImplemented reason={LOGGED_IN_REASON} />
-  }
   return (
-    <Header
+    <HeaderDesktop
       mode={lookup(HEADER_MODES, variant, "Mode")}
       logo={null}
-      actions={renderLoggedOutActions(
-        variant.props["Show CTA Button"] === "True",
-      )}
+      actions={actionsOf(variant)}
     />
   )
 }
@@ -198,7 +330,7 @@ function NavigationItemCell({ variant }: { variant: FigmaVariant }) {
   const state = variant.props["State"]
   return (
     <ForceState states={state === "Hover" ? ["hover"] : []}>
-      <Header
+      <HeaderDesktop
         mode={lookup(HEADER_MODES, variant, "Mode")}
         logo={null}
         navItems={[{ label: "팀 매칭", href: "/matching" }]}
@@ -221,11 +353,74 @@ function HomeLinkPrimitiveCell({
         variant.props["State"] === "Hover & Pressed" ? ["hover", "active"] : []
       }
     >
-      <Header
+      <HeaderDesktop
         mode={lookup(HEADER_MODES, variant, "Mode")}
         logo={<HeaderHomeLink {...homeLink} />}
       />
     </ForceState>
+  )
+}
+
+const MENU_CONTAINER_MODES = { Light: "light", Variant2: "dark" } as const
+
+const menuContainerTone = (variant: FigmaVariant) =>
+  variant.props["Property 1"] === "Variant2" ? "dark" : undefined
+
+function HeaderMobileCell({ variant }: { variant: FigmaVariant }) {
+  const opened = variant.props["Menu State"] === "Opened"
+  return (
+    <div className={opened ? MOBILE_OPENED_FRAME : MOBILE_FRAME}>
+      <HeaderMobile
+        mode={lookup(HEADER_MODES, variant, "Mode")}
+        navItems={MOBILE_NAV_ITEMS}
+        currentPath="/about"
+        actions={<MobileMenuCta />}
+        open={opened}
+      />
+    </div>
+  )
+}
+
+function ActionsMobileCell({ variant }: { variant: FigmaVariant }) {
+  return (
+    <div className="h-20 w-[130px] overflow-hidden">
+      <HeaderMobile
+        mode={lookup(HEADER_MODES, variant, "Mode")}
+        logo={null}
+        navItems={MOBILE_NAV_ITEMS}
+        open={variant.props["Menu State"] === "Opened"}
+      />
+    </div>
+  )
+}
+
+function MenuItemCell({ variant }: { variant: FigmaVariant }) {
+  const state = variant.props["Property 1"]
+  return (
+    <ForceState states={state === "Hover" ? ["hover"] : []}>
+      <div className={`${MOBILE_FRAME} h-[164px]`}>
+        <HeaderMobile
+          mode={lookup(HEADER_MODES, variant, "Mode")}
+          navItems={[{ label: "팀 매칭", href: "/matching" }]}
+          currentPath={state === "Selected" ? "/matching" : "/"}
+          open
+        />
+      </div>
+    </ForceState>
+  )
+}
+
+function MenuContainerCell({ variant }: { variant: FigmaVariant }) {
+  return (
+    <div className={MOBILE_OPENED_FRAME}>
+      <HeaderMobile
+        mode={lookup(MENU_CONTAINER_MODES, variant, "Property 1")}
+        navItems={MOBILE_NAV_ITEMS}
+        currentPath="/about"
+        actions={<MobileMenuCta />}
+        open
+      />
+    </div>
   )
 }
 
@@ -235,7 +430,7 @@ export function HeaderAllVariants() {
   return (
     <PreviewLinks>
       <VariantGrid
-        set="header"
+        set="header-desktop"
         sections={["Mode"]}
         rows={["Login Status", "Show CTA Button"]}
         columns={[]}
@@ -248,11 +443,19 @@ export function HeaderAllVariants() {
         render={(variant) => <HeaderVariantCell variant={variant} />}
       />
       <VariantGrid
+        set="header-mobile"
+        rows={["Menu State"]}
+        columns={["Mode"]}
+        order={{ ...MODE_ORDER, "Menu State": ["Default", "Opened"] }}
+        tone={darkTone}
+        render={(variant) => <HeaderMobileCell variant={variant} />}
+      />
+      <VariantGrid
         set="header-home-link"
         rows={["Context"]}
         columns={[]}
         render={(variant) => (
-          <Header
+          <HeaderDesktop
             logo={
               <HeaderHomeLink
                 {...lookup(HOME_LINK_CONTEXTS, variant, "Context")}
@@ -281,7 +484,7 @@ export function HeaderAllVariants() {
         order={MODE_ORDER}
         tone={darkTone}
         render={(variant) => (
-          <Header
+          <HeaderDesktop
             mode={lookup(HEADER_MODES, variant, "Mode")}
             logo={null}
             navItems={NAV_ITEMS}
@@ -298,7 +501,7 @@ export function HeaderAllVariants() {
         render={(variant) => <NavigationItemCell variant={variant} />}
       />
       <VariantGrid
-        set="header-actions"
+        set="header-actions-desktop"
         sections={["Mode"]}
         rows={["Login Status", "Show CTA Button"]}
         columns={[]}
@@ -309,6 +512,32 @@ export function HeaderAllVariants() {
         }}
         tone={darkTone}
         render={(variant) => <HeaderActionsCell variant={variant} />}
+      />
+      <VariantGrid
+        set="header-actions-mobile"
+        rows={["Menu State"]}
+        columns={["Mode"]}
+        order={{ ...MODE_ORDER, "Menu State": ["Default", "Opened"] }}
+        tone={darkTone}
+        render={(variant) => <ActionsMobileCell variant={variant} />}
+      />
+      <VariantGrid
+        set="header-menu-container"
+        rows={["Property 1"]}
+        columns={[]}
+        tone={menuContainerTone}
+        render={(variant) => <MenuContainerCell variant={variant} />}
+      />
+      <VariantGrid
+        set="header-menu-item"
+        rows={["Property 1"]}
+        columns={["Mode"]}
+        order={{
+          ...MODE_ORDER,
+          "Property 1": ["Unselected", "Hover", "Selected"],
+        }}
+        tone={darkTone}
+        render={(variant) => <MenuItemCell variant={variant} />}
       />
       <VariantGrid
         set="header-action-button"

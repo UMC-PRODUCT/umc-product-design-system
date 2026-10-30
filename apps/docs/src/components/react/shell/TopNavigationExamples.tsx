@@ -63,6 +63,27 @@ export function TopNavigationWithBack() {
   )
 }
 
+export function TopNavigationSubtitle() {
+  return (
+    <div className="umc-example umc-example-flush">
+      <PreviewLinks>
+        <div
+          className={PHONE_FRAME}
+          data-spec-id="top-navigation-center-title top-navigation-subtitle"
+        >
+          <TopNavigation
+            title="학습 일정"
+            titleAlign="center"
+            subtitle="11기 웹 파트"
+            back={{ href: "/study" }}
+            actions={makeActions(false)}
+          />
+        </div>
+      </PreviewLinks>
+    </div>
+  )
+}
+
 export function TopNavigationDropdown() {
   const [open, setOpen] = useState(false)
   return (
@@ -89,13 +110,22 @@ function TopNavigationCell({ variant }: { variant: FigmaVariant }) {
 
   return (
     <div className={VARIANT_PHONE_FRAME}>
-      <TopNavigation
-        title={isMain ? "홈" : "상세 페이지"}
-        titleAlign={isCenter ? "center" : "start"}
-        back={hasBack ? { href: "/prev" } : undefined}
-        onTitleClick={hasDropdown ? () => {} : undefined}
-        actions={makeActions(isMain && !hasDropdown)}
-      />
+      {isCenter ? (
+        <TopNavigation
+          title="상세 페이지"
+          titleAlign="center"
+          subtitle="부제"
+          back={hasBack ? { href: "/prev" } : undefined}
+          actions={makeActions(false)}
+        />
+      ) : (
+        <TopNavigation
+          title={isMain ? "홈" : "상세 페이지"}
+          back={hasBack ? { href: "/prev" } : undefined}
+          onTitleClick={hasDropdown ? () => {} : undefined}
+          actions={makeActions(isMain && !hasDropdown)}
+        />
+      )}
     </div>
   )
 }

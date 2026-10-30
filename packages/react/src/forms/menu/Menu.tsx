@@ -5,16 +5,46 @@ import type { ReactElement, ReactNode } from "react"
 
 export type MenuItemDef = {
   label: ReactNode
+  caption?: ReactNode
   onClick?: () => void
   disabled?: boolean
 }
 
-export type MenuProps = {
+type MenuLayoutProps =
+  | { size?: "xs" | "sm" | "md"; layout?: "default" }
+  | { size: "xs"; layout: "inline" }
+
+export type MenuProps = MenuLayoutProps & {
   trigger: ReactElement
   items: MenuItemDef[]
   title?: ReactNode
-  size?: "xs" | "sm" | "md"
   className?: string
+}
+
+type MenuItemContentProps = {
+  item: Pick<MenuItemDef, "label" | "caption">
+}
+
+function DefaultMenuItemContent({ item }: MenuItemContentProps) {
+  return (
+    <span className="umc-dropdown-item__content">
+      {item.label}
+      {item.caption && (
+        <span className="umc-dropdown-item__caption">{item.caption}</span>
+      )}
+    </span>
+  )
+}
+
+function InlineMenuItemContent({ item }: MenuItemContentProps) {
+  return (
+    <>
+      <span className="umc-dropdown-item__content">{item.label}</span>
+      {item.caption && (
+        <span className="umc-dropdown-item__caption">{item.caption}</span>
+      )}
+    </>
+  )
 }
 
 export function Menu({
@@ -22,8 +52,11 @@ export function Menu({
   items,
   title,
   size = "sm",
+  layout = "default",
   className,
 }: MenuProps) {
+  const ItemContent =
+    layout === "inline" ? InlineMenuItemContent : DefaultMenuItemContent
   const menuItems = items.map((item, index) => (
     <BaseUIMenu.Item
       key={index}
@@ -31,8 +64,9 @@ export function Menu({
       onClick={item.onClick}
       className="umc-dropdown-item"
       data-size={size}
+      data-layout={layout}
     >
-      {item.label}
+      <ItemContent item={item} />
     </BaseUIMenu.Item>
   ))
 

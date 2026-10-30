@@ -10,7 +10,6 @@ export const DOCS_SITE_URL = (
 ).replace(/\/+$/, "")
 
 const PAGES_OUTSIDE_SPEC: Readonly<Record<string, string>> = {
-  TopNavigation: "/components/shell/top-navigation/",
   BottomNavigation: "/components/shell/bottom-navigation/",
   FormSectionEmpty: "/components/questionnaire/form-section/",
 }

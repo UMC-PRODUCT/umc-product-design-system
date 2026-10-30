@@ -1,12 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import {
   Button,
-  Header,
+  HeaderDesktop,
   HeaderActionButton,
   HeaderHomeLink,
-  type HeaderProps,
+  HeaderProfileMenu,
+  type HeaderDesktopProps,
+  type HeaderProfileMenuProps,
 } from "@umc-product/react"
-import { ExpandMoreIcon } from "@umc-product/icons"
 import { fn } from "storybook/test"
 
 import { hiddenControl } from "../../arg-types.tsx"
@@ -19,7 +20,19 @@ const NAV_ITEMS = [
   { label: "스터디", href: "/studies" },
 ]
 
-type StoryArgs = HeaderProps & {
+const PROFILE: HeaderProfileMenuProps["profile"] = {
+  nickname: "닉네임",
+  name: "김유엠",
+  school: "한국대 ERICA",
+  role: { label: "챌린저", color: "challenger-super-admin" },
+}
+
+const GENERATIONS: HeaderProfileMenuProps["generations"] = [
+  { value: "11", label: "11기", caption: "2026" },
+  { value: "10", label: "10기", caption: "2026" },
+]
+
+type StoryArgs = HeaderDesktopProps & {
   loggedIn: boolean
   showCta: boolean
   onLoginClick: () => void
@@ -28,10 +41,13 @@ type StoryArgs = HeaderProps & {
 }
 
 const meta = {
-  title: "앱 셸/Header",
-  id: "header",
-  component: Header,
-  parameters: { ...componentParameters("Header"), layout: "fullscreen" },
+  title: "앱 셸/HeaderDesktop",
+  id: "header-desktop",
+  component: HeaderDesktop,
+  parameters: {
+    ...componentParameters("HeaderDesktop"),
+    layout: "fullscreen",
+  },
   argTypes: {
     currentPath: {
       control: { type: "select" },
@@ -69,13 +85,25 @@ const meta = {
     ...headerProps
   }) {
     return (
-      <Header
+      <HeaderDesktop
         {...headerProps}
         actions={
           loggedIn ? (
-            <HeaderActionButton suffix={<ExpandMoreIcon weight="fill" />}>
-              11기 운영진
-            </HeaderActionButton>
+            <>
+              {showCta && (
+                <Button size="md" onClick={onCtaClick}>
+                  지원하기
+                </Button>
+              )}
+              <HeaderActionButton onClick={onContactClick}>
+                문의사항
+              </HeaderActionButton>
+              <HeaderProfileMenu
+                profile={PROFILE}
+                generations={GENERATIONS}
+                defaultGeneration="11"
+              />
+            </>
           ) : (
             <>
               {showCta && (

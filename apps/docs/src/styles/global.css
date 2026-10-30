@@ -891,11 +891,11 @@ body {
 }
 
 @media (max-width: 49.99rem) {
-  .docs-header .umc-header__nav {
+  .docs-header .umc-header-desktop__nav {
     display: none;
   }
 
-  .docs-header .umc-header__logo {
+  .docs-header .umc-header-desktop__logo {
     padding-inline: var(--umc-spacing-padding-16);
   }
 }

@@ -87,4 +87,39 @@ describe("Menu", () => {
     await user.click(screen.getByText("비활성"))
     expect(onClick).not.toHaveBeenCalled()
   })
+
+  it("caption을 넘기면 기본 배치에서 레이블 아래에 둔다", async () => {
+    const user = userEvent.setup()
+    render(
+      <Menu
+        trigger={<button>메뉴</button>}
+        items={[{ label: "내보내기", caption: "CSV 파일" }]}
+      />,
+    )
+    await user.click(screen.getByText("메뉴"))
+    const item = await screen.findByRole("menuitem", { name: /내보내기/ })
+    expect(item).toHaveAttribute("data-layout", "default")
+    expect(item.firstElementChild?.lastElementChild).toHaveClass(
+      "umc-dropdown-item__caption",
+    )
+  })
+
+  it("layout이 inline이면 캡션을 레이블과 같은 줄 끝에 둔다", async () => {
+    const user = userEvent.setup()
+    render(
+      <Menu
+        trigger={<button>메뉴</button>}
+        size="xs"
+        layout="inline"
+        items={[{ label: "11기", caption: "2026" }]}
+      />,
+    )
+    await user.click(screen.getByText("메뉴"))
+    const item = await screen.findByRole("menuitem", { name: /11기/ })
+    expect(item).toHaveAttribute("data-layout", "inline")
+    const [label, caption] = Array.from(item.children)
+    expect(label).toHaveTextContent("11기")
+    expect(caption).toHaveClass("umc-dropdown-item__caption")
+    expect(caption).toHaveTextContent("2026")
+  })
 })

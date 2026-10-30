@@ -1,7 +1,7 @@
 "use client"
 
 import {
-  Header,
+  HeaderDesktop,
   HeaderHomeLink,
   NumberBadge,
   PageHeader,
@@ -144,7 +144,7 @@ function RecruitingFrame({
 }: RecruitingFrameProps) {
   return (
     <div className={`flex min-w-[960px] flex-col ${className}`}>
-      <Header
+      <HeaderDesktop
         logo={
           <HeaderHomeLink context="operation" generation={CURRENT_GENERATION} />
         }

@@ -20,11 +20,12 @@
     min-width: 200px;
   }
 
-  .umc-header__logo:has(.umc-logo-lockup[data-labeled]) {
+  .umc-header-desktop__logo:has(.umc-logo-lockup[data-labeled]) {
     padding-inline-start: 34px;
   }
 
-  .umc-header[data-mode="dark"] .umc-header-home-link {
+  .umc-header-desktop[data-mode="dark"] .umc-header-home-link,
+  .umc-header-mobile[data-mode="dark"] .umc-header-home-link {
     --umc-header-home-link-fg: var(--umc-color-teal-50);
     --umc-header-home-link-active-fg: var(--umc-color-teal-200);
   }

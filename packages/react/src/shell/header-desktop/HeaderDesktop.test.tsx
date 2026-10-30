@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react"
 import { describe, expect, it } from "vitest"
 
 import { LinkProvider } from "../link-provider/LinkProvider.tsx"
-import { Header } from "./Header.tsx"
+import { HeaderDesktop } from "./HeaderDesktop.tsx"
 
 const navItems = [
   { label: "소개", href: "/about" },
@@ -10,10 +10,10 @@ const navItems = [
   { label: "지원하기", href: "/apply" },
 ]
 
-describe("Header", () => {
+describe("HeaderDesktop", () => {
   it("현재 경로와 일치하는 메뉴에 aria-current='page'를 단다", () => {
     render(
-      <Header
+      <HeaderDesktop
         logo={<span>UMC</span>}
         navItems={navItems}
         currentPath="/matching"
@@ -27,28 +27,35 @@ describe("Header", () => {
   })
 
   it("actions 슬롯을 렌더한다", () => {
-    render(<Header logo={<span>UMC</span>} actions={<button>로그인</button>} />)
+    render(
+      <HeaderDesktop
+        logo={<span>UMC</span>}
+        actions={<button>로그인</button>}
+      />,
+    )
     expect(screen.getByRole("button", { name: "로그인" })).toBeInTheDocument()
   })
 
   it("data-mode 속성을 루트 요소에 붙인다", () => {
-    const { container } = render(<Header logo={<span>UMC</span>} mode="dark" />)
-    expect(container.querySelector(".umc-header")).toHaveAttribute(
+    const { container } = render(
+      <HeaderDesktop logo={<span>UMC</span>} mode="dark" />,
+    )
+    expect(container.querySelector(".umc-header-desktop")).toHaveAttribute(
       "data-mode",
       "dark",
     )
   })
 
   it("기본 mode는 light다", () => {
-    const { container } = render(<Header logo={<span>UMC</span>} />)
-    expect(container.querySelector(".umc-header")).toHaveAttribute(
+    const { container } = render(<HeaderDesktop logo={<span>UMC</span>} />)
+    expect(container.querySelector(".umc-header-desktop")).toHaveAttribute(
       "data-mode",
       "light",
     )
   })
 
   it("logo를 넘기지 않으면 UMC 홈 링크를 그린다", () => {
-    render(<Header />)
+    render(<HeaderDesktop />)
     expect(screen.getByRole("link", { name: "UMC" })).toHaveAttribute(
       "href",
       "/",
@@ -56,12 +63,14 @@ describe("Header", () => {
   })
 
   it("logo={null}이면 로고 칸을 비운다", () => {
-    const { container } = render(<Header logo={null} />)
-    expect(container.querySelector(".umc-header__logo")).toBeEmptyDOMElement()
+    const { container } = render(<HeaderDesktop logo={null} />)
+    expect(
+      container.querySelector(".umc-header-desktop__logo"),
+    ).toBeEmptyDOMElement()
   })
 
   it("navItems가 없으면 nav 요소를 렌더하지 않는다", () => {
-    render(<Header logo={<span>UMC</span>} />)
+    render(<HeaderDesktop logo={<span>UMC</span>} />)
     expect(screen.queryByRole("navigation")).not.toBeInTheDocument()
   })
 
@@ -83,7 +92,7 @@ describe("Header", () => {
     }
     render(
       <LinkProvider component={CustomLink}>
-        <Header
+        <HeaderDesktop
           logo={<span>UMC</span>}
           navItems={navItems}
           currentPath="/about"
@@ -97,7 +106,7 @@ describe("Header", () => {
   })
 
   it("nav 요소에 aria-label이 있다", () => {
-    render(<Header logo={<span>UMC</span>} navItems={navItems} />)
+    render(<HeaderDesktop logo={<span>UMC</span>} navItems={navItems} />)
     expect(screen.getByRole("navigation")).toHaveAccessibleName(
       "메인 내비게이션",
     )
