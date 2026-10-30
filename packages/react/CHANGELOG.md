@@ -1,5 +1,13 @@
 # @umc-product/react
 
+## 0.11.1 (2026-10-30)
+
+### Patch Changes
+
+- f3b28cb: **화면 변화** 선택 목록의 위치(Select): 목록이 버튼보다 넓을 때 버튼 왼쪽 끝에 맞춰 열립니다 (가운데 정렬 → 왼쪽 정렬). 학교명처럼 긴 옵션이 있으면 목록이 버튼 양옆으로 반씩 튀어나와 버튼 왼쪽과 어긋났습니다. `Select`의 목록 위치를 `Menu`, `ContextSwitcher`와 같은 `align="start"`로 맞춥니다. 목록이 버튼 폭과 같으면 화면은 그대로입니다.
+- @umc-product/design-tokens@0.11.1
+  - @umc-product/icons@0.11.1
+
 ## 0.11.0 (2026-10-30)
 
 ### Minor Changes
