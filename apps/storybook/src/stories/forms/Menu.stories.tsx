@@ -47,3 +47,21 @@ export const Opened: Story = {
     await userEvent.keyboard("{ArrowDown}")
   },
 }
+
+export const InlineCaption: Story = {
+  tags: ["!autodocs"],
+  args: {
+    title: undefined,
+    size: "xs",
+    layout: "inline",
+    items: [
+      { label: "CSV", caption: ".csv", onClick: fn() },
+      { label: "엑셀", caption: ".xlsx", onClick: fn() },
+      { label: "PDF", caption: ".pdf", onClick: fn(), disabled: true },
+    ],
+  },
+  play: async ({ canvasElement }) => {
+    await userEvent.click(within(canvasElement).getByRole("button"))
+    await userEvent.keyboard("{ArrowDown}")
+  },
+}

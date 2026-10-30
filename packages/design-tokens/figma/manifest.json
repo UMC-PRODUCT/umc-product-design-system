@@ -75,9 +75,9 @@
     {
       "file": "export/token.mode-1.tokens.json",
       "tool": "Figma Variables Export modes (Token 컬렉션)",
-      "originalName": "Mode 1.tokens 2.json",
-      "fetchedAt": "2026-10-08",
-      "sha256": "d4ae9e0c0ec5a3e911f9f52db7581fbadd98d9d32f578c0079e9bb0941660605"
+      "originalName": "Mode 1.tokens.json",
+      "fetchedAt": "2026-10-30",
+      "sha256": "7d685ea255d09813cd2f0bc0677a3184dd128f213360e2bcad94e11ae1f26835"
     }
   ]
 }

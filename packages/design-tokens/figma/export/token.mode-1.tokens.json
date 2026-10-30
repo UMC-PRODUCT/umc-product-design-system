@@ -1,7 +1,7 @@
 {
   "Label": {
     "$type": "string",
-    "$value": "Label",
+    "$value": "라벨",
     "$extensions": {
       "com.figma.variableId": "VariableID:2559:3012",
       "com.figma.scopes": [
@@ -185,7 +185,6 @@
           "$value": "Pretendard Variable",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7725",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "FONT_FAMILY"
             ],
@@ -199,7 +198,6 @@
           "$value": "Regular",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7723",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "FONT_STYLE"
             ],
@@ -211,7 +209,6 @@
           "$value": "Medium",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7722",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "FONT_STYLE"
             ],
@@ -223,7 +220,6 @@
           "$value": "Semibold",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7724",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "FONT_STYLE"
             ],
@@ -235,7 +231,6 @@
           "$value": "Bold",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7721",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "FONT_STYLE"
             ],
@@ -251,120 +246,112 @@
         "$type": "number",
         "$value": 0,
         "$extensions": {
-          "com.figma.variableId": "VariableID:2066:7693",
-          "com.figma.hiddenFromPublishing": true
+          "com.figma.variableId": "VariableID:2066:7693"
         }
       },
       "2": {
         "$type": "number",
         "$value": 2,
         "$extensions": {
-          "com.figma.variableId": "VariableID:2066:7744",
-          "com.figma.hiddenFromPublishing": true
+          "com.figma.variableId": "VariableID:2066:7744"
         }
       },
       "4": {
         "$type": "number",
         "$value": 4,
         "$extensions": {
-          "com.figma.variableId": "VariableID:2066:7689",
-          "com.figma.hiddenFromPublishing": true
+          "com.figma.variableId": "VariableID:2066:7689"
         }
       },
       "6": {
         "$type": "number",
         "$value": 6,
         "$extensions": {
-          "com.figma.variableId": "VariableID:2066:7668",
-          "com.figma.hiddenFromPublishing": true
+          "com.figma.variableId": "VariableID:2066:7668"
         }
       },
       "8": {
         "$type": "number",
         "$value": 8,
         "$extensions": {
-          "com.figma.variableId": "VariableID:2066:7687",
-          "com.figma.hiddenFromPublishing": true
+          "com.figma.variableId": "VariableID:2066:7687"
         }
       },
       "10": {
         "$type": "number",
         "$value": 10,
         "$extensions": {
-          "com.figma.variableId": "VariableID:2066:7658",
-          "com.figma.hiddenFromPublishing": true
+          "com.figma.variableId": "VariableID:2066:7658"
         }
       },
       "12": {
         "$type": "number",
         "$value": 12,
         "$extensions": {
-          "com.figma.variableId": "VariableID:2066:7657",
-          "com.figma.hiddenFromPublishing": true
+          "com.figma.variableId": "VariableID:2066:7657"
         }
       },
       "16": {
         "$type": "number",
         "$value": 16,
         "$extensions": {
-          "com.figma.variableId": "VariableID:2066:7676",
-          "com.figma.hiddenFromPublishing": true
+          "com.figma.variableId": "VariableID:2066:7676"
         }
       },
       "20": {
         "$type": "number",
         "$value": 20,
         "$extensions": {
-          "com.figma.variableId": "VariableID:2066:7667",
-          "com.figma.hiddenFromPublishing": true
+          "com.figma.variableId": "VariableID:2066:7667"
         }
       },
       "24": {
         "$type": "number",
         "$value": 24,
         "$extensions": {
-          "com.figma.variableId": "VariableID:2066:7697",
-          "com.figma.hiddenFromPublishing": true
+          "com.figma.variableId": "VariableID:2066:7697"
         }
       },
       "28": {
         "$type": "number",
         "$value": 28,
         "$extensions": {
-          "com.figma.variableId": "VariableID:2066:7688",
-          "com.figma.hiddenFromPublishing": true
+          "com.figma.variableId": "VariableID:2066:7688"
         }
       },
       "32": {
         "$type": "number",
         "$value": 32,
         "$extensions": {
-          "com.figma.variableId": "VariableID:2066:7684",
-          "com.figma.hiddenFromPublishing": true
+          "com.figma.variableId": "VariableID:2066:7684"
+        }
+      },
+      "40": {
+        "$type": "number",
+        "$value": 40,
+        "$extensions": {
+          "com.figma.variableId": "VariableID:4898:82449"
         }
       },
       "48": {
         "$type": "number",
         "$value": 48,
         "$extensions": {
-          "com.figma.variableId": "VariableID:2858:68590",
-          "com.figma.hiddenFromPublishing": true
+          "com.figma.variableId": "VariableID:2858:68590"
         }
       },
       "64": {
         "$type": "number",
         "$value": 64,
         "$extensions": {
-          "com.figma.variableId": "VariableID:2066:7672",
-          "com.figma.hiddenFromPublishing": true
+          "com.figma.variableId": "VariableID:2066:7672"
         }
       },
       "80": {
         "$type": "number",
         "$value": 80,
         "$extensions": {
-          "com.figma.variableId": "VariableID:2066:7679",
-          "com.figma.hiddenFromPublishing": true
+          "com.figma.variableId": "VariableID:2066:7679"
         }
       }
     },
@@ -375,7 +362,6 @@
           "$value": "{Spacing.Primitive.0}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2535:8809",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -386,7 +372,6 @@
           "$value": "{Spacing.Primitive.4}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7748",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -397,7 +382,6 @@
           "$value": "{Spacing.Primitive.6}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7756",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -408,7 +392,6 @@
           "$value": "{Spacing.Primitive.8}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7665",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -419,7 +402,6 @@
           "$value": "{Spacing.Primitive.10}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7664",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -430,7 +412,6 @@
           "$value": "{Spacing.Primitive.12}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7681",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -441,7 +422,6 @@
           "$value": "{Spacing.Primitive.16}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7674",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -452,7 +432,6 @@
           "$value": "{Spacing.Primitive.20}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7677",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -463,7 +442,6 @@
           "$value": "{Spacing.Primitive.24}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7662",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -474,7 +452,6 @@
           "$value": "{Spacing.Primitive.28}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7673",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -485,7 +462,26 @@
           "$value": "{Spacing.Primitive.32}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7694",
-            "com.figma.hiddenFromPublishing": true,
+            "com.figma.scopes": [
+              "GAP"
+            ]
+          }
+        },
+        "Padding 40": {
+          "$type": "number",
+          "$value": "{Spacing.Primitive.40}",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:4898:82453",
+            "com.figma.scopes": [
+              "GAP"
+            ]
+          }
+        },
+        "Padding 48": {
+          "$type": "number",
+          "$value": "{Spacing.Primitive.48}",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:4898:82457",
             "com.figma.scopes": [
               "GAP"
             ]
@@ -498,7 +494,6 @@
           "$value": "{Spacing.Primitive.0}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2535:8805",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -509,7 +504,6 @@
           "$value": "{Spacing.Primitive.4}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7678",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -520,7 +514,6 @@
           "$value": "{Spacing.Primitive.6}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7669",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -531,7 +524,6 @@
           "$value": "{Spacing.Primitive.8}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7671",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -542,7 +534,6 @@
           "$value": "{Spacing.Primitive.10}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7670",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -553,7 +544,6 @@
           "$value": "{Spacing.Primitive.12}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7666",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -564,7 +554,6 @@
           "$value": "{Spacing.Primitive.16}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7685",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -575,7 +564,6 @@
           "$value": "{Spacing.Primitive.20}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7682",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -586,7 +574,6 @@
           "$value": "{Spacing.Primitive.24}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7680",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -597,7 +584,6 @@
           "$value": "{Spacing.Primitive.28}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7752",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -608,7 +594,16 @@
           "$value": "{Spacing.Primitive.32}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7691",
-            "com.figma.hiddenFromPublishing": true,
+            "com.figma.scopes": [
+              "GAP"
+            ]
+          }
+        },
+        "Gap 40": {
+          "$type": "number",
+          "$value": "{Spacing.Primitive.40}",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:4898:82461",
             "com.figma.scopes": [
               "GAP"
             ]
@@ -621,7 +616,6 @@
           "$value": "{Spacing.Primitive.0}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2535:8813",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -632,7 +626,16 @@
           "$value": "{Spacing.Primitive.16}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7686",
-            "com.figma.hiddenFromPublishing": true,
+            "com.figma.scopes": [
+              "GAP"
+            ]
+          }
+        },
+        "Margin 20": {
+          "$type": "number",
+          "$value": "{Spacing.Primitive.20}",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:5481:67629",
             "com.figma.scopes": [
               "GAP"
             ]
@@ -643,7 +646,6 @@
           "$value": "{Spacing.Primitive.24}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7661",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -654,7 +656,16 @@
           "$value": "{Spacing.Primitive.32}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7690",
-            "com.figma.hiddenFromPublishing": true,
+            "com.figma.scopes": [
+              "GAP"
+            ]
+          }
+        },
+        "Margin 40": {
+          "$type": "number",
+          "$value": "{Spacing.Primitive.40}",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:4898:82465",
             "com.figma.scopes": [
               "GAP"
             ]
@@ -665,7 +676,6 @@
           "$value": "{Spacing.Primitive.48}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2858:68586",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -676,7 +686,6 @@
           "$value": "{Spacing.Primitive.64}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7731",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -687,7 +696,6 @@
           "$value": "{Spacing.Primitive.80}",
           "$extensions": {
             "com.figma.variableId": "VariableID:2066:7736",
-            "com.figma.hiddenFromPublishing": true,
             "com.figma.scopes": [
               "GAP"
             ]
@@ -703,7 +711,6 @@
         "$value": 6,
         "$extensions": {
           "com.figma.variableId": "VariableID:2547:25220",
-          "com.figma.hiddenFromPublishing": true,
           "com.figma.scopes": [
             "CORNER_RADIUS"
           ]
@@ -714,7 +721,6 @@
         "$value": 8,
         "$extensions": {
           "com.figma.variableId": "VariableID:2559:23238",
-          "com.figma.hiddenFromPublishing": true,
           "com.figma.scopes": [
             "CORNER_RADIUS"
           ]
@@ -725,7 +731,6 @@
         "$value": 10,
         "$extensions": {
           "com.figma.variableId": "VariableID:2066:7794",
-          "com.figma.hiddenFromPublishing": true,
           "com.figma.scopes": [
             "CORNER_RADIUS"
           ]
@@ -736,7 +741,6 @@
         "$value": 12,
         "$extensions": {
           "com.figma.variableId": "VariableID:2066:7792",
-          "com.figma.hiddenFromPublishing": true,
           "com.figma.scopes": [
             "CORNER_RADIUS"
           ]
@@ -747,7 +751,6 @@
         "$value": 14,
         "$extensions": {
           "com.figma.variableId": "VariableID:2066:7787",
-          "com.figma.hiddenFromPublishing": true,
           "com.figma.scopes": [
             "CORNER_RADIUS"
           ]
@@ -758,7 +761,6 @@
         "$value": 16,
         "$extensions": {
           "com.figma.variableId": "VariableID:2066:7785",
-          "com.figma.hiddenFromPublishing": true,
           "com.figma.scopes": [
             "CORNER_RADIUS"
           ]
@@ -769,7 +771,6 @@
         "$value": 18,
         "$extensions": {
           "com.figma.variableId": "VariableID:2066:7783",
-          "com.figma.hiddenFromPublishing": true,
           "com.figma.scopes": [
             "CORNER_RADIUS"
           ]
@@ -780,7 +781,6 @@
         "$value": 20,
         "$extensions": {
           "com.figma.variableId": "VariableID:2066:7786",
-          "com.figma.hiddenFromPublishing": true,
           "com.figma.scopes": [
             "CORNER_RADIUS"
           ]
@@ -791,7 +791,6 @@
         "$value": 24,
         "$extensions": {
           "com.figma.variableId": "VariableID:2066:7781",
-          "com.figma.hiddenFromPublishing": true,
           "com.figma.scopes": [
             "CORNER_RADIUS"
           ]
@@ -802,7 +801,6 @@
         "$value": "48",
         "$extensions": {
           "com.figma.variableId": "VariableID:2107:5809",
-          "com.figma.hiddenFromPublishing": true,
           "com.figma.scopes": [
             "FONT_FAMILY"
           ],
@@ -814,7 +812,6 @@
         "$value": 999,
         "$extensions": {
           "com.figma.variableId": "VariableID:2066:7782",
-          "com.figma.hiddenFromPublishing": true,
           "com.figma.scopes": [
             "CORNER_RADIUS"
           ]
@@ -836,6 +833,17 @@
         }
       },
       "Button": {
+        "R Button 8": {
+          "$type": "number",
+          "$value": "{Radius.Primitive.8}",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:4626:80504",
+            "com.figma.hiddenFromPublishing": true,
+            "com.figma.scopes": [
+              "CORNER_RADIUS"
+            ]
+          }
+        },
         "R Button 10": {
           "$type": "number",
           "$value": "{Radius.Primitive.10}",

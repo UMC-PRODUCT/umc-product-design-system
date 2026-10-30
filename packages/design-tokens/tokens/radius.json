@@ -143,6 +143,16 @@
       }
     },
     "button": {
+      "8": {
+        "$type": "dimension",
+        "$value": "{radius.8}",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Radius/Semantic/Button/R Button 8",
+            "variableId": "VariableID:4626:80504"
+          }
+        }
+      },
       "10": {
         "$type": "dimension",
         "$value": "{radius.10}",

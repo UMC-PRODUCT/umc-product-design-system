@@ -112,6 +112,7 @@
     --umc-spacing-24: 1.5rem;
     --umc-spacing-28: 1.75rem;
     --umc-spacing-32: 2rem;
+    --umc-spacing-40: 2.5rem;
     --umc-spacing-48: 3rem;
     --umc-spacing-64: 4rem;
     --umc-spacing-80: 5rem;
@@ -126,6 +127,8 @@
     --umc-spacing-padding-24: var(--umc-spacing-24);
     --umc-spacing-padding-28: var(--umc-spacing-28);
     --umc-spacing-padding-32: var(--umc-spacing-32);
+    --umc-spacing-padding-40: var(--umc-spacing-40);
+    --umc-spacing-padding-48: var(--umc-spacing-48);
     --umc-spacing-gap-0: var(--umc-spacing-0);
     --umc-spacing-gap-4: var(--umc-spacing-4);
     --umc-spacing-gap-6: var(--umc-spacing-6);
@@ -137,10 +140,13 @@
     --umc-spacing-gap-24: var(--umc-spacing-24);
     --umc-spacing-gap-28: var(--umc-spacing-28);
     --umc-spacing-gap-32: var(--umc-spacing-32);
+    --umc-spacing-gap-40: var(--umc-spacing-40);
     --umc-spacing-margin-0: var(--umc-spacing-0);
     --umc-spacing-margin-16: var(--umc-spacing-16);
+    --umc-spacing-margin-20: var(--umc-spacing-20);
     --umc-spacing-margin-24: var(--umc-spacing-24);
     --umc-spacing-margin-32: var(--umc-spacing-32);
+    --umc-spacing-margin-40: var(--umc-spacing-40);
     --umc-spacing-margin-48: var(--umc-spacing-48);
     --umc-spacing-margin-64: var(--umc-spacing-64);
     --umc-spacing-margin-80: var(--umc-spacing-80);
@@ -156,6 +162,7 @@
     --umc-radius-24: 1.5rem;
     --umc-radius-full: 62.4375rem;
     --umc-radius-text-field-box: var(--umc-radius-14);
+    --umc-radius-button-8: var(--umc-radius-8);
     --umc-radius-button-10: var(--umc-radius-10);
     --umc-radius-button-12: var(--umc-radius-12);
     --umc-radius-button-14: var(--umc-radius-14);

@@ -1561,6 +1561,20 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
+    "name": "spacing.40",
+    "cssVariable": "--umc-spacing-40",
+    "tier": "spacing",
+    "type": "dimension",
+    "value": "40px",
+    "alias": null,
+    "figmaName": "Spacing/Primitive/40",
+    "codeSyntax": null,
+    "utility": null,
+    "tailwindName": null,
+    "vanillaExtract": null,
+    "typography": null
+  },
+  {
     "name": "spacing.48",
     "cssVariable": "--umc-spacing-48",
     "tier": "spacing",
@@ -1757,6 +1771,34 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
+    "name": "spacing.padding.40",
+    "cssVariable": "--umc-spacing-padding-40",
+    "tier": "spacing",
+    "type": "dimension",
+    "value": "40px",
+    "alias": "spacing.40",
+    "figmaName": "Spacing/Semantic/Padding/Padding 40",
+    "codeSyntax": null,
+    "utility": null,
+    "tailwindName": null,
+    "vanillaExtract": null,
+    "typography": null
+  },
+  {
+    "name": "spacing.padding.48",
+    "cssVariable": "--umc-spacing-padding-48",
+    "tier": "spacing",
+    "type": "dimension",
+    "value": "48px",
+    "alias": "spacing.48",
+    "figmaName": "Spacing/Semantic/Padding/Padding 48",
+    "codeSyntax": null,
+    "utility": null,
+    "tailwindName": null,
+    "vanillaExtract": null,
+    "typography": null
+  },
+  {
     "name": "spacing.gap.0",
     "cssVariable": "--umc-spacing-gap-0",
     "tier": "spacing",
@@ -1911,6 +1953,20 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
+    "name": "spacing.gap.40",
+    "cssVariable": "--umc-spacing-gap-40",
+    "tier": "spacing",
+    "type": "dimension",
+    "value": "40px",
+    "alias": "spacing.40",
+    "figmaName": "Spacing/Semantic/Gap/Gap 40",
+    "codeSyntax": null,
+    "utility": null,
+    "tailwindName": null,
+    "vanillaExtract": null,
+    "typography": null
+  },
+  {
     "name": "spacing.margin.0",
     "cssVariable": "--umc-spacing-margin-0",
     "tier": "spacing",
@@ -1939,6 +1995,20 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "typography": null
   },
   {
+    "name": "spacing.margin.20",
+    "cssVariable": "--umc-spacing-margin-20",
+    "tier": "spacing",
+    "type": "dimension",
+    "value": "20px",
+    "alias": "spacing.20",
+    "figmaName": "Spacing/Semantic/Margin/Margin 20",
+    "codeSyntax": null,
+    "utility": null,
+    "tailwindName": null,
+    "vanillaExtract": null,
+    "typography": null
+  },
+  {
     "name": "spacing.margin.24",
     "cssVariable": "--umc-spacing-margin-24",
     "tier": "spacing",
@@ -1960,6 +2030,20 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "32px",
     "alias": "spacing.32",
     "figmaName": "Spacing/Semantic/Margin/Margin 32",
+    "codeSyntax": null,
+    "utility": null,
+    "tailwindName": null,
+    "vanillaExtract": null,
+    "typography": null
+  },
+  {
+    "name": "spacing.margin.40",
+    "cssVariable": "--umc-spacing-margin-40",
+    "tier": "spacing",
+    "type": "dimension",
+    "value": "40px",
+    "alias": "spacing.40",
+    "figmaName": "Spacing/Semantic/Margin/Margin 40",
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,
@@ -2156,6 +2240,20 @@ export const tokenManifest: readonly TokenManifestEntry[] = [
     "value": "14px",
     "alias": "radius.14",
     "figmaName": "Radius/Semantic/Text Field/Box",
+    "codeSyntax": null,
+    "utility": null,
+    "tailwindName": null,
+    "vanillaExtract": null,
+    "typography": null
+  },
+  {
+    "name": "radius.button.8",
+    "cssVariable": "--umc-radius-button-8",
+    "tier": "radius",
+    "type": "dimension",
+    "value": "8px",
+    "alias": "radius.8",
+    "figmaName": "Radius/Semantic/Button/R Button 8",
     "codeSyntax": null,
     "utility": null,
     "tailwindName": null,

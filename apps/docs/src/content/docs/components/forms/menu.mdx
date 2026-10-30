@@ -6,6 +6,7 @@ description: 버튼을 눌러 여는 동작 목록입니다.
 import {
   DropdownItemAllVariants,
   MenuDefault,
+  MenuInline,
   MenuListAllVariants,
   MenuSizes,
   MenuWithTitle,
@@ -43,9 +44,15 @@ import { Button, Menu } from "@umc-product/react"
 
 <MenuSizes client:visible />
 
+## 캡션
+
+항목에 `caption`을 넘기면 레이블 아래에 작은 회색 글씨가 붙습니다. `size="xs"`에서 `layout="inline"`을 넘기면 캡션이 같은 줄 오른쪽 끝으로 갑니다. 피그마 `Layout=Inline`이 Xs 크기에만 있어서 다른 `size`와 함께 쓰면 타입 오류가 납니다.
+
+<MenuInline client:visible />
+
 ## 모든 변형
 
-피그마 `Meue List` 변형 2개와 `.primitve/Meue Item/Text Only` 변형 12개를 그렸습니다. 목록은 열려 있을 때만 보이므로 펼친 모습을 고정해 그렸습니다. 항목은 Select 목록도 같이 씁니다. 칸에 마우스를 올리면 코드가 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
+피그마 `Meue List` 변형 2개와 `.primitve/Meue Item/Text Only` 변형 16개를 그렸습니다. 목록은 열려 있을 때만 보이므로 펼친 모습을 고정해 그렸습니다. 항목은 Select 목록과 헤더 프로필 메뉴의 기수 목록도 같이 씁니다. Selected 칸의 코드는 고른 상태를 남기는 Select로 보여 줍니다. 칸에 마우스를 올리면 코드가 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
 
 <MenuListAllVariants />
 
@@ -53,12 +60,13 @@ import { Button, Menu } from "@umc-product/react"
 
 ## props
 
-| prop      | 타입                   | 기본값 | 설명                               |
-| --------- | ---------------------- | ------ | ---------------------------------- |
-| `trigger` | `ReactElement`         | 없음   | 목록을 여는 요소. 버튼 요소여야 함 |
-| `items`   | `MenuItemDef[]`        | 없음   | `label`, `onClick`, `disabled`     |
-| `title`   | `ReactNode`            | 없음   | 항목 위에 두는 타이틀              |
-| `size`    | `"xs" \| "sm" \| "md"` | `"sm"` | 항목 크기와 목록 최소 폭           |
+| prop      | 타입                    | 기본값      | 설명                                      |
+| --------- | ----------------------- | ----------- | ----------------------------------------- |
+| `trigger` | `ReactElement`          | 없음        | 목록을 여는 요소. 버튼 요소여야 함        |
+| `items`   | `MenuItemDef[]`         | 없음        | `label`, `caption`, `onClick`, `disabled` |
+| `title`   | `ReactNode`             | 없음        | 항목 위에 두는 타이틀                     |
+| `size`    | `"xs" \| "sm" \| "md"`  | `"sm"`      | 항목 크기와 목록 최소 폭                  |
+| `layout`  | `"default" \| "inline"` | `"default"` | 캡션 자리. `inline`은 `size="xs"`에서만   |
 
 ## 알아 둘 점
 

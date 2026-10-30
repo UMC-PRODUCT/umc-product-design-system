@@ -109,8 +109,8 @@ describe("normalizeVariables: 피그마 export 전체", () => {
       "color.semantic.json": 152,
       "color.primitive.json": 78,
       "font.json": 20,
-      "spacing.json": 44,
-      "radius.json": 17,
+      "spacing.json": 50,
+      "radius.json": 18,
     })
   })
 
@@ -126,6 +126,9 @@ describe("normalizeVariables: 피그마 export 전체", () => {
     ["color.dimmed.weak", "#0f101033"],
     ["color.dimmed.strong", "#0f1010d9"],
     ["spacing.margin.16", "{spacing.16}"],
+    ["spacing.margin.20", "{spacing.20}"],
+    ["spacing.gap.40", "{spacing.40}"],
+    ["radius.button.8", "{radius.8}"],
     ["radius.button.12", "{radius.12}"],
     ["radius.toast", "{radius.14}"],
     ["font-weight.semibold", 600],

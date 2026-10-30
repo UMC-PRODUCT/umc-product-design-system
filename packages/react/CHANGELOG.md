@@ -1,6 +1,6 @@
 # @umc-product/react
 
-## 0.11.0 (2026-10-28)
+## 0.11.0 (2026-10-30)
 
 ### Minor Changes
 
@@ -16,6 +16,8 @@
 
 - 5df4b4a: 모바일 웹 헤더 `HeaderMobile`을 추가합니다. 피그마 `Web/Header/Mobile`과 primitive `Actions-Mobile`, `Menu Container`, `Menu Item`을 옮긴 것으로, 80px 줄에 홈 링크와 메뉴 버튼을 두고 버튼을 누르면 헤더 아래에 메뉴를 겹쳐 펼칩니다. 메뉴에는 데스크톱 헤더와 같은 `navItems`(20px 항목)와 `actions`(CTA 버튼 자리)가 들어가고, 항목을 누르거나 `Esc`, 바깥을 누르면 닫힙니다. 열림 상태는 `open`, `defaultOpen`, `onOpenChange`로 다루고, 다크 모드는 피그마대로 투명한 줄과 `#0d1a19` 메뉴 배경을 씁니다.
 - eca2783: 앱 상단 내비게이션(App/Top Navigation)에 부제 `subtitle`이 생깁니다. 피그마 `Subtitle` 스위치를 옮긴 것으로, `TopNavigation`에 `titleAlign="center"`와 `subtitle`을 넘기면 제목 아래에 12px 부제(`Caption/3-Regular`, teal-grey-500)를 그립니다. 피그마의 왼쪽 정렬 변형에는 부제가 없어 `titleAlign="start"`에서는 타입이 `subtitle`을 받지 않습니다. `title`은 선택 값이 되어, 제목 없이 뒤로 가기 버튼만 둔 줄도 그릴 수 있습니다.
+- 0b441a8: 웹 헤더의 프로필(Web/Header/Profile Menu): 로그인한 사용자의 아바타와 프로필 메뉴가 생깁니다 (없음 → `HeaderProfileMenu`). 피그마 `.primitive/Web/Header/Profile`과 `Web/Header/Profile Menu`를 옮겼습니다. 40px 원형 아바타(사진이 없으면 기본 사람 그림)를 누르면 닉네임, 이름, 학교, 역할 태그, 기수 목록, 계정 설정, 로그아웃을 담은 메뉴가 열립니다. 메뉴는 피그마 예시 화면대로 아바타 바로 아래에 붙고 오른쪽 끝이 아바타보다 4px 바깥에 놓입니다. 기수는 `generations`, `generation`, `onGenerationChange`로 하나를 고르고, 고르는 즉시 메뉴가 닫힙니다. `HeaderDesktop`의 `actions` 맨 끝에 둡니다.
+- 1ad9791: 메뉴와 선택 목록의 Xs 항목(Meue Item): 캡션을 레이블과 같은 줄 오른쪽 끝에 두는 배치가 생깁니다 (캡션은 레이블 아래 → Inline 배치 추가). 피그마 `.primitve/Meue Item/Text Only`에 더해진 `Layout=Inline`을 옮겼습니다. `Select`에 `itemSize="xs"`와 `itemLayout="inline"`을, `Menu`에 `size="xs"`와 `layout="inline"`을 넘기면 캡션이 10px 회색 글씨로 같은 줄 끝에 붙습니다. 고른 항목은 체크가 레이블 앞으로 오고 좌우 여백이 8px, 캡션이 teal-500이 됩니다. 피그마처럼 Xs 크기에서만 타입이 Inline을 받습니다. `Menu` 항목(`MenuItemDef`)에도 `caption`이 생겨 기본 배치에서는 레이블 아래에 그립니다.
 
 ### Patch Changes
 
@@ -25,7 +27,8 @@
 - 5a4c04d: **화면 변화** 밑줄 입력의 레이블과 입력 칸(Text Field/Line): 둘 사이 간격이 사라져 레이블이 입력 칸에 바로 붙습니다 (6px → 0). 피그마 `Text Field/Line`이 레이블과 입력 칸을 `Label+Text Field` 묶음으로 바꾸고 묶음 안 간격을 0으로 둔 것을 따라 `TextFieldLine`의 루트 간격을 0으로 두고 도움말과 오류 문구 위에만 6px을 줍니다. 입력 칸과 도움말 사이 6px은 그대로입니다.
 - 7cd28e7: **화면 변화** 앱 상단 내비게이션의 뒤로 가기 아이콘(App/Top Navigation): 아래 화살표가 왼쪽 화살표로 바뀝니다 (`ExpandMoreIcon` → `ChevronLeftIcon`). 피그마 `App/Top Navigation`의 뒤로 가기 버튼이 `Icon/Chevron_Left`(Fill)를 쓰게 바뀐 것을 따라 `TopNavigation`의 `back` 버튼 아이콘을 바꿉니다. 버튼 이름 "뒤로 가기"와 크기는 바뀌지 않습니다.
 - a23cb8a: **화면 변화** 앱 상단 내비게이션의 가운데 제목(App/Top Navigation): 글자색이 짙어집니다 (`#606262` → `#0f1010`). 피그마 가운데 정렬 변형의 제목 색이 `color/text/default`로 바뀐 것을 따라 `TopNavigation`의 가운데 제목이 왼쪽 정렬 제목과 같은 색을 씁니다. 가운데 제목에만 쓰던 컴포넌트 변수 `--umc-top-navigation-sub-title-color`는 `--umc-top-navigation-subtitle-color`로 이름을 바꿔 부제 색(teal-grey-500)에 씁니다.
-- @umc-product/design-tokens@0.11.0
+- Updated dependencies [f65950f]
+  - @umc-product/design-tokens@0.11.0
   - @umc-product/icons@0.11.0
 
 ## 0.10.0 (2026-10-26)

@@ -53,6 +53,37 @@
         "line-height": "22.5px",
         "letter-spacing": "-0.15px"
       }
+    },
+    {
+      "specId": "menu-item-inline",
+      "interaction": "open",
+      "node": "5641:85574",
+      "variant": ".primitve/Meue Item/Text Only, Size=Xs, State=Default, Layout=Inline",
+      "target": ".umc-dropdown-item[data-layout=\"inline\"]:not([data-highlighted])",
+      "expected": {
+        "padding-top": "4px",
+        "padding-right": "8px",
+        "padding-bottom": "4px",
+        "padding-left": "12px",
+        "color": "#0f1010",
+        "font-size": "14px",
+        "font-weight": "400",
+        "line-height": "21px"
+      }
+    },
+    {
+      "specId": "menu-item-inline-caption",
+      "interaction": "open",
+      "node": "5641:85683",
+      "variant": ".primitve/Meue Item/Text Only, Size=Xs, State=Default, Layout=Inline 안의 caption",
+      "target": ".umc-dropdown-item[data-layout=\"inline\"]:not([data-highlighted]) .umc-dropdown-item__caption",
+      "expected": {
+        "color": "#adadad",
+        "font-size": "10px",
+        "font-weight": "500",
+        "line-height": "15px",
+        "text-align": "end"
+      }
     }
   ]
 }

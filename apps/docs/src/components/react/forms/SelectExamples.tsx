@@ -127,6 +127,33 @@ export function SelectSearchable() {
   )
 }
 
+const GENERATIONS: SelectOption[] = [
+  { value: "11", label: "11기", caption: "2026" },
+  { value: "10", label: "10기", caption: "2026" },
+  { value: "9", label: "9기", caption: "2025" },
+  { value: "8", label: "8기", caption: "2025" },
+]
+
+export function SelectInline() {
+  return (
+    <div className="umc-example umc-example-stack">
+      <div
+        className="w-full max-w-[200px]"
+        data-spec-id="select-item-inline-selected select-item-inline-selected-label select-item-inline-selected-caption"
+      >
+        <Select
+          label="기수"
+          size="md"
+          itemSize="xs"
+          itemLayout="inline"
+          options={GENERATIONS}
+          defaultValue="11"
+        />
+      </div>
+    </div>
+  )
+}
+
 export function SelectStates() {
   return (
     <div className="umc-example umc-example-stack">

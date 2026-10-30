@@ -27,6 +27,13 @@ export {
   type HeaderActionButtonProps,
 } from "./header-action-button/HeaderActionButton.tsx"
 export {
+  HeaderProfileMenu,
+  type HeaderProfileMenuGeneration,
+  type HeaderProfileMenuProfile,
+  type HeaderProfileMenuProps,
+  type HeaderProfileMenuRole,
+} from "./header-profile-menu/HeaderProfileMenu.tsx"
+export {
   SideNavigation,
   type SideNavigationGroup,
   type SideNavigationItem,

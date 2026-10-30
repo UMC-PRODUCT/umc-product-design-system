@@ -2,7 +2,7 @@
 
 - 독자: 3기 디자인 팀, 웹 파트
 - 소유자: UMC PRODUCT Design Chapter
-- 기준일: 2026-10-28
+- 기준일: 2026-10-29
 
 문서 사이트에는 싣지 않는 작업 목록입니다.
 
@@ -35,6 +35,8 @@
 2026-10-08에 `Label/3-Medium` 자간이 -3%로 바뀐 것을 반영했습니다. 같은 날 `Color` 컬렉션을 Export modes로 다시 받아 바뀐 이름 38개를 코드 이름에 맞췄습니다. `Fill/Neutral/Stronger-300`과 `Stronger-Hover(Pressed)`는 새로 넣었고, 빠진 `Surface/Disabled`는 토큰에서도 뺐습니다(코드에서 쓰는 곳 없음). 값이 바뀐 변수는 없습니다. `Token` 컬렉션은 이전 스냅샷과 같습니다.
 
 2026-10-24에 캡션 스타일 번호가 한 칸씩 밀린 것을 반영해 코드 토큰 이름도 피그마를 따라 바꿨습니다. 14px `Caption/1-Regular`가 새로 생겼고, 13px·12px·11px 스타일은 `Caption/2`·`Caption/3`·`Caption/4`가 되었습니다. `Caption/1-Regular`는 타이포그래피 문서 프레임에 아직 없어 `Help Text`에서 읽었습니다. 문서 프레임 표의 이름표도 예전 번호인 Caption 1·2·3 그대로입니다.
+
+2026-10-30에 `Token` 컬렉션을 다시 받아 새 변수 7개를 토큰으로 넣었습니다. 간격은 `Spacing/Primitive/40`, `Padding 40`, `Padding 48`, `Gap 40`, `Margin 20`, `Margin 40`, 모서리는 `Button/R Button 8`입니다. 값이 바뀌거나 빠진 변수는 없지만 아직 이 변수를 쓰는 컴포넌트도 없습니다. Icon Button의 8px 모서리는 `Radius/Primitive/8`, App/Page Header의 20px 여백은 `Padding 20`에 연결되어 있고 Side Navigation 하위 메뉴의 48px 들여쓰기는 변수에 연결되어 있지 않습니다. 새 변수로 다시 연결할 컴포넌트가 있으면 알려 주세요. 연결되면 코드도 같은 토큰으로 바꾸겠습니다.
 
 상태 글자색 세 개가 작은 글자의 대비 기준(WCAG AA 4.5:1)에 못 미칩니다.
 
@@ -163,6 +165,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 21. Progress Summary 퍼센트 글자에 붙은 스타일 이름은 `Label/1-Semibold`인데, 값(16px, 줄 높이 1.4, 자간 -2%)은 3기 `Label/3-Semibold`와 같습니다. 3기 `Label/1-Semibold`는 18px입니다. 코드는 값을 따라 `Label/3-Semibold`를 씁니다. 윗줄과 막대 사이 간격 5px은 이름 없는 값이라 컴포넌트 변수로 둡니다.
 22. Progress Summary 변형 속성 이름이 기본값 `Property 1`이고, 막대 자리가 Slot입니다. 코드는 개수를 받아 막대를 직접 그립니다. 막대 말고 다른 내용을 넣는 화면이 있는지 알려 주세요.
 23. Progress Summary 퍼센트 규칙은 코드에서 정했습니다. 반올림하되 끝나지 않았으면 99%에서 멈추고, 하나라도 마쳤으면 1%부터 보여 줍니다. 피그마 예시는 `(16/42)` 옆에 32%를 적었는데, 코드는 개수로 계산한 38%를 씁니다. 긴 라벨은 말줄임표로 자르고 퍼센트와 최소 8px을 띄웠습니다(피그마에는 규칙 없음). 다른 규칙을 원하면 알려 주세요.
+24. 프로필 메뉴 안의 Tag/Role Md(2621:36193)는 좌우 7px, 위 1px, 줄 높이 1.35입니다. 코드 `RoleTag` Md는 좌우 6px, 줄 높이 1.45라 태그 폭이 2~3px 좁습니다. Tag/Role 값이 바뀐 것이면 알려 주세요. RoleTag는 이번 작업에서 고치지 않았습니다.
 
 ## 오버레이와 피드백
 
@@ -213,7 +216,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 
 1. Header 다크 모드 hover 글자색 `#02746c`는 어두운 배경 위에서 대비가 낮습니다. 랜딩 배경 이미지 위에서 읽히는지 확인해 주세요.
 2. Header 다크 모드 선택 항목은 1px 테두리와 좌우 16px입니다. 선택이 바뀔 때 폭이 흔들리지 않도록 코드는 18px 패딩과 inset 그림자를 씁니다.
-3. Header의 `Profile`(원형 아바타)은 기본 아바타 이미지가 정해지지 않아 아직 컴포넌트로 만들지 않았습니다. 기본 이미지를 패키지에 넣을지 알려 주세요. `Action Button`은 `HeaderActionButton`, `Home Link`는 `HeaderHomeLink`로 만들었습니다. 2026-10-12에 기수 선택을 프로필 드롭다운으로 옮긴다고 들었습니다. 문서 예시에서는 사이드 내비게이션 슬롯의 기수 전환을 뺐습니다. 드롭다운을 만들려면 펼친 목록의 항목, 열림 모양, 기본 아바타 디자인이 필요합니다.
+3. Header의 `Profile`(원형 아바타)은 기본 아바타 이미지가 정해지지 않아 아직 컴포넌트로 만들지 않았습니다. 기본 이미지를 패키지에 넣을지 알려 주세요. `Action Button`은 `HeaderActionButton`, `Home Link`는 `HeaderHomeLink`로 만들었습니다. 2026-10-12에 기수 선택을 프로필 드롭다운으로 옮긴다고 들었습니다. 문서 예시에서는 사이드 내비게이션 슬롯의 기수 전환을 뺐습니다. 드롭다운을 만들려면 펼친 목록의 항목, 열림 모양, 기본 아바타 디자인이 필요합니다. (해결 2026-10-29) 피그마에 `.primitive/Web/Header/Profile`(40px, 기본 사람 그림)과 `Web/Header/Profile Menu`가 생겨 코드도 `HeaderProfileMenu`로 만들었습니다. 기본 그림은 패키지 안 SVG로 넣었고 기수 선택은 메뉴 안 목록으로 옮겼습니다.
 4. Side Navigation 그룹은 피그마 설명대로라면 누르면 첫 하위 페이지로 이동합니다. 코드는 펼침과 접힘만 맡습니다. 접으려고 누를 때도 페이지가 바뀌는 문제 때문입니다. 이동이 꼭 필요한지 알려 주세요.
 5. Side Navigation 그룹에 펼침 여부를 알리는 표시(화살표 등)가 없습니다. 그대로 둘지 알려 주세요. 하위 메뉴의 hover 상태도 없습니다.
 6. Side Navigation 오른쪽 경계선이 `Type=Default`는 `#e9ecec`, `Type=With Slot`은 `#e2e3e3`입니다. `#e2e3e3`으로 통일했습니다.
@@ -237,7 +240,11 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 24. Web/Header/Mobile은 헤더 아래로 펼친 모습만 있습니다. 코드는 메뉴를 본문 위에 겹쳐 띄우고(본문이 밀리지 않음), 항목을 누르거나 `Esc`나 바깥을 누르면 닫습니다. 본문을 밀어내야 하는지, 열고 닫을 때 움직임이 필요한지 알려 주세요.
 25. 모바일 메뉴 버튼은 34px 아이콘 그대로라 누르는 영역이 권장 크기 44px보다 작습니다. 넓혀도 되는지 알려 주세요.
 26. 라이트 메뉴를 펼친 모습(5572:81765)은 `Shadow/Drop/Neutral_2`(`#eff0f080`)를 씁니다. 같은 이름의 토큰은 `#eceeee85`라 코드는 토큰 값을 씁니다.
-27. Web/Header/Mobile에는 로그인 상태(프로필, 로그인 버튼)와 홈 링크 맥락(Operation, Study 등) 변형이 없고, 문서의 "권한별 헤더 4종"도 아직 정의되지 않았습니다. 코드는 Desktop처럼 `logo`와 `actions` 슬롯으로 열어 두었습니다.
+27. Web/Header/Mobile에는 로그인 상태(프로필, 로그인 버튼)와 홈 링크 맥락(Operation, Study 등) 변형이 없고, 문서의 "권한별 헤더 4종"도 아직 정의되지 않았습니다. 코드는 Desktop처럼 `logo`와 `actions` 슬롯으로 열어 두었습니다. 2026-10-29에 생긴 프로필 메뉴도 Desktop에만 있습니다.
+28. 프로필 아바타 배경 `#e9ecec`와 기본 사람 그림 `#656b6b`는 변수에 연결되지 않았고 3기 팔레트에도 없습니다. 배경은 Skeleton, Image Thumbnail과 같은 값입니다. 코드는 컴포넌트 변수로 둡니다. 이름 있는 색으로 연결할지 알려 주세요.
+29. 프로필 메뉴의 열고 닫는 움직임, 아바타 버튼의 hover와 포커스, 계정 설정과 로그아웃의 hover가 없습니다. 코드는 움직임 없이 열고 닫으며 아바타 버튼에 다른 헤더 항목과 같은 2px 포커스 외곽선을 둡니다. 계정 설정과 로그아웃은 마우스를 올리거나 키보드로 옮기면 밑줄을 긋습니다. 원하는 모양을 알려 주세요.
+30. 사진이 있는 프로필 모양이 없습니다. 코드는 사진을 원 안에 꽉 채워 자릅니다(`object-fit: cover`). 테두리나 불러오는 동안의 자리 표시가 필요한지 알려 주세요.
+31. 프로필 메뉴 예시 가운데 Admin과 Product 역할만 기수 목록 이름이 "기수"이고 나머지는 "기수 변경"입니다. 역할에 따라 글귀가 바뀌는 규칙인지 알려 주세요. 코드는 기본값을 "기수 변경"으로 두고 `generationLabel`로 바꿀 수 있게 했습니다.
 
 ## 폼
 
@@ -272,6 +279,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 29. 같은 상태를 `Text Field/Line/Field`는 `Typed`, `Text Field/Box/Field`는 `Filled`로 부르고, 같은 종류를 `Selector`와 `Select`로 부릅니다. 코드는 Selector를 `Select`의 `shape="line"`으로 옮겼습니다. 이름을 한쪽으로 맞출지 알려 주세요. Line의 Disabled 레이블은 Default 색(#544f4b)인데 Box는 비활성 색이라, 코드는 Box와 같게 두었습니다.
 30. 2026-10-25에 `Text Field/Box/Field`의 오류 배경이 Red-50 100%에서 30%(`rgba(254, 242, 241, 0.3)`)로 바뀌었습니다. 투명도 색 체계가 아직 없어 코드는 `#fef2f14d`를 컴포넌트 변수(`--umc-text-field-box-field-error-bg`, `--umc-select-error-bg`)로 둡니다. Opacity Color System이 정해지면 토큰으로 바꾸겠습니다. `Select`, `TextFieldArea`, `VerificationCodeField`는 같은 상자라 함께 바뀌었고, `Input Box/Code Input/ Cell`의 오류 배경(60%)과 Icon Button Weak Error 배경(100%)은 그대로입니다.
 31. 2026-10-25에 `Text Field/ Code Input`에 `Size=Md`(칸 42px, 모서리 12px, 글자 `Title/1-Semibold` 22px, 칸 간격 6px)가 생겨 `CodeField`에 `size="md"`를 더했습니다. 칸 컴포넌트 `Input Box/Code Input/ Cell`에는 아직 Lg만 있고, Md 칸은 인스턴스에서 크기를 덮어쓴 것입니다. 칸 컴포넌트에도 Md 변형을 둘지 알려 주세요.
+32. `.primitve/Meue Item/Text Only`에 `Layout=Inline`(Xs만)이 생겨 Menu의 `layout`, Select의 `itemLayout`으로 옮겼습니다. Inline Disabled는 레이블이 `#cccccc`인데 캡션은 `#adadad`로 레이블보다 진합니다. 기본 배치는 비활성 캡션도 `#cccccc`입니다. 코드는 피그마대로 Inline만 `#adadad`를 씁니다. 의도한 값인지 알려 주세요.
 
 ## 질문지
 
