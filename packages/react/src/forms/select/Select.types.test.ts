@@ -24,4 +24,23 @@ describe("Select 제네릭 타입", () => {
       "xs" | "sm" | "md" | undefined
     >()
   })
+
+  it("itemLayout은 default와 inline만 받는다", () => {
+    expectTypeOf<SelectProps["itemLayout"]>().toEqualTypeOf<
+      "default" | "inline" | undefined
+    >()
+  })
+
+  it("inline 배치는 피그마처럼 Xs 항목에서만 받는다", () => {
+    expectTypeOf<{
+      options: SelectOption[]
+      itemSize: "sm"
+      itemLayout: "inline"
+    }>().not.toMatchTypeOf<SelectProps>()
+    expectTypeOf<{
+      options: SelectOption[]
+      itemSize: "xs"
+      itemLayout: "inline"
+    }>().toMatchTypeOf<SelectProps>()
+  })
 })

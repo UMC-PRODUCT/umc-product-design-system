@@ -15,28 +15,68 @@ export type SelectOption<V extends string = string> = {
   disabled?: boolean
 }
 
-export type SelectProps<V extends string = string> = FieldOwnProps & {
-  options: SelectOption<V>[]
-  value?: V | null
-  defaultValue?: V | null
-  onValueChange?: (value: V | null) => void
-  placeholder?: ReactNode
-  size?: "lg" | "md"
-  itemSize?: "xs" | "sm" | "md"
-  variant?: "default" | "filter"
-  shape?: "box" | "line"
-  searchable?: boolean
-  searchPlaceholder?: string
-  disabled?: boolean
-  name?: string
-  className?: string
-  "aria-label"?: string
-}
+type SelectItemLayoutProps =
+  | { itemSize?: "xs" | "sm" | "md"; itemLayout?: "default" }
+  | { itemSize: "xs"; itemLayout: "inline" }
+
+export type SelectProps<V extends string = string> = FieldOwnProps &
+  SelectItemLayoutProps & {
+    options: SelectOption<V>[]
+    value?: V | null
+    defaultValue?: V | null
+    onValueChange?: (value: V | null) => void
+    placeholder?: ReactNode
+    size?: "lg" | "md"
+    variant?: "default" | "filter"
+    shape?: "box" | "line"
+    searchable?: boolean
+    searchPlaceholder?: string
+    disabled?: boolean
+    name?: string
+    className?: string
+    "aria-label"?: string
+  }
 
 const ICON_SIZE = 16
 
 const searchTextOf = <V extends string>(option: SelectOption<V>): string =>
   typeof option.label === "string" ? option.label : option.value
+
+type SelectItemContentProps = {
+  option: Pick<SelectOption, "label" | "caption">
+}
+
+function DefaultSelectItemContent({ option }: SelectItemContentProps) {
+  return (
+    <>
+      <span className="umc-dropdown-item__content">
+        <BaseUISelect.ItemText>{option.label}</BaseUISelect.ItemText>
+        {option.caption && (
+          <span className="umc-dropdown-item__caption">{option.caption}</span>
+        )}
+      </span>
+      <BaseUISelect.ItemIndicator className="umc-dropdown-item__indicator">
+        <LegacyCheckGlyph />
+      </BaseUISelect.ItemIndicator>
+    </>
+  )
+}
+
+function InlineSelectItemContent({ option }: SelectItemContentProps) {
+  return (
+    <>
+      <span className="umc-dropdown-item__content">
+        <BaseUISelect.ItemIndicator className="umc-dropdown-item__indicator">
+          <LegacyCheckGlyph />
+        </BaseUISelect.ItemIndicator>
+        <BaseUISelect.ItemText>{option.label}</BaseUISelect.ItemText>
+      </span>
+      {option.caption && (
+        <span className="umc-dropdown-item__caption">{option.caption}</span>
+      )}
+    </>
+  )
+}
 
 export function Select<V extends string = string>({
   label,
@@ -53,6 +93,7 @@ export function Select<V extends string = string>({
   placeholder = "선택",
   size = "lg",
   itemSize = "sm",
+  itemLayout = "default",
   variant = "default",
   shape = "box",
   searchable,
@@ -69,6 +110,8 @@ export function Select<V extends string = string>({
         searchTextOf(option).toLowerCase().includes(normalizedQuery),
       )
     : options
+  const ItemContent =
+    itemLayout === "inline" ? InlineSelectItemContent : DefaultSelectItemContent
 
   return (
     <Field
@@ -134,20 +177,9 @@ export function Select<V extends string = string>({
                     disabled={option.disabled}
                     className="umc-dropdown-item"
                     data-size={itemSize}
+                    data-layout={itemLayout}
                   >
-                    <span className="umc-dropdown-item__content">
-                      <BaseUISelect.ItemText>
-                        {option.label}
-                      </BaseUISelect.ItemText>
-                      {option.caption && (
-                        <span className="umc-dropdown-item__caption">
-                          {option.caption}
-                        </span>
-                      )}
-                    </span>
-                    <BaseUISelect.ItemIndicator className="umc-dropdown-item__indicator">
-                      <LegacyCheckGlyph />
-                    </BaseUISelect.ItemIndicator>
+                    <ItemContent option={option} />
                   </BaseUISelect.Item>
                 ))}
               </BaseUISelect.List>

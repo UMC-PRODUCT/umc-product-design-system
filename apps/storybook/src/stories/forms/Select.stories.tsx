@@ -87,3 +87,15 @@ export const Opened: Story = {
     await userEvent.keyboard("{ArrowDown}")
   },
 }
+
+export const InlineCaption: Story = {
+  tags: ["!autodocs"],
+  args: {
+    itemSize: "xs",
+    itemLayout: "inline",
+    value: "web",
+  },
+  play: async ({ canvasElement }) => {
+    await userEvent.click(within(canvasElement).getByRole("combobox"))
+  },
+}
