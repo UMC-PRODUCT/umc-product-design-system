@@ -130,6 +130,19 @@ pnpm up "@umc-product/*" --latest
 <!-- releases:start -->
 
 <details open>
+<summary><b>0.11.1</b> · 2026-10-30 · 화면 변화 1</summary>
+
+**화면 변화**
+
+| 대상                     | 변경사항                                             | 변경&nbsp;전&nbsp;→&nbsp;변경&nbsp;후 | 보기                                                                                                                                                                                                                                                   |
+| ------------------------ | ---------------------------------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 선택 목록의 위치(Select) | 목록이 버튼보다 넓을 때 버튼 왼쪽 끝에 맞춰 열립니다 | 가운데 정렬 → 왼쪽 정렬               | [Select](https://design.university.neordinary.com/components/forms/select/) · [Menu](https://design.university.neordinary.com/components/forms/menu/) · [ContextSwitcher](https://design.university.neordinary.com/components/shell/context-switcher/) |
+
+전문과 대응표: [react](packages/react/CHANGELOG.md#0111-2026-10-30)
+
+</details>
+
+<details>
 <summary><b>0.11.0</b> · 2026-10-30 · 깨지는 변경 1 · 새 기능 6 · 화면 변화 6</summary>
 
 **깨지는 변경**
