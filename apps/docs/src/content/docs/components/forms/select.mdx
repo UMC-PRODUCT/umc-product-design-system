@@ -39,7 +39,7 @@ const [part, setPart] = useState<Part | null>(null)
 
 ## 필터
 
-`variant="filter"`는 피그마 `State=Filtered`입니다. 값이 있으면 테두리, 배경, 글자가 청록으로 바뀌어 필터가 걸려 있음을 알립니다. 보이는 레이블이 없으면 `aria-label`을 넘깁니다.
+`variant="filter"`는 피그마 `State=Filtered`입니다. 값이 있으면 테두리, 배경, 글자가 청록으로 바뀌어 필터가 걸려 있음을 알립니다. 보이는 레이블이 없으면 `aria-label`을 넘깁니다. 세 번째 예시처럼 옵션이 버튼보다 길면 목록이 버튼 왼쪽 끝에 맞춰 오른쪽으로 넓어집니다.
 
 <SelectFilter client:visible />
 
@@ -96,3 +96,4 @@ const [part, setPart] = useState<Part | null>(null)
 
 - 목록이 열리면 화살표가 180도 돕니다.
 - 목록이 열려 있는 동안 버튼은 hover 배경을 유지합니다.
+- 목록은 버튼 왼쪽 끝에 맞춰 열리고 최소 폭은 버튼 폭입니다. 옵션이 길어 목록이 더 넓어지면 오른쪽으로 늘어납니다. 화면 오른쪽에 자리가 모자라면 버튼 오른쪽 끝에 맞춰 왼쪽으로 펼칩니다.

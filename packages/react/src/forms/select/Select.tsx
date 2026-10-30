@@ -157,6 +157,7 @@ export function Select<V extends string = string>({
           <BaseUISelect.Positioner
             className="umc-dropdown-list__positioner"
             sideOffset={4}
+            align="start"
             alignItemWithTrigger={false}
           >
             <BaseUISelect.Popup className="umc-dropdown-list umc-select__popup">
