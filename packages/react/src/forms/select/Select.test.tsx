@@ -175,4 +175,24 @@ describe("Select", () => {
     expect(content?.lastElementChild).toHaveClass("umc-dropdown-item__caption")
     expect(indicator).toHaveClass("umc-dropdown-item__indicator")
   })
+
+  it("목록이 트리거보다 넓어도 트리거 왼쪽 끝에 맞춰 펼친다", async () => {
+    const user = userEvent.setup()
+    render(
+      <Select
+        aria-label="학교"
+        variant="filter"
+        size="md"
+        options={[
+          { value: "seoultech", label: "서울과학기술대학교 미래융합대학" },
+        ]}
+      />,
+    )
+    await user.click(screen.getByRole("combobox", { name: "학교" }))
+    const listbox = await screen.findByRole("listbox")
+    expect(listbox.closest(".umc-dropdown-list__positioner")).toHaveAttribute(
+      "data-align",
+      "start",
+    )
+  })
 })

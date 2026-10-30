@@ -73,6 +73,12 @@ export function SelectDefault() {
   )
 }
 
+const FILTER_SCHOOLS: SelectOption[] = [
+  { value: "dongguk", label: "동국대학교" },
+  { value: "seoultech", label: "서울과학기술대학교 미래융합대학" },
+  { value: "hanyang-erica", label: "한양대학교 ERICA" },
+]
+
 export function SelectFilter() {
   return (
     <div className="umc-example">
@@ -87,6 +93,15 @@ export function SelectFilter() {
       </div>
       <div className="w-[140px]">
         <Select variant="filter" size="md" options={SORTS} placeholder="정렬" />
+      </div>
+      <div className="w-[140px]">
+        <Select
+          variant="filter"
+          size="md"
+          aria-label="학교"
+          options={FILTER_SCHOOLS}
+          placeholder="학교"
+        />
       </div>
     </div>
   )
