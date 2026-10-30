@@ -12,6 +12,7 @@ import {
   HeaderLight,
   HeaderMobileDark,
   HeaderMobileLight,
+  HeaderProfileMenuExample,
 } from "../../../../components/react/shell/HeaderExamples.tsx"
 
 피그마 `Web/Header`를 구현했습니다. `Web/Header/Desktop`은 `HeaderDesktop`, `Web/Header/Mobile`은 `HeaderMobile`입니다. 두 헤더는 같은 `NavItem` 목록과 `currentPath`를 받으므로 메뉴 데이터 하나로 둘 다 그립니다. 피그마에 브레이크포인트가 정해지지 않아, 화면 폭에 따라 어느 헤더를 그릴지는 앱이 정합니다.
@@ -153,7 +154,62 @@ import { ExpandMoreIcon } from "@umc-product/icons"
 
 <HeaderActions client:visible />
 
-네이티브 `button` 속성을 받고 `type`의 기본값은 `"button"`입니다. 피그마의 `Profile`(원형 아바타)은 기본 아바타 이미지가 정해지지 않아 아직 컴포넌트로 만들지 않았습니다.
+네이티브 `button` 속성을 받고 `type`의 기본값은 `"button"`입니다. 피그마의 `Profile`(원형 아바타)은 아래 [프로필 메뉴](#프로필-메뉴)를 여는 버튼입니다.
+
+## 프로필 메뉴
+
+`HeaderProfileMenu`는 피그마 `.primitive/Web/Header/Profile`(40px 원형 아바타)과 `Web/Header/Profile Menu`입니다. 로그인한 사용자의 아바타를 `HeaderDesktop`의 `actions` 맨 끝에 두고 아바타를 누르면 바로 아래에 프로필 메뉴가 열립니다. 메뉴에는 닉네임, 이름, 학교, 역할 태그와 기수 목록, 계정 설정, 로그아웃이 들어갑니다.
+
+```tsx
+import {
+  HeaderActionButton,
+  HeaderDesktop,
+  HeaderProfileMenu,
+} from "@umc-product/react"
+
+<HeaderDesktop
+  navItems={navItems}
+  currentPath={pathname}
+  actions={
+    <>
+      <HeaderActionButton onClick={openInquiry}>문의사항</HeaderActionButton>
+      <HeaderProfileMenu
+        profile={{
+          nickname: "닉네임",
+          name: "김유엠",
+          school: "한국대 ERICA",
+          role: { label: "챌린저", color: "challenger-super-admin" },
+        }}
+        generations={[
+          { value: "11", label: "11기", caption: "2026" },
+          { value: "10", label: "10기", caption: "2026" },
+        ]}
+        generation={generation}
+        onGenerationChange={setGeneration}
+        onAccountSettings={() => router.push("/account")}
+        onLogout={logout}
+      />
+    </>
+  }
+/>
+```
+
+<HeaderProfileMenuExample client:visible />
+
+### 위치
+
+피그마 예시 화면(1440px)을 따라 메뉴 위쪽 끝을 아바타 아래쪽 끝에 붙입니다(간격 0). 메뉴 오른쪽 끝은 아바타보다 4px 바깥에 맞춥니다. 아바타가 헤더 오른쪽 끝에서 34px 안쪽에 있으므로 메뉴는 화면 오른쪽 끝에서 30px 안쪽에 놓입니다.
+
+### 동작
+
+- 아바타 버튼 이름은 "프로필 메뉴"이고 `triggerLabel`로 바꿉니다. 메뉴가 열리면 화면 낭독기는 닉네임, 이름, 학교, 역할을 메뉴 설명으로 읽습니다.
+- `imageSrc`가 없으면 아바타에 기본 사람 그림을 그립니다. 사진은 원을 꽉 채우도록 잘립니다(`object-fit: cover`).
+- 기수 목록은 [Menu](../../forms/menu/#캡션)의 Xs Inline 항목으로 만든, 하나만 고르는 목록(`menuitemradio`)입니다. 기수를 고르면 `onGenerationChange`를 부르고 메뉴를 닫습니다. 고른 기수를 앱이 쥐려면 `generation`을 넘기고 처음 값만 정하려면 `defaultGeneration`을 씁니다.
+- 목록 이름은 기본 "기수 변경"입니다. 피그마 예시 일부는 "기수"라고 써서 `generationLabel`로 바꿀 수 있게 했습니다.
+- 계정 설정과 로그아웃은 누르면 `onAccountSettings`, `onLogout`을 부르고 메뉴를 닫습니다. 페이지 이동은 앱의 라우터로 합니다.
+- 역할 태그는 [RoleTag](../../display/member-tag/#roletag) Md(26px)이고 `role.color`로 색을 고릅니다. `role`이 없으면 태그를 그리지 않습니다.
+- 메뉴 폭은 내용에 맞춰 늘어납니다. 피그마 예시도 이름과 역할 태그 길이에 따라 191~243px로 달라집니다.
+- 열림 상태는 `open`, `defaultOpen`, `onOpenChange`로 다룹니다.
 
 ## 선택 상태
 
@@ -174,7 +230,7 @@ isActivePath("/matching", "/m") // false, 경로 단위로만 비교
 
 ## 모든 변형
 
-피그마 `Web/Header/Desktop` 8개, `Web/Header/Mobile` 4개, `Home Link` 4개와 primitive 16개, `Navigation` 2개, `Navigation Item` 6개, `Actions-Desktop` 6개, `Actions-Mobile` 4개, `Menu Container` 2개, `Menu Item` 6개, `Action Button` 4개를 그렸습니다. 항목 하나의 변형은 그 항목만 든 헤더로 보여 줍니다. 칸에 마우스를 올리면 코드가 보이고, hover 같은 상태는 켜 둔 모습입니다. 피그마 `Menu Container`의 `Variant2`는 다크 모드입니다.
+피그마 `Web/Header/Desktop` 8개, `Web/Header/Mobile` 4개, `Home Link` 4개와 primitive 16개, `Navigation` 2개, `Navigation Item` 6개, `Actions-Desktop` 6개, `Actions-Mobile` 4개, `Menu Container` 2개, `Menu Item` 6개, `Action Button` 4개를 그렸습니다. 로그인 변형의 아바타는 `HeaderProfileMenu`입니다. 항목 하나의 변형은 그 항목만 든 헤더로 보여 줍니다. 칸에 마우스를 올리면 코드가 보이고, hover 같은 상태는 켜 둔 모습입니다. 피그마 `Menu Container`의 `Variant2`는 다크 모드입니다.
 
 <HeaderAllVariants client:visible />
 
@@ -190,6 +246,24 @@ isActivePath("/matching", "/m") // false, 경로 단위로만 비교
 | `actions`     | `ReactNode`         | 없음      | 오른쪽 액션 영역. 로그인 버튼, 프로필 등 |
 | `mode`        | `"light" \| "dark"` | `"light"` | 색 모드                                  |
 | `className`   | `string`            | 없음      | 루트 `header` 요소에 붙일 클래스         |
+
+### HeaderProfileMenu
+
+| prop                 | 타입                            | 기본값          | 설명                                                               |
+| -------------------- | ------------------------------- | --------------- | ------------------------------------------------------------------ |
+| `profile`            | `HeaderProfileMenuProfile`      | 없음            | `nickname`, `name`, `school`, `role`(`label`, `color`), `imageSrc` |
+| `generations`        | `HeaderProfileMenuGeneration[]` | 없음            | 기수 항목(`value`, `label`, `caption`, `disabled`)                 |
+| `generation`         | `string`                        | 없음            | 고른 기수 값(제어)                                                 |
+| `defaultGeneration`  | `string`                        | 없음            | 처음 고른 기수 값(비제어)                                          |
+| `onGenerationChange` | `(generation: string) => void`  | 없음            | 기수를 고를 때                                                     |
+| `generationLabel`    | `ReactNode`                     | `"기수 변경"`   | 기수 목록 이름                                                     |
+| `onAccountSettings`  | `() => void`                    | 없음            | 계정 설정을 누를 때                                                |
+| `onLogout`           | `() => void`                    | 없음            | 로그아웃을 누를 때                                                 |
+| `open`               | `boolean`                       | 없음            | 열림 상태(제어)                                                    |
+| `defaultOpen`        | `boolean`                       | 없음            | 처음 열림 상태(비제어)                                             |
+| `onOpenChange`       | `(open: boolean) => void`       | 없음            | 열림 상태가 바뀔 때                                                |
+| `triggerLabel`       | `string`                        | `"프로필 메뉴"` | 아바타 버튼 이름                                                   |
+| `className`          | `string`                        | 없음            | 아바타 버튼에 붙일 클래스                                          |
 
 ### HeaderMobile
 

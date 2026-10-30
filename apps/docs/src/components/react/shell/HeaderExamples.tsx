@@ -6,12 +6,14 @@ import {
   HeaderActionButton,
   HeaderHomeLink,
   HeaderMobile,
+  HeaderProfileMenu,
   type HeaderHomeLinkProps,
+  type HeaderProfileMenuProps,
 } from "@umc-product/react"
 import { ExpandMoreIcon } from "@umc-product/icons"
 import { useState } from "react"
 
-import { ForceState, NotImplemented } from "../variants/VariantCells.tsx"
+import { ForceState } from "../variants/VariantCells.tsx"
 import {
   lookup,
   type FigmaVariant,
@@ -137,6 +139,61 @@ export function HeaderActions() {
   )
 }
 
+const PROFILE: HeaderProfileMenuProps["profile"] = {
+  nickname: "닉네임",
+  name: "김유엠",
+  school: "한국대 ERICA",
+  role: { label: "챌린저", color: "challenger-super-admin" },
+}
+
+const GENERATIONS: HeaderProfileMenuProps["generations"] = [
+  { value: "11", label: "11기", caption: "2026" },
+  { value: "10", label: "10기", caption: "2026" },
+  { value: "9", label: "9기", caption: "2025" },
+  { value: "8", label: "8기", caption: "2025" },
+  { value: "5", label: "5기", caption: "2023" },
+]
+
+const CURRENT_GENERATION = "11"
+
+export function HeaderProfileMenuExample() {
+  const [path, setPath] = useState("/matching")
+  const [generation, setGeneration] = useState(CURRENT_GENERATION)
+  const [lastAction, setLastAction] = useState("없음")
+  return (
+    <div className="umc-example umc-example-flush overflow-x-auto">
+      <PreviewLinks onNavigate={setPath}>
+        <div
+          className="min-w-[960px]"
+          data-spec-id="header-profile header-profile-silhouette header-actions-logged-in header-profile-menu header-profile-menu-avatar header-profile-menu-summary header-profile-menu-identity header-profile-menu-name header-profile-menu-school header-profile-menu-role header-profile-menu-divider header-profile-menu-generation-label header-profile-menu-generation-list header-profile-menu-generation-selected header-profile-menu-actions header-profile-menu-account header-profile-menu-logout"
+        >
+          <HeaderDesktop
+            navItems={NAV_ITEMS}
+            currentPath={path}
+            actions={
+              <>
+                <Button size="md">버튼</Button>
+                <HeaderActionButton>문의사항</HeaderActionButton>
+                <HeaderProfileMenu
+                  profile={PROFILE}
+                  generations={GENERATIONS}
+                  generation={generation}
+                  onGenerationChange={setGeneration}
+                  onAccountSettings={() => setLastAction("계정 설정")}
+                  onLogout={() => setLastAction("로그아웃")}
+                />
+              </>
+            }
+          />
+        </div>
+      </PreviewLinks>
+      <p className="m-0 px-4 py-3 text-sm">
+        고른 기수: {generation}기 · 마지막 동작: {lastAction}
+      </p>
+    </div>
+  )
+}
+
 function MobileMenuCta() {
   return (
     <Button size="md" variant="weak">
@@ -210,9 +267,6 @@ const HOME_LINK_PRIMITIVE_SETS: ReadonlyArray<{
   { set: "header-home-link-product-tech", homeLink: PRODUCT_TECH_HOME_LINK },
 ]
 
-const LOGGED_IN_REASON =
-  "로그인 상태의 프로필 아바타 에셋이 정해지지 않아 아직 없습니다"
-
 const darkTone = (variant: FigmaVariant) =>
   variant.props["Mode"] === "Dark" ? "dark" : undefined
 
@@ -228,35 +282,46 @@ function renderLoggedOutActions(withCta: boolean) {
   )
 }
 
+function renderLoggedInActions(withCta: boolean) {
+  return (
+    <>
+      {withCta && <Button size="md">버튼</Button>}
+      <HeaderActionButton>문의사항</HeaderActionButton>
+      <HeaderProfileMenu
+        profile={PROFILE}
+        generations={GENERATIONS}
+        defaultGeneration={CURRENT_GENERATION}
+      />
+    </>
+  )
+}
+
+function actionsOf(variant: FigmaVariant) {
+  const withCta = variant.props["Show CTA Button"] === "True"
+  return variant.props["Login Status"] === "Logged In"
+    ? renderLoggedInActions(withCta)
+    : renderLoggedOutActions(withCta)
+}
+
 function HeaderVariantCell({ variant }: { variant: FigmaVariant }) {
-  if (variant.props["Login Status"] === "Logged In") {
-    return <NotImplemented reason={LOGGED_IN_REASON} />
-  }
   return (
     <div className="min-w-[720px]">
       <HeaderDesktop
         mode={lookup(HEADER_MODES, variant, "Mode")}
         navItems={NAV_ITEMS}
         currentPath="/matching"
-        actions={renderLoggedOutActions(
-          variant.props["Show CTA Button"] === "True",
-        )}
+        actions={actionsOf(variant)}
       />
     </div>
   )
 }
 
 function HeaderActionsCell({ variant }: { variant: FigmaVariant }) {
-  if (variant.props["Login Status"] === "Logged In") {
-    return <NotImplemented reason={LOGGED_IN_REASON} />
-  }
   return (
     <HeaderDesktop
       mode={lookup(HEADER_MODES, variant, "Mode")}
       logo={null}
-      actions={renderLoggedOutActions(
-        variant.props["Show CTA Button"] === "True",
-      )}
+      actions={actionsOf(variant)}
     />
   )
 }
