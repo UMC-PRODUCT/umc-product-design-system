@@ -1,0 +1,231 @@
+{
+  "component": "HeaderProfileMenu",
+  "figmaSection": "2858:65987",
+  "page": "/components/shell/header/",
+  "nodes": [
+    {
+      "specId": "header-profile",
+      "node": "3384:66270",
+      "variant": ".primitive/Web/Header/Profile",
+      "target": ".umc-header-profile-trigger .umc-header-profile",
+      "expected": {
+        "width": "40px",
+        "height": "40px",
+        "border-top-left-radius": "999px",
+        "background-color": "#e9ecec"
+      },
+      "figmaDiffers": {
+        "background-color": "맞는 토큰이 없어 컴포넌트 변수 --umc-header-profile-bg로 둔다",
+        "border-top-left-radius": "피그마는 9999px이다. 코드는 같은 원형 토큰 --umc-radius-full(999px)을 쓴다"
+      }
+    },
+    {
+      "specId": "header-profile-silhouette",
+      "node": "3384:66266",
+      "variant": ".primitive/Web/Header/Profile 안의 기본 사람 그림",
+      "target": ".umc-header-profile-trigger .umc-header-profile__silhouette",
+      "expected": {
+        "width": "36px",
+        "height": "36px",
+        "top": "7px",
+        "color": "#656b6b"
+      },
+      "figmaDiffers": {
+        "color": "맞는 토큰이 없어 컴포넌트 변수 --umc-header-profile-silhouette-color로 둔다"
+      }
+    },
+    {
+      "specId": "header-actions-logged-in",
+      "node": "2732:61069",
+      "variant": ".primitive/Web/Header/Actions-Desktop, Mode=Light, Login Status=Logged In, Show CTA Button=True",
+      "target": ".umc-header-desktop__actions",
+      "expected": {
+        "column-gap": "16px",
+        "padding-right": "34px"
+      }
+    },
+    {
+      "specId": "header-profile-menu",
+      "interaction": "open",
+      "node": "5641:85790",
+      "variant": "Web/Header/Profile Menu",
+      "target": ".umc-header-profile-menu",
+      "expected": {
+        "padding-top": "16px",
+        "padding-right": "12px",
+        "padding-bottom": "16px",
+        "padding-left": "12px",
+        "row-gap": "12px",
+        "border-top-left-radius": "10px",
+        "background-color": "#ffffff",
+        "box-shadow~": "#40444329 0px 4px 16px 0px"
+      }
+    },
+    {
+      "specId": "header-profile-menu-avatar",
+      "interaction": "open",
+      "node": "5641:85746",
+      "variant": "Web/Header/Profile Menu 안의 .primitive/Web/Header/Profile",
+      "target": ".umc-header-profile-menu__avatar .umc-header-profile",
+      "expected": {
+        "width": "46px",
+        "height": "46px",
+        "background-color": "#e9ecec"
+      }
+    },
+    {
+      "specId": "header-profile-menu-summary",
+      "interaction": "open",
+      "node": "5641:85744",
+      "variant": "Web/Header/Profile Menu 안의 프로필 묶음",
+      "target": ".umc-header-profile-menu__summary",
+      "expected": {
+        "row-gap": "10px"
+      }
+    },
+    {
+      "specId": "header-profile-menu-identity",
+      "interaction": "open",
+      "node": "5641:85747",
+      "variant": "Web/Header/Profile Menu 안의 이름과 역할 태그 줄",
+      "target": ".umc-header-profile-menu__identity",
+      "expected": {
+        "column-gap": "16px",
+        "padding-left": "10px",
+        "padding-right": "10px"
+      }
+    },
+    {
+      "specId": "header-profile-menu-name",
+      "interaction": "open",
+      "node": "5641:88806",
+      "variant": "Web/Header/Profile Menu 안의 닉네임/이름",
+      "target": ".umc-header-profile-menu__name-line",
+      "expected": {
+        "column-gap": "1px",
+        "color": "#0f1010",
+        "font-size": "16px",
+        "font-weight": "600",
+        "line-height": "23.2px",
+        "letter-spacing": "-0.16px"
+      }
+    },
+    {
+      "specId": "header-profile-menu-school",
+      "interaction": "open",
+      "node": "5641:85750",
+      "variant": "Web/Header/Profile Menu 안의 학교",
+      "target": ".umc-header-profile-menu__school",
+      "expected": {
+        "color": "#7e7f7f",
+        "font-size": "12px",
+        "font-weight": "500",
+        "line-height": "15.6px"
+      }
+    },
+    {
+      "specId": "header-profile-menu-role",
+      "interaction": "open",
+      "node": "5641:85751",
+      "variant": "Web/Header/Profile Menu 안의 Tag/Role, Size=Md",
+      "target": ".umc-header-profile-menu__identity .umc-role-tag",
+      "expected": {
+        "height": "26px"
+      }
+    },
+    {
+      "specId": "header-profile-menu-divider",
+      "interaction": "open",
+      "node": "5641:85753",
+      "variant": "Web/Header/Profile Menu 안의 Divider",
+      "target": ".umc-header-profile-menu .umc-divider",
+      "expected": {
+        "border-top-color": "#f7f8f8"
+      }
+    },
+    {
+      "specId": "header-profile-menu-generation-label",
+      "interaction": "open",
+      "node": "5641:85755",
+      "variant": "Web/Header/Profile Menu 안의 24 Text Button(기수 변경)",
+      "target": ".umc-header-profile-menu__generation-label",
+      "expected": {
+        "padding-top": "2px",
+        "padding-right": "4px",
+        "padding-bottom": "2px",
+        "padding-left": "4px",
+        "color": "#adadad",
+        "font-size": "12px",
+        "font-weight": "500",
+        "line-height": "18px",
+        "letter-spacing": "-0.24px"
+      }
+    },
+    {
+      "specId": "header-profile-menu-generation-list",
+      "interaction": "open",
+      "node": "5641:85757",
+      "variant": "Web/Header/Profile Menu 안의 기수 목록 상자",
+      "target": ".umc-header-profile-menu__generation-list",
+      "expected": {
+        "padding-top": "2px",
+        "padding-left": "2px",
+        "border-top-width": "1px",
+        "border-top-color": "#fbfcfc",
+        "border-top-left-radius": "10px",
+        "background-color": "#ffffff"
+      }
+    },
+    {
+      "specId": "header-profile-menu-generation-selected",
+      "interaction": "open",
+      "node": "5641:85759",
+      "variant": "Web/Header/Profile Menu 안의 .primitve/Meue Item/Text Only, Size=Xs, State=Selected, Layout=Inline",
+      "target": ".umc-header-profile-menu__generation-list .umc-dropdown-item[data-checked]",
+      "expected": {
+        "height": "29px",
+        "padding-left": "8px",
+        "padding-right": "8px",
+        "background-color": "#f4fbfa",
+        "color": "#02746c"
+      }
+    },
+    {
+      "specId": "header-profile-menu-actions",
+      "interaction": "open",
+      "node": "5641:85765",
+      "variant": "Web/Header/Profile Menu 안의 계정 설정과 로그아웃 묶음",
+      "target": ".umc-header-profile-menu__actions",
+      "expected": {
+        "row-gap": "10px",
+        "padding-left": "6px",
+        "padding-right": "6px"
+      }
+    },
+    {
+      "specId": "header-profile-menu-account",
+      "interaction": "open",
+      "node": "5641:85766",
+      "variant": "Web/Header/Profile Menu 안의 Text Button(계정 설정)",
+      "target": ".umc-header-profile-menu__action:not([data-tone])",
+      "expected": {
+        "color": "#3f4141",
+        "font-size": "14px",
+        "font-weight": "500",
+        "line-height": "18.9px"
+      }
+    },
+    {
+      "specId": "header-profile-menu-logout",
+      "interaction": "open",
+      "node": "5641:85767",
+      "variant": "Web/Header/Profile Menu 안의 Text Button(로그아웃)",
+      "target": ".umc-header-profile-menu__action[data-tone=\"danger\"]",
+      "expected": {
+        "color": "#dc3d3d",
+        "font-size": "14px",
+        "font-weight": "500"
+      }
+    }
+  ]
+}

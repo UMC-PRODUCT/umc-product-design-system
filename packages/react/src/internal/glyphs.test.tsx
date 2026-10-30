@@ -10,6 +10,7 @@ import {
   CheckboxCheckMdGlyph,
   LegacyCheckGlyph,
   LegacyExpandMoreGlyph,
+  ProfileSilhouetteGlyph,
 } from "./glyphs.tsx"
 
 const GLYPHS: [name: string, element: ReactElement, size: number][] = [
@@ -20,6 +21,7 @@ const GLYPHS: [name: string, element: ReactElement, size: number][] = [
   ["CheckboxCheckMdGlyph", <CheckboxCheckMdGlyph />, 20],
   ["CheckboxCheckLgGlyph", <CheckboxCheckLgGlyph />, 24],
   ["CheckButtonGlyph", <CheckButtonGlyph />, 24],
+  ["ProfileSilhouetteGlyph", <ProfileSilhouetteGlyph />, 36],
 ]
 
 const svgOf = (element: ReactElement) =>
