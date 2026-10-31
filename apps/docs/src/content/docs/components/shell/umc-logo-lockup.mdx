@@ -1,6 +1,6 @@
 ---
 title: UmcLogoLockup
-description: UMC 로고와 맥락 이름(Operation, Study, Product Tech)을 묶은 로고 락업입니다. 링크가 아니라서 헤더 밖에서도 씁니다.
+description: UMC 로고와 맥락 이름(Operation, Activity, Product Tech)을 묶은 로고 락업입니다. 링크가 아니라서 헤더 밖에서도 씁니다.
 ---
 
 import {
@@ -15,7 +15,7 @@ import { UmcLogoLockup } from "@umc-product/react"
 
 <UmcLogoLockup />
 <UmcLogoLockup context="operation" generation={11} />
-<UmcLogoLockup context="study" generation={11} />
+<UmcLogoLockup context="activity" generation={11} />
 <UmcLogoLockup context="product-tech" />
 ```
 
@@ -27,7 +27,7 @@ import { UmcLogoLockup } from "@umc-product/react"
 | -------------- | --------------------- | ------------ |
 | `main`(기본값) | 없음, 로고만 그림     | 받지 않음    |
 | `operation`    | Operation과 기수 서수 | 필수         |
-| `study`        | Study와 기수 서수     | 필수         |
+| `activity`     | Activity와 기수 서수  | 필수         |
 | `product-tech` | Product와 Tech 두 줄  | 받지 않음    |
 
 `generation`은 영어 서수로 씁니다(11기는 11th, 21기는 21st). 1 이상의 정수가 아니면 서수 줄을 빼고 맥락 이름만 그립니다.
@@ -40,12 +40,12 @@ import { UmcLogoLockup } from "@umc-product/react"
 
 ## props
 
-| prop         | 타입                                                 | 기본값   | 설명                                 |
-| ------------ | ---------------------------------------------------- | -------- | ------------------------------------ |
-| `context`    | `"main" \| "operation" \| "study" \| "product-tech"` | `"main"` | 로고 옆에 붙일 맥락                  |
-| `generation` | `number`                                             | 없음     | `operation`, `study`에서 필수인 기수 |
-| `className`  | `string`                                             | 없음     | 루트 `span`에 붙일 클래스            |
-| `ref`        | `Ref<HTMLSpanElement>`                               | 없음     | 루트 `span` 참조                     |
+| prop         | 타입                                                    | 기본값   | 설명                                    |
+| ------------ | ------------------------------------------------------- | -------- | --------------------------------------- |
+| `context`    | `"main" \| "operation" \| "activity" \| "product-tech"` | `"main"` | 로고 옆에 붙일 맥락                     |
+| `generation` | `number`                                                | 없음     | `operation`, `activity`에서 필수인 기수 |
+| `className`  | `string`                                                | 없음     | 루트 `span`에 붙일 클래스               |
+| `ref`        | `Ref<HTMLSpanElement>`                                  | 없음     | 루트 `span` 참조                        |
 
 그 밖에 `span` 속성(`id`, `title`, `aria-*` 등)을 그대로 넘깁니다. 내용은 맥락으로 정해지므로 `children`은 받지 않습니다.
 

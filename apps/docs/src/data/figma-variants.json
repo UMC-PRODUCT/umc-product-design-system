@@ -1613,12 +1613,12 @@
       "node": "2732:60555",
       "name": "Web/Header/Home Link",
       "axes": {
-        "Context": ["Main", "Operation", "Study", "Product Tech"]
+        "Context": ["Main", "Operation", "Activity", "Product Tech"]
       },
       "variants": [
         "Context=Main",
         "Context=Operation",
-        "Context=Study",
+        "Context=Activity",
         "Context=Product Tech"
       ]
     },

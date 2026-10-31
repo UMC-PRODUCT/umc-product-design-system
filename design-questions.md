@@ -2,7 +2,7 @@
 
 - 독자: 3기 디자인 팀, 웹 파트
 - 소유자: UMC PRODUCT Design Chapter
-- 기준일: 2026-10-29
+- 기준일: 2026-10-31
 
 문서 사이트에는 싣지 않는 작업 목록입니다.
 
@@ -223,11 +223,11 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 7. Context Switcher 목록에는 바깥 그림자가 없어 흰 페이지 위에서 경계가 거의 보이지 않습니다. 일반 `Dropdown_List`는 `Shadow/Drop/Neutral_1`을 씁니다. 같은 그림자를 써도 되는지 알려 주세요.
 8. Context Switcher는 172px인데 Side Navigation 슬롯 안쪽 폭은 168px입니다. 코드는 슬롯 안에서 168px로 줄입니다.
 9. Page Header 브레드크럼 구분자 색 `#cccccc`가 변수에 연결되어 있지 않고, 마지막(현재) 항목도 같은 색입니다. hover하면 굵기가 바뀌어 글자 폭이 조금 늘어납니다.
-10. 라벨 있는 Home Link(Operation, Study, ProductTech)에 "가제" 주석이 있습니다. 맥락 이름과 `11th` 같은 기수 표기가 확정되면 알려 주세요. 코드는 기수를 영어 서수(1st, 2nd, 3rd, 11th)로 만듭니다.
+10. 라벨 있는 Home Link(Operation, Activity, ProductTech)에 "가제" 주석이 있습니다. 맥락 이름과 `11th` 같은 기수 표기가 확정되면 알려 주세요. 코드는 기수를 영어 서수(1st, 2nd, 3rd, 11th)로 만듭니다. (2026-10-31) `Web/Header/Home Link`의 `Context=Study`가 `Context=Activity`로 바뀌어 코드도 `context="activity"`로 옮겼습니다(깨지는 변경, 전 `study`). 안쪽 primitive는 이름(`.primitive/Web/Header/Home Link/Study`)과 원본 글자가 아직 Study이고, 공개 컴포넌트의 Activity 변형만 글자를 Activity로 덮어씁니다. 코드는 공개 컴포넌트를 따랐습니다. primitive도 Activity로 볼지 알려 주세요.
 11. 라벨 있는 Home Link의 로고는 `Logo/UMC` 인스턴스가 아닙니다. 떼어 낸 그림을 73.76×21.93으로 줄였고, 라이브러리 로고는 74×22입니다. 코드는 피그마 크기를 따랐습니다. 인스턴스로 바꿀지 알려 주세요.
 12. Home Link 라벨의 Orbitron Bold와 글자 크기 13.487px, 11.689px은 텍스트 스타일에도 변수에도 없습니다. 로고와 함께 비율로 줄인 값으로 보고 그대로 옮겼습니다. Orbitron을 브랜드 글꼴 토큰으로 등록할지 알려 주세요.
 13. Home Link 색 변수의 codeSyntax `--color-action-primary-default` 하나가 `#3f4141`(라이트), `#02746c`(라이트 hover), `#f4fbfa`(다크) 세 값을 가리킵니다. 어느 변수인지 알 수 없어 코드는 값이 같은 `icon-neutral-stronger-700`, `icon-brand-strong-600`, `teal-50`, `teal-200`을 씁니다.
-14. `Web/Header/Home Link`의 왼쪽 여백은 Main이 60px, 라벨 있는 맥락이 34px입니다. 라벨 칸 200px 안에서 내용을 가운데 두므로 로고 시작 위치가 맥락마다 다릅니다(헤더 왼쪽에서 Main 76px, Operation 51.5px, Study 68.5px, Product Tech 57.8px). 맥락이 바뀌어도 로고 위치가 같아야 하는지 알려 주세요.
+14. `Web/Header/Home Link`의 왼쪽 여백은 Main이 60px, 라벨 있는 맥락이 34px입니다. 라벨 칸 200px 안에서 내용을 가운데 두므로 로고 시작 위치가 맥락마다 다릅니다(헤더 왼쪽에서 Main 76px, Operation 51.5px, Activity 59.7px, Product Tech 57.8px). 맥락이 바뀌어도 로고 위치가 같아야 하는지 알려 주세요.
 15. 좁은 화면용 Header가 없습니다. 라벨 있는 홈 링크는 로고 칸이 250px(여백 34px과 16px, 링크 200px)이라, 375px 화면에서 액션 버튼과 함께 두면 가로로 넘칩니다. 모바일 헤더 규칙과 브레이크포인트를 알려 주세요. (일부 해결 2026-10-28) `Web/Header`가 `Web/Header/Desktop`과 `Web/Header/Mobile`로 나뉘어 코드도 `HeaderDesktop`(깨지는 변경, 전 `Header`)과 `HeaderMobile`로 나눴습니다. 남은 것: 둘을 바꾸는 브레이크포인트가 없어 앱이 화면 폭으로 고릅니다. 기준 폭을 알려 주세요.
 16. Section Header Md의 제목(`Title/3-Semibold`, 18px)과 Sm의 설명(`Body/4-Regular`, 13px)은 2026-10-08에 받은 3기 텍스트 스타일에 없습니다. 코드는 피그마 값을 컴포넌트 변수로 둡니다. Export modes를 다시 주시면 토큰으로 바꾸겠습니다.
 17. Section Header Sm은 번호가 18px, 제목이 16px로 크기가 다릅니다. Lg와 Md는 번호와 제목이 같은 크기입니다. 의도한 것인지 알려 주세요.
@@ -274,9 +274,9 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 24. `Help Text`에 14px 크기(`Size=14px`)가 생겨 `Field`의 `captionSize="lg"`로 옮겼습니다. 기본값은 13px이고, 14px을 쓰는 화면은 아직 찾지 못했습니다. 어느 입력에서 14px 도움말을 쓰는지 알려 주세요.
 25. `Text Info Button` 글자가 12px에서 13px로 커지면서 굵기도 Regular에서 Medium으로 바뀌었습니다. 코드는 피그마대로 Medium을 씁니다. 텍스트 스타일에는 연결되어 있지 않고, 크기·굵기·행간이 같은 `Caption/2-Medium`과는 자간(-2%와 0)만 다릅니다. 굵기가 의도인지, 스타일에 연결할지 알려 주세요.
 26. 2026-10-25에 `Text Field/Line`과 `Text Field/Line/Field`가 생겨 `TextFieldLine`, `TextFieldLineField`로 옮겼습니다. 이름을 맞추느라 `Text Field/Box`는 `TextFieldBox`(옛 `TextField`), `Text Field/Box/Field`는 `TextFieldBoxField`(옛 `InputBox`)가 되었습니다(깨지는 변경).
-27. `Text Field/Line`의 `Error=True` 변형은 레이블과 Help Text가 Default 색이고, 밑줄만 Focused & Hover와 Typing에서 Red-500입니다. Default, Typed, Disabled의 밑줄은 Error=False와 같은 회색입니다. 코드는 밑줄은 피그마대로 두고 레이블과 도움말은 `Field` 규칙대로 빨갛게 바꿉니다. 오류를 포커스 전에도 밑줄로 보여 줄지 알려 주세요. (2026-10-25) 레이블과 Help Text가 `text/error`(#dc3d3d)로 바뀌어 코드와 같아졌습니다. 밑줄 질문은 남아 있습니다.
+27. `Text Field/Line`의 `Error=True` 변형은 레이블과 Help Text가 Default 색이고, 밑줄만 Focused & Hover와 Typing에서 Red-500입니다. Default, Typed, Disabled의 밑줄은 Error=False와 같은 회색입니다. 코드는 밑줄은 피그마대로 두고 레이블과 도움말은 `Field` 규칙대로 빨갛게 바꿉니다. 오류를 포커스 전에도 밑줄로 보여 줄지 알려 주세요. (2026-10-25) 레이블과 Help Text가 `text/error`(#dc3d3d)로 바뀌어 코드와 같아졌습니다. 밑줄 질문은 남아 있습니다. (2026-10-31) `Text Field/Box`와 `Text Field/Line`의 Error=True 레이블이 다시 Default 색이 되어, 코드도 `Field`에서 오류 레이블 빨강을 뺐습니다. Help Text는 계속 빨강이고, 밑줄 질문은 남아 있습니다.
 28. `Text Field/Line/Field`의 Typed 글자색은 다른 파일 변수(`semantic/text/primary`, rgba(0,12,30,0.8))를 가리키고, Password의 Typed는 `text-default`(#0f1010)입니다. 코드는 #0f1010을 썼습니다. 캐럿은 Box가 Teal-500, Line이 Teal-400이라 코드도 다르게 두었습니다.
-29. 같은 상태를 `Text Field/Line/Field`는 `Typed`, `Text Field/Box/Field`는 `Filled`로 부르고, 같은 종류를 `Selector`와 `Select`로 부릅니다. 코드는 Selector를 `Select`의 `shape="line"`으로 옮겼습니다. 이름을 한쪽으로 맞출지 알려 주세요. Line의 Disabled 레이블은 Default 색(#544f4b)인데 Box는 비활성 색이라, 코드는 Box와 같게 두었습니다.
+29. 같은 상태를 `Text Field/Line/Field`는 `Typed`, `Text Field/Box/Field`는 `Filled`로 부르고, 같은 종류를 `Selector`와 `Select`로 부릅니다. 코드는 Selector를 `Select`의 `shape="line"`으로 옮겼습니다. 이름을 한쪽으로 맞출지 알려 주세요. Line의 Disabled 레이블은 Default 색(#544f4b)인데 Box는 비활성 색이라, 코드는 Box와 같게 두었습니다. (2026-10-31) Box의 Disabled 레이블도 Default 색(Error=False #606262, Error=True #544f4b)이 되어 Box와 Line 모두 비활성 레이블이 흐려지지 않습니다. 코드는 아직 비활성 레이블을 #adadad로 흐리게 그립니다. 비활성 레이블도 Default 색으로 둘지 알려 주세요.
 30. 2026-10-25에 `Text Field/Box/Field`의 오류 배경이 Red-50 100%에서 30%(`rgba(254, 242, 241, 0.3)`)로 바뀌었습니다. 투명도 색 체계가 아직 없어 코드는 `#fef2f14d`를 컴포넌트 변수(`--umc-text-field-box-field-error-bg`, `--umc-select-error-bg`)로 둡니다. Opacity Color System이 정해지면 토큰으로 바꾸겠습니다. `Select`, `TextFieldArea`, `VerificationCodeField`는 같은 상자라 함께 바뀌었고, `Input Box/Code Input/ Cell`의 오류 배경(60%)과 Icon Button Weak Error 배경(100%)은 그대로입니다.
 31. 2026-10-25에 `Text Field/ Code Input`에 `Size=Md`(칸 42px, 모서리 12px, 글자 `Title/1-Semibold` 22px, 칸 간격 6px)가 생겨 `CodeField`에 `size="md"`를 더했습니다. 칸 컴포넌트 `Input Box/Code Input/ Cell`에는 아직 Lg만 있고, Md 칸은 인스턴스에서 크기를 덮어쓴 것입니다. 칸 컴포넌트에도 Md 변형을 둘지 알려 주세요.
 32. `.primitve/Meue Item/Text Only`에 `Layout=Inline`(Xs만)이 생겨 Menu의 `layout`, Select의 `itemLayout`으로 옮겼습니다. Inline Disabled는 레이블이 `#cccccc`인데 캡션은 `#adadad`로 레이블보다 진합니다. 기본 배치는 비활성 캡션도 `#cccccc`입니다. 코드는 피그마대로 Inline만 `#adadad`를 씁니다. 의도한 값인지 알려 주세요.
