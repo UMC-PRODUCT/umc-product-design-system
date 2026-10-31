@@ -27,7 +27,7 @@ import { Field, FieldControl, TextFieldBoxField } from "@umc-product/react"
 
 ## 도움말 색
 
-`captionColor="success"`는 피그마 `Help Text/Success`로 초록(`--umc-color-text-success`)입니다. `invalid`이면 도움말만 빨강으로 바뀌고 레이블 색은 그대로입니다. `invalid`이고 `errorMessage`가 있으면 도움말 자리를 오류 메시지가 대신합니다. 비활성이면 레이블과 도움말이 흐려지지만 `invalid`인 도움말은 빨강을 유지합니다.
+`captionColor="success"`는 피그마 `Help Text/Success`로 초록(`--umc-color-text-success`)입니다. `invalid`이면 도움말만 빨강으로 바뀌고 레이블 색은 그대로입니다. `invalid`이고 `errorMessage`가 있으면 도움말 자리를 오류 메시지가 대신합니다. 비활성이어도 레이블과 도움말 색은 그대로입니다.
 
 <FieldCaptionTones client:visible />
 
@@ -49,7 +49,7 @@ import { Field, FieldControl, TextFieldBoxField } from "@umc-product/react"
 
 ## 모든 변형
 
-피그마 `Text Field/ Label` 6개와 `Help Text` 8개를 그렸습니다. 칸에 마우스를 올리면 코드가 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
+피그마 `Text Field/ Label` 6개와 `Help Text` 8개를 그렸습니다. 칸에 마우스를 올리면 코드가 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다. 레이블의 `Error`와 `Disabled`, 도움말의 `Disabled`는 `Text Field/Box`와 `Text Field/Line`이 쓰지 않는 색이라 그리지 않았습니다.
 
 <FieldAllVariants client:visible />
 

@@ -224,11 +224,11 @@
     },
     {
       "specId": "text-field-disabled-label",
-      "node": "2621:33403",
-      "variant": "Text Field/ Label, State=Disabled",
+      "node": "2621:33386",
+      "variant": "Text Field/ Box, State=Disabled, Error=False 레이블",
       "target": ".umc-field__label",
       "expected": {
-        "color": "#adadad"
+        "color": "#606262"
       }
     },
     {
