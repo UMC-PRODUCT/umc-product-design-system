@@ -130,6 +130,26 @@ pnpm up "@umc-product/*" --latest
 <!-- releases:start -->
 
 <details open>
+<summary><b>0.12.0</b> · 2026-10-31 · 깨지는 변경 1 · 화면 변화 2</summary>
+
+**깨지는 변경**
+
+| 대상                                         | 변경사항                    | 변경&nbsp;전&nbsp;→&nbsp;변경&nbsp;후    | 보기                                                                                                                                                                              |
+| -------------------------------------------- | --------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 웹 헤더 홈 링크의 맥락(Web/Header/Home Link) | Study가 Activity로 바뀝니다 | `context="study"` → `context="activity"` | [HeaderHomeLink](https://design.university.neordinary.com/components/shell/header/) · [UmcLogoLockup](https://design.university.neordinary.com/components/shell/umc-logo-lockup/) |
+
+**화면 변화**
+
+| 대상                                                              | 변경사항                                 | 변경&nbsp;전&nbsp;→&nbsp;변경&nbsp;후                      | 보기                                                                      |
+| ----------------------------------------------------------------- | ---------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------- |
+| 입력 칸의 비활성 레이블과 도움말(Text Field/Box, Text Field/Line) | 흐린 회색에서 기본 색으로 바뀝니다       | 레이블 `#adadad` → `#606262`, 도움말 `#adadad` → `#7e7f7f` | [Field](https://design.university.neordinary.com/components/forms/field/) |
+| 입력 칸의 오류 레이블(Text Field/Box, Text Field/Line)            | 레이블이 빨강에서 기본 회색으로 바뀝니다 | `#dc3d3d` → `#606262`                                      | [Field](https://design.university.neordinary.com/components/forms/field/) |
+
+전문과 대응표: [react](packages/react/CHANGELOG.md#0120-2026-10-31)
+
+</details>
+
+<details>
 <summary><b>0.11.1</b> · 2026-10-30 · 화면 변화 1</summary>
 
 **화면 변화**
