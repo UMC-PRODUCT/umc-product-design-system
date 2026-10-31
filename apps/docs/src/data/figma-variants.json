@@ -1650,7 +1650,7 @@
         "State=Hover & Pressed, Mode=Dark"
       ]
     },
-    "header-home-link-study": {
+    "header-home-link-activity": {
       "node": "2858:66648",
       "name": ".primitive/Web/Header/Home Link/Study",
       "axes": {

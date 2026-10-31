@@ -223,7 +223,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 7. Context Switcher 목록에는 바깥 그림자가 없어 흰 페이지 위에서 경계가 거의 보이지 않습니다. 일반 `Dropdown_List`는 `Shadow/Drop/Neutral_1`을 씁니다. 같은 그림자를 써도 되는지 알려 주세요.
 8. Context Switcher는 172px인데 Side Navigation 슬롯 안쪽 폭은 168px입니다. 코드는 슬롯 안에서 168px로 줄입니다.
 9. Page Header 브레드크럼 구분자 색 `#cccccc`가 변수에 연결되어 있지 않고, 마지막(현재) 항목도 같은 색입니다. hover하면 굵기가 바뀌어 글자 폭이 조금 늘어납니다.
-10. 라벨 있는 Home Link(Operation, Activity, ProductTech)에 "가제" 주석이 있습니다. 맥락 이름과 `11th` 같은 기수 표기가 확정되면 알려 주세요. 코드는 기수를 영어 서수(1st, 2nd, 3rd, 11th)로 만듭니다. (2026-10-31) `Web/Header/Home Link`의 `Context=Study`가 `Context=Activity`로 바뀌어 코드도 `context="activity"`로 옮겼습니다(깨지는 변경, 전 `study`). 안쪽 primitive는 이름(`.primitive/Web/Header/Home Link/Study`)과 원본 글자가 아직 Study이고, 공개 컴포넌트의 Activity 변형만 글자를 Activity로 덮어씁니다. 코드는 공개 컴포넌트를 따랐습니다. primitive도 Activity로 볼지 알려 주세요.
+10. 라벨 있는 Home Link(Operation, Activity, ProductTech)에 "가제" 주석이 있습니다. 맥락 이름과 `11th` 같은 기수 표기가 확정되면 알려 주세요. 코드는 기수를 영어 서수(1st, 2nd, 3rd, 11th)로 만듭니다. (2026-10-31) `Web/Header/Home Link`의 `Context=Study`가 `Context=Activity`로 바뀌어 코드도 `context="activity"`로 옮겼습니다(깨지는 변경, 전 `study`). 안쪽 primitive는 이름(`.primitive/Web/Header/Home Link/Study`)과 원본 글자가 아직 Study이고, 공개 컴포넌트의 Activity 변형만 글자를 Activity로 덮어씁니다. 코드는 공개 컴포넌트를 따랐고, 문서 내부 키도 `header-home-link-activity`로 바꿔 Study는 문서의 피그마 이름 표시에만 남겼습니다. primitive 이름과 원본 글자도 Activity로 바뀌는지 알려 주세요.
 11. 라벨 있는 Home Link의 로고는 `Logo/UMC` 인스턴스가 아닙니다. 떼어 낸 그림을 73.76×21.93으로 줄였고, 라이브러리 로고는 74×22입니다. 코드는 피그마 크기를 따랐습니다. 인스턴스로 바꿀지 알려 주세요.
 12. Home Link 라벨의 Orbitron Bold와 글자 크기 13.487px, 11.689px은 텍스트 스타일에도 변수에도 없습니다. 로고와 함께 비율로 줄인 값으로 보고 그대로 옮겼습니다. Orbitron을 브랜드 글꼴 토큰으로 등록할지 알려 주세요.
 13. Home Link 색 변수의 codeSyntax `--color-action-primary-default` 하나가 `#3f4141`(라이트), `#02746c`(라이트 hover), `#f4fbfa`(다크) 세 값을 가리킵니다. 어느 변수인지 알 수 없어 코드는 값이 같은 `icon-neutral-stronger-700`, `icon-brand-strong-600`, `teal-50`, `teal-200`을 씁니다.
@@ -240,7 +240,7 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 24. Web/Header/Mobile은 헤더 아래로 펼친 모습만 있습니다. 코드는 메뉴를 본문 위에 겹쳐 띄우고(본문이 밀리지 않음), 항목을 누르거나 `Esc`나 바깥을 누르면 닫습니다. 본문을 밀어내야 하는지, 열고 닫을 때 움직임이 필요한지 알려 주세요.
 25. 모바일 메뉴 버튼은 34px 아이콘 그대로라 누르는 영역이 권장 크기 44px보다 작습니다. 넓혀도 되는지 알려 주세요.
 26. 라이트 메뉴를 펼친 모습(5572:81765)은 `Shadow/Drop/Neutral_2`(`#eff0f080`)를 씁니다. 같은 이름의 토큰은 `#eceeee85`라 코드는 토큰 값을 씁니다.
-27. Web/Header/Mobile에는 로그인 상태(프로필, 로그인 버튼)와 홈 링크 맥락(Operation, Study 등) 변형이 없고, 문서의 "권한별 헤더 4종"도 아직 정의되지 않았습니다. 코드는 Desktop처럼 `logo`와 `actions` 슬롯으로 열어 두었습니다. 2026-10-29에 생긴 프로필 메뉴도 Desktop에만 있습니다.
+27. Web/Header/Mobile에는 로그인 상태(프로필, 로그인 버튼)와 홈 링크 맥락(Operation, Activity 등) 변형이 없고, 문서의 "권한별 헤더 4종"도 아직 정의되지 않았습니다. 코드는 Desktop처럼 `logo`와 `actions` 슬롯으로 열어 두었습니다. 2026-10-29에 생긴 프로필 메뉴도 Desktop에만 있습니다.
 28. 프로필 아바타 배경 `#e9ecec`와 기본 사람 그림 `#656b6b`는 변수에 연결되지 않았고 3기 팔레트에도 없습니다. 배경은 Skeleton, Image Thumbnail과 같은 값입니다. 코드는 컴포넌트 변수로 둡니다. 이름 있는 색으로 연결할지 알려 주세요.
 29. 프로필 메뉴의 열고 닫는 움직임, 아바타 버튼의 hover와 포커스, 계정 설정과 로그아웃의 hover가 없습니다. 코드는 움직임 없이 열고 닫으며 아바타 버튼에 다른 헤더 항목과 같은 2px 포커스 외곽선을 둡니다. 계정 설정과 로그아웃은 마우스를 올리거나 키보드로 옮기면 밑줄을 긋습니다. 원하는 모양을 알려 주세요.
 30. 사진이 있는 프로필 모양이 없습니다. 코드는 사진을 원 안에 꽉 채워 자릅니다(`object-fit: cover`). 테두리나 불러오는 동안의 자리 표시가 필요한지 알려 주세요.
