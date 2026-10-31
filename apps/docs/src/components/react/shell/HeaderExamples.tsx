@@ -45,8 +45,8 @@ const OPERATION_HOME_LINK: HeaderHomeLinkProps = {
   context: "operation",
   generation: 11,
 }
-const STUDY_HOME_LINK: HeaderHomeLinkProps = {
-  context: "study",
+const ACTIVITY_HOME_LINK: HeaderHomeLinkProps = {
+  context: "activity",
   generation: 11,
 }
 const PRODUCT_TECH_HOME_LINK: HeaderHomeLinkProps = {
@@ -101,7 +101,7 @@ export function HeaderHomeLinks() {
           <div data-spec-id="home-link-labeled-slot home-link-labeled home-link-labeled-body home-link-labeled-logo home-link-labeled-title home-link-labeled-subtitle">
             <HeaderDesktop logo={<HeaderHomeLink {...OPERATION_HOME_LINK} />} />
           </div>
-          <HeaderDesktop logo={<HeaderHomeLink {...STUDY_HOME_LINK} />} />
+          <HeaderDesktop logo={<HeaderHomeLink {...ACTIVITY_HOME_LINK} />} />
           <HeaderDesktop
             logo={<HeaderHomeLink {...PRODUCT_TECH_HOME_LINK} />}
           />
@@ -253,7 +253,7 @@ const HEADER_MODES = { Light: "light", Dark: "dark" } as const
 const HOME_LINK_CONTEXTS = {
   Main: MAIN_HOME_LINK,
   Operation: OPERATION_HOME_LINK,
-  Study: STUDY_HOME_LINK,
+  Activity: ACTIVITY_HOME_LINK,
   "Product Tech": PRODUCT_TECH_HOME_LINK,
 }
 
@@ -263,7 +263,7 @@ const HOME_LINK_PRIMITIVE_SETS: ReadonlyArray<{
 }> = [
   { set: "header-home-link-umc", homeLink: MAIN_HOME_LINK },
   { set: "header-home-link-operation", homeLink: OPERATION_HOME_LINK },
-  { set: "header-home-link-study", homeLink: STUDY_HOME_LINK },
+  { set: "header-home-link-study", homeLink: ACTIVITY_HOME_LINK },
   { set: "header-home-link-product-tech", homeLink: PRODUCT_TECH_HOME_LINK },
 ]
 

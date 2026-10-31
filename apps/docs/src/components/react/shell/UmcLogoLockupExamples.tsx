@@ -14,7 +14,7 @@ export function UmcLogoLockupPreview() {
       <span data-spec-id="lockup-operation lockup-operation-logo lockup-operation-title lockup-operation-subtitle">
         <UmcLogoLockup context="operation" generation={11} />
       </span>
-      <UmcLogoLockup context="study" generation={11} />
+      <UmcLogoLockup context="activity" generation={11} />
       <UmcLogoLockup context="product-tech" />
     </div>
   )

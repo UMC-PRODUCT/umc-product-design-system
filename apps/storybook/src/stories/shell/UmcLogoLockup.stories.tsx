@@ -11,7 +11,7 @@ const meta = {
   argTypes: {
     context: {
       control: { type: "select" },
-      options: ["main", "product-tech", "operation", "study"],
+      options: ["main", "product-tech", "operation", "activity"],
     },
     generation: { control: { type: "number", min: 1 } },
   },
@@ -20,7 +20,7 @@ const meta = {
     generation: 11,
   },
   render: function Render(args) {
-    if (args.context === "operation" || args.context === "study") {
+    if (args.context === "operation" || args.context === "activity") {
       return <UmcLogoLockup {...args} />
     }
     return <UmcLogoLockup context={args.context} />

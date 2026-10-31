@@ -2,7 +2,7 @@
 
 - 독자: 3기 디자인 팀, 웹 파트
 - 소유자: UMC PRODUCT Design Chapter
-- 기준일: 2026-10-29
+- 기준일: 2026-10-31
 
 문서 사이트에는 싣지 않는 작업 목록입니다.
 
@@ -223,11 +223,11 @@ Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합�
 7. Context Switcher 목록에는 바깥 그림자가 없어 흰 페이지 위에서 경계가 거의 보이지 않습니다. 일반 `Dropdown_List`는 `Shadow/Drop/Neutral_1`을 씁니다. 같은 그림자를 써도 되는지 알려 주세요.
 8. Context Switcher는 172px인데 Side Navigation 슬롯 안쪽 폭은 168px입니다. 코드는 슬롯 안에서 168px로 줄입니다.
 9. Page Header 브레드크럼 구분자 색 `#cccccc`가 변수에 연결되어 있지 않고, 마지막(현재) 항목도 같은 색입니다. hover하면 굵기가 바뀌어 글자 폭이 조금 늘어납니다.
-10. 라벨 있는 Home Link(Operation, Study, ProductTech)에 "가제" 주석이 있습니다. 맥락 이름과 `11th` 같은 기수 표기가 확정되면 알려 주세요. 코드는 기수를 영어 서수(1st, 2nd, 3rd, 11th)로 만듭니다.
+10. 라벨 있는 Home Link(Operation, Activity, ProductTech)에 "가제" 주석이 있습니다. 맥락 이름과 `11th` 같은 기수 표기가 확정되면 알려 주세요. 코드는 기수를 영어 서수(1st, 2nd, 3rd, 11th)로 만듭니다. (2026-10-31) `Web/Header/Home Link`의 `Context=Study`가 `Context=Activity`로 바뀌어 코드도 `context="activity"`로 옮겼습니다(깨지는 변경, 전 `study`). 안쪽 primitive는 이름(`.primitive/Web/Header/Home Link/Study`)과 원본 글자가 아직 Study이고, 공개 컴포넌트의 Activity 변형만 글자를 Activity로 덮어씁니다. 코드는 공개 컴포넌트를 따랐습니다. primitive도 Activity로 볼지 알려 주세요.
 11. 라벨 있는 Home Link의 로고는 `Logo/UMC` 인스턴스가 아닙니다. 떼어 낸 그림을 73.76×21.93으로 줄였고, 라이브러리 로고는 74×22입니다. 코드는 피그마 크기를 따랐습니다. 인스턴스로 바꿀지 알려 주세요.
 12. Home Link 라벨의 Orbitron Bold와 글자 크기 13.487px, 11.689px은 텍스트 스타일에도 변수에도 없습니다. 로고와 함께 비율로 줄인 값으로 보고 그대로 옮겼습니다. Orbitron을 브랜드 글꼴 토큰으로 등록할지 알려 주세요.
 13. Home Link 색 변수의 codeSyntax `--color-action-primary-default` 하나가 `#3f4141`(라이트), `#02746c`(라이트 hover), `#f4fbfa`(다크) 세 값을 가리킵니다. 어느 변수인지 알 수 없어 코드는 값이 같은 `icon-neutral-stronger-700`, `icon-brand-strong-600`, `teal-50`, `teal-200`을 씁니다.
-14. `Web/Header/Home Link`의 왼쪽 여백은 Main이 60px, 라벨 있는 맥락이 34px입니다. 라벨 칸 200px 안에서 내용을 가운데 두므로 로고 시작 위치가 맥락마다 다릅니다(헤더 왼쪽에서 Main 76px, Operation 51.5px, Study 68.5px, Product Tech 57.8px). 맥락이 바뀌어도 로고 위치가 같아야 하는지 알려 주세요.
+14. `Web/Header/Home Link`의 왼쪽 여백은 Main이 60px, 라벨 있는 맥락이 34px입니다. 라벨 칸 200px 안에서 내용을 가운데 두므로 로고 시작 위치가 맥락마다 다릅니다(헤더 왼쪽에서 Main 76px, Operation 51.5px, Activity 59.7px, Product Tech 57.8px). 맥락이 바뀌어도 로고 위치가 같아야 하는지 알려 주세요.
 15. 좁은 화면용 Header가 없습니다. 라벨 있는 홈 링크는 로고 칸이 250px(여백 34px과 16px, 링크 200px)이라, 375px 화면에서 액션 버튼과 함께 두면 가로로 넘칩니다. 모바일 헤더 규칙과 브레이크포인트를 알려 주세요. (일부 해결 2026-10-28) `Web/Header`가 `Web/Header/Desktop`과 `Web/Header/Mobile`로 나뉘어 코드도 `HeaderDesktop`(깨지는 변경, 전 `Header`)과 `HeaderMobile`로 나눴습니다. 남은 것: 둘을 바꾸는 브레이크포인트가 없어 앱이 화면 폭으로 고릅니다. 기준 폭을 알려 주세요.
 16. Section Header Md의 제목(`Title/3-Semibold`, 18px)과 Sm의 설명(`Body/4-Regular`, 13px)은 2026-10-08에 받은 3기 텍스트 스타일에 없습니다. 코드는 피그마 값을 컴포넌트 변수로 둡니다. Export modes를 다시 주시면 토큰으로 바꾸겠습니다.
 17. Section Header Sm은 번호가 18px, 제목이 16px로 크기가 다릅니다. Lg와 Md는 번호와 제목이 같은 크기입니다. 의도한 것인지 알려 주세요.

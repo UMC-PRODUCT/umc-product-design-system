@@ -3,7 +3,7 @@ import type { ComponentPropsWithRef } from "react"
 
 import { cx } from "../../internal/cx.ts"
 
-type GenerationContext = "operation" | "study"
+type GenerationContext = "operation" | "activity"
 
 export type UmcLogoLockupContextProps =
   | { context?: "main" | "product-tech"; generation?: never }
@@ -16,7 +16,7 @@ type LockupLabel = { title: string; subtitle?: string }
 
 const GENERATION_CONTEXT_TITLES: Readonly<Record<GenerationContext, string>> = {
   operation: "Operation",
-  study: "Study",
+  activity: "Activity",
 }
 
 const ORDINAL_SUFFIXES: Readonly<Record<Intl.LDMLPluralRule, string>> = {
@@ -40,7 +40,7 @@ const isGeneration = (value: number) => Number.isInteger(value) && value > 0
 const labelOf = (props: UmcLogoLockupContextProps): LockupLabel | undefined => {
   switch (props.context) {
     case "operation":
-    case "study":
+    case "activity":
       return {
         title: GENERATION_CONTEXT_TITLES[props.context],
         subtitle: isGeneration(props.generation)
