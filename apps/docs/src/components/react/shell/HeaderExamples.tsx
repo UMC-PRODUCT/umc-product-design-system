@@ -263,7 +263,7 @@ const HOME_LINK_PRIMITIVE_SETS: ReadonlyArray<{
 }> = [
   { set: "header-home-link-umc", homeLink: MAIN_HOME_LINK },
   { set: "header-home-link-operation", homeLink: OPERATION_HOME_LINK },
-  { set: "header-home-link-study", homeLink: ACTIVITY_HOME_LINK },
+  { set: "header-home-link-activity", homeLink: ACTIVITY_HOME_LINK },
   { set: "header-home-link-product-tech", homeLink: PRODUCT_TECH_HOME_LINK },
 ]
 

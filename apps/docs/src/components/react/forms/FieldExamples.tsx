@@ -120,20 +120,23 @@ export function FieldWithInfo() {
   )
 }
 
+const LABEL_DEFAULT_ONLY =
+  "피그마 Text Field/Box와 Line이 오류와 비활성에서도 Default 레이블을 써서 이 색은 쓰지 않습니다"
+
+const CAPTION_DISABLED_UNUSED =
+  "피그마 Text Field/Box와 Line이 비활성에서도 Default 도움말을 써서 이 색은 쓰지 않습니다"
+
 function FieldLabelCell({ variant }: { variant: FigmaVariant }) {
   if (variant.props["Caption"] === "True") {
     return (
       <NotImplemented reason="레이블 옆 회색 보조 문구는 쓰임새를 확인할 때까지 넣지 않았습니다" />
     )
   }
-  const state = variant.props["State"]
+  if (variant.props["State"] !== "Default") {
+    return <NotImplemented reason={LABEL_DEFAULT_ONLY} />
+  }
   return (
-    <Field
-      label="레이블"
-      required
-      invalid={state === "Error"}
-      disabled={state === "Disabled"}
-    >
+    <Field label="레이블" required>
       {null}
     </Field>
   )
@@ -146,6 +149,9 @@ const FIGMA_CAPTION_SIZES: Readonly<Record<string, FieldCaptionSize>> = {
 
 function FieldCaptionCell({ variant }: { variant: FigmaVariant }) {
   const type = variant.props["Type"]
+  if (type === "Disabled") {
+    return <NotImplemented reason={CAPTION_DISABLED_UNUSED} />
+  }
   return (
     <Field
       caption="도움말을 적어 주세요"
@@ -153,7 +159,6 @@ function FieldCaptionCell({ variant }: { variant: FigmaVariant }) {
       captionSize={lookup(FIGMA_CAPTION_SIZES, variant, "Size")}
       invalid={type === "Error"}
       errorMessage={type === "Error" ? "오류 메시지를 적어 주세요" : undefined}
-      disabled={type === "Disabled"}
     >
       {null}
     </Field>

@@ -16,10 +16,6 @@
     border: 0;
   }
 
-  .umc-field[data-disabled] {
-    --umc-field-label-color: var(--umc-color-teal-grey-400);
-  }
-
   .umc-field__label {
     display: flex;
     align-items: center;
@@ -65,10 +61,6 @@
 
   .umc-field__caption[data-tone="error"] {
     --umc-field-caption-color: var(--umc-color-text-error);
-  }
-
-  .umc-field[data-disabled] .umc-field__caption:not([data-tone="error"]) {
-    --umc-field-caption-color: var(--umc-color-teal-grey-400);
   }
 
   .umc-field__info {
