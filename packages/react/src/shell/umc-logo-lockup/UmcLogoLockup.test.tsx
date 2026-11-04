@@ -53,16 +53,16 @@ describe("UmcLogoLockup", () => {
     [13, "13th"],
     [21, "21st"],
     [22, "22nd"],
-  ])("study %i기는 %s로 쓴다", (generation, ordinal) => {
-    render(<UmcLogoLockup context="study" generation={generation} />)
+  ])("activity %i기는 %s로 쓴다", (generation, ordinal) => {
+    render(<UmcLogoLockup context="activity" generation={generation} />)
     expect(screen.getByText(ordinal)).toBeInTheDocument()
   })
 
   it.each([0, -1, 1.5])("기수가 %s이면 서수 줄을 뺀다", (generation) => {
     const { container } = render(
-      <UmcLogoLockup context="study" generation={generation} />,
+      <UmcLogoLockup context="activity" generation={generation} />,
     )
-    expect(screen.getByText("Study")).toBeInTheDocument()
+    expect(screen.getByText("Activity")).toBeInTheDocument()
     expect(
       container.querySelector(".umc-logo-lockup__subtitle"),
     ).not.toBeInTheDocument()

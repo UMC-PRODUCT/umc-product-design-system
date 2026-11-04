@@ -3,12 +3,12 @@ import { describe, expectTypeOf, it } from "vitest"
 import { type UmcLogoLockupProps } from "./UmcLogoLockup.tsx"
 
 describe("UmcLogoLockupProps", () => {
-  it("operation과 study는 generation이 있어야 한다", () => {
+  it("operation과 activity는 generation이 있어야 한다", () => {
     expectTypeOf<{
       context: "operation"
     }>().not.toMatchTypeOf<UmcLogoLockupProps>()
     expectTypeOf<{
-      context: "study"
+      context: "activity"
       generation: number
     }>().toMatchTypeOf<UmcLogoLockupProps>()
   })

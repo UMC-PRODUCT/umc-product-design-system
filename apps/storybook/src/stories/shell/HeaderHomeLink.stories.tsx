@@ -11,7 +11,7 @@ const meta = {
   argTypes: {
     context: {
       control: { type: "select" },
-      options: ["main", "product-tech", "operation", "study"],
+      options: ["main", "product-tech", "operation", "activity"],
     },
     generation: { control: { type: "number", min: 1 } },
   },
@@ -21,7 +21,7 @@ const meta = {
     href: "/",
   },
   render: function Render(args) {
-    if (args.context === "operation" || args.context === "study") {
+    if (args.context === "operation" || args.context === "activity") {
       return <HeaderHomeLink {...args} />
     }
     return <HeaderHomeLink context={args.context} href={args.href} />

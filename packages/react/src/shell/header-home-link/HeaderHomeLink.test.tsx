@@ -41,9 +41,9 @@ describe("HeaderHomeLink", () => {
     expect(screen.getByText("11th")).toHaveClass("umc-logo-lockup__subtitle")
   })
 
-  it("study도 기수 서수를 붙인다", () => {
-    render(<HeaderHomeLink context="study" generation={3} />)
-    expect(screen.getByRole("link")).toHaveAccessibleName("UMC Study 3rd")
+  it("activity도 기수 서수를 붙인다", () => {
+    render(<HeaderHomeLink context="activity" generation={3} />)
+    expect(screen.getByRole("link")).toHaveAccessibleName("UMC Activity 3rd")
   })
 
   it("product-tech는 Product와 Tech 두 줄이다", () => {
@@ -79,8 +79,8 @@ describe("HeaderHomeLink", () => {
   it.each([Number.NaN, 0, -1, 1.5])(
     "기수 %s처럼 1 이상의 정수가 아니면 기수 줄을 그리지 않는다",
     (generation) => {
-      render(<HeaderHomeLink context="study" generation={generation} />)
-      expect(screen.getByRole("link")).toHaveAccessibleName("UMC Study")
+      render(<HeaderHomeLink context="activity" generation={generation} />)
+      expect(screen.getByRole("link")).toHaveAccessibleName("UMC Activity")
       expect(
         document.querySelector(".umc-logo-lockup__subtitle"),
       ).not.toBeInTheDocument()

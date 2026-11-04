@@ -87,29 +87,32 @@
     },
     {
       "specId": "field-label-error",
-      "node": "2621:33410",
-      "variant": "Text Field/ Label, State=Error",
+      "node": "2621:33356",
+      "variant": "Text Field/ Box, State=Default, Error=True 레이블",
       "target": ".umc-field__label",
       "expected": {
-        "color": "#dc3d3d"
+        "color": "#606262"
+      },
+      "figmaDiffers": {
+        "color": "Error=True 레이블은 Label 원본의 Default 색인 2기 변수 warmgray-600(#544f4b)을 그대로 쓴다. 오류가 없는 레이블과 같은 3기 토큰 #606262를 썼다"
       }
     },
     {
       "specId": "field-caption-disabled",
-      "node": "2621:33349",
-      "variant": "Help Text, Type=Disabled, Size=13px",
+      "node": "2621:33388",
+      "variant": "Text Field/ Box, State=Disabled, Error=False 도움말",
       "target": ".umc-field__caption",
       "expected": {
-        "color": "#adadad"
+        "color": "#7e7f7f"
       }
     },
     {
       "specId": "field-label-disabled",
-      "node": "2621:33403",
-      "variant": "Text Field/ Label, State=Disabled",
+      "node": "2621:33386",
+      "variant": "Text Field/ Box, State=Disabled, Error=False 레이블",
       "target": ".umc-field__label",
       "expected": {
-        "color": "#adadad"
+        "color": "#606262"
       }
     }
   ]

@@ -13,7 +13,7 @@ export type HeaderHomeLinkProps = UmcLogoLockupContextProps & {
 }
 
 const lockupOf = (props: UmcLogoLockupContextProps) =>
-  props.context === "operation" || props.context === "study" ? (
+  props.context === "operation" || props.context === "activity" ? (
     <UmcLogoLockup context={props.context} generation={props.generation} />
   ) : (
     <UmcLogoLockup context={props.context} />
