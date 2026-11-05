@@ -130,6 +130,19 @@ pnpm up "@umc-product/*" --latest
 <!-- releases:start -->
 
 <details open>
+<summary><b>0.12.1</b> · 2026-11-05 · 수정 1</summary>
+
+**수정**
+
+| 대상       | 변경사항                                          | 변경&nbsp;전&nbsp;→&nbsp;변경&nbsp;후 | 보기                                                                    |
+| ---------- | ------------------------------------------------- | ------------------------------------- | ----------------------------------------------------------------------- |
+| 메뉴(Menu) | 목록을 버튼 오른쪽 끝에 맞춰 여는 정렬이 생깁니다 | 버튼 왼쪽 끝 고정 → `align`으로 선택  | [Menu](https://design.university.neordinary.com/components/forms/menu/) |
+
+전문과 대응표: [react](packages/react/CHANGELOG.md#0121-2026-11-05)
+
+</details>
+
+<details>
 <summary><b>0.12.0</b> · 2026-11-04 · 깨지는 변경 1 · 화면 변화 2</summary>
 
 **깨지는 변경**
