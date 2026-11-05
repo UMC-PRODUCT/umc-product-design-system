@@ -21,6 +21,7 @@
     --umc-header-desktop-item-selected-shadow: none;
     --umc-header-desktop-shadow: var(--umc-shadow-drop-neutral-3);
 
+    position: relative;
     display: grid;
     grid-template-columns: minmax(max-content, 1fr) auto minmax(
         max-content,
