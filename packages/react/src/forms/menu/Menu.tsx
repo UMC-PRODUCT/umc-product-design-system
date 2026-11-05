@@ -18,6 +18,7 @@ export type MenuProps = MenuLayoutProps & {
   trigger: ReactElement
   items: MenuItemDef[]
   title?: ReactNode
+  align?: "start" | "end"
   className?: string
 }
 
@@ -53,6 +54,7 @@ export function Menu({
   title,
   size = "sm",
   layout = "default",
+  align = "start",
   className,
 }: MenuProps) {
   const ItemContent =
@@ -77,7 +79,7 @@ export function Menu({
         <BaseUIMenu.Positioner
           className="umc-dropdown-list__positioner"
           sideOffset={4}
-          align="start"
+          align={align}
         >
           <BaseUIMenu.Popup
             className="umc-dropdown-list umc-menu"
