@@ -73,6 +73,30 @@ describe("Menu", () => {
     expect(screen.queryByRole("group")).not.toBeInTheDocument()
   })
 
+  it("align을 넘기지 않으면 목록을 트리거 왼쪽 끝에 맞춘다", async () => {
+    const user = userEvent.setup()
+    render(<Menu trigger={<button>메뉴</button>} items={baseItems} />)
+    await user.click(screen.getByText("메뉴"))
+    const menu = await screen.findByRole("menu")
+    expect(menu.closest(".umc-dropdown-list__positioner")).toHaveAttribute(
+      "data-align",
+      "start",
+    )
+  })
+
+  it("align이 end면 목록을 트리거 오른쪽 끝에 맞춘다", async () => {
+    const user = userEvent.setup()
+    render(
+      <Menu trigger={<button>메뉴</button>} items={baseItems} align="end" />,
+    )
+    await user.click(screen.getByText("메뉴"))
+    const menu = await screen.findByRole("menu")
+    expect(menu.closest(".umc-dropdown-list__positioner")).toHaveAttribute(
+      "data-align",
+      "end",
+    )
+  })
+
   it("disabled 항목은 onClick이 호출되지 않는다", async () => {
     const onClick = vi.fn()
     const user = userEvent.setup()

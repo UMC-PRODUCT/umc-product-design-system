@@ -5,6 +5,7 @@ description: 버튼을 눌러 여는 동작 목록입니다.
 
 import {
   DropdownItemAllVariants,
+  MenuAlign,
   MenuDefault,
   MenuInline,
   MenuListAllVariants,
@@ -50,6 +51,12 @@ import { Button, Menu } from "@umc-product/react"
 
 <MenuInline client:visible />
 
+## 정렬
+
+`align`은 목록을 버튼의 어느 끝에 맞출지 정합니다. 기본값 `"start"`는 버튼 왼쪽 끝에 맞춰 오른쪽으로 펼치고, `"end"`는 버튼 오른쪽 끝에 맞춰 왼쪽으로 펼칩니다. 카드나 표 행의 오른쪽 끝 버튼처럼 목록이 버튼 오른쪽 끝을 넘으면 안 될 때 `"end"`를 씁니다. 화면 가장자리에 자리가 모자라면 어느 값이든 반대쪽 끝에 맞춰 열립니다.
+
+<MenuAlign client:visible />
+
 ## 모든 변형
 
 피그마 `Meue List` 변형 2개와 `.primitve/Meue Item/Text Only` 변형 16개를 그렸습니다. 목록은 열려 있을 때만 보이므로 펼친 모습을 고정해 그렸습니다. 항목은 Select 목록과 헤더 프로필 메뉴의 기수 목록도 같이 씁니다. Selected 칸의 코드는 고른 상태를 남기는 Select로 보여 줍니다. 칸에 마우스를 올리면 코드가 보이고, hover와 포커스 같은 상태는 켜 둔 모습입니다.
@@ -67,6 +74,7 @@ import { Button, Menu } from "@umc-product/react"
 | `title`   | `ReactNode`             | 없음        | 항목 위에 두는 타이틀                     |
 | `size`    | `"xs" \| "sm" \| "md"`  | `"sm"`      | 항목 크기와 목록 최소 폭                  |
 | `layout`  | `"default" \| "inline"` | `"default"` | 캡션 자리. `inline`은 `size="xs"`에서만   |
+| `align`   | `"start" \| "end"`      | `"start"`   | 목록을 맞출 버튼 끝. `end`는 오른쪽 끝    |
 
 ## 알아 둘 점
 
