@@ -103,6 +103,26 @@ export function MenuInline() {
   )
 }
 
+export function MenuAlign() {
+  return (
+    <div className="umc-example justify-between">
+      {(["start", "end"] as const).map((align) => (
+        <Menu
+          key={align}
+          align={align}
+          size="md"
+          trigger={
+            <Button variant="weak" color="neutral" size="sm">
+              {align}
+            </Button>
+          }
+          items={[{ label: "수정" }, { label: "복제" }, { label: "삭제" }]}
+        />
+      ))}
+    </div>
+  )
+}
+
 const ITEM_SIZES = { Xs: "xs", Sm: "sm", Md: "md" } as const
 const ITEM_LAYOUTS = { Default: "default", Inline: "inline" } as const
 const LIST_SIZES = { Sm: "sm", Md: "md" } as const

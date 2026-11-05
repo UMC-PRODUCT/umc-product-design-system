@@ -65,3 +65,15 @@ export const InlineCaption: Story = {
     await userEvent.keyboard("{ArrowDown}")
   },
 }
+
+export const AlignEnd: Story = {
+  tags: ["!autodocs"],
+  args: {
+    size: "md",
+    align: "end",
+  },
+  play: async ({ canvasElement }) => {
+    await userEvent.click(within(canvasElement).getByRole("button"))
+    await userEvent.keyboard("{ArrowDown}")
+  },
+}

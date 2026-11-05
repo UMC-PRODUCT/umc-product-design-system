@@ -45,6 +45,12 @@ describe("MenuProps 타입", () => {
     }>().toMatchTypeOf<MenuProps>()
   })
 
+  it("align은 start와 end만 받는다", () => {
+    expectTypeOf<MenuProps["align"]>().toEqualTypeOf<
+      "start" | "end" | undefined
+    >()
+  })
+
   it("caption은 선택적인 ReactNode다", () => {
     expectTypeOf<MenuItemDef["caption"]>().toEqualTypeOf<
       ReactNode | undefined
