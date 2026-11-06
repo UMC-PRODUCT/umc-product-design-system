@@ -70,6 +70,18 @@
       }
     },
     {
+      "specId": "verification-code-label-invalid",
+      "node": "2621:36625",
+      "variant": "Text Field/ Verification Code, State=Default, Error=True 레이블",
+      "target": ".umc-field__label",
+      "expected": {
+        "color": "#606262"
+      },
+      "figmaDiffers": {
+        "color": "2026-11-05에 Error=True 레이블이 빨강에서 Label 원본의 Default 색인 2기 변수 warmgray-600(#544f4b)으로 바뀌었다. 오류가 없는 레이블과 같은 3기 토큰 #606262를 썼다"
+      }
+    },
+    {
       "specId": "verification-code-disabled",
       "node": "2621:36722",
       "variant": "Type=Default, State=Disabled, Size=Lg 타이머",

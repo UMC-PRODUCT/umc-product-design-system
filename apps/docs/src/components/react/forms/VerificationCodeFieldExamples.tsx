@@ -72,7 +72,7 @@ export function VerificationCodeFieldStates() {
       </div>
       <div
         className="w-full max-w-[326px]"
-        data-spec-id="verification-code-invalid"
+        data-spec-id="verification-code-invalid verification-code-label-invalid"
       >
         <VerificationCodeField
           label="인증번호"
