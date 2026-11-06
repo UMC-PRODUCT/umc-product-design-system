@@ -70,6 +70,18 @@
       }
     },
     {
+      "specId": "verification-code-label-invalid",
+      "node": "2621:36655",
+      "variant": "Text Field/ Verification Code, State=Filled, Error=True 레이블",
+      "target": ".umc-field__label",
+      "expected": {
+        "color": "#606262"
+      },
+      "figmaDiffers": {
+        "color": "2026-11-05에 Error=True 레이블이 빨강에서 Label 원본의 Default 색인 2기 변수 warmgray-600(#544f4b)으로 바뀌었지만 이 State=Filled 변형만 Label 인스턴스 대신 직접 그린 텍스트라 아직 Red-500(#dc3d3d)이다. 코드는 상태와 상관없이 오류가 없는 레이블과 같은 3기 토큰 #606262를 썼다"
+      }
+    },
+    {
       "specId": "verification-code-disabled",
       "node": "2621:36722",
       "variant": "Type=Default, State=Disabled, Size=Lg 타이머",
