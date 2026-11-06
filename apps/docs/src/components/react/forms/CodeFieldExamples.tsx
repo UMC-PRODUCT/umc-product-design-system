@@ -74,7 +74,7 @@ export function CodeFieldSizes() {
 export function CodeFieldStates() {
   return (
     <div className="umc-example umc-example-stack">
-      <div data-spec-id="code-field-cell-invalid">
+      <div data-spec-id="code-field-cell-invalid code-field-label-invalid">
         <CodeField
           label="개별 지원 코드"
           defaultValue="000000"
