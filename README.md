@@ -130,6 +130,19 @@ pnpm up "@umc-product/*" --latest
 <!-- releases:start -->
 
 <details open>
+<summary><b>0.12.2</b> · 2026-11-06 · 화면 변화 1</summary>
+
+**화면 변화**
+
+| 대상                       | 변경사항                                         | 변경&nbsp;전&nbsp;→&nbsp;변경&nbsp;후 | 보기                                                                               |
+| -------------------------- | ------------------------------------------------ | ------------------------------------- | ---------------------------------------------------------------------------------- |
+| 헤더 그림자(HeaderDesktop) | 뒤에 오는 본문 배경에 가려지던 그림자가 보입니다 | 가려짐 → 본문 배경 위에 그려짐        | [HeaderDesktop](https://design.university.neordinary.com/components/shell/header/) |
+
+전문과 대응표: [react](packages/react/CHANGELOG.md#0122-2026-11-06)
+
+</details>
+
+<details>
 <summary><b>0.12.1</b> · 2026-11-05 · 수정 1</summary>
 
 **수정**
