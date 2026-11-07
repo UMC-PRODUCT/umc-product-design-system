@@ -3,6 +3,7 @@ import {
   Button,
   ToastProvider,
   useToast,
+  type ServiceNoticeOptions,
   type ToastOptions,
   type ToastProviderProps,
 } from "@umc-product/react"
@@ -41,6 +42,23 @@ function ToastTrigger({
       onClick={() => toast.show({ message, color, icon, action, duration })}
     >
       {TRIGGER_LABEL}
+    </Button>
+  )
+}
+
+const SERVICE_NOTICE_TRIGGER_LABEL = "서비스 공지 보기"
+
+function ServiceNoticeTrigger({
+  message,
+  color,
+}: {
+  message: string
+  color: NonNullable<ServiceNoticeOptions["color"]>
+}) {
+  const toast = useToast()
+  return (
+    <Button onClick={() => toast.showServiceNotice({ message, color })}>
+      {SERVICE_NOTICE_TRIGGER_LABEL}
     </Button>
   )
 }
@@ -87,6 +105,42 @@ export const Playground: Story = {
   play: async ({ canvasElement }) => {
     await userEvent.click(
       await within(canvasElement).findByRole("button", { name: TRIGGER_LABEL }),
+    )
+  },
+}
+
+export const ServiceNotice: Story = {
+  args: {
+    message: "리크루팅 서비스는 12기 모집 때 공개될 예정이에요",
+  },
+  argTypes: {
+    color: {
+      control: { type: "select" },
+      options: ["brand", "neutral"],
+    },
+    icon: hiddenControl,
+    actionLabel: hiddenControl,
+    duration: hiddenControl,
+    onAction: hiddenControl,
+  },
+  parameters: {
+    docs: { story: { inline: false, height: "200px" } },
+  },
+  render: function Render({ placement, message, color }) {
+    return (
+      <ToastProvider key={placement} placement={placement}>
+        <ServiceNoticeTrigger
+          message={message}
+          color={color === "neutral" ? "neutral" : "brand"}
+        />
+      </ToastProvider>
+    )
+  },
+  play: async ({ canvasElement }) => {
+    await userEvent.click(
+      await within(canvasElement).findByRole("button", {
+        name: SERVICE_NOTICE_TRIGGER_LABEL,
+      }),
     )
   },
 }
