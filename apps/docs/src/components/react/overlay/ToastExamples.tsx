@@ -243,6 +243,29 @@ export function ToastStaticPreview() {
   )
 }
 
+const LONG_TOAST_MESSAGE =
+  "토스트 알림이에요토스트 알림이에요토스트 알림이에요토스트 알림이에요토스트 알림이에요"
+
+export function ToastWidthPreview() {
+  return (
+    <div className="umc-example umc-example-stack docs-toast-preview">
+      <ToastPreviewItem
+        color="neutral"
+        message="토스트 알림이에요"
+        withIcon
+        actionLabel="버튼"
+      />
+      <ToastPreviewItem
+        specId="toast-width-wrap"
+        color="neutral"
+        message={LONG_TOAST_MESSAGE}
+        withIcon
+        actionLabel="취소"
+      />
+    </div>
+  )
+}
+
 function ToastTrigger({
   label,
   color,

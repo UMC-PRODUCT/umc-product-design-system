@@ -233,6 +233,15 @@
       "figmaDiffers": {
         "min-width": "상단 Service Notice만 최소 폭 400px이다. 하단 Service Notice(2621:33511)와 하단 사용 예시(6034:63660, 폭 279px)는 최소 폭 없이 내용 폭이고, 최소 폭을 주면 짧은 문구에서 오른쪽 픽토그램이 끝에서 떨어져 두 위치 모두 내용 폭으로 그렸다"
       }
+    },
+    {
+      "specId": "toast-width-wrap",
+      "node": "3913:59181",
+      "variant": "너비 예시 최소 400px + Hug(긴 문구와 동작 버튼)",
+      "target": ".umc-toast",
+      "expected": {
+        "width": "400px"
+      }
     }
   ]
 }
