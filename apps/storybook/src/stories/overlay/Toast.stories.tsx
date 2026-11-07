@@ -19,6 +19,7 @@ type StoryArgs = ToastProviderProps & {
   icon?: ReactNode
   actionLabel: string
   duration: number
+  width?: number
   onAction: () => void
 }
 
@@ -32,6 +33,7 @@ function ToastTrigger({
   icon,
   actionLabel,
   duration,
+  width,
   onAction,
 }: ToastTriggerProps) {
   const toast = useToast()
@@ -39,7 +41,9 @@ function ToastTrigger({
     actionLabel === "" ? undefined : { label: actionLabel, onClick: onAction }
   return (
     <Button
-      onClick={() => toast.show({ message, color, icon, action, duration })}
+      onClick={() =>
+        toast.show({ message, color, icon, action, duration, width })
+      }
     >
       {TRIGGER_LABEL}
     </Button>
@@ -75,6 +79,7 @@ const meta = {
       control: { type: "select" },
       options: ["brand", "neutral", "warning", "error"],
     },
+    width: { control: { type: "number" } },
   },
   args: {
     placement: "bottom",
@@ -121,6 +126,7 @@ export const ServiceNotice: Story = {
     icon: hiddenControl,
     actionLabel: hiddenControl,
     duration: hiddenControl,
+    width: hiddenControl,
     onAction: hiddenControl,
   },
   parameters: {

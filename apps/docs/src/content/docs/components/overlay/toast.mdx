@@ -62,7 +62,11 @@ function Page() {
 
 ## 너비
 
-하단 토스트는 폭 400px로 그리고 문구가 길면 그 안에서 줄을 바꿉니다. 화면이 좁으면 양옆 16px 안쪽으로 줄어듭니다.
+하단 토스트는 폭 400px로 그리고 문구가 길면 그 안에서 줄을 바꿉니다. 화면이 좁으면 양옆 16px 안쪽으로 줄어듭니다. 더 넓게 써야 하면 `width`에 px 값을 넘깁니다. 하단 토스트는 `width`를 넘겨도 400px보다 좁아지지 않고, 어느 위치든 화면 양옆 16px 안쪽까지만 넓어집니다.
+
+```tsx
+toast.show({ message: "긴 안내 문구", width: 527 })
+```
 
 <ToastWidthPreview />
 
@@ -112,6 +116,7 @@ toast.showServiceNotice({
 | `icon`     | `ReactNode`                                    | 없음      | 왼쪽 아이콘                                  |
 | `action`   | `{ label: ReactNode; onClick: () => void }`    | 없음      | 액션 버튼                                    |
 | `duration` | `number`                                       | 없음      | 자동 닫힘 시간(ms). 기본: 3000, action: 6000 |
+| `width`    | `number`                                       | 없음      | 폭(px). 기본: 하단 400, 상단 내용 폭         |
 
 ### ServiceNoticeOptions
 

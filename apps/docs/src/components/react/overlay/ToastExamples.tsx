@@ -39,6 +39,7 @@ type ToastPreviewItemProps = {
   placement?: ToastPlacement
   withIcon?: boolean
   actionLabel?: string
+  width?: number
 }
 
 const toastIconOf = (color: ToastColor) =>
@@ -63,12 +64,14 @@ const toastCodeOf = ({
   placement,
   icon,
   actionLabel,
+  width,
 }: {
   color: ToastColor
   message: string
   placement: ToastPlacement
   icon: ReactElement | undefined
   actionLabel: string | undefined
+  width: number | undefined
 }) => {
   const show = callCodeOf("toast.show", {
     message,
@@ -78,6 +81,7 @@ const toastCodeOf = ({
       actionLabel === undefined
         ? undefined
         : { label: actionLabel, onClick: CODE_PLACEHOLDER },
+    width,
   })
   return withPlacementCode(show, placement)
 }
@@ -89,9 +93,17 @@ function ToastPreviewItem({
   placement = "bottom",
   withIcon = false,
   actionLabel,
+  width,
 }: ToastPreviewItemProps) {
   const icon = withIcon ? toastIconOf(color) : undefined
-  const code = toastCodeOf({ color, message, placement, icon, actionLabel })
+  const code = toastCodeOf({
+    color,
+    message,
+    placement,
+    icon,
+    actionLabel,
+    width,
+  })
   return (
     <div data-spec-id={specId}>
       <div
@@ -99,7 +111,7 @@ function ToastPreviewItem({
         data-color={color}
         data-placement={placement}
         data-icon={withIcon ? "" : undefined}
-        style={{ animation: "none" }}
+        style={{ animation: "none", width }}
         {...codeAttributeOf(code)}
       >
         <div className="umc-toast__main">
@@ -246,6 +258,9 @@ export function ToastStaticPreview() {
 const LONG_TOAST_MESSAGE =
   "토스트 알림이에요토스트 알림이에요토스트 알림이에요토스트 알림이에요토스트 알림이에요"
 
+const WIDE_TOAST_MESSAGE =
+  "토스트 알림이에요토스트 알림이에요토스트 알림이에요토스트 알림이에요"
+
 export function ToastWidthPreview() {
   return (
     <div className="umc-example umc-example-stack docs-toast-preview">
@@ -254,6 +269,14 @@ export function ToastWidthPreview() {
         message="토스트 알림이에요"
         withIcon
         actionLabel="버튼"
+      />
+      <ToastPreviewItem
+        specId="toast-width-fixed"
+        color="neutral"
+        message={WIDE_TOAST_MESSAGE}
+        withIcon
+        actionLabel="버튼"
+        width={527}
       />
       <ToastPreviewItem
         specId="toast-width-wrap"

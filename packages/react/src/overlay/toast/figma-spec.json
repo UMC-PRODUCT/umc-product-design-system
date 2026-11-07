@@ -242,6 +242,15 @@
       "expected": {
         "width": "400px"
       }
+    },
+    {
+      "specId": "toast-width-fixed",
+      "node": "3913:59170",
+      "variant": "너비 예시 최소 400px + Fixed(가로 너비 연장 527px)",
+      "target": ".umc-toast",
+      "expected": {
+        "width": "527px"
+      }
     }
   ]
 }

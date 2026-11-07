@@ -32,14 +32,16 @@ function ShowApp({
   message,
   action,
   color,
+  width,
 }: {
   message: string
   action?: { label: string; onClick: () => void }
   color?: "brand" | "neutral" | "warning" | "error"
+  width?: number
 }) {
   const toast = useToast()
   return (
-    <button onClick={() => toast.show({ message, action, color })}>
+    <button onClick={() => toast.show({ message, action, color, width })}>
       보여줘
     </button>
   )
@@ -351,6 +353,32 @@ describe("ToastProvider & useToast", () => {
     })
     const toast = document.querySelector(".umc-toast")
     expect(toast).toHaveAttribute("data-color", "error")
+  })
+
+  it("width를 넘기면 그 폭(px)으로 그린다", () => {
+    render(
+      <ToastProvider>
+        <ShowApp message="너비를 늘린 토스트" width={527} />
+      </ToastProvider>,
+    )
+    act(() => {
+      fireEvent.click(screen.getByRole("button", { name: "보여줘" }))
+    })
+    const toast = document.querySelector<HTMLElement>(".umc-toast")
+    expect(toast?.style.width).toBe("527px")
+  })
+
+  it("width를 넘기지 않으면 폭을 스타일 규칙에 맡긴다", () => {
+    render(
+      <ToastProvider>
+        <ShowApp message="기본 폭 토스트" />
+      </ToastProvider>,
+    )
+    act(() => {
+      fireEvent.click(screen.getByRole("button", { name: "보여줘" }))
+    })
+    const toast = document.querySelector<HTMLElement>(".umc-toast")
+    expect(toast?.style.width).toBe("")
   })
 
   describe("showServiceNotice", () => {
