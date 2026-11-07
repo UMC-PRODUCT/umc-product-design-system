@@ -239,7 +239,8 @@
   max-width: 100cqi;
 }
 
-.docs-toast-preview .umc-toast:not([data-placement="top"]) {
+.docs-toast-preview
+  .umc-toast:not([data-placement="top"], [data-kind="service-notice"]) {
   min-width: min(400px, 100cqi);
 }
 

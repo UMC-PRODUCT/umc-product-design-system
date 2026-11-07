@@ -77,6 +77,18 @@
     gap: var(--umc-spacing-gap-8);
   }
 
+  .umc-toast[data-kind="service-notice"] {
+    --umc-toast-service-notice-gap: 14px;
+
+    min-width: 0;
+    gap: var(--umc-toast-service-notice-gap);
+  }
+
+  .umc-toast__pictogram {
+    display: inline-flex;
+    flex-shrink: 0;
+  }
+
   .umc-toast[data-starting-style],
   .umc-toast[data-ending-style] {
     opacity: 0;

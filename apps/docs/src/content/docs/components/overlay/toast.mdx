@@ -7,6 +7,7 @@ import {
   ToastAllVariants,
   ToastColors,
   ToastPlacementTop,
+  ToastServiceNotice,
   ToastStaticPreview,
   ToastWithAction,
 } from "../../../../components/react/overlay/ToastExamples.tsx"
@@ -36,7 +37,7 @@ function Page() {
 
 ## 외형 미리보기
 
-피그마 `Toast Bottom`과 `Toast Top`의 변형을 항상 보이게 그린 미리보기입니다. 위에서부터 Primary(아이콘과 닫기), Primary(동작 버튼), Neutral, Warning, Warning(동작 버튼), Error, Error(동작 버튼), 상단 Primary(아이콘), 상단 Primary(동작 버튼)입니다. 앞 아이콘은 `icon`에 넘긴 아이콘을 타입에 맞는 색으로 칠합니다. Primary와 Neutral은 틸, Error는 빨강으로 `<CheckCircleIcon weight="fill" />`을, Warning은 주황으로 `<WarningIcon weight="fill" />`을 넘깁니다.
+피그마 `Toast Bottom`과 `Toast Top`의 변형을 항상 보이게 그린 미리보기입니다. 위에서부터 Primary(아이콘과 닫기), Primary(동작 버튼), Neutral, Warning, Warning(동작 버튼), Error, Error(동작 버튼), 상단 Primary(아이콘), 상단 Primary(동작 버튼), Service Notice, Service Notice(Neutral), 상단 Service Notice입니다. 앞 아이콘은 `icon`에 넘긴 아이콘을 타입에 맞는 색으로 칠합니다. Primary와 Neutral은 틸, Error는 빨강으로 `<CheckCircleIcon weight="fill" />`을, Warning은 주황으로 `<WarningIcon weight="fill" />`을 넘깁니다.
 
 <ToastStaticPreview />
 
@@ -58,6 +59,18 @@ function Page() {
 
 <ToastPlacementTop client:visible />
 
+## 서비스 공지
+
+준비 중인 서비스나 공개 예정인 기능을 알릴 때는 `toast.showServiceNotice()`를 씁니다. 메시지 양옆에 공사 중 픽토그램을 그리고, 아이콘과 동작 버튼 없이 내용 폭으로 그립니다. 닫기 버튼도 없어서 3초 뒤에 저절로 닫힙니다. 색은 `brand`(기본)와 `neutral` 두 가지입니다.
+
+```tsx
+toast.showServiceNotice({
+  message: "리크루팅 서비스는 12기 모집 때 공개될 예정이에요",
+})
+```
+
+<ToastServiceNotice client:visible />
+
 ## 모든 변형
 
 피그마 `Toast Bottom` 16개와 `Toast Top` 16개를 그렸습니다. 토스트는 잠깐 떴다 사라지므로 화면에 고정해 그렸습니다. 칸에 마우스를 올리면 코드가 보입니다.
@@ -75,10 +88,11 @@ function Page() {
 
 ### useToast()가 반환하는 API
 
-| 메서드  | 시그니처                            | 설명                        |
-| ------- | ----------------------------------- | --------------------------- |
-| `show`  | `(options: ToastOptions) => string` | 토스트를 열고 id를 반환한다 |
-| `close` | `(id: string) => void`              | 해당 id의 토스트를 닫는다   |
+| 메서드              | 시그니처                                    | 설명                                    |
+| ------------------- | ------------------------------------------- | --------------------------------------- |
+| `show`              | `(options: ToastOptions) => string`         | 토스트를 열고 id를 반환한다             |
+| `showServiceNotice` | `(options: ServiceNoticeOptions) => string` | 서비스 공지 토스트를 열고 id를 반환한다 |
+| `close`             | `(id: string) => void`                      | 해당 id의 토스트를 닫는다               |
 
 반환값은 `ToastProvider`마다 하나로 고정됩니다. 토스트가 열리고 닫혀도 `useToast()`를 부른 컴포넌트는 다시 렌더되지 않으므로, 반환값을 `useEffect`나 `useCallback`의 의존성에 넣어도 됩니다.
 
@@ -92,14 +106,18 @@ function Page() {
 | `action`   | `{ label: ReactNode; onClick: () => void }`    | 없음      | 액션 버튼                                    |
 | `duration` | `number`                                       | 없음      | 자동 닫힘 시간(ms). 기본: 3000, action: 6000 |
 
+### ServiceNoticeOptions
+
+| prop       | 타입                   | 기본값    | 설명                           |
+| ---------- | ---------------------- | --------- | ------------------------------ |
+| `message`  | `ReactNode`            | 필수      | 본문                           |
+| `color`    | `"brand" \| "neutral"` | `"brand"` | 색상                           |
+| `duration` | `number`               | 없음      | 자동 닫힘 시간(ms). 기본: 3000 |
+
 ## 동작
 
 - 3초 뒤에 저절로 닫히고, 동작 버튼이 있으면 6초 뒤에 닫힙니다.
 - Error 토스트는 나타날 때 좌우로 흔들리고, 화면 낭독기에 바로 알립니다. 움직임 줄이기 설정에서는 흔들리지 않습니다.
-- 웹에서는 최소 폭 400px이고 화면 양옆 16px 안쪽으로 줄어듭니다.
+- 웹에서는 최소 폭 400px이고 화면 양옆 16px 안쪽으로 줄어듭니다. 서비스 공지는 최소 폭 없이 내용 폭으로 그립니다.
 - 하단 배치는 화면 아래에서 40px 띄워 가운데에 놓습니다(높이 48px 토스트라면 윗변이 아래에서 88px). 상단 배치는 화면 위에서 112px에 놓습니다.
 - 하단 토스트의 닫기 버튼과 동작 버튼은 아이콘과 글자 왼쪽(닫기 8px, 동작 12px)까지 누를 수 있습니다.
-
-## 알아 둘 점
-
-- Service Notice 타입은 아직 지원하지 않습니다.
