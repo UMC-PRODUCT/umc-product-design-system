@@ -166,6 +166,91 @@
         "padding-right": "16px",
         "column-gap": "16px"
       }
+    },
+    {
+      "specId": "toast-service-notice",
+      "node": "2621:33511",
+      "variant": "Type=Service Notice, Leading Acc=True, Text Button=False",
+      "target": ".umc-toast",
+      "expected": {
+        "background-color": "#b3e5e1",
+        "color": "#015a54",
+        "min-width": "0px",
+        "padding-top": "12px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "column-gap": "14px"
+      }
+    },
+    {
+      "specId": "toast-service-notice-pictogram",
+      "node": "3156:42963",
+      "variant": "Toast Top Type=Service Notice 양옆 Pictogram/Under-construction",
+      "target": ".umc-toast__pictogram svg",
+      "expected": {
+        "color": "#02746c",
+        "width": "24px",
+        "height": "24px"
+      },
+      "figmaDiffers": {
+        "color": "하단 Service Notice(2621:33513)의 양옆 그래픽은 아직 픽토그램 인스턴스가 아닌 .docs/Grapic이라 #008a80과 #ddf4f1이다. 상단처럼 Pictogram/Under-construction의 light 모드(#02746c, #ddf4f1)를 두 위치에 같이 썼다"
+      }
+    },
+    {
+      "specId": "toast-service-notice-neutral",
+      "node": "3156:42839",
+      "variant": "Type=Service Notice · Neutral, Leading Acc=True, Text Button=False",
+      "target": ".umc-toast",
+      "expected": {
+        "background-color": "#3f4141cc",
+        "color": "#ffffff",
+        "column-gap": "14px"
+      }
+    },
+    {
+      "specId": "toast-service-notice-neutral-pictogram",
+      "node": "3156:42973",
+      "variant": "Toast Top Type=Service Notice · Neutral 양옆 Pictogram/Under-construction",
+      "target": ".umc-toast__pictogram svg",
+      "expected": {
+        "color": "#008a80",
+        "width": "24px"
+      },
+      "figmaDiffers": {
+        "color": "하단 Service Notice · Neutral(3156:42841)의 양옆 그래픽은 .docs/Grapic이라 안쪽 면이 #ddf4f1이다. 상단처럼 Pictogram/Under-construction의 dark 모드(#008a80, #b3e6e1)를 두 위치에 같이 썼다"
+      }
+    },
+    {
+      "specId": "toast-top-service-notice",
+      "node": "2621:33559",
+      "variant": "Toast Top Type=Service Notice, Leading Acc=True, Text Button=False",
+      "target": ".umc-toast",
+      "expected": {
+        "min-width": "0px",
+        "padding-left": "16px",
+        "column-gap": "14px"
+      },
+      "figmaDiffers": {
+        "min-width": "상단 Service Notice만 최소 폭 400px이다. 하단 Service Notice(2621:33511)와 하단 사용 예시(6034:63660, 폭 279px)는 최소 폭 없이 내용 폭이고, 최소 폭을 주면 짧은 문구에서 오른쪽 픽토그램이 끝에서 떨어져 두 위치 모두 내용 폭으로 그렸다"
+      }
+    },
+    {
+      "specId": "toast-width-wrap",
+      "node": "3913:59181",
+      "variant": "너비 예시 최소 400px + Hug(긴 문구와 동작 버튼)",
+      "target": ".umc-toast",
+      "expected": {
+        "width": "400px"
+      }
+    },
+    {
+      "specId": "toast-width-fixed",
+      "node": "3913:59170",
+      "variant": "너비 예시 최소 400px + Fixed(가로 너비 연장 527px)",
+      "target": ".umc-toast",
+      "expected": {
+        "width": "527px"
+      }
     }
   ]
 }

@@ -1,6 +1,11 @@
 "use client"
 
-import { CheckCircleIcon, CloseIcon, WarningIcon } from "@umc-product/icons"
+import {
+  CheckCircleIcon,
+  CloseIcon,
+  UnderConstructionPictogram,
+  WarningIcon,
+} from "@umc-product/icons"
 import { Button, ToastProvider, useToast } from "@umc-product/react"
 import type { ReactElement } from "react"
 
@@ -10,13 +15,22 @@ import {
   codeAttributeOf,
   componentCodeOf,
 } from "../../../lib/component-code.ts"
-import { NotImplemented } from "../variants/VariantCells.tsx"
 import { lookup, type FigmaVariant } from "../variants/figma-variants.ts"
 import { VariantGrid } from "../variants/VariantGrid.tsx"
 
 type ToastColor = "brand" | "neutral" | "warning" | "error"
 
 type ToastPlacement = "top" | "bottom"
+
+type ServiceNoticeColor = "brand" | "neutral"
+
+const SERVICE_NOTICE_MESSAGE =
+  "리크루팅 서비스는 12기 모집 때 공개될 예정이에요"
+
+const SERVICE_NOTICE_PICTOGRAM_MODE = {
+  brand: "light",
+  neutral: "dark",
+} as const
 
 type ToastPreviewItemProps = {
   color: ToastColor
@@ -25,6 +39,7 @@ type ToastPreviewItemProps = {
   placement?: ToastPlacement
   withIcon?: boolean
   actionLabel?: string
+  width?: number
 }
 
 const toastIconOf = (color: ToastColor) =>
@@ -34,18 +49,29 @@ const toastIconOf = (color: ToastColor) =>
     <CheckCircleIcon weight="fill" />
   )
 
+const withPlacementCode = (show: string, placement: ToastPlacement) => {
+  if (placement === "bottom") return show
+  const provider = componentCodeOf(ToastProvider, {
+    placement,
+    children: CODE_PLACEHOLDER,
+  })
+  return `${provider}\n\n${show}`
+}
+
 const toastCodeOf = ({
   color,
   message,
   placement,
   icon,
   actionLabel,
+  width,
 }: {
   color: ToastColor
   message: string
   placement: ToastPlacement
   icon: ReactElement | undefined
   actionLabel: string | undefined
+  width: number | undefined
 }) => {
   const show = callCodeOf("toast.show", {
     message,
@@ -55,13 +81,9 @@ const toastCodeOf = ({
       actionLabel === undefined
         ? undefined
         : { label: actionLabel, onClick: CODE_PLACEHOLDER },
+    width,
   })
-  if (placement === "bottom") return show
-  const provider = componentCodeOf(ToastProvider, {
-    placement,
-    children: CODE_PLACEHOLDER,
-  })
-  return `${provider}\n\n${show}`
+  return withPlacementCode(show, placement)
 }
 
 function ToastPreviewItem({
@@ -71,9 +93,17 @@ function ToastPreviewItem({
   placement = "bottom",
   withIcon = false,
   actionLabel,
+  width,
 }: ToastPreviewItemProps) {
   const icon = withIcon ? toastIconOf(color) : undefined
-  const code = toastCodeOf({ color, message, placement, icon, actionLabel })
+  const code = toastCodeOf({
+    color,
+    message,
+    placement,
+    icon,
+    actionLabel,
+    width,
+  })
   return (
     <div data-spec-id={specId}>
       <div
@@ -81,7 +111,7 @@ function ToastPreviewItem({
         data-color={color}
         data-placement={placement}
         data-icon={withIcon ? "" : undefined}
-        style={{ animation: "none" }}
+        style={{ animation: "none", width }}
         {...codeAttributeOf(code)}
       >
         <div className="umc-toast__main">
@@ -102,6 +132,43 @@ function ToastPreviewItem({
             <CloseIcon size={20} />
           </button>
         )}
+      </div>
+    </div>
+  )
+}
+
+function ServiceNoticePreviewItem({
+  color,
+  message,
+  specId,
+  placement = "bottom",
+}: {
+  color: ServiceNoticeColor
+  message: string
+  specId?: string
+  placement?: ToastPlacement
+}) {
+  const show = callCodeOf("toast.showServiceNotice", { message, color })
+  const pictogram = (
+    <span className="umc-toast__pictogram" aria-hidden="true">
+      <UnderConstructionPictogram
+        size={24}
+        mode={SERVICE_NOTICE_PICTOGRAM_MODE[color]}
+      />
+    </span>
+  )
+  return (
+    <div data-spec-id={specId}>
+      <div
+        className="umc-toast"
+        data-kind="service-notice"
+        data-color={color}
+        data-placement={placement}
+        {...codeAttributeOf(withPlacementCode(show, placement))}
+      >
+        {pictogram}
+        <p className="umc-toast__message">{message}</p>
+        {pictogram}
       </div>
     </div>
   )
@@ -167,6 +234,56 @@ export function ToastStaticPreview() {
         placement="top"
         message="토스트 알림이에요"
         actionLabel="버튼"
+      />
+      <ServiceNoticePreviewItem
+        specId="toast-service-notice toast-service-notice-pictogram"
+        color="brand"
+        message={SERVICE_NOTICE_MESSAGE}
+      />
+      <ServiceNoticePreviewItem
+        specId="toast-service-notice-neutral toast-service-notice-neutral-pictogram"
+        color="neutral"
+        message={SERVICE_NOTICE_MESSAGE}
+      />
+      <ServiceNoticePreviewItem
+        specId="toast-top-service-notice"
+        color="brand"
+        placement="top"
+        message={SERVICE_NOTICE_MESSAGE}
+      />
+    </div>
+  )
+}
+
+const LONG_TOAST_MESSAGE =
+  "토스트 알림이에요토스트 알림이에요토스트 알림이에요토스트 알림이에요토스트 알림이에요"
+
+const WIDE_TOAST_MESSAGE =
+  "토스트 알림이에요토스트 알림이에요토스트 알림이에요토스트 알림이에요"
+
+export function ToastWidthPreview() {
+  return (
+    <div className="umc-example umc-example-stack docs-toast-preview">
+      <ToastPreviewItem
+        color="neutral"
+        message="토스트 알림이에요"
+        withIcon
+        actionLabel="버튼"
+      />
+      <ToastPreviewItem
+        specId="toast-width-fixed"
+        color="neutral"
+        message={WIDE_TOAST_MESSAGE}
+        withIcon
+        actionLabel="버튼"
+        width={527}
+      />
+      <ToastPreviewItem
+        specId="toast-width-wrap"
+        color="neutral"
+        message={LONG_TOAST_MESSAGE}
+        withIcon
+        actionLabel="취소"
       />
     </div>
   )
@@ -244,6 +361,49 @@ export function ToastWithAction() {
   )
 }
 
+function ServiceNoticeTrigger({
+  label,
+  color,
+  message,
+}: {
+  label: string
+  color: ServiceNoticeColor
+  message: string
+}) {
+  const toast = useToast()
+  return (
+    <Button
+      size="sm"
+      variant="weak"
+      color="neutral"
+      onClick={() => {
+        toast.showServiceNotice({ message, color })
+      }}
+    >
+      {label}
+    </Button>
+  )
+}
+
+export function ToastServiceNotice() {
+  return (
+    <ToastProvider>
+      <div className="umc-example" style={{ gap: "8px" }}>
+        <ServiceNoticeTrigger
+          label="brand"
+          color="brand"
+          message={SERVICE_NOTICE_MESSAGE}
+        />
+        <ServiceNoticeTrigger
+          label="neutral"
+          color="neutral"
+          message="이 서비스는 준비 중이에요"
+        />
+      </div>
+    </ToastProvider>
+  )
+}
+
 export function ToastPlacementTop() {
   return (
     <ToastProvider placement="top">
@@ -265,6 +425,11 @@ const TOAST_COLORS = {
   Error: "error",
 } as const
 
+const SERVICE_NOTICE_COLORS = {
+  "Service Notice": "brand",
+  "Service Notice · Neutral": "neutral",
+} as const
+
 const TOAST_TYPE_ORDER = [
   "Primary",
   "Neutral",
@@ -283,7 +448,11 @@ function ToastVariantCell({
 }) {
   if (variant.props["Type"]?.startsWith("Service Notice")) {
     return (
-      <NotImplemented reason="양옆 그래픽 에셋과 사용처가 정해지지 않아 넣지 않았습니다" />
+      <ServiceNoticePreviewItem
+        color={lookup(SERVICE_NOTICE_COLORS, variant, "Type")}
+        placement={placement}
+        message={SERVICE_NOTICE_MESSAGE}
+      />
     )
   }
   return (

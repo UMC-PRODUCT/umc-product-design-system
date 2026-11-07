@@ -10,7 +10,7 @@ import {
   vi,
 } from "vitest"
 
-import { CloseIcon } from "@umc-product/icons"
+import { CloseIcon, UnderConstructionPictogram } from "@umc-product/icons"
 
 import { ToastProvider, type ToastApi } from "./Toast.tsx"
 import { useToast } from "./useToast.ts"
@@ -32,15 +32,32 @@ function ShowApp({
   message,
   action,
   color,
+  width,
 }: {
   message: string
   action?: { label: string; onClick: () => void }
   color?: "brand" | "neutral" | "warning" | "error"
+  width?: number
 }) {
   const toast = useToast()
   return (
-    <button onClick={() => toast.show({ message, action, color })}>
+    <button onClick={() => toast.show({ message, action, color, width })}>
       보여줘
+    </button>
+  )
+}
+
+function ShowServiceNoticeApp({
+  message,
+  color,
+}: {
+  message: string
+  color?: "brand" | "neutral"
+}) {
+  const toast = useToast()
+  return (
+    <button onClick={() => toast.showServiceNotice({ message, color })}>
+      공지 보여줘
     </button>
   )
 }
@@ -336,6 +353,101 @@ describe("ToastProvider & useToast", () => {
     })
     const toast = document.querySelector(".umc-toast")
     expect(toast).toHaveAttribute("data-color", "error")
+  })
+
+  it("width를 넘기면 그 폭(px)으로 그린다", () => {
+    render(
+      <ToastProvider>
+        <ShowApp message="너비를 늘린 토스트" width={527} />
+      </ToastProvider>,
+    )
+    act(() => {
+      fireEvent.click(screen.getByRole("button", { name: "보여줘" }))
+    })
+    const toast = document.querySelector<HTMLElement>(".umc-toast")
+    expect(toast?.style.width).toBe("527px")
+  })
+
+  it("width를 넘기지 않으면 폭을 스타일 규칙에 맡긴다", () => {
+    render(
+      <ToastProvider>
+        <ShowApp message="기본 폭 토스트" />
+      </ToastProvider>,
+    )
+    act(() => {
+      fireEvent.click(screen.getByRole("button", { name: "보여줘" }))
+    })
+    const toast = document.querySelector<HTMLElement>(".umc-toast")
+    expect(toast?.style.width).toBe("")
+  })
+
+  describe("showServiceNotice", () => {
+    const openServiceNotice = (
+      color?: "brand" | "neutral",
+      placement: "top" | "bottom" = "bottom",
+    ) => {
+      render(
+        <ToastProvider placement={placement}>
+          <ShowServiceNoticeApp message="서비스 준비 중이에요" color={color} />
+        </ToastProvider>,
+      )
+      act(() => {
+        fireEvent.click(screen.getByRole("button", { name: "공지 보여줘" }))
+      })
+      return document.querySelector(".umc-toast")
+    }
+
+    it("서비스 공지 토스트를 띄우고 기본 색은 brand다", () => {
+      const toast = openServiceNotice()
+      expect(screen.getByText("서비스 준비 중이에요")).toBeInTheDocument()
+      expect(toast).toHaveAttribute("data-kind", "service-notice")
+      expect(toast).toHaveAttribute("data-color", "brand")
+    })
+
+    it("메시지 양옆에 24px 공사 중 픽토그램을 그린다", () => {
+      const toast = openServiceNotice()
+      const parts = Array.from(toast?.children ?? []).map(
+        (child) => child.className,
+      )
+      expect(parts).toEqual([
+        "umc-toast__pictogram",
+        "umc-toast__message",
+        "umc-toast__pictogram",
+      ])
+      const pictograms = toast?.querySelectorAll(".umc-toast__pictogram svg")
+      expect(pictograms).toHaveLength(2)
+      for (const pictogram of pictograms ?? []) {
+        expect(pictogram).toHaveAttribute("width", "24")
+        expect(drawingOf(pictogram)).toEqual(
+          drawingOf(svgOf(<UnderConstructionPictogram size={24} />)),
+        )
+      }
+    })
+
+    it("neutral은 어두운 배경용 픽토그램을 그린다", () => {
+      const toast = openServiceNotice("neutral")
+      expect(toast).toHaveAttribute("data-color", "neutral")
+      const pictogram = toast?.querySelector(".umc-toast__pictogram svg")
+      expect(drawingOf(pictogram)).toEqual(
+        drawingOf(svgOf(<UnderConstructionPictogram size={24} mode="dark" />)),
+      )
+    })
+
+    it("하단에서도 닫기 버튼과 동작 버튼 없이 그린다", () => {
+      const toast = openServiceNotice("brand", "bottom")
+      expect(toast).toHaveAttribute("data-placement", "bottom")
+      expect(toast?.querySelector(".umc-toast__close")).toBeNull()
+      expect(toast?.querySelector(".umc-toast__action")).toBeNull()
+    })
+
+    it("3초 뒤에 저절로 닫힌다", async () => {
+      openServiceNotice()
+      await act(async () => {
+        vi.advanceTimersByTime(3100)
+        await vi.runAllTimersAsync()
+      })
+      expect(screen.queryByText("서비스 준비 중이에요")).not.toBeInTheDocument()
+    })
   })
 
   it("Provider 밖에서 useToast를 호출하면 user-friendly 오류가 발생한다", () => {
