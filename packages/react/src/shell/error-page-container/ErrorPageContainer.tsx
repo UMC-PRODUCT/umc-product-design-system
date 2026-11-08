@@ -24,6 +24,12 @@ const CONE_SHADE_PATH =
 const CONE_SHEEN_OPACITY = 0.2
 const CONE_SHADE_OPACITY = 0.2
 
+const rendersSomething = (node: ReactNode) =>
+  node !== undefined &&
+  node !== null &&
+  node !== "" &&
+  typeof node !== "boolean"
+
 function UnderConstructionIllustration() {
   const sheenId = useId()
 
@@ -98,11 +104,11 @@ export function ErrorPageContainer({
       <UnderConstructionIllustration />
       <div className="umc-error-page-container__text">
         <h1 className="umc-error-page-container__title">{title}</h1>
-        {body !== undefined && (
+        {rendersSomething(body) && (
           <p className="umc-error-page-container__body">{body}</p>
         )}
       </div>
-      {actions !== undefined && (
+      {rendersSomething(actions) && (
         <div className="umc-error-page-container__actions">{actions}</div>
       )}
     </div>

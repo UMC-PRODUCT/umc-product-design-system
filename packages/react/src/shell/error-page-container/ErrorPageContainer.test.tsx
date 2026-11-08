@@ -32,6 +32,26 @@ describe("ErrorPageContainer", () => {
     ).not.toBeInTheDocument()
   })
 
+  it("본문과 동작 버튼이 null, false, 빈 문자열이어도 그 자리를 그리지 않는다", () => {
+    const { container, rerender } = render(
+      <ErrorPageContainer title="제목" body={null} actions={false} />,
+    )
+    const bodyOf = () =>
+      container.querySelector(".umc-error-page-container__body")
+    const actionsOf = () =>
+      container.querySelector(".umc-error-page-container__actions")
+    expect(bodyOf()).not.toBeInTheDocument()
+    expect(actionsOf()).not.toBeInTheDocument()
+    rerender(<ErrorPageContainer title="제목" body="" actions={null} />)
+    expect(bodyOf()).not.toBeInTheDocument()
+    expect(actionsOf()).not.toBeInTheDocument()
+  })
+
+  it("본문이 숫자 0이면 그린다", () => {
+    render(<ErrorPageContainer title="제목" body={0} />)
+    expect(screen.getByText("0")).toHaveClass("umc-error-page-container__body")
+  })
+
   it("actions는 본문 아래 동작 칸에 그린다", () => {
     const { container } = render(
       <ErrorPageContainer
