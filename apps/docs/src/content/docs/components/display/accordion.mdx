@@ -1,0 +1,108 @@
+---
+title: Accordion
+description: 제목을 눌러 관련 내용을 펼치거나 접는 아코디언입니다. FAQ, 이용 안내, 상세 설명처럼 항목이 여럿일 때 씁니다.
+---
+
+import {
+  AccordionAllVariants,
+  AccordionFaq,
+  AccordionMultiple,
+  AccordionPreview,
+  AccordionWithoutPrefix,
+} from "../../../../components/react/display/AccordionExamples.tsx"
+
+피그마 `Web/Accordion Item`을 구현했습니다. 공홈 랜딩 FAQ에서 쓰던 로컬 컴포넌트를 공용으로 올린 것입니다. `Accordion` 안에 `AccordionItem`을 16px 간격으로 쌓습니다. 항목은 접두(`Q`)와 22px 제목, 펼침 아이콘을 한 줄에 두고, 펼치면 24px 아래에 18px 본문을 보입니다. 제목 줄 전체가 버튼이고 Base UI Accordion을 내부적으로 씁니다.
+
+```tsx
+import { Accordion, AccordionItem } from "@umc-product/react"
+
+<Accordion>
+  <AccordionItem
+    value="about"
+    title="UMC는 어떤 동아리이고, 어떤 활동을 하나요?"
+    body="UMC는 기획, 디자인, 개발 분야의 대학생들이 함께 공부하고 실제 서비스를 만들어보는 전국 단위 IT 연합 동아리예요."
+  />
+  <AccordionItem value="period" title="활동 기간은 얼마나 되나요?" body="약 6개월이에요." />
+</Accordion>
+```
+
+## 기본
+
+위 항목은 접힌 모양, 아래 항목은 `defaultValue`로 펼친 모양입니다. 접힌 항목에 마우스를 올리면 테두리가 틸로 바뀝니다.
+
+<AccordionPreview client:visible />
+
+## FAQ
+
+제목이 두 줄이면 접두와 아이콘은 세로 가운데에 머물고 본문은 그대로 24px 아래에 옵니다. 본문의 줄바꿈(`\n`)은 그대로 보입니다.
+
+<AccordionFaq client:visible />
+
+## 여러 개 펼치기
+
+기본값은 한 번에 하나만 펼치고, 다른 항목을 누르면 먼저 펼친 항목이 접힙니다. `multiple`을 주면 여러 항목을 함께 펼칩니다.
+
+<AccordionMultiple client:visible />
+
+## 접두 없이
+
+`prefix`는 기본값이 `Q`입니다. 다른 글자를 넘기거나 `null`을 넘겨 뺄 수 있습니다.
+
+<AccordionWithoutPrefix client:visible />
+
+## 제어
+
+펼친 항목을 앱 상태로 다루려면 `value`와 `onValueChange`를 씁니다. 값은 펼친 항목의 `value` 배열입니다.
+
+```tsx
+const [open, setOpen] = useState<string[]>(["about"])
+
+<Accordion value={open} onValueChange={setOpen}>
+  ...
+</Accordion>
+```
+
+## 모든 변형
+
+피그마 `Web/Accordion Item` 변형 3개를 그렸습니다.
+
+<AccordionAllVariants client:visible />
+
+## props
+
+### Accordion
+
+| prop            | 타입                        | 기본값  | 설명                               |
+| --------------- | --------------------------- | ------- | ---------------------------------- |
+| `value`         | `string[]`                  | 없음    | 펼친 항목의 `value`(제어형)        |
+| `defaultValue`  | `string[]`                  | `[]`    | 처음 펼칠 항목의 `value`(비제어형) |
+| `onValueChange` | `(value: string[]) => void` | 없음    | 펼친 항목이 바뀔 때                |
+| `multiple`      | `boolean`                   | `false` | 여러 항목을 함께 펼칠 수 있는지    |
+| `children`      | `ReactNode`                 | 필수    | `AccordionItem` 목록               |
+| `className`     | `string`                    | 없음    | 루트 요소에 붙일 클래스            |
+
+나머지 `div` 속성은 루트 요소에 넘깁니다.
+
+### AccordionItem
+
+| prop        | 타입        | 기본값  | 설명                                 |
+| ----------- | ----------- | ------- | ------------------------------------ |
+| `value`     | `string`    | 필수    | 항목을 구분하는 값                   |
+| `title`     | `ReactNode` | 필수    | 제목. 제목 줄 전체가 버튼            |
+| `body`      | `ReactNode` | 필수    | 펼쳤을 때 보이는 본문                |
+| `prefix`    | `ReactNode` | `"Q"`   | 제목 앞 접두. `null`이면 그리지 않음 |
+| `disabled`  | `boolean`   | `false` | 펼치거나 접을 수 없게 함             |
+| `className` | `string`    | 없음    | 항목 루트에 붙일 클래스              |
+
+## 동작
+
+- 제목 줄은 `h3` 안의 버튼입니다. 접두는 낭독기에 읽히지 않고 제목만 버튼 이름이 됩니다.
+- 펼치고 접을 때 본문 높이가 150ms 동안 바뀌고 아이콘이 돌아갑니다. 움직임 줄이기 설정에서는 바로 바뀝니다.
+- 접힌 항목에 마우스를 올리면 테두리가 틸 2px 두께로 보입니다. 펼친 항목에는 마우스 모양이 없습니다.
+- 키보드로 버튼에 초점을 두면 항목 바깥에 2px 외곽선이 생기고, Enter나 Space로 펼치고 접습니다.
+
+## 알아 둘 점
+
+- 폭은 부모를 채웁니다. 피그마 예시처럼 1168px 목록을 만들려면 부모 폭을 정합니다.
+- 배경색 `#fcfcfc`와 제목(22px, 줄 높이 1.3), 본문(18px, 줄 높이 1.6), 접두(27px) 글자는 3기 토큰에 없는 값이라 컴포넌트 변수로 씁니다.
+- 좁은 화면용 크기는 피그마에 없어 한 크기만 있습니다.
