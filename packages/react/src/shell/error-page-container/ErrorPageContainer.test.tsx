@@ -86,6 +86,18 @@ describe("ErrorPageContainer", () => {
     expect(illustration?.querySelector("linearGradient")).not.toBeNull()
   })
 
+  it("광택 그라데이션은 시작, 중간, 끝 stop을 순서대로 둔다", () => {
+    const { container } = render(<ErrorPageContainer title="제목" />)
+    const stops = Array.from(
+      container.querySelectorAll("linearGradient stop"),
+    ).map((stop) => [stop.getAttribute("class"), stop.getAttribute("offset")])
+    expect(stops).toEqual([
+      ["umc-error-page-container__cone-sheen-start", null],
+      ["umc-error-page-container__cone-sheen-middle", "0.653846"],
+      ["umc-error-page-container__cone-sheen-end", "1"],
+    ])
+  })
+
   it("한 화면에 둘을 그려도 그림의 그라데이션 id가 겹치지 않는다", () => {
     const { container } = render(
       <>
