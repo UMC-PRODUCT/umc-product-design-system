@@ -2467,6 +2467,14 @@
         "State=Default, Selected=True, Disabled=False, Hightlight=False, Show Task Dot=False",
         "State=Default, Selected=True, Disabled=False, Hightlight=False, Show Task Dot=True"
       ]
+    },
+    "web-accordion-item": {
+      "node": "6073:66664",
+      "name": "Web/Accordion Item",
+      "axes": {
+        "State": ["Default", "Hover", "Expanded"]
+      },
+      "variants": ["State=Default", "State=Hover", "State=Expanded"]
     }
   }
 }

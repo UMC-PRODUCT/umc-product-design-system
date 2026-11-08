@@ -1,0 +1,130 @@
+{
+  "component": "Accordion",
+  "figmaSection": "6078:66756",
+  "page": "/components/display/accordion/",
+  "figmaDiffers": {
+    "padding": "피그마 테두리는 안쪽에 그려져 여백 40·30·24px에 1px 테두리가 포함된다. 코드는 1px 테두리에 여백 39·29·23px을 줘 내용 위치를 같게 맞춘다",
+    "hover": "피그마 Hover는 2px 테두리지만 코드는 1px 테두리에 안쪽 그림자 1px을 더해 글이 1px 밀리지 않게 한다",
+    "icon": "피그마는 펼치면 Icon/Expand_less로 바꾸지만 코드는 같은 모양인 Icon/Expand_more Fill을 180도 돌려 움직임을 준다",
+    "width": "피그마 항목은 1176px 고정이지만 코드는 부모 폭을 채운다"
+  },
+  "nodes": [
+    {
+      "specId": "accordion",
+      "node": "6080:66951",
+      "variant": "Landing-06 FAQ 안의 항목 목록",
+      "target": ".umc-accordion",
+      "expected": {
+        "row-gap": "16px"
+      }
+    },
+    {
+      "specId": "accordion-item",
+      "node": "6073:66665",
+      "variant": "State=Default",
+      "target": ".umc-accordion-item",
+      "expected": {
+        "background-color": "#fcfcfc",
+        "border-top-width": "1px",
+        "border-top-color": "#eff0f0",
+        "border-top-left-radius": "24px",
+        "padding-top": "23px",
+        "padding-bottom": "23px",
+        "padding-left": "39px",
+        "padding-right": "29px",
+        "box-shadow~": "rgba(239, 240, 240, 0.3) 0px 4px 16px 0px"
+      }
+    },
+    {
+      "specId": "accordion-item-trigger",
+      "node": "6073:66666",
+      "variant": "State=Default 안의 제목 줄",
+      "target": ".umc-accordion-item__trigger",
+      "expected": {
+        "column-gap": "10px"
+      }
+    },
+    {
+      "specId": "accordion-item-title-container",
+      "node": "6073:66667",
+      "variant": "State=Default 안의 Title Container",
+      "target": ".umc-accordion-item__title-container",
+      "expected": {
+        "column-gap": "12px"
+      }
+    },
+    {
+      "specId": "accordion-item-prefix",
+      "node": "6073:66668",
+      "variant": "State=Default 안의 Q",
+      "target": ".umc-accordion-item__prefix",
+      "expected": {
+        "color": "#02746c",
+        "font-size": "27px",
+        "font-weight": "600",
+        "line-height": "35.1px",
+        "letter-spacing": "-0.54px"
+      }
+    },
+    {
+      "specId": "accordion-item-title",
+      "node": "6073:66669",
+      "variant": "State=Default 안의 제목",
+      "target": ".umc-accordion-item__title",
+      "expected": {
+        "color": "#282a2a",
+        "font-size": "22px",
+        "font-weight": "600",
+        "line-height": "28.6px",
+        "letter-spacing": "-0.44px"
+      }
+    },
+    {
+      "specId": "accordion-item-icon",
+      "node": "6073:66670",
+      "variant": "State=Default 안의 아이콘 칸",
+      "target": ".umc-accordion-item__icon",
+      "expected": {
+        "color": "#7e7f7f",
+        "height": "34px",
+        "padding-left": "16px",
+        "padding-right": "16px"
+      }
+    },
+    {
+      "specId": "accordion-item-hover",
+      "node": "6073:66672",
+      "variant": "State=Hover",
+      "target": ".umc-accordion-item",
+      "interaction": "hover",
+      "expected": {
+        "border-top-color": "#7ac7c1",
+        "box-shadow~": "rgb(122, 199, 193) 0px 0px 0px 1px inset"
+      }
+    },
+    {
+      "specId": "accordion-item-expanded",
+      "node": "6073:66679",
+      "variant": "State=Expanded",
+      "target": ".umc-accordion-item[data-open]",
+      "expected": {
+        "background-color": "#e9f7f5"
+      }
+    },
+    {
+      "specId": "accordion-item-body",
+      "node": "6073:66688",
+      "variant": "State=Expanded 안의 본문",
+      "target": ".umc-accordion-item__body",
+      "expected": {
+        "color": "#606262",
+        "font-size": "18px",
+        "font-weight": "400",
+        "line-height": "28.8px",
+        "letter-spacing": "-0.18px",
+        "padding-top": "24px",
+        "padding-right": "14px"
+      }
+    }
+  ]
+}
