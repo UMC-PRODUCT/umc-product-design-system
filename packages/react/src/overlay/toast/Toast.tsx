@@ -10,6 +10,7 @@ export type ToastOptions = {
   icon?: ReactNode
   action?: { label: ReactNode; onClick: () => void }
   duration?: number
+  width?: number
 }
 
 export type ServiceNoticeOptions = {
@@ -36,6 +37,7 @@ type MessageToastData = {
   color: NonNullable<ToastOptions["color"]>
   icon?: ReactNode
   action?: ToastOptions["action"]
+  width?: number
 }
 
 type ServiceNoticeToastData = {
@@ -75,6 +77,7 @@ function ToastApiProvider({ children }: { children: ReactNode }) {
             color: options.color ?? "brand",
             icon: options.icon,
             action: options.action,
+            width: options.width,
           },
         })
       },
@@ -116,6 +119,7 @@ function MessageToast({
       data-color={color}
       data-placement={placement}
       data-icon={data?.icon === undefined ? undefined : ""}
+      style={data?.width === undefined ? undefined : { width: data.width }}
     >
       <div className="umc-toast__main">
         {data?.icon !== undefined && (

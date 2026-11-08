@@ -18,6 +18,10 @@ describe("ToastOptions", () => {
     type ActionType = NonNullable<ToastOptions["action"]>
     expectTypeOf<ActionType["onClick"]>().toEqualTypeOf<() => void>()
   })
+
+  it("width는 px 숫자만 받는다", () => {
+    expectTypeOf<ToastOptions["width"]>().toEqualTypeOf<number | undefined>()
+  })
 })
 
 describe("ServiceNoticeOptions", () => {
@@ -27,9 +31,10 @@ describe("ServiceNoticeOptions", () => {
     >()
   })
 
-  it("아이콘과 동작 버튼은 받지 않는다", () => {
+  it("아이콘과 동작 버튼, 폭은 받지 않는다", () => {
     expectTypeOf<ServiceNoticeOptions>().not.toHaveProperty("icon")
     expectTypeOf<ServiceNoticeOptions>().not.toHaveProperty("action")
+    expectTypeOf<ServiceNoticeOptions>().not.toHaveProperty("width")
   })
 })
 
