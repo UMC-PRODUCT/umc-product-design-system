@@ -1,6 +1,7 @@
 export { Tooltip, type TooltipProps } from "./tooltip/Tooltip.tsx"
 export {
   ToastProvider,
+  type ServiceNoticeOptions,
   type ToastApi,
   type ToastOptions,
   type ToastProviderProps,

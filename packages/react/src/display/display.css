@@ -12,6 +12,7 @@
 @import "./divider/divider.css";
 @import "./guidance-message/guidance-message.css";
 @import "./image-thumbnail/image-thumbnail.css";
+@import "./accordion/accordion.css";
 
 @layer components {
 }

@@ -1,5 +1,20 @@
 # @umc-product/react
 
+## 0.13.0 (2026-11-08)
+
+### Minor Changes
+
+- d3ed8dd: 아코디언(Web/Accordion Item): 제목을 눌러 본문을 펼치고 접는 아코디언이 생깁니다 (없음 → `Accordion`, `AccordionItem`). 피그마 `Web/Accordion Item`을 옮긴 것으로 공홈 랜딩 FAQ의 로컬 컴포넌트를 공용으로 올렸습니다. `Accordion` 안에 `AccordionItem`을 16px 간격으로 쌓고, 항목은 접두(`prefix`, 기본 `Q`)와 22px 제목(`title`), 펼침 아이콘을 한 줄에 두고 펼치면 18px 본문(`body`)을 24px 아래에 보입니다. 기본값은 한 번에 하나만 펼치고 `multiple`을 주면 여럿을 함께 펼칩니다. `value`, `defaultValue`, `onValueChange`로 펼친 항목을 다룹니다. 제목이 두 줄이면 접두와 아이콘은 세로 가운데에 머뭅니다.
+- fb7c39d: 에러 페이지(Web/Error Page Container): 404, 500, 서비스 준비 중 화면의 안내 묶음이 생깁니다 (없음 → `ErrorPageContainer`). 피그마 `Web/Error Page Container`를 옮긴 것으로, 공사 중 그림(192×180) 아래에 32px 제목(`title`, `h1`)과 20px 본문(`body`)을 18px 간격으로 놓고 그 아래 `actions`에 넘긴 동작 버튼을 16px 간격으로 놓습니다. 그림, 글, 버튼 사이는 40px이고 폭은 460px까지 넓어지며 좁은 화면에서는 부모 폭에 맞춰 줄어듭니다. 화면 배경은 들어 있지 않아 앱이 페이지 배경을 그리고 가운데에 놓습니다.
+- 3bd6302: 토스트(Toast): 서비스 공지 토스트가 생깁니다 (Service Notice 미지원 → `toast.showServiceNotice`). 피그마 `Toast`의 `Type=Service Notice`와 `Type=Service Notice · Neutral`을 옮긴 것으로, 메시지 양옆에 24px `UnderConstructionPictogram`을 그리고 아이콘, 동작 버튼, 닫기 버튼 없이 내용 폭으로 그립니다. `useToast()`가 돌려주는 객체에 `showServiceNotice({ message, color, duration })`가 더해지고, `color`는 `"brand"`(기본, 픽토그램 light 모드)와 `"neutral"`(dark 모드)입니다. 3초 뒤에 저절로 닫히며 기존 `toast.show()`는 그대로입니다.
+- 541dea0: 토스트(Toast): 토스트 폭을 넓힐 수 있습니다 (하단 400px 고정 → `width`로 지정). `toast.show()`에 `width`(px)를 넘기면 피그마 `Toast`의 가로 너비 연장 예시처럼 토스트를 그 폭으로 그립니다. 하단 토스트는 400px보다 좁아지지 않고 어느 위치든 화면 양옆 16px 안쪽까지만 넓어집니다. 넘기지 않으면 화면이 그대로입니다.
+
+### Patch Changes
+
+- 3c91840: **화면 변화** 하단 토스트의 폭(Toast): 긴 문구가 400px 안에서 줄을 바꿉니다 (문구 길이만큼 넓어짐 → 400px에서 줄바꿈). 피그마 `Toast`의 너비 규칙(최소 400px + Hug)을 따라 하단 토스트의 기본 폭을 400px로 둡니다. 화면이 좁으면 지금처럼 양옆 16px 안쪽으로 줄어듭니다. 짧은 문구의 토스트와 상단 토스트, 서비스 공지는 화면이 그대로입니다.
+- @umc-product/design-tokens@0.13.0
+  - @umc-product/icons@0.13.0
+
 ## 0.12.2 (2026-11-06)
 
 ### Patch Changes

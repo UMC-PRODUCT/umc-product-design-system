@@ -77,3 +77,7 @@ export {
   type BottomNavigationItemProps,
   type BottomNavigationProps,
 } from "./bottom-navigation/BottomNavigation.tsx"
+export {
+  ErrorPageContainer,
+  type ErrorPageContainerProps,
+} from "./error-page-container/ErrorPageContainer.tsx"

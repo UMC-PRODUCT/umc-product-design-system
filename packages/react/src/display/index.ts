@@ -72,3 +72,10 @@ export {
   ImageThumbnail,
   type ImageThumbnailProps,
 } from "./image-thumbnail/index.ts"
+export {
+  Accordion,
+  AccordionItem,
+  type AccordionItemProps,
+  type AccordionProps,
+  type AccordionValue,
+} from "./accordion/Accordion.tsx"

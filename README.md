@@ -130,6 +130,28 @@ pnpm up "@umc-product/*" --latest
 <!-- releases:start -->
 
 <details open>
+<summary><b>0.13.0</b> · 2026-11-08 · 새 기능 4 · 화면 변화 1</summary>
+
+**새 기능**
+
+| 대상                                  | 변경사항                                             | 변경&nbsp;전&nbsp;→&nbsp;변경&nbsp;후             | 보기                                                                                        |
+| ------------------------------------- | ---------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| 아코디언(Web/Accordion Item)          | 제목을 눌러 본문을 펼치고 접는 아코디언이 생깁니다   | 없음 → `Accordion`, `AccordionItem`               | [Accordion](https://design.university.neordinary.com/components/display/accordion/)         |
+| 에러 페이지(Web/Error Page Container) | 404, 500, 서비스 준비 중 화면의 안내 묶음이 생깁니다 | 없음 → `ErrorPageContainer`                       | [ErrorPageContainer](https://design.university.neordinary.com/components/shell/error-page/) |
+| 토스트(Toast)                         | 서비스 공지 토스트가 생깁니다                        | Service Notice 미지원 → `toast.showServiceNotice` | [Toast](https://design.university.neordinary.com/components/overlay/toast/)                 |
+| 토스트(Toast)                         | 토스트 폭을 넓힐 수 있습니다                         | 하단 400px 고정 → `width`로 지정                  | [Toast](https://design.university.neordinary.com/components/overlay/toast/)                 |
+
+**화면 변화**
+
+| 대상                    | 변경사항                             | 변경&nbsp;전&nbsp;→&nbsp;변경&nbsp;후   | 보기                                                                        |
+| ----------------------- | ------------------------------------ | --------------------------------------- | --------------------------------------------------------------------------- |
+| 하단 토스트의 폭(Toast) | 긴 문구가 400px 안에서 줄을 바꿉니다 | 문구 길이만큼 넓어짐 → 400px에서 줄바꿈 | [Toast](https://design.university.neordinary.com/components/overlay/toast/) |
+
+전문과 대응표: [react](packages/react/CHANGELOG.md#0130-2026-11-08)
+
+</details>
+
+<details>
 <summary><b>0.12.2</b> · 2026-11-06 · 화면 변화 1</summary>
 
 **화면 변화**

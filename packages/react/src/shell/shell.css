@@ -10,6 +10,7 @@
 @import "./section-header/section-header.css";
 @import "./top-navigation/top-navigation.css";
 @import "./app-page-header/app-page-header.css";
+@import "./error-page-container/error-page-container.css";
 @import "./bottom-navigation/bottom-navigation.css";
 
 @layer components {
