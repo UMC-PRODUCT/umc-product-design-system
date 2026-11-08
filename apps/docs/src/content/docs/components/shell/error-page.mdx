@@ -1,0 +1,74 @@
+---
+title: Error Page
+description: 404, 500, 서비스 준비 중처럼 화면을 보여 줄 수 없을 때 이유와 다음 행동을 안내하는 에러 페이지 묶음입니다.
+---
+
+import {
+  ErrorPageContainerCases,
+  ErrorPageContainerPreview,
+  ErrorPageContainerWithoutActions,
+} from "../../../../components/react/shell/ErrorPageContainerExamples.tsx"
+
+피그마 `Web/Error Page Container`를 구현했습니다. 공사 중 그림(192×180) 아래에 32px 제목과 20px 본문(Title/2-Medium)을 18px 간격으로 놓고, 그 아래에 동작 버튼 칸을 둡니다. 그림, 글, 버튼 칸 사이는 40px이고 전체 폭은 460px입니다. 제목은 `h1`입니다.
+
+```tsx
+import { Button, ErrorPageContainer } from "@umc-product/react"
+
+export function NotFoundPage() {
+  return (
+    <ErrorPageContainer
+      title="페이지를 찾을 수 없어요"
+      body={
+        <>
+          입력한 주소가 잘못되었거나,
+          <br />
+          페이지가 이동 또는 삭제되었을 수 있어요
+        </>
+      }
+      actions={
+        <>
+          <Button size="lg" variant="weak" onClick={() => history.back()}>
+            이전으로 이동
+          </Button>
+          <Button size="lg" onClick={() => navigate("/")}>
+            홈으로 이동
+          </Button>
+        </>
+      }
+    />
+  )
+}
+```
+
+## 기본
+
+<ErrorPageContainerPreview />
+
+## 케이스
+
+피그마가 고려한 케이스는 404(페이지를 찾을 수 없는 경우), 500(서버 오류가 발생한 경우), 서비스 준비 중(아직 공개하지 않은 서비스에 접근한 경우) 세 가지입니다. 케이스별 노출 조건에 따라 해당 화면을 보여 주고, 버튼 문구와 구성, 동작은 각 서비스의 플로우에 맞게 조정합니다. 아래는 피그마 예시와 같은 문구를 화면 배경 위에 그린 것입니다.
+
+<ErrorPageContainerCases />
+
+## 동작 버튼
+
+`actions`는 피그마 `Control Slot`입니다. 피그마 예시는 Lg 크기의 Weak 버튼(이전으로 이동)과 Fill 버튼(홈으로 이동, 새로고침)을 16px 간격으로 놓습니다. 버튼을 넘기지 않으면 칸을 그리지 않습니다. 본문도 넘긴 것만 그립니다.
+
+<ErrorPageContainerWithoutActions />
+
+## props
+
+| prop        | 타입        | 기본값 | 설명                                |
+| ----------- | ----------- | ------ | ----------------------------------- |
+| `title`     | `ReactNode` | 필수   | 제목. `h1`로 그림                   |
+| `body`      | `ReactNode` | 없음   | 제목 아래 본문. 줄바꿈은 `<br />`로 |
+| `actions`   | `ReactNode` | 없음   | 본문 아래 동작 버튼 칸              |
+| `className` | `string`    | 없음   | 루트 요소에 붙일 클래스             |
+
+나머지 `div` 속성은 루트 요소에 넘깁니다.
+
+## 알아 둘 점
+
+- 화면 배경은 컴포넌트에 들어 있지 않습니다. 피그마 예시 화면의 배경은 흰색 위에 `#8FFFF3` 8%를 깔고 왼쪽 위와 오른쪽 아래에서 `#229084` 5%와 3%를 흰색으로 풀어 내는 그라데이션입니다. 앱은 페이지를 꽉 채우는 요소에 배경을 그리고 그 가운데에 `ErrorPageContainer`를 놓습니다.
+- 폭은 460px까지 넓어지고 더 좁은 화면에서는 부모 폭에 맞춰 줄어듭니다. 동작 버튼은 한 줄에 들어가지 않으면 줄을 바꿔 가운데에 놓습니다.
+- 제목 글자(32px, 줄 높이 1.2, 자간 -1.5%)는 3기 텍스트 스타일에 없어 값을 그대로 씁니다.

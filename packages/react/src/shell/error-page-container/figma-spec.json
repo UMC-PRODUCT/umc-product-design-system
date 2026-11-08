@@ -1,0 +1,77 @@
+{
+  "component": "ErrorPageContainer",
+  "figmaSection": "6069:66379",
+  "page": "/components/shell/error-page/",
+  "figmaDiffers": {
+    "width": "피그마는 460px 고정이지만 코드는 max-width 460px이라 좁은 화면에서 부모 폭에 맞춰 줄어든다",
+    "actions": "피그마 Control Slot은 한 줄 왼쪽 정렬이지만 코드는 좁은 화면에서 줄을 바꾸고 가운데 정렬한다"
+  },
+  "nodes": [
+    {
+      "specId": "error-page-container",
+      "node": "6068:66198",
+      "variant": "Web/Error Page Container",
+      "target": ".umc-error-page-container",
+      "expected": {
+        "width": "460px",
+        "row-gap": "40px",
+        "align-items": "center",
+        "text-align": "center"
+      }
+    },
+    {
+      "specId": "error-page-container-illustration",
+      "node": "6068:66179",
+      "variant": "Web/Error Page Container 안의 Group 2087330818",
+      "target": ".umc-error-page-container__illustration",
+      "expected": {
+        "width": "192px",
+        "height": "180px"
+      }
+    },
+    {
+      "specId": "error-page-container-text",
+      "node": "6068:66190",
+      "variant": "Web/Error Page Container 안의 글 묶음",
+      "target": ".umc-error-page-container__text",
+      "expected": {
+        "row-gap": "18px"
+      }
+    },
+    {
+      "specId": "error-page-container-title",
+      "node": "6068:66191",
+      "variant": "Web/Error Page Container 안의 타이틀",
+      "target": ".umc-error-page-container__title",
+      "expected": {
+        "color": "#02746c",
+        "font-size": "32px",
+        "font-weight": "600",
+        "line-height": "38.4px",
+        "letter-spacing": "-0.48px"
+      }
+    },
+    {
+      "specId": "error-page-container-body",
+      "node": "6068:66192",
+      "variant": "Web/Error Page Container 안의 본문",
+      "target": ".umc-error-page-container__body",
+      "expected": {
+        "color": "#606262",
+        "font-size": "20px",
+        "font-weight": "500",
+        "line-height": "28px",
+        "letter-spacing": "-0.4px"
+      }
+    },
+    {
+      "specId": "error-page-container-actions",
+      "node": "6068:66193",
+      "variant": "Web/Error Page Container 안의 Control Slot",
+      "target": ".umc-error-page-container__actions",
+      "expected": {
+        "column-gap": "16px"
+      }
+    }
+  ]
+}
