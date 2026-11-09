@@ -13,7 +13,7 @@ type AxisValues = Readonly<Record<string, readonly string[]>>
 
 type Combo = readonly string[]
 
-export type CellTone = "muted" | "dark"
+export type CellTone = "muted" | "dark" | "deep"
 
 export type VariantGridProps = {
   set: VariantSetKey
@@ -90,7 +90,8 @@ export function VariantGrid({
   return (
     <div className="umc-variant-grid not-content" data-figma-set={key}>
       <p className="umc-variant-grid__source">
-        피그마 <code>{set.name}</code> · {scope}
+        피그마 {set.file !== undefined && `${set.file} › `}
+        <code>{set.name}</code> · {scope}
       </p>
       {combosOf(variants, sections, rank).map((sectionCombo) => {
         const sectionVariants = variants.filter((variant) =>
