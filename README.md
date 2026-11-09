@@ -130,6 +130,19 @@ pnpm up "@umc-product/*" --latest
 <!-- releases:start -->
 
 <details open>
+<summary><b>0.14.2</b> · 2026-11-09 · 화면 변화 1</summary>
+
+**화면 변화**
+
+| 대상                            | 변경사항                                                 | 변경&nbsp;전&nbsp;→&nbsp;변경&nbsp;후                                     | 보기                                                                                                                                                               |
+| ------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 다크 헤더의 버튼(HeaderDesktop) | 액션 영역의 버튼이 피그마 다크 헤더와 같은 모양이 됩니다 | 라이트 버튼 색 그대로 → 반투명 흰 배경의 CTA 버튼과 링만 남은 로그인 버튼 | [HeaderDesktop](https://design.university.neordinary.com/components/shell/header/) · [Button](https://design.university.neordinary.com/components/actions/button/) |
+
+전문과 대응표: [react](packages/react/CHANGELOG.md#0142-2026-11-09)
+
+</details>
+
+<details>
 <summary><b>0.14.1</b> · 2026-11-09 · 화면 변화 1</summary>
 
 **화면 변화**
