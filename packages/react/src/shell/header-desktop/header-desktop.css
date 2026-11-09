@@ -89,10 +89,12 @@
     gap: var(--umc-spacing-gap-6);
     margin: 0;
     padding: var(--umc-spacing-padding-6);
-    border: 1px solid var(--umc-header-desktop-nav-border-color);
+    border: 0;
     border-radius: var(--umc-radius-full);
     background-color: var(--umc-header-desktop-nav-bg);
-    box-shadow: 0 0 16px 0 var(--umc-header-desktop-nav-shadow-color);
+    box-shadow:
+      0 0 16px 0 var(--umc-header-desktop-nav-shadow-color),
+      inset 0 0 0 1px var(--umc-header-desktop-nav-border-color);
     backdrop-filter: var(--umc-header-desktop-nav-backdrop);
     list-style: none;
   }
@@ -169,6 +171,11 @@
   @media (forced-colors: active) {
     .umc-header-desktop {
       border-bottom: 1px solid CanvasText;
+    }
+
+    .umc-header-desktop__nav-list {
+      outline: 1px solid CanvasText;
+      outline-offset: -1px;
     }
 
     .umc-header-desktop__nav-link[aria-current="page"] {

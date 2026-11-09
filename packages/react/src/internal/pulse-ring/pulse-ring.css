@@ -1,0 +1,75 @@
+@layer components {
+  .umc-pulse-ring {
+    --umc-pulse-ring-size: 70px;
+    --umc-pulse-ring-inner-size: 50px;
+    --umc-pulse-ring-core-size: 29.5px;
+    --umc-pulse-ring-outer-bg: #0e817933;
+    --umc-pulse-ring-inner-bg: #0e817966;
+    --umc-pulse-ring-core-border-color: #63c4b866;
+    --umc-pulse-ring-duration: 1.65s;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--umc-pulse-ring-size);
+    height: var(--umc-pulse-ring-size);
+    border-radius: var(--umc-radius-full);
+    background-color: var(--umc-pulse-ring-outer-bg);
+    translate: -50% -50%;
+    pointer-events: none;
+    animation: umc-pulse-ring var(--umc-pulse-ring-duration) ease-out infinite;
+  }
+
+  .umc-pulse-ring::before,
+  .umc-pulse-ring::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    box-sizing: border-box;
+    border-radius: var(--umc-radius-full);
+    translate: -50% -50%;
+  }
+
+  .umc-pulse-ring::before {
+    width: var(--umc-pulse-ring-inner-size);
+    height: var(--umc-pulse-ring-inner-size);
+    background-color: var(--umc-pulse-ring-inner-bg);
+  }
+
+  .umc-pulse-ring::after {
+    width: var(--umc-pulse-ring-core-size);
+    height: var(--umc-pulse-ring-core-size);
+    border: 0.5px solid var(--umc-pulse-ring-core-border-color);
+  }
+
+  @keyframes umc-pulse-ring {
+    0% {
+      opacity: 0;
+      scale: 0.72;
+    }
+
+    42.4% {
+      opacity: 1;
+      scale: 1;
+    }
+
+    84.8%,
+    100% {
+      opacity: 0;
+      scale: 1.35;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .umc-pulse-ring {
+      animation: none;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .umc-pulse-ring {
+      display: none;
+    }
+  }
+}

@@ -250,6 +250,18 @@
   padding: 0;
 }
 
+.docs-pagination-bar-scene {
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+  background: linear-gradient(180deg, #0f1010 0%, #132927 100%);
+  box-shadow: none;
+}
+
+.docs-pagination-bar-scene--stack {
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 .umc-example-last-bar .umc-ranked-bar-chart__item:not(:last-child) {
   display: none;
 }
@@ -514,6 +526,10 @@
 
 .umc-variant-grid__table td[data-tone="dark"] {
   background: linear-gradient(180deg, #56625f 0%, #a9b1af 100%);
+}
+
+.umc-variant-grid__table td[data-tone="deep"] {
+  background: linear-gradient(180deg, #0f1010 0%, #132927 100%);
 }
 
 .umc-variant-grid__corner {
