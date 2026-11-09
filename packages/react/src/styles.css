@@ -2,10 +2,12 @@
 @import "@umc-product/design-tokens/fonts.css";
 @import "@umc-product/design-tokens/base.css";
 @import "./internal/internal.css";
+@import "./internal/pulse-ring/pulse-ring.css";
 @import "./button/button.css";
 @import "./text-button/text-button.css";
 @import "./icon-button/icon-button.css";
 @import "./pagination/pagination.css";
+@import "./pagination-bar/pagination-bar.css";
 @import "./floating-action-button/floating-action-button.css";
 @import "./forms/forms.css";
 @import "./selection/selection.css";

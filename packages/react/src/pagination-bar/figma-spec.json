@@ -1,0 +1,135 @@
+{
+  "component": "PaginationBar",
+  "figmaFile": "WWaat5valEhnd2bpA4zebl",
+  "figmaSection": "1797:142779",
+  "page": "/components/actions/pagination-bar/",
+  "nodes": [
+    {
+      "specId": "pagination-bar",
+      "node": "2462:156295",
+      "variant": "페이지네이션 바",
+      "expected": {
+        "width": "234px",
+        "height": "42px",
+        "column-gap": "10px",
+        "padding-top": "6px",
+        "padding-left": "12px",
+        "border-top-left-radius": "12px",
+        "background-color": "#fbfcfc0d",
+        "box-shadow~": "#ffffff14 0px 0px 0px 1px inset",
+        "backdrop-filter": "blur(21px)"
+      },
+      "figmaDiffers": {
+        "box-shadow~": "피그마 획은 안쪽 1px 흰색이고 불투명도가 변수로 안 보인다. 렌더 결과를 재면 8% 정도라 #ffffff14로 두었고, 234×42 크기가 유지되도록 border 대신 inset 그림자로 그렸다"
+      }
+    },
+    {
+      "specId": "pagination-bar-dots",
+      "node": "2462:156305",
+      "variant": "페이지 네이션 · Property 1=Default",
+      "target": ".umc-pagination-bar__dots",
+      "expected": {
+        "width": "130px",
+        "height": "8px",
+        "column-gap": "6px"
+      }
+    },
+    {
+      "specId": "pagination-bar-dot-current",
+      "node": "2462:156300",
+      "variant": "페이지 네이션 버튼 · Property 1=Rectangle 17967",
+      "target": ".umc-pagination-bar__dot[aria-current=\"true\"]",
+      "expected": {
+        "width": "18px",
+        "height": "8px",
+        "border-top-left-radius": "6px",
+        "background-color": "#9ca3a3"
+      }
+    },
+    {
+      "specId": "pagination-bar-dot",
+      "node": "2462:156302",
+      "variant": "페이지 네이션 버튼 · Property 1=Ellipse 83",
+      "target": ".umc-pagination-bar__dot:not([aria-current])",
+      "expected": {
+        "width": "8px",
+        "height": "8px",
+        "border-top-left-radius": "999px",
+        "background-color": "#404443"
+      }
+    },
+    {
+      "specId": "pagination-bar-arrow-next",
+      "node": "2462:156396",
+      "variant": "페이지네이션 버튼 · type=Right, State=Default",
+      "target": ".umc-pagination-bar__arrow[data-direction=\"next\"]",
+      "expected": {
+        "width": "30px",
+        "height": "30px",
+        "color": "#9ca3a3"
+      }
+    },
+    {
+      "specId": "pagination-bar-arrow-next",
+      "interaction": "hover",
+      "node": "2462:156398",
+      "variant": "페이지네이션 버튼 · type=Right, State=Hover",
+      "target": ".umc-pagination-bar__arrow[data-direction=\"next\"]",
+      "expected": {
+        "color": "#f6f7f7"
+      }
+    },
+    {
+      "specId": "pagination-bar-arrow-previous-disabled",
+      "node": "2462:156400",
+      "variant": "페이지네이션 버튼 · type=Left, State=Default",
+      "target": ".umc-pagination-bar__arrow[data-direction=\"previous\"]",
+      "expected": {
+        "width": "30px",
+        "height": "30px",
+        "color": "#404443"
+      },
+      "figmaDiffers": {
+        "color": "피그마 왼쪽 Default는 첫 페이지 모습이라 어둡다. 코드는 이 색을 넘어갈 페이지가 없는 비활성 화살표 색으로 쓰고, 넘어갈 페이지가 있으면 오른쪽과 같은 #9ca3a3이다"
+      }
+    },
+    {
+      "specId": "pagination-bar-arrow-previous-hover",
+      "interaction": "hover",
+      "node": "2462:156402",
+      "variant": "페이지네이션 버튼 · type=Left, State=Hover",
+      "target": ".umc-pagination-bar__arrow[data-direction=\"previous\"]",
+      "expected": {
+        "color": "#f6f7f7"
+      }
+    },
+    {
+      "specId": "pagination-bar-arrow-icon",
+      "node": "2462:156397",
+      "variant": "30 icon",
+      "target": ".umc-pagination-bar__arrow[data-direction=\"next\"] svg",
+      "expected": {
+        "width": "24px",
+        "height": "24px"
+      },
+      "figmaDiffers": {
+        "width": "피그마는 라이브러리 아이콘이 아닌 30px 로컬 그림(획 2px, 팔 길이 11.1px)이다. 코드는 라이브러리 Icon/Chevron fill 24px(획 2px, 팔 길이 11.7px)을 30px 버튼 가운데에 놓는다"
+      }
+    },
+    {
+      "specId": "pagination-bar-pulse-ring",
+      "node": "3123:294371",
+      "variant": "Group 2087330852",
+      "target": ".umc-pulse-ring",
+      "expected": {
+        "width": "70px",
+        "height": "70px",
+        "border-top-left-radius": "999px",
+        "background-color": "#0e817933"
+      },
+      "figmaDiffers": {
+        "animation-name": "피그마는 멈춘 그림이고 코드는 1.65초 주기로 0.72배에서 1.35배로 커지며 사라지는 움직임을 반복한다. 값은 2기 소개 랜딩의 움직임을 그대로 옮겼고, 움직임 줄이기 설정에서는 피그마 그림으로 멈춘다"
+      }
+    }
+  ]
+}

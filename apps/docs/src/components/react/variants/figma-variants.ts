@@ -35,6 +35,7 @@ export type FigmaVariantSet = {
   key: VariantSetKey
   node: string
   name: string
+  file?: string
   axes: Readonly<Record<string, readonly string[]>>
   variants: readonly FigmaVariant[]
 }
@@ -57,6 +58,7 @@ export const variantSet = (key: VariantSetKey): FigmaVariantSet => {
     key,
     node: set.node,
     name: set.name,
+    file: "file" in set ? set.file : undefined,
     axes: set.axes,
     variants: set.variants.map((name) => ({
       name,

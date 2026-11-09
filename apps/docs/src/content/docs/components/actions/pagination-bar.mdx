@@ -1,0 +1,119 @@
+---
+title: PaginationBar
+description: 어두운 배경 위에서 슬라이드 위치를 점으로 보여 주고 이전·다음으로 넘기는 막대입니다. 다음 화살표에 펄스 링을 켤 수 있습니다.
+---
+
+import {
+  PaginationBarArrowAllVariants,
+  PaginationBarDotAllVariants,
+  PaginationBarDotRowAllVariants,
+  PaginationBarHighlightOnFirst,
+  PaginationBarPositions,
+  PaginationBarPreview,
+} from "../../../../components/react/PaginationBarExamples.tsx"
+
+피그마 `페이지네이션 바`를 구현했습니다. 소개 랜딩의 사용 설명서 슬라이드 아래에서 쓰던 로컬 컴포넌트를 공용으로 올린 것입니다. 유리처럼 비치는 막대 안에 이전·다음 화살표와 슬라이드 수만큼의 점을 놓고, 현재 점은 알약 모양으로 늘립니다. 번호형 `Pagination`과 같은 `totalPages`, `page`, `onPageChange`를 쓰므로 화면 폭에 따라 둘을 바꿔 끼울 수 있습니다.
+
+```tsx
+import { PaginationBar } from "@umc-product/react"
+
+<PaginationBar totalPages={9} page={page} onPageChange={setPage} highlightNext />
+```
+
+## 기본
+
+첫 슬라이드에서 `highlightNext`를 켠 모습입니다. 다음 화살표 뒤에서 청록 링이 커지며 사라지기를 반복해 넘길 수 있다는 것을 알립니다. 어두운 배경 위에서만 쓰도록 만든 컴포넌트라 밝은 배경에는 어울리지 않습니다.
+
+<PaginationBarPreview client:visible />
+
+## 처음과 끝
+
+넘어갈 슬라이드가 없는 쪽의 화살표는 비활성으로 어두워지고 눌리지 않습니다. 화살표는 한 슬라이드씩 옮기고, 점을 누르면 그 슬라이드로 바로 갑니다.
+
+<PaginationBarPositions />
+
+## 강조 링 켜고 끄기
+
+언제 링을 보일지는 앱이 정합니다. 아래는 첫 슬라이드에서만 켜고, 한 번이라도 넘기면 끄는 예시입니다. 마지막 슬라이드에서는 `highlightNext`를 켜도 그리지 않습니다.
+
+<PaginationBarHighlightOnFirst client:visible />
+
+```tsx
+const [page, setPage] = useState(1)
+
+<PaginationBar
+  totalPages={9}
+  page={page}
+  onPageChange={setPage}
+  highlightNext={page === 1}
+/>
+```
+
+## 캐러셀과 함께 쓰기
+
+슬라이드를 움직이는 라이브러리가 따로 있으면 `page`를 그 라이브러리의 현재 위치에서 받고 `onPageChange`에서 그 라이브러리를 움직입니다. 번호는 1부터 세므로 0부터 세는 라이브러리는 1을 더하고 뺍니다.
+
+```tsx
+const [emblaRef, embla] = useEmblaCarousel()
+const [index, setIndex] = useState(0)
+
+useEffect(() => {
+  embla?.on("select", () => setIndex(embla.selectedScrollSnap()))
+}, [embla])
+
+<PaginationBar
+  totalPages={slides.length}
+  page={index + 1}
+  onPageChange={(page) => embla?.scrollTo(page - 1)}
+  controls="guide-slides"
+/>
+```
+
+## 접근성
+
+- 루트는 `role="group"`이고 이름은 "슬라이드 이동"입니다. 한 화면에 여러 개를 두면 `aria-label`로 구분합니다.
+- 점은 "3번째 슬라이드"처럼 읽히는 버튼이고 현재 점에 `aria-current="true"`가 붙습니다. 화살표는 "이전"과 "다음"으로 읽힙니다. 세 이름 모두 `pageLabel`, `previousLabel`, `nextLabel`로 바꿀 수 있습니다.
+- 슬라이드 영역의 `id`를 `controls`로 넘기면 화살표와 점이 그 영역을 `aria-controls`로 가리킵니다.
+- 펄스 링은 장식이라 낭독기에 읽히지 않고, 움직임 줄이기 설정에서는 멈춘 모습으로 보입니다.
+
+## 모든 변형
+
+피그마 `페이지 네이션`(점 묶음) 변형 9개입니다. 현재 슬라이드 위치마다 하나씩입니다.
+
+<PaginationBarDotRowAllVariants />
+
+점 하나(`페이지 네이션 버튼`)의 변형 2개입니다. 점은 따로 내보내지 않으므로 그 점이 보이는 `PaginationBar`로 그렸습니다.
+
+<PaginationBarDotAllVariants />
+
+화살표(`페이지네이션 버튼`)의 변형 4개입니다. 왼쪽 Default는 첫 슬라이드의 비활성 모습이고, Hover 칸은 마우스를 올린 상태를 켜 둔 모습입니다.
+
+<PaginationBarArrowAllVariants />
+
+## props
+
+| prop                         | 타입                           | 기본값                                 | 설명                                                 |
+| ---------------------------- | ------------------------------ | -------------------------------------- | ---------------------------------------------------- |
+| `totalPages`                 | `number`                       | 필수                                   | 슬라이드 수. 점의 개수가 됩니다                      |
+| `page`                       | `number`                       | 없음                                   | 현재 슬라이드(제어형). 1부터 셉니다                  |
+| `defaultPage`                | `number`                       | `1`                                    | 처음 슬라이드(비제어형)                              |
+| `onPageChange`               | `(page: number) => void`       | 없음                                   | 옮겨 갈 슬라이드를 받는 함수                         |
+| `highlightNext`              | `boolean`                      | `false`                                | 다음 화살표에 펄스 링을 그릴지. 마지막에서는 안 그림 |
+| `controls`                   | `string`                       | 없음                                   | 화살표와 점이 조작하는 슬라이드 영역의 `id`          |
+| `previousLabel`, `nextLabel` | `string`                       | `"이전"`, `"다음"`                     | 화살표 이름                                          |
+| `pageLabel`                  | `(page: number) => string`     | `` (page) => `${page}번째 슬라이드` `` | 점 이름                                              |
+| 나머지                       | `ComponentPropsWithRef<"div">` | `aria-label="슬라이드 이동"`           | `ref`, `className`, `aria-*`, `data-*`               |
+
+## 동작
+
+- 점과 화살표를 누르면 `onPageChange`로 옮겨 갈 번호를 알리고, `page`를 넘기지 않았으면 스스로 현재 점을 옮깁니다. 현재 점을 다시 누르면 아무 일도 없습니다.
+- 현재 점은 150ms 동안 8px에서 18px로 늘어나고, 화살표 색도 같은 시간 동안 바뀝니다. 움직임 줄이기 설정에서는 바로 바뀝니다.
+- 펄스 링은 70px 크기에서 0.72배로 시작해 1.35배까지 커지며 사라지기를 1.65초마다 반복합니다.
+- 범위를 벗어난 `page`는 가까운 끝으로 맞추고, `totalPages`가 0이면 아무것도 그리지 않습니다.
+
+## 알아 둘 점
+
+- 막대 배경은 뒤를 21px 흐리게 비추므로 사진이나 그라데이션 위에 놓아야 유리 느낌이 납니다.
+- 점은 슬라이드 수만큼 늘어납니다. 피그마는 9개까지만 그려져 있어 그보다 많으면 폭이 그만큼 넓어집니다.
+- 화살표 색(`#9ca3a3`, `#f6f7f7`, `#404443`)과 링 색은 3기 토큰에 없는 값이라 컴포넌트 변수로 씁니다.
+- 밝은 배경용 모양은 피그마에 없어 어두운 모양만 있습니다.
