@@ -60,12 +60,19 @@ export function HeaderLight() {
       <PreviewLinks onNavigate={setPath}>
         <div
           className="min-w-[720px]"
-          data-spec-id="header-light header-light-logo header-light-navigation header-light-item header-light-item-hover header-light-item-selected header-light-actions home-link-main home-link-main-logo home-link-main-hover"
+          data-spec-id="header-light header-light-logo header-light-navigation header-light-item header-light-item-hover header-light-item-selected header-light-actions header-light-cta header-light-login home-link-main home-link-main-logo home-link-main-hover"
         >
           <HeaderDesktop
             navItems={NAV_ITEMS}
             currentPath={path}
-            actions={<Button size="md">로그인</Button>}
+            actions={
+              <>
+                <Button size="sm">지원하기</Button>
+                <Button size="sm" variant="weak">
+                  로그인
+                </Button>
+              </>
+            }
           />
         </div>
       </PreviewLinks>
@@ -83,9 +90,21 @@ export function HeaderDark() {
       <PreviewLinks onNavigate={setPath}>
         <div
           className="min-w-[720px]"
-          data-spec-id="header-dark header-dark-navigation header-dark-item header-dark-item-hover header-dark-item-selected home-link-dark home-link-dark-hover"
+          data-spec-id="header-dark header-dark-navigation header-dark-item header-dark-item-hover header-dark-item-selected header-dark-cta header-dark-login home-link-dark home-link-dark-hover"
         >
-          <HeaderDesktop mode="dark" navItems={NAV_ITEMS} currentPath={path} />
+          <HeaderDesktop
+            mode="dark"
+            navItems={NAV_ITEMS}
+            currentPath={path}
+            actions={
+              <>
+                <Button size="sm">지원하기</Button>
+                <Button size="sm" variant="weak">
+                  로그인
+                </Button>
+              </>
+            }
+          />
         </div>
       </PreviewLinks>
     </div>
@@ -172,7 +191,7 @@ export function HeaderProfileMenuExample() {
             currentPath={path}
             actions={
               <>
-                <Button size="md">버튼</Button>
+                <Button size="sm">버튼</Button>
                 <HeaderActionButton>문의사항</HeaderActionButton>
                 <HeaderProfileMenu
                   profile={PROFILE}
@@ -270,37 +289,94 @@ const HOME_LINK_PRIMITIVE_SETS: ReadonlyArray<{
 const darkTone = (variant: FigmaVariant) =>
   variant.props["Mode"] === "Dark" ? "dark" : undefined
 
-function renderLoggedOutActions(withCta: boolean) {
-  return (
-    <>
-      {withCta && <Button size="md">버튼</Button>}
-      <HeaderActionButton>문의사항</HeaderActionButton>
-      <Button size="md" variant="weak">
-        로그인
-      </Button>
-    </>
-  )
+type HeaderAction = "cta" | "inquiry" | "login" | "profile"
+
+type HeaderActionTable = Readonly<Record<string, readonly HeaderAction[]>>
+
+const HEADER_DESKTOP_ACTIONS: HeaderActionTable = {
+  "Mode=Light, Login Status=Logged In, Show CTA Button=False": [
+    "inquiry",
+    "profile",
+  ],
+  "Mode=Dark, Login Status=Logged In, Show CTA Button=False": ["profile"],
+  "Mode=Light, Login Status=Logged Out, Show CTA Button=True": ["cta", "login"],
+  "Mode=Dark, Login Status=Logged Out, Show CTA Button=True": ["cta", "login"],
+  "Mode=Light, Login Status=Logged Out, Show CTA Button=False": [
+    "inquiry",
+    "login",
+  ],
+  "Mode=Dark, Login Status=Logged Out, Show CTA Button=False": ["login"],
+  "Mode=Light, Login Status=Logged In, Show CTA Button=True": [
+    "cta",
+    "inquiry",
+    "profile",
+  ],
+  "Mode=Dark, Login Status=Logged In, Show CTA Button=True": ["cta", "profile"],
 }
 
-function renderLoggedInActions(withCta: boolean) {
-  return (
-    <>
-      {withCta && <Button size="md">버튼</Button>}
-      <HeaderActionButton>문의사항</HeaderActionButton>
-      <HeaderProfileMenu
-        profile={PROFILE}
-        generations={GENERATIONS}
-        defaultGeneration={CURRENT_GENERATION}
-      />
-    </>
-  )
+const ACTIONS_DESKTOP_ITEMS: HeaderActionTable = {
+  "Mode=Light, Login Status=Logged In, Show CTA Button=False": [
+    "inquiry",
+    "profile",
+  ],
+  "Mode=Dark, Login Status=Logged In, Show CTA Button=False": [
+    "inquiry",
+    "profile",
+  ],
+  "Mode=Light, Login Status=Logged In, Show CTA Button=True": [
+    "cta",
+    "inquiry",
+    "profile",
+  ],
+  "Mode=Dark, Login Status=Logged In, Show CTA Button=True": ["cta", "profile"],
+  "Mode=Light, Login Status=Logged Out, Show CTA Button=True": [
+    "cta",
+    "inquiry",
+    "login",
+  ],
+  "Mode=Dark, Login Status=Logged Out, Show CTA Button=True": ["cta", "login"],
 }
 
-function actionsOf(variant: FigmaVariant) {
-  const withCta = variant.props["Show CTA Button"] === "True"
-  return variant.props["Login Status"] === "Logged In"
-    ? renderLoggedInActions(withCta)
-    : renderLoggedOutActions(withCta)
+const actionItemsOf = (table: HeaderActionTable, variant: FigmaVariant) => {
+  const items = table[variant.name]
+  if (items === undefined) {
+    throw new Error(`${variant.name}: 그릴 액션 구성이 없습니다`)
+  }
+  return items
+}
+
+function renderActions(items: readonly HeaderAction[], ctaLabel: string) {
+  return (
+    <>
+      {items.map((item) => {
+        switch (item) {
+          case "cta":
+            return (
+              <Button key={item} size="sm">
+                {ctaLabel}
+              </Button>
+            )
+          case "inquiry":
+            return <HeaderActionButton key={item}>문의사항</HeaderActionButton>
+          case "login":
+            return (
+              <Button key={item} size="sm" variant="weak">
+                로그인
+              </Button>
+            )
+          case "profile":
+            return (
+              <HeaderProfileMenu
+                key={item}
+                profile={PROFILE}
+                generations={GENERATIONS}
+                defaultGeneration={CURRENT_GENERATION}
+              />
+            )
+        }
+      })}
+    </>
+  )
 }
 
 function HeaderVariantCell({ variant }: { variant: FigmaVariant }) {
@@ -310,7 +386,10 @@ function HeaderVariantCell({ variant }: { variant: FigmaVariant }) {
         mode={lookup(HEADER_MODES, variant, "Mode")}
         navItems={NAV_ITEMS}
         currentPath="/matching"
-        actions={actionsOf(variant)}
+        actions={renderActions(
+          actionItemsOf(HEADER_DESKTOP_ACTIONS, variant),
+          "지원하기",
+        )}
       />
     </div>
   )
@@ -321,7 +400,10 @@ function HeaderActionsCell({ variant }: { variant: FigmaVariant }) {
     <HeaderDesktop
       mode={lookup(HEADER_MODES, variant, "Mode")}
       logo={null}
-      actions={actionsOf(variant)}
+      actions={renderActions(
+        actionItemsOf(ACTIONS_DESKTOP_ITEMS, variant),
+        "버튼",
+      )}
     />
   )
 }
