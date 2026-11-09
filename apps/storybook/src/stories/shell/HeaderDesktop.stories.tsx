@@ -35,6 +35,7 @@ const GENERATIONS: HeaderProfileMenuProps["generations"] = [
 type StoryArgs = HeaderDesktopProps & {
   loggedIn: boolean
   showCta: boolean
+  showContact: boolean
   onLoginClick: () => void
   onContactClick: () => void
   onCtaClick: () => void
@@ -72,6 +73,7 @@ const meta = {
     currentPath: "/notices",
     loggedIn: false,
     showCta: true,
+    showContact: false,
     onLoginClick: fn(),
     onContactClick: fn(),
     onCtaClick: fn(),
@@ -79,6 +81,7 @@ const meta = {
   render: function Render({
     loggedIn,
     showCta,
+    showContact,
     onLoginClick,
     onContactClick,
     onCtaClick,
@@ -91,13 +94,15 @@ const meta = {
           loggedIn ? (
             <>
               {showCta && (
-                <Button size="md" onClick={onCtaClick}>
+                <Button size="sm" onClick={onCtaClick}>
                   지원하기
                 </Button>
               )}
-              <HeaderActionButton onClick={onContactClick}>
-                문의사항
-              </HeaderActionButton>
+              {showContact && (
+                <HeaderActionButton onClick={onContactClick}>
+                  문의사항
+                </HeaderActionButton>
+              )}
               <HeaderProfileMenu
                 profile={PROFILE}
                 generations={GENERATIONS}
@@ -107,14 +112,16 @@ const meta = {
           ) : (
             <>
               {showCta && (
-                <Button size="md" onClick={onCtaClick}>
+                <Button size="sm" onClick={onCtaClick}>
                   지원하기
                 </Button>
               )}
-              <HeaderActionButton onClick={onContactClick}>
-                문의사항
-              </HeaderActionButton>
-              <Button size="md" variant="weak" onClick={onLoginClick}>
+              {showContact && (
+                <HeaderActionButton onClick={onContactClick}>
+                  문의사항
+                </HeaderActionButton>
+              )}
+              <Button size="sm" variant="weak" onClick={onLoginClick}>
                 로그인
               </Button>
             </>

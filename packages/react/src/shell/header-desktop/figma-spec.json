@@ -106,6 +106,36 @@
       }
     },
     {
+      "specId": "header-light-cta",
+      "node": "I2780:61665;2780:61609",
+      "variant": "Mode=Light, Login Status=Logged Out, Show CTA Button=True › Button Size=Sm, Color=Brand, Style=Fill",
+      "target": ".umc-header-desktop__actions .umc-button[data-variant=\"fill\"]",
+      "expected": {
+        "height": "40px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "border-top-left-radius": "12px",
+        "background-color": "#008a80",
+        "color": "#ffffff",
+        "font-size": "16px",
+        "font-weight": "500",
+        "line-height": "22.4px",
+        "letter-spacing": "-0.48px"
+      }
+    },
+    {
+      "specId": "header-light-login",
+      "node": "I2780:61665;2809:62421",
+      "variant": "Mode=Light, Login Status=Logged Out, Show CTA Button=True › Button Size=Sm, Color=Brand, Style=Weak",
+      "target": ".umc-header-desktop__actions .umc-button[data-variant=\"weak\"]",
+      "expected": {
+        "height": "40px",
+        "border-top-left-radius": "12px",
+        "background-color": "#ddf4f1",
+        "color": "#02746c"
+      }
+    },
+    {
       "specId": "header-dark",
       "node": "2809:62842",
       "variant": "Mode=Dark, Login Status=Logged In, Show CTA Button=False",
@@ -171,6 +201,38 @@
       },
       "figmaDiffers": {
         "color": "피그마 선택 글자는 흰색이고 테두리는 흰색 1px이다. 공홈 랜딩 헤더에 맞춰 글자를 TealGrey-200으로 두고 테두리는 알약과 같은 하이라이트 링으로 그린다(앱 셸 35)"
+      }
+    },
+    {
+      "specId": "header-dark-cta",
+      "node": "I2809:62849;2809:62389",
+      "variant": "Mode=Dark, Login Status=Logged Out, Show CTA Button=True › Button Size=Sm, Color=Brand, Style=Fill",
+      "target": ".umc-header-desktop__actions .umc-button[data-variant=\"fill\"]",
+      "expected": {
+        "height": "40px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "border-top-left-radius": "12px",
+        "background-color": "#fbfcfc4d",
+        "color": "#ffffff",
+        "font-size": "16px",
+        "font-weight": "500",
+        "letter-spacing": "-0.48px"
+      }
+    },
+    {
+      "specId": "header-dark-login",
+      "node": "I2809:62849;2809:62446",
+      "variant": "Mode=Dark, Login Status=Logged Out, Show CTA Button=True › Button Size=Sm, Color=Neutral, Style=Fill",
+      "target": ".umc-header-desktop__actions .umc-button[data-variant=\"weak\"]",
+      "expected": {
+        "height": "40px",
+        "border-top-left-radius": "12px",
+        "background-color": "#00000000",
+        "color": "#ffffff"
+      },
+      "figmaDiffers": {
+        "background-color": "피그마는 Neutral Fill 인스턴스의 배경을 숨기고 0.5px 하이라이트 링을 덮어썼다. 앱은 라이트와 같은 weak 버튼을 쓰고 다크 헤더가 배경을 지운다. 링은 회전한 타원 그라데이션 두 겹이라 같은 중심의 축 정렬 타원으로 근사했다(앱 셸 36)"
       }
     }
   ]
