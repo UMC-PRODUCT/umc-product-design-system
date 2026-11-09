@@ -1,5 +1,9 @@
 # @umc-product/design-tokens
 
+## 0.14.2 (2026-11-09)
+
+No changes in this release.
+
 ## 0.14.1 (2026-11-09)
 
 No changes in this release.
