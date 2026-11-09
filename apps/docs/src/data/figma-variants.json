@@ -357,6 +357,62 @@
         "State=Unselected, Type=Arrow-Right"
       ]
     },
+    "pagination-bar-dots": {
+      "file": "UMC Learning",
+      "fileKey": "WWaat5valEhnd2bpA4zebl",
+      "node": "2462:156304",
+      "name": "페이지 네이션",
+      "axes": {
+        "Property 1": [
+          "Default",
+          "Variant2",
+          "Variant3",
+          "Variant4",
+          "Variant5",
+          "Variant6",
+          "Variant7",
+          "Variant8",
+          "Variant9"
+        ]
+      },
+      "variants": [
+        "Property 1=Default",
+        "Property 1=Variant2",
+        "Property 1=Variant3",
+        "Property 1=Variant4",
+        "Property 1=Variant5",
+        "Property 1=Variant6",
+        "Property 1=Variant7",
+        "Property 1=Variant8",
+        "Property 1=Variant9"
+      ]
+    },
+    "pagination-bar-dot": {
+      "file": "UMC Learning",
+      "fileKey": "WWaat5valEhnd2bpA4zebl",
+      "node": "2462:156299",
+      "name": "페이지 네이션 버튼",
+      "axes": {
+        "Property 1": ["Rectangle 17967", "Ellipse 83"]
+      },
+      "variants": ["Property 1=Rectangle 17967", "Property 1=Ellipse 83"]
+    },
+    "pagination-bar-arrow": {
+      "file": "UMC Learning",
+      "fileKey": "WWaat5valEhnd2bpA4zebl",
+      "node": "2462:156395",
+      "name": "페이지네이션 버튼",
+      "axes": {
+        "type": ["Right", "Left"],
+        "State": ["Default", "Hover"]
+      },
+      "variants": [
+        "type=Right, State=Default",
+        "type=Right, State=Hover",
+        "type=Left, State=Default",
+        "type=Left, State=Hover"
+      ]
+    },
     "text-button": {
       "node": "3573:95925",
       "name": "Text Button",
