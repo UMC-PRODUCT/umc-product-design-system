@@ -32,19 +32,19 @@
       "variant": "Web/Header/Navigation, Mode=Light",
       "target": ".umc-header-desktop__nav-list",
       "expected": {
+        "height": "48px",
         "padding-top": "6px",
         "padding-right": "6px",
         "padding-bottom": "6px",
         "padding-left": "6px",
         "column-gap": "6px",
-        "border-top-width": "1px",
-        "border-top-color": "#f7f8f8",
         "border-top-left-radius": "999px",
         "background-color": "#fbfcfc",
-        "box-shadow~": "#0a56500a 0px 0px 16px 0px"
+        "box-shadow~": "#0a56500a 0px 0px 16px 0px, #f7f8f8 0px 0px 0px 1px inset"
       },
       "figmaDiffers": {
-        "border-top-left-radius": "피그마 컨테이너는 9999px 리터럴, 항목은 radius/primitive/full(999px)을 쓴다. 둘 다 완전한 원형이라 토큰 999px로 통일했다"
+        "border-top-left-radius": "피그마 컨테이너는 9999px 리터럴, 항목은 radius/primitive/full(999px)을 쓴다. 둘 다 완전한 원형이라 토큰 999px로 통일했다",
+        "box-shadow~": "피그마 1px 테두리는 안쪽에 그려져 알약이 48px이다. border는 패딩 바깥에 더해져 50px이 되므로 inset 그림자로 테두리를 그린다"
       }
     },
     {
@@ -125,10 +125,10 @@
       "variant": "Web/Header/Navigation, Mode=Dark",
       "target": ".umc-header-desktop__nav-list",
       "expected": {
-        "border-top-color": "#ffffff",
+        "height": "48px",
         "background-color": "#fbfcfc33",
         "backdrop-filter": "blur(21px)",
-        "box-shadow~": "#0a56500a 0px 0px 16px 0px"
+        "box-shadow~": "#0a56500a 0px 0px 16px 0px, #ffffff 0px 0px 0px 1px inset"
       }
     },
     {
@@ -166,7 +166,7 @@
         "box-shadow~": "#ffffff 0px 0px 0px 1px inset"
       },
       "figmaDiffers": {
-        "box-shadow~": "피그마는 1px 테두리와 좌우 패딩 16px을 쓴다. 선택 시 폭이 바뀌지 않도록 패딩 18px을 유지하고 inset 그림자로 테두리를 그렸다"
+        "box-shadow~": "피그마는 1px 흰 테두리를 안쪽에 그린다. 선택 시 폭이 바뀌지 않도록 좌우 패딩 18px을 그대로 두고 inset 그림자로 테두리를 그렸다"
       }
     }
   ]
