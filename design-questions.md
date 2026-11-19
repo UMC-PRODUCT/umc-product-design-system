@@ -194,7 +194,7 @@ UMC Learning 파일(`WWaat5valEhnd2bpA4zebl`) "UPMS 이용가이드" 페이지�
 1. Tooltip 라벨 색이 2기 `teal-600`(`#0b6b64`)입니다. 3기 Teal-600은 `#02746c`입니다.
 2. Tooltip 라벨은 Light Md에만 있습니다. Dark나 다른 크기에서도 쓸 수 있는지 알려 주세요.
 3. Tooltip Md의 최대 폭이 없어 240px로 가정했습니다. 트리거와의 간격은 8px로 두었습니다.
-4. Toast Error 배경이 2기 `error-200`(`#fed7d7`)이고, Neutral 배경 `rgba(63, 65, 65, 0.8)`은 이름 없는 값입니다.
+4. Toast Error 배경이 2기 `error-200`(`#fed7d7`)이고, Neutral 배경 `rgba(63, 65, 65, 0.8)`은 이름 없는 값입니다. (해결 2026-11-19) Error 배경은 새 Red-100을 가리키는 `Fill/Error/Medium-100`에 연결되었고, Neutral, Warning, Service Notice · Neutral 배경은 불투명한 `Fill/Neutral-Inverse/Strong-600`(`#606262`)에 연결되었습니다. 코드도 두 토큰을 씁니다.
 5. Toast 앞 아이콘의 체크 색이 `#fbfcfc`인데 아이콘 패키지는 흰색으로 고정합니다.
 6. Toast Service Notice 타입의 양옆 그래픽 에셋은 컴포넌트에 넣지 않았습니다. 에셋과 사용처를 알려 주세요. (해결 2026-11-07) 상단 Service Notice의 양옆 그래픽이 `Pictogram/Under-construction` 인스턴스가 되었고, 하단에 사용 예시 두 개(서비스 공개 예정, 준비 중)가 생겼습니다. 그래서 코드에 `toast.showServiceNotice()`를 더했습니다. Brand는 픽토그램 light 모드를, Neutral은 dark 모드를 씁니다. 두 가지를 확인해 주세요.
    - 하단 Service Notice의 양옆 그래픽은 아직 `.docs/Grapic`이라 Brand와 Neutral 모두 `#008a80`과 `#ddf4f1`입니다. 코드는 상단처럼 픽토그램 모드를 따릅니다. 하단도 같은 픽토그램으로 바꿔도 되는지 알려 주세요.
