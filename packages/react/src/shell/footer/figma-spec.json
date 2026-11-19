@@ -1,0 +1,301 @@
+{
+  "component": "Footer",
+  "figmaSection": "6402:114442",
+  "page": "/components/shell/footer/",
+  "figmaDiffers": {
+    "width": "피그마는 1386px 고정이지만 코드는 부모 폭을 채운다",
+    "padding": "피그마 좌우 여백 60px·56px은 1440px 화면 기준 값이다. 코드는 화면이 좁아지면 20px까지 줄인다",
+    "column-gap": "피그마 링크 열 간격 120px은 1440px 화면 기준 값이다. 코드는 화면이 좁아지면 32px까지 줄이고, 폭이 모자라면 열을 다음 줄로 넘긴다"
+  },
+  "nodes": [
+    {
+      "specId": "footer-dark-hero",
+      "node": "6402:114443",
+      "variant": "Property 1=Dark, Type=Hero",
+      "target": ".umc-footer",
+      "expected": {
+        "background-color": "#283938",
+        "padding-top": "64px",
+        "padding-right": "56px",
+        "padding-bottom": "46px",
+        "padding-left": "60px"
+      }
+    },
+    {
+      "specId": "footer-dark-hero-glow",
+      "node": "6402:114444",
+      "variant": "Property 1=Dark, Type=Hero 안의 Vector 4073",
+      "target": ".umc-footer__glow",
+      "expected": {
+        "mix-blend-mode": "color",
+        "top": "-513.84px",
+        "left": "-410.84px"
+      }
+    },
+    {
+      "specId": "footer-dark-hero-content",
+      "node": "6402:114445",
+      "variant": "Property 1=Dark, Type=Hero 안의 Frame 2087331558",
+      "target": ".umc-footer__content",
+      "expected": {
+        "row-gap": "50px"
+      }
+    },
+    {
+      "specId": "footer-dark-hero-columns",
+      "node": "6402:114447",
+      "variant": "Property 1=Dark, Type=Hero 안의 링크 열 묶음",
+      "target": ".umc-footer__columns",
+      "expected": {
+        "column-gap": "120px"
+      }
+    },
+    {
+      "specId": "footer-dark-hero-column",
+      "node": "6402:114448",
+      "variant": "Property 1=Dark, Type=Hero 안의 About 열",
+      "target": ".umc-footer__column",
+      "expected": {
+        "row-gap": "10px"
+      }
+    },
+    {
+      "specId": "footer-dark-hero-column-title",
+      "node": "6402:114449",
+      "variant": "Property 1=Dark, Type=Hero 안의 열 제목 About",
+      "target": ".umc-footer__column-title",
+      "expected": {
+        "color": "#cccccc",
+        "font-size": "15px",
+        "font-weight": "400",
+        "line-height": "22.5px",
+        "letter-spacing": "-0.15px"
+      }
+    },
+    {
+      "specId": "footer-dark-hero-items",
+      "node": "6402:114450",
+      "variant": "Property 1=Dark, Type=Hero 안의 About 항목 묶음",
+      "target": ".umc-footer__items",
+      "expected": {
+        "row-gap": "7px"
+      },
+      "figmaDiffers": {
+        "row-gap": "About·Product 열은 항목 간격이 7px, Policies·Contact 열은 10px이다. 코드는 모든 열을 7px로 그린다"
+      }
+    },
+    {
+      "specId": "footer-dark-hero-link",
+      "node": "6402:114451",
+      "variant": "Property 1=Dark, Type=Hero 안의 Text Button UMC PRODUCT",
+      "target": ".umc-footer__link",
+      "expected": {
+        "color": "#fbfcfc",
+        "font-size": "16px",
+        "font-weight": "400",
+        "line-height": "23.2px",
+        "letter-spacing": "-0.8px",
+        "text-decoration-line": "underline"
+      },
+      "figmaDiffers": {
+        "text-decoration-line": "피그마 Text Button은 아직 Appearance=Clear다. 디자이너 전달(2026-11-19)에 따라 이동할 수 있는 항목은 밑줄을 그린다"
+      }
+    },
+    {
+      "specId": "footer-dark-hero-text",
+      "node": "6402:114456",
+      "variant": "Property 1=Dark, Type=Hero 안의 글자 UMC APP",
+      "target": ".umc-footer__text",
+      "expected": {
+        "color": "#fbfcfc",
+        "font-size": "16px",
+        "text-decoration-line": "none"
+      }
+    },
+    {
+      "specId": "footer-dark-hero-brand",
+      "node": "6402:114475",
+      "variant": "Property 1=Dark, Type=Hero 안의 로고와 제목 묶음",
+      "target": ".umc-footer__brand",
+      "expected": {
+        "row-gap": "16px"
+      }
+    },
+    {
+      "specId": "footer-dark-hero-logo",
+      "node": "6402:114476",
+      "variant": "Property 1=Dark, Type=Hero 안의 umc logo",
+      "target": ".umc-footer__logo",
+      "expected": {
+        "color": "#ffffff",
+        "width": "63.6364px",
+        "height": "20px"
+      }
+    },
+    {
+      "specId": "footer-dark-hero-title",
+      "node": "6402:114480",
+      "variant": "Property 1=Dark, Type=Hero 안의 University MakeUs Challenge",
+      "target": ".umc-footer__title",
+      "expected": {
+        "color": "#ffffff",
+        "font-size": "24px",
+        "font-weight": "600",
+        "line-height": "32.4px",
+        "letter-spacing": "-0.24px"
+      }
+    },
+    {
+      "specId": "footer-dark-hero-copyright",
+      "node": "6402:114847",
+      "variant": "Property 1=Dark, Type=Hero 안의 저작권 문구",
+      "target": ".umc-footer__copyright",
+      "expected": {
+        "color": "#7ac7c1",
+        "font-size": "15px",
+        "font-weight": "500",
+        "line-height": "22.5px"
+      }
+    },
+    {
+      "specId": "footer-dark-hero-social",
+      "node": "6402:114483",
+      "variant": "Property 1=Dark, Type=Hero 안의 소셜 아이콘 묶음",
+      "target": ".umc-footer__social",
+      "expected": {
+        "column-gap": "11px"
+      }
+    },
+    {
+      "specId": "footer-dark-hero-social-link",
+      "node": "6402:114486",
+      "variant": "Property 1=Dark, Type=Hero 안의 Footer icon-youtube",
+      "target": ".umc-footer__social-link",
+      "expected": {
+        "width": "36px",
+        "height": "36px",
+        "background-color": "#7e7f7fb3",
+        "color": "#f1f1f2",
+        "opacity": "0.7",
+        "border-top-left-radius": "999px"
+      },
+      "figmaDiffers": {
+        "width": "피그마 Footer icon-facebook과 Footer icon-instagram은 37×36px이다. 원이 찌그러지지 않게 세 아이콘 모두 36×36px로 그린다"
+      }
+    },
+    {
+      "specId": "footer-dark-default-identity",
+      "node": "6404:115892",
+      "variant": "Property 1=Dark, Type=Default 안의 로고, 제목, 저작권 묶음",
+      "target": ".umc-footer__default-identity",
+      "expected": {
+        "row-gap": "12px"
+      }
+    },
+    {
+      "specId": "footer-gray-hero",
+      "node": "6402:114782",
+      "variant": "Property 1=Gray, Type=Hero",
+      "target": ".umc-footer",
+      "expected": {
+        "background-color": "#9ca3a3"
+      }
+    },
+    {
+      "specId": "footer-gray-hero-column-title",
+      "node": "6402:114788",
+      "variant": "Property 1=Gray, Type=Hero 안의 열 제목 About",
+      "target": ".umc-footer__column-title",
+      "expected": {
+        "color": "#e2e3e3"
+      }
+    },
+    {
+      "specId": "footer-gray-hero-copyright",
+      "node": "6402:114864",
+      "variant": "Property 1=Gray, Type=Hero 안의 저작권 문구",
+      "target": ".umc-footer__copyright",
+      "expected": {
+        "color": "#eff0f0"
+      }
+    },
+    {
+      "specId": "footer-gray-hero-social-link",
+      "node": "6402:114867",
+      "variant": "Property 1=Gray, Type=Hero 안의 Footer icon-facebook",
+      "target": ".umc-footer__social-link",
+      "expected": {
+        "background-color": "#7e7f7f80",
+        "color": "#f1f1f2"
+      }
+    },
+    {
+      "specId": "footer-light-default",
+      "node": "6402:114881",
+      "variant": "Property 1=Light, Type=Default",
+      "target": ".umc-footer",
+      "expected": {
+        "background-color": "#f4f7f6"
+      }
+    },
+    {
+      "specId": "footer-light-default-column-title",
+      "node": "6402:115529",
+      "variant": "Property 1=Light, Type=Default 안의 열 제목 About",
+      "target": ".umc-footer__column-title",
+      "expected": {
+        "color": "#9ca3a3"
+      }
+    },
+    {
+      "specId": "footer-light-default-link",
+      "node": "6402:115531",
+      "variant": "Property 1=Light, Type=Default 안의 Text Button UMC PRODUCT",
+      "target": ".umc-footer__link",
+      "expected": {
+        "color": "#7e7f7f",
+        "font-weight": "500"
+      }
+    },
+    {
+      "specId": "footer-light-default-logo",
+      "node": "6402:114988",
+      "variant": "Property 1=Light, Type=Default 안의 umc logo",
+      "target": ".umc-footer__logo",
+      "expected": {
+        "color": "#adadad"
+      }
+    },
+    {
+      "specId": "footer-light-default-title",
+      "node": "6402:114986",
+      "variant": "Property 1=Light, Type=Default 안의 University MakeUs Challenge",
+      "target": ".umc-footer__title",
+      "expected": {
+        "color": "#7e7f7f"
+      }
+    },
+    {
+      "specId": "footer-light-default-copyright",
+      "node": "6402:114995",
+      "variant": "Property 1=Light, Type=Default 안의 저작권 문구",
+      "target": ".umc-footer__copyright",
+      "expected": {
+        "color": "#606262"
+      }
+    },
+    {
+      "specId": "footer-light-default-social-link",
+      "node": "6404:115748",
+      "variant": "Property 1=Light, Type=Default 안의 Footer icon-facebook",
+      "target": ".umc-footer__social-link",
+      "expected": {
+        "background-color": "#7e7f7f80",
+        "color": "#ffffff"
+      },
+      "figmaDiffers": {
+        "color": "Light · Hero(6402:115505)의 소셜 로고는 #f1f1f2이고 Light · Default는 흰색이다. 코드는 Light 두 변형 모두 흰색으로 그린다"
+      }
+    }
+  ]
+}

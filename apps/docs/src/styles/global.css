@@ -1121,6 +1121,18 @@ body {
   width: 100%;
 }
 
+.docs-footer-frame {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.docs-footer-stack {
+  display: grid;
+  gap: 0.75rem;
+  background: none;
+  box-shadow: none;
+}
+
 .docs-error-page-frame {
   display: flex;
   align-items: center;

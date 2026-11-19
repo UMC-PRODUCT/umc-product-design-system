@@ -107,7 +107,7 @@ describe("normalizeVariables: 피그마 export 전체", () => {
     )
     expect(counts).toEqual({
       "color.semantic.json": 152,
-      "color.primitive.json": 78,
+      "color.primitive.json": 79,
       "font.json": 20,
       "spacing.json": 50,
       "radius.json": 18,
@@ -118,6 +118,9 @@ describe("normalizeVariables: 피그마 export 전체", () => {
     ["color.teal.500", "#008a80"],
     ["color.teal-grey.75", "#f7f8f8"],
     ["color.white", "#ffffff"],
+    ["color.red.75", "#ffe7e5"],
+    ["color.red.100", "#fed7d7"],
+    ["color.fill.error.medium-100", "{color.red.100}"],
     ["color.text.neutral-default-900", "{color.teal-grey.900}"],
     ["color.icon.neutral-weak-400", "{color.teal-grey.400}"],
     ["color.fill.primary.stronger-hover-pressed-400", "{color.teal.400}"],

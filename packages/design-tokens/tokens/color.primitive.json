@@ -255,9 +255,19 @@
           }
         }
       },
-      "100": {
+      "75": {
         "$type": "color",
         "$value": "#ffe7e5",
+        "$extensions": {
+          "umc.figma": {
+            "name": "Primitives/Red/Red-75",
+            "variableId": "VariableID:6376:38828"
+          }
+        }
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#fed7d7",
         "$extensions": {
           "umc.figma": {
             "name": "Primitives/Red/Red-100",

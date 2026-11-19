@@ -38,10 +38,14 @@
 
 2026-10-30에 `Token` 컬렉션을 다시 받아 새 변수 7개를 토큰으로 넣었습니다. 간격은 `Spacing/Primitive/40`, `Padding 40`, `Padding 48`, `Gap 40`, `Margin 20`, `Margin 40`, 모서리는 `Button/R Button 8`입니다. 값이 바뀌거나 빠진 변수는 없지만 아직 이 변수를 쓰는 컴포넌트도 없습니다. Icon Button의 8px 모서리는 `Radius/Primitive/8`, App/Page Header의 20px 여백은 `Padding 20`에 연결되어 있고 Side Navigation 하위 메뉴의 48px 들여쓰기는 변수에 연결되어 있지 않습니다. 새 변수로 다시 연결할 컴포넌트가 있으면 알려 주세요. 연결되면 코드도 같은 토큰으로 바꾸겠습니다.
 
+2026-11-19에 Red 팔레트 변경을 반영했습니다. 기존 Red-100(`#ffe7e5`)은 새 `Red-75`로 옮겨 갔고, `Red-100`에는 Toast Error 배경에 쓰던 `#fed7d7`이 들어왔습니다. 피그마에서 Red-100을 직접 쓰거나 `Fill/Error/Medium-100`으로 쓰는 곳도 모두 `#fed7d7`로 바뀌어서 코드도 같은 값으로 바꿨습니다. 대상은 Button(Red Fill 비활성 글자, Red Weak 배경), Icon Button(Error Weak 누름), Tag와 Number Badge(Error Weak 배경), Dialog(Error 확인 버튼)입니다. 이 다섯 곳이 의도한 변화인지 확인해 주세요.
+
+같은 날 Color 컬렉션을 읽어 보니 semantic 이름 체계(`Icon/Neutral-Weak-400` → `Icon/Neutral/Weak-400`), Light·Dark 두 모드, primitive 변수 id가 2026-10-08 export와 다릅니다. 이번에는 Red-75와 Red-100만 export 원본에 넣었고, 새 `Fill/Error/Weak-75`를 포함한 나머지는 Color 컬렉션을 다시 export할 때 함께 옮기겠습니다. 이름 개편이 끝났는지 알려 주세요.
+
 상태 글자색 세 개가 작은 글자의 대비 기준(WCAG AA 4.5:1)에 못 미칩니다.
 
 - `--umc-color-text-warning`(`#ed8002`): 흰 배경 2.73:1, `yellow-100` 배경 2.41:1
-- `--umc-color-text-error`(`#dc3d3d`): 흰 배경 4.40:1, `red-100` 배경 3.73:1
+- `--umc-color-text-error`(`#dc3d3d`): 흰 배경 4.40:1, `red-100`(`#fed7d7`) 배경 3.33:1
 - `--umc-color-text-success`(`#06844c`): `green-100` 배경 4.16:1
 
 Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합을 씁니다. 코드는 피그마 값을 그대로 따르고, 문서 사이트 안내 상자만 제목을 중립색으로 바꿔 피했습니다. 글자색을 한 단계 진한 값으로 바꿀지 알려 주세요.
@@ -190,7 +194,7 @@ UMC Learning 파일(`WWaat5valEhnd2bpA4zebl`) "UPMS 이용가이드" 페이지�
 1. Tooltip 라벨 색이 2기 `teal-600`(`#0b6b64`)입니다. 3기 Teal-600은 `#02746c`입니다.
 2. Tooltip 라벨은 Light Md에만 있습니다. Dark나 다른 크기에서도 쓸 수 있는지 알려 주세요.
 3. Tooltip Md의 최대 폭이 없어 240px로 가정했습니다. 트리거와의 간격은 8px로 두었습니다.
-4. Toast Error 배경이 2기 `error-200`(`#fed7d7`)이고, Neutral 배경 `rgba(63, 65, 65, 0.8)`은 이름 없는 값입니다.
+4. Toast Error 배경이 2기 `error-200`(`#fed7d7`)이고, Neutral 배경 `rgba(63, 65, 65, 0.8)`은 이름 없는 값입니다. (해결 2026-11-19) Error 배경은 새 Red-100을 가리키는 `Fill/Error/Medium-100`에 연결되었고, Neutral, Warning, Service Notice · Neutral 배경은 불투명한 `Fill/Neutral-Inverse/Strong-600`(`#606262`)에 연결되었습니다. 코드도 두 토큰을 씁니다.
 5. Toast 앞 아이콘의 체크 색이 `#fbfcfc`인데 아이콘 패키지는 흰색으로 고정합니다.
 6. Toast Service Notice 타입의 양옆 그래픽 에셋은 컴포넌트에 넣지 않았습니다. 에셋과 사용처를 알려 주세요. (해결 2026-11-07) 상단 Service Notice의 양옆 그래픽이 `Pictogram/Under-construction` 인스턴스가 되었고, 하단에 사용 예시 두 개(서비스 공개 예정, 준비 중)가 생겼습니다. 그래서 코드에 `toast.showServiceNotice()`를 더했습니다. Brand는 픽토그램 light 모드를, Neutral은 dark 모드를 씁니다. 두 가지를 확인해 주세요.
    - 하단 Service Notice의 양옆 그래픽은 아직 `.docs/Grapic`이라 Brand와 Neutral 모두 `#008a80`과 `#ddf4f1`입니다. 코드는 상단처럼 픽토그램 모드를 따릅니다. 하단도 같은 픽토그램으로 바꿔도 되는지 알려 주세요.
@@ -270,6 +274,12 @@ UMC Learning 파일(`WWaat5valEhnd2bpA4zebl`) "UPMS 이용가이드" 페이지�
 34. 에러 페이지 예시 화면(404, 500, 서비스 준비 중)의 배경은 흰색 위에 `#8FFFF3` 8%와 `#229084` 5%·3% 그라데이션인데 변수에 연결되어 있지 않고 `Web/Error Page Container` 밖에 있습니다. 코드는 컴포넌트에 배경을 넣지 않고 문서 예시에만 그렸습니다. 페이지 배경을 컴포넌트나 토큰으로 둘지 알려 주세요.
 35. (2026-11-09 결정) `Web/Header/Desktop` 다크 변형은 내비게이션 알약과 선택 항목에 흰색 1px 테두리, 선택 글자 흰색인데 공홈 랜딩 헤더는 테두리 대신 위아래가 밝은 흰색 50% 하이라이트 링, 선택 글자 `TealGrey-200`(`#e2e3e3`), 헤더 위쪽 `#07211e` 60% 그라데이션 오버레이를 씁니다. 웹 파트는 공홈 구현을 기준으로 코드를 맞췄습니다. 공홈 랜딩 피그마의 Header 인스턴스(10001:30086)는 2기 `Header` 컴포넌트라 두 피그마가 서로 다릅니다. 어느 쪽을 DS 피그마에 반영할지 알려 주세요.
 36. `Web/Header/Desktop` 다크 변형의 지원하기 버튼은 Button `Sm Brand Fill` 인스턴스에 `#fbfcfc` 30% 배경과 1px 하이라이트 링을, 로그인 버튼은 `Sm Neutral Fill` 인스턴스의 배경을 숨기고 0.5px 하이라이트 링을 덮어쓴 모양이라 Button 변형에 없습니다. 코드는 Button 변형을 늘리지 않고 `HeaderDesktop` 다크 모드가 액션 영역 안 `Button`의 `fill`을 지원하기 모양으로, `weak`를 로그인 모양으로 그립니다. 로그인 링은 회전한 타원 그라데이션 두 겹이라 같은 중심의 축 정렬 타원(`120% 228.5% at 60.9% 2%`, `99.5% 237.5% at 90.4% 0%`)으로 근사했습니다. 피그마에 hover, pressed, disabled가 없어서 hover와 pressed는 지원하기 배경을 `#fbfcfc` 30%에서 40%(공홈 `UMC 바로가기` hover와 같음)로, 로그인 배경을 투명에서 `#fbfcfc` 20%(다크 내비게이션 알약과 같음)로 바꾸고, disabled는 배경을 두고 글자만 `TealGrey-400`으로 바꿉니다. 원하는 상태 모양과, 이 모양을 Button 세트의 다크 변형으로 올릴지 알려 주세요. 헤더 변형마다 보이는 버튼도 다릅니다. 다크 변형 넷은 문의사항을 숨기고, 라이트 로그아웃 + CTA 변형도 문의사항을 숨깁니다. `.primitive/Web/Header/Actions-Desktop` 다크 로그인 + CTA 없음 변형은 문의사항을 보여 줍니다. 문서는 피그마 그대로 그렸습니다. 의도한 구성인지 알려 주세요. 모바일 다크 메뉴의 CTA(23번)는 아직 그대로입니다.
+37. `Footer`(6402:114442)의 링크는 2026-11-19 전달 내용대로 그렸습니다. `href`가 있는 항목만 밑줄 링크로 그리고, 운영하지 않는 서비스(UMC APP, 리크루팅 서비스, UMC Operation)는 밑줄 없는 글자로 둡니다. 피그마 Text Button은 아직 `Appearance=Clear`이니 이동할 수 있는 항목을 `Underline`으로 바꿔 주세요. 코드의 소셜 플랫폼은 Facebook, Instagram, YouTube 셋입니다. 중앙과 확인 중인 소셜 종류, 링크, 추가 정보가 정해지면 알려 주세요.
+38. Footer 항목 간격은 About·Product 열이 7px, Policies·Contact 열이 10px입니다(안쪽 프레임이 한 겹 더 있음). 코드는 모든 열을 7px로 그립니다. 링크 글자는 Text Button XS를 16px, 줄 높이 1.45, 자간 -5%로 덮어썼는데 같은 텍스트 스타일이 없습니다. Body/1(자간 -1%)로 맞출지 알려 주세요.
+39. Footer 배경은 변수에 연결되어 있지 않습니다. Dark는 `#283938` 위 `#0c2a25` 86%, Gray는 `#9ca3a3`, Light는 `#f4f7f6`입니다. Light 열 제목 `#9ca3a3`, 소셜 원 배경(`TealGrey-500` 70%와 50%), 소셜 로고 `#f1f1f2`와 YouTube 재생 표시 `#8d8f8f`도 이름 없는 값입니다. Dark 배경의 빛 번짐(`#32ffff`, 흐림 116, 혼합 모드 Color)은 이름 없는 벡터입니다. 코드는 이 값들을 모두 컴포넌트 변수로 둡니다.
+40. Footer 로고는 라이브러리 `Logo` 인스턴스가 아니라 떼어 낸 그룹(63.6×20)이고, `Logo (Type=워터마크)`(148×44)와 모양도 다릅니다. 코드는 피그마 path를 그대로 그렸으니 라이브러리 로고로 바꿀지 알려 주세요. 소셜 아이콘은 Facebook·Instagram이 37×36px, YouTube가 36×36px라 코드는 모두 36px 원으로 그립니다. Light·Hero의 소셜 로고는 `#f1f1f2`, Light·Default는 흰색이라 코드는 둘 다 흰색으로 맞췄습니다.
+41. Footer Light·Gray 모드의 글자 대비가 WCAG AA(4.5:1)에 못 미칩니다. Light는 링크(`#7e7f7f`) 3.73:1, 열 제목(`#9ca3a3`) 2.38:1입니다. Gray는 링크(`#fbfcfc`) 2.50:1, 열 제목(`#e2e3e3`) 2.00:1, 저작권(`#eff0f0`) 2.25:1입니다. 링크와 소셜 아이콘의 Hover·Pressed 모양도 없습니다. 색을 조정할지와 상태 모양을 알려 주세요.
+42. Footer는 데스크톱(1386px) 변형만 있습니다. 코드는 좁은 화면에서 좌우 여백을 20px, 열 간격을 32px까지 줄이고 열을 줄바꿈합니다. 모바일 푸터 모양이 필요하면 그려 주세요.
 
 ## 폼
 

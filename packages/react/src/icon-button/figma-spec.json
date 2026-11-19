@@ -265,7 +265,7 @@
       "node": "4626:80676",
       "variant": "State=Hover&Pressed, Color=Error, Style=Weak, Size=Md",
       "expected": {
-        "background-color": "#ffe7e5",
+        "background-color": "#fed7d7",
         "box-shadow~": "1px 1px 2px 0px inset"
       }
     },

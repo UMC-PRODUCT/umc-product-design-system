@@ -26,8 +26,7 @@
   }
 
   .umc-toast {
-    --umc-toast-neutral-bg: rgba(63, 65, 65, 0.8);
-    --umc-toast-error-bg: #fed7d7;
+    --umc-toast-neutral-bg: var(--umc-color-fill-neutral-inverse-strong-600);
     --umc-toast-action-letter-spacing: -0.02em;
     --umc-toast-min-width: min(400px, calc(100vw - 32px));
 
@@ -119,7 +118,7 @@
   }
 
   .umc-toast[data-color="error"] {
-    --umc-toast-bg: var(--umc-toast-error-bg);
+    --umc-toast-bg: var(--umc-color-fill-error-medium-100);
     --umc-toast-fg: var(--umc-color-red-700);
     --umc-toast-icon: var(--umc-color-icon-error);
     --umc-toast-action: var(--umc-color-red-500);

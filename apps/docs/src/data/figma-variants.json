@@ -2531,6 +2531,22 @@
         "State": ["Default", "Hover", "Expanded"]
       },
       "variants": ["State=Default", "State=Hover", "State=Expanded"]
+    },
+    "footer": {
+      "node": "6402:114442",
+      "name": "Footer",
+      "axes": {
+        "Property 1": ["Dark", "Gray", "Light"],
+        "Type": ["Hero", "Default"]
+      },
+      "variants": [
+        "Property 1=Dark, Type=Hero",
+        "Property 1=Dark, Type=Default",
+        "Property 1=Gray, Type=Hero",
+        "Property 1=Gray, Type=Default",
+        "Property 1=Light, Type=Hero",
+        "Property 1=Light, Type=Default"
+      ]
     }
   }
 }

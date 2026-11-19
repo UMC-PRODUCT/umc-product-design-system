@@ -8,7 +8,7 @@ import { paths } from "../shared/paths.ts"
 const FIGMA_ALIAS_PATTERN = /^\{([^{}]+)\}$/
 
 export const PREVIOUS_SNAPSHOT_COUNT: Readonly<Record<string, number>> = {
-  "color.mode-1.tokens.json": 229,
+  "color.mode-1.tokens.json": 230,
   "token.mode-1.tokens.json": 83,
 }
 

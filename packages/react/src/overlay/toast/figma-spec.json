@@ -77,7 +77,7 @@
       "variant": "Type=Neutral, Leading Acc=True, Text Button=False",
       "target": ".umc-toast",
       "expected": {
-        "background-color": "#3f4141cc",
+        "background-color": "#606262",
         "color": "#ffffff"
       }
     },
@@ -87,7 +87,7 @@
       "variant": "Type=Warning, Leading Acc=True, Text Button=False",
       "target": ".umc-toast",
       "expected": {
-        "background-color": "#3f4141cc",
+        "background-color": "#606262",
         "color": "#ffffff",
         "column-gap": "10px"
       }
@@ -202,7 +202,7 @@
       "variant": "Type=Service Notice · Neutral, Leading Acc=True, Text Button=False",
       "target": ".umc-toast",
       "expected": {
-        "background-color": "#3f4141cc",
+        "background-color": "#606262",
         "color": "#ffffff",
         "column-gap": "14px"
       }

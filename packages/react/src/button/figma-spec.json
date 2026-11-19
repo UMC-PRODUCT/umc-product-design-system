@@ -226,7 +226,7 @@
       "variant": "Size=Lg, Color=Red, Style=Fill, State=Disabled",
       "expected": {
         "background-color": "#fdb4b4",
-        "color": "#ffe7e5"
+        "color": "#fed7d7"
       }
     },
     {
@@ -243,7 +243,7 @@
       "node": "2621:33920",
       "variant": "Size=Lg, Color=Red, Style=Weak, State=Default",
       "expected": {
-        "background-color": "#ffe7e5",
+        "background-color": "#fed7d7",
         "color": "#c21f14",
         "height": "56px",
         "min-width": "96px",

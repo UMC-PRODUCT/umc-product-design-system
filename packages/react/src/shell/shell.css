@@ -12,6 +12,7 @@
 @import "./app-page-header/app-page-header.css";
 @import "./error-page-container/error-page-container.css";
 @import "./bottom-navigation/bottom-navigation.css";
+@import "./footer/footer.css";
 
 @layer components {
 }
