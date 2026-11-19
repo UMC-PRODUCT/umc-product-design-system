@@ -132,7 +132,7 @@
       "variant": "State 이거 변경 필요=Warning, Button Style=Fill, Show Icon=False",
       "target": ".umc-dialog__actions .umc-button:last-child",
       "expected": {
-        "background-color": "#ffe7e5",
+        "background-color": "#fed7d7",
         "color": "#c21f14"
       }
     },

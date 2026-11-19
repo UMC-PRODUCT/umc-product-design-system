@@ -14,14 +14,14 @@
 | `mcp/get-variable-defs.3155-19501.json` | get_variable_defs | 3155:19501 | 2026-10-07 |
 | `mcp/get-variable-defs.2621-32882.json` | get_variable_defs | 2621:32882 | 2026-10-07 |
 | `mcp/get-variable-defs.2621-33341.json` | get_variable_defs | 2621:33341 | 2026-10-24 |
-| `export/color.mode-1.tokens.json` | Figma Variables Export modes (Color 컬렉션) | Mode 1.tokens.json | 2026-10-08 |
+| `export/color.mode-1.tokens.json` | Figma Variables Export modes (Color 컬렉션), Primitives/Red/Red-75·Red-100은 2026-11-19 Plugin API로 읽은 Light Mode 값 | Mode 1.tokens.json | 2026-11-19 |
 | `export/token.mode-1.tokens.json` | Figma Variables Export modes (Token 컬렉션) | Mode 1.tokens.json | 2026-10-30 |
 
 ## 변수 개수
 
 | export 파일 | 변수 | 이전 스냅샷 |
 | --- | --- | --- |
-| `color.mode-1.tokens.json` | 230 | 229 |
+| `color.mode-1.tokens.json` | 231 | 230 |
 | `token.mode-1.tokens.json` | 90 | 83 |
 
 ## 디자인 팀 확인 요청
@@ -106,7 +106,7 @@
 
 | 피그마 이름 | 내용 |
 | --- | --- |
-| `Primitives/*` | primitive 78개 중 76개가 ALL_SCOPES라 디자이너 선택 목록에 그대로 노출됩니다 |
+| `Primitives/*` | primitive 79개 중 77개가 ALL_SCOPES라 디자이너 선택 목록에 그대로 노출됩니다 |
 | `Semantic/Border/Neutral/Disabled` | Border인데 STROKE scope가 없습니다 (ALL_SCOPES) |
 | `Semantic/Border/Neutral/Default` | Border인데 STROKE scope가 없습니다 (FRAME_FILL, SHAPE_FILL) |
 
@@ -371,6 +371,7 @@ codeSyntax(WEB)를 둘째 칸 값으로 바꾸면 Dev Mode 코드 패널과 피�
 | `Primitives/Teal/Teal-800` | `var(--umc-color-teal-800)` | 없음 |
 | `Primitives/Teal/Teal-900` | `var(--umc-color-teal-900)` | 없음 |
 | `Primitives/Red/Red-50` | `var(--umc-color-red-50)` | 없음 |
+| `Primitives/Red/Red-75` | `var(--umc-color-red-75)` | 없음 |
 | `Primitives/Red/Red-100` | `var(--umc-color-red-100)` | 없음 |
 | `Primitives/Red/Red-200` | `var(--umc-color-red-200)` | 없음 |
 | `Primitives/Red/Red-300` | `var(--umc-color-red-300)` | 없음 |

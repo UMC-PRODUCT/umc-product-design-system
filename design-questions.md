@@ -38,10 +38,14 @@
 
 2026-10-30에 `Token` 컬렉션을 다시 받아 새 변수 7개를 토큰으로 넣었습니다. 간격은 `Spacing/Primitive/40`, `Padding 40`, `Padding 48`, `Gap 40`, `Margin 20`, `Margin 40`, 모서리는 `Button/R Button 8`입니다. 값이 바뀌거나 빠진 변수는 없지만 아직 이 변수를 쓰는 컴포넌트도 없습니다. Icon Button의 8px 모서리는 `Radius/Primitive/8`, App/Page Header의 20px 여백은 `Padding 20`에 연결되어 있고 Side Navigation 하위 메뉴의 48px 들여쓰기는 변수에 연결되어 있지 않습니다. 새 변수로 다시 연결할 컴포넌트가 있으면 알려 주세요. 연결되면 코드도 같은 토큰으로 바꾸겠습니다.
 
+2026-11-19에 Red 팔레트 변경을 반영했습니다. 기존 Red-100(`#ffe7e5`)은 새 `Red-75`로 옮겨 갔고, `Red-100`에는 Toast Error 배경에 쓰던 `#fed7d7`이 들어왔습니다. 피그마에서 Red-100을 직접 쓰거나 `Fill/Error/Medium-100`으로 쓰는 곳도 모두 `#fed7d7`로 바뀌어서 코드도 같은 값으로 바꿨습니다. 대상은 Button(Red Fill 비활성 글자, Red Weak 배경), Icon Button(Error Weak 누름), Tag와 Number Badge(Error Weak 배경), Dialog(Error 확인 버튼)입니다. 이 다섯 곳이 의도한 변화인지 확인해 주세요.
+
+같은 날 Color 컬렉션을 읽어 보니 semantic 이름 체계(`Icon/Neutral-Weak-400` → `Icon/Neutral/Weak-400`), Light·Dark 두 모드, primitive 변수 id가 2026-10-08 export와 다릅니다. 이번에는 Red-75와 Red-100만 export 원본에 넣었고, 새 `Fill/Error/Weak-75`를 포함한 나머지는 Color 컬렉션을 다시 export할 때 함께 옮기겠습니다. 이름 개편이 끝났는지 알려 주세요.
+
 상태 글자색 세 개가 작은 글자의 대비 기준(WCAG AA 4.5:1)에 못 미칩니다.
 
 - `--umc-color-text-warning`(`#ed8002`): 흰 배경 2.73:1, `yellow-100` 배경 2.41:1
-- `--umc-color-text-error`(`#dc3d3d`): 흰 배경 4.40:1, `red-100` 배경 3.73:1
+- `--umc-color-text-error`(`#dc3d3d`): 흰 배경 4.40:1, `red-100`(`#fed7d7`) 배경 3.33:1
 - `--umc-color-text-success`(`#06844c`): `green-100` 배경 4.16:1
 
 Tag와 Number Badge의 Weak 변형, Status Tag, 폼 오류 문구가 이 조합을 씁니다. 코드는 피그마 값을 그대로 따르고, 문서 사이트 안내 상자만 제목을 중립색으로 바꿔 피했습니다. 글자색을 한 단계 진한 값으로 바꿀지 알려 주세요.

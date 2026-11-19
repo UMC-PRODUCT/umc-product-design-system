@@ -67,10 +67,10 @@
     },
     {
       "file": "export/color.mode-1.tokens.json",
-      "tool": "Figma Variables Export modes (Color 컬렉션)",
+      "tool": "Figma Variables Export modes (Color 컬렉션), Primitives/Red/Red-75·Red-100은 2026-11-19 Plugin API로 읽은 Light Mode 값",
       "originalName": "Mode 1.tokens.json",
-      "fetchedAt": "2026-10-08",
-      "sha256": "1289aa0148bd13815baca2479e44c1fa282a521426b149ea4e21cb5234b92463"
+      "fetchedAt": "2026-11-19",
+      "sha256": "5190dcbf96c2e527343140b612d82e15b2ef2964c839a40f19613532fd9443e0"
     },
     {
       "file": "export/token.mode-1.tokens.json",

@@ -88,6 +88,7 @@ export const cssVariables = [
   "--umc-color-teal-800",
   "--umc-color-teal-900",
   "--umc-color-red-50",
+  "--umc-color-red-75",
   "--umc-color-red-100",
   "--umc-color-red-200",
   "--umc-color-red-300",

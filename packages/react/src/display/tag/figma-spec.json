@@ -125,7 +125,7 @@
       "variant": "Style=Weak, Size=Sm, Color=Error",
       "target": ".umc-tag",
       "expected": {
-        "background-color": "#ffe7e5",
+        "background-color": "#fed7d7",
         "color": "#dc3d3d"
       }
     },
