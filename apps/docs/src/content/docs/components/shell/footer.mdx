@@ -1,0 +1,125 @@
+---
+title: Footer
+description: 서비스 맨 아래에 놓는 UMC 소개, 서비스와 정책 링크, 연락처, 소셜 링크 묶음입니다. 랜딩 페이지용 Hero와 일반 서비스용 Default가 있습니다.
+---
+
+import {
+  FooterAllVariants,
+  FooterItems,
+  FooterModes,
+  FooterPreview,
+  FooterVariants,
+} from "../../../../components/react/shell/FooterExamples.tsx"
+
+피그마 `Footer`를 구현했습니다. UMC 로고와 `University MakeUs Challenge`, 저작권 문구, 소셜 링크, 링크 열을 한 묶음으로 그립니다. 링크 열은 `columns`로 넘기고, 링크는 `LinkProvider`에 등록한 링크 컴포넌트로 그립니다. 루트 요소는 `footer`입니다.
+
+```tsx
+import { Footer, LinkProvider, type FooterColumn } from "@umc-product/react"
+import Link from "next/link"
+
+const columns: FooterColumn[] = [
+  {
+    title: "About",
+    items: [
+      { label: "UMC PRODUCT", href: "/product" },
+      { label: "중앙사무국", href: "/office" },
+    ],
+  },
+  {
+    title: "Product",
+    items: [
+      { label: "데모데이 매칭 서비스", href: "/matching" },
+      { label: "리크루팅 서비스" },
+    ],
+  },
+]
+
+export function AppFooter() {
+  return (
+    <LinkProvider component={Link}>
+      <Footer
+        columns={columns}
+        socialLinks={[
+          { platform: "instagram", href: "https://www.instagram.com/" },
+        ]}
+      />
+    </LinkProvider>
+  )
+}
+```
+
+## 기본
+
+<FooterPreview client:visible />
+
+## 변형
+
+`variant="hero"`는 랜딩 페이지처럼 주목도가 큰 페이지에 씁니다. 링크 열이 위에 오고, 로고와 제목, 저작권 문구와 소셜 링크가 아래에 놓입니다. 일반 서비스 화면에는 `variant="default"`(기본)를 붙이며, 로고와 소셜 링크가 위, 링크 열이 아래입니다. 화면 낭독기도 보이는 순서대로 읽습니다.
+
+<FooterVariants client:visible />
+
+## 모드
+
+`mode`는 배경 톤을 고릅니다. `light`(기본)는 연한 회색, `gray`는 중간 회색이고, `dark`는 진한 청록 배경 위에 청록 빛 번짐을 깝니다. 글자, 로고, 소셜 아이콘 색도 모드에 맞춰 바뀝니다.
+
+<FooterModes client:visible />
+
+## 링크와 일반 글자
+
+`href`가 있는 항목은 밑줄 링크, 없는 항목은 밑줄 없는 글자로 그립니다. 아직 운영하지 않는 서비스처럼 이동할 곳이 없는 항목은 `href`를 빼서 글자로 남깁니다.
+
+<FooterItems client:visible />
+
+## 소셜 링크
+
+`socialLinks`의 `platform`은 `facebook`, `instagram`, `youtube` 중 하나입니다. 원 안에 플랫폼 로고를 그리고, 화면 낭독기에는 플랫폼 이름(Facebook, Instagram, YouTube)을 읽어 줍니다. 다른 이름을 읽히려면 `label`을 넘깁니다. 소셜 링크를 넘기지 않으면 아이콘 줄을 그리지 않습니다.
+
+## 모든 변형
+
+피그마 `Footer` 6개를 그렸습니다. 피그마 `Property 1`(Dark, Gray, Light)은 `mode`, `Type`(Hero, Default)은 `variant`입니다. 칸에 마우스를 올리면 코드가 보입니다.
+
+<FooterAllVariants client:visible />
+
+## props
+
+| prop          | 타입                          | 기본값                                        | 설명                                    |
+| ------------- | ----------------------------- | --------------------------------------------- | --------------------------------------- |
+| `variant`     | `"default" \| "hero"`         | `"default"`                                   | 배치                                    |
+| `mode`        | `"light" \| "gray" \| "dark"` | `"light"`                                     | 배경 톤                                 |
+| `columns`     | `FooterColumn[]`              | `[]`                                          | 링크 열. 비면 열 묶음을 그리지 않음     |
+| `socialLinks` | `FooterSocialLink[]`          | `[]`                                          | 소셜 링크. 비면 아이콘 줄을 그리지 않음 |
+| `title`       | `ReactNode`                   | `"University MakeUs Challenge"`               | 로고 아래 제목                          |
+| `copyright`   | `ReactNode`                   | `"© <올해> UMC Product All rights reserved."` | 저작권 문구                             |
+| `className`   | `string`                      | 없음                                          | 루트 요소에 붙일 클래스                 |
+
+나머지 `footer` 속성은 루트 요소에 넘깁니다.
+
+### FooterColumn
+
+| 필드    | 타입           | 설명      |
+| ------- | -------------- | --------- |
+| `title` | `ReactNode`    | 열 제목   |
+| `items` | `FooterItem[]` | 열의 항목 |
+
+### FooterItem
+
+| 필드    | 타입        | 설명                                      |
+| ------- | ----------- | ----------------------------------------- |
+| `label` | `ReactNode` | 항목 글자                                 |
+| `href`  | `string`    | 이동할 주소. 없으면 밑줄 없는 글자로 그림 |
+
+### FooterSocialLink
+
+| 필드       | 타입                                     | 설명                                        |
+| ---------- | ---------------------------------------- | ------------------------------------------- |
+| `platform` | `"facebook" \| "instagram" \| "youtube"` | 원 안에 그릴 플랫폼 로고                    |
+| `href`     | `string`                                 | 이동할 주소                                 |
+| `label`    | `string`                                 | 화면 낭독기가 읽을 이름. 기본은 플랫폼 이름 |
+
+## 알아 둘 점
+
+- 폭은 부모를 꽉 채웁니다. 링크 열은 오른쪽에 붙고, 폭이 모자라면 열을 다음 줄로 넘겨 왼쪽부터 채웁니다.
+- 좌우 여백(60px, 56px)과 링크 열 사이 간격(120px)은 1440px 화면 기준입니다. 화면이 좁아지면 여백은 20px, 열 간격은 32px까지 줄어듭니다.
+- `title`은 HTML `title` 속성이 아니라 로고 아래 제목입니다.
+- 저작권 문구 기본값은 렌더하는 시점의 연도로 만듭니다. 서버에서 그린 연도와 브라우저의 연도가 달라도 hydration 경고를 띄우지 않습니다.
+- 링크 글자 자간(-5%)은 3기 텍스트 스타일에 없어 값을 그대로 씁니다.

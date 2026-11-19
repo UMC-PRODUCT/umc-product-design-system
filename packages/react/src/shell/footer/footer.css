@@ -1,0 +1,268 @@
+@layer components {
+  .umc-footer {
+    --umc-footer-padding-top: var(--umc-spacing-64);
+    --umc-footer-padding-bottom: 46px;
+    --umc-footer-padding-start: clamp(20px, 4.1667vw, 60px);
+    --umc-footer-padding-end: clamp(20px, 3.8889vw, 56px);
+    --umc-footer-row-gap: 50px;
+    --umc-footer-column-gap: clamp(32px, 8.3333vw, 120px);
+    --umc-footer-column-row-gap: var(--umc-spacing-gap-32);
+    --umc-footer-item-gap: 7px;
+    --umc-footer-link-letter-spacing: -0.05em;
+    --umc-footer-social-size: 36px;
+    --umc-footer-social-gap: 11px;
+    --umc-footer-social-opacity: 0.7;
+    --umc-footer-glow-top: -513.84px;
+    --umc-footer-glow-left: -410.84px;
+    --umc-footer-light-bg: #f4f7f6;
+    --umc-footer-light-heading: #9ca3a3;
+    --umc-footer-gray-bg: #9ca3a3;
+    --umc-footer-dark-bg: #283938;
+    --umc-footer-dark-overlay: #0c2a25db;
+    --umc-footer-social-bg-weak: #7e7f7f80;
+    --umc-footer-social-bg-strong: #7e7f7fb3;
+    --umc-footer-social-glyph: #f1f1f2;
+    --umc-footer-social-play-dark: #8d8f8f;
+    --umc-footer-glow-color: #32ffff;
+
+    --umc-footer-bg: var(--umc-footer-light-bg);
+    --umc-footer-bg-image: none;
+    --umc-footer-heading-fg: var(--umc-footer-light-heading);
+    --umc-footer-link-fg: var(--umc-color-teal-grey-500);
+    --umc-footer-link-font-weight: var(
+      --umc-typography-body-1-medium-font-weight
+    );
+    --umc-footer-title-fg: var(--umc-color-text-neutral-weak-500);
+    --umc-footer-copyright-fg: var(--umc-color-teal-grey-600);
+    --umc-footer-logo-fg: var(--umc-color-teal-grey-400);
+    --umc-footer-social-bg: var(--umc-footer-social-bg-weak);
+    --umc-footer-social-fg: var(--umc-color-white);
+    --umc-footer-social-play: transparent;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-top: var(--umc-footer-padding-top);
+    padding-right: var(--umc-footer-padding-end);
+    padding-bottom: var(--umc-footer-padding-bottom);
+    padding-left: var(--umc-footer-padding-start);
+    background-color: var(--umc-footer-bg);
+    background-image: var(--umc-footer-bg-image);
+  }
+
+  .umc-footer[data-mode="gray"] {
+    --umc-footer-bg: var(--umc-footer-gray-bg);
+    --umc-footer-heading-fg: var(--umc-color-teal-grey-200);
+    --umc-footer-link-fg: var(--umc-color-teal-grey-50);
+    --umc-footer-link-font-weight: var(
+      --umc-typography-body-1-regular-font-weight
+    );
+    --umc-footer-title-fg: var(--umc-color-text-inverse);
+    --umc-footer-copyright-fg: var(--umc-color-teal-grey-100);
+    --umc-footer-logo-fg: var(--umc-color-white);
+    --umc-footer-social-fg: var(--umc-footer-social-glyph);
+  }
+
+  .umc-footer[data-mode="dark"] {
+    --umc-footer-bg: var(--umc-footer-dark-bg);
+    --umc-footer-bg-image: linear-gradient(
+      var(--umc-footer-dark-overlay),
+      var(--umc-footer-dark-overlay)
+    );
+    --umc-footer-heading-fg: var(--umc-color-teal-grey-300);
+    --umc-footer-link-fg: var(--umc-color-teal-grey-50);
+    --umc-footer-link-font-weight: var(
+      --umc-typography-body-1-regular-font-weight
+    );
+    --umc-footer-title-fg: var(--umc-color-text-inverse);
+    --umc-footer-copyright-fg: var(--umc-color-teal-300);
+    --umc-footer-logo-fg: var(--umc-color-white);
+    --umc-footer-social-bg: var(--umc-footer-social-bg-strong);
+    --umc-footer-social-fg: var(--umc-footer-social-glyph);
+    --umc-footer-social-play: var(--umc-footer-social-play-dark);
+  }
+
+  .umc-footer__glow {
+    position: absolute;
+    top: var(--umc-footer-glow-top);
+    left: var(--umc-footer-glow-left);
+    max-width: none;
+    mix-blend-mode: color;
+    pointer-events: none;
+  }
+
+  .umc-footer__glow-stroke {
+    stroke: var(--umc-footer-glow-color);
+  }
+
+  .umc-footer__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--umc-footer-row-gap);
+  }
+
+  .umc-footer__columns {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: flex-end;
+    max-width: 100%;
+    column-gap: var(--umc-footer-column-gap);
+    row-gap: var(--umc-footer-column-row-gap);
+  }
+
+  .umc-footer__column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--umc-spacing-gap-10);
+  }
+
+  .umc-footer__column-title {
+    margin: 0;
+    color: var(--umc-footer-heading-fg);
+    font-family: var(--umc-typography-body-2-regular-font-family);
+    font-size: var(--umc-typography-body-2-regular-font-size);
+    font-weight: var(--umc-typography-body-2-regular-font-weight);
+    line-height: var(--umc-typography-body-2-regular-line-height);
+    letter-spacing: var(--umc-typography-body-2-regular-letter-spacing);
+  }
+
+  .umc-footer__items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--umc-footer-item-gap);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .umc-footer__item,
+  .umc-footer__social-item {
+    display: flex;
+  }
+
+  .umc-footer__link,
+  .umc-footer__text {
+    color: var(--umc-footer-link-fg);
+    font-family: var(--umc-typography-body-1-regular-font-family);
+    font-size: var(--umc-typography-body-1-regular-font-size);
+    font-weight: var(--umc-footer-link-font-weight);
+    line-height: var(--umc-typography-body-1-regular-line-height);
+    letter-spacing: var(--umc-footer-link-letter-spacing);
+  }
+
+  .umc-footer__link {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: from-font;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .umc-footer__link:focus-visible,
+  .umc-footer__social-link:focus-visible {
+    outline: 2px solid var(--umc-color-border-primary-strong-500);
+    outline-offset: 2px;
+  }
+
+  .umc-footer__brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--umc-spacing-gap-16);
+  }
+
+  .umc-footer__logo {
+    display: block;
+    flex-shrink: 0;
+    color: var(--umc-footer-logo-fg);
+  }
+
+  .umc-footer__title {
+    margin: 0;
+    color: var(--umc-footer-title-fg);
+    font-family: var(--umc-typography-heading-2-semibold-font-family);
+    font-size: var(--umc-typography-heading-2-semibold-font-size);
+    font-weight: var(--umc-typography-heading-2-semibold-font-weight);
+    line-height: var(--umc-typography-heading-2-semibold-line-height);
+    letter-spacing: var(--umc-typography-heading-2-semibold-letter-spacing);
+  }
+
+  .umc-footer__copyright {
+    margin: 0;
+    color: var(--umc-footer-copyright-fg);
+    font-family: var(--umc-typography-body-2-medium-font-family);
+    font-size: var(--umc-typography-body-2-medium-font-size);
+    font-weight: var(--umc-typography-body-2-medium-font-weight);
+    line-height: var(--umc-typography-body-2-medium-line-height);
+    letter-spacing: var(--umc-typography-body-2-medium-letter-spacing);
+  }
+
+  .umc-footer__hero-identity {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .umc-footer__hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--umc-spacing-gap-16);
+  }
+
+  .umc-footer__default-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--umc-spacing-gap-24);
+  }
+
+  .umc-footer__default-identity {
+    display: flex;
+    flex-direction: column;
+    gap: var(--umc-spacing-gap-12);
+  }
+
+  .umc-footer__social {
+    display: flex;
+    align-items: center;
+    gap: var(--umc-footer-social-gap);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .umc-footer__social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: var(--umc-footer-social-size);
+    height: var(--umc-footer-social-size);
+    border-radius: var(--umc-radius-full);
+    background-color: var(--umc-footer-social-bg);
+    color: var(--umc-footer-social-fg);
+    opacity: var(--umc-footer-social-opacity);
+  }
+
+  .umc-footer__social-glyph {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .umc-footer__social-play {
+    fill: var(--umc-footer-social-play);
+  }
+
+  @media (forced-colors: active) {
+    .umc-footer__social-link {
+      border: 1px solid CanvasText;
+    }
+  }
+}

@@ -81,3 +81,13 @@ export {
   ErrorPageContainer,
   type ErrorPageContainerProps,
 } from "./error-page-container/ErrorPageContainer.tsx"
+export {
+  Footer,
+  type FooterColumn,
+  type FooterItem,
+  type FooterMode,
+  type FooterProps,
+  type FooterSocialLink,
+  type FooterSocialPlatform,
+  type FooterVariant,
+} from "./footer/Footer.tsx"
